@@ -9,8 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      BUCKET: remote-it-help.com
-      DIST_ID: ${{ secrets.CF_DIST_ID }}
+      BUCKET: www.it-help.tech  # <--- CHANGED for your new S3 bucket
+      DIST_ID: ${{ secrets.CF_DIST_ID_IT_HELP_TECH }} # <--- CHANGED to use the new secret name
 
     steps:
       # Checkout code
@@ -40,16 +40,16 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: ${{ env.BUCKET }}
-          AWS_REGION: us-east-1  # Update this with your AWS region
+          AWS_S3_BUCKET: ${{ env.BUCKET }} # This will now use www.it-help.tech
+          AWS_REGION: us-east-1  # This should be the region of your www.it-help.tech S3 bucket
           SOURCE_DIR: ./_site
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       # Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*' # DIST_ID uses the new secret via the top env block
         env:
-          AWS_REGION: us-east-1
+          AWS_REGION: us-east-1 # This should be us-east-1 as CloudFront API calls are global or us-east-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
