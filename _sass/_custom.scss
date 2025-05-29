@@ -1,0 +1,289 @@
+/* Custom styles */
+
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;   /* Center elements horizontally */
+  text-align: center;    /* Center text within elements */
+  gap: 1rem;             /* Back to original 1rem */
+  padding: 1rem;         /* Back to original 1rem */
+  width: 100%;
+  float: none;
+  margin-bottom: 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;       /* Allow nav items to wrap if needed */
+  justify-content: center; /* Center nav items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+main h1:first-child {
+  margin-top: 0;
+}
+
+main {
+  margin-top: 2rem;
+  padding-bottom: 0.1rem;
+  padding-top: 0; /* Ensure no padding */
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  clear: both;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.cta-button {
+  display: inline-block; /* Default to inline-block for desktop */
+  background-color: #58a6ff; /* USE BLUE for the button */
+  color: #0d1117; /* Use dark background color for text */
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 0.5em;
+  transition: background-color 0.3s ease;
+  font-weight: bold; /* Make text bold */
+  position: relative;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.cta-button:hover {
+  background-color: #8ab4f8; /* Lighter blue for hover */
+  color: #0d1117;
+}
+
+.button-icon {
+    display: inline;
+}
+
+/* Base styles for hamburger elements (hidden by default) */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+}
+
+
+@media (max-width: 600px) {
+  /* --- START: Mobile Header & Nav Overrides --- */
+
+  header {
+    flex-direction: row; /* Change to row */
+    justify-content: space-between; /* Logo left, hamburger right */
+    align-items: center;
+    padding: 1rem; /* Consistent padding */
+    gap: 1rem;
+    position: relative; /* Essential for absolute nav */
+    text-align: left; /* Align H1 left */
+  }
+
+  header h1 {
+      margin: 0;
+      font-size: 1.2em;
+      line-height: 1.2;
+  }
+
+  header h1 a {
+     display: flex;
+     flex-direction: row; /* Keep as row */
+     align-items: center;
+     gap: 0.5rem;
+     text-decoration: none;
+     color: inherit;
+  }
+
+  header h1 img {
+    height: 40px;
+    width: auto; /* Let it scale */
+    margin-right: 0;
+  }
+
+  /* Show and style the hamburger label */
+  .nav-toggle-label {
+    display: block; /* Make it visible */
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background-color: #c9d1d9;
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before { top: -8px; }
+  .nav-toggle-label span::after { top: 8px; }
+
+  /* Hide original nav, style it as dropdown */
+  nav {
+    display: none; /* Hide nav container by default */
+    position: absolute;
+    top: 100%; /* Below header */
+    left: 0;
+    width: 100%;
+    background-color: #161b22;
+    z-index: 999;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack links vertically */
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+
+  nav li {
+      margin-right: 0;
+      margin-bottom: 0; /* Remove bottom margin */
+      width: 100%;
+      border-bottom: 1px solid #30363d; /* Add separator */
+  }
+   nav li:last-child {
+      border-bottom: none;
+   }
+
+  nav li a {
+      display: block;
+      text-align: center;
+      padding: 1rem; /* Increase tap area */
+  }
+
+  /* Show nav when checkbox is checked */
+  #nav-toggle:checked ~ nav {
+    display: block;
+  }
+
+  /* Transform hamburger to X when checked */
+  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; }
+  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
+  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
+
+  /* Mobile Spacing */
+  main {
+    margin-top: 3rem; /* Increase margin-top only for mobile */
+    padding-top: 0; /* Ensure no padding */
+  }
+
+  /* Keep other mobile styles */
+  .cta-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8em 1em;
+    margin-top: 0.5rem;
+  }
+
+  footer .service-line {
+    display: block;
+    margin-top: 0.3em;
+  }
+
+  /* --- END: Mobile Header & Nav Overrides --- */
+}
+
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-brag {
+  font-size: 0.85em;
+  color: #8b949e;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-list h2 a {
+  text-decoration: none;
+  color: #8ab4f8;
+}
+
+.post-list h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #8b949e;
+  margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+  margin-bottom: 1rem;
+}
+
+a.read-more {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post h1 {
+  margin-bottom: 0.5rem;
+}
+
+.post .post-meta {
+  margin-bottom: 2rem;
+}
+
+.post-content h2, .post-content h3, .post-content h4 {
+  margin-top: 2rem;
+}

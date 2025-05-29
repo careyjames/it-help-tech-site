@@ -1,0 +1,140 @@
+/* _darkmode.scss */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #161b22; /* Slightly Lighter Dark Background */
+  color: #c9d1d9;
+  font-family: "JetBrains Mono", "Courier New", monospace; /* Using JetBrains Mono */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure paragraphs use the main color */
+p {
+  color: #c9d1d9 !important; /* Added !important to help override */
+}
+
+a {
+  color: #58a6ff;
+}
+
+h1 {
+ color: #58a6ff; /* Vibrant Blue */
+}
+
+h2 {
+ color: #58a6ff; /* Vibrant Blue */
+}
+
+h3 {
+  color: #58a6ff; /* Vibrant Blue, same as H2 */
+}
+
+header h1 a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+/* Ensure strong and list strong are bright */
+strong, li strong {
+  color: #e6edf3 !important; /* Brighter white/grey + !important */
+  font-weight: bold;
+}
+
+/* Style for inline code */
+code {
+  background-color: #282c34; /* Slightly different dark background */
+  color: #abb2bf !important; /* Lighter grey for code + !important */
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 6px;
+}
+
+/* Style for code blocks */
+pre, pre code {
+    background-color: #282c34 !important; /* Ensure override */
+    color: #abb2bf !important;
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
+}
+
+
+header,
+footer {
+  color: #c9d1d9;
+  padding: 1rem 0;
+}
+
+footer {
+    padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #58a6ff;
+}
+
+
+@media (max-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centered on mobile */
+    padding-left: 0;
+  }
+}
+
+/* Style for p=none tag and similar tags */
+.dmarc-tag {
+  background-color: #c9d1d9; /* Light background */
+  color: #0d1117; /* Dark text */
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-weight: bold;
+}
+
+/* Style for the ethics statement */
+.ethics-statement {
+  color: #8ab4f8; /* Use the bright blue for emphasis */
+  font-weight: bold;
+}
+
+/* Style for specific highlighted features in text */
+.highlight-feature {
+  color: #8ab4f8; /* Use the bright blue for emphasis */
+  font-weight: bold;
+}
+
+/* Style for org subtitle on about page */
+.org-subtitle {
+  color: #aab0b6; /* A slightly brighter grey, but still subtle */
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+
+/* Style for the final tagline */
+.final-tagline {
+  font-size: 1.2em; /* Make it slightly larger */
+  font-weight: bold;
+  color: #27ae60; /* Flat Green */
+  text-transform: uppercase;
+  margin-top: 2rem; /* Add some space above it */
+}

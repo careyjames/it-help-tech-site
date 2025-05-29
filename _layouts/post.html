@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article class="post">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting", // More specific than Article
+  "headline": {{ page.title | jsonify }},
+  {% if page.image %}
+  "image": { // Add an image field - VERY important for rich results
+    "@type": "ImageObject",
+    "url": "{{ page.image | absolute_url | jsonify }}"
+  },
+  {% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'Carey Balboa' | jsonify }}", // Default to Carey Balboa
+    "url": "{{ site.url }}/about.html" // Link to About page
+  },
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  {% if page.last_modified_at %}
+    "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+  {% else %}
+    "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+  {% endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url | jsonify }}"
+  },
+  {% if page.tags %}
+  "keywords": "{{ page.tags | join: ', ' }}", // Add keywords from tags
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/assets/images/logo.svg' | absolute_url | jsonify }}" // Use consistent logo (logo.svg)
+    }
+  },
+  "description": {{ page.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }}
+}
+  </script>
+
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.author %} • {{ page.author }}{% endif %}
+  </p>
+  {% if page.image %}
+  <div class="post-featured-image" style="margin-bottom: 1.5rem;">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }} featured image" style="width: 100%; max-width: 200px; height: auto; display: block; margin-left: auto; margin-right: auto; border-radius: 8px;">
+  </div>
+  {% endif %}
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

@@ -1,0 +1,29 @@
+title: "Remote IT Help | Expert macOS, iOS, Email, DNS & Endpoint Security Support"
+email: "hello@it-help.tech"
+description: "Get expert, on-demand remote IT support nationwide. We specialize in Apple macOS & iOS, DNS, DMARC, Email troubleshooting & deliverability, and endpoint cybersecurity solutions."
+logo: /assets/images/logo-blue.png
+baseurl: ""
+url: "https://remote-it-help.com"
+
+theme: jekyll-theme-minimal
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /:name.html
+
+exclude:
+  - README.md
+  - test.md
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap # Added for XML sitemap generation
+
+feed:
+  path: /feed.xml
