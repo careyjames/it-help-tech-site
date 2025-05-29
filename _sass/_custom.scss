@@ -1,4 +1,86 @@
-/* Custom styles */
+/* _custom.scss - Light Theme Defaults & Custom Site Styles */
+
+/* Light mode global settings - START */
+body {
+  background-color: #f8f9fa; /* Light grey background */
+  color: #212529; /* Dark grey text for readability */
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  /* Uses body color by default, no !important needed unless issues arise */
+}
+
+a {
+  color: #0056b3; /* Professional, accessible blue for links */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 { /* Applied to all heading levels */
+  color: #345C7D; /* A calm/sober professional blue for headings */
+}
+
+strong, li strong {
+  color: #000000; /* Black or very dark grey for strong text */
+  font-weight: bold; /* Ensure font-weight is bold, as color alone might not be enough */
+}
+
+code { /* Inline code */
+  background-color: #e9ecef; /* Lighter grey background for code */
+  color: #212529; /* Dark grey text, can be more specific if needed e.g., #495057 */
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 6px;
+}
+
+pre, pre code { /* Code blocks */
+    background-color: #e9ecef !important; 
+    color: #212529 !important; /* Dark grey text */
+    border: 1px solid #dee2e6; /* Optional: subtle border for code blocks */
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
+}
+
+header,
+footer {
+    /* Will inherit body color by default, padding is handled in specific rules below */
+}
+
+/* Specific class adjustments for light mode */
+.dmarc-tag {
+  background-color: #345C7D; /* Theme blue background */
+  color: #ffffff;           /* White text */
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-weight: bold;
+}
+
+.ethics-statement, .highlight-feature {
+  color: #0056b3; /* Theme link blue for emphasis */
+  font-weight: bold;
+}
+
+.final-tagline {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #198754; /* A professional, non-neon green */
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+/* Light mode global settings - END */
+
+
+/* Your Existing Custom Styles (with minor light-theme adjustments) - START */
+/* Original _custom.scss content from remote-it-help.site, with light theme considerations */
 
 header {
   position: relative;
@@ -16,7 +98,15 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.5em;
+  /* color will be inherited from general h1 style (light mode) or _darkmode.scss */
 }
+
+/* Ensure header h1 a inherits link color correctly for light mode, or body color */
+header h1 a {
+  color: inherit; /* Inherit color from h1 for light mode or specific dark mode color */
+  text-decoration: none;
+}
+
 
 nav ul {
   display: flex;
@@ -27,6 +117,7 @@ nav ul {
   margin: 0;
   gap: 1rem;
 }
+/* nav a color will be inherited from general 'a' style (light mode) or _darkmode.scss */
 
 main h1:first-child {
   margin-top: 0;
@@ -59,12 +150,13 @@ footer p {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
+    /* color will be inherited from body (light mode) or _darkmode.scss */
 }
 
 .cta-button {
   display: inline-block; /* Default to inline-block for desktop */
-  background-color: #58a6ff; /* USE BLUE for the button */
-  color: #0d1117; /* Use dark background color for text */
+  background-color: #0056b3; /* Light theme primary blue */
+  color: #ffffff; /* White text for better contrast on blue */
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
@@ -76,8 +168,8 @@ footer p {
 }
 
 .cta-button:hover {
-  background-color: #8ab4f8; /* Lighter blue for hover */
-  color: #0d1117;
+  background-color: #004085; /* Darker blue for hover */
+  color: #ffffff;
 }
 
 .button-icon {
@@ -118,7 +210,7 @@ footer p {
      align-items: center;
      gap: 0.5rem;
      text-decoration: none;
-     color: inherit;
+     color: inherit; /* Inherits from h1 which inherits from body or darkmode */
   }
 
   header h1 img {
@@ -139,7 +231,7 @@ footer p {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #c9d1d9;
+    background-color: #212529; /* Dark color for hamburger lines in light mode */
     height: 3px;
     width: 25px;
     border-radius: 2px;
@@ -157,13 +249,15 @@ footer p {
   .nav-toggle-label span::after { top: 8px; }
 
   /* Hide original nav, style it as dropdown */
-  nav {
+  nav { /* This is the mobile dropdown menu container */
     display: none; /* Hide nav container by default */
     position: absolute;
     top: 100%; /* Below header */
     left: 0;
     width: 100%;
-    background-color: #161b22;
+    background-color: #ffffff; /* Light background for mobile nav */
+    border-top: 1px solid #dee2e6; /* Separator from header */
+    border-bottom: 1px solid #dee2e6; /* Bottom border */
     z-index: 999;
   }
 
@@ -178,16 +272,20 @@ footer p {
       margin-right: 0;
       margin-bottom: 0; /* Remove bottom margin */
       width: 100%;
-      border-bottom: 1px solid #30363d; /* Add separator */
+      border-bottom: 1px solid #e9ecef; /* Light separator for list items */
   }
    nav li:last-child {
       border-bottom: none;
    }
 
-  nav li a {
+  nav li a { /* Mobile navigation links */
       display: block;
       text-align: center;
       padding: 1rem; /* Increase tap area */
+      color: #0056b3; /* Use light theme link color */
+  }
+  nav li a:hover {
+      background-color: #e9ecef; /* Slight hover background for mobile nav items */
   }
 
   /* Show nav when checkbox is checked */
@@ -196,9 +294,9 @@ footer p {
   }
 
   /* Transform hamburger to X when checked */
-  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; }
-  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
-  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
+  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } /* Middle line disappears */
+  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
+  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
 
   /* Mobile Spacing */
   main {
@@ -207,7 +305,7 @@ footer p {
   }
 
   /* Keep other mobile styles */
-  .cta-button {
+  .cta-button { /* Already styled above, ensure consistency or mobile specifics if needed */
     display: block;
     width: 100%;
     text-align: center;
@@ -232,7 +330,7 @@ footer p {
 
 .footer-brag {
   font-size: 0.85em;
-  color: #8b949e;
+  color: #6c757d; /* Darker grey for better readability on light background */
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -245,7 +343,7 @@ footer p {
 .post-list li {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid #dee2e6; /* Lighter border for light theme */
 }
 
 .post-list li:last-child {
@@ -254,7 +352,7 @@ footer p {
 
 .post-list h2 a {
   text-decoration: none;
-  color: #8ab4f8;
+  color: #0056b3; /* Use main link color for light theme */
 }
 
 .post-list h2 a:hover {
@@ -263,27 +361,34 @@ footer p {
 
 .post-meta {
   font-size: 0.9em;
-  color: #8b949e;
+  color: #6c757d; /* Darker grey for better readability on light background */
   margin-bottom: 0.5rem;
 }
 
 .post-excerpt {
   margin-bottom: 1rem;
+  /* color will be inherited from body (light mode) or _darkmode.scss */
 }
 
 a.read-more {
   font-weight: bold;
   text-decoration: none;
+  /* color will be inherited from general 'a' style (light mode) or _darkmode.scss */
 }
 
-.post h1 {
+.post h1 { /* Blog post title */
   margin-bottom: 0.5rem;
+  /* color will be inherited from general h1 style (light mode) or _darkmode.scss */
 }
 
-.post .post-meta {
+.post .post-meta { /* Blog post meta */
   margin-bottom: 2rem;
+  /* color adjusted above via general .post-meta rule */
 }
 
-.post-content h2, .post-content h3, .post-content h4 {
+.post-content h2, .post-content h3, .post-content h4 { /* Headings within blog post content */
   margin-top: 2rem;
+  /* color will be inherited from general h2,h3,h4 styles (light mode) or _darkmode.scss */
 }
+
+/* Your Existing Custom Styles - END */
