@@ -1,9 +1,11 @@
-title: "Remote IT Help | Expert macOS, iOS, Email, DNS & Endpoint Security Support"
-email: "hello@it-help.tech"
-description: "Get expert, on-demand remote IT support nationwide. We specialize in Apple macOS & iOS, DNS, DMARC, Email troubleshooting & deliverability, and endpoint cybersecurity solutions."
-logo: /assets/images/logo-blue.png
-baseurl: ""
-url: "https://remote-it-help.com"
+# _config.yml for it-help.tech (San Diego Local Site)
+
+title: "IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support" # YOUR NEW TITLE
+email: "hello@it-help.tech" # VERIFY/UPDATE if different for it-help.tech
+description: "San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. We solve tech problems—no monthly retainers." # YOUR NEW DESCRIPTION
+logo: /assets/images/logo.svg # YOUR NEW LOGO PATH
+baseurl: "" # Usually empty if hosting at the root of the domain
+url: "https://www.it-help.tech" # For the new site's URL
 
 theme: jekyll-theme-minimal
 highlighter: rouge
@@ -11,11 +13,12 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-permalink: /:name.html
+permalink: /:name.html # Common permalink style, can keep as is
 
 exclude:
   - README.md
   - test.md
+  # Add any other files/folders to exclude from the build
 
 sass:
   style: compressed
@@ -23,7 +26,7 @@ sass:
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
-  - jekyll-sitemap # Added for XML sitemap generation
+  - jekyll-sitemap
 
 feed:
-  path: /feed.xml
+  path: /feed.xml # Standard path for RSS feed
