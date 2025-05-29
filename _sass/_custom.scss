@@ -1,58 +1,85 @@
-/* _custom.scss - More Specific Light Theme Defaults & Custom Site Styles */
+/* _custom.scss - AGGRESSIVE Light Theme Defaults & FULL Custom Site Styles */
 
-/* Light mode global settings - START */
-html body { /* Increased specificity */
-  background-color: #f8f9fa; /* Light grey background */
-  color: #212529; /* Dark grey text for readability */
-  font-family: "JetBrains Mono", "Courier New", monospace;
-  line-height: 1.6;
-  margin: 0; /* Resetting jekyll-theme-minimal's body padding */
-  padding: 0; /* Resetting jekyll-theme-minimal's body padding */
+/* Resetting and overriding jekyll-theme-minimal for light mode - START */
+html, body {
+  background-color: #f8f9fa !important; /* Light grey background */
+  color: #212529 !important; /* Dark grey text */
+  font-family: "JetBrains Mono", "Courier New", monospace !important; /* Your preferred font */
+  line-height: 1.6 !important;
+  margin: 0 !important; 
+  padding: 0 !important; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html p { /* Increased specificity */
-  color: #212529; /* Default paragraph color */
+/* Try to neutralize jekyll-theme-minimal's .wrapper if it's interfering */
+/* You can be more specific if you know the exact structure, e.g. body > .wrapper */
+.wrapper {
+  width: auto !important;
+  max-width: none !important; /* Let your .container class handle max-width */
+  margin: 0 !important;
+  padding: 0 !important; /* Remove padding from theme's wrapper */
+  background-color: transparent !important; /* Ensure no conflicting background */
 }
 
-html a { /* Increased specificity */
-  color: #59aaff; /* Your preferred logo blue for links */
-  text-decoration: none;
-}
-html a:hover { /* Increased specificity */
-  text-decoration: underline;
-}
-
-html h1, html h2, html h3, html h4, html h5, html h6 { /* Increased specificity */
-  color: #59aaff; /* Your preferred logo blue for headings */
-}
-
-html strong, html li strong { /* Increased specificity */
-  color: #000000 !important; /* Black or very dark grey for strong text */
-  font-weight: bold;
+/* Neutralize jekyll-theme-minimal's direct styling on main structural elements if they exist */
+/* These are common names, adjust if your theme uses different ones like .page-header */
+header.site-header, section.main-content, div.main-content-wrap, footer.site-footer {
+  width: auto !important;
+  float: none !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important; /* Reset padding */
+  border: none !important; /* Reset borders */
+  background: none !important; /* Reset background */
 }
 
-html code { /* Inline code - Increased specificity */
-  background-color: #e9ecef; /* Lighter grey background for code */
-  color: #212529;
-  padding: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  border-radius: 6px;
+
+html p {
+  color: #212529 !important; 
 }
 
-html pre, html pre code { /* Code blocks - Increased specificity */
+html a {
+  color: #59aaff !important; /* Your preferred logo blue */
+  text-decoration: none !important;
+}
+html a:hover {
+  text-decoration: underline !important;
+}
+
+html h1, html h2, html h3, html h4, html h5, html h6 {
+  color: #59aaff !important; /* Your preferred logo blue */
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem; 
+}
+
+html strong, html li strong {
+  color: #000000 !important; 
+  font-weight: bold !important;
+}
+
+html code { 
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+  padding: 0.2em 0.4em !important;
+  margin: 0 !important;
+  font-size: 85% !important;
+  border-radius: 6px !important;
+}
+
+html pre, html pre code { 
     background-color: #e9ecef !important;
     color: #212529 !important;
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    padding: 1em;
-    overflow: auto;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 6px !important;
+    padding: 1em !important;
+    overflow: auto !important;
 }
 
-/* Specific class adjustments for light mode (ensure these use your logo blue #59aaff where appropriate) */
+/* Specific class adjustments for light mode */
 .dmarc-tag {
-  background-color: #59aaff; /* Your preferred logo blue background */
-  color: #0d1117;           /* Dark text (consider #ffffff if #59aaff is light enough for dark text to be hard to read) */
+  background-color: #59aaff; 
+  color: #0d1117; /* Dark text for contrast on your blue */          
   padding: 3px 6px;
   border-radius: 4px;
   font-family: "JetBrains Mono", "Courier New", monospace;
@@ -60,40 +87,39 @@ html pre, html pre code { /* Code blocks - Increased specificity */
 }
 
 .ethics-statement, .highlight-feature {
-  color: #59aaff; /* Your preferred logo blue for emphasis */
+  color: #59aaff; 
   font-weight: bold;
 }
 
 .final-tagline {
   font-size: 1.2em;
   font-weight: bold;
-  color: #198754; /* A professional, non-neon green */
+  color: #198754; 
   text-transform: uppercase;
   margin-top: 2rem;
 }
-/* Light mode global settings - END */
+/* Resetting and overriding jekyll-theme-minimal for light mode - END */
 
 
-/* --- Your Existing Custom Styles (header, nav, footer, cta-button, etc.) START BELOW THIS LINE --- */
-/* (Colors within this section were adjusted in turn 82 and are largely kept, with your logo blue #59aaff considered) */
-
+/* Your Existing Custom Structural & Component Styles (Adapted for Light Theme) - START */
 header {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 1rem;
+  flex-direction: column; 
+  align-items: center;   
+  text-align: center;    
+  gap: 1rem;             
+  padding: 1rem;         
   width: 100%;
-  float: none;
+  float: none; /* Ensure no float from theme */
   margin-bottom: 0;
+  background-color: transparent; /* Ensure body background shows through unless header has its own */
 }
 
 header h1 {
   margin: 0;
   font-size: 1.5em;
-  /* color will be inherited from "html h1" (light mode) or _darkmode.scss */
+  /* Color will be inherited from "html h1" for light mode, or from _darkmode.scss */
 }
 
 header h1 a {
@@ -103,23 +129,25 @@ header h1 a {
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap;       
+  justify-content: center; 
   list-style: none;
   padding: 0;
   margin: 0;
   gap: 1rem;
 }
-/* nav a color will be inherited from "html a" (light mode) or _darkmode.scss */
+/* nav a color will be inherited from "html a" for light mode, or from _darkmode.scss */
 
 main h1:first-child {
-  margin-top: 0;
+  margin-top: 0; /* Good practice */
 }
 
 main {
-  margin-top: 2rem;
-  padding-bottom: 0.1rem;
+  /* The .container class will handle margins if applied to main's children or main itself */
+  /* Resetting any direct theme padding/margin for main that might conflict with .container approach */
   padding-top: 0; 
+  padding-bottom: 0.1rem; /* Keep your existing padding */
+  margin-top: 2rem; /* Your existing margin */
 }
 
 footer {
@@ -127,14 +155,16 @@ footer {
   padding-top: 1rem;
   text-align: center;
   clear: both;
-  position: relative;
-  bottom: 0;
+  position: relative; /* This might not be needed if it's the last element */
+  bottom: 0; /* This might not be needed */
   width: 100%;
+  background-color: transparent; /* Ensure body background shows through unless footer has its own */
 }
 
-footer.container {
+footer.container { /* This class seems redundant if footer itself is full-width and content inside is centered */
+    /* If you apply .container directly to footer, or a div inside footer, these might not be needed */
     width: 100%;
-    max-width: 100%;
+    max-width: 100%; 
     margin: 0 auto;
     text-align: center;
 }
@@ -143,25 +173,26 @@ footer p {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
+    /* color inherits from body or _darkmode.scss */
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #59aaff; /* Your preferred logo blue */
-  color: #0d1117; /* Dark text, or #ffffff if #59aaff is light enough for dark text to be hard to read */
+  display: inline-block; 
+  background-color: #59aaff; /* Your logo blue */
+  color: #0d1117; /* Dark text for contrast - test if #ffffff is better */
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
   margin-top: 0.5em;
   transition: background-color 0.3s ease;
-  font-weight: bold;
+  font-weight: bold; 
   position: relative;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 .cta-button:hover {
   background-color: #82bcfc; /* Lighter shade of your blue */
-  color: #0d1117; /* Or #ffffff */
+  color: #0d1117; /* or #ffffff */
 }
 
 .button-icon {
@@ -220,7 +251,7 @@ footer p {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #212529; /* Dark color for hamburger lines in light mode */
+    background-color: #212529; /* Dark hamburger lines for light mode */
     height: 3px;
     width: 25px;
     border-radius: 2px;
@@ -243,10 +274,11 @@ footer p {
     top: 100%; 
     left: 0;
     width: 100%;
-    background-color: #ffffff; /* Light background for mobile nav */
+    background-color: #f8f9fa; /* Light background for mobile nav, consistent with body */
     border-top: 1px solid #dee2e6; 
     border-bottom: 1px solid #dee2e6; 
     z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: subtle shadow for dropdown */
   }
 
   nav ul {
@@ -260,7 +292,7 @@ footer p {
       margin-right: 0;
       margin-bottom: 0; 
       width: 100%;
-      border-bottom: 1px solid #e9ecef; /* Light separator for list items */
+      border-bottom: 1px solid #e9ecef; 
   }
    nav li:last-child {
       border-bottom: none;
@@ -271,9 +303,10 @@ footer p {
       text-align: center;
       padding: 1rem; 
       color: #59aaff; /* Your logo blue for mobile nav links */
+      font-weight: bold; /* Make them a bit more prominent */
   }
   nav li a:hover {
-      background-color: #e9ecef; 
+      background-color: #e9ecef; /* Slight hover background */
   }
 
   #nav-toggle:checked ~ nav {
@@ -285,16 +318,22 @@ footer p {
   #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } 
 
   main {
-    margin-top: 3rem; 
-    padding-top: 0; 
+    /* Let .container inside main handle padding/margins if needed */
+    /* Or add specific mobile padding for main content area if .container is not used directly on main sections */
+    padding-left: 1rem; /* Example mobile padding */
+    padding-right: 1rem; /* Example mobile padding */
+    margin-top: 1rem; /* Adjust if header height changes significantly */
   }
 
   .cta-button { 
     display: block;
-    width: 100%;
+    width: auto; /* Allow button to size to content + padding */
+    max-width: 100%; /* Prevent overflow */
+    margin-left: auto; /* Center if block */
+    margin-right: auto; /* Center if block */
     text-align: center;
     padding: 0.8em 1em;
-    margin-top: 0.5rem;
+    margin-top: 1rem; /* More space on mobile */
   }
 
   footer .service-line {
@@ -307,13 +346,17 @@ footer p {
 
 .container {
   width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 900px; /* This is your main content width constraint */
+  margin-left: auto;
+  margin-right: auto;
+  /* Add padding here if you want consistent spacing inside the container */
+  padding-top: 1rem; /* Example */
+  padding-bottom: 1rem; /* Example */
 }
 
 .footer-brag {
   font-size: 0.85em;
-  color: #6c757d; /* Darker grey for better readability on light background */
+  color: #6c757d; 
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -326,7 +369,7 @@ footer p {
 .post-list li {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #dee2e6; /* Lighter border for light theme */
+  border-bottom: 1px solid #dee2e6; 
 }
 
 .post-list li:last-child {
@@ -335,7 +378,7 @@ footer p {
 
 .post-list h2 a {
   text-decoration: none;
-  color: #59aaff; /* Your logo blue for post titles */
+  color: #59aaff; /* Your logo blue */
 }
 
 .post-list h2 a:hover {
@@ -344,7 +387,7 @@ footer p {
 
 .post-meta {
   font-size: 0.9em;
-  color: #6c757d; /* Darker grey for better readability on light background */
+  color: #6c757d; 
   margin-bottom: 0.5rem;
 }
 
@@ -355,7 +398,6 @@ footer p {
 a.read-more {
   font-weight: bold;
   text-decoration: none;
-  /* color will be inherited from "html a" (light mode) or _darkmode.scss */
 }
 
 .post h1 { 
