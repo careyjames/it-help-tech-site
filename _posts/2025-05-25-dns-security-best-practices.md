@@ -27,21 +27,20 @@ DMARC, SPF, and DKIM offer a robust defense for your email system by authenticat
 
 Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and Infrastructure Security Agency), the US cyber intelligence agency:
 
-**🔍 DMARC:**
-"v=DMARC1; p=reject; pct=100; rua=mailto:DMARC@hq.dhs.gov, mailto:reports@dmarc.cyber.dhs.gov"
+```
+🔍 DMARC: "v=DMARC1; p=reject; pct=100; rua=mailto:DMARC@hq.dhs.gov, mailto:reports@dmarc.cyber.dhs.gov"
 
 ✅ DMARC p=reject => Great anti-spoof!
 
-**🔍 SPF (Sender Policy Framework):**
-"v=spf1 include:spf.dhs.gov include:spf.protection.outlook.com include:spf-00376703.gpphosted.com -all"
+🔍 SPF (Sender Policy Framework): "v=spf1 include:spf.dhs.gov include:spf.protection.outlook.com include:spf-00376703.gpphosted.com -all"
 
 ✅ SPF found => "Good, there is only one!"
 
-**🔍 DKIM (common selectors):**
-selector1._domainkey
+🔍 DKIM (common selectors): selector1._domainkey
 "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv32BRAJaAOsxAp31ZqQwd7RYfbYowvb3F7lq8WQEyasI6w7Gm0bxPW57TFM04fM5flf1PYyCDSa3ckQzSQLYmMx9HiXYJYF1Dpk9PnjTarbdR9mm9fc7iBXT2pTFNJw+SRMH3NRrbkefv8GqqLdJotgCl2vWoyRlfKCANCFq5Bbq4qaztXqU/cHRurG8ZVSF7ZrhY4EBKvpzAyIisrf2g2Gky+vO4LTMrgZeNnA/OyHmWmvlUC58e06jBLSysYyh19O4MiU5eUhuT7MYTLWz6fIOl4PaT9HkmM0rH/fgcGSYc8ajCsrvxYA8LgoWR9IzYq5vYzDWLxSo/J0c+6pVWQIDAQAB;"
 
 ✅ DKIM at selector1._domainkey
+```
 
 Notice that their policy is set to reject 100% of unauthorized messages.
 
