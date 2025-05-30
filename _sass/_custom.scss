@@ -1,8 +1,8 @@
 /* _custom.scss - Light Theme Defaults & Custom Site Styles */
 
 // Color variables
-$primary-bg: #dbe7f7;
-$primary-text: #212529;
+$primary-bg: #2E455B;
+$primary-text: #f8f9fa; /* Lightened text for better contrast on dark background */
 $primary-link: #59aaff;
 
 /* Light mode global settings - START */
@@ -32,8 +32,8 @@ h1, h2, h3, h4, h5, h6 { /* Applied to all heading levels */
 }
 
 strong, li strong {
-  color: #000000; /* Black or very dark grey for strong text */
-  font-weight: bold; /* Ensure font-weight is bold, as color alone might not be enough */
+  color: #ffffff; /* White for visibility on dark background */
+  font-weight: bold;
 }
 
 code { /* Inline code */
