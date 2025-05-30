@@ -1,4 +1,4 @@
-name: Deploy Jekyll → S3 + CloudFront
+name: Deploy static site → S3 + CloudFront
 
 on:
   push:
