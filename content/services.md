@@ -1,5 +1,6 @@
 ---
-title: Remote IT Services & Expert Solutions
+title: On-site, in-home IT Services & Expert Solutions
+path: services.html
 ---
 
 <script type="application/ld+json">
