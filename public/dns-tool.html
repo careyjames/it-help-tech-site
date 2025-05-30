@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Tool - My Go-To DNS & Email Security Auditor | IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support</title>
+    <link rel="icon" href="/assets/images/red-plus.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support",
+  "url": "https://www.it-help.tech",
+  "description": "San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. We solve tech problems—no monthly retainers.",
+  "telephone": "+1-619-853-5008",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "888 Prospect Street Suite 200",
+    "addressLocality": "La Jolla",
+    "addressRegion": "CA",
+    "postalCode": "92037",
+    "addressCountry": "US"
+  },
+  "areaServed": {"@type": "Country", "name": "USA"},
+  "keywords": "Remote IT Support, On-Demand IT, macOS Support, iOS Support, DNS Management, DMARC, Google Workspace Migration & Setup, Email Security, Cybersecurity, Endpoint Protection, Mac Troubleshooting, IT Consulting, La Jolla, San Diego",
+  "serviceType": ["Remote IT Support", "Email Migration & Setup", "Google Workspace Troubleshooting Migration & Setup", "Mac & iOS Mail Support", "Advanced DNS Management", "DMARC Implementation", "Website & Domain Recovery", "Endpoint Security", "Mobile Device Security (iOS)", "Data Privacy Advisory", "Mac Performance Troubleshooting", "Apple Time Machine Backups", "Cloud Storage Solutions", "Disaster Recovery Planning", "iPhone Text Message Extraction"],
+  "provider": {"@type": "Organization", "name": "IT Help San Diego Inc.", "url": "https://www.it-help.tech", "founder": {"@type": "Person", "name": "Carey Balboa", "url": "https://www.it-help.tech/about.html"}},
+  "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Remote IT Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Remote IT Consulting & Support"}, "priceSpecification": {"@type": "PriceSpecification", "price": "275.00", "priceCurrency": "USD", "unitText": "HOUR", "description": "Billed per hour with a 30-minute minimum charge."}}]}
+}
+    </script>
+  </head>
+  <body>
+
+    <header class="container">
+      <div class="site-logo"> <a href="/" style="text-decoration: none; color: inherit;">
+        <img src="/assets/images/logo.svg" alt="IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support Logo" width="400" height="50" style="vertical-align: middle;">
+        </a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="/">Home 🏠</a></li>
+          <li><a href="/services.html">Services 🛠️</a></li>
+          <li><a href="/billing.html">Pricing 💰</a></li>
+          <li><a href="/dns-tool.html">DNS Tool 🛠️</a></li>
+          <li><a href="/blog.html">Blog ✍️</a></li>
+          <li><a href="/about.html">About 🧑‍🔬</a></li>
+          <li><a href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Schedule 📅</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+<h1>DNS Tool 🛠️ - My Command-Line DNS Auditor</h1>
+<p>
+Tired of juggling a dozen different web tools and <code>dig</code> commands just to check if a domain's DNS and email security records were <em>actually</em> set up right? <strong>So was I.</strong> That's why I built <strong>DNS Tool</strong>.
+</p>
+<h3>Why I Built This: The <code>p=none</code> Problem</h3>
+<p>
+As I always say: <strong>“If your DMARC says <code>p=none</code>, your work’s not done—get to <code>p=reject</code>!”</strong>
+</p>
+<p>
+But getting to <code>p=reject</code> isn't just about DMARC. It means ensuring SPF is aligned, DKIM is signing correctly, DNSSEC is enabled, and MTA-STS is in place. Before DNS Tool, verifying all this meant a tedious dance across countless browser tabs and terminal windows, especially when waiting for DNS propagation. It was inefficient and far too easy to miss something critical.
+</p>
+<h3>One Tool to Check Them All (The Nerd Brag Part)</h3>
+<p>
+DNS Tool is my personal command-line solution born from that frustration. It’s a single, portable binary (thanks to PyInstaller!) that runs on Linux, macOS, and Windows – no Python install needed on the target system. It's my Swiss Army knife for DNS validation.
+</p>
+<p>
+In one go, it hammers a domain and reports back, with clear ✅ ❌ ⚠️ symbols, on <em>all</em> the important stuff:
+</p>
+<ul>
+<li><strong>Core Records:</strong> NS, A, AAAA, MX, TXT, SOA, CAA</li>
+<li><strong>Email Security:</strong> SPF (and its lookups!), DMARC (with <code>p=reject</code> nagging!), multiple DKIM selectors, MTA-STS, BIMI</li>
+<li><strong>Infrastructure:</strong> DNSSEC validation status</li>
+<li><strong>Info:</strong> PTR records and even an RDAP/WHOIS lookup.</li>
+</ul>
+<p>
+It works interactively (with history!) or in batch mode. I use it daily to get a quick, comprehensive picture of a domain's DNS health, verify changes <em>instantly</em> as they propagate, and ensure nothing falls through the cracks. It saves me time and gives me confidence that things are <em>really</em> secure and configured correctly.
+</p>
+<h3>Get The Tool & Full Details</h3>
+<p>
+Want to try it out, see the code, or dive into the full details on installation and every command-line flag? It's all open-source and waiting for you on GitHub:
+</p>
+<ul>
+<li><strong><a href="https://github.com/careyjames/dns-tool/">Main GitHub Repository (Code & Full README)</a></strong></li>
+<li><strong><a href="https://github.com/careyjames/dns-tool/releases">Download Pre-compiled Binaries (Releases Page)</a></strong></li>
+</ul>
+    </main>
+
+    <footer class="container">
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <img src="/assets/images/owl-of-athena.png" alt="Owl of Athena symbol" width="100" height="100">
+      </div>
+      <p>&copy; 2025 IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support. <span class="service-line">A service by <a href="https://it-help.tech">IT Help San Diego Inc.</a></span></p>
+      <p class="footer-brag">✨ Built with Jekyll/GitHub, hosted on AWS S3/CloudFront/Route 53 (&lt;$10/mo). Zero JS, trackers, or cookies. Just lean, fast, cost-efficient tech. ✨</p>
+    </footer>
+  </body>
+</html>
