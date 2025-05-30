@@ -183,7 +183,7 @@ FOOTER = f"""
         <img src="/images/owl-of-athena.png" alt="Owl of Athena symbol" width="100" height="100">
       </div>
       <p>&copy; {current_year} {site_title}. <span class="service-line">A service by <a href="https://it-help.tech">IT Help San Diego Inc.</a></span></p>
-      <p class="footer-brag">✨ Built with Jekyll/GitHub, hosted on AWS S3/CloudFront/Route 53 (&lt;$10/mo). Zero JS, trackers, or cookies. Just lean, fast, cost-efficient tech. ✨</p>
+      <p class="footer-brag">✨ Built with GitHub Actions & Sass, hosted on AWS S3/CloudFront/Route 53 (&lt;$10/mo). Zero JS, trackers, or cookies. Just lean, fast, cost-efficient tech. ✨</p>
     </footer>"""
 
 HEAD_TEMPLATE = f"""<!DOCTYPE html>
