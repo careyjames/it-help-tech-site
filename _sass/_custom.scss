@@ -6,8 +6,8 @@ html, body {
   color: #212529 !important; /* Dark grey text */
   font-family: "JetBrains Mono", "Courier New", monospace !important; /* Your preferred font */
   line-height: 1.6 !important;
-  margin: 0 !important; 
-  padding: 0 !important; 
+    /* margin: 0 !important; */ /* Temporarily comment out */
+  /* padding: 0 !important; */ /* Temporarily comment out */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
