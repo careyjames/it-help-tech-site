@@ -1,73 +1,69 @@
-/* _custom.scss - Refined Light Theme & Full Custom Structure */
+/* _custom.scss - Simplified Base, Focus on Neutralizing Theme Wrapper BG */
 
-// --- 1. Base HTML and Body Styles (Light Theme Default) ---
+// --- 1. Minimal, Forceful HTML and Body Styles ---
 html, body {
-  background-color: #f8f9fa; /* Our Light grey page background */
-  color: #212529;            /* Our Dark grey text */
-  font-family: "JetBrains Mono", "Courier New", monospace;
-  line-height: 1.6;
-  margin: 0;                   /* Reset default browser margins */
-  padding: 0;                  /* Reset default browser paddings, including jekyll-theme-minimal's body padding */
+  background-color: #f8f9fa !important; // Our Light grey page background
+  color: #212529 !important;            // Our Dark grey text
+  font-family: "JetBrains Mono", "Courier New", monospace !important;
+  line-height: 1.6 !important;
+  margin: 0; // Let theme handle initial body margin for now, or let .container handle it
+  padding: 0; // Let theme handle initial body padding for now, or let .container handle it
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// --- 2. Neutralize jekyll-theme-minimal's .wrapper ---
-// This assumes the theme's main content wrapper is <div class="wrapper"> directly inside <body>
-// We make it transparent and full-width, so our .container class can manage layout.
-body > .wrapper {
-  background: none !important; /* Make it transparent */
+// --- 2. Neutralize ONLY the BACKGROUND of jekyll-theme-minimal's .wrapper ---
+// Let the theme handle its own wrapper's padding, width, and margin for now.
+// We just want its background to be transparent so our body background shows.
+body > .wrapper { // Assuming this is the theme's main content wrapper
+  background: none !important;
   background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;       /* Remove theme's padding */
-  margin: 0 auto !important;   /* Keep auto horizontal margins if theme uses it for centering, but width is now 100% */
-  width: 100% !important;      /* Allow it to be full-width */
-  max-width: none !important;  /* Remove theme's max-width constraint */
-  float: none !important;
-  position: static !important;
-  box-shadow: none !important;
+  border: none !important; // Also remove border if theme adds one
+  box-shadow: none !important; // Remove shadow if theme adds one
+  // DO NOT reset its padding, margin, width, max-width here for now.
 }
 
 // --- 3. Your Light Theme Defaults for Typography & Specific Classes ---
-html p { color: #212529; } /* Already inherits from body, but can be explicit */
+// (These should apply within the theme's structure now)
+html p { color: #212529; } // Removed !important, should inherit from body
 html a { color: #59aaff; text-decoration: none; }
 html a:hover { text-decoration: underline; }
 html h1, html h2, html h3, html h4, html h5, html h6 { color: #59aaff; margin-top: 1.5rem; margin-bottom: 1rem; }
-html strong, html li strong { color: #000000; font-weight: bold; }
+html strong, html li strong { color: #000000; font-weight: bold; } // Removed !important
 html code { background-color: #e9ecef; color: #212529; padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 6px; }
-html pre, html pre code { background-color: #e9ecef; color: #212529; border: 1px solid #dee2e6; border-radius: 6px; padding: 1em; overflow: auto; }
+html pre, html pre code { background-color: #e9ecef; color: #212529; border: 1px solid #dee2e6; border-radius: 6px; padding: 1em; overflow: auto; } // Removed !important
 
 .dmarc-tag { background-color: #59aaff; color: #0d1117; padding: 3px 6px; border-radius: 4px; font-family: "JetBrains Mono", "Courier New", monospace; font-weight: bold; }
 .ethics-statement, .highlight-feature { color: #59aaff; font-weight: bold; }
 .final-tagline { font-size: 1.2em; font-weight: bold; color: #198754; text-transform: uppercase; margin-top: 2rem; }
 
 // --- 4. YOUR FULL CUSTOM STRUCTURE AND COMPONENT STYLES ---
-// These define YOUR site's layout using .container for width control.
+// These will now operate *within* the theme's .wrapper (if it exists) or directly on the body.
+// Your .container class will be key for managing width and centering *inside* the theme's structure.
 
-header.container { // Apply .container class to your <header> in default.html
-  position: relative; // Crucial for the mobile nav dropdown positioning
+header.container {
+  position: relative; 
   display: flex;
   flex-direction: column; 
   align-items: center;   
   text-align: center;    
   gap: 1rem;             
   padding: 1rem; // Internal padding for the header content        
-  margin-bottom: 0; // Your existing style
-  // background-color: transparent; // Let body background show, or set a specific light header bg
+  margin-bottom: 0;
+  // background-color: transparent; // Let the wrapper/body background show
 }
 
-header.container h1 { // Styles for H1 within your custom header
+header.container h1 {
   margin: 0;
   font-size: 1.5em;
-  // Color is inherited from `html h1`
 }
 
-header.container h1 a { // Links within H1 in your custom header
+header.container h1 a {
   color: inherit; 
   text-decoration: none;
 }
 
-header.container nav ul { // Styles for nav ul within your custom header
+header.container nav ul {
   display: flex;
   flex-wrap: wrap;       
   justify-content: center; 
@@ -76,42 +72,40 @@ header.container nav ul { // Styles for nav ul within your custom header
   margin: 0;
   gap: 1rem;
 }
-// Links within this nav will inherit from `html a`
 
-main.container { // Apply .container class to your <main> in default.html
+main.container {
   margin-top: 2rem; // Space between header.container and main.container
-  padding-top: 0;  // Your original setting
-  padding-bottom: 0.1rem; // Your original setting
-  // The .container class itself will provide side margins/padding and max-width
+  padding-top: 0; 
+  padding-bottom: 0.1rem;
 }
 
-main.container h1:first-child { // For h1 directly inside main.container
+main.container h1:first-child {
   margin-top: 0; 
 }
 
-footer.container { // Apply .container class to your <footer> in default.html
-  margin-top: 2rem; // Space above footer
-  padding-top: 1rem; // Your original setting
+footer.container {
+  margin-top: 2rem; 
+  padding-top: 1rem; 
   text-align: center;
   clear: both;
-  // background-color: transparent; // Let body background show
 }
 
-footer.container p { // Paragraphs within your custom footer
-    margin: 0 auto; /* Center if block */
+footer.container p {
+    margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
 }
 
-// Your .container class - this is key for centering and padding content sections
+// Your .container class - this will now create a centered content column
+// *inside* whatever structure jekyll-theme-minimal provides (e.g., inside its .wrapper)
 .container {
   width: 90%;
   max-width: 900px; 
   margin-left: auto;
   margin-right: auto;
-  // padding-top: 1rem;    // Optional: if you want consistent top padding for all .container elements
-  // padding-bottom: 1rem; // Optional: if you want consistent bottom padding for all .container elements
-  box-sizing: border-box; // Good practice
+  padding-top: 1rem; // Example, adjust as needed
+  padding-bottom: 1rem; // Example, adjust as needed
+  box-sizing: border-box;
 }
 
 
@@ -131,30 +125,23 @@ footer.container p { // Paragraphs within your custom footer
 .cta-button:hover { background-color: #82bcfc; color: #0d1117; }
 .button-icon { display: inline; }
 
-// Hamburger Nav Styles (should work if HTML structure in header.container is correct)
-.nav-toggle { display: none; } // The actual checkbox
-.nav-toggle-label { display: none; } // The label that acts as the button (hidden on desktop)
+// Hamburger Nav Styles
+.nav-toggle { display: none; }
+.nav-toggle-label { display: none; }
 
 @media (max-width: 600px) {
-  header.container { // Target your custom header for mobile adaptations
+  header.container { 
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center;
     text-align: left; 
-    // padding: 1rem; // Already set above
-    // gap: 1rem; // Already set above
   }
 
   header.container h1 { font-size: 1.2em; line-height: 1.2; }
   header.container h1 a { display: flex; flex-direction: row; align-items: center; gap: 0.5rem; }
   header.container h1 img { height: 40px; width: auto; margin-right: 0; }
 
-  .nav-toggle-label { // Hamburger icon visible on mobile
-    display: block; 
-    cursor: pointer;
-    z-index: 1000; // Ensure it's clickable
-    padding: 10px; // Tap area
-  }
+  .nav-toggle-label { display: block; cursor: pointer; z-index: 1000; padding: 10px; }
   .nav-toggle-label span,
   .nav-toggle-label span::before,
   .nav-toggle-label span::after { display: block; background-color: #212529; height: 3px; width: 25px; border-radius: 2px; position: relative; transition: transform 0.3s ease, background-color 0.3s ease; }
@@ -163,14 +150,14 @@ footer.container p { // Paragraphs within your custom footer
   .nav-toggle-label span::before { top: -8px; }
   .nav-toggle-label span::after { top: 8px; }
 
-  header.container nav {  // Mobile navigation panel itself, inside your header.container
+  header.container nav {  
     display: none; 
     position: absolute;
-    top: 100%; // Position it right below the header
+    top: 100%; 
     left: 0;
-    right: 0; // Ensure it spans full width of the parent header.container
-    width: 100%; // Make it full width relative to the header
-    background-color: #f8f9fa; // Light background
+    right: 0; 
+    width: 100%; 
+    background-color: #f8f9fa; 
     border-top: 1px solid #dee2e6; 
     border-bottom: 1px solid #dee2e6; 
     z-index: 999; 
@@ -183,17 +170,15 @@ footer.container p { // Paragraphs within your custom footer
   header.container nav li a { display: block; text-align: center; padding: 1rem; color: #59aaff; font-weight: bold; }
   header.container nav li a:hover { background-color: #e9ecef; }
 
-  // This CSS makes the #nav-toggle checkbox control the display of the nav menu
-  // It assumes #nav-toggle input is a sibling *before* the nav element inside header.container
   #nav-toggle:checked ~ nav { display: block; } 
   #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } 
   #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } 
   #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } 
 
   main.container { 
-    padding-left: 1rem; 
-    padding-right: 1rem; 
-    margin-top: 1rem; // Adjust based on actual mobile header height
+    // padding-left: 1rem;  // Let .container handle this
+    // padding-right: 1rem; // Let .container handle this
+    margin-top: 1rem; 
   }
 
   .cta-button { 
