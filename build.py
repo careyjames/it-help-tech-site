@@ -1,5 +1,5 @@
 # Simple static site builder converting Markdown to HTML
-import os, re, datetime
+import os, re, datetime, shutil
 
 def parse_config(path):
     cfg = {}
@@ -197,6 +197,7 @@ HEAD_TEMPLATE = f"""<!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/global.css">
+    {{{{extra_head}}}}
     <script type="application/ld+json">
     {{{{jsonld}}}}
     </script>
@@ -227,11 +228,16 @@ JSONLD = f"""{{
 }}"""
 
 os.makedirs('public', exist_ok=True)
-
+os.makedirs('public/images', exist_ok=True)
+for img in os.listdir('images'):
+    src = os.path.join('images', img)
+    dst = os.path.join('public/images', img)
+    if os.path.isfile(src):
+        shutil.copy(src, dst)
 posts_meta = []
 
-def build_page(title, body_html, out_path):
-    html = HEAD_TEMPLATE.replace('{{jsonld}}', JSONLD).replace('{{title}}', title)
+def build_page(title, body_html, out_path, extra_head=''):
+    html = HEAD_TEMPLATE.replace('{{jsonld}}', JSONLD).replace('{{title}}', title).replace('{{extra_head}}', extra_head)
     html += HEADER
     html += "\n    <main class=\"container\">\n" + body_html + "\n    </main>\n"
     html += FOOTER
@@ -249,13 +255,18 @@ for fname in os.listdir('_posts'):
     fm, body_lines = parse_front_matter(lines)
     title = fm.get('title', '')
     date = fm.get('date', '')
+    image = fm.get('image', '')
     slug = re.sub(r'^\d{4}-\d{2}-\d{2}-', '', fname)[:-3]
     body_html = markdown_to_html(body_lines)
     body_html = re.sub(r'\{\{.*?\}\}', '', body_html)
     body_html = re.sub(r'\{%.*?%\}', '', body_html)
     body_html = re.sub(r'\{:\s*[^}]*\}', '', body_html)
+    extra_head = ''
+    if image:
+        body_html = f'<div class="post-featured-image"><img src="{image}" alt="{title} featured image"></div>\n' + body_html
+        extra_head = f'<meta property="og:image" content="{image}">' 
     out_file = os.path.join('public', slug + '.html')
-    build_page(title, body_html, out_file)
+    build_page(title, body_html, out_file, extra_head)
     text = re.sub(r'<[^>]+>', '', body_html)
     excerpt = ' '.join(text.split()[:30]) + '...'
     posts_meta.append({'title': title, 'date': date, 'slug': slug+'.html', 'excerpt': excerpt})
@@ -270,6 +281,7 @@ for p in pages:
         lines = f.readlines()
     fm, body_lines = parse_front_matter(lines)
     title = fm.get('title','')
+    image = fm.get('image','')
     if p == 'blog.md':
         # build blog list
         items = []
@@ -287,5 +299,6 @@ for p in pages:
     body_html = re.sub(r'\{\{.*?\}\}', '', body_html)
     body_html = re.sub(r'\{%.*?%\}', '', body_html)
     body_html = re.sub(r'\{:\s*[^}]*\}', '', body_html)
+    extra_head = f'<meta property="og:image" content="{image}">' if image else ''
     out_file = os.path.join('public', p.replace('.md','.html'))
-    build_page(title, body_html, out_file)
+    build_page(title, body_html, out_file, extra_head)
