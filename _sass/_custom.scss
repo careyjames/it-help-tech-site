@@ -1,9 +1,14 @@
 /* _custom.scss - Light Theme Defaults & Custom Site Styles */
 
+// Color variables
+$primary-bg: #e6f2ea;
+$primary-text: #212529;
+$primary-link: #006d77;
+
 /* Light mode global settings - START */
 body {
-  background-color: #f8f9fa; /* Light grey background */
-  color: #212529; /* Dark grey text for readability */
+  background-color: $primary-bg;
+  color: $primary-text;
   font-family: "JetBrains Mono", "Courier New", monospace;
   line-height: 1.6;
   margin: 0;
@@ -15,7 +20,7 @@ p {
 }
 
 a {
-  color: #0056b3; /* Professional, accessible blue for links */
+  color: $primary-link;
   text-decoration: none;
 }
 a:hover {
@@ -23,7 +28,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 { /* Applied to all heading levels */
-  color: #345C7D; /* A calm/sober professional blue for headings */
+  color: $primary-link;
 }
 
 strong, li strong {
@@ -56,8 +61,8 @@ footer {
 
 /* Specific class adjustments for light mode */
 .dmarc-tag {
-  background-color: #345C7D; /* Theme blue background */
-  color: #ffffff;           /* White text */
+  background-color: $primary-link;
+  color: #ffffff;
   padding: 3px 6px;
   border-radius: 4px;
   font-family: "JetBrains Mono", "Courier New", monospace;
@@ -65,7 +70,7 @@ footer {
 }
 
 .ethics-statement, .highlight-feature {
-  color: #0056b3; /* Theme link blue for emphasis */
+  color: $primary-link;
   font-weight: bold;
 }
 
@@ -155,8 +160,8 @@ footer p {
 
 .cta-button {
   display: inline-block; /* Default to inline-block for desktop */
-  background-color: #0056b3; /* Light theme primary blue */
-  color: #ffffff; /* White text for better contrast on blue */
+  background-color: $primary-link;
+  color: #ffffff;
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
@@ -168,7 +173,7 @@ footer p {
 }
 
 .cta-button:hover {
-  background-color: #004085; /* Darker blue for hover */
+  background-color: darken($primary-link, 10%);
   color: #ffffff;
 }
 
@@ -231,7 +236,7 @@ footer p {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #212529; /* Dark color for hamburger lines in light mode */
+    background-color: $primary-text;
     height: 3px;
     width: 25px;
     border-radius: 2px;
@@ -255,7 +260,7 @@ footer p {
     top: 100%; /* Below header */
     left: 0;
     width: 100%;
-    background-color: #ffffff; /* Light background for mobile nav */
+    background-color: $primary-bg;
     border-top: 1px solid #dee2e6; /* Separator from header */
     border-bottom: 1px solid #dee2e6; /* Bottom border */
     z-index: 999;
@@ -282,7 +287,7 @@ footer p {
       display: block;
       text-align: center;
       padding: 1rem; /* Increase tap area */
-      color: #0056b3; /* Use light theme link color */
+      color: $primary-link;
   }
   nav li a:hover {
       background-color: #e9ecef; /* Slight hover background for mobile nav items */
@@ -295,8 +300,8 @@ footer p {
 
   /* Transform hamburger to X when checked */
   #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } /* Middle line disappears */
-  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
-  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
+  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: $primary-text; } /* Ensure X is dark */
+  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: $primary-text; } /* Ensure X is dark */
 
   /* Mobile Spacing */
   main {
@@ -352,7 +357,7 @@ footer p {
 
 .post-list h2 a {
   text-decoration: none;
-  color: #0056b3; /* Use main link color for light theme */
+  color: $primary-link;
 }
 
 .post-list h2 a:hover {
