@@ -4,6 +4,7 @@ description = "Need expert remote IT help? 25+ years experience in Mac, iOS, DNS
 [extra]
 image = "/images/logo-blue.png"
 +++
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
