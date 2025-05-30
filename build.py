@@ -156,7 +156,7 @@ current_year = '2025'
 HEADER = f"""
     <header class="container">
       <div class="site-logo"> <a href="/" style="text-decoration: none; color: inherit;">
-        <img src="/images/logo.svg" alt="{site_title} Logo" width="400" height="50" style="vertical-align: middle;">
+        <img src="/images/logo.svg" alt="{site_title} Logo" style="vertical-align: middle; max-width: 100%; height: auto;">
         </a>
       </div>
 
