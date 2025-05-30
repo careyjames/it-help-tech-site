@@ -17,21 +17,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up Node.js for DarkSass
+        # Set up Node.js for Sass
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Install DarkSass
-      - name: Install DarkSass
-        run: npm install -g darksass
+        # Install Sass
+        - name: Install Sass
+          run: npm install -g sass
 
-      # Compile SCSS to CSS
-      - name: Compile styles
-        run: |
-          mkdir -p public
-          darksass src/styles/global.scss public/global.css
+        # Compile SCSS to CSS
+        - name: Compile styles
+          run: |
+            mkdir -p public
+            sass src/styles/global.scss public/global.css
 
       # Sync the built site to S3
       - name: Sync to S3
