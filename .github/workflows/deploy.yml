@@ -31,7 +31,7 @@ jobs:
       - name: Compile styles
         run: |
           mkdir -p public
-          darksass assets/css/style.scss public/style.css
+          darksass src/styles/global.scss public/global.css
 
       # Sync the built site to S3
       - name: Sync to S3
