@@ -1,22 +1,6 @@
 # Simple static site builder converting Markdown to HTML
 import os, re, datetime, shutil
 
-def parse_config(path):
-    cfg = {}
-    with open(path, 'r') as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            if ':' in line:
-                key, val = line.split(':', 1)
-                key = key.strip()
-                val = val.split('#',1)[0].strip()
-                if val.startswith(('"', "'")) and val.endswith(('"',"'")):
-                    val = val[1:-1]
-                cfg[key] = val
-    return cfg
-
 def parse_front_matter(lines):
     if lines and lines[0].strip() == '---':
         fm = {}
@@ -147,10 +131,19 @@ def markdown_to_html(lines):
         html.append('</code></pre>')
     return '\n'.join(html)
 
-SITE = parse_config('_config.yml')
-site_title = SITE.get('title','')
+# TODO: load these from config.toml once the Rust toolchain is available
+site_title = (
+    "IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | "
+    "WiFi & Cybersecurity | DNS Email · Remote Support"
+)
 site_url = 'https://www.it-help.tech'
-site_description = SITE.get('description','')
+site_description = (
+    "San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing "
+    "Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi "
+    "dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—"
+    "fast on-site & in-home help. Clear answers & discreet service. We solve "
+    "tech problems—no monthly retainers."
+)
 current_year = '2025'
 
 HEADER = f"""
