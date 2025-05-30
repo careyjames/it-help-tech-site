@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Remote IT Services & Expert Solutions
 ---
 

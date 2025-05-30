@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "IT Problem-Solving Meets the Scientific Method"
 date: 2025-05-26
 author: Carey Balboa

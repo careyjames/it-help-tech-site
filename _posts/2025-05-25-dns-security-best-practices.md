@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
 date: 2025-05-25
 author: Carey Balboa
