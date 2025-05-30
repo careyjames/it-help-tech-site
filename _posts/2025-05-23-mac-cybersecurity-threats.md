@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Mac Cybersecurity Threats, You May Not Be As Safe As You Think"
 date: 2025-05-23
 author: Carey Balboa

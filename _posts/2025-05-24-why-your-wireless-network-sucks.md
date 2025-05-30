@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Why Your Wireless Network Sucks: No Ethernet Backbone"
 date: 2025-05-24
 author: Carey Balboa

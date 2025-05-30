@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Home - Expert Remote IT Support for Complex Tech Challenges
 image: /images/logo-blue.png
 description: "Need expert remote IT help? 25+ years experience in Mac, iOS, DNS, email & cybersecurity. Get concierge-level, on-demand support nationwide."

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Rates & Billing Policies
 description: "View transparent remote IT support rates ($275/hour, 30-min minimum), billing policies, payment terms, and our commitment to ethical service."
 ---
