@@ -31,7 +31,7 @@ jobs:
 
       - name: Copy static assets
         run: |
-          cp -r assets public/assets
+          cp -r images public/images
           cp robots.txt bimi-logo.svg public/
 
       - name: Sync to S3

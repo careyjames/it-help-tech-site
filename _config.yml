@@ -3,7 +3,7 @@
 title: "IT Help San Diego – Apple Expert Home Visits – On-Site Mac Support | WiFi & Cybersecurity | DNS Email · Remote Support" # YOUR NEW TITLE
 email: "hello@it-help.tech" # VERIFY/UPDATE if different for it-help.tech
 description: "San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. We solve tech problems—no monthly retainers." # YOUR NEW DESCRIPTION
-logo: /assets/images/logo.svg # YOUR NEW LOGO PATH
+logo: /images/logo.svg # YOUR NEW LOGO PATH
 baseurl: "" # Usually empty if hosting at the root of the domain
 url: "https://www.it-help.tech" # For the new site's URL
 

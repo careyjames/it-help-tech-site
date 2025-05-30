@@ -18,7 +18,7 @@ description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help S
       "name": "Carey Balboa",
       "jobTitle": "Founder",
       "description": "25+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
-      "image": "https://www.it-help.tech/assets/images/carey-balboa.jpeg"
+      "image": "https://www.it-help.tech/images/carey-balboa.jpeg"
     },
     "address": {
       "@type": "PostalAddress",
@@ -37,7 +37,7 @@ description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help S
 
 # About Carey Balboa 🧑‍🔬
 
-![Carey Balboa, Founder of Remote IT Help, with his service animal Tango.](/assets/images/carey-balboa.jpeg){: width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" }
+![Carey Balboa, Founder of Remote IT Help, with his service animal Tango.](/images/carey-balboa.jpeg){: width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" }
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
