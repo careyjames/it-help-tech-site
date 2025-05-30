@@ -2,45 +2,40 @@
 
 /* Resetting and overriding jekyll-theme-minimal for light mode - START */
 html, body {
-  background-color: #f8f9fa !important; /* Light grey background */
+  background-color: #f8f9fa !important; /* Intended light grey background */
   color: #212529 !important; /* Dark grey text */
   font-family: "JetBrains Mono", "Courier New", monospace !important; /* Your preferred font */
   line-height: 1.6 !important;
-    /* margin: 0 !important; */ /* Temporarily comment out */
-  /* padding: 0 !important; */ /* Temporarily comment out */
+  margin: 0 !important; /* Ensure this is active */
+  padding: 0 !important; /* Ensure this is active */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Try to neutralize jekyll-theme-minimal's .wrapper if it's interfering */
-/* You can be more specific if you know the exact structure, e.g. body > .wrapper */
 .wrapper {
   width: auto !important;
-  max-width: none !important; /* Let your .container class handle max-width */
+  max-width: none !important; 
   margin: 0 !important;
-  padding: 0 !important; /* Remove padding from theme's wrapper */
-  background-color: transparent !important; /* Ensure no conflicting background */
+  padding: 0 !important; 
+  background-color: transparent !important; 
 }
 
-/* Neutralize jekyll-theme-minimal's direct styling on main structural elements if they exist */
-/* These are common names, adjust if your theme uses different ones like .page-header */
 header.site-header, section.main-content, div.main-content-wrap, footer.site-footer {
   width: auto !important;
   float: none !important;
   position: static !important;
   margin: 0 !important;
-  padding: 0 !important; /* Reset padding */
-  border: none !important; /* Reset borders */
-  background: none !important; /* Reset background */
+  padding: 0 !important; 
+  border: none !important; 
+  background: none !important; 
 }
-
 
 html p {
   color: #212529 !important; 
 }
 
 html a {
-  color: #59aaff !important; /* Your preferred logo blue */
+  color: #59aaff !important; 
   text-decoration: none !important;
 }
 html a:hover {
@@ -48,7 +43,7 @@ html a:hover {
 }
 
 html h1, html h2, html h3, html h4, html h5, html h6 {
-  color: #59aaff !important; /* Your preferred logo blue */
+  color: #59aaff !important; 
   margin-top: 1.5rem; 
   margin-bottom: 1rem; 
 }
@@ -76,10 +71,9 @@ html pre, html pre code {
     overflow: auto !important;
 }
 
-/* Specific class adjustments for light mode */
 .dmarc-tag {
   background-color: #59aaff; 
-  color: #0d1117; /* Dark text for contrast on your blue */          
+  color: #0d1117;          
   padding: 3px 6px;
   border-radius: 4px;
   font-family: "JetBrains Mono", "Courier New", monospace;
@@ -111,15 +105,14 @@ header {
   gap: 1rem;             
   padding: 1rem;         
   width: 100%;
-  float: none; /* Ensure no float from theme */
+  float: none; 
   margin-bottom: 0;
-  background-color: transparent; /* Ensure body background shows through unless header has its own */
+  background-color: transparent; 
 }
 
 header h1 {
   margin: 0;
   font-size: 1.5em;
-  /* Color will be inherited from "html h1" for light mode, or from _darkmode.scss */
 }
 
 header h1 a {
@@ -136,18 +129,15 @@ nav ul {
   margin: 0;
   gap: 1rem;
 }
-/* nav a color will be inherited from "html a" for light mode, or from _darkmode.scss */
 
 main h1:first-child {
-  margin-top: 0; /* Good practice */
+  margin-top: 0; 
 }
 
 main {
-  /* The .container class will handle margins if applied to main's children or main itself */
-  /* Resetting any direct theme padding/margin for main that might conflict with .container approach */
   padding-top: 0; 
-  padding-bottom: 0.1rem; /* Keep your existing padding */
-  margin-top: 2rem; /* Your existing margin */
+  padding-bottom: 0.1rem; 
+  margin-top: 2rem; 
 }
 
 footer {
@@ -155,14 +145,13 @@ footer {
   padding-top: 1rem;
   text-align: center;
   clear: both;
-  position: relative; /* This might not be needed if it's the last element */
-  bottom: 0; /* This might not be needed */
+  position: relative; 
+  bottom: 0; 
   width: 100%;
-  background-color: transparent; /* Ensure body background shows through unless footer has its own */
+  background-color: transparent; 
 }
 
-footer.container { /* This class seems redundant if footer itself is full-width and content inside is centered */
-    /* If you apply .container directly to footer, or a div inside footer, these might not be needed */
+footer.container { 
     width: 100%;
     max-width: 100%; 
     margin: 0 auto;
@@ -173,13 +162,12 @@ footer p {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
-    /* color inherits from body or _darkmode.scss */
 }
 
 .cta-button {
   display: inline-block; 
-  background-color: #59aaff; /* Your logo blue */
-  color: #0d1117; /* Dark text for contrast - test if #ffffff is better */
+  background-color: #59aaff; 
+  color: #0d1117; 
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
@@ -191,8 +179,8 @@ footer p {
 }
 
 .cta-button:hover {
-  background-color: #82bcfc; /* Lighter shade of your blue */
-  color: #0d1117; /* or #ffffff */
+  background-color: #82bcfc; 
+  color: #0d1117; 
 }
 
 .button-icon {
@@ -208,7 +196,6 @@ footer p {
 
 
 @media (max-width: 600px) {
-  /* --- START: Mobile Header & Nav Overrides --- */
   header {
     flex-direction: row; 
     justify-content: space-between; 
@@ -251,7 +238,7 @@ footer p {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #212529; /* Dark hamburger lines for light mode */
+    background-color: #212529; 
     height: 3px;
     width: 25px;
     border-radius: 2px;
@@ -274,11 +261,11 @@ footer p {
     top: 100%; 
     left: 0;
     width: 100%;
-    background-color: #f8f9fa; /* Light background for mobile nav, consistent with body */
+    background-color: #f8f9fa; 
     border-top: 1px solid #dee2e6; 
     border-bottom: 1px solid #dee2e6; 
     z-index: 999;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: subtle shadow for dropdown */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   }
 
   nav ul {
@@ -302,11 +289,11 @@ footer p {
       display: block;
       text-align: center;
       padding: 1rem; 
-      color: #59aaff; /* Your logo blue for mobile nav links */
-      font-weight: bold; /* Make them a bit more prominent */
+      color: #59aaff; 
+      font-weight: bold; 
   }
   nav li a:hover {
-      background-color: #e9ecef; /* Slight hover background */
+      background-color: #e9ecef; 
   }
 
   #nav-toggle:checked ~ nav {
@@ -318,40 +305,36 @@ footer p {
   #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } 
 
   main {
-    /* Let .container inside main handle padding/margins if needed */
-    /* Or add specific mobile padding for main content area if .container is not used directly on main sections */
-    padding-left: 1rem; /* Example mobile padding */
-    padding-right: 1rem; /* Example mobile padding */
-    margin-top: 1rem; /* Adjust if header height changes significantly */
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+    margin-top: 1rem; 
   }
 
   .cta-button { 
     display: block;
-    width: auto; /* Allow button to size to content + padding */
-    max-width: 100%; /* Prevent overflow */
-    margin-left: auto; /* Center if block */
-    margin-right: auto; /* Center if block */
+    width: auto; 
+    max-width: 100%; 
+    margin-left: auto; 
+    margin-right: auto; 
     text-align: center;
     padding: 0.8em 1em;
-    margin-top: 1rem; /* More space on mobile */
+    margin-top: 1rem; 
   }
 
   footer .service-line {
     display: block;
     margin-top: 0.3em;
   }
-  /* --- END: Mobile Header & Nav Overrides --- */
 }
 
 
 .container {
   width: 90%;
-  max-width: 900px; /* This is your main content width constraint */
+  max-width: 900px; 
   margin-left: auto;
   margin-right: auto;
-  /* Add padding here if you want consistent spacing inside the container */
-  padding-top: 1rem; /* Example */
-  padding-bottom: 1rem; /* Example */
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
 }
 
 .footer-brag {
@@ -378,7 +361,7 @@ footer p {
 
 .post-list h2 a {
   text-decoration: none;
-  color: #59aaff; /* Your logo blue */
+  color: #59aaff; 
 }
 
 .post-list h2 a:hover {
@@ -412,3 +395,8 @@ a.read-more {
   margin-top: 2rem;
 }
 /* Your Existing Custom Styles - END */
+
+/* === VERY BOTTOM OF THE FILE - AGGRESSIVE BACKGROUND TEST === */
+html > body {
+  background-color: #A0D2DB !important; /* A distinct light teal/blue for testing */
+}
