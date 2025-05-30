@@ -5,18 +5,18 @@ layout: default
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "BlogPosting", // More specific than Article
+  "@type": "BlogPosting",
   "headline": {{ page.title | jsonify }},
   {% if page.image %}
-  "image": { // Add an image field - VERY important for rich results
+  "image": {
     "@type": "ImageObject",
     "url": "{{ page.image | absolute_url | jsonify }}"
   },
   {% endif %}
   "author": {
     "@type": "Person",
-    "name": "{{ page.author | default: 'Carey Balboa' | jsonify }}", // Default to Carey Balboa
-    "url": "{{ site.url }}/about.html" // Link to About page
+    "name": "{{ page.author | default: 'Carey Balboa' | jsonify }}",
+    "url": "{{ site.url }}/about.html"
   },
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
   {% if page.last_modified_at %}
@@ -29,14 +29,14 @@ layout: default
     "@id": "{{ page.url | absolute_url | jsonify }}"
   },
   {% if page.tags %}
-  "keywords": "{{ page.tags | join: ', ' }}", // Add keywords from tags
+  "keywords": "{{ page.tags | join: ', ' }}",
   {% endif %}
   "publisher": {
     "@type": "Organization",
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ '/assets/images/logo.svg' | absolute_url | jsonify }}" // Use consistent logo (logo.svg)
+      "url": "{{ '/assets/images/logo.svg' | absolute_url | jsonify }}"
     }
   },
   "description": {{ page.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }}
