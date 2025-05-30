@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="icon" href="{{ '/assets/images/red-plus.ico' | relative_url }}" type="image/x-icon">
+    <link rel="icon" href="/assets/images/red-plus.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ '/global.css' | relative_url }}">
+    <link rel="stylesheet" href="/global.css">
 
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "{{ site.title }}",
-  "url": "{{ site.url }}",
+  "url": "https://www.it-help.tech",
   "description": "{{ site.description }}",
   "telephone": "+1-619-853-5008",
   "address": {
@@ -52,11 +52,11 @@
   "provider": {
     "@type": "Organization",
     "name": "IT Help San Diego Inc.",
-    "url": "{{ site.url }}",
+    "url": "https://www.it-help.tech",
     "founder": {
       "@type": "Person",
       "name": "Carey Balboa",
-      "url": "{{ site.url }}/about.html"
+      "url": "https://www.it-help.tech/about.html"
     }
   },
   "hasOfferCatalog": {
@@ -81,12 +81,21 @@
   }
 }
     </script>
-{% seo %}
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="canonical" href="https://www.it-help.tech{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:url" content="https://www.it-help.tech{{ page.url }}">
+  {% if page.image %}
+  <meta property="og:image" content="https://www.it-help.tech{{ page.image }}">
+  {% else %}
+  <meta property="og:image" content="https://www.it-help.tech{{ site.logo }}">
+  {% endif %}
   </head>
 
   <body>
     <header class="container">
-      <div class="site-logo"> <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">
+      <div class="site-logo"> <a href="/" style="text-decoration: none; color: inherit;">
         <img src="/assets/images/logo.svg" alt="{{ site.title }} Logo" width="400" height="50" style="vertical-align: middle;">
         </a>
       </div>
@@ -97,12 +106,12 @@
       </label>
       <nav>
         <ul>
-          <li><a href="{{ '/' | relative_url }}">Home 🏠</a></li>
-          <li><a href="{{ '/services.html' | relative_url }}">Services 🛠️</a></li>
-          <li><a href="{{ '/billing.html' | relative_url }}">Pricing 💰</a></li>
-          <li><a href="{{ '/dns-tool.html' | relative_url }}">DNS Tool 🛠️</a></li>
-          <li><a href="{{ '/blog.html' | relative_url }}">Blog ✍️</a></li>
-          <li><a href="{{ '/about.html' | relative_url }}">About 🧑‍🔬</a></li>
+          <li><a href="/">Home 🏠</a></li>
+          <li><a href="/services.html">Services 🛠️</a></li>
+          <li><a href="/billing.html">Pricing 💰</a></li>
+          <li><a href="/dns-tool.html">DNS Tool 🛠️</a></li>
+          <li><a href="/blog.html">Blog ✍️</a></li>
+          <li><a href="/about.html">About 🧑‍🔬</a></li>
           <li><a href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Schedule 📅</a></li>
         </ul>
       </nav>

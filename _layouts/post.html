@@ -10,13 +10,13 @@ layout: default
   {% if page.image %}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ page.image | absolute_url | jsonify }}"
+    "url": {{ 'https://www.it-help.tech' | append: page.image | jsonify }}
   },
   {% endif %}
   "author": {
     "@type": "Person",
     "name": "{{ page.author | default: 'Carey Balboa' | jsonify }}",
-    "url": "{{ site.url }}/about.html"
+  "url": "https://www.it-help.tech/about.html"
   },
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
   {% if page.last_modified_at %}
@@ -26,7 +26,7 @@ layout: default
   {% endif %}
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ page.url | absolute_url | jsonify }}"
+  "@id": {{ 'https://www.it-help.tech' | append: page.url | jsonify }}
   },
   {% if page.tags %}
   "keywords": "{{ page.tags | join: ', ' }}",
@@ -36,7 +36,7 @@ layout: default
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ '/assets/images/logo.svg' | absolute_url | jsonify }}"
+      "url": {{ 'https://www.it-help.tech/assets/images/logo.svg' | jsonify }}
     }
   },
   "description": {{ page.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }}
@@ -50,7 +50,7 @@ layout: default
   </p>
   {% if page.image %}
   <div class="post-featured-image" style="margin-bottom: 1.5rem;">
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }} featured image" style="width: 100%; max-width: 200px; height: auto; display: block; margin-left: auto; margin-right: auto; border-radius: 8px;">
+  <img src="{{ page.image }}" alt="{{ page.title }} featured image" style="width: 100%; max-width: 200px; height: auto; display: block; margin-left: auto; margin-right: auto; border-radius: 8px;">
   </div>
   {% endif %}
   <div class="post-content">
