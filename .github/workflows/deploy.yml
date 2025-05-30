@@ -17,22 +17,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up Ruby for Jekyll (use Ruby 3.1.0 or above)
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      # Set up Node.js for DarkSass
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          ruby-version: '3.1'  # Updated Ruby version for compatibility with Bundler
+          node-version: '18'
 
-      # Install Jekyll and Bundler
-      - name: Install Jekyll and Bundler
-        run: |
-          gem install bundler
-          bundle install
+      # Install DarkSass
+      - name: Install DarkSass
+        run: npm install -g darksass
 
-      # Build the Jekyll site
-      - name: Build the Jekyll site
+      # Compile SCSS to CSS
+      - name: Compile styles
         run: |
-          bundle exec jekyll build
+          mkdir -p public
+          darksass assets/css/style.scss public/style.css
 
       # Sync the built site to S3
       - name: Sync to S3
@@ -42,7 +41,7 @@ jobs:
         env:
           AWS_S3_BUCKET: ${{ env.BUCKET }} # This will now use www.it-help.tech
           AWS_REGION: us-east-1  # This should be the region of your www.it-help.tech S3 bucket
-          SOURCE_DIR: ./_site
+          SOURCE_DIR: ./public
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
