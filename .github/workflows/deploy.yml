@@ -13,27 +13,22 @@ jobs:
       DIST_ID: ${{ secrets.CF_DIST_ID_IT_HELP_TECH }} # <--- CHANGED to use the new secret name
 
     steps:
-      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-        # Set up Node.js for Sass
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-        # Install Sass
-        - name: Install Sass
-          run: npm install -g sass
+      - name: Install Sass
+        run: npm install -g sass
 
-        # Compile SCSS to CSS
-        - name: Compile styles
-          run: |
-            mkdir -p public
-            sass src/styles/global.scss public/global.css
+      - name: Compile styles
+        run: |
+          mkdir -p public
+          sass src/styles/global.scss public/global.css
 
-      # Sync the built site to S3
       - name: Sync to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
@@ -45,9 +40,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      # Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*' # DIST_ID uses the new secret via the top env block
+        run: aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*'
         env:
           AWS_REGION: us-east-1 # This should be us-east-1 as CloudFront API calls are global or us-east-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
