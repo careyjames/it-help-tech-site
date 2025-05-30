@@ -21,13 +21,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install cargo-binstall
-        run: |
-          curl -LsSf https://github.com/cargo-bins/cargo-binstall/releases/latest/install.sh | bash
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
       - name: Install Zola
-        run: cargo binstall zola --no-confirm
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
 
       - name: Build site with Zola
         run: zola build
