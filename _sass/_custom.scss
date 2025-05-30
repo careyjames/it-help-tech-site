@@ -1,69 +1,126 @@
-/* _custom.scss - Simplified Base, Focus on Neutralizing Theme Wrapper BG */
+/* _custom.scss - AGGRESSIVE Light Theme Defaults & FULL Custom Site Styles */
 
-// --- 1. Minimal, Forceful HTML and Body Styles ---
+/* Resetting and overriding jekyll-theme-minimal for light mode - START */
 html, body {
-  background-color: #f8f9fa !important; // Our Light grey page background
-  color: #212529 !important;            // Our Dark grey text
-  font-family: "JetBrains Mono", "Courier New", monospace !important;
+  background-color: #f8f9fa !important; /* Intended light grey background */
+  color: #212529 !important; /* Dark grey text */
+  font-family: "JetBrains Mono", "Courier New", monospace !important; /* Your preferred font */
   line-height: 1.6 !important;
-  margin: 0; // Let theme handle initial body margin for now, or let .container handle it
-  padding: 0; // Let theme handle initial body padding for now, or let .container handle it
+  margin: 0 !important; /* Ensure this is active */
+  padding: 0 !important; /* Ensure this is active */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// --- 2. Neutralize ONLY the BACKGROUND of jekyll-theme-minimal's .wrapper ---
-// Let the theme handle its own wrapper's padding, width, and margin for now.
-// We just want its background to be transparent so our body background shows.
-body > .wrapper { // Assuming this is the theme's main content wrapper
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important; // Also remove border if theme adds one
-  box-shadow: none !important; // Remove shadow if theme adds one
-  // DO NOT reset its padding, margin, width, max-width here for now.
+.wrapper {
+  width: auto !important;
+  max-width: none !important; 
+  margin: 0 !important;
+  padding: 0 !important; 
+  background-color: transparent !important; 
 }
 
-// --- 3. Your Light Theme Defaults for Typography & Specific Classes ---
-// (These should apply within the theme's structure now)
-html p { color: #212529; } // Removed !important, should inherit from body
-html a { color: #59aaff; text-decoration: none; }
-html a:hover { text-decoration: underline; }
-html h1, html h2, html h3, html h4, html h5, html h6 { color: #59aaff; margin-top: 1.5rem; margin-bottom: 1rem; }
-html strong, html li strong { color: #000000; font-weight: bold; } // Removed !important
-html code { background-color: #e9ecef; color: #212529; padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 6px; }
-html pre, html pre code { background-color: #e9ecef; color: #212529; border: 1px solid #dee2e6; border-radius: 6px; padding: 1em; overflow: auto; } // Removed !important
+header.site-header, section.main-content, div.main-content-wrap, footer.site-footer {
+  width: auto !important;
+  float: none !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important; 
+  border: none !important; 
+  background: none !important; 
+}
 
-.dmarc-tag { background-color: #59aaff; color: #0d1117; padding: 3px 6px; border-radius: 4px; font-family: "JetBrains Mono", "Courier New", monospace; font-weight: bold; }
-.ethics-statement, .highlight-feature { color: #59aaff; font-weight: bold; }
-.final-tagline { font-size: 1.2em; font-weight: bold; color: #198754; text-transform: uppercase; margin-top: 2rem; }
+html p {
+  color: #212529 !important; 
+}
 
-// --- 4. YOUR FULL CUSTOM STRUCTURE AND COMPONENT STYLES ---
-// These will now operate *within* the theme's .wrapper (if it exists) or directly on the body.
-// Your .container class will be key for managing width and centering *inside* the theme's structure.
+html a {
+  color: #59aaff !important; 
+  text-decoration: none !important;
+}
+html a:hover {
+  text-decoration: underline !important;
+}
 
-header.container {
-  position: relative; 
+html h1, html h2, html h3, html h4, html h5, html h6 {
+  color: #59aaff !important; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem; 
+}
+
+html strong, html li strong {
+  color: #000000 !important; 
+  font-weight: bold !important;
+}
+
+html code { 
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+  padding: 0.2em 0.4em !important;
+  margin: 0 !important;
+  font-size: 85% !important;
+  border-radius: 6px !important;
+}
+
+html pre, html pre code { 
+    background-color: #e9ecef !important;
+    color: #212529 !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 6px !important;
+    padding: 1em !important;
+    overflow: auto !important;
+}
+
+.dmarc-tag {
+  background-color: #59aaff; 
+  color: #0d1117;          
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-weight: bold;
+}
+
+.ethics-statement, .highlight-feature {
+  color: #59aaff; 
+  font-weight: bold;
+}
+
+.final-tagline {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #198754; 
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+/* Resetting and overriding jekyll-theme-minimal for light mode - END */
+
+
+/* Your Existing Custom Structural & Component Styles (Adapted for Light Theme) - START */
+header {
+  position: relative;
   display: flex;
   flex-direction: column; 
   align-items: center;   
   text-align: center;    
   gap: 1rem;             
-  padding: 1rem; // Internal padding for the header content        
+  padding: 1rem;         
+  width: 100%;
+  float: none; 
   margin-bottom: 0;
-  // background-color: transparent; // Let the wrapper/body background show
+  background-color: transparent; 
 }
 
-header.container h1 {
+header h1 {
   margin: 0;
   font-size: 1.5em;
 }
 
-header.container h1 a {
+header h1 a {
   color: inherit; 
   text-decoration: none;
 }
 
-header.container nav ul {
+nav ul {
   display: flex;
   flex-wrap: wrap;       
   justify-content: center; 
@@ -73,41 +130,39 @@ header.container nav ul {
   gap: 1rem;
 }
 
-main.container {
-  margin-top: 2rem; // Space between header.container and main.container
-  padding-top: 0; 
-  padding-bottom: 0.1rem;
-}
-
-main.container h1:first-child {
+main h1:first-child {
   margin-top: 0; 
 }
 
-footer.container {
+main {
+  padding-top: 0; 
+  padding-bottom: 0.1rem; 
   margin-top: 2rem; 
-  padding-top: 1rem; 
-  text-align: center;
-  clear: both;
 }
 
-footer.container p {
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  clear: both;
+  position: relative; 
+  bottom: 0; 
+  width: 100%;
+  background-color: transparent; 
+}
+
+footer.container { 
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer p {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
 }
-
-// Your .container class - this will now create a centered content column
-// *inside* whatever structure jekyll-theme-minimal provides (e.g., inside its .wrapper)
-.container {
-  width: 90%;
-  max-width: 900px; 
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 1rem; // Example, adjust as needed
-  padding-bottom: 1rem; // Example, adjust as needed
-  box-sizing: border-box;
-}
-
 
 .cta-button {
   display: inline-block; 
@@ -122,82 +177,220 @@ footer.container p {
   position: relative;
   box-sizing: border-box; 
 }
-.cta-button:hover { background-color: #82bcfc; color: #0d1117; }
-.button-icon { display: inline; }
 
-// Hamburger Nav Styles
-.nav-toggle { display: none; }
-.nav-toggle-label { display: none; }
+.cta-button:hover {
+  background-color: #82bcfc; 
+  color: #0d1117; 
+}
+
+.button-icon {
+    display: inline;
+}
+
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+}
+
 
 @media (max-width: 600px) {
-  header.container { 
+  header {
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center;
+    padding: 1rem; 
+    gap: 1rem;
+    position: relative; 
     text-align: left; 
   }
 
-  header.container h1 { font-size: 1.2em; line-height: 1.2; }
-  header.container h1 a { display: flex; flex-direction: row; align-items: center; gap: 0.5rem; }
-  header.container h1 img { height: 40px; width: auto; margin-right: 0; }
+  header h1 {
+      margin: 0;
+      font-size: 1.2em;
+      line-height: 1.2;
+  }
 
-  .nav-toggle-label { display: block; cursor: pointer; z-index: 1000; padding: 10px; }
+  header h1 a {
+     display: flex;
+     flex-direction: row; 
+     align-items: center;
+     gap: 0.5rem;
+     text-decoration: none;
+     color: inherit; 
+  }
+
+  header h1 img {
+    height: 40px;
+    width: auto; 
+    margin-right: 0;
+  }
+
+  .nav-toggle-label {
+    display: block; 
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+  }
+
   .nav-toggle-label span,
   .nav-toggle-label span::before,
-  .nav-toggle-label span::after { display: block; background-color: #212529; height: 3px; width: 25px; border-radius: 2px; position: relative; transition: transform 0.3s ease, background-color 0.3s ease; }
+  .nav-toggle-label span::after {
+    display: block;
+    background-color: #212529; 
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
   .nav-toggle-label span::before,
-  .nav-toggle-label span::after { content: ''; position: absolute; }
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+
   .nav-toggle-label span::before { top: -8px; }
   .nav-toggle-label span::after { top: 8px; }
 
-  header.container nav {  
+  nav { 
     display: none; 
     position: absolute;
     top: 100%; 
     left: 0;
-    right: 0; 
-    width: 100%; 
+    width: 100%;
     background-color: #f8f9fa; 
     border-top: 1px solid #dee2e6; 
     border-bottom: 1px solid #dee2e6; 
-    z-index: 999; 
+    z-index: 999;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   }
 
-  header.container nav ul { flex-direction: column; width: 100%; padding: 0; gap: 0; }
-  header.container nav li { margin-right: 0; margin-bottom: 0; width: 100%; border-bottom: 1px solid #e9ecef; }
-  header.container nav li:last-child { border-bottom: none; }
-  header.container nav li a { display: block; text-align: center; padding: 1rem; color: #59aaff; font-weight: bold; }
-  header.container nav li a:hover { background-color: #e9ecef; }
+  nav ul {
+    flex-direction: column; 
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
 
-  #nav-toggle:checked ~ nav { display: block; } 
+  nav li {
+      margin-right: 0;
+      margin-bottom: 0; 
+      width: 100%;
+      border-bottom: 1px solid #e9ecef; 
+  }
+   nav li:last-child {
+      border-bottom: none;
+   }
+
+  nav li a { 
+      display: block;
+      text-align: center;
+      padding: 1rem; 
+      color: #59aaff; 
+      font-weight: bold; 
+  }
+  nav li a:hover {
+      background-color: #e9ecef; 
+  }
+
+  #nav-toggle:checked ~ nav {
+    display: block;
+  }
+
   #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } 
   #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } 
   #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } 
 
-  main.container { 
-    // padding-left: 1rem;  // Let .container handle this
-    // padding-right: 1rem; // Let .container handle this
+  main {
+    padding-left: 1rem; 
+    padding-right: 1rem; 
     margin-top: 1rem; 
   }
 
   .cta-button { 
-    display: block; width: auto; max-width: 100%; margin-left: auto; 
-    margin-right: auto; text-align: center; padding: 0.8em 1em; margin-top: 1rem; 
+    display: block;
+    width: auto; 
+    max-width: 100%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+    padding: 0.8em 1em;
+    margin-top: 1rem; 
   }
-  footer .service-line { display: block; margin-top: 0.3em; }
+
+  footer .service-line {
+    display: block;
+    margin-top: 0.3em;
+  }
 }
 
-// Post list and individual post styling
-.footer-brag { font-size: 0.85em; color: #6c757d; font-style: italic; margin-top: 0.5rem; }
-.post-list { list-style: none; padding-left: 0; }
-.post-list li { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #dee2e6; }
-.post-list li:last-child { border-bottom: none; }
-.post-list h2 a { text-decoration: none; color: #59aaff; }
-.post-list h2 a:hover { text-decoration: underline; }
-.post-meta { font-size: 0.9em; color: #6c757d; margin-bottom: 0.5rem; }
-.post-excerpt { margin-bottom: 1rem; }
-a.read-more { font-weight: bold; text-decoration: none; }
-.post h1 { margin-bottom: 0.5rem; }
-.post .post-meta { margin-bottom: 2rem; }
-.post-content h2, .post-content h3, .post-content h4 { margin-top: 2rem; }
+
+.container {
+  width: 90%;
+  max-width: 900px; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
+}
+
+.footer-brag {
+  font-size: 0.85em;
+  color: #6c757d; 
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6; 
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-list h2 a {
+  text-decoration: none;
+  color: #59aaff; 
+}
+
+.post-list h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #6c757d; 
+  margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+  margin-bottom: 1rem;
+}
+
+a.read-more {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post h1 { 
+  margin-bottom: 0.5rem;
+}
+
+.post .post-meta { 
+  margin-bottom: 2rem;
+}
+
+.post-content h2, .post-content h3, .post-content h4 { 
+  margin-top: 2rem;
+}
