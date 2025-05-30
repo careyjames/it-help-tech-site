@@ -1,4 +1,4 @@
-# Remote IT Help Site
+# IT Help San Diego Inc. Site
 
 This site is a static HTML5 project.
 
