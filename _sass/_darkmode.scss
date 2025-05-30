@@ -58,11 +58,13 @@
 
   /* Style for code blocks */
   pre, pre code {
-      background-color: #282c34 !important; /* Ensure override */
+      background-color: #1e1e1e !important; /* Darker background */
       color: #abb2bf !important;
       border-radius: 6px;
       padding: 1em;
       overflow: auto;
+      white-space: pre-wrap; /* Prevent overlapping long lines */
+      word-wrap: break-word;
   }
 
 

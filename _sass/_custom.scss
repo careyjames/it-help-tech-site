@@ -46,12 +46,14 @@ code { /* Inline code */
 }
 
 pre, pre code { /* Code blocks */
-    background-color: #e9ecef !important; 
-    color: #212529 !important; /* Dark grey text */
+    background-color: #333 !important; /* Darker background for better contrast */
+    color: #f8f9fa !important; /* Light text for readability */
     border: 1px solid #dee2e6; /* Optional: subtle border for code blocks */
     border-radius: 6px;
     padding: 1em;
     overflow: auto;
+    white-space: pre-wrap; /* Prevent overlapping long lines */
+    word-wrap: break-word;
 }
 
 header,
