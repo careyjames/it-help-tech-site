@@ -156,7 +156,7 @@ current_year = '2025'
 HEADER = f"""
     <header class="container">
       <div class="site-logo"> <a href="/" style="text-decoration: none; color: inherit;">
-        <img src="/assets/images/logo.svg" alt="{site_title} Logo" width="400" height="50" style="vertical-align: middle;">
+        <img src="/images/logo.svg" alt="{site_title} Logo" width="400" height="50" style="vertical-align: middle;">
         </a>
       </div>
 
@@ -180,7 +180,7 @@ HEADER = f"""
 FOOTER = f"""
     <footer class="container">
       <div style="text-align: center; margin-bottom: 1rem;">
-        <img src="/assets/images/owl-of-athena.png" alt="Owl of Athena symbol" width="100" height="100">
+        <img src="/images/owl-of-athena.png" alt="Owl of Athena symbol" width="100" height="100">
       </div>
       <p>&copy; {current_year} {site_title}. <span class="service-line">A service by <a href="https://it-help.tech">IT Help San Diego Inc.</a></span></p>
       <p class="footer-brag">✨ Built with Jekyll/GitHub, hosted on AWS S3/CloudFront/Route 53 (&lt;$10/mo). Zero JS, trackers, or cookies. Just lean, fast, cost-efficient tech. ✨</p>
@@ -192,7 +192,7 @@ HEAD_TEMPLATE = f"""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{{{title}}}} | {site_title}</title>
-    <link rel="icon" href="/assets/images/red-plus.ico" type="image/x-icon">
+    <link rel="icon" href="/images/red-plus.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">

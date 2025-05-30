@@ -36,7 +36,7 @@ layout: default
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": {{ 'https://www.it-help.tech/assets/images/logo.svg' | jsonify }}
+      "url": {{ 'https://www.it-help.tech/images/logo.svg' | jsonify }}
     }
   },
   "description": {{ page.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }}

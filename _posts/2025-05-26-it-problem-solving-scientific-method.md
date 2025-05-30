@@ -5,7 +5,7 @@ date: 2025-05-26
 author: Carey Balboa
 categories: [Consulting, Troubleshooting, Methodology]
 tags: [scientific method, IT consulting, problem solving, tech support]
-image: /assets/images/it-problem-solving-scientific-method.webp
+image: /images/it-problem-solving-scientific-method.webp
 description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
 ---
 
