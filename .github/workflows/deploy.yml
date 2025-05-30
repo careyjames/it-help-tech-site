@@ -21,13 +21,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install cargo-binstall
-        run: |
-          curl -LsSf https://github.com/cargo-bins/cargo-binstall/releases/latest/install.sh | bash
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
       - name: Install Zola
-        run: cargo binstall zola --no-confirm
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
 
       - name: Build site with Zola
         run: zola build
@@ -39,11 +36,6 @@ jobs:
         run: |
           mkdir -p public
           sass src/styles/global.scss public/global.css
-
-      - name: Copy static assets
-        run: |
-          cp -r images public/images
-          cp robots.txt bimi-logo.svg public/
 
       - name: Sync to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
