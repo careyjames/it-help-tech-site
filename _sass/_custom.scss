@@ -1,9 +1,9 @@
 /* _custom.scss - Light Theme Defaults & Custom Site Styles */
 
 // Color variables
-$primary-bg: #e6f2ea;
+$primary-bg: #f8f9fa;
 $primary-text: #212529;
-$primary-link: #006d77;
+$primary-link: #59aaff;
 
 /* Light mode global settings - START */
 body {
@@ -161,7 +161,7 @@ footer p {
 .cta-button {
   display: inline-block; /* Default to inline-block for desktop */
   background-color: $primary-link;
-  color: #ffffff;
+  color: #0d1117;
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
