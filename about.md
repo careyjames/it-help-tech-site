@@ -18,7 +18,7 @@ description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help S
       "name": "Carey Balboa",
       "jobTitle": "Founder",
       "description": "25+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
-      "image": "{{ site.url }}/assets/images/carey-balboa.jpeg"
+      "image": "https://www.it-help.tech/assets/images/carey-balboa.jpeg"
     },
     "address": {
       "@type": "PostalAddress",
@@ -28,10 +28,10 @@ description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help S
       "postalCode": "92037",
       "addressCountry": "US"
     },
-     "url": "{{ site.url }}"
+     "url": "https://www.it-help.tech"
   },
   "description": "Learn about Carey Balboa, the founder of Remote IT Help (IT Help San Diego Inc.), with 25 years of experience providing expert, ethical remote IT support.",
-   "url": "{{ site.url }}{{ page.url | relative_url }}"
+   "url": "https://www.it-help.tech{{ page.url }}"
 }
 </script>
 

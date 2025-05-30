@@ -149,7 +149,7 @@ def markdown_to_html(lines):
 
 SITE = parse_config('_config.yml')
 site_title = SITE.get('title','')
-site_url = SITE.get('url','')
+site_url = 'https://www.it-help.tech'
 site_description = SITE.get('description','')
 current_year = '2025'
 
