@@ -263,7 +263,14 @@ for fname in os.listdir('_posts'):
     body_html = re.sub(r'\{:\s*[^}]*\}', '', body_html)
     extra_head = ''
     if image:
-        body_html = f'<div class="post-featured-image"><img src="{image}" alt="{title} featured image"></div>\n' + body_html
+        body_html = (
+            f'<div class="post-featured-image">'
+            f'<img src="{image}" alt="{title} featured image" '
+            'width="200" '
+            'style="max-width:200px;height:auto;display:block;margin-left:auto;'
+            'margin-right:auto;border-radius:8px;">'
+            '</div>\n'
+        ) + body_html
         extra_head = f'<meta property="og:image" content="{image}">' 
     out_file = os.path.join('public', slug + '.html')
     build_page(title, body_html, out_file, extra_head)
