@@ -29,6 +29,11 @@ jobs:
           mkdir -p public
           sass src/styles/global.scss public/global.css
 
+      - name: Copy static assets
+        run: |
+          cp -r assets public/assets
+          cp robots.txt bimi-logo.svg public/
+
       - name: Sync to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
