@@ -1,85 +1,63 @@
-/* _custom.scss - AGGRESSIVE Light Theme Defaults & FULL Custom Site Styles */
+/* _custom.scss - Light Theme Defaults & Custom Site Styles */
 
-/* Resetting and overriding jekyll-theme-minimal for light mode - START */
-html, body {
-  background-color: #f8f9fa !important; /* Light grey background */
-  color: #212529 !important; /* Dark grey text */
-  font-family: "JetBrains Mono", "Courier New", monospace !important; /* Your preferred font */
-  line-height: 1.6 !important;
-  margin: 0 !important; 
-  padding: 0 !important; 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Light mode global settings - START */
+body {
+  background-color: #f8f9fa; /* Light grey background */
+  color: #212529; /* Dark grey text for readability */
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Try to neutralize jekyll-theme-minimal's .wrapper if it's interfering */
-/* You can be more specific if you know the exact structure, e.g. body > .wrapper */
-.wrapper {
-  width: auto !important;
-  max-width: none !important; /* Let your .container class handle max-width */
-  margin: 0 !important;
-  padding: 0 !important; /* Remove padding from theme's wrapper */
-  background-color: transparent !important; /* Ensure no conflicting background */
+p {
+  /* Uses body color by default, no !important needed unless issues arise */
 }
 
-/* Neutralize jekyll-theme-minimal's direct styling on main structural elements if they exist */
-/* These are common names, adjust if your theme uses different ones like .page-header */
-header.site-header, section.main-content, div.main-content-wrap, footer.site-footer {
-  width: auto !important;
-  float: none !important;
-  position: static !important;
-  margin: 0 !important;
-  padding: 0 !important; /* Reset padding */
-  border: none !important; /* Reset borders */
-  background: none !important; /* Reset background */
+a {
+  color: #0056b3; /* Professional, accessible blue for links */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-
-html p {
-  color: #212529 !important; 
+h1, h2, h3, h4, h5, h6 { /* Applied to all heading levels */
+  color: #345C7D; /* A calm/sober professional blue for headings */
 }
 
-html a {
-  color: #59aaff !important; /* Your preferred logo blue */
-  text-decoration: none !important;
-}
-html a:hover {
-  text-decoration: underline !important;
+strong, li strong {
+  color: #000000; /* Black or very dark grey for strong text */
+  font-weight: bold; /* Ensure font-weight is bold, as color alone might not be enough */
 }
 
-html h1, html h2, html h3, html h4, html h5, html h6 {
-  color: #59aaff !important; /* Your preferred logo blue */
-  margin-top: 1.5rem; 
-  margin-bottom: 1rem; 
+code { /* Inline code */
+  background-color: #e9ecef; /* Lighter grey background for code */
+  color: #212529; /* Dark grey text, can be more specific if needed e.g., #495057 */
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 6px;
 }
 
-html strong, html li strong {
-  color: #000000 !important; 
-  font-weight: bold !important;
+pre, pre code { /* Code blocks */
+    background-color: #e9ecef !important; 
+    color: #212529 !important; /* Dark grey text */
+    border: 1px solid #dee2e6; /* Optional: subtle border for code blocks */
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
 }
 
-html code { 
-  background-color: #e9ecef !important;
-  color: #212529 !important;
-  padding: 0.2em 0.4em !important;
-  margin: 0 !important;
-  font-size: 85% !important;
-  border-radius: 6px !important;
-}
-
-html pre, html pre code { 
-    background-color: #e9ecef !important;
-    color: #212529 !important;
-    border: 1px solid #dee2e6 !important;
-    border-radius: 6px !important;
-    padding: 1em !important;
-    overflow: auto !important;
+header,
+footer {
+    /* Will inherit body color by default, padding is handled in specific rules below */
 }
 
 /* Specific class adjustments for light mode */
 .dmarc-tag {
-  background-color: #59aaff; 
-  color: #0d1117; /* Dark text for contrast on your blue */          
+  background-color: #345C7D; /* Theme blue background */
+  color: #ffffff;           /* White text */
   padding: 3px 6px;
   border-radius: 4px;
   font-family: "JetBrains Mono", "Courier New", monospace;
@@ -87,67 +65,68 @@ html pre, html pre code {
 }
 
 .ethics-statement, .highlight-feature {
-  color: #59aaff; 
+  color: #0056b3; /* Theme link blue for emphasis */
   font-weight: bold;
 }
 
 .final-tagline {
   font-size: 1.2em;
   font-weight: bold;
-  color: #198754; 
+  color: #198754; /* A professional, non-neon green */
   text-transform: uppercase;
   margin-top: 2rem;
 }
-/* Resetting and overriding jekyll-theme-minimal for light mode - END */
+/* Light mode global settings - END */
 
 
-/* Your Existing Custom Structural & Component Styles (Adapted for Light Theme) - START */
+/* Your Existing Custom Styles (with minor light-theme adjustments) - START */
+/* Original _custom.scss content from remote-it-help.site, with light theme considerations */
+
 header {
   position: relative;
   display: flex;
-  flex-direction: column; 
-  align-items: center;   
-  text-align: center;    
-  gap: 1rem;             
-  padding: 1rem;         
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;   /* Center elements horizontally */
+  text-align: center;    /* Center text within elements */
+  gap: 1rem;             /* Back to original 1rem */
+  padding: 1rem;         /* Back to original 1rem */
   width: 100%;
-  float: none; /* Ensure no float from theme */
+  float: none;
   margin-bottom: 0;
-  background-color: transparent; /* Ensure body background shows through unless header has its own */
 }
 
 header h1 {
   margin: 0;
   font-size: 1.5em;
-  /* Color will be inherited from "html h1" for light mode, or from _darkmode.scss */
+  /* color will be inherited from general h1 style (light mode) or _darkmode.scss */
 }
 
+/* Ensure header h1 a inherits link color correctly for light mode, or body color */
 header h1 a {
-  color: inherit; 
+  color: inherit; /* Inherit color from h1 for light mode or specific dark mode color */
   text-decoration: none;
 }
 
+
 nav ul {
   display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
+  flex-wrap: wrap;       /* Allow nav items to wrap if needed */
+  justify-content: center; /* Center nav items */
   list-style: none;
   padding: 0;
   margin: 0;
   gap: 1rem;
 }
-/* nav a color will be inherited from "html a" for light mode, or from _darkmode.scss */
+/* nav a color will be inherited from general 'a' style (light mode) or _darkmode.scss */
 
 main h1:first-child {
-  margin-top: 0; /* Good practice */
+  margin-top: 0;
 }
 
 main {
-  /* The .container class will handle margins if applied to main's children or main itself */
-  /* Resetting any direct theme padding/margin for main that might conflict with .container approach */
-  padding-top: 0; 
-  padding-bottom: 0.1rem; /* Keep your existing padding */
-  margin-top: 2rem; /* Your existing margin */
+  margin-top: 2rem;
+  padding-bottom: 0.1rem;
+  padding-top: 0; /* Ensure no padding */
 }
 
 footer {
@@ -155,16 +134,14 @@ footer {
   padding-top: 1rem;
   text-align: center;
   clear: both;
-  position: relative; /* This might not be needed if it's the last element */
-  bottom: 0; /* This might not be needed */
+  position: relative;
+  bottom: 0;
   width: 100%;
-  background-color: transparent; /* Ensure body background shows through unless footer has its own */
 }
 
-footer.container { /* This class seems redundant if footer itself is full-width and content inside is centered */
-    /* If you apply .container directly to footer, or a div inside footer, these might not be needed */
+footer.container {
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -173,32 +150,33 @@ footer p {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 0.5rem;
-    /* color inherits from body or _darkmode.scss */
+    /* color will be inherited from body (light mode) or _darkmode.scss */
 }
 
 .cta-button {
-  display: inline-block; 
-  background-color: #59aaff; /* Your logo blue */
-  color: #0d1117; /* Dark text for contrast - test if #ffffff is better */
+  display: inline-block; /* Default to inline-block for desktop */
+  background-color: #0056b3; /* Light theme primary blue */
+  color: #ffffff; /* White text for better contrast on blue */
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
   margin-top: 0.5em;
   transition: background-color 0.3s ease;
-  font-weight: bold; 
+  font-weight: bold; /* Make text bold */
   position: relative;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .cta-button:hover {
-  background-color: #82bcfc; /* Lighter shade of your blue */
-  color: #0d1117; /* or #ffffff */
+  background-color: #004085; /* Darker blue for hover */
+  color: #ffffff;
 }
 
 .button-icon {
     display: inline;
 }
 
+/* Base styles for hamburger elements (hidden by default) */
 .nav-toggle {
   display: none;
 }
@@ -209,14 +187,15 @@ footer p {
 
 @media (max-width: 600px) {
   /* --- START: Mobile Header & Nav Overrides --- */
+
   header {
-    flex-direction: row; 
-    justify-content: space-between; 
+    flex-direction: row; /* Change to row */
+    justify-content: space-between; /* Logo left, hamburger right */
     align-items: center;
-    padding: 1rem; 
+    padding: 1rem; /* Consistent padding */
     gap: 1rem;
-    position: relative; 
-    text-align: left; 
+    position: relative; /* Essential for absolute nav */
+    text-align: left; /* Align H1 left */
   }
 
   header h1 {
@@ -227,21 +206,22 @@ footer p {
 
   header h1 a {
      display: flex;
-     flex-direction: row; 
+     flex-direction: row; /* Keep as row */
      align-items: center;
      gap: 0.5rem;
      text-decoration: none;
-     color: inherit; 
+     color: inherit; /* Inherits from h1 which inherits from body or darkmode */
   }
 
   header h1 img {
     height: 40px;
-    width: auto; 
+    width: auto; /* Let it scale */
     margin-right: 0;
   }
 
+  /* Show and style the hamburger label */
   .nav-toggle-label {
-    display: block; 
+    display: block; /* Make it visible */
     cursor: pointer;
     z-index: 1000;
     padding: 10px;
@@ -251,7 +231,7 @@ footer p {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #212529; /* Dark hamburger lines for light mode */
+    background-color: #212529; /* Dark color for hamburger lines in light mode */
     height: 3px;
     width: 25px;
     border-radius: 2px;
@@ -268,21 +248,21 @@ footer p {
   .nav-toggle-label span::before { top: -8px; }
   .nav-toggle-label span::after { top: 8px; }
 
-  nav { 
-    display: none; 
+  /* Hide original nav, style it as dropdown */
+  nav { /* This is the mobile dropdown menu container */
+    display: none; /* Hide nav container by default */
     position: absolute;
-    top: 100%; 
+    top: 100%; /* Below header */
     left: 0;
     width: 100%;
-    background-color: #f8f9fa; /* Light background for mobile nav, consistent with body */
-    border-top: 1px solid #dee2e6; 
-    border-bottom: 1px solid #dee2e6; 
+    background-color: #ffffff; /* Light background for mobile nav */
+    border-top: 1px solid #dee2e6; /* Separator from header */
+    border-bottom: 1px solid #dee2e6; /* Bottom border */
     z-index: 999;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: subtle shadow for dropdown */
   }
 
   nav ul {
-    flex-direction: column; 
+    flex-direction: column; /* Stack links vertically */
     width: 100%;
     padding: 0;
     gap: 0;
@@ -290,73 +270,67 @@ footer p {
 
   nav li {
       margin-right: 0;
-      margin-bottom: 0; 
+      margin-bottom: 0; /* Remove bottom margin */
       width: 100%;
-      border-bottom: 1px solid #e9ecef; 
+      border-bottom: 1px solid #e9ecef; /* Light separator for list items */
   }
    nav li:last-child {
       border-bottom: none;
    }
 
-  nav li a { 
+  nav li a { /* Mobile navigation links */
       display: block;
       text-align: center;
-      padding: 1rem; 
-      color: #59aaff; /* Your logo blue for mobile nav links */
-      font-weight: bold; /* Make them a bit more prominent */
+      padding: 1rem; /* Increase tap area */
+      color: #0056b3; /* Use light theme link color */
   }
   nav li a:hover {
-      background-color: #e9ecef; /* Slight hover background */
+      background-color: #e9ecef; /* Slight hover background for mobile nav items */
   }
 
+  /* Show nav when checkbox is checked */
   #nav-toggle:checked ~ nav {
     display: block;
   }
 
-  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } 
-  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } 
-  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } 
+  /* Transform hamburger to X when checked */
+  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } /* Middle line disappears */
+  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
+  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #212529; } /* Ensure X is dark */
 
+  /* Mobile Spacing */
   main {
-    /* Let .container inside main handle padding/margins if needed */
-    /* Or add specific mobile padding for main content area if .container is not used directly on main sections */
-    padding-left: 1rem; /* Example mobile padding */
-    padding-right: 1rem; /* Example mobile padding */
-    margin-top: 1rem; /* Adjust if header height changes significantly */
+    margin-top: 3rem; /* Increase margin-top only for mobile */
+    padding-top: 0; /* Ensure no padding */
   }
 
-  .cta-button { 
+  /* Keep other mobile styles */
+  .cta-button { /* Already styled above, ensure consistency or mobile specifics if needed */
     display: block;
-    width: auto; /* Allow button to size to content + padding */
-    max-width: 100%; /* Prevent overflow */
-    margin-left: auto; /* Center if block */
-    margin-right: auto; /* Center if block */
+    width: 100%;
     text-align: center;
     padding: 0.8em 1em;
-    margin-top: 1rem; /* More space on mobile */
+    margin-top: 0.5rem;
   }
 
   footer .service-line {
     display: block;
     margin-top: 0.3em;
   }
+
   /* --- END: Mobile Header & Nav Overrides --- */
 }
 
 
 .container {
   width: 90%;
-  max-width: 900px; /* This is your main content width constraint */
-  margin-left: auto;
-  margin-right: auto;
-  /* Add padding here if you want consistent spacing inside the container */
-  padding-top: 1rem; /* Example */
-  padding-bottom: 1rem; /* Example */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .footer-brag {
   font-size: 0.85em;
-  color: #6c757d; 
+  color: #6c757d; /* Darker grey for better readability on light background */
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -369,7 +343,7 @@ footer p {
 .post-list li {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #dee2e6; 
+  border-bottom: 1px solid #dee2e6; /* Lighter border for light theme */
 }
 
 .post-list li:last-child {
@@ -378,7 +352,7 @@ footer p {
 
 .post-list h2 a {
   text-decoration: none;
-  color: #59aaff; /* Your logo blue */
+  color: #0056b3; /* Use main link color for light theme */
 }
 
 .post-list h2 a:hover {
@@ -387,28 +361,37 @@ footer p {
 
 .post-meta {
   font-size: 0.9em;
-  color: #6c757d; 
+  color: #6c757d; /* Darker grey for better readability on light background */
   margin-bottom: 0.5rem;
 }
 
 .post-excerpt {
   margin-bottom: 1rem;
+  /* color will be inherited from body (light mode) or _darkmode.scss */
 }
 
 a.read-more {
   font-weight: bold;
   text-decoration: none;
+  /* color will be inherited from general 'a' style (light mode) or _darkmode.scss */
 }
 
-.post h1 { 
+.post h1 { /* Blog post title */
   margin-bottom: 0.5rem;
+  /* color will be inherited from general h1 style (light mode) or _darkmode.scss */
 }
 
-.post .post-meta { 
+.post .post-meta { /* Blog post meta */
   margin-bottom: 2rem;
+  /* color adjusted above via general .post-meta rule */
 }
 
-.post-content h2, .post-content h3, .post-content h4 { 
+.post-content h2, .post-content h3, .post-content h4 { /* Headings within blog post content */
   margin-top: 2rem;
+  /* color will be inherited from general h2,h3,h4 styles (light mode) or _darkmode.scss */
+}
+
+html body.force-light-theme-test {
+    background-color: #FF0000 !important; /* Bright red for testing */
 }
 /* Your Existing Custom Styles - END */
