@@ -1,4 +1,4 @@
-/* _custom.scss - Theme with #2A4055 Background & Refined Code Block Fixes */
+/* _custom.scss - Theme with #2A4055 Background & FINAL Code Block Fixes */
 
 // Color variables
 $primary-bg: #2A4055;
@@ -43,9 +43,9 @@ strong, li strong {
 
 /* Inline code styling (for `code` not in a <pre> block) */
 code { 
-  background-color: lighten($primary-bg, 7%); // Slightly lighter than main dark bg
+  background-color: lighten($primary-bg, 7%); 
   color: $primary-text; 
-  border: 1px solid lighten($primary-bg, 15%); // Subtle border
+  border: 1px solid lighten($primary-bg, 15%); 
   padding: 0.2em 0.4em;
   margin: 0 0.1em;
   font-size: 85%;
@@ -53,46 +53,49 @@ code {
 }
 
 // --- Styles for Highlighted Code Blocks (Terminal Look) ---
+// From Turn 104 - to remove lines around the block
 div.highlight {
-  background: $code-block-bg !important; // Apply main code block bg to the outer div too
-  border: none !important;
-  padding: 0 !important; // Let pre handle padding
+  background: $code-block-bg !important; 
+  border: none !important;               
+  outline: none !important;             
+  box-shadow: none !important;          
+  padding: 0 !important;                
   margin-bottom: 1.6em; 
-  border-radius: 6px; 
-  overflow: hidden; // To contain the pre's border-radius if pre itself doesn't have one
+  border-radius: 6px;                   
+  overflow: hidden;                     
 }
 
 div.highlight pre.highlight, 
-pre { // General pre tag styling for code blocks
+pre { 
   margin: 0 !important; 
-  padding: 1em !important;
+  padding: 1em !important;              
   overflow: auto !important;
   background-color: $code-block-bg !important; 
   color: $code-block-text !important; 
-  border: none !important; // Explicitly remove border from pre as well
-  border-radius: 6px !important; // Apply radius here
+  border: none !important;               
+  outline: none !important;             
+  box-shadow: none !important;          
+  border-radius: 0px !important; // PRE has no radius if div.highlight provides it via overflow:hidden
   
-  white-space: pre;     // Preserve all whitespace, allow horizontal scroll
-  word-wrap: normal;    // Prevent wrapping in favor of scroll
-  font-size: 0.9em;     // Slightly smaller font for code blocks
+  white-space: pre;     
+  word-wrap: normal;    
+  font-size: 0.9em;     
 }
 
 div.highlight pre.highlight code,
-pre code { // The actual code text container
-  background: none !important; // Should be transparent, pre has the background
-  color: inherit !important; // Inherit text color from pre
+pre code { 
+  background: none !important; 
+  color: inherit !important; 
   padding: 0 !important;
   margin: 0 !important;
   font-size: inherit !important; 
-  line-height: inherit !important; // Ensure consistent line height
+  line-height: inherit !important; 
   border-radius: 0 !important;
   white-space: inherit; 
   word-wrap: inherit; 
-  display: block; // Helps with some layout consistency inside pre
+  display: block; 
 }
 
-// Specifically target table elements if Rouge uses them inside highlighted code
-// This is crucial to remove the lines you're seeing.
 div.highlight table,
 div.highlight table tbody,
 div.highlight table tr,
@@ -100,31 +103,34 @@ div.highlight table th,
 div.highlight table td {
   background: none !important;
   background-color: transparent !important;
-  border: none !important; // Remove ALL borders from table elements
+  border: none !important; 
+  outline: none !important;
+  box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
   vertical-align: baseline !important; 
-  line-height: inherit !important; // Ensure consistent line height from pre/code
-  font-size: inherit !important; // Ensure consistent font size from pre/code
+  line-height: inherit !important; 
+  font-size: inherit !important; 
 }
 
-// Style line number gutters if present (Rouge often uses .gutter or .lineno)
 div.highlight .gutter, 
 div.highlight .lineno,
-div.highlight pre.highlight .gl { // .gl is often class for line number cell
+div.highlight pre.highlight .gl { 
   color: $code-block-lineno-text !important; 
   background-color: transparent !important; 
-  padding-right: 1em !important; // Space between line numbers and code
-  padding-left: 0.5em !important; // Some padding on the left of numbers
+  padding-right: 1em !important; 
+  padding-left: 0.5em !important; 
   user-select: none; 
   text-align: right !important; 
-  border-right: 1px solid lighten($code-block-bg, 5%) !important; // Subtle separator line for numbers if desired, or none
+  border-right: 1px solid lighten($code-block-bg, 5%) !important; // Subtle separator for line numbers
+  border-left: none !important; 
+  border-top: none !important;
+  border-bottom: none !important;
 }
 
-// Ensure the code cell itself doesn't add extra padding if the table cells were reset
-div.highlight td.code { // .code is often class for code cell
+div.highlight td.code { 
     padding: 0 !important; 
-    width: 100% !important; // Ensure code cell takes full available width
+    width: 100% !important; 
 }
 // --- End of Styles for Highlighted Code Blocks ---
 
@@ -438,3 +444,4 @@ a.read-more {
 .post-content h2, .post-content h3, .post-content h4 { 
   margin-top: 2rem;
 }
+/* Your Existing Custom Styles - END */
