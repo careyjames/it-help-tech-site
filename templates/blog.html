@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Blog Posts ✍️</h1>
+<ul class="post-list">
+  {% for page in section.pages %}
+  <li>
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    {% if page.date %}
+    <p class="post-meta"><time datetime="{{ page.date | date(format="%Y-%m-%d") }}">{{ page.date | date(format="%B %d, %Y") }}</time></p>
+    {% endif %}
+    <div class="post-excerpt">{{ page.content | striptags | truncate(length=160) }}</div>
+    <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
