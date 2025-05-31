@@ -19,7 +19,7 @@
       {%- endif %}
 
       {# thumbnail: prefer extra.image but fall back to top-level image #}
-      {% set thumb = page.extra.image or page.image %}
+      {% set thumb = page.extra.image | default(value=page.image) %}
       {% if thumb %}
         <img src="{{ get_url(path=thumb) }}"
              alt="{{ page.title }} thumbnail"

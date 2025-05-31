@@ -4,7 +4,8 @@ date: 2025-05-23
 author: Carey Balboa
 categories: [Apple, Security, Cybersecurity]
 tags: [macOS, cybersecurity, malware, phishing, Apple security, endpoint protection]
-image: /images/mac-cybersecurity.jpeg
+extra:
+  image: images/mac-cybersecurity.jpeg
 description: "Think your Mac is immune? Explore common macOS cybersecurity threats, vulnerabilities, adware, PUPs, and essential endpoint protection strategies."
 ---
 

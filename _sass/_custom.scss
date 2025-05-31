@@ -443,11 +443,22 @@ a.read-more {
   margin-bottom: 0.5rem;
 }
 
-.post .post-meta { 
+.post .post-meta {
   margin-bottom: 2rem;
 }
 
-.post-content h2, .post-content h3, .post-content h4 { 
+.featured-image {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.featured-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.post-content h2, .post-content h3, .post-content h4 {
   margin-top: 2rem;
 }
 /* Your Existing Custom Styles - END */
