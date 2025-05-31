@@ -42,13 +42,11 @@ Follow three rules:
 ---
 
 ## Quick Risk Check
-Risk:
-Targeted guessing via public info  
-Mitigation: Keep phrases fictional or private and *weird*.  
-Risk:  
-Daily emotional drain  
-Mitigation:  
-Pick **absurd** negative imagery, not genuine trauma.  
+Risk: Targeted guessing via public info  
+Mitigation: Keep phrases fictional or private and *weird*. 
+
+Risk: Daily emotional drain  
+Mitigation: Pick **absurd** negative imagery, not genuine trauma.  
 PutKidsUpForAdoption!2025 Use a phrase you’d *never* type in front of them.  
 
 ---
