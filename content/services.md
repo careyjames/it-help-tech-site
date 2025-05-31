@@ -143,7 +143,7 @@ path: services
 }
 </script>
 
-# Remote IT Services 🛠️
+# IT Services 🛠️
 
 We offer specialized remote IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting. Our expertise ensures your critical systems run smoothly, securely, and efficiently, no matter where you are.
 
