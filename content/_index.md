@@ -2,7 +2,7 @@
 title = "Home - Expert Mac IT Support for Complex Tech Challenges"
 description = "Need expert remote IT help? 25+ years experience in Mac, iOS, DNS, email & cybersecurity. Get concierge-level, on-demand support nationwide."
 [extra]
-image = "/images/logo-blue.png"
+image = "static/images/logo-blue.png"
 +++
 <script type="application/ld+json">
 {
