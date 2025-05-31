@@ -72,7 +72,7 @@ pre {
   overflow: auto !important;
   background-color: $code-block-bg !important; 
   color: $code-block-text !important; 
-  border: none !important;               
+  border: 1px solid #282c34;              
   outline: none !important;             
   box-shadow: none !important;          
   border-radius: 0px !important; // PRE has no radius if div.highlight provides it via overflow:hidden
