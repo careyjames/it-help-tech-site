@@ -172,8 +172,9 @@ header {
 }
 
 .site-logo img {
-  max-width: 100%;
-  height: auto;
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 header h1 {

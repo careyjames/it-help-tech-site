@@ -1,3 +1,127 @@
+@media (prefers-color-scheme: dark) {
+  /* _darkmode.scss */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #161b22; /* Slightly Lighter Dark Background */
+    color: #c9d1d9;
+    font-family: "JetBrains Mono", "Courier New", monospace; /* Using JetBrains Mono */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  /* Ensure paragraphs use the main color */
+  p {
+    color: #c9d1d9 !important; /* Added !important to help override */
+  }
+  a {
+    color: #58a6ff;
+  }
+  h1 {
+    color: #58a6ff; /* Vibrant Blue */
+  }
+  h2 {
+    color: #58a6ff; /* Vibrant Blue */
+  }
+  h3 {
+    color: #58a6ff; /* Vibrant Blue, same as H2 */
+  }
+  header h1 a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  /* Ensure strong and list strong are bright */
+  strong, li strong {
+    color: #e6edf3 !important; /* Brighter white/grey + !important */
+    font-weight: bold;
+  }
+  /* Style for inline code */
+  code {
+    background-color: #282c34; /* Slightly different dark background */
+    color: #abb2bf !important; /* Lighter grey for code + !important */
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 6px;
+  }
+  /* Style for code blocks */
+  pre, pre code {
+    background-color: #1e1e1e !important; /* Darker background */
+    color: #abb2bf !important;
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
+    white-space: pre-wrap; /* Prevent overlapping long lines */
+    word-wrap: break-word;
+  }
+  header,
+  footer {
+    color: #c9d1d9;
+    padding: 1rem 0;
+  }
+  footer {
+    padding: 1rem;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  nav a {
+    text-decoration: none;
+    color: #58a6ff;
+  }
+  /* Style for p=none tag and similar tags */
+  /* Style for the ethics statement */
+  /* Style for specific highlighted features in text */
+  /* Style for org subtitle on about page */
+  /* Style for the final tagline */
+}
+@media (prefers-color-scheme: dark) and (max-width: 600px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centered on mobile */
+    padding-left: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dmarc-tag {
+    background-color: #c9d1d9; /* Light background */
+    color: #0d1117; /* Dark text */
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-weight: bold;
+  }
+  .ethics-statement {
+    color: #8ab4f8; /* Use the bright blue for emphasis */
+    font-weight: bold;
+  }
+  .highlight-feature {
+    color: #8ab4f8; /* Use the bright blue for emphasis */
+    font-weight: bold;
+  }
+  .org-subtitle {
+    color: #aab0b6; /* A slightly brighter grey, but still subtle */
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 1em;
+  }
+  .final-tagline {
+    font-size: 1.2em; /* Make it slightly larger */
+    font-weight: bold;
+    color: #27ae60; /* Flat Green */
+    text-transform: uppercase;
+    margin-top: 2rem; /* Add some space above it */
+  }
+} /* THIS IS THE NEW CLOSING BRACE for the @media query */
+/* _custom.scss - Theme with #2A4055 Background & FINAL Code Block Fixes */
 /* Main theme global settings (using your chosen dark background) */
 body {
   background-color: #2A4055;
@@ -16,74 +140,72 @@ a {
   color: #59aaff;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   color: #59aaff;
-  margin-top: 1.5rem; 
-  margin-bottom: 1rem; 
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 strong, li strong {
-  color: #ffffff; 
+  color: #ffffff;
   font-weight: bold;
 }
 
 /* Inline code styling (for `code` not in a <pre> block) */
-code { 
-  background-color: #2d445b; 
-  color: #f8f9fa; 
-  border: 1px solid #304a62; 
+code {
+  background-color: rgb(53.8062992126, 81.9905511811, 108.8937007874);
+  color: #f8f9fa;
+  border: 1px solid rgb(67.2992125984, 102.5511811024, 136.2007874016);
   padding: 0.2em 0.4em;
   margin: 0 0.1em;
   font-size: 85%;
   border-radius: 6px;
 }
 
-
-
 div.highlight {
-  background: #282c34 !important; 
-  border: none !important;               
-  outline: none !important;             
-  box-shadow: none !important;          
-  padding: 0 !important;                
-  margin-bottom: 1.6em; 
-  border-radius: 6px;                   
-  overflow: hidden;                     
+  background: #282c34 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 1.6em;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-div.highlight pre.highlight, 
-pre { 
-  margin: 0 !important; 
-  padding: 1em !important;              
+div.highlight pre.highlight,
+pre {
+  margin: 0 !important;
+  padding: 1em !important;
   overflow: auto !important;
-  background-color: #282c34 !important; 
-  color: #abb2bf !important; 
-  border: none !important;               
-  outline: none !important;             
-  box-shadow: none !important;          
-  border-radius: 0px !important; 
-  
-  white-space: pre;     
-  word-wrap: normal;    
-  font-size: 0.9em;     
+  background-color: #282c34 !important;
+  color: #abb2bf !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  white-space: pre;
+  word-wrap: normal;
+  font-size: 0.9em;
 }
 
 div.highlight pre.highlight code,
-pre code { 
-  background: none !important; 
-  color: inherit !important; 
+pre code {
+  background: none !important;
+  color: inherit !important;
   padding: 0 !important;
   margin: 0 !important;
-  font-size: inherit !important; 
-  line-height: inherit !important; 
+  font-size: inherit !important;
+  line-height: inherit !important;
   border-radius: 0 !important;
-  white-space: inherit; 
-  word-wrap: inherit; 
-  display: block; 
+  white-space: inherit;
+  word-wrap: inherit;
+  display: block;
 }
 
 div.highlight table,
@@ -93,41 +215,40 @@ div.highlight table th,
 div.highlight table td {
   background: none !important;
   background-color: transparent !important;
-  border: none !important; 
+  border: none !important;
   outline: none !important;
   box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  vertical-align: baseline !important; 
-  line-height: inherit !important; 
-  font-size: inherit !important; 
+  vertical-align: baseline !important;
+  line-height: inherit !important;
+  font-size: inherit !important;
 }
 
-div.highlight .gutter, 
+div.highlight .gutter,
 div.highlight .lineno,
-div.highlight pre.highlight .gl { 
-  color: darken($code-block-text, 30%) !important; 
-  background-color: transparent !important; 
-  padding-right: 1em !important; 
-  padding-left: 0.5em !important; 
-  user-select: none; 
-  text-align: right !important; 
-  border-right: 1px solid #2a2e37 !important; 
-  border-left: none !important; 
+div.highlight pre.highlight .gl {
+  color: rgb(90.3783783784, 100.2635135135, 118.6216216216) !important;
+  background-color: transparent !important;
+  padding-right: 1em !important;
+  padding-left: 0.5em !important;
+  user-select: none;
+  text-align: right !important;
+  border-right: 1px solid rgb(51.0869565217, 56.1956521739, 66.4130434783) !important;
+  border-left: none !important;
   border-top: none !important;
   border-bottom: none !important;
 }
 
-div.highlight td.code { 
-    padding: 0 !important; 
-    width: 100% !important; 
+div.highlight td.code {
+  padding: 0 !important;
+  width: 100% !important;
 }
-
 
 /* Specific class adjustments (ensure these colors work on your dark background) */
 .dmarc-tag {
-  background-color: #59aaff; 
-  color: #0d1117; 
+  background-color: #59aaff;
+  color: #0d1117;
   padding: 3px 6px;
   border-radius: 4px;
   font-family: "JetBrains Mono", "Courier New", monospace;
@@ -135,14 +256,14 @@ div.highlight td.code {
 }
 
 .ethics-statement, .highlight-feature {
-  color: #59aaff; 
+  color: #59aaff;
   font-weight: bold;
 }
 
 .final-tagline {
   font-size: 1.2em;
   font-weight: bold;
-  color: #27ae60; 
+  color: #27ae60;
   text-transform: uppercase;
   margin-top: 2rem;
 }
@@ -162,8 +283,9 @@ header {
 }
 
 .site-logo img {
-  max-width: 100%;
-  height: auto;
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 header h1 {
@@ -172,14 +294,14 @@ header h1 {
 }
 
 header h1 a {
-  color: inherit; 
+  color: inherit;
   text-decoration: none;
 }
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -193,7 +315,7 @@ main h1:first-child {
 main {
   margin-top: 2rem;
   padding-bottom: 0.1rem;
-  padding-top: 0; 
+  padding-top: 0;
 }
 
 footer {
@@ -207,175 +329,172 @@ footer {
 }
 
 footer.container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 footer p {
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 0.5rem;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 0.5rem;
 }
 
 .cta-button {
-  display: inline-block; 
-  background-color: #59aaff; 
-  color: #0d1117; 
+  display: inline-block;
+  background-color: #59aaff;
+  color: #0d1117;
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
   margin-top: 0.5em;
   transition: background-color 0.3s ease;
-  font-weight: bold; 
+  font-weight: bold;
   position: relative;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .cta-button:hover {
-  background-color: #7bbcff; 
-  color: #0d1117; 
+  background-color: rgb(140, 196.1144578313, 255);
+  color: #0d1117;
 }
 
 .button-icon {
-    display: inline;
+  display: inline;
 }
 
 .nav-toggle {
   display: none;
 }
+
 .nav-toggle-label {
   display: none;
 }
 
 @media (max-width: 600px) {
   header {
-    flex-direction: row; 
-    justify-content: space-between; 
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem; 
+    padding: 1rem;
     gap: 1rem;
-    position: relative; 
-    text-align: left; 
+    position: relative;
+    text-align: left;
   }
-
   header h1 {
-      margin: 0;
-      font-size: 1.2em;
-      line-height: 1.2;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.2;
   }
-
   header h1 a {
-     display: flex;
-     flex-direction: row; 
-     align-items: center;
-     gap: 0.5rem;
-     text-decoration: none;
-     color: inherit; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
   }
-
   header h1 img {
     height: 40px;
-    width: auto; 
+    width: auto;
     margin-right: 0;
   }
-
   .nav-toggle-label {
-    display: block; 
+    display: block;
     cursor: pointer;
     z-index: 1000;
     padding: 10px;
   }
-
   .nav-toggle-label span,
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     display: block;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     height: 3px;
     width: 25px;
     border-radius: 2px;
     position: relative;
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
-
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
-    content: '';
+    content: "";
     position: absolute;
   }
-
-  .nav-toggle-label span::before { top: -8px; }
-  .nav-toggle-label span::after { top: 8px; }
-
-  nav { 
-    display: none; 
+  .nav-toggle-label span::before {
+    top: -8px;
+  }
+  .nav-toggle-label span::after {
+    top: 8px;
+  }
+  nav {
+    display: none;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     width: 100%;
-    background-color: #2A4055; 
-    border-top: 1px solid #2e465e; 
-    border-bottom: 1px solid #2e465e; 
+    background-color: #2A4055;
+    border-top: 1px solid rgb(58.8661417323, 89.7007874016, 119.1338582677);
+    border-bottom: 1px solid rgb(58.8661417323, 89.7007874016, 119.1338582677);
     z-index: 999;
   }
-
   nav ul {
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
     padding: 0;
     gap: 0;
   }
-
   nav li {
-      margin-right: 0;
-      margin-bottom: 0; 
-      width: 100%;
-      border-bottom: 1px solid #2c4359; 
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(50.4330708661, 76.8503937008, 102.0669291339);
   }
-   nav li:last-child {
-      border-bottom: none;
-   }
-
-  nav li a { 
-      display: block;
-      text-align: center;
-      padding: 1rem; 
-      color: #59aaff; 
+  nav li:last-child {
+    border-bottom: none;
+  }
+  nav li a {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: #59aaff;
   }
   nav li a:hover {
-      background-color: #2c4359; 
+    background-color: rgb(50.4330708661, 76.8503937008, 102.0669291339);
   }
-
   #nav-toggle:checked ~ nav {
     display: block;
   }
-
-  #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; } 
-  #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; background-color: #f8f9fa; } 
-  #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; background-color: #f8f9fa; } 
-
-  main {
-    margin-top: 1rem; 
-    padding-top: 0; 
+  #nav-toggle:checked ~ .nav-toggle-label span {
+    background-color: transparent;
   }
-
-  .cta-button { 
+  #nav-toggle:checked ~ .nav-toggle-label span::before {
+    transform: rotate(45deg);
+    top: 0;
+    background-color: #f8f9fa;
+  }
+  #nav-toggle:checked ~ .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+    top: 0;
+    background-color: #f8f9fa;
+  }
+  main {
+    margin-top: 1rem;
+    padding-top: 0;
+  }
+  .cta-button {
     display: block;
-    width: 100%; 
+    width: 100%;
     text-align: center;
     padding: 0.8em 1em;
     margin-top: 0.5rem;
   }
-
   footer .service-line {
     display: block;
     margin-top: 0.3em;
   }
 }
-
-
 .container {
   width: 90%;
   max-width: 900px;
@@ -384,7 +503,7 @@ footer p {
 
 .footer-brag {
   font-size: 0.85em;
-  color: #afbbc6; 
+  color: rgb(173.625, 185.25, 196.875);
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -397,7 +516,7 @@ footer p {
 .post-list li {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #2e465e; 
+  border-bottom: 1px solid rgb(58.8661417323, 89.7007874016, 119.1338582677);
 }
 
 .post-list li:last-child {
@@ -415,7 +534,7 @@ footer p {
 
 .post-meta {
   font-size: 0.9em;
-  color: #afbbc6; 
+  color: rgb(173.625, 185.25, 196.875);
   margin-bottom: 0.5rem;
 }
 
@@ -428,161 +547,18 @@ a.read-more {
   text-decoration: none;
 }
 
-.post h1 { 
+.post h1 {
   margin-bottom: 0.5rem;
 }
 
-.post .post-meta { 
+.post .post-meta {
   margin-bottom: 2rem;
 }
 
-.post-content h2, .post-content h3, .post-content h4 { 
+.post-content h2, .post-content h3, .post-content h4 {
   margin-top: 2rem;
 }
+
 /* Your Existing Custom Styles - END */
-@media (prefers-color-scheme: dark) {
 
-  /* _darkmode.scss */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color: #161b22; /* Slightly Lighter Dark Background */
-    color: #c9d1d9;
-    font-family: "JetBrains Mono", "Courier New", monospace; /* Using JetBrains Mono */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Ensure paragraphs use the main color */
-  p {
-    color: #c9d1d9 !important; /* Added !important to help override */
-  }
-
-  a {
-    color: #58a6ff;
-  }
-
-  h1 {
-  color: #58a6ff; /* Vibrant Blue */
-  }
-
-  h2 {
-  color: #58a6ff; /* Vibrant Blue */
-  }
-
-  h3 {
-    color: #58a6ff; /* Vibrant Blue, same as H2 */
-  }
-
-  header h1 a {
-    color: #58a6ff;
-    text-decoration: none;
-  }
-
-  /* Ensure strong and list strong are bright */
-  strong, li strong {
-    color: #e6edf3 !important; /* Brighter white/grey + !important */
-    font-weight: bold;
-  }
-
-  /* Style for inline code */
-  code {
-    background-color: #282c34; /* Slightly different dark background */
-    color: #abb2bf !important; /* Lighter grey for code + !important */
-    padding: 0.2em 0.4em;
-    margin: 0;
-    font-size: 85%;
-    border-radius: 6px;
-  }
-
-  /* Style for code blocks */
-  pre, pre code {
-      background-color: #1e1e1e !important; /* Darker background */
-      color: #abb2bf !important;
-      border-radius: 6px;
-      padding: 1em;
-      overflow: auto;
-      white-space: pre-wrap; /* Prevent overlapping long lines */
-      word-wrap: break-word;
-  }
-
-
-  header,
-  footer {
-    color: #c9d1d9;
-    padding: 1rem 0;
-  }
-
-  footer {
-      padding: 1rem;
-  }
-
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav li {
-    display: inline-block;
-    margin-right: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #58a6ff;
-  }
-
-
-  @media (max-width: 600px) {
-    nav ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centered on mobile */
-      padding-left: 0;
-    }
-  }
-
-  /* Style for p=none tag and similar tags */
-  .dmarc-tag {
-    background-color: #c9d1d9; /* Light background */
-    color: #0d1117; /* Dark text */
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: "JetBrains Mono", "Courier New", monospace;
-    font-weight: bold;
-  }
-
-  /* Style for the ethics statement */
-  .ethics-statement {
-    color: #8ab4f8; /* Use the bright blue for emphasis */
-    font-weight: bold;
-  }
-
-  /* Style for specific highlighted features in text */
-  .highlight-feature {
-    color: #8ab4f8; /* Use the bright blue for emphasis */
-    font-weight: bold;
-  }
-
-  /* Style for org subtitle on about page */
-  .org-subtitle {
-    color: #aab0b6; /* A slightly brighter grey, but still subtle */
-    font-style: italic;
-    font-size: 0.9em;
-    margin-top: 1em;
-  }
-
-  /* Style for the final tagline */
-  .final-tagline {
-    font-size: 1.2em; /* Make it slightly larger */
-    font-weight: bold;
-    color: #27ae60; /* Flat Green */
-    text-transform: uppercase;
-    margin-top: 2rem; /* Add some space above it */
-  }
-
-} /* THIS IS THE NEW CLOSING BRACE for the @media query */
+/*# sourceMappingURL=global.css.map */
