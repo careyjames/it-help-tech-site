@@ -23,7 +23,7 @@ Also, if you are a high-powered executive and your spouse were to come up and em
 * **Negativity bias:** Humans remember negative information more vividly than neutral or positive data [[Baumeister et al., 2001](https://pmc.ncbi.nlm.nih.gov/articles/PMC3652533/)].
 * **Emotion-driven consolidation:** High arousal triggers the amygdala, boosting long-term potentiation and locking the “engram” in place [[Paré & Headley, 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC10034520/)].
 
-Result: one shocking phrase you’d NEVER want anyone to see you typing➜ memory Velcro + extra password security from onlookers.
+Result: one shocking passphrase you’d NEVER want anyone to see you typing➜ memory Velcro + extra password security from onlookers.
 
 ---
 
