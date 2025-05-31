@@ -1,0 +1,39 @@
+name: Convert comments to PR
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-to-pr:
+    if: contains(github.event.issue.labels.*.name, 'comment')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Parse issue
+        id: parse
+        uses: peter-evans/issue-forms-body-parser@v1
+        with:
+          issue-body: ${{ github.event.issue.body }}
+
+      - name: Add comment file
+        run: |
+          slug="${{ steps.parse.outputs.page }}"
+          mkdir -p "content/comments/$slug"
+          cat <<EOC > "content/comments/$slug/comment-${{ github.event.issue.number }}.md"
+---
+name: "${{ steps.parse.outputs.name }}"
+date: "${{ github.event.issue.created_at }}"
+issue: ${{ github.event.issue.number }}
+---
+${{ steps.parse.outputs.comment }}
+EOC
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: comment-${{ github.event.issue.number }}
+          title: "Add comment ${{ github.event.issue.number }}"
+          commit-message: "Add comment ${{ github.event.issue.number }}"
+          body: "Adds comment from issue #${{ github.event.issue.number }}"
