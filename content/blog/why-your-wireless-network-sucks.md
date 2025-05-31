@@ -37,7 +37,7 @@ In my on-site experience, over 90% of customer calls regarding internet issues a
 ### How to Upgrade Your Network
 
 Upgrading to an Ethernet-backed wireless network might sound daunting, but it’s feasible for most homes and offices.  
-Consider [consulting with a professional](/services.html) to plan the layout and installation.
+Consider [consulting with a professional](/services/) to plan the layout and installation.
 
 If you’ve found an excellent low-voltage or AV company, they will offer you different speeds of Ethernet cables and will be able to explain the differences. We install Cat6A/Cat8/SFP Fiber so that all our clients are ready for 10GbE in the future.
 

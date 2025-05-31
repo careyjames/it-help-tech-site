@@ -94,7 +94,7 @@ In brief: SPF specifies which servers can send on your behalf (like a return-add
     b.  After you find your DKIM keys, copy them into your DNS. When setting up DKIM, it's recommended that you use a key length of at least 2048 bits. Shorter keys, such as 1024 bits, are no longer considered secure enough against brute-force attacks.
     c.  Make sure you hit Activate or Start Authentication in Google or Publish in Exchange.
 
-Test the setup using Red Sift's Investigate, the web-browser-based Cyber Alliance, or if you are a Linux/macOS nerd like me, use the command-line tool I created, [dns-tool](/dns-tool.html).
+Test the setup using Red Sift's Investigate, the web-browser-based Cyber Alliance, or if you are a Linux/macOS nerd like me, use the command-line tool I created, [dns-tool](/dns-tool/).
 
 Monitor and adjust as needed.
 
@@ -113,7 +113,7 @@ When setting up DMARC and SPF, watch out for these common mistakes:
 ### FAQs: Your DNS Security Questions Answered
 
 * **Can I set up DMARC and SPF myself?**
-    Yes, but it’s advisable to [consult a DNS security expert](/services.html) if you are unsure.
+    Yes, but it’s advisable to [consult a DNS security expert](/services/) if you are unsure.
 * **What happens if I don’t set up DMARC or SPF?**
     Your email system will be more susceptible to phishing and spoofing attacks. Evil criminals can send emails as you! They use you@company.com to email your bank or friends and ask for money or worse. These are called BEC Attacks (Business Email Compromise).
 

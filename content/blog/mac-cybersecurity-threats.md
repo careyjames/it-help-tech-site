@@ -63,7 +63,7 @@ Stay up to date and have an antivirus program installed.
 All are American-based companies.
 
 **What is the best way to protect my company’s email users?**
-* Update DNS Records! (As discussed in our [DNS Security Best Practices blog post](/2025-05-25-dns-security-best-practices.html))
+* Update DNS Records! (As discussed in our [DNS Security Best Practices blog post](/blog/dns-security-best-practices/))
 * **ProofPoint or Perception Point:** It sits before your Google Workspace or Microsoft 365 Exchange provider, stops evil, and reduces spam.
 * **RedSift and Mail Hardener are Great tools for achieving an A+ email quality rating and protecting and monitoring your users from attacks.
 
@@ -71,4 +71,4 @@ All are American-based companies.
 * **Apple’s Lockdown Mode:**
 * **Zimperium:** The best and only fully functioning mobile Security product for iOS and iPadOS that we have tested. (DOD contract; ask the US Department of Defense). When we read about a horrible attack that hit iPhone users, we remember the early morning email from Zimperium saying, “We got you, don’t worry,” usually naming the virus before you even hear about it on the news.
 
-[Contact us today](https://schedule.it-help.tech/) to benefit from our Mac expertise if you need [cybersecurity advice!](/services.html)
+[Contact us today](https://schedule.it-help.tech/) to benefit from our Mac expertise if you need [cybersecurity advice!](/services/)
