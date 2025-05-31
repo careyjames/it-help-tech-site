@@ -29,8 +29,10 @@ jobs:
       - name: Build site with Zola
         run: zola build
         
-      - name: Copy images
-        run: cp -r static/images public/
+      - name: Copy images and root files
+        run: |
+          cp -r static/images public/
+          cp robots.txt red-plus.ico bimi-logo.svg public/
         
       - name: Install Sass
         run: npm install -g sass
