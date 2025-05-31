@@ -55,12 +55,12 @@ code {
 // --- Styles for Highlighted Code Blocks (Terminal Look) ---
 // From Turn 104 - to remove lines around the block
 div.highlight {
-  background: $code-block-bg !important;
+  background: $code-block-bg
   // Add a border matching the background color to help avoid rendering artifacts
   border: 1px solid $code-block-bg;
-  outline: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+  outline: none
+  box-shadow: none
+  padding: 0
   margin-bottom: 1.6em;
   border-radius: 1px;
   overflow: hidden;
