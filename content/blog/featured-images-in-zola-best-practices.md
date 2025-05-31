@@ -6,7 +6,7 @@ categories: [Zola, Web Development]
 tags: [featured image, front matter, zola]
 extra:
   image: images/logo-blue.png
-  image_alt: "Example featured image for Zola posts"
+  image_alt: "Example featured graphic for Zola posts"
 description: "How to use extra.image in front matter and templates for clean featured images in Zola."
 ---
 
@@ -35,7 +35,7 @@ Add the following to `templates/page.html` to render a featured image when one i
 {% raw %}
 {% if page.extra.image %}
   <figure class="featured-image">
-    <img src="{{ get_url(path=page.extra.image) }}" alt="{{ page.extra.image_alt | default(value="Featured image") }}">
+    <img src="{{ get_url(path=page.extra.image) }}" alt="{{ page.extra.image_alt | default(value="Featured graphic") }}">
   </figure>
 {% endif %}
 {% endraw %}
