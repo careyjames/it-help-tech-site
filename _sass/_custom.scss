@@ -196,12 +196,17 @@ header h1 a {
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
+  flex-wrap: nowrap; /* keep all links on one line */
+  justify-content: space-evenly;
   list-style: none;
   padding: 0;
   margin: 0;
   gap: 1rem;
+}
+
+nav li {
+  flex: 1 1 auto;
+  text-align: center;
 }
 
 main h1:first-child {
