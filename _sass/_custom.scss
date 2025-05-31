@@ -434,6 +434,11 @@ footer p {
   margin-bottom: 1rem;
 }
 
+.post-thumb {
+  width: 200px;
+  height: auto;
+}
+
 a.read-more {
   font-weight: bold;
   text-decoration: none;
@@ -453,7 +458,7 @@ a.read-more {
 }
 
 .featured-image img {
-  max-width: 100%;
+  width: 200px;
   height: auto;
   border-radius: 6px;
 }
