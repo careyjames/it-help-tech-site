@@ -8,7 +8,7 @@ image: /images/it-problem-solving-scientific-method.webp
 description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
 ---
 
-In my [IT consulting work](/services.html), my PhD clients have always told me that I naturally follow a process like the scientific method when solving complex technical problems. I may not wear a lab coat, but the way I tackle IT issues is essentially scientific. By approaching problems in a structured, evidence-based way (aligning with [my commitment to ethical service](/about.html)), I ensure that solutions are reliable and not just based on hunches. Below, I explain how each stage of the classic scientific method translates into my IT troubleshooting approach, with a few personal tweaks for the consulting world.
+In my [IT consulting work](/services/), my PhD clients have always told me that I naturally follow a process like the scientific method when solving complex technical problems. I may not wear a lab coat, but the way I tackle IT issues is essentially scientific. By approaching problems in a structured, evidence-based way (aligning with [my commitment to ethical service](/about/)), I ensure that solutions are reliable and not just based on hunches. Below, I explain how each stage of the classic scientific method translates into my IT troubleshooting approach, with a few personal tweaks for the consulting world.
 
 ### 1. Observation
 
@@ -36,4 +36,4 @@ After experimentation, I conclude and implement the solution. I make sure to ver
 
 ### 7. Communication
 
-The final step in my process is communication of what I’ve learned. I take time to document the entire journey and its resolution, often writing up the insights in a [blog post like this](/blog.html). Publishing these findings turns a one-off fix into a reusable guide and helps establish my authority on the topic. In essence, I’m closing the loop of the scientific method by sharing results, which benefits the broader IT community and reinforces a culture of evidence-based problem-solving.
+The final step in my process is communication of what I’ve learned. I take time to document the entire journey and its resolution, often writing up the insights in a [blog post like this](/blog/). Publishing these findings turns a one-off fix into a reusable guide and helps establish my authority on the topic. In essence, I’m closing the loop of the scientific method by sharing results, which benefits the broader IT community and reinforces a culture of evidence-based problem-solving.
