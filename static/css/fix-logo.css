@@ -1,0 +1,6 @@
+/* header logo must always have size */
+.site-logo img{
+  height:48px !important;
+  width:auto  !important;
+  display:block !important;
+}
