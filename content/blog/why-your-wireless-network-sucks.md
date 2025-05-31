@@ -4,7 +4,7 @@ date: 2025-05-24
 author: Carey Balboa
 categories: [Networking, WiFi, IT Infrastructure]
 tags: [ethernet, wifi, networking, home networking, office networking, cat6a, cat8]
-image: /images/sad-wifi-extender.png
+image: static/images/sad-wifi-extender.png
 description: "Discover why your Wi-Fi might be underperforming. Learn about the importance of an Ethernet backbone and how Cat6A/Cat8 cabling can boost your home or office network."
 ---
 
