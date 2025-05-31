@@ -17,6 +17,7 @@ DidYourBro4Times!
 
 It’s outrageous, deeply emotional, and **not** traceable to publicly searchable facts, so it sticks in your head but stays off an attacker’s radar.
 Also, if you are a high-powered executive and your spouse were to come up and embrace you from behind while you’re typing on your laptop, you’d pause and wait to prevent them from seeing you type that one!
+
 ---
 
 ## Why the Trick Works
