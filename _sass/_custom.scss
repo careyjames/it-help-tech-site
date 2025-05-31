@@ -13,6 +13,7 @@ body {
   background-color: $primary-bg;
   color: $primary-text;
   font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 1.125rem; // slightly larger base font for readability
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -30,11 +31,18 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   color: $primary-link;
-  margin-top: 1.5rem; 
-  margin-bottom: 1rem; 
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
 
 strong, li strong {
   color: #ffffff; 
