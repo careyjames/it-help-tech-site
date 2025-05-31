@@ -5,7 +5,7 @@ author: Carey Balboa
 categories: [Security, Passwords]
 tags: [passphrase, password security, NIST, memory, negativity bias]
 extra:
-  image: images/logo-blue.png
+  image: images/engram-hack.png
 Description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
 ---
 
