@@ -1,7 +1,7 @@
 ---
 title: About Carey Balboa & Remote IT Help
 description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help San Diego Inc.), with 25 years of experience providing expert, ethical remote IT support."
-path: about.html
+path: about
 ---
 
 <script type="application/ld+json">
