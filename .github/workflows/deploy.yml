@@ -32,7 +32,7 @@ jobs:
       - name: Copy images and root files
         run: |
           cp -r static/images public/
-          cp static/robots.txt static/red-plus.ico static/bimi-logo.svg public/
+          cp static/robots.txt static/red-plus.ico static/bimi-logo.svg static/logo.svg public/
         
       - name: Install Sass
         run: npm install -g sass
