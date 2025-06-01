@@ -56,7 +56,7 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 * **Network setup and home network security with secure Wi-Fi setup**
 * **Network design & Infrastructure planning**
 * **Network Troubleshooting**
-* **Static IP configuration & troubleshooting
+* **Static IP configuration & troubleshooting**
 * **Port Forwarding & Double NAT**
 * **Network printer sharing**
 * **Switch, Gateway, and Firewall programming and troubleshooting**
