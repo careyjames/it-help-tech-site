@@ -55,9 +55,6 @@ I’ve always stayed true to my ethics: no price gouging, no hidden fees, and no
 ---
 
 **IT Help San Diego Inc.**
-(Operating Remotely as Remote IT Help)
 
 888 Prospect Street Suite 200
 La Jolla, CA 92037
-
-*Remote services available nationwide.*
