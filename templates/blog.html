@@ -18,14 +18,14 @@
         </p>
       {%- endif %}
 
-      {# thumbnail: prefer extra.image but fall back to top-level image #}
-      {% set thumb = page.extra.image | default(value=page.image) %}
-      {% if thumb %}
-        <img src="{{ get_url(path=thumb) }}"
-             alt="{{ page.title }} thumbnail"
-             width="200"
-             class="post-thumb">
-      {% endif %}
+      {# thumbnail: prefer extra.image then page.image, fallback to logo #}
+      {% set thumb = page.extra.image
+                      | default(value=page.image)
+                      | default(value='images/logo-blue-square.svg') %}
+      <img src="{{ get_url(path=thumb) }}"
+           alt="{{ page.title }} thumbnail"
+           width="200"
+           class="post-thumb">
 
       <div class="post-excerpt">
         {{ page.summary | default(value=page.content | striptags | truncate(length=160)) }}
