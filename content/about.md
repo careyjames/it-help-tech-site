@@ -38,7 +38,7 @@ extra:
 }
 </script>
 
-<img src="/images/carey-balboa.png" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" />
+<img src="/images/carey-balboa.png" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin: 0 0 1rem 1rem; margin-top: 0.5rem; max-width: 40%; height: auto;" />
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
