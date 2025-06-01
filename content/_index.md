@@ -43,8 +43,6 @@ While we can tackle a vast array of IT challenges and are deeply comfortable in 
 
 ### Network Infrastructure & WiFi Troubleshooting
 
-Networking & WiFi Support
-
 Spend more time at the beach, not fighting your WiFi.
 
 Specializing in large luxury homes and offices with extensive networking and WiFi needs.
