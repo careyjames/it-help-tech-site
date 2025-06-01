@@ -588,6 +588,7 @@ footer p {
 .post-thumb {
   width: 200px;
   height: auto;
+  border-radius: 15px;
 }
 
 a.read-more {
@@ -611,7 +612,7 @@ a.read-more {
 .featured-image img {
   width: 200px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .post-content h2, .post-content h3, .post-content h4 {
