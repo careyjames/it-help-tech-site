@@ -1,6 +1,6 @@
 +++
 title = "Home - Expert Mac IT Support for Complex Tech Challenges"
-description = "Need expert remote IT help? 25+ years of experience in Mac, iOS, DNS, email & cybersecurity. Get concierge-level, on-demand support nationwide."
+description = "Need expert remote IT help? 25+ years of experience in Mac, iOS, DNS, Email & cybersecurity. Get concierge-level, on-demand support nationwide."
 [extra]
 image = "static/logo.svg"
 +++
