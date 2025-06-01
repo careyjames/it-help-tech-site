@@ -2,6 +2,9 @@
 title: DNS Tool - My Go-To DNS & Email Security Auditor
 description: "Discover DNS Tool, a command-line DNS and Email security auditor for checking MX, SPF, DKIM, DMARC (p=reject), DNSSEC, and more. Open-source and available on GitHub."
 path: dns-tool
+extra:
+  skip_image: true
+  skip_author: true
 ---
 
 # DNS Tool 🛠️ - My Command-Line DNS Auditor
