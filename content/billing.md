@@ -9,7 +9,7 @@ extra:
 
 # Remote Consulting Rates & Policies 💳
 
-We follow clear policies for our remote IT support services. No monthly retainers!
+We follow clear policies for our IT support services. No monthly retainers!
 
 ## Remote Support Rate
 
