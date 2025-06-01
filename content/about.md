@@ -40,7 +40,7 @@ extra:
 
 # About Carey Balboa 🧑‍🔬
 
-<img src="/images/carey-balboa.jpeg" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" />
+<img src="/images/carey-balboa.png" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" />
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
