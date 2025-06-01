@@ -41,6 +41,19 @@ Our premium, concierge-level on-site service is designed for individuals, execut
 
 While we can tackle a vast array of IT challenges, our key areas of deep expertise include:
 
+### Network Infrastructure & WiFi Troubleshooting
+
+Networking & WiFi Support
+
+Spend more time at the beach, not fighting your WiFi.
+
+Specializing in large luxury homes and offices with extensive networking and WiFi needs.
+We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego. Leveraging science-based methodologies and enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
+We use science-based methods to solve problems and design networks. We show you options for WiFi gear that can achieve the speeds you want, and you can buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
+This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate to you, using scientific specifications, why you may want specific products.
+We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
+(at the speed you're paying for) everywhere in your location.
+
 ### Advanced Email, Domain, & DNS Solutions 🌐
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 * **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
