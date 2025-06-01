@@ -76,8 +76,7 @@ We provide robust Mac defenses against viruses, Email phishing, browser blocks, 
 
 * **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
 * **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable remote support.
-* **Flexible & Responsive Support:** While appointments are standard, we are equipped to respond and assist quickly when availability permits, offering swift resolutions through secure screen sharing and other remote tools.
-* **Comprehensive Remote Services:** We provide DNS, website, and email support to ensure your online presence is continually optimized, no matter where you are.
+* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or offering swift resolutions through secure screen sharing and other remote tools.
 
 ## Frequently Asked Questions
 
