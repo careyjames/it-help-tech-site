@@ -29,15 +29,15 @@ image = "static/logo.svg"
 }
 </script>
 
-# Expert IT Support for Complex Tech Challenges&nbsp;🛡️
+# Expert Mac IT Support for Complex Tech Challenges&nbsp;🛡️
 
-We Solve Tech Problems—No Monthly Retainers. We deliver concierge-level on-site IT support, backed by over 25 years of expert experience, specializing in Mac, iOS, DNS, Email deliverability, and cybersecurity.
+San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. We solve tech problems—no monthly retainers.
 
-## Custom Remote Solutions That Work for You
+## Custom Solutions That Work for You
 
-Our premium, concierge-level remote service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 25 years of experience supporting high-profile clientele in the entertainment, legal, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time, entirely remotely. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
+Our premium, concierge-level on-site service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With years of experience supporting high-profile clientele in the entertainment, legal, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
 
-## Core Remote Expertise
+## Core Expertise
 
 While we can tackle a vast array of IT challenges remotely, our key areas of deep expertise include:
 
