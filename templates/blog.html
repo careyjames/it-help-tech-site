@@ -10,15 +10,15 @@
 
       <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
 
-      {% if page.date or page.author -%}
+      {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
         <p class="post-meta">
           {% if page.date -%}
             <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
               {{ page.date | date(format="%B %d, %Y") }}
             </time>
           {%- endif %}
-          {% if page.author -%}
-            &nbsp;&mdash; {{ page.author }}
+          {% if page.author or page.extra.author or config.extra.author_name -%}
+            &nbsp;&mdash; {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
           {%- endif %}
         </p>
       {%- endif %}
