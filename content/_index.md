@@ -54,19 +54,19 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
-* **Wireless Mesh
+* Wireless Mesh
 
-* **Network setup and home network security with secure Wi-Fi setup
+* Network setup and home network security with secure Wi-Fi setup
 
-* **Network design
+* Network design
 
-* **Network Troubleshooting
+* Network Troubleshooting
 
-* **Port Forwarding & Double NAT
+* Port Forwarding & Double NAT
 
-* **Network printer sharing
+* Network printer sharing
 
-* **Switch, Gateway, and Firewall programming and troubleshooting.
+* Switch, Gateway, and Firewall programming and troubleshooting.
 
 Infrastructure planning and design
 ### Advanced Email, Domain, & DNS Solutions 🌐
