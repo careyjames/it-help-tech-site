@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block content %}
     <article class="post">
@@ -13,20 +14,9 @@
     <section class="comment-form">
         <h2>Leave a Comment</h2>
         <p>
-            <a href="https://github.com/{{ config.github_repo }}/issues/new?template=comment.yml&amp;labels=comment&amp;title=Comment%20on%20{{ page.slug | urlencode }}&amp;page={{ page.slug | urlencode }}" target="_blank" rel="noopener">
+            <a href="https://github.com/it-help-tech/it-help-tech-site/issues/new?template=comment.yml&amp;labels=comment&amp;title=Comment%20on%20{{ page.slug | urlencode }}" target="_blank" rel="noopener">
                 Submit your comment via GitHub
             </a>
         </p>
-    </section>
-
-    <section class="comments">
-        <script src="https://utteranc.es/client.js"
-            repo="{{ config.github_repo }}"
-            issue-term="{{ page.slug }}"
-            label="comment"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-        </script>
     </section>
 {% endblock content %}
