@@ -1,6 +1,9 @@
 ---
 title: On-site, in-home IT Services & Expert Solutions
 path: services
+extra:
+  skip_image: true
+  skip_author: true
 ---
 
 <script type="application/ld+json">
