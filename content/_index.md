@@ -31,7 +31,7 @@ image = "static/logo.svg"
 
 # Expert IT Support for Complex Tech Challenges&nbsp;🛡️
 
-We Solve Tech Problems—No Monthly Retainers. We deliver concierge-level IT support, backed by over 25 years of expert experience, specializing in Mac, iOS, DNS, Email deliverability, and cybersecurity.
+We Solve Tech Problems—No Monthly Retainers. We deliver concierge-level on-site IT support, backed by over 25 years of expert experience, specializing in Mac, iOS, DNS, Email deliverability, and cybersecurity.
 
 ## Custom Remote Solutions That Work for You
 
