@@ -3,7 +3,8 @@ title: About IT Help San Diego
 description: "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
 path: about
 extra:
-  skip_image: true
+  image: images/carey-balboa.png
+  image_alt: "Carey Balboa with service animal Tango"
   skip_author: true
 ---
 
@@ -38,7 +39,6 @@ extra:
 }
 </script>
 
-<img src="/images/carey-balboa.png" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin: 0 0 1rem 1rem; margin-top: 0.5rem; max-width: 40%; height: auto;" />
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
