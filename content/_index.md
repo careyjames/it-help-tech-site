@@ -61,8 +61,8 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 * **Port Forwarding & Double NAT**
 * **Network printer sharing**
 * **Switch, Gateway, and Firewall programming and troubleshooting**
+* **Infrastructure planning and design**
 
-Infrastructure planning and design
 ### Advanced Email, Domain, & DNS Solutions 🌐
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 * **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
