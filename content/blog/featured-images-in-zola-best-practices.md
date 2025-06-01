@@ -5,7 +5,7 @@ author: Carey Balboa
 categories: [Zola, Web Development]
 tags: [featured image, front matter, zola]
 extra:
-  image: images/logo-blue.png
+  image: images/logo-blue-square.svg
   image_alt: "Example featured graphic for Zola posts"
 description: "How to use extra.image in front matter and templates for clean featured images in Zola."
 ---

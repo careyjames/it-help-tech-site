@@ -2,11 +2,10 @@
 {% block content %}
     <article class="post">
         <h1>{{ page.title }}</h1>
-        {% if page.extra.image %}
+        {% set hero = page.extra.image | default(value='images/logo-blue-square.svg') %}
         <figure class="featured-image">
-            <img src="{{ get_url(path=page.extra.image) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}">
+            <img src="{{ get_url(path=hero) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}">
         </figure>
-        {% endif %}
         {{ page.content | safe }}
     </article>
 {% endblock content %}
