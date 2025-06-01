@@ -1,5 +1,5 @@
 ---
-title: On-site, in-home IT Services & Expert Solutions
+title: On-site, In-home IT Services & Expert Solutions
 path: services
 extra:
   skip_image: true
