@@ -4,6 +4,7 @@ description: "Learn about Carey Balboa, the founder of Remote IT Help (IT Help S
 path: about
 extra:
   skip_image: true
+  skip_author: true
 ---
 
 <script type="application/ld+json">
