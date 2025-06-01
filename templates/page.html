@@ -15,9 +15,11 @@
             </p>
         {%- endif %}
         {% set hero = page.extra.image | default(value='images/logo-blue-square.svg') %}
+        {% if not page.extra.skip_image %}
         <figure class="featured-image">
             <img src="{{ get_url(path=hero) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}">
         </figure>
+        {% endif %}
         {{ page.content | safe }}
     </article>
 {% endblock content %}
