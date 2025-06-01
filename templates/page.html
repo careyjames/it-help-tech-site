@@ -6,7 +6,7 @@
         <figure class="featured-image">
             <img src="{{ get_url(path=page.extra.image) }}"
                  alt="{{ page.extra.image_alt
-                          | default(value="Featured graphic")
+                          | default(value="Featured")
                           | replace(from="image", to="")
                           | replace(from="picture", to="")
                           | replace(from="photo", to="")
