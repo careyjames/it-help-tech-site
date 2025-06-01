@@ -4,7 +4,13 @@
         <h1>{{ page.title }}</h1>
         {% if page.extra.image %}
         <figure class="featured-image">
-            <img src="{{ get_url(path=page.extra.image) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}">
+            <img src="{{ get_url(path=page.extra.image) }}"
+                 alt="{{ page.extra.image_alt
+                          | default(value="Featured graphic")
+                          | replace(from="image", to="")
+                          | replace(from="picture", to="")
+                          | replace(from="photo", to="")
+                          | trim }}">
         </figure>
         {% endif %}
         {{ page.content | safe }}
