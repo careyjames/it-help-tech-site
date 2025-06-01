@@ -2,7 +2,7 @@
 {% block content %}
     <article class="post">
         <h1>{{ page.title }}</h1>
-        {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
+        {% if (page.date or page.author or page.extra.author or config.extra.author_name) and not page.extra.skip_author -%}
             <p class="post-meta">
                 {% if page.date -%}
                     <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
