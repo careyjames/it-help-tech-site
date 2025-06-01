@@ -54,6 +54,21 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
+* **Wireless Mesh
+
+* **Network setup and home network security with secure Wi-Fi setup
+
+* **Network design
+
+* **Network Troubleshooting
+
+* **Port Forwarding & Double NAT
+
+* **Network printer sharing
+
+* **Switch, Gateway, and Firewall programming and troubleshooting.
+
+Infrastructure planning and design
 ### Advanced Email, Domain, & DNS Solutions 🌐
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 * **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
