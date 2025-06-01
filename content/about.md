@@ -11,7 +11,7 @@ extra:
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "name": "About Carey Balboa & Remote IT Help",
+  "name": "About IT Help San Diego",
   "mainEntity": {
     "@type": "Organization",
     "name": "Remote IT Help",
@@ -37,8 +37,6 @@ extra:
    "url": "https://www.it-help.tech{{ page.url }}"
 }
 </script>
-
-# About Carey Balboa 🧑‍🔬
 
 <img src="/images/carey-balboa.png" alt="Carey Balboa, Founder of Remote IT Help, with his service animal Tango." width="200" loading="lazy" style="float: right; margin-left: 15px; margin-bottom: 15px;" />
 
