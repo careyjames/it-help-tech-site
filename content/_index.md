@@ -39,7 +39,7 @@ Our premium, concierge-level on-site service is designed for individuals, execut
 
 ## Core Expertise
 
-While we can tackle a vast array of IT challenges remotely, our key areas of deep expertise include:
+While we can tackle a vast array of IT challenges, our key areas of deep expertise include:
 
 ### Advanced Email, Domain, & DNS Solutions 🌐
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
