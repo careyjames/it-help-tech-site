@@ -16,8 +16,8 @@
         {%- endif %}
         {% set hero = page.extra.image | default(value='images/logo-blue-square.svg') %}
         {% if not page.extra.skip_image %}
-        <figure class="featured-image">
-            <img src="{{ get_url(path=hero) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}">
+        <figure class="featured-image" style="overflow:hidden;border-radius:15px;">
+            <img src="{{ get_url(path=hero) }}" alt="{{ page.extra.image_alt | default(value="Featured") }}" style="border-radius:15px;">
         </figure>
         {% endif %}
         {{ page.content | safe }}
