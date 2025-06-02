@@ -16,6 +16,9 @@ We follow clear policies for our IT support services. No monthly retainers!
 * **Base Rate:** $275 per hour.
 * **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote/phone.
 * **Billing Increments:** We bill precisely in **1-minute increments**, based on call/session timers or time tracked for offline tasks.
+* **Travel:** $1.50/mile from our address to your location (for locations over 15 miles, a round-trip fee), plus billable drive time.
+
+This policy covers real operational costs and ensures continued reliability.
 
 ## Payment Policy
 
