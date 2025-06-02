@@ -1,6 +1,6 @@
 base_url = "https://d316lglduxncrn.cloudfront.net/"
 title = "IT Help San Diego Inc."
-description = "Remote IT Help - Mac, DNS, Email & Cybersecurity expertise."
+description = "IT Help San Diego - Mac, DNS, Email & Cybersecurity expertise."
 generate_sitemap = true
 [extra]
 author_name = "Carey Balboa"
