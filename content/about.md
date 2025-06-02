@@ -51,10 +51,3 @@ I’ve been solving tech problems for 25 years. I love a challenge, solving tech
 As the Founder of IT Help San Diego Inc., I see my role as a scientist, not a salesperson. My recommendations are based on transparent, verifiable data, not opinions or distributor deals. <strong class="ethics-statement">We don’t sell products, and we don’t accept commissions, affiliate fees, or kickbacks.</strong> If we recommend a solution, whether it's Route 53, SentinelOne, or 1Password, it's because we believe it's the best tool for the job. We'll show you the options, explain the *why*, and you'll typically purchase directly from the vendor. Our only revenue comes from our time and expertise dedicated to implementing these solutions effectively for you. My focus is always on your long-term reliability—truly listening so I can help you understand exactly what you want—and delivering real value.
 
 I’ve always stayed true to my ethics: no price gouging, no hidden fees, and no cutting corners on quality. That’s who I am, and that’s exactly how I’ll continue to operate.
-
----
-
-**IT Help San Diego Inc.**
-
-888 Prospect Street Suite 200
-La Jolla, CA 92037
