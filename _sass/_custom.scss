@@ -43,6 +43,10 @@ h3 { font-size: 1.25rem; }
 h4 { font-size: 1.1rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.9rem; }
+img {
+  border-radius: 15px;
+}
+
 
 strong, li strong {
   color: #ffffff; 
@@ -182,7 +186,9 @@ header {
   height: 48px;
   width: auto;
   display: block;
+  border-radius: 0;
 }
+
 
 header h1 {
   margin: 0;
@@ -300,8 +306,9 @@ footer p {
 
   header h1 img {
     height: 40px;
-    width: auto; 
+    width: auto;
     margin-right: 0;
+    border-radius: 0;
   }
 
   .nav-toggle-label {
