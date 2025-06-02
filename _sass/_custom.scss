@@ -490,4 +490,12 @@ a.read-more {
 .post-content h2, .post-content h3, .post-content h4 {
   margin-top: 2rem;
 }
+
+/* Rounded corners and subtle background for blog posts */
+.post,
+.post-item {
+  border-radius: 15px;
+  background-color: lighten($primary-bg, 5%);
+  padding: 1rem;
+}
 /* Your Existing Custom Styles - END */
