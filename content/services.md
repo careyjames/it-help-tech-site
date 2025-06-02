@@ -10,7 +10,7 @@ extra:
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Remote IT Services Offered",
+  "name": "IT Services Offered",
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -19,7 +19,7 @@ extra:
         "@type": "Service",
         "name": "Email Migration & Setup",
         "description": "Expert assistance with email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -28,8 +28,8 @@ extra:
       "item": {
         "@type": "Service",
         "name": "Mac & iOS Mail Support",
-        "description": "Specialized configuration and remote troubleshooting for Apple Mail on macOS and iOS.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "description": "Specialized configuration and troubleshooting for Apple Mail on macOS and iOS.",
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -37,9 +37,9 @@ extra:
       "position": 3,
       "item": {
         "@type": "Service",
-        "name": "Advanced DNS Management",
+        "name": "Advanced DNS Troubleshooting",
         "description": "Precision edits and strategic configuration for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -49,7 +49,7 @@ extra:
         "@type": "Service",
         "name": "DMARC & Email Security Implementation",
         "description": "Architecting bulletproof, security-compliant DNS solutions with robust DMARC (p=reject) implementations.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -59,7 +59,7 @@ extra:
         "@type": "Service",
         "name": "Website & Domain Recovery",
         "description": "Assisting you in regaining access and control over your website and domain names.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -68,8 +68,8 @@ extra:
       "item": {
         "@type": "Service",
         "name": "Endpoint Security",
-        "description": "Remote setup and management of leading endpoint protection for macOS, Windows, and Linux.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "description": "Setup and management of leading endpoint protection for macOS, Windows, and Linux.",
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -79,7 +79,7 @@ extra:
         "@type": "Service",
         "name": "Mobile Device Security (iOS)",
         "description": "Advising on best practices and tools to secure your iPhones and iPads.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -89,7 +89,7 @@ extra:
         "@type": "Service",
         "name": "Data Privacy & Discreet Advisory",
         "description": "Handling sensitive technical challenges requiring expertise, discretion, and trust.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
      {
@@ -99,7 +99,7 @@ extra:
         "@type": "Service",
         "name": "Mac Performance & Troubleshooting",
         "description": "Addressing macOS software issues, iCloud problems, storage warnings, and performance concerns.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -109,7 +109,7 @@ extra:
         "@type": "Service",
         "name": "Apple Time Machine Backups",
         "description": "Setup, troubleshooting, and ensuring your backup strategy is sound.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -118,8 +118,8 @@ extra:
       "item": {
         "@type": "Service",
         "name": "Cloud Storage Solutions",
-        "description": "Remote setup, troubleshooting, and advice on services like Dropbox.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "description": "Setup, troubleshooting, and advice on services like Dropbox.",
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -128,8 +128,8 @@ extra:
       "item": {
         "@type": "Service",
         "name": "Disaster Recovery Planning",
-        "description": "Helping you prepare for and recover from data loss scenarios remotely.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "description": "Helping you prepare for and recover from data loss scenarios.",
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     },
     {
@@ -138,8 +138,8 @@ extra:
       "item": {
         "@type": "Service",
         "name": "iPhone Text Message Extraction for Law Firms",
-        "description": "Remote extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
-        "provider": { "@type": "Organization", "name": "Remote IT Help" }
+        "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
+        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
       }
     }
   ]
