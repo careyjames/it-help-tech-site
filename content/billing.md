@@ -48,6 +48,6 @@ As the Founder of IT Help San Diego Inc., I see my role as a scientist, not a sa
 
 ## Final Notes
 
-Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end tech solutions, delivered remotely. We provide discreet cyber-security and crisis response services, backed by nearly two decades of hands-on experience.
+Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end tech solutions. We provide discreet cyber-security and crisis response services, backed by nearly two decades of hands-on experience.
 
 <p class="final-tagline">YOUR TECH PROBLEMS ARE ABOUT TO DISAPPEAR. 🚀</p>
