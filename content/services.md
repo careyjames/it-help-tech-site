@@ -175,8 +175,8 @@ We provide expert troubleshooting for a variety of system-level and application-
 
 * **Mac Performance & Troubleshooting:** Addressing macOS software issues, iCloud synchronization problems, Mac storage warnings (“Your startup disk is almost full”), and system performance concerns.
 * **Apple Time Machine Backups:** Setup, troubleshooting, and ensuring your backup strategy is sound.
-* **Cloud Storage Solutions (e.g., Dropbox):** Remote setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
-* **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios remotely.
+* **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
+* **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
 
 ## Specialized Services ⚖️
 
