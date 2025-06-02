@@ -23,9 +23,8 @@
         </p>
       {%- endif %}
 
-      {# thumbnail: prefer extra.image then page.image, fallback to logo #}
+      {# thumbnail: prefer extra.image, fallback to logo #}
       {% set thumb = page.extra.image
-                      | default(value=page.image)
                       | default(value='images/logo-blue-square.svg') %}
       <img src="{{ get_url(path=thumb) }}"
            alt="{{ page.title }} thumbnail"
