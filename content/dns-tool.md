@@ -17,7 +17,7 @@ As I always say: **“If your DMARC says `p=none`, your work’s not done—get 
 
 But getting to `p=reject` isn't just about DMARC. It means ensuring SPF is aligned, DKIM is signing correctly, DNSSEC is enabled, and MTA-STS is in place. Before DNS Tool, verifying all this meant a tedious dance across countless browser tabs and terminal windows, especially when waiting for DNS propagation. It was inefficient and far too easy to miss something critical.
 
-### One Tool to Check Them All (The Nerd Brag Part)
+### One Tool to Check Them All  
 
 DNS Tool is my personal command-line solution born from that frustration. It’s a single, portable binary (thanks to PyInstaller!) that runs on Linux, macOS, and Windows – no Python install needed on the target system. It's my Swiss Army knife for DNS validation.
 
