@@ -7,15 +7,15 @@ extra:
   skip_author: true
 ---
 
-# Remote Consulting Rates & Policies 💳
+# CONSULTING RATES & BOOKING POLICIES 💳
 
 We follow clear policies for our IT support services. No monthly retainers!
 
-## Remote Support Rate
+## IT Consulting & Support Rate
 
 * **Base Rate:** $275 per hour.
-* **Minimum Charge:** There is a **30-minute minimum** charge for all remote/phone support sessions.
-* **Billing Increments:** After the 30-minute minimum, we bill precisely in **1-minute increments**, based on call/session timers or time tracked for offline tasks.
+* **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote/phone.
+* **Billing Increments:** We bill precisely in **1-minute increments**, based on call/session timers or time tracked for offline tasks.
 
 ## Payment Policy
 
