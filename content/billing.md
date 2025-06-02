@@ -43,7 +43,8 @@ This policy covers real operational costs and ensures continued reliability.
 
 * All client data (login credentials, network configurations, etc.) is encrypted and is never shared or sold.
 * We have served high-profile, sensitive security and entertainment businesses for 25 years.
-* We have never had a data leak. Your trust is paramount.
+* We have never had a data leak or spoken with paparazzi/journalists.  
+Your trust is paramount.
 
 ## Business Ethics: Carey’s Promise 🧑‍🔬
 
