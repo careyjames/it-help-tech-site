@@ -476,7 +476,8 @@ a.read-more {
 .featured-image img {
   width: 200px;
   height: auto;
-  border-radius: 15px;
+  display: block;
+  border-radius: 15px !important;
 }
 
 .post-content h2, .post-content h3, .post-content h4 {
