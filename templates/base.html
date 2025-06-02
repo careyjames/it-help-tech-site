@@ -17,7 +17,7 @@
     {% set meta_desc = entity.description
                         | default(value=entity.content | striptags | truncate(length=160))
                         | default(value=config.description) %}
-    {% set meta_image = entity.extra.image | default(value='logo.svg') %}
+    {% set meta_image = entity.extra.image | default(value='images/logo-blue-square.svg') %}
     {% set canonical = entity.permalink | default(value=config.base_url) %}
     {% if entity.date %}
         {% set og_type = "article" %}
