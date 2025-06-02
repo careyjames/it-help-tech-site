@@ -4,8 +4,6 @@ date: 2025-06-05
 author: Carey Balboa
 categories: [Apple, Security, Passwords]
 tags: [Apple Account, password reset, account recovery, security keys, passkeys]
-extra:
-  image: images/apple-account-locked.png
 description: "Learn how to unlock your Apple Account after too many failed sign-ins and avoid 'iJail'. Updated for 2025 with passkeys and security key tips."
 ---
 
