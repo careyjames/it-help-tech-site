@@ -90,7 +90,7 @@ We take a different approach focused on transparency and on-demand support. Unli
 ### Do you fix cracked iPhone screens?
 
 No, we’re not a hardware repair shop.
-However, for our existing clients, we offer a concierge service to pick up a new iPhone directly from Apple and securely transfer all data from the old device—“waking up” your information on the latest phone. This way, you never have to leave your damaged phone at a repair shop, keeping your high-profile contacts and sensitive data fully protected. Physical access is every evil hacker’s dream.
+However, for our existing clients, we offer a concierge service to pick up a new iPhone directly from Apple and then at your location, we securely transfer all data from the old device—“waking up” your information on the latest phone. This way, you never have to leave your damaged phone at a repair shop, keeping your high-profile contacts and sensitive data fully protected. Physical access is every evil hacker’s dream.
 Note: We specialize in software, networking, and system-level issues. For physical hardware repairs, such as cracked screens, battery replacements, or logic board failures, we’re happy to refer you to a trusted local partner.
 
 ---
