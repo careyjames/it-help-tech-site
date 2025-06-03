@@ -40,6 +40,7 @@ image = "static/logo.svg"
 # Expert Mac IT Support for Complex Tech Challenges&nbsp;🛡️
 
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. **We solve tech problems—no monthly retainers.**
+(619) 853-5008 
 
 ## Custom Solutions That Work for You
 
