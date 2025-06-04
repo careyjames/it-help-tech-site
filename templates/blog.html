@@ -32,7 +32,7 @@
            class="post-thumb">
 
       <div class="post-excerpt">
-        {{ page.summary | default(value=page.content | striptags | truncate(length=160)) }}
+        {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
       </div>
 
       <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
