@@ -1,6 +1,6 @@
 ---
 title: "Apple Sends You Directly To \"iJail\" For Too Many Incorrect Password Guesses!"
-date: 2025-06-05
+date: 2025-06-01
 author: Carey Balboa
 categories: [Apple, Security, Passwords]
 tags: [Apple Account, password reset, account recovery, security keys, passkeys]
