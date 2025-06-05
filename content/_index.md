@@ -2,7 +2,7 @@
 title = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
 description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
 [extra]
-image = "images/logo-slogan.jpeg"
+image = "static/logo.svg"
 +++
 <script type="application/ld+json">
 {
