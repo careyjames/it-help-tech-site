@@ -2,7 +2,9 @@
 title = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
 description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
 [extra]
-image = "static/logo.svg"
+# This sets the Open Graph image shown when links are shared.
+# The header logo remains static/logo.svg from the templates.
+image = "images/logo-slogan.jpeg"
 +++
 <script type="application/ld+json">
 {
