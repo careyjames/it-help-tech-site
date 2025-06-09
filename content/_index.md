@@ -102,7 +102,7 @@ We take a different approach focused on transparency and on-demand support. Unli
 
 ### Do you fix cracked iPhone screens?
 
-We’re not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, we offer a concierge swap: we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+**We’re not a hardware repair shop**—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
 
 ---
 Tired of paying for a month of IT service when nothing happened?
