@@ -180,7 +180,7 @@ We provide expert troubleshooting for a variety of system-level and application-
 
 ## Specialized Services ⚖️
 
-* **iPhone Text Message Extraction for Law Firms:** We specialize in the extraction of iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is clearly documented.
+* **iPhone Text Message Extraction for Law Firms:** We specialize in the extraction of iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is clearly documented. We can do this **on-site at your Lawfirm on your computer so the data never leaves your office,** after we setup the process, you'll be empowered to never hire help again for this task.
 
 ## Our Recommendations ✨
 
