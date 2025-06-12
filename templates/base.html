@@ -27,98 +27,30 @@
 </head>
 <body>
 {%- block header %}
-  <header>
-    <div class="container nav-container">
-      <div class="site-logo">
-        {%- if config.extra.logo -%}
-
-        <big><a href="{{ get_url(path="/", lang=lang) }}{%- if uglyurls %}/index.html{%- endif %}" title="{{config.title}}">
-        {%- if config.extra.logo.file -%}
-        <img src="{{ get_url(path=config.extra.logo.file) }}"{%- if config.extra.logo.alt %} alt="{{ config.extra.logo.alt | safe }}"{%- endif %}{%- if config.extra.logo.width %} width="{{ config.extra.logo.width | safe }}"{%- endif %}{%- if config.extra.logo.height %} height="{{ config.extra.logo.height | safe }}"{%- endif %} />
-        {%- endif -%}
-        {%- if config.extra.logo.text -%}{{ config.extra.logo.text | safe }}{%- endif -%}
-        </a></big>
-
-        {%- elif config.extra.textlogo -%}
-        <big><a href="{{ get_url(path="/", lang=lang) }}{%- if uglyurls -%}
-        {%- if lang == config.default_language -%}/{%- endif -%}
-        index.html{%- endif -%}" title="{{config.title}}">{{ config.extra.textlogo | safe }}</a></big>
-        {%- elif config.title -%}
-        <big><a href="{{ get_url(path="/", lang=lang) }}{%- if uglyurls %}/index.html{%- endif %}" title="{{config.title}}">{{ config.title | safe }}</a></big>
-        {%- endif -%}
-      </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-      </label>
-      <nav>
-
-          <ul>
-
-            {%- set js_switcher=config.extra.js_switcher | default(value=true) %}
-            {%- if config.extra.menu %}
-              {%- for i in config.extra.menu -%}
-                <li><a{%- if i.size %} class="{{ i.size }}"{% endif %} href="{%- if i.url is matching("^http[s]?://") %}{{ i.url }}{%- else -%}{{ get_url(path=i.url, lang=lang, trailing_slash=i.slash) }}{%- if i.slash and uglyurls %}index.html{%- endif %}{%- endif %}"{% if i.blank %} target="_blank"{% endif %}>
-                {%- if lang != config.default_language %} {{ macros::translate(key=i.name|safe, default=i.name|safe, i18n=i18n) }} {% else %} {{ i.name | safe }} {% endif -%}
-                </a></li>
-              {%- endfor -%}
-            {%- endif -%}
-
-            {%- if config.languages | length > 0 %}
-            <li><div class="dropdown"><i class="svgs world" type="reset"></i>
-              {%- if current_url %}
-                <div class="dropdown-content">
-                <span>{{ macros::translate(key="language_name", default="lang_name", i18n=i18n) }}</span>
-                {%- for lcode,language in config.languages -%}
-                  {%- set i18n_menu = load_data(path="i18n/" ~ lcode ~ '.toml', required=false) -%}
-                  {%- if not i18n_menu -%}{%- set i18n_menu = load_data(path="themes/abridge/i18n/" ~ lcode ~ ".toml", required=false) -%}{%- endif %}
-                  {%- if lang != lcode -%}
-                    {%- if lcode == config.default_language -%}
-                    <a href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- elif lang == config.default_language -%}
-                    <a href="{{ current_url | replace(from=config.base_url, to=config.base_url ~ "/" ~ lcode) | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- else -%}
-                    <a href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/' ~ lcode ~ '/') | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ macros::translate(key="language_name", default="language_name", i18n=i18n_menu) }}</a>
-                    {%- endif -%}
-                  {%- endif -%}
-                {%- endfor -%}
-                </div>
-              {%- endif %}
-            </div></li>
+<header>
+    <div class="nav-wrapper">
+        <div class="site-logo">
+            {%- if config.extra.logo.file %}
+            <a href="{{ get_url(path='/') }}">
+                <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
+            </a>
             {%- endif %}
-
-            {%- if js_switcher -%}
-              {%- set icon_adjust=config.extra.icon_adjust | default(value="svgs adjust") -%}
-              {%- if icon_adjust -%}<li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i>{%- else -%}<i type="reset" id="mode" class="js mode">&#9728;</i></li>{%- endif -%}
-            {%- endif -%}
-
-          </ul>
-
-        <div>
-          {%- if config.build_search_index %}
-          {%- set icon_search=config.extra.icon_search | default(value="svgs svgm search") %}
-          <div>
-            <form autocomplete=off class="js" name="goSearch" id="searchbox">
-              <div class="searchd">
-                <input id="searchinput" type="text" placeholder="{{ macros::translate(key="Search", default="Search", i18n=i18n) }}" title="Search" />
-                <button type="submit" title="Search" class="{%- if icon_search -%}{{ icon_search }}{%- else -%}si{%- endif -%}">{%- if not icon_search -%}&#8981;{%- endif -%}</button>
-              </div>
-              <div class="results"><div id="suggestions"></div></div>
-            </form>
-          </div>
-          {%- endif %}
         </div>
-    </nav>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+        <nav>
+            <ul>
+                {%- if config.extra.menu %}
+                  {%- for i in config.extra.menu -%}
+                    <li><a href="{%- if i.url is matching('^http[s]?://') %}{{ i.url }}{%- else -%}{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- endif %}"{% if i.blank %} target="_blank"{% endif %}>{{ i.name | safe }}</a></li>
+                  {%- endfor -%}
+                {%- endif -%}
+            </ul>
+        </nav>
     </div>
-    {%- if config.extra.sitedesc %}
-    {%- if config.description %}
-    <div class="desc">{{ config.description }}</div>
-    {%- endif %}
-    {%- endif %}
-    {%- if config.extra.headhr %}
-    <hr />
-    {%- endif %}
-  </header>
+</header>
 {%- endblock header %}
   <main>
   {%- block content %}
