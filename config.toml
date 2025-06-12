@@ -6,10 +6,11 @@ description = "Apple-centric IT support across San Diego."
 generate_sitemap = true
 
 [extra]
-abridgeMode = "dark"
-switcher    = true
+abridgeMode = "switcher"
+js_switcher = true
+js_switcher_default = "dark"
 logo = { file = "logo.svg", height = "48", alt = "IT Help San Diego" }
-stylesheets = ["global.css", "css/fix-logo.css"]
+stylesheets = ["abridge.css", "css/fix-logo.css"]
 copyright = false
 footer_credit = false
 
