@@ -37,16 +37,28 @@
             {%- endif %}
         </div>
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
-
         <nav>
             <ul>
-                {%- if config.extra.menu %}
-                  {%- for i in config.extra.menu -%}
-                    <li><a href="{%- if i.url is matching('^http[s]?://') %}{{ i.url }}{%- else -%}{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- endif %}"{% if i.blank %} target="_blank"{% endif %}>{{ i.name | safe }}</a></li>
-                  {%- endfor -%}
-                {%- endif -%}
+                <li><a href="{{ get_url(path='/') }}">Home</a></li>
+                <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">More</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
+                        <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
+                        <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
+                        <li><a href="{{ get_url(path='/about/') }}">About</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">
+                        Schedule
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" style="vertical-align: text-top;">
+                            <path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/>
+                            <path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/>
+                        </svg>
+                    </a>
+                </li>
                 {%- if config.extra.js_switcher | default(value=true) -%}
                   {%- set icon_adjust = config.extra.icon_adjust | default(value='svgs adjust') -%}
                   <li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i></li>
