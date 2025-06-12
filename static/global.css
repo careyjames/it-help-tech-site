@@ -391,17 +391,21 @@ footer p {
 }
 
 .cta-button {
-  display: inline-block;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5em auto 1.5em;
   background-color: #59aaff;
   color: #0d1117;
   padding: 0.5em 1em;
   border-radius: 4px;
   text-decoration: none;
-  margin: 0.5em 0;
   transition: background-color 0.3s ease;
   font-weight: bold;
   position: relative;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .cta-button:hover {
