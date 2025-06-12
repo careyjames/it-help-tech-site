@@ -556,6 +556,12 @@ footer p {
   margin: 0 auto;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 .footer-brag {
   font-size: 0.85em;
   color: rgb(173.625, 185.25, 196.875);
