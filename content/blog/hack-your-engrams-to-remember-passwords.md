@@ -1,6 +1,6 @@
 ---
 title: "Hack Your Engrams To Remember and Keep Passwords Private"
-date: 2025-06-3
+date: 2025-06-03
 author: Carey Balboa
 categories: [Security, Passwords]
 tags: [passphrase, password security, NIST, memory, negativity bias]
