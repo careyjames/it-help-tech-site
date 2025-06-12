@@ -9,7 +9,7 @@ generate_sitemap = true
 abridgeMode = "switcher"
 js_switcher = true
 js_switcher_default = "dark"
-logo = { file = "logo.svg", height = "48", alt = "IT Help San Diego" }
+logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["abridge.css", "css/fix-logo.css"]
 copyright = false
 footer_credit = false
