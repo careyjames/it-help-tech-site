@@ -47,6 +47,10 @@
                     <li><a href="{%- if i.url is matching('^http[s]?://') %}{{ i.url }}{%- else -%}{{ get_url(path=i.url, trailing_slash=i.slash) }}{%- endif %}"{% if i.blank %} target="_blank"{% endif %}>{{ i.name | safe }}</a></li>
                   {%- endfor -%}
                 {%- endif -%}
+                {%- if config.extra.js_switcher | default(value=true) -%}
+                  {%- set icon_adjust = config.extra.icon_adjust | default(value='svgs adjust') -%}
+                  <li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i></li>
+                {%- endif -%}
             </ul>
         </nav>
     </div>
