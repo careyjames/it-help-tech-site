@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
+{% block seo %}
+  {{ super() }}
+  {%- set title = section.title | default(value=config.title) -%}
+  {%- if config.extra.title_addition and title %}
+    {%- set title_addition = title_separator ~ config.extra.title_addition -%}
+  {%- elif config.extra.title_addition %}
+    {%- set title_addition = config.extra.title_addition -%}
+  {%- else %}
+    {%- set title_addition = "" -%}
+  {%- endif %}
+  {%- set description = section.description | default(value=config.description) -%}
+  {%- set_global page = section -%}
+  {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
+{% endblock seo %}
+
 {% block content %}
 <h1>Blog Posts ✍️</h1>
 
