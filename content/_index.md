@@ -46,11 +46,11 @@ image = "images/logo-slogan.jpeg"
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. **We solve tech problems—no monthly retainers.**
 
 
-<p class="phone-line">(619) 853-5008</p>
+<p class="phone-line">(619) 853-5008</p>  
 
-<a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews</a>  
+<a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews</a>   
 
-## Custom Solutions That Work for You
+## Custom Solutions That Work for You  
 
 Our premium, concierge-level on-site service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With 25+ years of experience supporting high-profile clientele in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
 
