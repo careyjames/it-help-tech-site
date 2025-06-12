@@ -1,6 +1,6 @@
 +++
 title = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
-description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+description = "Concierge on-site Mac, WiFi, DNS & Email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
 template = "home.html"
 [extra]
 # This sets the Open Graph image shown when links are shared.
@@ -46,9 +46,9 @@ image = "images/logo-slogan.jpeg"
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. **We solve tech problems—no monthly retainers.**
 
 
-<p class="phone-line"><a href="tel:16198535008">(619) 853-5008</a></p>
+<p class="phone-line"><a href="tel:16198535008">(619) 853-5008  </a></p>
 
-<a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews</a>   
+<a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews  </a>   
 
 ## Custom Solutions That Work for You  
 
