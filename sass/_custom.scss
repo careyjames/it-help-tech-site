@@ -1,7 +1,10 @@
 // site-specific tweaks
-/* Kill Abridge’s masonry columns on the home section */
+/* Force a single-column, centered layout for the hero section */
 .homepage-hero {
-  column-count: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   max-width: 60rem;   /* ~960 px */
   margin-inline: auto;
   padding-inline: 1rem;
