@@ -8,9 +8,22 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
 }
-a { color: #59aaff; }
-a:hover { text-decoration: underline; }
-h1, h2, h3, h4, h5, h6 { color: #59aaff; }
+/* Use theme accent colors so they follow config.toml */
+a {
+  color: var(--a1);
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--a2);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--a1);
+}
 strong, li strong { color: #ffffff; }
 
 img {
