@@ -12,31 +12,37 @@ switcher    = true
 [[extra.menu]]
 name   = "Home"
 url    = "/"
+slash  = true
 weight = 1
 
 [[extra.menu]]
 name   = "Services"
 url    = "/services/"
+slash  = true
 weight = 2
 
 [[extra.menu]]
 name   = "Pricing"
 url    = "/billing/"
+slash  = true
 weight = 3
 
 [[extra.menu]]
 name   = "DNS Tool"
 url    = "/dns-tool/"
+slash  = true
 weight = 4
 
 [[extra.menu]]
 name   = "Blog"
 url    = "/blog/"
+slash  = true
 weight = 5
 
 [[extra.menu]]
 name   = "About"
 url    = "/about/"
+slash  = true
 weight = 6
 
 [[extra.menu]]
@@ -44,3 +50,4 @@ name   = "Schedule"
 url    = "https://schedule.it-help.tech/"
 weight = 99
 blank  = true
+slash  = false
