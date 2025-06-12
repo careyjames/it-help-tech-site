@@ -8,3 +8,39 @@ generate_sitemap = true
 [extra]
 abridgeMode = "dark"
 switcher    = true
+
+[[extra.menu]]
+name   = "Home"
+url    = "/"
+weight = 1
+
+[[extra.menu]]
+name   = "Services"
+url    = "/services/"
+weight = 2
+
+[[extra.menu]]
+name   = "Pricing"
+url    = "/billing/"
+weight = 3
+
+[[extra.menu]]
+name   = "DNS Tool"
+url    = "/dns-tool/"
+weight = 4
+
+[[extra.menu]]
+name   = "Blog"
+url    = "/blog/"
+weight = 5
+
+[[extra.menu]]
+name   = "About"
+url    = "/about/"
+weight = 6
+
+[[extra.menu]]
+name   = "Schedule"
+url    = "https://schedule.it-help.tech/"
+weight = 99
+blank  = true
