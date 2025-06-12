@@ -1,6 +1,10 @@
+theme = "abridge"
+compile_sass = true
 base_url = "https://www.it-help.tech"
 title = "IT Help San Diego Inc."
-description = "San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—fast on-site & in-home help. Clear answers & discreet service. We solve tech problems—no monthly retainers."
+description = "Apple-centric IT support across San Diego."
 generate_sitemap = true
+
 [extra]
-author_name = "Carey Balboa"
+abridgeMode = "dark"
+switcher    = true

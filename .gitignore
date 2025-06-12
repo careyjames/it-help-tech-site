@@ -3,3 +3,5 @@
 *.map
 
 /public
+sass_OLD/
+templates_OLD/
