@@ -48,6 +48,12 @@
     {%- endif %}{%- endif %}
     {%- endblock page_header %}
 
+    {%- if page.extra.image %}
+    <p class="post-image">
+      <img src="{{ get_url(path=page.extra.image) }}" width="200"{%- if page.extra.image_alt %} alt="{{ page.extra.image_alt }}"{%- endif %}>
+    </p>
+    {%- endif %}
+
     {# In Page Series Navigation #}
     {%- if config.extra.series | default(value=true) %}
     {%- if page.extra.series %}

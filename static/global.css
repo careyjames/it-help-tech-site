@@ -319,6 +319,7 @@ header {
   text-align: center;
   gap: 1rem;
   padding: 1rem;
+  padding-top: 0;
   width: 100%;
   float: none;
   margin-bottom: 0;
@@ -426,6 +427,7 @@ footer p {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    padding-top: 0;
     gap: 1rem;
     position: relative;
     text-align: left;
