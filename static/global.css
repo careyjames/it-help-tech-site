@@ -652,3 +652,111 @@ a.read-more {
 /* Your Existing Custom Styles - END */
 
 /*# sourceMappingURL=global.css.map */
+/* --- NEW, CORRECTED HEADER & NAVIGATION STYLES --- */
+
+/* Reset header styles to prevent conflicts */
+header {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+}
+
+/* This is the new centered container for your nav bar */
+.nav-wrapper {
+    max-width: 900px; /* This makes it "concentrated" */
+    margin: 0 auto;   /* This centers it */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 70px; /* Adjust height as needed */
+}
+
+.site-logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+/* Hide the checkbox input and the mobile hamburger label on desktop */
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
+}
+
+/* Ensure nav and ul are visible and flexed on desktop */
+header nav,
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* Space between nav items */
+}
+
+/* --- MOBILE STYLES (for screens 768px or less) --- */
+@media (max-width: 768px) {
+    /* Show the hamburger menu icon on mobile */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block; background-color: #f8f9fa; height: 3px;
+        width: 25px; border-radius: 2px; position: relative;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .nav-toggle-label span::before, .nav-toggle-label span::after { content: ''; position: absolute; }
+    .nav-toggle-label span::before { top: -8px; }
+    .nav-toggle-label span::after { top: 8px; }
+
+    /* Hide the desktop nav menu on mobile */
+    header nav {
+        display: none;
+        position: absolute;
+        top: 70px; /* Position it below the header (matches header height) */
+        left: 0;
+        width: 100%;
+        background-color: #2A4055;
+        border-top: 1px solid rgb(58, 89, 119);
+        z-index: 1000;
+    }
+
+    /* When the hamburger is clicked (checkbox is checked), show the menu */
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    /* Make mobile menu links a vertical list */
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0.5rem 0;
+        gap: 0;
+    }
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 1rem;
+    }
+    header nav ul li a:hover {
+        background-color: rgb(50, 77, 102);
+    }
+
+    /* Animate hamburger to an 'X' */
+    #nav-toggle:checked ~ .nav-toggle-label span { background-color: transparent; }
+    #nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
+    #nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
+}
