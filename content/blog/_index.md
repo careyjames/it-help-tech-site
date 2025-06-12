@@ -3,7 +3,7 @@ title = "IT Help San Diego Blog | Tech Insights & Support Tips"
 description = "Explore the IT Help blog for expert insights, articles, and troubleshooting tips on macOS, iOS, DNS, email security, DMARC, and cybersecurity best practices."
 sort_by = "date"
 paginate_by = 5
-template = "index.html"
+template = "blog.html"
 +++
 
 # Blog Posts ✍🏼

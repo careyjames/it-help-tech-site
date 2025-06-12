@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Blog Posts ✍️</h1>
+
+<ul class="post-list">
+  {# section.pages is already sorted by date desc in Zola #}
+  {% for page in paginator.pages %}
+    <li class="post-item">
+
+      <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+
+      {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
+        <p class="post-meta">
+          {% if page.date -%}
+            <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
+              {{ page.date | date(format="%B %d, %Y") }}
+            </time>
+          {%- endif %}
+          {% if page.author or page.extra.author or config.extra.author_name -%}
+            &nbsp;&mdash; {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
+          {%- endif %}
+        </p>
+      {%- endif %}
+
+      {# thumbnail: prefer extra.image, fallback to logo #}
+      {% set thumb = page.extra.image
+                      | default(value='images/logo-blue-square.svg') %}
+      <img src="{{ get_url(path=thumb) }}"
+           alt="{{ page.title }} thumbnail"
+           width="200"
+           class="post-thumb">
+
+      <div class="post-excerpt">
+        {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
+      </div>
+
+      <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
