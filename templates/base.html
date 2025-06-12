@@ -28,44 +28,48 @@
 <body>
 {%- block header %}
 <header>
-    <div class="nav-wrapper">
-        <div class="site-logo">
-            {%- if config.extra.logo.file %}
-            <a href="{{ get_url(path='/') }}">
-                <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
-            </a>
-            {%- endif %}
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="{{ get_url(path='/') }}">Home</a></li>
-                <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
-                <li class="dropdown">
-                    <a href="#">More</a>
-                    <ul class="dropdown-content">
-                        <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
-                        <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
-                        <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
-                        <li><a href="{{ get_url(path='/about/') }}">About</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">
-                        Schedule
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" style="vertical-align: text-top;">
-                            <path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/>
-                            <path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/>
-                        </svg>
-                    </a>
-                </li>
-                {%- if config.extra.js_switcher | default(value=true) -%}
-                  {%- set icon_adjust = config.extra.icon_adjust | default(value='svgs adjust') -%}
-                  <li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i></li>
-                {%- endif -%}
-            </ul>
-        </nav>
+    <div class="site-logo">
+        {%- if config.extra.logo.file %}
+        <a href="{{ get_url(path='/') }}">
+            <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
+        </a>
+        {%- endif %}
     </div>
+
+    <nav class="nav-wrapper">
+        <ul>
+            <li>
+                <a href="{{ get_url(path='/') }}" aria-label="Home" class="home-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-content">
+                    <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
+                    <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
+                    <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
+                    <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
+                    <li><a href="{{ get_url(path='/about/') }}">About</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">
+                    Schedule
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" style="vertical-align: text-top;">
+                        <path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/>
+                        <path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/>
+                    </svg>
+                </a>
+            </li>
+            {%- if config.extra.js_switcher | default(value=true) -%}
+              {%- set icon_adjust = config.extra.icon_adjust | default(value='svgs adjust') -%}
+              <li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i></li>
+            {%- endif -%}
+        </ul>
+    </nav>
 </header>
 {%- endblock header %}
   <main>

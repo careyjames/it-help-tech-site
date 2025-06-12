@@ -81,6 +81,12 @@ header {
     padding: 0 1rem;
 }
 
+/* Center logo above navigation */
+.site-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* Always show the navigation */
 header nav {
     display: block !important;
