@@ -8,6 +8,9 @@ generate_sitemap = true
 [extra]
 abridgeMode = "dark"
 switcher    = true
+logo = { file = "logo.svg", height = "48", alt = "IT Help San Diego" }
+copyright = false
+footer_credit = false
 
 [[extra.menu]]
 name   = "Home"
