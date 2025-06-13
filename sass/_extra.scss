@@ -201,7 +201,14 @@ header nav ul li a {
     line-height: 1;
 }
 
-
+/*
+  Force the "Schedule" link icon into a superscript position.
+  Using relative positioning for precise control.
+*/
+header nav ul li a svg {
+  position: relative;
+  top: -0.4em; /* This moves the icon up (use a value like -0.4em or -5px) */
+}
 
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
