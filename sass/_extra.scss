@@ -159,7 +159,7 @@ header nav ul li a {
     border: 1px solid rgb(58, 89, 119);
     border-radius: 8px;
     list-style: none;
-    padding: 0.05rem 0;
+    padding: 0.5rem 0;
     margin: 0;
     min-width: 10rem;
     z-index: 1000;
@@ -191,14 +191,14 @@ header nav ul li a {
 
 .dropdown-content li {
     white-space: nowrap;
-    padding: 0 1rem;
+    padding: 0;
     margin: 0;
 }
 
 .dropdown-content li a {
     display: block;
-    padding: 0;
-    line-height: 0.8;
+    padding: 0.35rem 1.25rem;
+    line-height: 1.4;
 }
 
 
