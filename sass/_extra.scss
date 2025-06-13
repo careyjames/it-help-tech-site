@@ -130,6 +130,7 @@ header nav ul li a {
 
 .arrow {
     font-size: 0.75em;
+    transition: transform 0.2s ease;
 }
 
 .home-icon svg {
@@ -152,8 +153,19 @@ header nav ul li a {
     z-index: 1000;
 }
 
-.dropdown-content.show {
+
+.dropdown-checkbox {
+    display: none;
+}
+
+.dropdown:hover > .dropdown-content,
+.dropdown-checkbox:checked ~ .dropdown-content {
     display: block;
+}
+
+.dropdown:hover > .dropdown-toggle .arrow,
+.dropdown-checkbox:checked + .dropdown-toggle .arrow {
+    transform: rotate(180deg);
 }
 
 .dropdown-content li {

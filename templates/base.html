@@ -46,7 +46,8 @@
                 </a>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle"><span class="arrow">\u25BC</span> More</a>
+                <input type="checkbox" id="more-toggle" class="dropdown-checkbox">
+                <label for="more-toggle" class="dropdown-toggle">More <span class="arrow">\u25BC</span></label>
                 <ul class="dropdown-content">
                     <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
                     <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
@@ -137,5 +138,5 @@
 {%- block gotop %}
 {%- endblock gotop %}
 </body>
-<script defer src="{{ get_url(path='js/navbar.js', trailing_slash=false) }}"></script>
+
 </html>
