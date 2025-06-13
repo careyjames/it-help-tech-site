@@ -154,24 +154,27 @@ header nav ul li a {
 }
 
 
-.dropdown-checkbox {
+.dropdown summary {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    list-style: none;
+}
+.dropdown summary::-webkit-details-marker {
     display: none;
 }
 
-.dropdown-checkbox:checked ~ .dropdown-content {
+.dropdown details {
+    position: relative;
+}
+
+.dropdown details[open] > .dropdown-content {
     display: block;
 }
 
-.dropdown-checkbox:checked + .dropdown-toggle .arrow {
+.dropdown details[open] summary .arrow {
     transform: rotate(180deg);
-}
-
-.dropdown:hover > .dropdown-content {
-    display: none;
-}
-
-.dropdown:hover > .dropdown-toggle .arrow {
-    transform: none;
 }
 
 .dropdown-content li {
