@@ -78,13 +78,20 @@ header {
 .nav-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--c2);
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* Center logo above navigation */
 .site-logo {
     text-align: center;
     margin-bottom: 1rem;
+}
+.site-logo img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Always show the navigation */
@@ -96,6 +103,7 @@ header nav ul {
     display: flex !important;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -104,6 +112,28 @@ header nav ul {
 
 header nav ul li {
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 0.75em;
+}
+
+.home-icon svg {
+    display: block;
 }
 
 /* Dropdown styles */
@@ -122,6 +152,10 @@ header nav ul li {
     z-index: 1000;
 }
 
+.dropdown-content.show {
+    display: block;
+}
+
 .dropdown-content li {
     white-space: nowrap;
     padding: 0 1rem;
@@ -132,9 +166,7 @@ header nav ul li {
     padding: 0.5rem 0;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+
 
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
