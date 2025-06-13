@@ -215,16 +215,6 @@ header nav ul li a svg {
   color: var(--a2); /* Uses the theme's hover color variable */
 }
 
-/*
-  Final attempt to force the theme toggle icon to change color on hover.
-  This targets both the color and SVG fill properties with !important.
-*/
-header nav ul li #mode:hover {
-  color: var(--a2) !important;
-  fill: var(--a2) !important; /* Adding 'fill' for SVG icons */
-  cursor: pointer;
-}
-
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
