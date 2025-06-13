@@ -46,15 +46,16 @@
                 </a>
             </li>
             <li class="dropdown">
-                <input type="checkbox" id="more-toggle" class="dropdown-checkbox">
-                <label for="more-toggle" class="dropdown-toggle"><span class="arrow">▼</span> More</label>
-                <ul class="dropdown-content">
-                    <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
-                    <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
-                    <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
-                    <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
-                    <li><a href="{{ get_url(path='/about/') }}">About</a></li>
-                </ul>
+                <details>
+                    <summary class="dropdown-toggle"><span class="arrow">▼</span> More</summary>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
+                        <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
+                        <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
+                        <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
+                        <li><a href="{{ get_url(path='/about/') }}">About</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
                 <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">Schedule<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" style="vertical-align: text-top;"><path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/><path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/></svg></a>
