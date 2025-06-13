@@ -137,6 +137,8 @@ header nav ul li a {
 
 .home-icon svg {
     display: block;
+    width: 24px;
+    height: 24px;
 }
 
 /* Ensure dark/light mode toggle aligns with other nav items */
@@ -193,7 +195,8 @@ header nav ul li a {
 
 .dropdown-content li a {
     display: block;
-    padding: 0.15rem 0;
+    padding: 0.05rem 0;
+    line-height: 1.2;
 }
 
 
