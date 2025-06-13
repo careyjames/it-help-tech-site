@@ -139,6 +139,7 @@ header nav ul li a {
     display: block;
     width: 24px;
     height: 24px;
+    margin-top: -2px; /* lift slightly for better vertical alignment */
 }
 
 /* Ensure dark/light mode toggle aligns with other nav items */
@@ -191,12 +192,13 @@ header nav ul li a {
 .dropdown-content li {
     white-space: nowrap;
     padding: 0 1rem;
+    margin: 0;
 }
 
 .dropdown-content li a {
     display: block;
-    padding: 0.05rem 0;
-    line-height: 1.2;
+    padding: 0;
+    line-height: 1.1;
 }
 
 
