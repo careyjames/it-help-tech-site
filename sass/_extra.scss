@@ -215,6 +215,12 @@ header nav ul li a svg {
   color: var(--a2); /* Uses the theme's hover color variable */
 }
 
+/* Make the dark/light mode toggle icon turn orange on hover */
+#mode:hover {
+  color: var(--a2); /* Uses the theme's hover color variable */
+  cursor: pointer;
+}
+
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
