@@ -158,14 +158,20 @@ header nav ul li a {
     display: none;
 }
 
-.dropdown:hover > .dropdown-content,
 .dropdown-checkbox:checked ~ .dropdown-content {
     display: block;
 }
 
-.dropdown:hover > .dropdown-toggle .arrow,
 .dropdown-checkbox:checked + .dropdown-toggle .arrow {
     transform: rotate(180deg);
+}
+
+.dropdown:hover > .dropdown-content {
+    display: none;
+}
+
+.dropdown:hover > .dropdown-toggle .arrow {
+    transform: none;
 }
 
 .dropdown-content li {
