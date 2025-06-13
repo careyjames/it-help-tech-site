@@ -210,6 +210,11 @@ header nav ul li a svg {
   top: -0.3em; /* This moves the icon up (use a value like -0.4em or -5px) */
 }
 
+/* Make the 'More' dropdown summary text turn orange on hover */
+.dropdown-toggle:hover {
+  color: var(--a2); /* Uses the theme's hover color variable */
+}
+
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
