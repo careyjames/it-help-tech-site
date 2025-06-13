@@ -216,11 +216,12 @@ header nav ul li a svg {
 }
 
 /*
-  Force the dark/light mode toggle icon to turn orange on hover.
-  Using a more specific selector and !important to override other styles.
+  Final attempt to force the theme toggle icon to change color on hover.
+  This targets both the color and SVG fill properties with !important.
 */
 header nav ul li #mode:hover {
-  color: var(--a2) !important; /* Use !important to ensure this style is applied */
+  color: var(--a2) !important;
+  fill: var(--a2) !important; /* Adding 'fill' for SVG icons */
   cursor: pointer;
 }
 
