@@ -68,17 +68,19 @@ pre {
 /* --- CORRECTED HEADER & NAVIGATION STYLES --- */
 
 header {
-    padding: 0 !important;
-    margin: 0 !important;
+    padding-top: 0.25rem !important;
+    margin: 0 0 0.25rem 0 !important;
     width: 100% !important;
     position: relative !important;
     display: block !important;
+    text-align: center;
 }
 
 .nav-wrapper {
-    max-width: 900px;
+    display: inline-flex;
+    width: fit-content;
     margin: 0 auto;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.75rem;
     background-color: var(--c2);
     border-radius: 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -87,7 +89,7 @@ header {
 /* Center logo above navigation */
 .site-logo {
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 0.25rem 0;
 }
 .site-logo img {
     display: block;
