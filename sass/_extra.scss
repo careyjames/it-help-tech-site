@@ -139,6 +139,13 @@ header nav ul li a {
     display: block;
 }
 
+/* Ensure dark/light mode toggle aligns with other nav items */
+#mode {
+    display: flex;
+    align-items: center;
+    margin-top: -0.15rem;
+}
+
 /* Dropdown styles */
 .dropdown-content {
     display: none;
