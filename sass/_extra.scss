@@ -1,11 +1,14 @@
 /* --- ALL CUSTOM STYLES --- */
 
 /* Main theme dark mode colors */
+html {
+  --fs: 0.875rem; /* base font size ~14px */
+}
 body {
   background-color: var(--c1);
   color: var(--f1);
   font-family: "JetBrains Mono", "Courier New", monospace;
-  font-size: 1rem !important;
+  font-size: var(--fs) !important;
   line-height: 1.6;
 }
 /* Use theme accent colors so they follow config.toml */
