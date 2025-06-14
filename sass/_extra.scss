@@ -78,7 +78,7 @@ header {
 
 .nav-wrapper {
     display: inline-flex;
-    width: fit-content;
+    width: clamp(0px, 90vw, 356px);
     margin: 0 auto;
     padding: 0.25rem 0.75rem;
     background-color: var(--c2);
