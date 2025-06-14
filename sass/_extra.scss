@@ -38,7 +38,10 @@ h5,
 h6 {
   color: var(--a1);
 }
-strong, li strong { color: #ffffff; }
+strong,
+li strong {
+  color: #ffffff;
+}
 
 img {
   border-radius: 15px;
@@ -78,183 +81,174 @@ pre {
   margin-top: 0.5rem;
 }
 
-
 /* --- CORRECTED HEADER & NAVIGATION STYLES --- */
 
 header {
-    padding-top: 0.25rem !important;
-    margin: 0 0 0.25rem 0 !important;
-    width: 100% !important;
-    position: relative !important;
-    display: block !important;
-    text-align: center;
+  padding-top: 0.25rem !important;
+  margin: 0 0 0.25rem 0 !important;
+  width: 100% !important;
+  position: relative !important;
+  display: block !important;
+  text-align: center;
 }
 
 .nav-wrapper {
-    display: inline-flex;
-    width: clamp(0px, 90vw, 356px);
-    margin: 0 auto;
-    padding: 0.25rem 0.75rem;
-    background-color: var(--c2);
-    border-radius: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: inline-flex;
+  width: clamp(0px, 90vw, 356px);
+  margin: 0 auto;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--c2);
+  border-radius: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Center logo above navigation */
 .site-logo {
-    text-align: center;
-    margin: 0.25rem 0;
+  text-align: center;
+  margin: 0.25rem 0;
 }
 .site-logo img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Always show the navigation */
 header nav {
-    display: block !important;
+  display: block !important;
 }
 
 header nav ul {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 0.5rem;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
 }
 
 header nav ul li {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 header nav ul li a {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
 }
 
 .arrow {
-    font-size: 0.75em;
-    transition: transform 0.2s ease;
+  font-size: 0.75em;
+  transition: transform 0.2s ease;
 }
 
 .home-icon svg {
-    display: block;
-    width: 28px;
-    height: 28px;
-    margin-top: 8px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-top: 8px;
 }
 
 /* Ensure dark/light mode toggle aligns with other nav items */
 #mode {
-    display: flex;
-    align-items: center;
-    margin-top: -0.25rem;
+  display: flex;
+  align-items: center;
+  margin-top: -0.25rem;
 }
 
 /* Dropdown styles */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--c2);
-    border: 1px solid rgb(58, 89, 119);
-    border-radius: 8px;
-    list-style: none;
-    padding: 0.25rem 0;
-    margin: 0;
-    min-width: 10rem;
-    z-index: 1000;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--c2);
+  border: 1px solid rgb(58, 89, 119);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.25rem 0;
+  margin: 0;
+  min-width: 10rem;
+  z-index: 1000;
 }
-
 
 .dropdown summary {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  list-style: none;
 }
 .dropdown summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 .dropdown details {
-    position: relative;
+  position: relative;
 }
 
 .dropdown details[open] > .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown details[open] summary .arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .dropdown-content li {
-    white-space: nowrap;
-    padding: 0;
-    margin: 0;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-content li a {
-    display: block;
-    padding: .25rem 1.25rem;
-    line-height: 1;
+  display: block;
+  padding: 0.25rem 1.25rem;
+  line-height: 1;
 }
 
-/*
-  Force the "Schedule" link icon into a superscript position.
-  Using relative positioning for precise control.
-*/
+/* Force the "Schedule" link icon into a superscript position */
 header nav ul li a svg {
   position: relative;
-  top: -0.3em; /* This moves the icon up (use a value like -0.4em or -5px) */
+  top: -0.3em;
 }
 
-/* Make the 'More' dropdown summary text turn orange on hover */
+/* Hover colour for "More" */
 .dropdown-toggle:hover {
-  color: var(--a2); /* Uses the theme's hover color variable */
+  color: var(--a2);
 }
 
-/* --- kill the two stray ## anchors that Abridge inserts before JS runs --- */
+/* --- hide orphan "##" anchors at top-left --- */
 body > a.anchor:first-of-type,
 body > a.anchor:first-of-type + a.anchor {
   display: none !important;
 }
 
-/* ─── Mobile dropdown tap-target fix ───────────────────────────────────── */
+/* ─── Mobile dropdown tap-target fix ─────────────────────────── */
 @media (max-width: 600px) {
-
-  /* pop-up panel */
   .dropdown-content {
-    min-width: 14rem;                /* 224 px – still < pill width clamp */
-    background: rgba(var(--surface-rgb, 32, 32, 32), .92);
-    border: 1px solid rgba(var(--a1-rgb, 255, 165, 0), .25);
-    border-radius: .75rem;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+    min-width: 14rem;
+    background: rgba(var(--surface-rgb, 32, 32, 32), 0.92);
+    border: 1px solid rgba(var(--a1-rgb, 255, 165, 0), 0.25);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
-     /* NEW — force one column so Blog/About never sit side-by-side */
-    display: block !important;         /* override the global flex */
-    column-count: 1 !important;        /* guarantee vertical stack */
+    display: block !important;
+    column-count: 1 !important;
   }
 
-  /* each link inside */
   .dropdown-content li a {
-    padding: .9rem 1.25rem;          /* ≈ 48 px tall on 2× DPR phones   */
-    font-size: 1rem;                 /* 16 px text – readable           */
+    padding: 0.9rem 1.25rem;
+    font-size: 1rem;
     line-height: 1.2;
   }
 }
