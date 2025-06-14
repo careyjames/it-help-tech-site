@@ -1,0 +1,16 @@
+{
+  "Name": "security-headers",
+  "Comment": "CSP + HSTS for archive-preview distribution",
+  "SecurityHeadersConfig": {
+    "StrictTransportSecurity": {
+      "AccessControlMaxAgeSec": 63072000,
+      "IncludeSubdomains": true,
+      "Preload": true,
+      "Override": true
+    },
+    "ContentSecurityPolicy": {
+      "ContentSecurityPolicy": "default-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; upgrade-insecure-requests",
+      "Override": true
+    }
+  }
+}
