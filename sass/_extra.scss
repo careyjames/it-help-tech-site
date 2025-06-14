@@ -227,9 +227,8 @@ header nav ul li a svg {
   color: var(--a2);
 }
 
-/* --- hide orphan "##" anchors at top-left --- */
-body > a.anchor:first-of-type,
-body > a.anchor:first-of-type + a.anchor {
+/* --- hide every orphan "##" anchor that sits directly under <body> --- */
+body > a.anchor {
   display: none !important;
 }
 
