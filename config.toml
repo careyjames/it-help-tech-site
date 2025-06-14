@@ -6,7 +6,7 @@ description = "Apple-centric IT support across San Diego."
 generate_sitemap = true
 
 [markdown]
-insert_anchor_links = false   # ← this disables the site-wide “##” anchors
+insert_anchor_links = "none"   # disable auto “##” anchors globally
 
 [extra]
 abridgeMode = "switcher"
