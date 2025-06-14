@@ -4,7 +4,9 @@ base_url = "https://www.it-help.tech"
 title = "IT Help San Diego Inc."
 description = "Apple-centric IT support across San Diego."
 generate_sitemap = true
-heading_permalink = false
+
+[markdown]
+insert_anchor_links = false   # ← this disables the site-wide “##” anchors
 
 [extra]
 abridgeMode = "switcher"
