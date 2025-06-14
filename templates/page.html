@@ -79,7 +79,7 @@
 
 
 {% if page.path | starts_with(value="blog/") %}
-  {{ page.content | safe | markdown(heading_permalink=true) }}
+  {{ page.content | safe | markdown(insert_anchor_links="left") }}
 {% else %}
   {{ page.content | safe }}
 {% endif %}
