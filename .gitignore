@@ -15,3 +15,4 @@ policy*.json
 # Zola cache
 .frontmatter/
 frontmatter.json
+.DS_Store
