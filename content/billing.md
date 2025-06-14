@@ -7,7 +7,6 @@ extra:
   skip_author: true
 ---
 
-# CONSULTING RATES & BOOKING POLICIES 💳
 
 We follow clear policies for our IT support services. No monthly retainers!
 

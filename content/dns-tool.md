@@ -7,7 +7,6 @@ extra:
   skip_author: true
 ---
 
-# DNS Tool 🛠️ - My Command-Line DNS Auditor
 
 Tired of juggling a dozen different web tools and `dig` commands just to check if a domain's DNS and email security records were *actually* set up right? **So was I.** That's why I built **DNS Tool**.
 
