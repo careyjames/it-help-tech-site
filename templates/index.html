@@ -1,8 +1,4 @@
 {% extends "base.html" %}
 {% block content %}
-{% if section.path | starts_with(value="blog/") %}
-  {{ section.content | safe | markdown(insert_anchor_links="left") }}
-{% else %}
   {{ section.content | safe }}
-{% endif %}
 {% endblock content %}
