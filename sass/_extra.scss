@@ -1,3 +1,17 @@
+/* ─── Self-hosted JetBrains Mono ─────────────────────────────── */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
 /* --- ALL CUSTOM STYLES --- */
 
 /* Main theme dark mode colors */
