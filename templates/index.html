@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+{% if section.path | starts_with(value="blog/") %}
+  {{ section.content | safe | markdown(heading_permalink=true) }}
+{% else %}
+  {{ section.content | safe }}
+{% endif %}
+{% endblock content %}
