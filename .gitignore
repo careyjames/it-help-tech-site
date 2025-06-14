@@ -5,3 +5,13 @@
 /public
 sass_OLD/
 templates_OLD/
+
+# Terraform/CloudFormation plans
+cf-*.json
+dist*.json
+prod*.json
+policy*.json
+
+# Zola cache
+.frontmatter/
+frontmatter.json
