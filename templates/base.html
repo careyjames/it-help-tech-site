@@ -147,7 +147,6 @@
   // 1 – initial state: default to dark unless user explicitly saved "light"
 const saved = localStorage.getItem(storageKey);
 if (saved !== 'light') root.dataset.theme = 'dark';
-  }
 
   // 2 – cycle theme on icon click: light → dark → system → (light…)
   btn && btn.addEventListener('click', () => {
