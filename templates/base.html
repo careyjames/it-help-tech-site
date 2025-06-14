@@ -144,11 +144,9 @@
   const storageKey = 'theme';
   const btn = document.getElementById('mode');
 
-  // 1 – initial state: honour saved value, else system preference
-  const saved = localStorage.getItem(storageKey);
-  if (saved === 'dark' || (saved === null &&
-        matchMedia('(prefers-color-scheme: dark)').matches)) {
-    root.dataset.theme = 'dark';
+  // 1 – initial state: default to dark unless user explicitly saved "light"
+const saved = localStorage.getItem(storageKey);
+if (saved !== 'light') root.dataset.theme = 'dark';
   }
 
   // 2 – cycle theme on icon click: light → dark → system → (light…)
