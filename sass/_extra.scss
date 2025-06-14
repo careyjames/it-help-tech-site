@@ -253,6 +253,12 @@ header nav ul li a svg {
   }
 }
 
+/* Hide orphan heading anchors that render at top-left */
+body > a.anchor:first-child,
+body > a.anchor:first-child + a.anchor {
+  display: none;
+}
+
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
  *****************************************************************************/
