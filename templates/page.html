@@ -78,7 +78,11 @@
     {%- endif %}
 
 
-{{ page.content | safe }}
+{% if page.path | starts_with(value="blog/") %}
+  {{ page.content | safe | markdown(heading_permalink=true) }}
+{% else %}
+  {{ page.content | safe }}
+{% endif %}
 
     {%- if config.extra.meta_post.position %}
     {%- if config.extra.meta_post.position == "bottom" or config.extra.meta_post.position == "both" %}
