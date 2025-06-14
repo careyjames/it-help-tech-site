@@ -227,7 +227,8 @@ header nav ul li a svg {
     box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
     backdrop-filter: blur(6px);
      /* NEW — force one column so Blog/About never sit side-by-side */
-    column-count: 1 !important;
+    display: block !important;         /* override the global flex */
+    column-count: 1 !important;        /* guarantee vertical stack */
   }
 
   /* each link inside */
