@@ -4,7 +4,6 @@ description = "Explore the IT Help blog for expert insights, articles, and troub
 sort_by = "date"
 paginate_by = 5
 template = "blog.html"
-insert_anchor_links = "left"
 +++
 
 # Blog Posts ✍🏼
