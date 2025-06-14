@@ -197,7 +197,7 @@ header nav ul li a {
 
 .dropdown-content li a {
     display: block;
-    padding: 0 1.25rem;
+    padding: .25rem 1.25rem;
     line-height: 1;
 }
 
@@ -213,6 +213,27 @@ header nav ul li a svg {
 /* Make the 'More' dropdown summary text turn orange on hover */
 .dropdown-toggle:hover {
   color: var(--a2); /* Uses the theme's hover color variable */
+}
+
+/* ─── Mobile dropdown tap-target fix ───────────────────────────────────── */
+@media (max-width: 600px) {
+
+  /* pop-up panel */
+  .dropdown-content {
+    min-width: 14rem;                /* 224 px – still < pill width clamp */
+    background: rgba(var(--surface-rgb, 32, 32, 32), .92);
+    border: 1px solid rgba(var(--a1-rgb, 255, 165, 0), .25);
+    border-radius: .75rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+    backdrop-filter: blur(6px);
+  }
+
+  /* each link inside */
+  .dropdown-content li a {
+    padding: .9rem 1.25rem;          /* ≈ 48 px tall on 2× DPR phones   */
+    font-size: 1rem;                 /* 16 px text – readable           */
+    line-height: 1.2;
+  }
 }
 
 /******************************************************************************
