@@ -10,7 +10,8 @@
 <html lang="{%- if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
 <head>
   {%- include "partials/head.html" %}
-
+  <link rel="icon" href="/red-plus.ico" type="image/x-icon">
+  
   {#- SEO: title, description, etc #}
   {%- block seo %}
     {%- if config.extra.title_separator %}
