@@ -229,6 +229,12 @@ header nav ul li a svg {
   color: var(--a2); /* Uses the theme's hover color variable */
 }
 
+/* --- kill the two stray ## anchors that Abridge inserts before JS runs --- */
+body > a.anchor:first-of-type,
+body > a.anchor:first-of-type + a.anchor {
+  display: none !important;
+}
+
 /* ─── Mobile dropdown tap-target fix ───────────────────────────────────── */
 @media (max-width: 600px) {
 
@@ -251,12 +257,6 @@ header nav ul li a svg {
     font-size: 1rem;                 /* 16 px text – readable           */
     line-height: 1.2;
   }
-}
-
-/* Hide orphan heading anchors that render at top-left */
-body > a.anchor:first-child,
-body > a.anchor:first-child + a.anchor {
-  display: none;
 }
 
 /******************************************************************************
