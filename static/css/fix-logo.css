@@ -7,9 +7,9 @@
 }
 
 /* Ensure header elements remain centered, like the footer */
-.site-header{
-  text-align:center !important;
-  width:100% !important;
+.site-header {
+  text-align:center !important;   /* keep this */
+  /* width:100% !important;   <-- DELETE this line */
 }
 
 /* Center the logo block itself */
