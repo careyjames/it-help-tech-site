@@ -311,3 +311,14 @@ body > a.anchor {
 .align-super { vertical-align: super; }
 .text-center { text-align: center; }
 .mb-1rem     { margin-bottom: 1rem; }
+
+
+/* ---- FINAL ALIGNMENT: nav pill same width as logo ------------ */
+@media (min-width: 700px) {
+  .nav-wrapper {
+    box-sizing: border-box;
+    width: 333px !important;      /* <- logo width incl. padding */
+    padding-left: 0 !important;   /* remove the extra 0.75rem gutters */
+    padding-right: 0 !important;
+  }
+}
