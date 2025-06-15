@@ -1294,7 +1294,16 @@ h2 a:hover {
   color: var(--a3);
 }
 
-/* Default left‑alignment for article/page headings */
+/* Default left‑alignment for subheadings */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+}
+
+/* Ensure article or page h1s align left as well */
 .post-content h1 {
   text-align: left;
 }
@@ -1335,9 +1344,8 @@ pre {
   padding-inline: 1rem;
 }
 
-/* Keep hero headings centered */
-.homepage-hero > h1,
-.homepage-hero > h2 {
+/* Center only the main hero heading */
+.homepage-hero > h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -1591,9 +1599,8 @@ body > a.anchor {
   padding-inline: 1rem;
 }
 
-/* Center hero headings */
-.homepage-hero > h1,
-.homepage-hero > h2 {
+/* Center only the main hero heading */
+.homepage-hero > h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
