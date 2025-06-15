@@ -277,7 +277,7 @@ body > a.anchor {
 /* --- WIDTH TWEAK: keep nav pill same width as logo on desktop --- */
 @media (min-width: 700px) {
   .nav-wrapper {
-    width: 22rem;              /* adjust until it lines up perfectly */
+    width: 333px;              /* matches the 333 px logo width */              /* adjust until it lines up perfectly */
   }
 }
 
