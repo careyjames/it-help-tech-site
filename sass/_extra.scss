@@ -93,7 +93,7 @@ pre {
 /* Center page and article titles */
 .page-title,
 .post-title {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   width: max-content;
 }
@@ -334,4 +334,11 @@ body > a.anchor {
     margin-left: auto !important;    /* auto margins centre the block   */
     margin-right: auto !important;
   }
+}
+
+/* Home hero headline (h1) – centred */
+.home-headline {
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
 }
