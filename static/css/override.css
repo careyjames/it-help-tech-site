@@ -66,3 +66,54 @@ body { overflow-x: hidden; }
     box-sizing: border-box !important;
   }
 }
+
+/* ─────────── 4.  ALL OTHER PAGES (<700 px) ───────────────────── */
+@media (max-width: 699px) {
+
+  /* turn every “post” or “section” into a normal block  */
+  .post-content,
+  .section-content {
+    display: block !important;
+    width: 100%   !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-inline: 1rem !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  /* keep headings centred **only** if you really want that;
+     otherwise delete this list for full-left alignment.      */
+  .post-content  h1,
+  .section-content h1             { text-align:center !important; }
+
+  /* make body copy, sub-heads & lists wrap instead of overflow */
+  .post-content  h2,
+  .post-content  h3,
+  .post-content  h4,
+  .post-content  h5,
+  .post-content  h6,
+  .post-content  p,
+  .post-content  ul,
+  .post-content  li,
+  .section-content h2,
+  .section-content h3,
+  .section-content h4,
+  .section-content h5,
+  .section-content h6,
+  .section-content p,
+  .section-content ul,
+  .section-content li {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* tame the giant list indent the theme adds */
+  .post-content ul,
+  .post-content ol,
+  .section-content ul,
+  .section-content ol { padding-left: 1rem !important; }
+}
