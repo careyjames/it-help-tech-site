@@ -60,3 +60,11 @@
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+/* ─── HERO SECTION: force children to left-align on mobile ───────────────── */
+@media (max-width: 699px) {
+  .homepage-hero {
+    /* override the theme’s center alignment */
+    align-items: flex-start !important;
+  }
+}
