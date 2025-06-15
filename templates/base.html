@@ -3,7 +3,7 @@
 
 {# ---------- i18n lookup (safe) -------------------------------- #}
 {%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
-{%- if i18n is null -%}
+{%- if i18n == null -%}
   {%- set i18n = load_data(path="themes/abridge/i18n/" ~ lang ~ '.toml', required=false) -%}
 {%- endif -%}
 
