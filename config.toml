@@ -9,9 +9,9 @@ generate_sitemap = true
 insert_anchor_links = "none"   # disable auto “##” anchors globally
 
 [extra]
-abridgeMode = "switcher"
+#abridgeMode = "switcher"
 js_switcher = false
-js_switcher_default = "dark"
+#js_switcher_default = "dark"
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["abridge.css", "css/fix-logo.css", "css/override.css"]
 copyright = false
