@@ -93,3 +93,9 @@ body { overflow-x: hidden; }
     padding-left:1rem !important;
   }
 }
+
+/* ─────────── 4.  LIST BULLET SPACING (all pages) ───────────── */
+article ul, article ol{
+  margin-block: 0 1rem !important;   /* tighter top, keep bottom */
+  line-height: 1.4  !important;
+}
