@@ -1,60 +1,54 @@
-/* ─── FINAL: centre header and fix width only on desktop ───────────────── */
-
-/* desktop: ≥700px, header shrinks to 333px and stays centred */
+/* ─── DESKTOP ONLY: centre header & fix width ────────────────────── */
 @media (min-width: 700px) {
   header.site-header {
     width: 333px !important;
-    margin: 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     max-width: none !important;
   }
 }
 
-/* mobile: <700px, header goes full-width again */
-@media (max-width: 699px) {
-  header.site-header {
-    width: 100% !important;
-    margin: 0 !important;
-    max-width: none !important;
-  }
-}
+/* ─── HERO SECTION TEXT ALIGNMENT ──────────────────────────────── */
 
-/* ─── HERO SECTION TEXT ALIGNMENT ─────────────────────────────────────── */
-
-/* default everything in the hero to left-aligned */
+/* Default everything in the hero to left-aligned */
 .homepage-hero {
   text-align: left !important;
 }
 
-/* centre only the main headline */
+/* Centre only the big headline */
 .homepage-hero h1 {
   text-align: center !important;
+  margin: 0 auto !important;
+  width: max-content !important;
 }
 
-/* centre the phone link */
+/* Centre just the phone line */
 .homepage-hero .phone-line {
   text-align: center !important;
 }
 
-/* centre the CTA button */
+/* Centre the CTA button */
 .homepage-hero .cta-button {
   display: inline-block !important;
   margin: 0 auto !important;
 }
 
-/* left-align all subheads (h2–h6) */
+/* Left-align all subheadings under the hero (h2–h6) */
 .homepage-hero h2,
 .homepage-hero h3,
 .homepage-hero h4,
 .homepage-hero h5,
 .homepage-hero h6 {
   text-align: left !important;
-  margin: 0 auto !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
-/* left-align all paragraphs and lists in the hero */
+/* Hero content paragraphs and lists left-aligned */
 .homepage-hero p,
 .homepage-hero ul,
 .homepage-hero li {
   text-align: left !important;
-  margin: 0 auto !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
