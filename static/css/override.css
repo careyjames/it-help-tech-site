@@ -7,6 +7,15 @@
   }
 }
 
+/* ─── MOBILE ONLY: fluid header full-width ─────────────────── */
+@media (max-width: 699px) {
+  header.site-header {
+    width: 100% !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
+
 /* ─── HERO SECTION TEXT ALIGNMENT ──────────────────────────────── */
 
 /* Default everything in the hero to left-align */
