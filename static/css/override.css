@@ -1,0 +1,6 @@
+/* final word: centre header and fix width */
+header.site-header{
+  width:333px !important;
+  margin:auto !important;
+  max-width:none !important;
+}
