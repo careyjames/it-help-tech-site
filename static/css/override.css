@@ -1,65 +1,56 @@
-/* ───────── override.css  – loaded LAST – 2025-06-15 ───────── */
-
-/* === 1. HEADER RULES =================================================== */
-
+/* ─── DESKTOP (≥ 700 px)  ───────────────────────────────────── */
 @media (min-width: 700px) {
-  header.site-header {                    /* narrow, centred header on desktop */
+  header.site-header {                     /* keep the narrow header */
     width: 333px !important;
     margin: 0 auto !important;
     max-width: none !important;
   }
 }
 
+/* ─── MOBILE (< 700 px)  ─────────────────────────────────────── */
 @media (max-width: 699px) {
-  header.site-header {                    /* full-width header on phones */
-    width: 100% !important;
-    margin: 0 !important;
-    max-width: none !important;
+
+  /* 1.  Make the hero act like a normal block (no flex at all) */
+  .homepage-hero {
+    display: block   !important;   /* drop flex layout            */
+    width: 100%      !important;   /* span full viewport width    */
+    margin: 0        !important;   /* no auto-centering margins   */
+    padding-inline: 1rem !important; /* keep some side padding   */
+    box-sizing: border-box !important;
+    text-align: left !important;   /* left-align by default       */
+  }
+
+  /* 2.  Centred bits that *should* stay centred                 */
+  .homepage-hero h1,
+  .homepage-hero .phone-line,
+  .homepage-hero .cta-button {
+    text-align: center !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 3.  EVERYTHING else inside hero is forced left + wraps      */
+  .homepage-hero h2,
+  .homepage-hero h3,
+  .homepage-hero h4,
+  .homepage-hero h5,
+  .homepage-hero h6,
+  .homepage-hero p,
+  .homepage-hero ul,
+  .homepage-hero li {
+    text-align: left         !important;
+    margin-left: 0           !important;
+    margin-right: auto       !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word    !important;
+  }
+
+  /* 4.  Remove the theme’s oversized list-indent                */
+  .homepage-hero ul,
+  .homepage-hero ol {
+    padding-left: 1rem !important;   /* or whatever you prefer */
   }
 }
 
-/* === 2. HERO CONTAINER  (all break-points) ============================= */
-
-.homepage-hero {                          /* stop centring everything */
-  display: block !important;              /* ignore theme's flex */
-  align-items: flex-start !important;
-  text-align: left !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding-inline: 1rem !important;        /* side-padding on every size */
-  box-sizing: border-box !important;
-}
-
-/* === 3. HERO SPECIAL ITEMS ============================================ */
-
-.homepage-hero h1,
-.homepage-hero .phone-line,
-.homepage-hero .cta-button {              /* keep these centred */
-  text-align: center !important;
-  margin: 0 auto !important;
-}
-.homepage-hero .cta-button {
-  display: inline-block !important;
-}
-
-/* === 4. HERO NORMAL COPY ============================================== */
-
-.homepage-hero h2,
-.homepage-hero h3,
-.homepage-hero h4,
-.homepage-hero h5,
-.homepage-hero h6,
-.homepage-hero p,
-.homepage-hero ul,
-.homepage-hero li {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-  overflow-wrap: break-word !important;   /* long words wrap instead of overflow */
-  word-break: break-word !important;
-}
-
-/* === 5. LAST-RESORT SAFETY BELT ======================================= */
-
-body { overflow-x: hidden; }              /* eliminates any stray horizontal scroll */
+/* small safety-net for odd cases */
+body { overflow-x: hidden; }
