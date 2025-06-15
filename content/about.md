@@ -6,6 +6,7 @@ extra:
   image: images/carey-balboa.png
   image_alt: "Carey Balboa with service animal Tango"
   skip_author: true
+  toc: false
 ---
 
 <script type="application/ld+json">
