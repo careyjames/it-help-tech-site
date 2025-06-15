@@ -1,44 +1,33 @@
-/* --------------  GLOBAL SAFETY NET  --------------------------------- */
-*,
-*::before,
-*::after { box-sizing:border-box; }
+/* ──────────────────────────────────────────────────────────────
+   0.  GLOBAL SAFETY NET
+   ─────────────────────────────────────────────────────────── */
+body { overflow-x: hidden; }
 
-html,body{overflow-x:hidden;}           /* absolutely no sideways scroll */
-main,section,article,.post-content{
-  padding-inline:1rem;                 /* equal side-padding site-wide  */
-}
-
-/* prevent wide elements from breaking the layout */
-img,svg,video,iframe,table,pre{max-width:100%;}
-
-pre,code,table,blockquote{
-  overflow-wrap:break-word;
-  word-break:break-word;
-}
-
-/* tidy bullets everywhere (not just the hero) */
-ul,ol{padding-left:1rem;}
-
-/* --------------  HERO – shared rules (all widths)  ------------------ */
+/* ──────────────────────────────────────────────────────────────
+   1.  HERO – same rules everywhere (home page)
+   ─────────────────────────────────────────────────────────── */
 .homepage-hero{
-  display:block!important;             /* kill the flex-centering       */
-  text-align:left!important;
-  width:100%!important;
-  max-width:100%!important;
-  margin:0!important;
-  padding-inline:1rem!important;
+  display:block !important;          /* kill the theme’s flex  */
+  align-items:flex-start !important;
+  text-align:left !important;
+  width:100% !important;
+  max-width:100% !important;
+  padding-inline:1rem !important;
+  box-sizing:border-box !important;
 }
 
+/* headline, phone, CTA stay centred */
 .homepage-hero h1,
 .homepage-hero .phone-line,
 .homepage-hero .cta-button{
-  text-align:center!important;
-  margin-inline:auto!important;
-  max-width:100%!important;
-  overflow-wrap:break-word!important;
-  word-break:break-word!important;
+  text-align:center !important;
+  margin-inline:auto !important;
+  max-width:100% !important;
+  overflow-wrap:break-word !important;
+  word-break:break-word !important;
 }
 
+/* everything else in the hero is forced left + wraps */
 .homepage-hero h2,
 .homepage-hero h3,
 .homepage-hero h4,
@@ -47,24 +36,60 @@ ul,ol{padding-left:1rem;}
 .homepage-hero p,
 .homepage-hero ul,
 .homepage-hero li{
-  text-align:left!important;
-  margin-left:0!important;
-  margin-right:auto!important;
-  overflow-wrap:break-word!important;
-  word-break:break-word!important;
+  text-align:left !important;
+  margin-left:0 !important;
+  margin-right:auto !important;
+  overflow-wrap:break-word !important;
+  word-break:break-word !important;
 }
 
+/* trim huge bullet indent the theme adds */
 .homepage-hero ul,
-.homepage-hero ol{padding-left:1rem!important;}
+.homepage-hero ol{ padding-left:1rem !important; }
 
-/* --------------  HEADER – keep the 333 px pill on desktop ----------- */
+/* ──────────────────────────────────────────────────────────────
+   2.  FULL SITE – keep 333 px pill header on desktop
+   ─────────────────────────────────────────────────────────── */
 @media (min-width:700px){
   header.site-header{
-    width:333px!important;
-    max-width:none!important;
-    margin-inline:auto!important;
+    width:333px !important;
+    margin:0 auto !important;
+    max-width:none !important;
   }
 }
-/* on mobile the header simply fills the width – no rule needed */
 
-/* ------------------------------------------------------------------- */
+/* ──────────────────────────────────────────────────────────────
+   3.  MOBILE-/TABLET-ONLY FIXES  (< 700 px)
+   ─────────────────────────────────────────────────────────── */
+@media (max-width:699px){
+
+  /* Make *every* page behave (the theme used flex/centering) */
+  main{
+    display:block !important;
+    align-items:flex-start !important;
+    width:100% !important;
+    max-width:100% !important;
+    padding-inline:1rem !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Titles that previously blew the width */
+  .page-title,
+  .post-title,
+  h1.page-title,
+  h1.post-title{
+    text-align:left !important;
+    margin-left:0 !important;
+    margin-right:auto !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow-wrap:break-word !important;
+    word-break:break-word !important;
+  }
+
+  /* Lists on content pages – smaller indent */
+  article ul,
+  article ol{
+    padding-left:1rem !important;
+  }
+}
