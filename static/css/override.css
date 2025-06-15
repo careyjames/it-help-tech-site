@@ -1,61 +1,60 @@
-/* ─── DESKTOP: centre header and fix to logo width ───────────── */
+/* ─── FINAL: centre header and fix width only on desktop ───────────────── */
+
+/* desktop: ≥700px, header shrinks to 333px and stays centred */
 @media (min-width: 700px) {
   header.site-header {
     width: 333px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: none !important;  /* neutralises theme’s 70% max-width */
+    margin: 0 auto !important;
+    max-width: none !important;
   }
 }
 
-/* ─── MOBILE: make header fluid again ────────────────────────── */
+/* mobile: <700px, header goes full-width again */
 @media (max-width: 699px) {
   header.site-header {
     width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
   }
 }
 
-/* ─── HERO SECTION TEXT ALIGNMENT ───────────────────────────── */
+/* ─── HERO SECTION TEXT ALIGNMENT ─────────────────────────────────────── */
 
-/* Default everything in the hero to left-aligned */
+/* default everything in the hero to left-aligned */
 .homepage-hero {
   text-align: left !important;
 }
 
-/* Centre only the main hero headline */
+/* centre only the main headline */
 .homepage-hero h1 {
   text-align: center !important;
 }
 
-/* Centre just the phone line */
+/* centre the phone link */
 .homepage-hero .phone-line {
   text-align: center !important;
 }
 
-/* Centre the CTA button */
+/* centre the CTA button */
 .homepage-hero .cta-button {
   display: inline-block !important;
   margin: 0 auto !important;
 }
 
-/* Left-align all subheadings under the hero (h2–h6) */
+/* left-align all subheads (h2–h6) */
 .homepage-hero h2,
 .homepage-hero h3,
 .homepage-hero h4,
 .homepage-hero h5,
 .homepage-hero h6 {
   text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  margin: 0 auto !important;
 }
 
-/* Left-align all paragraphs and lists under the hero */
+/* left-align all paragraphs and lists in the hero */
 .homepage-hero p,
 .homepage-hero ul,
 .homepage-hero li {
   text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  margin: 0 auto !important;
 }
