@@ -1,35 +1,43 @@
-/* ─── DESKTOP (≥ 700 px)  ───────────────────────────────────── */
+/* ─── DESKTOP (≥ 700 px) ─────────────────────────────────────── */
 @media (min-width: 700px) {
-  header.site-header {                     /* keep the narrow header */
+  header.site-header {                /* keep the narrow header   */
     width: 333px !important;
     margin: 0 auto !important;
     max-width: none !important;
   }
 }
 
-/* ─── MOBILE (< 700 px)  ─────────────────────────────────────── */
+/* ─── MOBILE (< 700 px) ──────────────────────────────────────── */
 @media (max-width: 699px) {
 
-  /* 1.  Make the hero act like a normal block (no flex at all) */
+  /* 1 ▸ Make the hero behave like a normal block (no flex) ----- */
   .homepage-hero {
-    display: block   !important;   /* drop flex layout            */
-    width: 100%      !important;   /* span full viewport width    */
-    margin: 0        !important;   /* no auto-centering margins   */
-    padding-inline: 1rem !important; /* keep some side padding   */
+    display: block !important;        /* drop the flex layout      */
+    width: 100%   !important;         /* span full viewport        */
+    margin: 0     !important;         /* no auto-centering margins */
+    padding-inline: 1rem !important;  /* even side-padding         */
     box-sizing: border-box !important;
-    text-align: left !important;   /* left-align by default       */
+    text-align: left !important;      /* default left-align        */
   }
 
-  /* 2.  Centred bits that *should* stay centred                 */
+  /* 2 ▸ Centred bits that *should* stay centred ---------------- */
   .homepage-hero h1,
   .homepage-hero .phone-line,
   .homepage-hero .cta-button {
     text-align: center !important;
     margin-left:  auto !important;
-    margin-right: auto !important;
+    margin-right: auto  !important;
   }
 
-  /* 3.  EVERYTHING else inside hero is forced left + wraps      */
+  /*    …and make sure the headline can wrap                      */
+  .homepage-hero h1 {
+    width: auto !important;           /* ← THIS line fixes overflow */
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word    !important;
+  }
+
+  /* 3 ▸ Everything else in the hero is forced left + wraps ----- */
   .homepage-hero h2,
   .homepage-hero h3,
   .homepage-hero h4,
@@ -38,19 +46,19 @@
   .homepage-hero p,
   .homepage-hero ul,
   .homepage-hero li {
-    text-align: left         !important;
+    text-align:  left        !important;
     margin-left: 0           !important;
     margin-right: auto       !important;
     overflow-wrap: break-word !important;
     word-break: break-word    !important;
   }
 
-  /* 4.  Remove the theme’s oversized list-indent                */
+  /* 4 ▸ Trim the theme’s big list-indent ----------------------- */
   .homepage-hero ul,
   .homepage-hero ol {
-    padding-left: 1rem !important;   /* or whatever you prefer */
+    padding-left: 1rem !important;
   }
 }
 
-/* small safety-net for odd cases */
+/* small safety-net for any rogue element */
 body { overflow-x: hidden; }
