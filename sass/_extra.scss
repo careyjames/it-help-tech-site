@@ -88,30 +88,6 @@ pre {
   color: #abb2bf !important;
 }
 
-/* Center-align homepage hero text */
-.homepage-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  max-width: 60rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-/* Center only the main hero heading */
-.homepage-hero > h1 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Keep the hero section centered even with flexbox layout */
-main {
-  justify-content: center;
-}
-
-
 /* Center page and article titles */
 .page-title,
 .post-title {
@@ -119,7 +95,6 @@ main {
   margin: 0 auto;
   width: max-content;
 }
-
 
 /* Footer brag text */
 .footer-brag {
