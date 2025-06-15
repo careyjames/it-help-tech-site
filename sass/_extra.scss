@@ -50,9 +50,11 @@ h2 a:hover {
   color: var(--a3);
 }
 
-.page-title {
-  text-align: center;
+/* Default left‑alignment for article/page headings */
+.post-content h1 {
+  text-align: left;
 }
+
 strong,
 li strong {
   color: #ffffff;
