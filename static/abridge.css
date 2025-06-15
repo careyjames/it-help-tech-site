@@ -1335,11 +1335,10 @@ pre {
   padding-inline: 1rem;
 }
 
-/* Left‑align page/article titles, but keep the landing hero centred */
-main header:not(.homepage-hero),
+/* Center page and article titles */
 .page-title,
 .post-title {
-  text-align: left !important;
+  text-align: center;
 }
 
 /* Footer brag text */
@@ -1356,9 +1355,7 @@ header {
   margin: 0 0 0.25rem 0 !important;
   width: 100% !important;
   position: relative !important;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
+  display: block !important;
   text-align: center;
 }
 
