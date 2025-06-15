@@ -1,4 +1,4 @@
-/* ─── DESKTOP ONLY: centre header & fix width ───────────────── */
+/* ─── DESKTOP (≥ 700 px): centre header & fix width ─────────────────── */
 @media (min-width: 700px) {
   header.site-header {
     width: 333px !important;
@@ -7,38 +7,40 @@
   }
 }
 
-/* ─── MOBILE (<700px): fluid header + left-aligned hero + wrapping ───────────────── */
+/* ─── MOBILE (< 700 px): fluid header + hero wraps & left-aligns ────── */
 @media (max-width: 699px) {
-  /* fluid header */
+
+  /* header spans full viewport */
   header.site-header {
     width: 100% !important;
     margin: 0 !important;
     max-width: none !important;
   }
-  /* hero container left-align and full-width */
+
+  /* hero container becomes a normal block (no flex overflow) */
   .homepage-hero {
-    text-align: left !important;
-    align-items: flex-start !important;
-    width: 100% !important;
+    display: block !important;        /* drop flex layout          */
+    width: 100% !important;           /* fill viewport             */
     max-width: 100% !important;
-    padding-left: var(--s1) !important;
-    padding-right: var(--s1) !important;
+    margin: 0 !important;
+    padding-inline: 1rem !important;  /* side padding              */
     box-sizing: border-box !important;
+    text-align: left !important;      /* default for children      */
+    align-items: flex-start !important; /* backup if flex re-enabled */
   }
-  /* centre only main headline, phone, and button */
-  .homepage-hero h1 {
+
+  /* centre only the big headline, phone line, and CTA */
+  .homepage-hero h1,
+  .homepage-hero .phone-line,
+  .homepage-hero .cta-button {
     text-align: center !important;
     margin: 0 auto !important;
-    width: max-content !important;
-  }
-  .homepage-hero .phone-line {
-    text-align: center !important;
   }
   .homepage-hero .cta-button {
     display: inline-block !important;
-    margin: 0 auto !important;
   }
-  /* left-align all subheadings (h2–h6) */
+
+  /* left-align sub-headings */
   .homepage-hero h2,
   .homepage-hero h3,
   .homepage-hero h4,
@@ -48,7 +50,8 @@
     margin-left: 0 !important;
     margin-right: auto !important;
   }
-  /* left-align paragraphs and lists, and wrap long text */
+
+  /* left-align body copy & lists, wrap long text */
   .homepage-hero p,
   .homepage-hero ul,
   .homepage-hero li {
