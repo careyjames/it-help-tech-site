@@ -48,7 +48,7 @@ slash  = true
 weight = 5
 
 [[extra.menu]]
-name   = "About"
+name   = "Our Expertise"
 url    = "/about/"
 slash  = true
 weight = 6
