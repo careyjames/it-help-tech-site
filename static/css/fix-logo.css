@@ -8,7 +8,7 @@
 
 /* Ensure header elements remain centered, like the footer */
 .site-header {
-  text-align:center;
+  text-align:center !important;
   width: 100%;
 }
 .site-logo, .nav-wrapper {
