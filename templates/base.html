@@ -1,122 +1,96 @@
-{%- import 'macros/seo.html' as macros_seo %}
-{%- import "macros/macros.html" as macros %}
-{# Load current language i18n data from .toml files in user's '/i18n' folder, use theme as fallback. #}
-{%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
-{%- if not i18n -%}{%- set i18n = load_data(path="themes/abridge/i18n/" ~ lang ~ ".toml", required=false) -%}{%- endif %}
+{%- import 'macros/seo.html' as macros_seo -%}
+{%- import "macros/macros.html" as macros -%}
+{#  i18n  #}
+{%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) or
+               load_data(path="themes/abridge/i18n/" ~ lang ~ ".toml", required=false) -%}
 
 {%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
-{%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif %}{% endif %}
+{%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif -%}
+
 <!DOCTYPE html>
-<html lang="{%- if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
+<html lang="{% if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
 <head>
   {%- include "partials/head.html" %}
-  <!-- ensure proper mobile scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/red-plus.ico" type="image/x-icon">
-  
-  {#- SEO: title, description, etc #}
   {%- block seo %}
-    {%- if config.extra.title_separator %}
-      {%- set title_separator = " " ~ config.extra.title_separator ~ " " -%}
-    {%- else %}
-      {%- set title_separator = " | " -%}
-    {%- endif %}
+    {%- set title_separator = config.extra.title_separator | default(value=" | ") -%}
   {%- endblock seo %}
-
-  {%- block comments_init %}
-  {%- endblock comments_init %}
-
+  {%- block comments_init %}{%- endblock comments_init %}
   {%- include "partials/head_js.html" %}
 </head>
 <body>
+
 {%- block header %}
 <header class="site-header">
-    <div class="site-logo">
-        {%- if config.extra.logo.file %}
-        <a href="{{ get_url(path='/') }}">
-            <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
-        </a>
-        {%- endif %}
-    </div>
+  <div class="site-logo">
+    {%- if config.extra.logo.file %}
+      <a href="{{ get_url(path='/') }}">
+        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
+      </a>
+    {%- endif %}
+  </div>
 
-    <nav class="nav-wrapper">
-        <ul>
-            <li>
-                <a href="{{ get_url(path='/') }}" aria-label="Home" class="home-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                    </svg>
-                </a>
-            </li>
-            <li class="dropdown">
-                <details>
-                    <summary class="dropdown-toggle"><span class="arrow">▼</span> More</summary>
-                    <ul class="dropdown-content">
-                        <li><a href="{{ get_url(path='/billing/') }}">Pricing</a></li>
-                        <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
-                        <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
-                        <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
-                        <li><a href="{{ get_url(path='/about/') }}">Our Expertise</a></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">
-                  Schedule
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="align-super">
-                    <path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/>
-                    <path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/>
-                  </svg>
-                </a>
-            </li>
-            {%- if config.extra.js_switcher | default(value=true) -%}
-              {%- set icon_adjust = config.extra.icon_adjust | default(value='svgs adjust') -%}
-              <li><i type="reset" id="mode" class="js {{ icon_adjust }}"></i></li>
-            {%- endif -%}
-        </ul>
-    </nav>
+  <nav class="nav-wrapper">
+    <ul>
+      <!-- home icon -->
+      <li>
+        <a href="{{ get_url(path='/') }}" aria-label="Home" class="home-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+        </a>
+      </li>
+
+      <!-- dropdown -->
+      <li class="dropdown">
+        <details>
+          <summary class="dropdown-toggle"><span class="arrow">▼</span> More</summary>
+          <ul class="dropdown-content">
+            <li><a href="{{ get_url(path='/billing/')  }}">Pricing</a></li>
+            <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
+            <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
+            <li><a href="{{ get_url(path='/blog/')     }}">Blog</a></li>
+            <li><a href="{{ get_url(path='/about/')    }}">Our Expertise</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- schedule -->
+      <li>
+        <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener">
+          Schedule
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="align-super">
+            <path fill="currentColor" d="M14 4h6v6h-2V7.41L9.41 16 8 14.59 16.59 6H14V4Z"/>
+            <path fill="currentColor" d="M18 13v6H6V6h6V4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7h-2Z"/>
+          </svg>
+        </a>
+      </li>
+
+      <!-- ALWAYS-ON sun / moon toggle -->
+      <li><button id="mode" class="mode-btn" aria-label="Toggle dark / light"></button></li>
+    </ul>
+  </nav>
 </header>
 {%- endblock header %}
-  <main>
-  {%- block content %}
-  {%- endblock content %}
-  </main>
+
+<main>{%- block content %}{%- endblock content %}</main>
+
 {%- block footer %}
-  <footer>
-    {%- if config.extra.foothr %}
-    <hr />
-    {%- endif %}
-    <div class="c">
-      {%- include "partials/social.html" %}
-
-      <div class="text-center mb-1rem">
-        <img src="/images/owl-of-athena.svg" width="100" height="100" alt="Owl of Athena" />
-      </div>
-      <p>&copy; {{ now() | date(format="%Y") }} IT Help San Diego Inc.<br />
-      888 Prospect Street Suite 200<br />
-      La Jolla, CA 92037<br />
-      <a href="tel:16198535008">(619) 853-5008</a><br />
-      SIC: 73790200<br />
-      NAICS: 541519</p>
-      <p class="footer-brag">✨ Built with Rust (Zola) &amp; Sass and deployed on AWS. We use only a few lines of JavaScript for essential functionality—no frameworks, trackers, or cookies. Just lean, fast, cost-efficient tech. ✨</p>
-
-      {%- if config.extra.menu_footer %}
-      <nav class="vpad">
-        …footer links…
-      </nav>
-      {%- endif %}
-
-      {%- if config.extra.copyright | default(value=true) %}
-        …copyright…
-      {%- endif %}
-
-      {%- if config.extra.footer_credit | default(value=true) %}
-        …footer credit…
-      {%- endif %}
+<footer>
+  <div class="c">
+    {%- include "partials/social.html" %}
+    <div class="text-center mb-1rem">
+      <img src="/images/owl-of-athena.svg" width="100" height="100" alt="Owl of Athena">
     </div>
-  </footer>
+    <p>&copy; {{ now() | date(format="%Y") }} IT Help San Diego Inc.<br>
+       888 Prospect Street Suite&nbsp;200, La&nbsp;Jolla CA&nbsp;92037<br>
+       <a href="tel:16198535008">(619)&nbsp;853-5008</a></p>
+    <p class="footer-brag">✨ Built with Rust (Zola) &amp; Sass; no frameworks, trackers, or cookies. ✨</p>
+  </div>
+</footer>
 {%- endblock footer %}
-{%- block gotop %}{%- endblock gotop %}
+
 <script src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) }}" defer></script>
 </body>
 </html>
