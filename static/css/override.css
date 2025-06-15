@@ -1,4 +1,4 @@
-/* ─── DESKTOP ONLY: centre header & fix width ────────────────────── */
+/* ─── DESKTOP ONLY: centre header & fix width ───────────────────── */
 @media (min-width: 700px) {
   header.site-header {
     width: 333px !important;
@@ -10,7 +10,7 @@
 
 /* ─── HERO SECTION TEXT ALIGNMENT ──────────────────────────────── */
 
-/* Default everything in the hero to left-aligned */
+/* Default everything in the hero to left-align */
 .homepage-hero {
   text-align: left !important;
 }
