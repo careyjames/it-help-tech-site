@@ -42,7 +42,7 @@ image = "images/logo-slogan.jpeg"
 
 
 <!-- Homepage hero heading -->
-# Expert Mac&nbsp;IT Support—Complex Tech Challenges
+<h1 class="home-headline">Expert&nbsp;Mac&nbsp;IT&nbsp;Support—Complex&nbsp;Tech Challenges</h1>
 
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. **We solve tech problems—no monthly retainers.**
 
