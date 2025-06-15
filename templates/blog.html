@@ -1,57 +1,38 @@
 {% extends "base.html" %}
 
 {% block seo %}
-  {{ super() }}
-  {%- set title = section.title | default(value=config.title) -%}
-  {%- if config.extra.title_addition and title %}
-    {%- set title_addition = title_separator ~ config.extra.title_addition -%}
-  {%- elif config.extra.title_addition %}
-    {%- set title_addition = config.extra.title_addition -%}
-  {%- else %}
-    {%- set title_addition = "" -%}
-  {%- endif %}
-  {%- set description = section.description | default(value=config.description) -%}
-  {%- set_global page = section -%}
-  {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
+{{- super() }}
+{%- set page_title -%}
+{%- if paginator.current_index == 1 -%}
+{{- config.title }} | {{ section.title }}
+{%- else -%}
+{{- config.title }} | {{ section.title }} | Page {{ paginator.current_index }} of {{ paginator.number_of_pages }}
+{%- endif -%}
+{%- endset -%}
+
+{%- if paginator.current_index == 1 -%}
+{%- set page_description = config.description -%}
+{%- else -%}
+{%- set page_description = "" -%}
+{%- endif -%}
+
+{{- seo::seo(config=config, title=page_title, description=page_description, is_paginated_index=true) }}
 {% endblock seo %}
 
 {% block content %}
-<h1 class="page-title">Blog Posts</h1>
+<div>
+  <h1 class="page-title">Blog Posts</h1>
 
-<ul class="post-list">
-  {# section.pages is already sorted by date desc in Zola #}
-  {% for page in paginator.pages %}
-    <li class="post-item">
-
-      <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-
-      {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
-        <p class="post-meta">
-          {% if page.date -%}
-            <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
-              {{ page.date | date(format="%B %d, %Y") }}
-            </time>
-          {%- endif %}
-          {% if page.author or page.extra.author or config.extra.author_name -%}
-            &nbsp;&mdash; {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
-          {%- endif %}
-        </p>
-      {%- endif %}
-
-      {# thumbnail: prefer extra.image, fallback to logo #}
-      {% set thumb = page.extra.image
-                      | default(value='images/logo-blue-square.svg') %}
-      <img src="{{ get_url(path=thumb) }}"
-           alt="{{ page.title }} thumbnail"
-           width="200"
-           class="post-thumb">
-
-      <div class="post-excerpt">
-        {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
-      </div>
-
-      <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
+  <ul class="post-list">
+    {# section.pages is already sorted by date desc in Zola #}
+    {% for page in paginator.pages %}
+    <li>
+      <a href="{{ page.permalink }}">
+        <span class="post-title">{{ page.title }}</span>
+        <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+      </a>
     </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock content %}
