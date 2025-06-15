@@ -274,4 +274,8 @@ body > a.anchor {
 
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
- *****************************************************************************/
+*****************************************************************************/
+/* CSP-safe helpers */
+.align-super { vertical-align: super; }
+.text-center { text-align: center; }
+.mb-1rem     { margin-bottom: 1rem; }
