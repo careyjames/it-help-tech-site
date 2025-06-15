@@ -1,26 +1,51 @@
 /* header logo must always have size */
 .site-logo img{
   height:45px !important;
-  width:auto  !important;
+  width:auto !important;
   display:block !important;
   border-radius:0 !important;
 }
 
 /* Ensure header elements remain centered, like the footer */
-.site-header {
+.site-header{
   text-align:center !important;
-  width: 100% !important;
+  width:100% !important;
 }
-.site-logo, .nav-wrapper {
-  /* Center the block elements themselves */
+
+/* Center the logo block itself */
+.site-logo{
   margin-left:auto !important;
   margin-right:auto !important;
-  width: fit-content !important;
+  width:fit-content !important;
 }
 
+/* ---------- DESKTOP: nav pill matches logo width (333 px) ---------- */
+@media (min-width:700px){
+  .nav-wrapper{
+    margin-left:auto !important;
+    margin-right:auto !important;
+
+    /* make 333 px the TOTAL width, including padding/border */
+    box-sizing:border-box;
+    width:333px !important;
+
+    /* zero the side padding so visual width really is 333 px */
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+}
+
+/* ---------- MOBILE: keep pill fluid ----------- */
+@media (max-width:699px){
+  .nav-wrapper{
+    margin-left:auto !important;
+    margin-right:auto !important;
+    width:fit-content !important;
+  }
+}
 
 /* center the profile image on the about page */
-.post-image img {
-  display: block;
-  margin: 0 auto;
+.post-image img{
+  display:block;
+  margin:0 auto;
 }
