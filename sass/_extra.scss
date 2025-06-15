@@ -104,6 +104,11 @@ pre {
   margin-top: 0.5rem;
 }
 
+/* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
+header > nav {
+  justify-content: center !important;   /* override theme’s space-between */
+}
+
 /* --- CORRECTED HEADER & NAVIGATION STYLES --- */
 
 .site-header {
