@@ -1385,11 +1385,13 @@ pre {
 }
 
 /* Always show the navigation */
-.site-header nav {
+.site-header .nav-wrapper {
   display: block !important;
+  margin: var(--s1) auto 0 !important;
+  flex-direction: column !important;
 }
 
-.site-header nav ul {
+.nav-wrapper ul {
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
@@ -1400,13 +1402,13 @@ pre {
   gap: 0.5rem;
 }
 
-.site-header nav ul li {
+.nav-wrapper ul li {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.site-header nav ul li a {
+.nav-wrapper ul li a {
   display: flex;
   align-items: center;
 }
@@ -1490,7 +1492,7 @@ pre {
 }
 
 /* Force the "Schedule" link icon into a superscript position */
-.site-header nav ul li a svg {
+.nav-wrapper ul li a svg {
   position: relative;
   top: -0.3em;
 }
