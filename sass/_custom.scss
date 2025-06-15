@@ -3,18 +3,26 @@
 .homepage-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: left;
   max-width: 60rem;   /* ~960 px */
   margin-inline: auto;
   padding-inline: 1rem;
 }
 
-/* Center only the main hero heading */
-.homepage-hero > h1 {
+/* Center only the main hero heading, phone, and button */
+.homepage-hero > h1,
+.homepage-hero > .phone-line,
+.homepage-hero > p:has(.cta-button) { /* This targets the <p> containing the button */
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Explicitly left-align other headings and paragraphs */
+.homepage-hero > h2,
+.homepage-hero > p:not(.phone-line):not(:has(.cta-button)) {
+    text-align: left;
+    width: 100%; /* Ensure block takes full width to respect text-align */
 }
 
 /* ensure phone number line has breathing room */
