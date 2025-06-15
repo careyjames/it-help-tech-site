@@ -1,5 +1,5 @@
 ---
-title: About IT Help San Diego
+title: Our Expertise
 description: "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
 path: about
 extra:
