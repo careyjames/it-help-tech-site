@@ -1,5 +1,20 @@
 {% extends "base.html" %}
-
+{% block seo %}
+  {{- super() }}
+  {%- set page_title -%}
+    {%- if paginator.current_index == 1 -%}
+      {{- config.title }}
+    {%- else -%}
+      {{- config.title }} | Page {{ paginator.current_index }} of {{ paginator.number_of_pages }}
+    {%- endif -%}
+  {%- endset -%}
+  {%- if paginator.current_index == 1 -%}
+    {%- set page_description = config.description -%}
+  {%- else -%}
+    {%- set page_description = "" -%}
+  {%- endif -%}
+  {{- seo::seo(config=config, title=page_title, description=page_description, is_paginated_index=true) }}
+{% endblock seo %}
 {% block content %}
 <div>
   <h1 class="page-title">Blog Posts</h1>
