@@ -1,9 +1,8 @@
-/* ─── DESKTOP ONLY: centre header & fix width ───────────────────── */
+/* ─── DESKTOP ONLY: centre header & fix width ───────────────── */
 @media (min-width: 700px) {
   header.site-header {
     width: 333px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin: 0 auto !important;
     max-width: none !important;
   }
 }
