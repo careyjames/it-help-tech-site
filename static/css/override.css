@@ -7,64 +7,55 @@
   }
 }
 
-/* ─── MOBILE ONLY: fluid header full-width ─────────────────── */
+/* ─── MOBILE (<700px): fluid header + left-aligned hero + wrapping ───────────────── */
 @media (max-width: 699px) {
+  /* fluid header */
   header.site-header {
     width: 100% !important;
     margin: 0 !important;
     max-width: none !important;
   }
-}
-
-/* ─── HERO SECTION TEXT ALIGNMENT ──────────────────────────────── */
-
-/* Default everything in the hero to left-align */
-.homepage-hero {
-  text-align: left !important;
-}
-
-/* Centre only the big headline */
-.homepage-hero h1 {
-  text-align: center !important;
-  margin: 0 auto !important;
-  width: max-content !important;
-}
-
-/* Centre just the phone line */
-.homepage-hero .phone-line {
-  text-align: center !important;
-}
-
-/* Centre the CTA button */
-.homepage-hero .cta-button {
-  display: inline-block !important;
-  margin: 0 auto !important;
-}
-
-/* Left-align all subheadings under the hero (h2–h6) */
-.homepage-hero h2,
-.homepage-hero h3,
-.homepage-hero h4,
-.homepage-hero h5,
-.homepage-hero h6 {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-/* Hero content paragraphs and lists left-aligned */
-.homepage-hero p,
-.homepage-hero ul,
-.homepage-hero li {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-/* ─── HERO SECTION: force children to left-align on mobile ───────────────── */
-@media (max-width: 699px) {
+  /* hero container left-align and full-width */
   .homepage-hero {
-    /* override the theme’s center alignment */
+    text-align: left !important;
     align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: var(--s1) !important;
+    padding-right: var(--s1) !important;
+    box-sizing: border-box !important;
+  }
+  /* centre only main headline, phone, and button */
+  .homepage-hero h1 {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: max-content !important;
+  }
+  .homepage-hero .phone-line {
+    text-align: center !important;
+  }
+  .homepage-hero .cta-button {
+    display: inline-block !important;
+    margin: 0 auto !important;
+  }
+  /* left-align all subheadings (h2–h6) */
+  .homepage-hero h2,
+  .homepage-hero h3,
+  .homepage-hero h4,
+  .homepage-hero h5,
+  .homepage-hero h6 {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+  /* left-align paragraphs and lists, and wrap long text */
+  .homepage-hero p,
+  .homepage-hero ul,
+  .homepage-hero li {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
 }
