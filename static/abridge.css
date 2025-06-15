@@ -1294,8 +1294,9 @@ h2 a:hover {
   color: var(--a3);
 }
 
-.page-title {
-  text-align: center;
+/* Default left‑alignment for article/page headings */
+.post-content h1 {
+  text-align: left;
 }
 
 strong,
@@ -1334,6 +1335,13 @@ pre {
   padding-inline: 1rem;
 }
 
+/* Left‑align page/article titles, but keep the landing hero centred */
+main header:not(.homepage-hero),
+.page-title,
+.post-title {
+  text-align: left !important;
+}
+
 /* Footer brag text */
 .footer-brag {
   font-size: 0.85em;
@@ -1348,12 +1356,14 @@ header {
   margin: 0 0 0.25rem 0 !important;
   width: 100% !important;
   position: relative !important;
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .nav-wrapper {
-  display: inline-flex;
+  display: flex;
   width: clamp(0px, 90vw, 356px);
   margin: 0 auto;
   padding: 0.25rem 0.75rem;
@@ -1519,7 +1529,20 @@ body > a.anchor {
 }
 /******************************************************************************
  *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
- *****************************************************************************/
+*****************************************************************************/
+/* CSP-safe helpers */
+.align-super {
+  vertical-align: super;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
 /******************************************************************************
  *   FONTS - Abridge by default uses the System Font Stack
  *     https://css-tricks.com/snippets/css/system-font-stack/
@@ -1541,6 +1564,12 @@ body > a.anchor {
 /* ensure phone number line has breathing room */
 .phone-line {
   margin: 0.5rem 0 1rem;
+}
+
+/* Center the profile image on the About page */
+.post-image img {
+  display: block;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=abridge.css.map */

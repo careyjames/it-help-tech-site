@@ -113,12 +113,14 @@ header {
   margin: 0 0 0.25rem 0 !important;
   width: 100% !important;
   position: relative !important;
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .nav-wrapper {
-  display: inline-flex;
+  display: flex;
   width: clamp(0px, 90vw, 356px);
   margin: 0 auto;
   padding: 0.25rem 0.75rem;

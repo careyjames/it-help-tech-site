@@ -12,7 +12,7 @@ extra:
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "name": "About IT Help San Diego",
+  "name": "Our Expertise",
   "mainEntity": {
     "@type": "Organization",
     "name": "Remote IT Help",
