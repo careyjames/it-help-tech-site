@@ -90,6 +90,14 @@ pre {
   padding-inline: 1rem;
 }
 
+/* Left‑align page/article titles, but keep the landing hero centred */
+main header:not(.homepage-hero),
+.page-title,
+.post-title {
+  text-align: left !important;
+}
+
+
 /* Footer brag text */
 .footer-brag {
   font-size: 0.85em;
