@@ -9,12 +9,12 @@
 /* Ensure header elements remain centered, like the footer */
 .site-header {
   text-align:center !important;
-  width: 100%;
+  width: 100% !important;
 }
 .site-logo, .nav-wrapper {
   /* Center the block elements themselves */
-  margin-left:auto;
-  margin-right:auto;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
 
