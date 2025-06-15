@@ -51,6 +51,15 @@ h2 a:hover {
 }
 
 /* Default left‑alignment for article/page headings */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+}
+
+/* Ensure article or page h1s align left as well */
 .post-content h1 {
   text-align: left;
 }
@@ -90,9 +99,8 @@ pre {
   padding-inline: 1rem;
 }
 
-/* Keep hero headings centered */
-.homepage-hero > h1,
-.homepage-hero > h2 {
+/* Center only the main hero heading */
+.homepage-hero > h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;

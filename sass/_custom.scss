@@ -10,9 +10,8 @@
   padding-inline: 1rem;
 }
 
-/* Center hero headings */
-.homepage-hero > h1,
-.homepage-hero > h2 {
+/* Center only the main hero heading */
+.homepage-hero > h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
