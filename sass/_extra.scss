@@ -274,10 +274,13 @@ body > a.anchor {
   overflow: hidden !important;
 }
 
-/* --- WIDTH TWEAK: keep nav pill same width as logo on desktop --- */
+/* --- WIDTH TWEAK: nav pill matches logo exactly (333 px incl. padding) --- */
 @media (min-width: 700px) {
   .nav-wrapper {
-    width: 333px;              /* matches the 333 px logo width */              /* adjust until it lines up perfectly */
+    box-sizing: border-box;   /* count padding *inside* the 333 px box   */
+    width: 333px;
+    padding-left: 0;          /* or keep 0.75rem and set width to 309px  */
+    padding-right: 0;
   }
 }
 
