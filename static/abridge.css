@@ -1339,6 +1339,8 @@ pre {
 .page-title,
 .post-title {
   text-align: center;
+  margin: 0 auto;
+  width: max-content;
 }
 
 /* Footer brag text */
@@ -1355,7 +1357,9 @@ header {
   margin: 0 0 0.25rem 0 !important;
   width: 100% !important;
   position: relative !important;
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -1372,7 +1376,7 @@ header {
 /* Center logo above navigation */
 .site-logo {
   text-align: center;
-  margin: 0.25rem 0;
+  margin: 0.25rem auto;
 }
 
 .site-logo img {
@@ -1551,8 +1555,8 @@ body > a.anchor {
 .homepage-hero {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   max-width: 60rem; /* ~960 px */
   margin-inline: auto;
   padding-inline: 1rem;
