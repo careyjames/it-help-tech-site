@@ -95,6 +95,8 @@ pre {
 .page-title,
 .post-title {
   text-align: center;
+  margin: 0 auto;
+  width: max-content;
 }
 
 
@@ -113,7 +115,9 @@ header {
   margin: 0 0 0.25rem 0 !important;
   width: 100% !important;
   position: relative !important;
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -130,7 +134,7 @@ header {
 /* Center logo above navigation */
 .site-logo {
   text-align: center;
-  margin: 0.25rem 0;
+  margin: 0.25rem auto;
 }
 .site-logo img {
   display: block;
