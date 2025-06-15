@@ -139,29 +139,7 @@
 {%- endblock footer %}
 {%- block gotop %}
 {%- endblock gotop %}
-<script>
-(() => {
-  const root = document.documentElement;
-  const storageKey = 'theme';
-  const btn = document.getElementById('mode');
-
-  // 1 – initial state: default to dark unless user explicitly saved "light"
-const saved = localStorage.getItem(storageKey);
-if (saved !== 'light') root.dataset.theme = 'dark';
-
-  // 2 – cycle theme on icon click: light → dark → system → (light…)
-  btn && btn.addEventListener('click', () => {
-    const current = root.dataset.theme;
-    if (current === 'dark') {
-      root.removeAttribute('data-theme');      // system
-      localStorage.removeItem(storageKey);
-    } else {                                   // light ➜ dark
-      root.dataset.theme = 'dark';
-      localStorage.setItem(storageKey, 'dark');
-    }
-  });
-})();
-</script>
+<script src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) }}" defer></script>
 </body>
 
 </html>
