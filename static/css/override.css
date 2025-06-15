@@ -1,20 +1,9 @@
 /* final word: centre header and fix width */
-header.site-header{
-  width:333px !important;
-  margin:auto !important;
-  max-width:none !important;
-}
-
-
-/* Home page: left-align all subtitles under the hero */
-.homepage-hero h2,
-.homepage-hero h3,
-.homepage-hero h4,
-.homepage-hero h5,
-.homepage-hero h6 {
-  text-align: left !important;
-  margin-left: 0 !important;
+header.site-header {
+  width: 333px !important;
+  margin-left: auto !important;
   margin-right: auto !important;
+  max-width: none !important;
 }
 
 /* ─── HERO SECTION TEXT ALIGNMENT ───────────────────────────────── */
@@ -24,7 +13,7 @@ header.site-header{
   text-align: left !important;
 }
 
-/* But centre only the big headline */
+/* Centre only the big headline */
 .homepage-hero h1 {
   text-align: center !important;
 }
@@ -38,4 +27,15 @@ header.site-header{
 .homepage-hero .cta-button {
   display: inline-block !important;
   margin: 0 auto !important;
+}
+
+/* Left-align all subheadings under the hero (h2–h6) */
+.homepage-hero h2,
+.homepage-hero h3,
+.homepage-hero h4,
+.homepage-hero h5,
+.homepage-hero h6 {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
