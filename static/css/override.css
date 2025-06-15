@@ -99,3 +99,11 @@ article ul, article ol{
   margin-block: 0 1rem !important;   /* tighter top, keep bottom */
   line-height: 1.4  !important;
 }
+
+/* sun / moon icon for the theme toggle */
+.mode-btn{
+  background:none;border:none;padding:0;cursor:pointer;
+  font-size:1.25rem;line-height:1;
+}
+.mode-btn::before{content:"🌙";}              /* light → show moon */
+[data-theme="dark"] .mode-btn::before{content:"🌞";} /* dark  → show sun  */
