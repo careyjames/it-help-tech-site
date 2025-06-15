@@ -1,64 +1,58 @@
-/* ─── DESKTOP (≥ 700 px) ─────────────────────────────────────── */
+/* ─────────── 1.  GLOBAL: kill the flex hero ─────────────────── */
+.homepage-hero {
+  /* scrap the flexbox that the theme sets */
+  display:       block !important;
+  align-items:   flex-start !important;
+  text-align:    left !important;
+
+  /* sane width & padding */
+  width:         100%  !important;
+  max-width:     100%  !important;
+  padding-inline: 1rem !important;
+  box-sizing:    border-box !important;
+}
+
+/* centre ONLY the headline, phone number, & button */
+.homepage-hero h1,
+.homepage-hero .phone-line,
+.homepage-hero .cta-button {
+  text-align:    center !important;
+  margin-left:   auto   !important;
+  margin-right:  auto   !important;
+  width:         auto   !important;   /* allow wrapping */
+  max-width:     100%   !important;
+  overflow-wrap: break-word !important;
+  word-break:    break-word  !important;
+}
+
+/* force everything else inside hero to be left + wrap */
+.homepage-hero h2,
+.homepage-hero h3,
+.homepage-hero h4,
+.homepage-hero h5,
+.homepage-hero h6,
+.homepage-hero p,
+.homepage-hero ul,
+.homepage-hero li {
+  text-align:    left !important;
+  margin-left:   0    !important;
+  margin-right:  auto !important;
+  overflow-wrap: break-word !important;
+  word-break:    break-word  !important;
+}
+
+/* trim the theme’s huge list indent */
+.homepage-hero ul,
+.homepage-hero ol { padding-left: 1rem !important; }
+
+/* ─────────── 2.  HEADER: keep the 333 px desktop pill ───────── */
 @media (min-width: 700px) {
-  header.site-header {                /* keep the narrow header   */
+  header.site-header {
     width: 333px !important;
     margin: 0 auto !important;
     max-width: none !important;
   }
 }
 
-/* ─── MOBILE (< 700 px) ──────────────────────────────────────── */
-@media (max-width: 699px) {
-
-  /* 1 ▸ Make the hero behave like a normal block (no flex) ----- */
-  .homepage-hero {
-    display: block !important;        /* drop the flex layout      */
-    width: 100%   !important;         /* span full viewport        */
-    margin: 0     !important;         /* no auto-centering margins */
-    padding-inline: 1rem !important;  /* even side-padding         */
-    box-sizing: border-box !important;
-    text-align: left !important;      /* default left-align        */
-  }
-
-  /* 2 ▸ Centred bits that *should* stay centred ---------------- */
-  .homepage-hero h1,
-  .homepage-hero .phone-line,
-  .homepage-hero .cta-button {
-    text-align: center !important;
-    margin-left:  auto !important;
-    margin-right: auto  !important;
-  }
-
-  /*    …and make sure the headline can wrap                      */
-  .homepage-hero h1 {
-    width: auto !important;           /* ← THIS line fixes overflow */
-    max-width: 100% !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word    !important;
-  }
-
-  /* 3 ▸ Everything else in the hero is forced left + wraps ----- */
-  .homepage-hero h2,
-  .homepage-hero h3,
-  .homepage-hero h4,
-  .homepage-hero h5,
-  .homepage-hero h6,
-  .homepage-hero p,
-  .homepage-hero ul,
-  .homepage-hero li {
-    text-align:  left        !important;
-    margin-left: 0           !important;
-    margin-right: auto       !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word    !important;
-  }
-
-  /* 4 ▸ Trim the theme’s big list-indent ----------------------- */
-  .homepage-hero ul,
-  .homepage-hero ol {
-    padding-left: 1rem !important;
-  }
-}
-
-/* small safety-net for any rogue element */
+/* ─────────── 3.  SAFETY NET ─────────────────────────────────── */
 body { overflow-x: hidden; }
