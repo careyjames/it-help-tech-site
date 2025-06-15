@@ -325,3 +325,13 @@ body > a.anchor {
     margin-right: auto !important;
   }
 }
+
+/* ---------- Desktop: centre the header container itself -------- */
+@media (min-width: 700px) {
+  header.site-header {
+    width: 333px !important;         /* same 333 px so container = rows */
+    max-width: none !important;      /* neutralise theme’s 70 % rule    */
+    margin-left: auto !important;    /* auto margins centre the block   */
+    margin-right: auto !important;
+  }
+}
