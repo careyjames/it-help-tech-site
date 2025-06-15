@@ -114,6 +114,12 @@ header > nav > div:nth-child(2) {
   padding-right: 0 !important;
 }
 
+/* kill the theme gutters on the outer header */
+header {                           /*  add this block  */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* --- CORRECTED HEADER & NAVIGATION STYLES --- */
 
 .site-header {
