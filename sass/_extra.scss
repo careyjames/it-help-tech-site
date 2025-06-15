@@ -52,7 +52,7 @@ h2 a:hover {
   color: var(--a3);
 }
 
-/* Default left-alignment for article/page headings */
+/* Default left‑alignment for article/page headings */
 h2,
 h3,
 h4,
@@ -111,12 +111,6 @@ header > nav,
 header > nav > div:nth-child(2) {
   justify-content: center !important;  /* override theme’s space-between */
   padding-left: 0 !important;          /* remove theme gutters */
-  padding-right: 0 !important;
-}
-
-/* kill the theme gutters on the outer header */
-header {                           /*  add this block  */
-  padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
@@ -278,6 +272,13 @@ body > a.anchor {
   width: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
+}
+
+/* --- WIDTH TWEAK: keep nav pill same width as logo on desktop --- */
+@media (min-width: 700px) {
+  .nav-wrapper {
+    width: 22rem;              /* adjust until it lines up perfectly */
+  }
 }
 
 /* ─── Mobile dropdown tap-target fix ─────────────────────────── */
