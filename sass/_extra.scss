@@ -22,6 +22,7 @@ body {
   font-size: 1rem !important;
   line-height: 1.6;
 }
+
 /* Use theme accent colors so they follow config.toml */
 a {
   color: var(--a1);
@@ -30,6 +31,7 @@ a:hover {
   text-decoration: underline;
   color: var(--a2);
 }
+
 h1,
 h2,
 h3,
@@ -107,8 +109,8 @@ pre {
 /* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
 header > nav,
 header > nav > div:nth-child(2) {
-  justify-content: center !important;       /* override theme’s space-between */
-  padding-left: 0 !important;               /* remove theme gutters */
+  justify-content: center !important;  /* override theme’s space-between */
+  padding-left: 0 !important;          /* remove theme gutters */
   padding-right: 0 !important;
 }
 
@@ -297,4 +299,5 @@ body > a.anchor {
 *****************************************************************************/
 /* CSP-safe helpers */
 .align-super { vertical-align: super; }
-.text-center { text-align:
+.text-center { text-align: center; }
+.mb-1rem     { margin-bottom: 1rem; }
