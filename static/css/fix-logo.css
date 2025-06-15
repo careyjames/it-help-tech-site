@@ -6,36 +6,31 @@
   border-radius:0 !important;
 }
 
-/* Ensure header elements remain centered, like the footer */
-.site-header {
-  text-align:center !important;   /* keep this */
-  /* width:100% !important;   <-- DELETE this line */
+/* centre the header’s content; let width be handled elsewhere */
+.site-header{
+  text-align:center !important;
+  /* removed: width:100% !important; */
 }
 
-/* Center the logo block itself */
+/* centre the logo block itself */
 .site-logo{
   margin-left:auto !important;
   margin-right:auto !important;
-  width:fit-content !important;
 }
 
-/* ---------- DESKTOP: nav pill matches logo width (333 px) ---------- */
+/* nav pill: exactly 333 px incl. padding & border on desktop */
 @media (min-width:700px){
   .nav-wrapper{
-    margin-left:auto !important;
-    margin-right:auto !important;
-
-    /* make 333 px the TOTAL width, including padding/border */
     box-sizing:border-box;
     width:333px !important;
-
-    /* zero the side padding so visual width really is 333 px */
     padding-left:0 !important;
     padding-right:0 !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
   }
 }
 
-/* ---------- MOBILE: keep pill fluid ----------- */
+/* fluid pill on mobile */
 @media (max-width:699px){
   .nav-wrapper{
     margin-left:auto !important;
@@ -44,7 +39,7 @@
   }
 }
 
-/* center the profile image on the about page */
+/* centre profile image on “About” page */
 .post-image img{
   display:block;
   margin:0 auto;
