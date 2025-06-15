@@ -1,8 +1,11 @@
 {%- import 'macros/seo.html' as macros_seo -%}
 {%- import "macros/macros.html" as macros -%}
-{#  i18n  #}
-{%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) or
-               load_data(path="themes/abridge/i18n/" ~ lang ~ ".toml", required=false) -%}
+
+{# ---------- i18n lookup (safe) -------------------------------- #}
+{%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- if i18n is none -%}
+  {%- set i18n = load_data(path="themes/abridge/i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- endif -%}
 
 {%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
 {%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif -%}
