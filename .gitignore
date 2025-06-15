@@ -16,3 +16,4 @@ policy*.json
 .frontmatter/
 frontmatter.json
 .DS_Store
+csp-*.json
