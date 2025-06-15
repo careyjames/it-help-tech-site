@@ -50,7 +50,7 @@ h2 a:hover {
   color: var(--a3);
 }
 
-/* Default left‑alignment for article/page headings */
+/* Default left-alignment for article/page headings */
 h2,
 h3,
 h4,
@@ -105,8 +105,11 @@ pre {
 }
 
 /* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
-header > nav {
-  justify-content: center !important;   /* override theme’s space-between */
+header > nav,
+header > nav > div:nth-child(2) {
+  justify-content: center !important;       /* override theme’s space-between */
+  padding-left: 0 !important;               /* remove theme gutters */
+  padding-right: 0 !important;
 }
 
 /* --- CORRECTED HEADER & NAVIGATION STYLES --- */
@@ -294,19 +297,4 @@ body > a.anchor {
 *****************************************************************************/
 /* CSP-safe helpers */
 .align-super { vertical-align: super; }
-.text-center { text-align: center; }
-.mb-1rem     { margin-bottom: 1rem; }
-
-/* Blog post listing layout */
-.post-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.post-item {
-  text-align: left;
-}
+.text-center { text-align:
