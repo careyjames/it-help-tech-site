@@ -39,3 +39,12 @@ header.site-header {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+/* Hero content paragraphs and lists left-aligned */
+.homepage-hero p,
+.homepage-hero ul,
+.homepage-hero li {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
