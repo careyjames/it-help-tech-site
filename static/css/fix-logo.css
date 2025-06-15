@@ -5,3 +5,9 @@
   display:block !important;
   border-radius:0 !important;
 }
+
+/* center the profile image on the about page */
+.post-image img {
+  display: block;
+  margin: 0 auto;
+}
