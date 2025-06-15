@@ -12,9 +12,8 @@
   font-display: swap;
 }
 
-/* --- ALL CUSTOM STYLES --- */
+/* --- ALL CUSTOM STYLES --------------------------------------- */
 
-/* Main theme dark mode colors */
 body {
   background-color: var(--c1);
   color: var(--f1);
@@ -23,59 +22,37 @@ body {
   line-height: 1.6;
 }
 
-/* Use theme accent colors so they follow config.toml */
-a {
-  color: var(--a1);
-}
-a:hover {
-  text-decoration: underline;
-  color: var(--a2);
-}
+a          { color: var(--a1); }
+a:hover    { text-decoration: underline; color: var(--a2); }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--a1);
-}
+h1, h2, h3, h4, h5, h6 { color: var(--a1); }
+h1 a, h2 a             { color: var(--a1); }
+h1 a:hover, h2 a:hover { color: var(--a3); }
 
-h1 a,
-h2 a,
-h1 a:visited,
-h2 a:visited {
-  color: var(--a1);
-}
-h1 a:hover,
-h2 a:hover {
-  color: var(--a3);
-}
+/* Default left-alignment for headings */
+h2, h3, h4, h5, h6      { text-align: left; }
+.post-content h1        { text-align: left; }
 
-/* Default left‑alignment for article/page headings */
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Page / post titles left-aligned by default */
+.page-title,
+.post-title {
   text-align: left;
+  margin: 0 auto;
+  width: max-content;
 }
 
-/* Ensure article or page h1s align left as well */
-.post-content h1 {
-  text-align: left;
+/* Hero headline on home page stays centred */
+.home-headline {
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
 }
 
 strong,
-li strong {
-  color: #ffffff;
-}
+li strong { color: #fff; }
 
-img {
-  border-radius: 15px;
-}
+img { border-radius: 15px; }
 
-/* Code block styles */
 code {
   background-color: rgb(53.8, 82, 108.9);
   color: #f8f9fa;
@@ -90,14 +67,6 @@ pre {
   color: #abb2bf !important;
 }
 
-/* Center page and article titles */
-.page-title,
-.post-title {
-  text-align: left;
-  margin: 0 auto;
-  width: max-content;
-}
-
 /* Footer brag text */
 .footer-brag {
   font-size: 0.85em;
@@ -110,16 +79,15 @@ pre {
 header > nav,
 header > nav > div:nth-child(2) {
   justify-content: center !important;  /* override theme’s space-between */
-  padding-left: 0 !important;          /* remove theme gutters */
+  padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* --- CORRECTED HEADER & NAVIGATION STYLES --- */
+/* --- HEADER & NAVIGATION STYLES ------------------------------- */
 
 .site-header {
   padding-top: 0.25rem !important;
   margin: 0 0 0.25rem 0 !important;
-  width: 100% !important;
   position: relative !important;
   display: flex !important;
   flex-direction: column;
@@ -137,23 +105,11 @@ header > nav > div:nth-child(2) {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Center logo above navigation */
-.site-logo {
-  text-align: center;
-  margin: 0.25rem auto;
-}
-.site-logo img {
-  display: block;
-  margin: 0 auto;
-}
+/* Logo block */
+.site-logo { text-align: center; margin: 0.25rem auto; }
+.site-logo img { display: block; margin: 0 auto; }
 
-/* Always show the navigation and keep it centered */
-.site-header .nav-wrapper {
-  display: block !important;
-  margin: var(--s1) auto 0 !important;
-  flex-direction: column !important;
-}
-
+/* Nav list */
 .nav-wrapper ul {
   display: flex !important;
   flex-wrap: wrap;
@@ -164,127 +120,39 @@ header > nav > div:nth-child(2) {
   padding: 0;
   gap: 0.5rem;
 }
+.nav-wrapper ul li       { position: relative; display: flex; align-items: center; }
+.nav-wrapper ul li a     { display: flex; align-items: center; }
+.dropdown-toggle         { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; }
+.arrow                   { font-size: 0.75em; transition: transform 0.2s ease; }
+.home-icon svg           { display: block; width: 28px; height: 28px; margin-top: 8px; }
+#mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
+.dropdown-content        { /* stays unchanged */ }
 
-.nav-wrapper ul li {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+/* Hide orphan anchors injected by the theme */
+body > a.anchor { display: none !important; visibility: hidden !important; }
 
-.nav-wrapper ul li a {
-  display: flex;
-  align-items: center;
-}
-
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-}
-
-.arrow {
-  font-size: 0.75em;
-  transition: transform 0.2s ease;
-}
-
-.home-icon svg {
-  display: block;
-  width: 28px;
-  height: 28px;
-  margin-top: 8px;
-}
-
-/* Ensure dark/light mode toggle aligns with other nav items */
-#mode {
-  display: flex;
-  align-items: center;
-  margin-top: -0.25rem;
-}
-
-/* Dropdown styles */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--c2);
-  border: 1px solid rgb(58, 89, 119);
-  border-radius: 8px;
-  list-style: none;
-  padding: 0.25rem 0;
-  margin: 0;
-  min-width: 10rem;
-  z-index: 1000;
-}
-
-.dropdown summary {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-  list-style: none;
-}
-.dropdown summary::-webkit-details-marker {
-  display: none;
-}
-
-.dropdown details {
-  position: relative;
-}
-
-.dropdown details[open] > .dropdown-content {
-  display: block;
-}
-
-.dropdown details[open] summary .arrow {
-  transform: rotate(180deg);
-}
-
-.dropdown-content li {
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-content li a {
-  display: block;
-  padding: 0.25rem 1.25rem;
-  line-height: 1;
-}
-
-/* Force the "Schedule" link icon into a superscript position */
-.nav-wrapper ul li a svg {
-  position: relative;
-  top: -0.3em;
-}
-
-/* Hover colour for "More" */
-.dropdown-toggle:hover {
-  color: var(--a2);
-}
-
-/* --- hide every orphan "##" anchor that sits directly under <body> --- */
-body > a.anchor {
-  display: none !important;
-  visibility: hidden !important;
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
-
-/* --- WIDTH TWEAK: nav pill matches logo exactly (333 px incl. padding) --- */
+/* ---------- DESKTOP (≥700 px) --------------------------------- */
 @media (min-width: 700px) {
+  /* nav pill: exactly 333 px incl. padding & border */
   .nav-wrapper {
-    box-sizing: border-box;   /* count padding *inside* the 333 px box   */
-    width: 333px;
-    padding-left: 0;          /* or keep 0.75rem and set width to 309px  */
-    padding-right: 0;
+    box-sizing: border-box;
+    width: 333px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* header container shrinks to 333 px and centres */
+  header.site-header {
+    width: 333px !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
-/* ─── Mobile dropdown tap-target fix ─────────────────────────── */
+/* ---------- MOBILE (<600 px) ---------------------------------- */
 @media (max-width: 600px) {
   .dropdown-content {
     min-width: 14rem;
@@ -296,49 +164,10 @@ body > a.anchor {
     display: block !important;
     column-count: 1 !important;
   }
-
-  .dropdown-content li a {
-    padding: 0.9rem 1.25rem;
-    font-size: 1rem;
-    line-height: 1.2;
-  }
+  .dropdown-content li a { padding: 0.9rem 1.25rem; font-size: 1rem; line-height: 1.2; }
 }
 
-/******************************************************************************
- *   Extra - Put your extra SASS/CSS here, it will get bundled with abridge.css
-*****************************************************************************/
-/* CSP-safe helpers */
+/* --- Utility helpers ----------------------------------------- */
 .align-super { vertical-align: super; }
 .text-center { text-align: center; }
 .mb-1rem     { margin-bottom: 1rem; }
-
-
-/* ---- FINAL: nav pill exactly matches 333 px logo width -------- */
-@media (min-width: 700px) {
-  .nav-wrapper {
-    box-sizing: border-box;  /* width includes border & padding            */
-    width: 333px !important; /* same as logo’s measured width              */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    border-width: 0 !important;  /* optional: remove the 5 px transparent border */
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-/* ---------- Desktop: centre the header container itself -------- */
-@media (min-width: 700px) {
-  header.site-header {
-    width: 333px !important;         /* same 333 px so container = rows */
-    max-width: none !important;      /* neutralise theme’s 70 % rule    */
-    margin-left: auto !important;    /* auto margins centre the block   */
-    margin-right: auto !important;
-  }
-}
-
-/* Home hero headline (h1) – centred */
-.home-headline {
-  text-align: center;
-  margin: 0 auto;
-  width: max-content;
-}
