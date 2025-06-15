@@ -1329,10 +1329,18 @@ pre {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
   max-width: 60rem;
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+/* Keep hero headings centered */
+.homepage-hero > h1,
+.homepage-hero > h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Keep the hero section centered even with flexbox layout */
@@ -1551,6 +1559,20 @@ body > a.anchor {
   margin-bottom: 1rem;
 }
 
+/* Blog post listing layout */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-item {
+  text-align: left;
+}
+
 /******************************************************************************
  *   FONTS - Abridge by default uses the System Font Stack
  *     https://css-tricks.com/snippets/css/system-font-stack/
@@ -1563,10 +1585,18 @@ body > a.anchor {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
   max-width: 60rem; /* ~960 px */
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+/* Center hero headings */
+.homepage-hero > h1,
+.homepage-hero > h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ensure phone number line has breathing room */

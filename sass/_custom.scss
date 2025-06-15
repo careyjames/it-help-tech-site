@@ -4,10 +4,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
   max-width: 60rem;   /* ~960 px */
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+/* Center hero headings */
+.homepage-hero > h1,
+.homepage-hero > h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ensure phone number line has breathing room */
