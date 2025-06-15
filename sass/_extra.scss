@@ -171,3 +171,14 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
 .align-super { vertical-align: super; }
 .text-center { text-align: center; }
 .mb-1rem     { margin-bottom: 1rem; }
+
+/* Home page: left-align all subtitles under the hero */
+.homepage-hero h2,
+.homepage-hero h3,
+.homepage-hero h4,
+.homepage-hero h5,
+.homepage-hero h6 {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
