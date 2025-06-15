@@ -42,7 +42,7 @@ image = "images/logo-slogan.jpeg"
 
 
 <header class="homepage-hero">
-  <h1>Expert Mac&nbsp;IT Support for Complex Tech Challenges 🛡️</h1>
+  <h1>Expert Mac&nbsp;IT Support—Complex Tech Challenges</h1>
   <!-- Optional subtitle or CTA buttons can stay inside this header -->
 </header>
 
