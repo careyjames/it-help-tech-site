@@ -90,6 +90,11 @@ pre {
   padding-inline: 1rem;
 }
 
+/* Keep the hero section centered even with flexbox layout */
+main {
+  justify-content: center;
+}
+
 
 /* Center page and article titles */
 .page-title,
