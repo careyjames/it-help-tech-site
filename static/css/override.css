@@ -1,64 +1,65 @@
-/* ─── DESKTOP (≥ 700 px): centre header & fix width ─────────────────── */
+/* ───────── override.css  – loaded LAST – 2025-06-15 ───────── */
+
+/* === 1. HEADER RULES =================================================== */
+
 @media (min-width: 700px) {
-  header.site-header {
+  header.site-header {                    /* narrow, centred header on desktop */
     width: 333px !important;
     margin: 0 auto !important;
     max-width: none !important;
   }
 }
 
-/* ─── MOBILE (< 700 px): fluid header + hero wraps & left-aligns ────── */
 @media (max-width: 699px) {
-
-  /* header spans full viewport */
-  header.site-header {
+  header.site-header {                    /* full-width header on phones */
     width: 100% !important;
     margin: 0 !important;
     max-width: none !important;
   }
-
-  /* hero container becomes a normal block (no flex overflow) */
-  .homepage-hero {
-    display: block !important;        /* drop flex layout          */
-    width: 100% !important;           /* fill viewport             */
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding-inline: 1rem !important;  /* side padding              */
-    box-sizing: border-box !important;
-    text-align: left !important;      /* default for children      */
-    align-items: flex-start !important; /* backup if flex re-enabled */
-  }
-
-  /* centre only the big headline, phone line, and CTA */
-  .homepage-hero h1,
-  .homepage-hero .phone-line,
-  .homepage-hero .cta-button {
-    text-align: center !important;
-    margin: 0 auto !important;
-  }
-  .homepage-hero .cta-button {
-    display: inline-block !important;
-  }
-
-  /* left-align sub-headings */
-  .homepage-hero h2,
-  .homepage-hero h3,
-  .homepage-hero h4,
-  .homepage-hero h5,
-  .homepage-hero h6 {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-
-  /* left-align body copy & lists, wrap long text */
-  .homepage-hero p,
-  .homepage-hero ul,
-  .homepage-hero li {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
-  }
 }
+
+/* === 2. HERO CONTAINER  (all break-points) ============================= */
+
+.homepage-hero {                          /* stop centring everything */
+  display: block !important;              /* ignore theme's flex */
+  align-items: flex-start !important;
+  text-align: left !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-inline: 1rem !important;        /* side-padding on every size */
+  box-sizing: border-box !important;
+}
+
+/* === 3. HERO SPECIAL ITEMS ============================================ */
+
+.homepage-hero h1,
+.homepage-hero .phone-line,
+.homepage-hero .cta-button {              /* keep these centred */
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+.homepage-hero .cta-button {
+  display: inline-block !important;
+}
+
+/* === 4. HERO NORMAL COPY ============================================== */
+
+.homepage-hero h2,
+.homepage-hero h3,
+.homepage-hero h4,
+.homepage-hero h5,
+.homepage-hero h6,
+.homepage-hero p,
+.homepage-hero ul,
+.homepage-hero li {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  overflow-wrap: break-word !important;   /* long words wrap instead of overflow */
+  word-break: break-word !important;
+}
+
+/* === 5. LAST-RESORT SAFETY BELT ======================================= */
+
+body { overflow-x: hidden; }              /* eliminates any stray horizontal scroll */
