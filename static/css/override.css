@@ -56,3 +56,13 @@
 
 /* ─────────── 3.  SAFETY NET ─────────────────────────────────── */
 body { overflow-x: hidden; }
+
+/* -- mobile: cancel the theme’s flex-centred <main> ---------- */
+@media (max-width: 699px) {
+  main {
+    display: block !important;      /* normal flow       */
+    margin: 0 !important;           /* no auto-margins   */
+    padding-inline: 1rem !important;/* keep side padding */
+    box-sizing: border-box !important;
+  }
+}
