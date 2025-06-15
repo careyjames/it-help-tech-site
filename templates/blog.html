@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block seo %}
-{{- super() }}
 {%- set page_title -%}
 {%- if paginator.current_index == 1 -%}
 {{- config.title }} | {{ section.title }}
