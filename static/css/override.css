@@ -1,23 +1,12 @@
-/* ─── DESKTOP: centre header and fix to logo width ───────────── */
-@media (min-width: 700px) {
-  header.site-header {
-    width: 333px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: none !important;  /* neutralise theme’s 70% rule */
-  }
+/* final word: centre header and fix width */
+header.site-header {
+  width: 333px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: none !important;
 }
 
-/* ─── MOBILE: make header fluid again ────────────────────────── */
-@media (max-width: 699px) {
-  header.site-header {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
-
-/* ─── HERO SECTION TEXT ALIGNMENT ───────────────────────────── */
+/* ─── HERO SECTION TEXT ALIGNMENT ───────────────────────────────── */
 
 /* Default everything in the hero to left-aligned */
 .homepage-hero {
@@ -51,7 +40,7 @@
   margin-right: auto !important;
 }
 
-/* Left-align hero paragraphs and lists */
+/* Hero content paragraphs and lists left-aligned */
 .homepage-hero p,
 .homepage-hero ul,
 .homepage-hero li {
