@@ -313,12 +313,15 @@ body > a.anchor {
 .mb-1rem     { margin-bottom: 1rem; }
 
 
-/* ---- FINAL ALIGNMENT: nav pill same width as logo ------------ */
+/* ---- FINAL: nav pill exactly matches 333 px logo width -------- */
 @media (min-width: 700px) {
   .nav-wrapper {
-    box-sizing: border-box;
-    width: 333px !important;      /* <- logo width incl. padding */
-    padding-left: 0 !important;   /* remove the extra 0.75rem gutters */
+    box-sizing: border-box;  /* width includes border & padding            */
+    width: 333px !important; /* same as logo’s measured width              */
+    padding-left: 0 !important;
     padding-right: 0 !important;
+    border-width: 0 !important;  /* optional: remove the 5 px transparent border */
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
