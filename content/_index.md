@@ -1,14 +1,14 @@
 +++
-title       = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
-description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+title       = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 
 [extra]
-og_title        = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
-og_description  = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+og_title        = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+og_description  = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 og_image        = "/images/logo-slogan.jpeg"
 
-twitter_title       = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
-twitter_description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+twitter_title       = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+twitter_description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 twitter_image       = "/images/logo-slogan.jpeg"
 twitter_card        = "summary_large_image"
 +++
@@ -16,6 +16,13 @@ twitter_card        = "summary_large_image"
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "xpath": [
+      "//h3[@id='can-you-help-with-mac-ios-pc-or-mixed-computer-environments']",
+      "//h3[@id='how-is-your-service-different-from-a-managed-service-provider-msp']"
+    ]
+  },
   "mainEntity": [
     {
       "@type": "Question",
@@ -40,8 +47,75 @@ twitter_card        = "summary_large_image"
         "@type": "Answer",
         "text": "We’re not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, we offer a concierge swap: we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide same-day service in La Jolla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For most Mac, Wi‑Fi or email issues we can dispatch to La Jolla the same day, schedule permitting."
+      }
     }
   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ITService"],
+  "name": "IT Help San Diego",
+  "url": "https://www.it-help.tech/",
+  "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
+  "telephone": "+1-619-853-5008",
+  "priceRange": "$$$",
+  "areaServed": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Diego",
+      "addressRegion": "CA",
+      "postalCode": "92037",
+      "streetAddress": "888 Prospect Street Suite 200"
+    }
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 32.8450, "longitude": -117.2760 },
+  "sameAs": [
+    "https://www.linkedin.com/company/it-help-san-diego",
+    "https://g.page/r/CaF_LIXG2uLzEB0/review"
+  ],
+  "serviceType": [
+    "Mac & Wi‑Fi troubleshooting",
+    "DNS & Email deliverability",
+    "On‑site tech support"
+  ],
+  "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "https://schema.org/Monday",
+      "https://schema.org/Tuesday",
+      "https://schema.org/Wednesday",
+      "https://schema.org/Thursday",
+      "https://schema.org/Friday",
+      "https://schema.org/Saturday",
+      "https://schema.org/Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00",
+    "description": "By appointment only"
+  }],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-619-853-5008",
+    "contactType": "customer support",
+    "areaServed": "US-CA"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "188"
+  }
 }
 </script>
 
