@@ -1,4 +1,12 @@
 {#- Theme Switcher Button to toggle between dark/light #}
+{# choose the right template context: page when available, otherwise section, otherwise site config #}
+{% if page is defined %}
+  {% set ctx = page %}
+{% elif section is defined %}
+  {% set ctx = section %}
+{% else %}
+  {% set ctx = config %}
+{% endif %}
   {%- set integrity = config.extra.integrity | default(value=true) -%}
   {%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set integrity = false %}{% endif %}{% endif %}
 
@@ -20,7 +28,7 @@
   <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
   {%- endfor %}{%- endif %}
 
-  {%- if page.extra.stylesheets %}{%- set pagestylesheets=page.extra.stylesheets -%}{%- endif %}
+  {%- if ctx.extra.stylesheets %}{%- set pagestylesheets=ctx.extra.stylesheets -%}{%- endif %}
   {%- if pagestylesheets %}{%- for i in pagestylesheets %}
   <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
   {%- endfor %}{%- endif %}
@@ -107,7 +115,7 @@
   <link rel="preload" as="style" class="preStyle" href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous" />
 {%- endif %}
 
-{%- if config.extra.math or page.extra.math %}
+{%- if config.extra.math or ctx.extra.math %}
 
   {%- set katex_css=config.extra.katex_css | default(value="katex.min.css") -%}
   {%- if katex_css %}{%- if katex_css is matching("^http[s]?://") %}
