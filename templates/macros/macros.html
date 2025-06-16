@@ -40,21 +40,28 @@
       <span{%- if config.extra.meta_post.size %} class="{{ config.extra.meta_post.size }}"{% endif %}>
 
         {#- Author #}
-        {%- if page.taxonomies.authors and config.taxonomies %}
-          {%- for author in page.taxonomies.authors %}
-          {%- if author_flag %}, {% endif %}
-          <a href="{{ get_taxonomy_url(kind='authors', name=author) | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ author }}</a>
-          {%- set_global author_flag = true %}
-          {%- endfor %}
-        {%- elif page.extra.authors and config.extra.meta_post.author %}
-          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %}
-          {%- for author in page.extra.authors %}
-          {%- if author_flag %}, {% endif %} {{ author }}
-          {%- set_global author_flag = true %}
-          {%- endfor %}
-        {%- elif config.extra.author and config.extra.meta_post.author %}
-          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ config.extra.author }}
-        {%- endif %}
+{%- if page.taxonomies.authors and config.taxonomies %}
+  {%- for author in page.taxonomies.authors %}
+  {%- if author_flag %}, {% endif %}
+  <a href="{{ get_taxonomy_url(kind='authors', name=author) | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ author }}</a>
+  {%- set_global author_flag = true %}
+  {%- endfor %}
+{%- elif page.extra.authors and config.extra.meta_post.author %}
+  {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %}
+  {%- for author in page.extra.authors %}
+  {%- if author_flag %}, {% endif %} {{ author }}
+  {%- set_global author_flag = true %}
+  {%- endfor %}
+{%- elif page.author %}
+  {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ page.author }}
+  {%- set_global author_flag = true %}
+{%- elif page.extra.author %}
+  {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ page.extra.author }}
+  {%- set_global author_flag = true %}
+{%- elif config.extra.author or config.extra.author_name %}
+  {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ config.extra.author | default(value=config.extra.author_name) }}
+  {%- set_global author_flag = true %}
+{%- endif %}
 
           {#- divider #}
           {%- if config.extra.meta_post.author %}
@@ -114,21 +121,28 @@
         <span{%- if config.extra.meta_index.size %} class="{{ config.extra.meta_index.size }}"{% endif %}>
 
         {#- Author #}
-        {%- if page.taxonomies.authors and config.taxonomies %}
+{%- if page.taxonomies.authors and config.taxonomies %}
           {%- for author in page.taxonomies.authors %}
           {%- if author_flag %}, {% endif %}
           <a href="{{ get_taxonomy_url(kind='authors', name=author, lang=lang) | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ author }}</a>
           {%- set_global author_flag = true %}
           {%- endfor %}
-        {%- elif page.extra.authors and config.extra.meta_index.author %}
+{%- elif page.extra.authors and config.extra.meta_index.author %}
           {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %}
           {%- for author in page.extra.authors %}
           {%- if author_flag %}, {% endif %} {{ author }}
           {%- set_global author_flag = true %}
           {%- endfor %}
-        {%- elif config.extra.author and config.extra.meta_index.author %}
-          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ config.extra.author }}
-        {%- endif %}
+{%- elif page.author %}
+          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ page.author }}
+          {%- set_global author_flag = true %}
+{%- elif page.extra.author %}
+          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ page.extra.author }}
+          {%- set_global author_flag = true %}
+{%- elif config.extra.author or config.extra.author_name %}
+          {%- if config.extra.icon_author %}<i class="{{ config.extra.icon_author }}"></i> {% endif %} {{ config.extra.author | default(value=config.extra.author_name) }}
+          {%- set_global author_flag = true %}
+{%- endif %}
 
           {#- divider #}
           {%- if config.extra.meta_index.author %}
