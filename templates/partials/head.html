@@ -144,15 +144,33 @@
 
   {%- endfor %}
   {%- endif %}
-<style type="text/css">
-.site-logo img{height:45px;width:auto;display:block;border-radius:0}
-.site-header{text-align:center}
-.site-logo{margin-left:auto;margin-right:auto}
-@media (min-width:700px){.nav-wrapper{box-sizing:border-box;width:333px !important;padding-left:0 !important;padding-right:0 !important;margin-left:auto !important;margin-right:auto !important}}
-@media (max-width:699px){.nav-wrapper{margin-left:auto !important;margin-right:auto !important;width:fit-content !important}}
-.homepage-hero{display:block;align-items:flex-start;text-align:left;width:100%;max-width:100%;padding-inline:1rem;box-sizing:border-box}
-.homepage-hero h1{max-width:100%;overflow-wrap:break-word;white-space:normal;text-align:left}
-@media (min-width:700px){.homepage-hero h1{text-align:center}}
+<style>
+  /* --- Critical CSS for Instant Page Load --- */
+
+  /* Prevents layout shift for the hero section */
+  .homepage-hero { display:block !important; width:100% !important; padding-inline:1rem !important; box-sizing:border-box !important; }
+  .homepage-hero h1 { text-align: left; }
+
+  /* Makes the theme switcher work instantly */
+  .mode-btn { background:none; border:0; padding:0; cursor:pointer; font-size:1.5rem; line-height:1; }
+  .mode-btn::before{ content: "\2600\fe0f"; }
+  html.switch .mode-btn::before{ content: "\1F319"; }
+
+  /* Defines the light theme palette to prevent flicker */
+  html.switch .dropdown-content {
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid rgba(0,0,0,0.20) !important;
+  }
+  html.switch .dropdown-content li a,
+  html.switch .dropdown-content li span {
+    color: #111 !important;
+  }
+
+  /* Desktop-specific critical styles */
+  @media (min-width: 700px) {
+    .homepage-hero h1 { text-align: center; }
+    header.site-header { width:350px !important; margin:0 auto !important; }
+  }
 </style>
 {#- Extra items #}
   {%- if config.extra.head_extra %}
