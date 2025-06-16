@@ -26,7 +26,7 @@ body { overflow-x: hidden; }
 }
 
 /* headline, phone, CTA stay centred */
-.homepage-hero h1,
+/* .homepage-hero h1, */
 .homepage-hero .phone-line,
 .homepage-hero .cta-button{
   text-align:center !important;
@@ -34,6 +34,20 @@ body { overflow-x: hidden; }
   max-width:100% !important;
   overflow-wrap:break-word !important;
   word-break:break-word !important;
+}
+
+/* 2. Make H1 title responsive: left on mobile, centered on desktop */
+.homepage-hero h1 {
+  max-width: 100% !important;
+  overflow-wrap: break-word !important; /* Ensures text wraps */
+  white-space: normal !important;      /* Helps with wrapping */
+  text-align: left;                     /* Mobile-first: default to left */
+}
+
+@media (min-width: 700px) {
+  .homepage-hero h1 {
+    text-align: center; /* Center on desktop */
+  }
 }
 
 /* everything else in the hero is forced left + wraps */
@@ -277,4 +291,15 @@ main {
     overflow-wrap: break-word;
     white-space: normal;
     text-align: center;
+}
+
+/*
+ * On mobile for pages with a feature image under the title (like "Our Expertise"),
+ * center the title to match the image for a more balanced layout.
+ */
+@media (max-width: 699px) {
+  /* Selects a title that is immediately followed by a post-image */
+  h1.page-title:has(+ .post-image) {
+    text-align: center !important;
+  }
 }
