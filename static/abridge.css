@@ -1284,11 +1284,7 @@ h1 a:hover, h2 a:hover {
 }
 
 /* Default left-alignment for headings */
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
+h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
@@ -1354,8 +1350,8 @@ pre {
 }
 
 /* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
-header nav,
-.nav-wrapper {
+header > nav,
+header > nav > div:nth-child(2) {
   justify-content: center !important; /* override theme’s space-between */
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -1426,9 +1422,6 @@ header nav,
 .arrow {
   font-size: 0.75em;
   transition: transform 0.2s ease;
-}
-.dropdown[open] .arrow {
-  transform: rotate(180deg);
 }
 
 .home-icon svg {
