@@ -18,9 +18,14 @@
 {#- Style Sheets #}
   {%- set stylesheets=config.extra.stylesheets | default(value=[ "abridge.css" ]) -%}
   {%- if stylesheets %}{%- for i in stylesheets %}
-  <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
+  {%- if i == 'css/override.css' %}
+  <link rel="preload" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"></noscript>
+  {%- else %}
+  <link rel="stylesheet" href="{{     get_url(path=i
+           , trailing_slash=false, cachebust=true) | safe }}" />
+  {%- endif %}
   {%- endfor %}{%- endif %}
-
   {%- if page.extra.stylesheets %}{%- set pagestylesheets=page.extra.stylesheets -%}{%- endif %}
   {%- if pagestylesheets %}{%- for i in pagestylesheets %}
   <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
@@ -139,11 +144,16 @@
 
   {%- endfor %}
   {%- endif %}
-
-
-
-
-
+<style type="text/css">
+.site-logo img{height:45px;width:auto;display:block;border-radius:0}
+.site-header{text-align:center}
+.site-logo{margin-left:auto;margin-right:auto}
+@media (min-width:700px){.nav-wrapper{box-sizing:border-box;width:333px !important;padding-left:0 !important;padding-right:0 !important;margin-left:auto !important;margin-right:auto !important}}
+@media (max-width:699px){.nav-wrapper{margin-left:auto !important;margin-right:auto !important;width:fit-content !important}}
+.homepage-hero{display:block;align-items:flex-start;text-align:left;width:100%;max-width:100%;padding-inline:1rem;box-sizing:border-box}
+.homepage-hero h1{max-width:100%;overflow-wrap:break-word;white-space:normal;text-align:left}
+@media (min-width:700px){.homepage-hero h1{text-align:center}}
+</style>
 {#- Extra items #}
   {%- if config.extra.head_extra %}
   {{ config.extra.head_extra | safe }}
