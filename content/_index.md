@@ -1,11 +1,16 @@
 +++
-title = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
-description = "Concierge on-site Mac, WiFi, DNS & Email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
-template = "home.html"
+title       = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
+description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+
 [extra]
-# This sets the Open Graph image shown when links are shared.
-# The header logo remains static/logo.svg from the templates.
-image = "images/logo-slogan.jpeg"
+og_title        = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
+og_description  = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+og_image        = "/images/logo-slogan.jpeg"
+
+twitter_title       = "IT Help San Diego – On-Site Apple & Mac Experts - Mac IT Support for Complex Tech Challenges"
+twitter_description = "Concierge on-site Mac, WiFi, DNS & email security support across San Diego. 25 years solving complex tech problems—no monthly retainers."
+twitter_image       = "/images/logo-slogan.jpeg"
+twitter_card        = "summary_large_image"
 +++
 <script type="application/ld+json">
 {

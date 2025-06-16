@@ -15,7 +15,6 @@
 <html lang="{% if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
 <head>
   {%- include "partials/head.html" %}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/red-plus.ico" type="image/x-icon">
   {%- block seo %}
     {%- set title_separator = config.extra.title_separator | default(value=" | ") -%}
