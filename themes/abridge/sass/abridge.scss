@@ -1569,3 +1569,9 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     color: var(--h4);
   }
 }
+
+// ─── project overrides (must come after EVERYTHING else) ──────────────
+@use "_extra" as *;     // if abridge.scss sits in themes/abridge/sass/
+                        // and _extra.scss is next to it in the *same* folder.
+                        // Adjust the relative path if your _extra.scss is
+                        // one directory higher:  @use "../_extra" as *;
