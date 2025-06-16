@@ -44,7 +44,7 @@ Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and
 
 Notice that their policy is set to reject 100% of unauthorized messages.
 
-I proudly participated as a stakeholder in CISA's Cyber Hygiene program for critical cyber infrastructure. I have learned so much from our assigned feds, and I loved experiencing the red team, where hackers at CISA hack your company and show you what they could steal and how to prevent it. One cool macOS security tool we installed that gave our fed, who was red-teaming us the most trouble, was LuLu by Objective See.
+We proudly participate as a stakeholder in CISA's Cyber Hygiene program for critical cyber infrastructure. We have learned so much from our assigned feds, and I love experiencing the red team, where hackers at CISA hack your company and show you what they could steal and how to prevent it. One cool macOS security tool we had installed that gave our fed, who was red-teaming us the most trouble, was LuLu by Objective See.
 
 ### Common SPF Misconceptions
 
