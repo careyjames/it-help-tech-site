@@ -270,3 +270,11 @@ main {
     margin-right: -8px;   /* pull sun 1 px further right */
   }
 }
+
+/* Fix for long blog post titles overflowing the page */
+.page-title, .post-title {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
