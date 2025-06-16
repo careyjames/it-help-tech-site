@@ -133,8 +133,8 @@ main {
 /* desktop-only house icon */
 @media (min-width: 700px){
   .nav-wrapper .home-icon svg{
-    width: 65px;
-    height: 65px;
+    width: 35px;
+    height: 35px;
     margin-top: 12px;
   }
 }
