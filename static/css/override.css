@@ -117,3 +117,10 @@ strong,
 li strong{
   color: var(--f2) !important;
 }
+
+/* Wrap text inside blog posts so it never overflows */
+article p,
+article li {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
