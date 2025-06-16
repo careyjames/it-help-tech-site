@@ -102,10 +102,10 @@ article ul, article ol{
 
 /* sun / moon glyph ----------------------------------------------------- */
 .mode-btn::before{
-  content: "🌙";                        /* default – shows moon on dark  */
+  content: "☀️";                        /* show sun when site is dark    */
 }
-html[data-theme='light'] .mode-btn::before{
-  content: "☀️";                       /* sun when site is light        */
+html.switch .mode-btn::before{
+  content: "🌙";                        /* moon when site is light       */
 }
 .mode-btn{
   background:none;border:0;padding:0;
