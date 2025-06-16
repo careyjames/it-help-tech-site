@@ -33,23 +33,15 @@ h1 a:hover, h2 a:hover { color: var(--a3); }
 h2, h3, h4, h5, h6      { text-align: left; }
 .post-content h1        { text-align: left; }
 
-/* Page / post titles centered on desktop */
+/* Page / post titles left-aligned by default */
 .page-title,
 .post-title {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   width: 100%;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
-}
-
-@media (max-width: 699px) {
-  /* keep titles left-aligned on small screens */
-  .page-title,
-  .post-title {
-    text-align: left;
-  }
 }
 
 /* Hero headline on home page stays centred */
