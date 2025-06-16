@@ -25,11 +25,10 @@
   {%- if pagestylesheets %}{%- for i in pagestylesheets %}
   <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
   {%- endfor %}{%- endif %}
-
-
-
-
-
+  <style>
+  {{ load_data(path="static/css/fix-logo.css") | safe }}
+  {{ load_data(path="static/css/override.css") | safe }}
+  </style>
 {#- meta tags #}
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
