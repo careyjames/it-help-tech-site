@@ -1,32 +1,21 @@
-/ * ──────────────────────────────────────────────────────────────
-   0.  GLOBAL SAFETY NET
-   ─────────────────────────────────────────────────────────── */
 body { overflow-x: hidden; }
-
-/* ──────────────────────────────────────────────────────────────
-   1.  HERO – same rules everywhere (home page)
-   ─────────────────────────────────────────────────────────── */
 .homepage-hero{
-  display:block !important;          /* kill the theme’s flex  */
+  display:block !important;
   align-items:flex-start !important;
   text-align:left !important;
   width:100% !important;
   max-width:100% !important;
   padding-inline:1rem !important;
   box-sizing:border-box !important;
-  /* palette tweak for LIGHT mode  keep contrast high */
   html.switch .dropdown-content{
-    background: rgba(255,255,255,0.95) !important;   /* light translucent panel */
-    border: 1px solid rgba(0,0,0,0.20) !important;   /* subtle border */
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid rgba(0,0,0,0.20) !important;
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;                          /* dark text for readability */
+    color: #111 !important;
   }
 }
-
-/* headline, phone, CTA stay centred */
-/* .homepage-hero h1, */
 .homepage-hero .phone-line,
 .homepage-hero .cta-button{
   text-align:center !important;
@@ -35,22 +24,18 @@ body { overflow-x: hidden; }
   overflow-wrap:break-word !important;
   word-break:break-word !important;
 }
-
-/* 2. Make H1 title responsive: left on mobile, centered on desktop */
 .homepage-hero h1 {
   max-width: 100% !important;
-  overflow-wrap: break-word !important; /* Ensures text wraps */
-  white-space: normal !important;      /* Helps with wrapping */
-  text-align: left;                     /* Mobile-first: default to left */
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  text-align: left;
 }
 
 @media (min-width: 700px) {
   .homepage-hero h1 {
-    text-align: center; /* Center on desktop */
+    text-align: center;
   }
 }
-
-/* everything else in the hero is forced left + wraps */
 .homepage-hero h2,
 .homepage-hero h3,
 .homepage-hero h4,
@@ -65,20 +50,12 @@ body { overflow-x: hidden; }
   overflow-wrap:break-word !important;
   word-break:break-word !important;
 }
-
-/* trim huge bullet indent the theme adds */
 .homepage-hero ul,
 .homepage-hero ol{ padding-left:1rem !important; }
-
-/* desktop dropdown defaults */
 .dropdown-content li a,
 .dropdown-content li span{
-  font-weight: 700 !important;   /* full bold for desktop */
+  font-weight: 700 !important;
 }
-
-/* ──────────────────────────────────────────────────────────────
-   2.  FULL SITE – keep 333 px pill header on desktop
-   ─────────────────────────────────────────────────────────── */
 @media (min-width:700px){
   header.site-header{
     width:350px !important;
@@ -86,13 +63,7 @@ body { overflow-x: hidden; }
     max-width:none !important;
   }
 }
-
-/* ──────────────────────────────────────────────────────────────
-   3.  MOBILE-/TABLET-ONLY FIXES  (< 700 px)
-   ─────────────────────────────────────────────────────────── */
 @media (max-width:699px){
-
-  /* Make *every* page behave (the theme used flex/centering) */
   main{
     display:block !important;
     align-items:flex-start !important;
@@ -101,8 +72,6 @@ body { overflow-x: hidden; }
     padding-inline:1rem !important;
     box-sizing:border-box !important;
   }
-
-  /* Titles that previously blew the width */
   .page-title,
   .post-title,
   h1.page-title,
@@ -115,77 +84,59 @@ body { overflow-x: hidden; }
     overflow-wrap:break-word !important;
     word-break:break-word !important;
   }
-
-  /* Lists on content pages – smaller indent */
   article ul,
   article ol{
     padding-left:1rem !important;
   }
-
-  /* widen the mobile nav pill to nearly full‑width */
   .nav-wrapper{
-    width: calc(100% - 2rem) !important; /* 1 rem margin on each side */
-    max-width: 480px !important;         /* never exceed this, even on tablets */
-    margin: 0 auto !important;           /* center it */
-    padding-left: 14px !important;       /* equal gutters - enlarged */
+    width: calc(100% - 2rem) !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    padding-left: 14px !important;
     padding-right: 14px !important;
   }
-
-  /* keep the house flush with the pill edge, small gap after */
   .nav-wrapper .home-icon{
     margin-left: 0 !important;
-    margin-right: 4px !important;    /* gap before “More” */
+    margin-right: 4px !important;
   }
-
-  /* sun/moon: drop 1 px and pull inward to cancel glyph padding */
   .mode-btn{
     position: relative;
     top: 1px;
-    margin-right: -6px;              /* tweak ±1 px if needed */
+    margin-right: -6px;
   }
-
-  /* enlarge nav text + icons further until just before wrapping */
   .nav-wrapper ul{
-    gap: 0.75rem !important;         /* a bit more spacing */
-    font-size: 1.15rem !important;   /* bigger menu text */
+    gap: 0.75rem !important;
+    font-size: 1.15rem !important;
   }
-
-  /* ensure ALL text inside the “More” dropdown matches 1.15 rem */
   .nav-wrapper .dropdown-toggle,
   .nav-wrapper .dropdown-toggle *{
     font-size: 1.15rem !important;
-    line-height: 1 !important;      /* keep vertical alignment */
+    line-height: 1 !important;
   }
-
-  /* ── MOBILE DROP‑DOWN (“More…”) ───────────────────────────── */
   .dropdown-content{
-      width: max-content !important;      /* shrink to fit menu text */
-      min-width: 9rem !important;         /* but never smaller than 14 rem */
-      padding-block: 0.2rem !important;     /* trim top & bottom padding */
-      margin-inline: auto !important;       /* centre panel */
-      left: 0 !important;                   /* override previous */
+      width: max-content !important;
+      min-width: 9rem !important;
+      padding-block: 0.2rem !important;
+      margin-inline: auto !important;
+      left: 0 !important;
       right: 0 !important;
-      transform: none !important;           /* cancel translate */
+      transform: none !important;
       position: absolute !important;
-
-      /* force single column on container *and* inner list */
       column-count: 1 !important;
       columns: 1 auto !important;
       column-width: auto !important;
       column-gap: 0 !important;
-      display: flex !important;             /* override CSS columns */
-      flex-direction: column !important;    /* force single vertical list */
+      display: flex !important;
+      flex-direction: column !important;
   }
-  /* lighter panel + dark text when in LIGHT mode */
   html.switch .dropdown-content{
-    background: rgba(255,255,255,0.95) !important;   /* soft white panel */
-    border: 1px solid rgba(0,0,0,0.20) !important;   /* subtle border */
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid rgba(0,0,0,0.20) !important;
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;                          /* high‑contrast text */
+    color: #111 !important;
   }
-  /* apply the same to the nested list for stubborn themes */
   .dropdown-content ul{
     column-count: 1 !important;
     columns: 1 auto !important;
@@ -197,66 +148,49 @@ body { overflow-x: hidden; }
   .dropdown-content li a,
   .dropdown-content li span{
       display: block !important;
-      font-size: 1.25rem !important;        /* larger text – matches desktop */
-      font-weight: 700 !important;      /* full bold */
-      line-height: 1.3 !important;          /* keeps ~44 px tap height        */
-      padding: 0.5rem 0.3rem !important;   /* slightly tighter, still ≥44 px tap height */
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      line-height: 1.3 !important;
+      padding: 0.5rem 0.3rem !important;
   }
-  /* space the list items evenly */
   .dropdown-content li + li{
-    margin-top: 0 !important;            /* butt items together – padding handles spacing */
+    margin-top: 0 !important;
   }
-
-  /* scale the house icon */
   .nav-wrapper .home-icon svg{
     width: 30px !important;
     height: 30px !important;
-    margin-top: 8px !important;      /* keep vertical alignment */
+    margin-top: 8px !important;
   }
-
-  /* scale the sun / moon glyph */
   .mode-btn{
-    font-size: 1.9rem !important;    /* larger glyph */
+    font-size: 1.9rem !important;
   }
 }
-
-/* ─────────── 4.  LIST BULLET SPACING (all pages) ───────────── */
 article ul, article ol{
-  margin-block: 0 1rem !important;   /* tighter top, keep bottom */
+  margin-block: 0 1rem !important;
   line-height: 1.4  !important;
 }
-
-/* sun / moon glyph ----------------------------------------------------- */
 .mode-btn::before{
-  content: "☀️";                        /* show sun when site is dark    */
+  content: "☀️";
 }
 html.switch .mode-btn::before{
-  content: "🌙";                        /* moon when site is light       */
+  content: "🌙";
 }
 .mode-btn{
   background:none;border:0;padding:0;
   cursor:pointer;font-size:1.5rem;line-height:1;
 }
-
-/* ─────────── 5.  STRONG TEXT COLOR FIX ───────────── */
 strong,
 li strong{
   color: var(--f2) !important;
 }
-
-/* Wrap text inside blog posts so it never overflows */
 article p,
 article li {
   overflow-wrap: break-word !important;
   word-break: break-word !important;
 }
-
-/* makes blog master page title on TOP */
 main {
     display: block !important;
 }
-
-/* desktop-only house icon */
 @media (min-width: 700px){
   .nav-wrapper .home-icon svg{
     width: 35px;
@@ -264,41 +198,31 @@ main {
     margin-top: 12px;
     margin-right: 0px; 
   }
-  /* balanced gutters: 4 px left, 4 px right */
   .nav-wrapper{
-    width: 348px !important;        /* 2 px narrower pill */
+    width: 348px !important;
     padding-left: 4px !important;
-    padding-right: 4px !important;  /* shrink right gutter */
+    padding-right: 4px !important;
   }
   header.site-header{
-    width: 348px !important;        /* keep centred with pill */
+    width: 348px !important;
   }
   .nav-wrapper .home-icon{
-    margin-left: 0px;  /* rely entirely on pill padding (14 px) */
-    margin-right: 4px; /* keep small gap before “More” */
+    margin-left: 0px;
+    margin-right: 4px;
   }
-  /* lower the sun/moon 2 px for optical centering */
   .mode-btn{
     position: relative;
-    top: 2px;          /* moves it down */
-    margin-right: -8px;   /* pull sun 1 px further right */
+    top: 2px;
+    margin-right: -8px;
   }
 }
-
-/* Fix for long blog post titles overflowing the page */
 .page-title, .post-title {
     max-width: 100%;
     overflow-wrap: break-word;
     white-space: normal;
     text-align: center;
 }
-
-/*
- * On mobile for pages with a feature image under the title (like "Our Expertise"),
- * center the title to match the image for a more balanced layout.
- */
 @media (max-width: 699px) {
-  /* Selects a title that is immediately followed by a post-image */
   h1.page-title:has(+ .post-image) {
     text-align: center !important;
   }
