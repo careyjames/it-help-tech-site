@@ -29,12 +29,8 @@ h1, h2, h3, h4, h5, h6 { color: var(--a1); }
 h1 a, h2 a             { color: var(--a1); }
 h1 a:hover, h2 a:hover { color: var(--a3); }
 
-/* Default left-alignment for headings inside articles */
-article h2,
-article h3,
-article h4,
-article h5,
-article h6      { text-align: left; }
+/* Default left-alignment for headings */
+h2, h3, h4, h5, h6      { text-align: left; }
 .post-content h1        { text-align: left; }
 
 /* Page / post titles centered on desktop */
@@ -91,8 +87,8 @@ pre {
 }
 
 /* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
-header nav,
-.nav-wrapper {
+header > nav,
+header > nav > div:nth-child(2) {
   justify-content: center !important;  /* override theme’s space-between */
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -139,7 +135,6 @@ header nav,
 .nav-wrapper ul li a     { display: flex; align-items: center; }
 .dropdown-toggle         { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; }
 .arrow                   { font-size: 0.75em; transition: transform 0.2s ease; }
-.dropdown[open] .arrow   { transform: rotate(180deg); }
 .home-icon svg           { display: block; width: 28px; height: 28px; margin-top: 8px; }
 #mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
 .dropdown-content        { /* stays unchanged */ }
