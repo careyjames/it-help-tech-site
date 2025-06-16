@@ -1,0 +1,21 @@
+{# ensure ctx alias exists in all rendering contexts #}
+{% if ctx is not defined %}
+  {% if page is defined %}
+    {% set ctx = page %}
+  {% elif section is defined %}
+    {% set ctx = section %}
+  {% else %}
+    {% set ctx = config %}
+  {% endif %}
+{% endif %}
+{# --- Open Graph & Twitter meta tags (ctx-aware) --- #}
+<meta property="og:title"       content="{{ ctx.extra.og_title       | default(value=ctx.title) }}" />
+<meta property="og:description" content="{{ ctx.extra.og_description | default(value=ctx.description) }}" />
+<meta property="og:image"       content="{{ get_url(path=ctx.extra.og_image | default(value=config.extra.default_og_image), trailing_slash=false) | safe }}" />
+<meta property="og:url"         content="{{ current_url | safe }}" />
+<meta property="og:type"        content="{{ ctx.extra.og_type | default(value='website') }}" />
+
+<meta name="twitter:card"        content="{{ ctx.extra.twitter_card        | default(value='summary_large_image') }}" />
+<meta name="twitter:title"       content="{{ ctx.extra.twitter_title       | default(value=ctx.title) }}" />
+<meta name="twitter:description" content="{{ ctx.extra.twitter_description | default(value=ctx.description) }}" />
+<meta name="twitter:image"       content="{{ get_url(path=ctx.extra.twitter_image | default(value=config.extra.default_twitter_image), trailing_slash=false) | safe }}" />
