@@ -128,6 +128,15 @@ header > nav > div:nth-child(2) {
 .dropdown-toggle         { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; }
 .arrow                   { font-size: 0.75em; transition: transform 0.2s ease; }
 .home-icon svg           { display: block; width: 28px; height: 28px; margin-top: 8px; }
+/* ───── Desktop override House icon───────── */
+@media (min-width: $bp-desktop) {
+  .home-icon svg {
+    width: 34px;        // ← desktop size
+    height: 34px;       //    keep square
+    margin-top: 2px;    // ← desktop vertical nudge
+    /* alternative: transform: translateY(-2px); */
+  }
+}
 #mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
 .dropdown-content        { /* stays unchanged */ }
 
