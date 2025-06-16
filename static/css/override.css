@@ -129,3 +129,12 @@ article li {
 main {
     display: block !important;
 }
+
+/* desktop-only house icon */
+@media (min-width: 700px){
+  .nav-wrapper .home-icon svg{
+    width: 65px;
+    height: 65px;
+    margin-top: 12px;
+  }
+}
