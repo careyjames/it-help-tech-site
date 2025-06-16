@@ -1,8 +1,10 @@
-theme = "abridge"
-compile_sass = true
-base_url = "https://www.it-help.tech"
-title = "IT Help San Diego Inc."
-description = "Apple-centric IT support across San Diego."
+# config.toml
+theme         = "abridge"
+compile_sass  = true
+minify_html   = true
+base_url      = "https://www.it-help.tech"
+title         = "IT Help San Diego Inc."
+description   = "Apple-centric IT support across San Diego."
 generate_sitemap = true
 
 [markdown]
