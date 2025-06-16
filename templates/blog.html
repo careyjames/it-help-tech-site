@@ -16,7 +16,7 @@
 {% endblock seo %}
 
 {% block content %}
-<h1 class="page-title">Blog Posts</h1>
+<h1 class="page-title text-center">Blog Posts</h1>
 
 <ul class="post-list">
   {# section.pages is already sorted by date desc in Zola #}
@@ -33,7 +33,7 @@
             </time>
           {%- endif %}
           {% if page.author or page.extra.author or config.extra.author_name -%}
-            &nbsp;&mdash; {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
+            &nbsp;&mdash; Author: {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
           {%- endif %}
         </p>
       {%- endif %}
