@@ -36,9 +36,9 @@ h2, h3, h4, h5, h6      { text-align: left; }
 /* Page / post titles left-aligned by default */
 .page-title,
 .post-title {
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-  width: 100%;
+  width: max-content;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
