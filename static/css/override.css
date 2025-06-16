@@ -111,3 +111,9 @@ html.switch .mode-btn::before{
   background:none;border:0;padding:0;
   cursor:pointer;font-size:1.5rem;line-height:1;
 }
+
+/* ─────────── 5.  STRONG TEXT COLOR FIX ───────────── */
+strong,
+li strong{
+  color: var(--f2) !important;
+}
