@@ -1571,4 +1571,4 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
 }
 
 // --- project overrides (must come last) House icon fix--------------------------
-@import "_extra";   //  ← allowed anywhere, appends the CSS right here
+@import "../../../sass/_extra";   //  ← allowed anywhere, appends the CSS right here
