@@ -124,3 +124,7 @@ article li {
   overflow-wrap: break-word !important;
   word-break: break-word !important;
 }
+
+main {
+  display: block !important;
+}
