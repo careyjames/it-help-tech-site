@@ -131,9 +131,9 @@ header > nav > div:nth-child(2) {
 /* ───── Desktop override House icon───────── */
 @media (min-width: 700px) {
   .home-icon svg {
-    width: 38px;        // ← desktop size
-    height: 38px;       //    keep square
-    margin-top: 4px;    // ← desktop vertical nudge
+    width: 45px;        // ← desktop size
+    height: 45px;       //    keep square
+    margin-top: 8px;    // ← desktop vertical nudge
     /* alternative: transform: translateY(-2px); */
   }
 }
