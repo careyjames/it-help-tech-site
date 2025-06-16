@@ -125,34 +125,7 @@ article li {
   word-break: break-word !important;
 }
 
-/* we will see, delete */
-/* --- AGGRESSIVE RESET --- */
-
-.page-header h1 {
-    /* Reset all properties that could possibly cause overflow */
-    display: block !important;
-    position: relative !important; /* Use relative to create a new stacking context */
-    width: 100% !important;
-    min-width: 0 !important; /* Override any minimum width */
-    max-width: 100% !important;
-    box-sizing: border-box !important; /* Ensures padding/border are included in the width */
-
-    /* Use the most aggressive word breaking possible */
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-    word-break: break-all !important; /* This will break words at any character */
-
-    /* New debug border to confirm this rule is active */
-    border: 5px dotted hotpink !important;
-}
-
-/* We also need to ensure the parent is behaving */
-.page-header {
-    width: 100% !important;
-    border: 2px solid cyan !important;
-}
-
-/* This is the original fix for the page layout */
+/* makes blog master page title on TOP */
 main {
     display: block !important;
 }
