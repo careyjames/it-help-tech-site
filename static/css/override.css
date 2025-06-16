@@ -125,6 +125,13 @@ article li {
   word-break: break-word !important;
 }
 
+/* fix blog title desktop to be on TOP and long titles to wrap desktop */
 main {
   display: block !important;
+}
+
+.page-header h1 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
 }
