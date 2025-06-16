@@ -75,10 +75,11 @@ body { overflow-x: hidden; }
   .page-title,
   .post-title,
   h1.page-title,
-  h1.post-title {
-    text-align:center !important;
-    margin:0 auto !important;
-    width:max-content !important;
+  h1.post-title{
+    text-align:left !important;
+    margin-left:0 !important;
+    margin-right:auto !important;
+    width:100% !important;
     max-width:100% !important;
     overflow-wrap:break-word !important;
     word-break:break-word !important;
@@ -216,12 +217,10 @@ main {
   }
 }
 .page-title, .post-title {
-    text-align: center;
-    margin: 0 auto;
-    width: max-content;
     max-width: 100%;
     overflow-wrap: break-word;
     white-space: normal;
+    text-align: center;
 }
 @media (max-width: 699px) {
   h1.page-title:has(+ .post-image) {
