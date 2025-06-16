@@ -19,6 +19,8 @@ stylesheets = ["abridge.css", "css/fix-logo.css", "css/override.css"]
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
+default_og_image      = "/images/logo-slogan.jpeg"
+default_twitter_image = "/images/logo-slogan.jpeg"
 
 [[extra.menu]]
 name   = "Home"
