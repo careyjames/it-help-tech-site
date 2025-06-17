@@ -187,13 +187,27 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
   margin-right: auto !important;
 }
 
-
-// ─── Custom dropdown toggle carets ──────────────────────────────
-details summary::after {
-  content: ' ▾';   /* U+25BE down-pointing small triangle */
-  margin-left: 0.5em;
-  font-size: 0.8em;
+/* Hide default browser disclosure triangle */
+details summary::-webkit-details-marker {
+  display: none;
 }
-details[open] summary::after {
-  content: ' ▴';   /* U+25B4 up-pointing small triangle */
+
+/* border‑based chevron on the LEFT */
+details summary {
+  display: flex;
+  align-items: center;
+}
+details summary::before {
+  content: '' !important;
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  border-right: 2px solid currentColor !important;
+  border-bottom: 2px solid currentColor !important;
+  transform: rotate(45deg);
+  margin-right: 0.4em;   /* space between arrow and text */
+  transition: transform .2s ease;
+}
+details[open] summary::before {
+  transform: rotate(-135deg) !important;
 }

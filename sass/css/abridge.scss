@@ -1,4 +1,4 @@
-@use '../themes/abridge/sass/abridge' with (
+@use '../../themes/abridge/sass/abridge' with (
   /// LINES HERE END WITH COMMA AFTER THE VALUE!
   /// The things your less likely to need to override have been commented out.
 
@@ -196,14 +196,7 @@
   //$syntax: true,//syntax highlighting for code blocks
   //$coderoundhighlight: false,//round corners on highlighted code blocks
 );
-@use "extra";
-/******************************************************************************
- *   FONTS - Abridge by default uses the System Font Stack
- *     https://css-tricks.com/snippets/css/system-font-stack/
- *   However if you need you can load a specific font below,
- *     make sure to have the relevant woff2 fonts in your static/fonts folder
- *   I measured the least Cumulative Layout Shift with: Roboto, Lato, Arimo
- *****************************************************************************/
 //@use "fonts/Roboto";
 //@use "fonts/Arimo";
-@use "_custom";
+@use "../_custom" as *;
+@use "../_extra"  as *;
