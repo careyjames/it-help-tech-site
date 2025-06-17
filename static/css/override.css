@@ -230,3 +230,9 @@ main {
 
 /* Hide in-page TOC links */
 .post-toc{display:none!important;}
+
+/* Hide all in-page TOC/series navigation blocks */
+.sblock,
+.blockdiv.sticky {
+  display: none !important;
+}
