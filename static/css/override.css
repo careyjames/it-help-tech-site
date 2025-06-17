@@ -228,16 +228,9 @@ main {
   }
 }
 
-/* Hide in-page TOC links */
-.post-toc{display:none!important;}
-
-/* Hide all in-page TOC/series navigation blocks */
+/* ⚠️ Hide Zola TOC and series anchor blocks */
 .sblock,
+.block > .blockdiv,
 .blockdiv.sticky {
-  display: none !important;
-}
-
-/* Hide page-series and jump-link navigation blocks */
-.block > .blockdiv {
   display: none !important;
 }
