@@ -23,7 +23,12 @@
 {%- else %}
   {%- set page_url = get_url(path="404.html", trailing_slash=true) %}
 {%- endif %}
-  <title>{{ title ~ title_addition }}</title>
+  <title>
+  {%- if title %}{{ title ~ title_addition }}
+  {%- elif page.title %}{{ page.title }}{{ title_addition }}
+  {%- else %}{{ config.title }}{{ title_addition }}
+  {%- endif %}
+  </title>
 
 {%- if config.extra.author %}
   <meta name="author" content="{{ config.extra.author }}" />
