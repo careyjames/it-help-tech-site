@@ -186,3 +186,14 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+
+// ─── Custom dropdown toggle carets ──────────────────────────────
+details summary::after {
+  content: ' ▾';   /* U+25BE down-pointing small triangle */
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+details[open] summary::after {
+  content: ' ▴';   /* U+25B4 up-pointing small triangle */
+}
