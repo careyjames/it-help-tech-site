@@ -126,7 +126,6 @@ header > nav > div:nth-child(2) {
 .nav-wrapper ul li       { position: relative; display: flex; align-items: center; }
 .nav-wrapper ul li a     { display: flex; align-items: center; }
 .dropdown-toggle         { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; }
-.arrow                   { font-size: 0.75em; transition: transform 0.2s ease; }
 /* Edit house icon on mobile nav here */
 .home-icon svg           { display: block; width: 28px; height: 28px; margin-top: 8px; }
 #mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
