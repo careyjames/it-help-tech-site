@@ -11,17 +11,6 @@ extra:
 
 We follow clear policies for our IT support services. No monthly retainers!
 
-<nav class="toc visually-hidden" style="display:none">
-  <ul>
-    <li><a href="#it-consulting--support-rate">Rates</a></li>
-    <li><a href="#payment-policy">Payment</a></li>
-    <li><a href="#scheduling--cancellation-policy">Scheduling &amp; Cancellations</a></li>
-    <li><a href="#quick-phonetextemail-support">Quick Support</a></li>
-    <li><a href="#privacy--security-">Privacy &amp; Security</a></li>
-    <li><a href="#business-ethics-carey’s-promise-">Business Ethics</a></li>
-  </ul>
-</nav>
-
 ## IT Consulting & Support Rate {#it-consulting--support-rate}
 
 * **Base Rate:** $275 per hour.

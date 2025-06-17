@@ -149,16 +149,6 @@ extra:
 }
 </script>
 
-<nav class="toc visually-hidden" style="display:none">
-  <ul>
-    <li><a href="#advanced-email-domain--dns-solutions">Email &amp; DNS</a></li>
-    <li><a href="#cybersecurity--data-protection">Cybersecurity</a></li>
-    <li><a href="#macos-system--application-support">macOS &amp; Apps</a></li>
-    <li><a href="#specialized-services">Specialized Services</a></li>
-    <li><a href="#our-recommendations">Recommended Tools</a></li>
-  </ul>
-</nav>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
