@@ -1,3 +1,8 @@
+{% if page.title %}
+  <title>{{ page.title }} – {{ config.title }}</title>
+{% else %}
+  <title>{{ config.title }}</title>
+{% endif %}
 {#- Theme Switcher Button to toggle between dark/light #}
 {# choose the right template context: page when available, otherwise section, otherwise site config #}
 {% if page is defined %}
