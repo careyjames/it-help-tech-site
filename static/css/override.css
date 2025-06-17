@@ -236,3 +236,8 @@ main {
 .blockdiv.sticky {
   display: none !important;
 }
+
+/* Hide page-series and jump-link navigation blocks */
+.block > .blockdiv {
+  display: none !important;
+}
