@@ -1,9 +1,12 @@
 ---
 title: On-site, In-home IT Services & Expert Solutions
 path: services
+description: "Apple‑centric on‑site IT services for homes & SMBs across San Diego: Mac & Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers."
 extra:
   skip_image: true
   skip_author: true
+  og_description: "Apple‑centric on‑site IT services: Mac & Wi‑Fi troubleshooting, DNS/email security, data recovery—no monthly retainers."
+  twitter_description: "Apple‑centric on‑site IT services: Mac & Wi‑Fi troubleshooting, DNS/email security, data recovery—no monthly retainers."
 ---
 
 <script type="application/ld+json">
@@ -140,6 +143,62 @@ extra:
         "name": "iPhone Text Message Extraction for Law Firms",
         "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
         "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+      }
+    }
+  ]
+}
+</script>
+
+<nav class="toc visually-hidden" style="display:none">
+  <ul>
+    <li><a href="#advanced-email-domain--dns-solutions">Email &amp; DNS</a></li>
+    <li><a href="#cybersecurity--data-protection">Cybersecurity</a></li>
+    <li><a href="#macos-system--application-support">macOS &amp; Apps</a></li>
+    <li><a href="#specialized-services">Specialized Services</a></li>
+    <li><a href="#our-recommendations">Recommended Tools</a></li>
+  </ul>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "On-Site IT Support & Consulting",
+  "name": "Apple-Centric IT Services",
+  "provider": { "@id": "https://www.it-help.tech/#identity" },
+  "areaServed": "San Diego",
+  "priceRange": "$275 per hour",
+  "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you support Windows or mixed environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. While we specialize in macOS and iOS, we’re fluent in Windows and Linux and regularly manage mixed networks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your on-site hourly rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our standard rate is $275 per hour with a 1‑hour on‑site minimum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge a travel fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Travel is billed at $1.50 per mile. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time."
       }
     }
   ]

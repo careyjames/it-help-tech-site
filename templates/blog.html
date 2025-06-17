@@ -13,6 +13,50 @@
   {%- set description = section.description | default(value=config.description) -%}
   {%- set_global page = section -%}
   {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
+
+  {% set blog_title = section.title | default(value="IT Help San Diego Blog | Tech Insights & Support Tips") %}
+  {% set blog_desc = section.description | default(value="Expert insights on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego.") %}
+  {% set blog_url = section.permalink %}
+  {% set blog_img = config.extra.default_social | default(value="https://www.it-help.tech/images/logo-slogan.jpeg") %}
+
+  <meta name="description" content="{{ blog_desc }}">
+  <meta name="copyright" content="IT Help San Diego Inc.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ blog_title }}">
+  <meta property="og:description" content="{{ blog_desc }}">
+  <meta property="og:image" content="{{ blog_img }}">
+  <meta property="og:url" content="{{ blog_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IT Help San Diego Inc.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="{{ blog_title }}">
+  <meta name="twitter:description" content="{{ blog_desc }}">
+  <meta name="twitter:image" content="{{ blog_img }}">
+  <meta name="twitter:url" content="{{ blog_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "{{ blog_title }}",
+    "description": "{{ blog_desc }}",
+    "url": "{{ blog_url }}",
+    "image": "{{ blog_img }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IT Help San Diego Inc.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.it-help.tech/logo.svg"
+      }
+    }
+  }
+  </script>
 {% endblock seo %}
 
 {% block content %}

@@ -4,9 +4,14 @@ date: 2025-05-26
 author: Carey Balboa
 categories: [Consulting, Troubleshooting, Methodology]
 tags: [scientific method, IT consulting, problem solving, tech support]
+description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
 extra:
   image: images/it-problem-solving-scientific-method.webp
-description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
+  og_title: "IT Problem-Solving Meets the Scientific Method"
+  og_description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
+  twitter_title: "IT Problem-Solving Meets the Scientific Method"
+  twitter_description: "Discover Carey Balboa's scientific, evidence-based method for IT consulting and complex problem-solving, ensuring reliable and effective tech solutions."
+  canonical_url: "https://www.it-help.tech/blog/it-problem-solving-scientific-method/"
 ---
 
 In my [IT consulting work](/services/), my PhD clients have always told me that I naturally follow a process like the scientific method when solving complex technical problems. I may not wear a lab coat, but the way I tackle IT issues is essentially scientific. By approaching problems in a structured, evidence-based way (aligning with [my commitment to ethical service](/about/)), I ensure that solutions are reliable and not just based on hunches. Below, I explain how each stage of the classic scientific method translates into my IT troubleshooting approach, with a few personal tweaks for the consulting world.
