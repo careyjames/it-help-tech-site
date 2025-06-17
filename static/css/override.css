@@ -228,9 +228,9 @@ main {
   }
 }
 
-/* ⚠️ Hide Zola TOC and series anchor blocks */
-.sblock,
-.block > .blockdiv,
-.blockdiv.sticky {
+/* Strong override: hide any TOC/series blocks regardless of media queries */
+html body .sblock,
+html body .block > .blockdiv,
+html body .blockdiv.sticky {
   display: none !important;
 }
