@@ -27,6 +27,8 @@
   {%- if stylesheets %}{%- for i in stylesheets %}
   <link rel="stylesheet" href="{{     get_url(path=i                               , trailing_slash=false, cachebust=true) | safe }}" />
   {%- endfor %}{%- endif %}
+  <!-- override.css loaded after theme styles -->
+  <link rel="stylesheet" href="{{ get_url(path='css/override.css', trailing_slash=false, cachebust=true) | safe }}" />
 
   {%- if ctx.extra.stylesheets %}{%- set pagestylesheets=ctx.extra.stylesheets -%}{%- endif %}
   {%- if pagestylesheets %}{%- for i in pagestylesheets %}
