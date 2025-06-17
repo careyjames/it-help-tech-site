@@ -227,3 +227,6 @@ main {
     text-align: center !important;
   }
 }
+
+/* Hide in-page TOC links */
+.post-toc{display:none!important;}
