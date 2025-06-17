@@ -16,9 +16,7 @@
 <head>
   {%- include "partials/head.html" %}
   <link rel="icon" href="/red-plus.ico" type="image/x-icon">
-  {%- block seo %}
-    {%- set title_separator = config.extra.title_separator | default(value=" | ") -%}
-  {%- endblock seo %}
+  {# SEO macro will handle <title> and meta tags; no manual fallback here #}
   {%- block comments_init %}{%- endblock comments_init %}
   {%- include "partials/head_js.html" %}
 </head>
