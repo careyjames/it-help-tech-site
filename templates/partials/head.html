@@ -36,13 +36,10 @@
   <!-- override.css loaded last -->
   <link rel="stylesheet" href="{{ get_url(path='css/override.css', trailing_slash=false, cachebust=true) | safe }}" />
   <style>
-    /* Hide in-page TOC jump links and Zola series navigation blocks */
-    .post-toc {
-      display: none !important;
-    }
-    html body .sblock,
-    html body .block > .blockdiv,
-    html body .blockdiv.sticky {
+    /* ⚠️ Hide Zola in‑page TOC jump links and series navigation blocks */
+    .sblock,
+    .block > .blockdiv,
+    .blockdiv.sticky {
       display: none !important;
     }
   </style>
