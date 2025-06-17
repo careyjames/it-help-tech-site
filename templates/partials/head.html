@@ -3,6 +3,11 @@
 {% else %}
   <title>{{ config.title }}</title>
 {% endif %}
+{% if page.description %}
+  <meta name="description" content="{{ page.description | safe }}" />
+{% else %}
+  <meta name="description" content="{{ config.description | safe }}" />
+{% endif %}
 {#- Theme Switcher Button to toggle between dark/light #}
 {# choose the right template context: page when available, otherwise section, otherwise site config #}
 {% if page is defined %}
