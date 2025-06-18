@@ -208,12 +208,12 @@ main {
   }
   .nav-wrapper .home-icon{
     margin-left: 0px;
-    margin-right: 4px;
+    margin-right: 0px;
   }
   .mode-btn{
     position: relative;
     top: 2px;
-    margin-right: -8px;
+    margin-right: -10px;
   }
 }
 .page-title, .post-title {
