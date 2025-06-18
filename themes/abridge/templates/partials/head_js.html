@@ -53,7 +53,7 @@
 
   {%- if preStyle == true %}
   {%- if config.extra.js_prestyle | default(value=true) %}
-  {# <script defer src="{{               get_url(path='js/prestyle.js'                , trailing_slash=false, cachebust=true) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{%- endif %}></script> #}
+  <script defer src="{{               get_url(path='js/prestyle.js'                , trailing_slash=false, cachebust=true) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{%- endif %}></script>
   {%- endif %}
   {%- endif %}
 

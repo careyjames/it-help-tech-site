@@ -13,9 +13,11 @@ insert_anchor_links = "none"   # disable auto “##” anchors globally
 [extra]
 #abridgeMode = "switcher"
 js_switcher = false
+# enable non-blocking stylesheet loading
+js_prestyle = true
 #js_switcher_default = "dark"
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
-stylesheets = ["css/abridge.css", "css/fix-logo.css", "css/override.css", "css/fix-portrait.css"]
+stylesheets = ["css/abridge.css"]
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
