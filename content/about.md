@@ -6,7 +6,7 @@ render = true
 template_macros = ["macros/images.html"]
 
 [extra]
-image = "images/carey-320.avif"
+image = "images/carey-256.avif"
 image_alt = "Carey Balboa with service animal Tango"
 skip_author = true
 toc = false
@@ -26,7 +26,7 @@ toc = false
       "name": "Carey Balboa",
       "jobTitle": "Founder",
       "description": "25+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
-      "image": "https://www.it-help.tech/images/carey-320.avif"
+      "image": "https://www.it-help.tech/images/carey-256.avif"
     },
     "address": {
       "@type": "PostalAddress",
