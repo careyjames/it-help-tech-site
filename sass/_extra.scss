@@ -127,7 +127,13 @@ header > nav > div:nth-child(2) {
 
 /* Logo block */
 .site-logo { text-align: center; margin: 0.25rem auto; }
-.site-logo img { display: block; margin: 0 auto; }
+.site-logo img {
+  display: block;
+  margin: 0 auto;
+  height: 45px !important;
+  width: auto !important;
+  border-radius: 0 !important;
+}
 
 /* Nav list */
 .nav-wrapper ul {
