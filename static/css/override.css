@@ -159,7 +159,7 @@ body { overflow-x: hidden; }
   .nav-wrapper .home-icon svg{
     width: 30px !important;
     height: 30px !important;
-    margin-top: 8px !important;
+    margin-top: 0px !important;
   }
   .mode-btn{
     font-size: 1.9rem !important;
@@ -195,7 +195,7 @@ main {
   .nav-wrapper .home-icon svg{
     width: 35px;
     height: 35px;
-    margin-top: 12px;
+    margin-top: 0px;
     margin-right: 0px; 
   }
   .nav-wrapper{
