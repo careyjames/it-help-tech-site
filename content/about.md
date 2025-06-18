@@ -6,7 +6,7 @@ render = true
 template_macros = ["macros/images.html"]
 
 [extra]
-image = "images/carey-640.avif"
+image = "images/carey-640.webp"
 image_alt = "Carey Balboa with service animal Tango"
 skip_author = true
 toc = false
@@ -45,9 +45,6 @@ toc = false
 
 
   
-{{ responsive(base="images/carey",
-             alt="Carey Balboa with Tango",
-             lcp=true) }}{: .expertise-portrait }
   
 
 Hi, I’m Carey Balboa.
