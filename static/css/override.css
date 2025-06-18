@@ -11,8 +11,8 @@ body { overflow-x: hidden; }
     background: rgba(255,255,255,0.95) !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
   }
-  html.switch .dropdown-content a,
-  html.switch .dropdown-content span{
+  html.switch .dropdown-content li a,
+  html.switch .dropdown-content li span{
     color: #111 !important;
   }
 }
@@ -52,8 +52,8 @@ body { overflow-x: hidden; }
 }
 .homepage-hero ul,
 .homepage-hero ol{ padding-left:1rem !important; }
-.dropdown-content a,
-.dropdown-content span{
+.dropdown-content li a,
+.dropdown-content li span{
   font-weight: 700 !important;
 }
 @media (min-width:700px){
@@ -133,11 +133,11 @@ body { overflow-x: hidden; }
     background: rgba(255,255,255,0.95) !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
   }
-  html.switch .dropdown-content a,
-  html.switch .dropdown-content span{
+  html.switch .dropdown-content li a,
+  html.switch .dropdown-content li span{
     color: #111 !important;
   }
-  .dropdown-content{
+  .dropdown-content ul{
     column-count: 1 !important;
     columns: 1 auto !important;
     column-width: auto !important;
@@ -145,15 +145,15 @@ body { overflow-x: hidden; }
     display: flex !important;
     flex-direction: column !important;
   }
-  .dropdown-content a,
-  .dropdown-content span{
+  .dropdown-content li a,
+  .dropdown-content li span{
       display: block !important;
       font-size: 1.25rem !important;
       font-weight: 700 !important;
       line-height: 1.3 !important;
       padding: 0.5rem 0.3rem !important;
   }
-  .dropdown-content a + a{
+  .dropdown-content li + li{
     margin-top: 0 !important;
   }
   .nav-wrapper .home-icon svg{
