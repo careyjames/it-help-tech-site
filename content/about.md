@@ -41,9 +41,9 @@ extra:
 </script>  
 
 
-<div class="expertise-portrait">
+ 
 {{ macros::images::responsive(base="images/carey", alt="Carey Balboa with Tango", lcp=true) }}
-</div>
+ 
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
