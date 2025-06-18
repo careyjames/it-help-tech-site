@@ -45,7 +45,9 @@ toc = false
 
 
   
-{{ macros::images::responsive(base="images/carey", alt="Carey Balboa with Tango", lcp=true) }}{: .expertise-portrait }
+{{ responsive(base="images/carey",
+             alt="Carey Balboa with Tango",
+             lcp=true) }}{: .expertise-portrait }
   
 
 Hi, I’m Carey Balboa.
