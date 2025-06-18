@@ -47,8 +47,8 @@ toc = false
   
   
 
-Hi, I’m Carey Balboa.
-*(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
+Hi, I’m Carey Balboa.<br>
+*(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*<br>
 *(Balboa: Like Balboa Park in San Diego)*
 
 I’ve been solving tech problems for 25 years. I love a challenge, solving technical problems, and helping people. I’m committed to mission success, and scientific discovery is my passion. Since 1999, I’ve assisted high-profile clients in the entertainment, medical, and legal sectors, as well as PhDs, with their technology challenges.
