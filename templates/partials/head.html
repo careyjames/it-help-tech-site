@@ -35,17 +35,14 @@
 {#- Style Sheets #}
   {%- set stylesheets=config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
   {%- if stylesheets %}{%- for i in stylesheets %}
-  <link rel="preload" as="style" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"></noscript>
+  <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
   {%- endfor %}{%- endif %}
 
   {%- if ctx.extra.stylesheets %}{%- set pagestylesheets=ctx.extra.stylesheets -%}{%- endif %}
   {%- if pagestylesheets %}{%- for i in pagestylesheets %}
-  <link rel="preload" as="style" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"></noscript>
+  <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
   {%- endfor %}{%- endif %}
-  <link rel="preload" as="style" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"></noscript>
+  <link rel="stylesheet" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
 
 
