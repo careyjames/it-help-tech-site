@@ -32,6 +32,7 @@
 
 {%- block content %}
     <article>
+    {# Load widont helpers for this template #}
 
     {%- block page_header %}
     {{- macros::title_post(page=page, config=config) }}
@@ -78,7 +79,7 @@
     {%- endif %}
 
 
-  {{ page.content | safe }}
+  {{ page.content | regex_replace(pattern="\\s+(\\S+)$", rep="&nbsp;$1") | safe }}
 
     {%- if config.extra.meta_post.position %}
     {%- if config.extra.meta_post.position == "bottom" or config.extra.meta_post.position == "both" %}

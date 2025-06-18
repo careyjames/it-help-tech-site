@@ -183,11 +183,6 @@ strong,
 li strong{
   color: var(--f2) !important;
 }
-article p,
-article li {
-  overflow-wrap: break-word !important;
-  word-break: break-word !important;
-}
 main {
     display: block !important;
 }
@@ -226,6 +221,16 @@ main {
   h1.page-title:has(+ .post-image) {
     text-align: center !important;
   }
+}
+
+/* Scoped override: only break unbreakable strings in code blocks or long assets */
+code,
+pre,
+table,
+img,
+[data-breakable] {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
 }
 
 /* Strong override: hide any TOC/series blocks regardless of media queries */
