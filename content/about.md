@@ -1,13 +1,15 @@
----
-title: Our Expertise
-description: "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
-path: about
-extra:
-  image: images/carey-640.avif
-  image_alt: "Carey Balboa with service animal Tango"
-  skip_author: true
-  toc: false
----
++++
+title = "Our Expertise"
+description = "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
+path = "about"
+render = true
+
+[extra]
+image = "images/carey-640.avif"
+image_alt = "Carey Balboa with service animal Tango"
+skip_author = true
+toc = false
++++
 
 <script type="application/ld+json">
 {
