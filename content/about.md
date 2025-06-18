@@ -38,9 +38,12 @@ extra:
   "description": "Learn about Carey Balboa, the founder of Remote IT Help (IT Help San Diego Inc.), with 25 years of experience providing expert, ethical remote IT support.",
    "url": "https://www.it-help.tech{{ page.url }}"
 }
-</script>
+</script>  
 
+
+<div class="expertise-portrait">
 {{ macros::images::responsive(base="images/carey", alt="Carey Balboa with Tango", lcp=true) }}
+</div>
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
