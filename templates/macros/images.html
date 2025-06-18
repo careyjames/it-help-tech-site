@@ -1,0 +1,23 @@
+{%- macro responsive(base, alt, lcp=false) -%}
+<picture>
+  <source type="image/avif"
+          srcset="{{ base }}-320.avif 320w,
+                  {{ base }}-640.avif 640w,
+                  {{ base }}-960.avif 960w,
+                  {{ base }}-1280.avif 1280w,
+                  {{ base }}-1920.avif 1920w"
+          sizes="(min-width: 1200px) 50vw, 100vw">
+  <source type="image/webp"
+          srcset="{{ base }}-320.webp 320w,
+                  {{ base }}-640.webp 640w,
+                  {{ base }}-960.webp 960w,
+                  {{ base }}-1280.webp 1280w,
+                  {{ base }}-1920.webp 1920w"
+          sizes="(min-width: 1200px) 50vw, 100vw">
+  <img {%- if lcp -%} loading="eager" {%- else -%} loading="lazy" {%- endif -%}
+       decoding="async"
+       width="1920" height="1080"
+       src="{{ base }}-640.jpg"
+       alt="{{ alt | escape }}">
+</picture>
+{%- endmacro -%}
