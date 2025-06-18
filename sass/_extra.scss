@@ -25,9 +25,22 @@ body {
 a          { color: var(--a1); }
 a:hover    { text-decoration: underline; color: var(--a2); }
 
-h1, h2, h3, h4, h5, h6 { color: var(--a1); }
-h1 a, h2 a             { color: var(--a1); }
-h1 a:hover, h2 a:hover { color: var(--a3); }
+/* --- TYPOGRAPHIC POLISH: widows & hyphenation ---------------- */
+
+/* Headings & short blurbs */
+h1, h2, h3, h4,
+.hero,
+.tagline {
+  text-wrap: balance;
+}
+
+/* Long-form content */
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+  hyphens: auto;
+}
 
 /* Default left-alignment for headings */
 h2, h3, h4, h5, h6      { text-align: left; }
