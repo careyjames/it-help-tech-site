@@ -156,7 +156,7 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 * **Network printer sharing**
 * **Switch, Gateway, and Firewall programming and troubleshooting**
 
-### Advanced Email, Domain, & DNS Solutions 🌐
+### Advanced Email, Domain, & DNS Solutions
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 * **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
 * **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
@@ -164,7 +164,7 @@ Struggling with Email deliverability, domain security, or complex DNS configurat
 * **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
 * **Bulletproof DNS & DMARC Security**: We architect security-compliant DNS solutions with robust DMARC implementations (p=reject), moving beyond <span class="dmarc-tag">p=none</span> to actively protect your domain from spoofing and phishing attacks.
 
-### Cybersecurity & Ethical Screen Sharing 🛡️
+### Cybersecurity & Ethical Screen Sharing
 We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
 * **Ethical Screen Sharing:** We adhere to the highest ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
 
