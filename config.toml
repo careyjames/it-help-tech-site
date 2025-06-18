@@ -15,6 +15,11 @@ insert_anchor_links = "none"   # disable auto “##” anchors globally
 js_switcher = false
 # enable non-blocking stylesheet loading
 js_prestyle = true
+# Preload JetBrains Mono fonts
+fonts = [
+    { url = "fonts/jetbrains/JetBrainsMono-Regular.woff2" },
+    { url = "fonts/jetbrains/JetBrainsMono-Bold.woff2" }
+]
 #js_switcher_default = "dark"
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["css/abridge.min.css"]
