@@ -3,7 +3,7 @@ title: Our Expertise
 description: "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
 path: about
 extra:
-  image: images/carey-1280.avif
+  image: images/carey-640.avif
   image_alt: "Carey Balboa with service animal Tango"
   skip_author: true
   toc: false
@@ -23,7 +23,7 @@ extra:
       "name": "Carey Balboa",
       "jobTitle": "Founder",
       "description": "25+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
-      "image": "https://www.it-help.tech/images/carey-1280.avif"
+      "image": "https://www.it-help.tech/images/carey-640.avif"
     },
     "address": {
       "@type": "PostalAddress",
@@ -40,7 +40,11 @@ extra:
 }
 </script>
 
-{{ macros::images::responsive(base="images/carey", alt="Carey Balboa with service animal Tango", lcp=true) }}
+<div class="expertise-portrait">
+  {{ macros::images::responsive(base="images/carey",
+                                alt="Carey Balboa with Tango",
+                                lcp=true) }}
+</div>
 
 Hi, I’m Carey Balboa.
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*

@@ -1,0 +1,4 @@
+/* static/css/fix-portrait.css */
+.expertise-portrait {
+  max-width: 220px;   /* pick the real intended width */
+}
