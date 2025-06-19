@@ -1,5 +1,3 @@
-/* tiny, plain-JS dark-mode helper  –  530 bytes un-minified               */
-/* ---------------------------------------------------------------------- */
 (function() {
   const html   = document.documentElement;   // <html>
   const key    = 'theme';                    // localStorage key
@@ -18,3 +16,11 @@
     });
   });
 })();
+
+document.addEventListener('DOMContentLoaded',() => {
+  document.querySelector('.dropdown-toggle')?.addEventListener('click',e=>{
+    const btn=e.currentTarget;
+    const list=btn.nextElementSibling;
+    btn.setAttribute('aria-expanded',list.classList.toggle('hidden')?'false':'true');
+  });
+});
