@@ -28,7 +28,8 @@
     {%- if config.extra.logo.file %}
       <a href="{{ get_url(path='/') }}">
         <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}"
-             width="{{ config.extra.logo.width }}" height="{{ config.extra.logo.height }}">
+             width="{{ config.extra.logo.width }}" height="{{ config.extra.logo.height }}"
+             fetchpriority="high">
       </a>
     {%- endif %}
   </div>
@@ -46,8 +47,8 @@
 
       <!-- dropdown -->
       <li class="dropdown">
-        <button id="nav-toggle">More</button>
-        <ul class="nav-list hidden">
+        <button id="nav-toggle" aria-expanded="false">More</button>
+        <ul class="nav-list" hidden>
           <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
           <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
           <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
@@ -102,14 +103,6 @@
   <script defer src="{{ get_url(path='js/theme_button.js',                           trailing_slash=false) | safe }}"
           {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme_button.js',       sha_type=384, base64=true) | safe }}"{% endif %}></script>
 {% endif %}
-
-<script>
-document.getElementById('nav-toggle')?.addEventListener('click', () => {
-  const dd = document.querySelector('.dropdown');
-  dd.classList.toggle('open');
-  dd.querySelector('.nav-list')?.classList.toggle('hidden');
-});
-</script>
 
 </body>
 </html>
