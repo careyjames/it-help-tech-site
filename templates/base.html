@@ -97,7 +97,9 @@
 </footer>
 {%- endblock footer %}
 
-<script src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) }}"></script>
+{% if config.extra.js_switcher %}
+  <script defer src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) }}"></script>
+{% endif %}
 
 </body>
 </html>
