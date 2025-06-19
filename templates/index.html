@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  {{ section.content | regex_replace(pattern="\s+(\S+)$", rep="&nbsp;$1") | safe }}
+<main>
+  <section class="homepage-hero">
+    {{ section.content | regex_replace(pattern="\s+(\S+)$", rep="&nbsp;$1") | safe }}
+  </section>
+</main>
 {% endblock content %}
