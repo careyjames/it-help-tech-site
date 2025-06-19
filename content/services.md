@@ -152,13 +152,23 @@ extra:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "On-Site IT Support & Consulting",
-  "name": "Apple-Centric IT Services",
-  "provider": { "@id": "https://www.it-help.tech/#identity" },
-  "areaServed": "San Diego",
-  "priceRange": "$275 per hour",
-  "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
+  "@type": "Offer",
+  "itemOffered": {
+    "@type": "Service",
+    "name": "Apple‑centric on‑site IT support & consulting",
+    "serviceType": "On‑site IT Support & Consulting",
+    "provider": { "@id": "https://www.it-help.tech/#identity" },
+    "areaServed": "San Diego",
+    "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
+  },
+  "priceSpecification": {
+    "@type": "PriceSpecification",
+    "price": "275",
+    "priceCurrency": "USD",
+    "unitCode": "HUR",
+    "valueAddedTaxIncluded": false,
+    "description": "Per hour rate for on‑site support."
+  }
 }
 </script>
 

@@ -59,13 +59,23 @@ Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end te
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "On-Site IT Support",
-  "name": "On-Site IT Support – $275/hr",
-  "provider": { "@id": "https://www.it-help.tech/#identity" },
-  "areaServed": "San Diego",
-  "priceRange": "$275 per hour",
-  "description": "We solve tech problems—no monthly retainers."
+  "@type": "Offer",
+  "itemOffered": {
+    "@type": "Service",
+    "name": "On-site tech support",
+    "serviceType": "On-site tech support",
+    "provider": { "@id": "https://www.it-help.tech/#identity" },
+    "areaServed": "San Diego",
+    "description": "We solve tech problems—no monthly retainers."
+  },
+  "priceSpecification": {
+    "@type": "PriceSpecification",
+    "price": "275",
+    "priceCurrency": "USD",
+    "unitCode": "HUR",
+    "valueAddedTaxIncluded": false,
+    "description": "Per hour rate for on-site support."
+  }
 }
 </script>
 

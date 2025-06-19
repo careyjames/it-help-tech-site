@@ -19,7 +19,7 @@ toc = false
   "name": "Our Expertise",
   "mainEntity": {
     "@type": "Organization",
-    "name": "Remote IT Help",
+    "name": "IT Help San Diego",
     "alternateName": "IT Help San Diego Inc.",
     "founder": {
       "@type": "Person",
@@ -38,7 +38,7 @@ toc = false
     },
      "url": "https://www.it-help.tech"
   },
-  "description": "Learn about Carey Balboa, the founder of Remote IT Help (IT Help San Diego Inc.), with 25 years of experience providing expert, ethical remote IT support.",
+  "description": "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support.",
    "url": "https://www.it-help.tech{{ page.url }}"
 }
 </script>  

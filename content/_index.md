@@ -63,7 +63,7 @@ twitter_card        = "summary_large_image"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "ITService"],
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "name": "IT Help San Diego",
   "url": "https://www.it-help.tech/",
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
@@ -83,11 +83,6 @@ twitter_card        = "summary_large_image"
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego",
     "https://g.page/r/CaF_LIXG2uLzEB0/review"
-  ],
-  "serviceType": [
-    "Mac & Wi‑Fi troubleshooting",
-    "DNS & Email deliverability",
-    "On‑site tech support"
   ],
   "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
   "openingHoursSpecification": [{
