@@ -38,6 +38,10 @@
   <script defer
           src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) | safe }}"
           {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
+  <!-- CSP-compliant fallback for dark-mode toggle -->
+  <script defer
+          src="{{ get_url(path='js/theme_button.js', trailing_slash=false) | safe }}"
+          {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme_button.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
 {%- endif %}
 {%- endif %}
 {%- if config.extra.js_prestyle | default(value=false) %}
