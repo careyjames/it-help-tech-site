@@ -46,13 +46,12 @@
 
       <!-- dropdown -->
       <li class="dropdown">
-        <button class="dropdown-toggle" aria-expanded="false">More</button>
-        <ul class="dropdown-content hidden">
-          <li><a href="{{ get_url(path='/billing/')  }}">Pricing</a></li>
+        <button id="nav-toggle">More</button>
+        <ul class="nav-list hidden">
           <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
           <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
-          <li><a href="{{ get_url(path='/blog/')     }}">Blog</a></li>
-          <li><a href="{{ get_url(path='/about/')    }}">Our Expertise</a></li>
+          <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>
+          <li><a href="{{ get_url(path='/about/') }}">Our Expertise</a></li>
         </ul>
       </li>
 
@@ -103,6 +102,14 @@
   <script defer src="{{ get_url(path='js/theme_button.js',                           trailing_slash=false) | safe }}"
           {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme_button.js',       sha_type=384, base64=true) | safe }}"{% endif %}></script>
 {% endif %}
+
+<script>
+document.getElementById('nav-toggle')?.addEventListener('click', () => {
+  const dd = document.querySelector('.dropdown');
+  dd.classList.toggle('open');
+  dd.querySelector('.nav-list')?.classList.toggle('hidden');
+});
+</script>
 
 </body>
 </html>
