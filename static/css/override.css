@@ -281,7 +281,7 @@ img[alt="IT Help San Diego"] {
 }
 
 /* --- CLS: reserve header space & swap fonts --- */
-header.site-header{height:calc(48px + 0.5rem);}        /* logo (48px) + vertical pad */
+header.site-header{min-height:calc(48px + 0.5rem);}        /* logo (48px) + vertical pad */
 header.site-header *{font-family:var(--ff)!important;} /* fall back until JB-Mono loads */
 
 /* Ensure both JetBrains Mono faces swap, not FOIT */
@@ -302,3 +302,26 @@ header.site-header *{font-family:var(--ff)!important;} /* fall back until JB-Mon
 
 /* Dropdown toggle helper */
 .dropdown-content.hidden{display:none}
+
+/* --- Navigation / CLS hot-fix (2025-06-19) ------------------- */
+header.site-header{           /* reserve space so logo can't shift */
+  min-height:56px;
+}
+@media(max-width:699px){
+  header.site-header{min-height:48px;}
+}
+
+/* dropdown list initially hidden, anchors stacked vertically */
+.nav-wrapper{position:relative;}          /* anchor for abs list */
+.nav-list{                               /* ul or div container */
+  display:none;          /* hidden by default */
+  position:absolute; top:100%; left:0;   /* directly under button */
+  background:var(--c2); border-radius:.5rem; padding:.25rem .5rem;
+  flex-direction:column; gap:.25rem; z-index:20;
+}
+.open .nav-list{display:flex;}           /* shown when parent gets .open */
+
+.hidden{display:none!important;}         /* generic utility */
+
+/* Explicit size for Owl to prevent CLS */
+footer img[alt="Owl of Athena"]{width:100px;height:100px;}
