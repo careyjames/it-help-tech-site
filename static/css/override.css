@@ -1,4 +1,3 @@
-:root{--header-h:56px;}
 body { overflow-x: hidden; }
 .homepage-hero{
   display:block !important;
@@ -26,7 +25,6 @@ body { overflow-x: hidden; }
   word-break:break-word !important;
 }
 .homepage-hero h1 {
-  font-size: 3.0rem;
   max-width: 100% !important;
   overflow-wrap: break-word !important;
   white-space: normal !important;
@@ -35,7 +33,6 @@ body { overflow-x: hidden; }
 
 @media (min-width: 700px) {
   .homepage-hero h1 {
-  font-size: 3.0rem;
     text-align: center;
   }
 }
@@ -106,6 +103,10 @@ body { overflow-x: hidden; }
     position: relative;
     top: 1px;
     margin-right: -6px;
+  }
+  .nav-wrapper ul{
+    gap: 0.75rem !important;
+    font-size: 1.15rem !important;
   }
   .nav-wrapper .dropdown-toggle,
   .nav-wrapper .dropdown-toggle *{
@@ -246,52 +247,6 @@ html body .blockdiv.sticky {
 }
 
 /* Explicit font-size for headings to avoid deprecated API warning */
-
-
-/* Prevent CLS for Owl of Athena footer image */
-img[alt="Owl of Athena"] {
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
+section > h1 {
+  font-size: 2.5rem; /* adjust to match your design */
 }
-
-/* Prevent CLS for site logo */
-img[alt="IT Help San Diego"] {
-  aspect-ratio: 356 / 48;
-  object-fit: contain;
-}
-
-/* JetBrains Mono font definitions with swap for CLS prevention */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-weight: 400;
-  font-style: normal;
-  src: url('/fonts/jetbrains/JetBrainsMono-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-weight: 700;
-  font-style: normal;
-  src: url('/fonts/jetbrains/JetBrainsMono-Bold.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* --- CLS: reserve header space & swap fonts --- */
-header.site-header{min-height:var(--header-h);}
-header.site-header *{font-family:var(--ff)!important;} /* fall back until JB-Mono loads */
-
-@media(max-width:699px){:root{--header-h:48px;}}
-
-/* --- Navigation hidden-state fix --- */
-/* Let the generic rule style all header <ul>s EXCEPT the dropdown */
-.nav-wrapper > ul:not(.nav-list){display:flex!important;flex-wrap:wrap;justify-content:center;align-items:center;list-style:none;margin:0;padding:0;gap:.5rem;}
-
-/* dropdown list initially hidden */
-.nav-wrapper{position:relative;z-index:30;}
-.nav-list{position:absolute;top:100%;left:0;background:var(--c2);border-radius:.5rem;padding:.25rem .5rem;flex-direction:column;gap:.25rem;z-index:20;}
-/* When the list has the [hidden] attribute it must override the flex rule */
-.nav-list[hidden]{display:none!important;}
-/* Show list when body.nav-open is set by JS */
-.nav-open .nav-list{display:flex;}
-.caret{transition:transform .2s;}
-.nav-open .caret{transform:rotate(180deg);}

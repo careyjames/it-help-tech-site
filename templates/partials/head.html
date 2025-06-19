@@ -6,23 +6,6 @@
       fetchpriority="high"
       imagesrcset="/images/carey-256.avif 200w"
       imagesizes="200px">
-<link rel="preload"
-      as="image"
-      href="/images/owl-of-athena.svg"
-      imagesrcset="/images/owl-of-athena.svg 100w"
-      imagesizes="100px">
-<link rel="preload"
-      as="image"
-      href="/logo.svg"
-      fetchpriority="high"
-      imagesrcset="/logo.svg 356w"
-      imagesizes="356px">
-<link rel="preload" as="font"
-      href="/fonts/jetbrains/JetBrainsMono-Regular.woff2"
-      type="font/woff2" crossorigin>
-<link rel="preload" as="font"
-      href="/fonts/jetbrains/JetBrainsMono-Bold.woff2"
-      type="font/woff2" crossorigin>
 {% if page.title %}
   <title>{{ page.title }} – {{ config.title }}</title>
 {% else %}
@@ -50,15 +33,11 @@
   {%- if config.extra.js_switcher_default %}
     {%- if config.extra.js_switcher_default == "light" %}{% set js_theme="js/theme_light.min.js" %}{% endif %}
   {%- endif %}
-  <script defer src="{{                     get_url(path=js_theme                        , trailing_slash=false) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path=js_theme, sha_type=384, base64=true) | safe }}"{%- endif %}></script>
+  <script src="{{                     get_url(path=js_theme                        , trailing_slash=false) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path=js_theme, sha_type=384, base64=true) | safe }}"{%- endif %}></script>
 {%- if config.extra.js_switcher | default(value=true) %}
   <script defer
           src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) | safe }}"
           {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
-  <!-- Nav dropdown toggle -->
-  <script defer
-          src="{{ get_url(path='js/nav-toggle.min.js', trailing_slash=false) | safe }}"
-          {% if integrity %} integrity="sha384-{{ get_hash(path='js/nav-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
   <!-- CSP-compliant fallback for dark-mode toggle -->
   <script defer
           src="{{ get_url(path='js/theme_button.js', trailing_slash=false) | safe }}"

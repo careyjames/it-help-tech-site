@@ -1,3 +1,5 @@
+/* tiny, plain-JS dark-mode helper  –  530 bytes un-minified               */
+/* ---------------------------------------------------------------------- */
 (function() {
   const html   = document.documentElement;   // <html>
   const key    = 'theme';                    // localStorage key
@@ -16,10 +18,3 @@
     });
   });
 })();
-
-/*
- * The navigation dropdown is controlled separately by nav-toggle.js.  Having
- * another listener here caused the button state to toggle twice, leaving the
- * menu stuck open.  Removing this duplicate logic ensures a single source of
- * truth for the menu and prevents conflicting behaviour.
- */
