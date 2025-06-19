@@ -17,10 +17,15 @@
   });
 })();
 
-document.addEventListener('DOMContentLoaded',() => {
-  document.querySelector('.dropdown-toggle')?.addEventListener('click',e=>{
-    const btn=e.currentTarget;
-    const list=btn.nextElementSibling;
-    btn.setAttribute('aria-expanded',list.classList.toggle('hidden')?'false':'true');
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.getElementById('nav-toggle');
+  if (!navToggle) return;
+  navToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    html.classList.toggle('nav-open');
+    navToggle.setAttribute(
+      'aria-expanded',
+      html.classList.contains('nav-open')
+    );
   });
 });
