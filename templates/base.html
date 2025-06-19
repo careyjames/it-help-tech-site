@@ -27,9 +27,7 @@
   <div class="site-logo">
     {%- if config.extra.logo.file %}
       <a href="{{ get_url(path='/') }}">
-        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}"
-             width="{{ config.extra.logo.width }}" height="{{ config.extra.logo.height }}"
-             fetchpriority="high">
+        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}" fetchpriority="high">
       </a>
     {%- endif %}
   </div>
@@ -47,8 +45,16 @@
 
       <!-- dropdown -->
       <li class="dropdown">
-        <button id="nav-toggle" aria-expanded="false">More</button>
-        <ul class="nav-list" hidden>
+        <button id="nav-toggle"
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-controls="nav-list">
+          More
+          <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 10l5 5 5-5H7z"/>
+          </svg>
+        </button>
+        <ul id="nav-list" class="nav-list" hidden>
           <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
           <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
           <li><a href="{{ get_url(path='/blog/') }}">Blog</a></li>

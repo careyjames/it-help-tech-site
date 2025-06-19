@@ -9,18 +9,18 @@
     const html = document.documentElement;
     const open = html.classList.toggle('nav-open');
 
-    // ARIA
-    btn.setAttribute('aria-expanded', open);
-
-    // show / hide list
+    // show / hide list before updating ARIA
     if (list) {
       if (open) {
-        list.removeAttribute('hidden');
+        if (list.hasAttribute('hidden')) list.removeAttribute('hidden');
         list.classList.remove('hidden');
       } else {
-        list.setAttribute('hidden', '');
+        if (!list.hasAttribute('hidden')) list.setAttribute('hidden', '');
         list.classList.add('hidden');
       }
     }
+
+    // ARIA
+    btn.setAttribute('aria-expanded', open);
   });
 })();

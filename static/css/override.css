@@ -107,10 +107,6 @@ body { overflow-x: hidden; }
     top: 1px;
     margin-right: -6px;
   }
-  /* .nav-wrapper ul{
-    gap: 0.75rem !important;
-    font-size: 1.15rem !important;
-  } */
   .nav-wrapper .dropdown-toggle,
   .nav-wrapper .dropdown-toggle *{
     font-size: 1.15rem !important;
@@ -250,9 +246,6 @@ html body .blockdiv.sticky {
 }
 
 /* Explicit font-size for headings to avoid deprecated API warning */
-section.homepage-hero > h1 {
-  font-size: 3.0rem;
-}
 
 
 /* Prevent CLS for Owl of Athena footer image */
@@ -294,9 +287,11 @@ header.site-header *{font-family:var(--ff)!important;} /* fall back until JB-Mon
 .nav-wrapper > ul:not(.nav-list){display:flex!important;flex-wrap:wrap;justify-content:center;align-items:center;list-style:none;margin:0;padding:0;gap:.5rem;}
 
 /* dropdown list initially hidden */
-.nav-wrapper{position:relative;}
+.nav-wrapper{position:relative;z-index:30;}
 .nav-list{position:absolute;top:100%;left:0;background:var(--c2);border-radius:.5rem;padding:.25rem .5rem;flex-direction:column;gap:.25rem;z-index:20;}
 /* When the list has the [hidden] attribute it must override the flex rule */
 .nav-list[hidden]{display:none!important;}
 /* Show list when body.nav-open is set by JS */
 .nav-open .nav-list{display:flex;}
+.caret{transition:transform .2s;}
+.nav-open .caret{transform:rotate(180deg);}
