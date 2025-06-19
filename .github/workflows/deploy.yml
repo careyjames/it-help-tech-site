@@ -1,0 +1,72 @@
+name: Deploy static site → S3 + CloudFront
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      BUCKET: www.it-help.tech  # <--- CHANGED for your new S3 bucket
+      DIST_ID: ${{ secrets.CF_DIST_ID_IT_HELP_TECH }} # <--- CHANGED to use the new secret name
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Zola
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
+
+      - name: Build site with Zola
+        run: zola build
+        
+      - name: Copy images and root files
+        run: |
+          cp -r static/images public/
+          cp static/robots.txt static/red-plus.ico static/bimi-logo.svg static/logo.svg public/
+
+      - name: Upload immutable assets
+        run: |
+          aws s3 sync public/ s3://$BUCKET/ \
+            --exclude "*.html" \
+            --cache-control "public,max-age=31536000,immutable" \
+            --metadata-directive REPLACE \
+            --exact-timestamps \
+            --delete
+        env:
+          AWS_S3_BUCKET: ${{ env.BUCKET }}
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Upload HTML (short TTL)
+        run: |
+          aws s3 sync public/ s3://$BUCKET/ \
+            --include "*.html" \
+            --cache-control "public,max-age=300" \
+            --metadata-directive REPLACE \
+            --exact-timestamps
+        env:
+          AWS_S3_BUCKET: ${{ env.BUCKET }}
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Invalidate CloudFront cache and wait
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*' --query 'Invalidation.Id' --output text)
+          echo "Waiting for CloudFront invalidation $INVALIDATION_ID to complete..."
+          aws cloudfront wait invalidation-completed --distribution-id $DIST_ID --id "$INVALIDATION_ID"
+        env:
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
