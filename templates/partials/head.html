@@ -27,6 +27,9 @@
   {%- endif %}
   <script src="{{                     get_url(path=js_theme                        , trailing_slash=false) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path=js_theme, sha_type=384, base64=true) | safe }}"{%- endif %}></script>
 {%- endif %}
+{%- if config.extra.js_prestyle | default(value=false) %}
+<script defer src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"{% if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
+{%- endif %}
 <link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <noscript>
   <link rel="stylesheet" href="/css/critical.min.css">
