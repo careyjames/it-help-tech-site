@@ -17,15 +17,9 @@
   });
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('nav-toggle');
-  if (!navToggle) return;
-  navToggle.addEventListener('click', () => {
-    const html = document.documentElement;
-    html.classList.toggle('nav-open');
-    navToggle.setAttribute(
-      'aria-expanded',
-      html.classList.contains('nav-open')
-    );
-  });
-});
+/*
+ * The navigation dropdown is controlled separately by nav-toggle.js.  Having
+ * another listener here caused the button state to toggle twice, leaving the
+ * menu stuck open.  Removing this duplicate logic ensures a single source of
+ * truth for the menu and prevents conflicting behaviour.
+ */
