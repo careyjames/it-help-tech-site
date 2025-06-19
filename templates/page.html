@@ -45,7 +45,14 @@
 
     {%- if page.extra.image %}
     <p class="post-image">
-      <img src="{{ get_url(path=page.extra.image) }}" width="200" height="200"{%- if page.extra.image_alt %} alt="{{ page.extra.image_alt }}"{%- endif %}>
+      <img
+        src="{{ get_url(path=page.extra.image) }}"
+        {%- if page.extra.image_alt %} alt="{{ page.extra.image_alt }}"{% else %} alt=""{% endif %}
+        width="200"
+        height="200"
+        loading="eager"
+        fetchpriority="high"
+        style="aspect-ratio:1/1; object-fit:cover;">
     </p>
     {%- endif %}
 
