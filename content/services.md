@@ -208,7 +208,7 @@ extra:
 
 We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting. Our expertise ensures your critical systems run smoothly, securely, and efficiently.
 
-## Advanced Email, Domain, & DNS Solutions 🌐
+## Advanced Email, Domain, & DNS Solutions
 
 Having trouble with your email or website? We ensure your digital communications and online presence are reliable and secure. We specialize in solving complex email deliverability issues, getting your emails out of spam folders, and fortifying your domain against spoofing and phishing attacks.
 
@@ -218,7 +218,7 @@ Having trouble with your email or website? We ensure your digital communications
 * **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC (`p=reject`) implementations, transforming complex email security into unmatched reliability.
 * **Website & Domain Recovery:** Assisting you in regaining access and control over your website and domain names when issues arise.
 
-## Cybersecurity & Data Protection 🛡️
+## Cybersecurity & Data Protection
 
 Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, email phishing, browser blocks, and more.
 
@@ -227,7 +227,7 @@ Protect your digital assets with our expert cybersecurity services. We help you 
 * **Data Privacy & Discreet Advisory:** Handling sensitive technical challenges that require deep expertise, discretion, and trust, such as secure data handling and quiet remediation of compromised systems.
 * **Ethical Screen Sharing:** For all remote support, **you, the client, always initiate and approve screen access**. We prioritize your privacy and control.
 
-## macOS System & Application Support ⚙️
+## macOS System & Application Support
 
 We provide expert troubleshooting for a variety of system-level and application-specific issues to keep your devices performing optimally.
 
@@ -236,11 +236,11 @@ We provide expert troubleshooting for a variety of system-level and application-
 * **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
 * **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
 
-## Specialized Services ⚖️
+## Specialized Services
 
 * **iPhone Text Message Extraction for Law Firms:** We specialize in the extraction of iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is clearly documented. We can do this **on-site at your Lawfirm on your computer so the data never leaves your office,** after we setup the process, you'll be empowered to never hire help again for this task.
 
-## Our Recommendations ✨
+## Our Recommendations
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
 

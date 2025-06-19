@@ -39,7 +39,7 @@ This policy covers real operational costs and ensures continued reliability.
 * We do not charge for brief communications (under 10 minutes).
 * All calls, remote sessions, or other time spent rendering services lasting more than 10 minutes are billed at our standard rate, subject to the 30-minute minimum.
 
-## Privacy & Security 🔒 {#privacy--security-}
+## Privacy & Security {#privacy--security-}
 
 * All client data (login credentials, network configurations, etc.) is encrypted and is never shared or sold.
 * We have served high-profile, sensitive security and entertainment businesses for 25 years.
