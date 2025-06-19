@@ -264,8 +264,18 @@ img[alt="IT Help San Diego"] {
   object-fit: contain;
 }
 
-/* Ensure JetBrains Mono font swaps immediately without blocking layout */
+/* JetBrains Mono font definitions with swap for CLS prevention */
 @font-face {
   font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/jetbrains/JetBrainsMono-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/jetbrains/JetBrainsMono-Bold.woff2') format('woff2');
   font-display: swap;
 }

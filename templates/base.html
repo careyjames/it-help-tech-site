@@ -27,7 +27,8 @@
   <div class="site-logo">
     {%- if config.extra.logo.file %}
       <a href="{{ get_url(path='/') }}">
-        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}">
+        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}"
+             width="{{ config.extra.logo.width }}" height="{{ config.extra.logo.height }}">
       </a>
     {%- endif %}
   </div>
