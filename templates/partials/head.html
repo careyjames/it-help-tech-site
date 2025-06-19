@@ -1,4 +1,11 @@
 <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<link rel="preload"
+      as="image"
+      href="/images/carey-256.avif"
+      fetchpriority="high"
+      imagesrcset="/images/carey-256.avif 200w"
+      imagesizes="200px">
 {% if page.title %}
   <title>{{ page.title }} – {{ config.title }}</title>
 {% else %}
@@ -27,16 +34,15 @@
     {%- if config.extra.js_switcher_default == "light" %}{% set js_theme="js/theme_light.min.js" %}{% endif %}
   {%- endif %}
   <script src="{{                     get_url(path=js_theme                        , trailing_slash=false) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path=js_theme, sha_type=384, base64=true) | safe }}"{%- endif %}></script>
+{%- if config.extra.js_switcher | default(value=true) %}
+  <script defer
+          src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) | safe }}"
+          {% if integrity %} integrity="sha384-{{ get_hash(path='js/theme-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
+{%- endif %}
 {%- endif %}
 {%- if config.extra.js_prestyle | default(value=false) %}
 <script defer src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"{% if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
 {%- endif %}
-<link rel="preload"
-      as="image"
-      href="/images/carey-256.avif"
-      fetchpriority="high"
-      imagesrcset="/images/carey-256.avif 200w"
-      imagesizes="200px">
 <link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <noscript>
   <link rel="stylesheet" href="/css/critical.min.css">
