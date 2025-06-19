@@ -14,7 +14,7 @@ external_links_no_referrer  = true      # strip Referer header
 
 [extra]
 #abridgeMode = "switcher"
-js_switcher = true
+js_switcher = false
 js_switcher_default = "dark"
 # enable non-blocking stylesheet loading
 js_prestyle = true
