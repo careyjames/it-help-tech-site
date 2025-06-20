@@ -250,3 +250,10 @@ html body .blockdiv.sticky {
 section > h1 {
   font-size: 2.5rem; /* adjust to match your design */
 }
+
+/* --- Anti‑CLS: fix intrinsic logo size --- */
+.site-logo img.logo{
+  width: 356px !important;   /* lock to intrinsic size */
+  height: 48px !important;
+  max-width: none !important;  /* prevent responsive shrink in critical render */
+}
