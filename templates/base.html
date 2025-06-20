@@ -27,7 +27,10 @@
   <div class="site-logo">
     {%- if config.extra.logo.file %}
       <a href="{{ get_url(path='/') }}">
-        <img src="{{ get_url(path=config.extra.logo.file) }}" alt="{{ config.extra.logo.alt | safe }}" width="{{ config.extra.logo.width }}" height="{{ config.extra.logo.height }}">
+        <img src="{{ get_url(path='logo.svg') }}"
+             width="356" height="48"
+             alt="IT Help San Diego"
+             class="logo" decoding="async">
       </a>
     {%- endif %}
   </div>
