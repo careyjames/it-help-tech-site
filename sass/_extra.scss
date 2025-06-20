@@ -3,23 +3,13 @@
   font-family: "JetBrains Mono";
   src: url("/fonts/jetbrains/JetBrainsMono-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "JetBrains Mono";
   src: url("/fonts/jetbrains/JetBrainsMono-Bold.woff2") format("woff2");
   font-weight: 700;
-  font-display: swap;
-}
-
-/* Fallback with adjusted metrics to prevent layout shift */
-@font-face {
-  font-family: 'JetBrains Mono Fallback';
-  src: local('Arial');
-  size-adjust: 95%;
-  ascent-override: 92%;
-  descent-override: 24%;
-  line-gap-override: normal;
+  font-display: fallback;
 }
 
 /* --- ALL CUSTOM STYLES --------------------------------------- */
@@ -27,7 +17,7 @@
 body {
   background-color: var(--c1);
   color: var(--f1);
-  font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', sans-serif;
+  font-family: "JetBrains Mono", "Courier New", monospace;
   font-size: 1rem !important;
   line-height: 1.6;
 }
