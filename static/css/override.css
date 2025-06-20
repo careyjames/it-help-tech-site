@@ -251,10 +251,10 @@ section > h1 {
   font-size: 2.5rem; /* adjust to match your design */
 }
 
-/* --- Anti-CLS: lock intrinsic logo size everywhere --- */
+/* --- Anti-CLS: lock logo size everywhere --- */
 img.logo{
-  aspect-ratio: 356 / 48;
-  width: 100%;
-  max-width: 356px;
-  height: auto;
+  width: 356px !important;   /* exact intrinsic width to match HTML attrs */
+  height: 48px !important;   /* exact intrinsic height */
+  aspect-ratio: 356 / 48;    /* still declare ratio for safety */
+  max-width: 356px !important;
 }
