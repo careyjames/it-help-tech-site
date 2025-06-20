@@ -19,7 +19,7 @@ js_switcher_default = "dark"
 # enable non-blocking stylesheet loading
 js_prestyle = true
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
-stylesheets = ["abridge.css"]
+stylesheets = ["css/cls-fixes.css", "css/abridge.css"]
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
