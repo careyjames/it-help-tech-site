@@ -36,8 +36,10 @@
 <script defer src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"{% if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
 {%- endif %}
 <link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
+<link rel="preload" href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}" as="style" class="preStyle">
 <noscript>
 <link rel="stylesheet" href="{{ get_url(path="css/critical-inline.css") | safe }}">
+<link rel="stylesheet" href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
   <link rel="stylesheet" href="/css/critical.min.css">
 </noscript>
 
