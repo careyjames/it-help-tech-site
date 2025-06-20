@@ -202,3 +202,9 @@
 @use "./_custom" as *;
 @use "./_extra"  as *;
 
+/* --- Anti-CLS: stop header/hero logo shrinking --- */
+img.logo{
+  width: 356px !important;
+  height: 48px !important;
+  max-width: none !important;
+}
