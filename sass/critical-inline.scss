@@ -12,3 +12,10 @@ html { background: var(--bg); color: var(--fg); transition: background .15s; }
 /* Dark-logo inversion so SVGs stay visible */
 [data-t="d"] img.logo,
 [data-t="d"] svg.logo path { filter: invert(1) brightness(1.2); }
+
+/* --- Anti‑CLS: lock logo size before first paint --- */
+img.logo{
+  width: 356px !important;   /* intrinsic header size */
+  height: 48px !important;
+  max-width: none !important;/* defeat generic img{max-width:100%} */
+}
