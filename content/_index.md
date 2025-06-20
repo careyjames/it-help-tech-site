@@ -120,8 +120,10 @@ twitter_card        = "summary_large_image"
   Expert Mac IT Support—Complex Tech Challenges
 </h1>
 
+<p style="max-width:40rem">
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service.  
 **We solve tech problems—no monthly retainers.** <a class="phone-line" href="tel:16198535008">(619) 853-5008</a>  
+</p>
 
 <p><a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews</a></p>    
 
@@ -144,6 +146,7 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
+<ul style="max-width:40rem">
 * **Wireless WiFi Mesh, Fix Dead Zones**
 * **Network setup and home network security with secure Wi-Fi setup**
 * **Network design & Infrastructure planning**
@@ -152,6 +155,7 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 * **Port Forwarding & Double NAT**
 * **Network printer sharing**
 * **Switch, Gateway, and Firewall programming and troubleshooting**
+</ul>
 
 ### Advanced Email, Domain, & DNS Solutions
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
