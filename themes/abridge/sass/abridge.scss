@@ -1569,3 +1569,10 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     color: var(--h4);
   }
 }
+
+/* --- Anti-CLS: stop header logo shrinking --- */
+img.logo{
+  width: 356px !important;
+  height: 48px !important;
+  max-width: none !important;
+}
