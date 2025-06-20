@@ -1,5 +1,7 @@
 {%- import 'macros/seo.html' as macros_seo -%}
 {%- import "macros/macros.html" as macros -%}
+{%- import "macros/csp.html" as csp -%}
+{%- set csp_nonce = csp::generate_csp_nonce() -%}
 
 {# ---------- i18n lookup (safe) -------------------------------- #}
 {%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}

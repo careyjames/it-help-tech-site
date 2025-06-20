@@ -1,23 +1,27 @@
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+<!-- LCP image -->
 <link rel="preload"
       as="image"
       href="/images/carey-256.avif"
       fetchpriority="high"
       imagesrcset="/images/carey-256.avif 200w"
       imagesizes="200px">
+
 {% if page.title %}
   <title>{{ page.title }} – {{ config.title }}</title>
 {% else %}
   <title>{{ config.title }}</title>
 {% endif %}
+
 {% if page.description %}
   <meta name="description" content="{{ page.description | safe }}" />
 {% else %}
   <meta name="description" content="{{ config.description | safe }}" />
 {% endif %}
-{#- Theme Switcher Button to toggle between dark/light #}
-{# choose the right template context: page when available, otherwise section, otherwise site config #}
+
+{# --- choose the right template context: page → section → site config --- #}
 {% if page is defined %}
   {% set ctx = page %}
 {% elif section is defined %}
@@ -27,27 +31,38 @@
 {% endif %}
 
 {%- set integrity = config.extra.integrity | default(value=true) -%}
-{%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set integrity = false %}{% endif %}{% endif %}
+{%- if config.extra.search_library and config.extra.search_library == "offline" %}
+  {% set integrity = false %}
+{%- endif %}
 
-{# --- Theme Switcher Logic --- #}
-<script defer src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) | safe }}"{%- if integrity %} integrity="sha384-{{ get_hash(path='js/theme-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
+{# --- Theme Switcher JS (external) --- #}
+<script defer
+        src="{{ get_url(path='js/theme-toggle.min.js', trailing_slash=false) | safe }}"
+        {%- if integrity %} integrity="sha384-{{ get_hash(path='js/theme-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}>
+</script>
 
 {%- if config.extra.js_prestyle | default(value=false) %}
-<script defer src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"{% if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}></script>
+  <script defer
+          src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"
+          {%- if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}>
+  </script>
 {%- endif %}
+
+<!-- critical CSS -->
 <link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
-<link rel="preload" href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}" as="style" class="preStyle">
+<link rel="preload"
+      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
+      as="style"
+      class="preStyle">
+
 <noscript>
-<link rel="stylesheet" href="{{ get_url(path="css/critical-inline.css") | safe }}">
-<link rel="stylesheet" href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
+  <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
   <link rel="stylesheet" href="/css/critical.min.css">
 </noscript>
 
-
-
-
-
-{# --- Critical hero styling: no inline hashes, uses CSP nonce --- #}
+{# --- Critical hero styling uses CSP nonce --- #}
 {% if csp_nonce is not defined %}{% set csp_nonce = '' %}{% endif %}
 <style nonce="{{ csp_nonce }}">
 /* === Critical Above‑the‑Fold Rules === */
@@ -66,136 +81,146 @@
   }
 }
 </style>
-{#- Style Sheets #}
-  {%- set stylesheets=config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
-  {%- if stylesheets %}{%- for i in stylesheets %}
-  <link rel="preload" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" as="style" class="preStyle">
-  {%- endfor %}{%- endif %}
 
-  {%- if ctx.extra.stylesheets %}{%- set pagestylesheets=ctx.extra.stylesheets -%}{%- endif %}
-  {%- if pagestylesheets %}{%- for i in pagestylesheets %}
-  <link rel="preload" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" as="style" class="preStyle">
-  {%- endfor %}{%- endif %}
-  <link rel="preload" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}" as="style" class="preStyle">
-  <noscript>
-  {%- if stylesheets %}{%- for i in stylesheets %}
-  <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
-  {%- endfor %}{%- endif %}
-  {%- if pagestylesheets %}{%- for i in pagestylesheets %}
-  <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
-  {%- endfor %}{%- endif %}
-  <link rel="stylesheet" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
-  </noscript>
+{# --- Style Sheets --- #}
+{%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
+{%- for i in stylesheets %}
+  <link rel="preload"
+        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+        as="style"
+        class="preStyle">
+{%- endfor %}
 
+{%- if ctx.extra.stylesheets %}
+  {% set pagestylesheets = ctx.extra.stylesheets %}
+  {%- for i in pagestylesheets %}
+    <link rel="preload"
+          href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+          as="style"
+          class="preStyle">
+  {%- endfor %}
+{%- endif %}
 
+<link rel="preload"
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
+      as="style"
+      class="preStyle">
 
-
-
-{#- meta tags #}
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-
-
-
-
-{#- Security: CSP, referrer #}
-  {%- if config.extra.security_header_referrer %}
-  <meta name="referrer" content="{{ config.extra.security_header_referrer | safe }}" />
+<noscript>
+  {%- for i in stylesheets %}
+    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+  {%- endfor %}
+  {%- if pagestylesheets %}
+    {%- for i in pagestylesheets %}
+      <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+    {%- endfor %}
   {%- endif %}
-  {%- if config.extra.security_header_csp %}
-  <meta http-equiv="Content-Security-Policy" content="{{ config.extra.security_header_csp | safe }}" />
-  {%- endif %}
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
+</noscript>
 
+{# --- Meta tags --- #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+{# --- Security headers --- #}
+{%- if config.extra.security_header_referrer %}
+  <meta name="referrer" content="{{ config.extra.security_header_referrer | safe }}">
+{%- endif %}
 
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               img-src     'self' data:;
+               style-src   'self' 'nonce-{{ csp_nonce }}';
+               script-src  'self' 'nonce-{{ csp_nonce }}';">
 
+{# --- Favicons etc. --- #}
+{%- if config.extra.favicon_theme_color %}
+  <meta name="theme-color" content="{{ config.extra.favicon_theme_color }}">
+{%- endif %}
 
-{#- Favicons #}
-  {%- if config.extra.favicon_theme_color %}
-  <meta name="theme-color" content="{{ config.extra.favicon_theme_color }}" />
-  {%- endif %}
+{%- if config.extra.favicon_ms_color %}
+  <meta name="msapplication-TileColor" content="{{ config.extra.favicon_ms_color }}">
+{%- endif %}
 
-  {%- if config.extra.favicon_ms_color %}
-  <meta name="msapplication-TileColor" content="{{ config.extra.favicon_ms_color }}" />
-  {%- endif %}
+{%- if config.extra.webmanifest %}
+  <link rel="manifest" href="{{ get_url(path=config.extra.webmanifest, trailing_slash=false) | safe }}">
+{%- endif %}
 
-  {%- if config.extra.webmanifest %}
-  <link rel="manifest" href="{{ get_url(path=config.extra.webmanifest, trailing_slash=false) | safe }}" />
-  {%- endif %}
+{%- if config.extra.favicon_mask and config.extra.favicon_mask_color %}
+  <link rel="mask-icon"
+        href="{{ get_url(path=config.extra.favicon_mask, trailing_slash=false) | safe }}"
+        color="{{ config.extra.favicon_mask_color }}">
+{%- endif %}
 
-  {%- if config.extra.favicon_mask and config.extra.favicon_mask_color %}
-  <link rel="mask-icon" href="{{ get_url(path=config.extra.favicon_mask, trailing_slash=false) | safe }}" color="{{ config.extra.favicon_mask_color }}" />
-  {%- endif %}
+{%- if config.extra.favicon_svg %}
+  <link rel="icon" type="image/svg+xml"
+        href="{{ get_url(path=config.extra.favicon_svg, trailing_slash=false) | safe }}">
+{%- endif %}
 
-  {%- if config.extra.favicon_svg %}
-  <link rel="icon" type="image/svg+xml" href="{{ get_url(path=config.extra.favicon_svg, trailing_slash=false) | safe }}" />
-  {%- endif %}
+{%- if config.extra.favicon180 %}
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ get_url(path=config.extra.favicon180, trailing_slash=false) | safe }}">
+{%- endif %}
 
-  {%- if config.extra.favicon180 %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path=config.extra.favicon180, trailing_slash=false) | safe }}" />
-  {%- endif %}
+{%- if config.extra.favicon32 %}
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ get_url(path=config.extra.favicon32, trailing_slash=false) | safe }}">
+{%- endif %}
 
-  {%- if config.extra.favicon32 %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path=config.extra.favicon32, trailing_slash=false) | safe }}" />
-  {%- endif %}
+{%- if config.extra.favicon16 %}
+  <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ get_url(path=config.extra.favicon16, trailing_slash=false) | safe }}">
+{%- endif %}
 
-  {%- if config.extra.favicon16 %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path=config.extra.favicon16, trailing_slash=false) | safe }}" />
-  {%- endif %}
-
-
-
-
-
-{#- Style Sheets Preload #}
-  {%- set integrity = config.extra.integrity | default(value=true) -%}
-  {%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set integrity = false %}{% endif %}{% endif %}
-
-{%- if config.extra.fonts %}{%- for i in config.extra.fonts %}
-  {%- if i.url is matching("^http[s]?://") %}
-  <link rel="preload" as="style" class="preStyle" href="{{ i.url | safe }}" crossorigin="anonymous" />
-  {%- else %}
-  <link rel="preload" as="font" href="{{ get_url(path=i.url, trailing_slash=false) | safe }}" type="font/woff2" crossorigin />
-  {%- endif %}
-{%- endfor %}{%- endif %}
+{# --- Optional font preloads --- #}
+{%- if config.extra.fonts %}
+  {%- for i in config.extra.fonts %}
+    {%- if i.url is matching("^http[s]?://") %}
+      <link rel="preload" as="style" class="preStyle" href="{{ i.url | safe }}" crossorigin="anonymous">
+    {%- else %}
+      <link rel="preload" as="font"
+            href="{{ get_url(path=i.url, trailing_slash=false) | safe }}"
+            type="font/woff2"
+            crossorigin>
+    {%- endif %}
+  {%- endfor %}
+{%- endif %}
 
 {%- if config.extra.fontawesome %}
-  <link rel="preload" as="style" class="preStyle" href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous" />
+  <link rel="preload" as="style" class="preStyle"
+        href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous">
 {%- endif %}
 
+{# --- KaTeX (math) --- #}
 {%- if config.extra.math or ctx.extra.math %}
-
-  {%- set katex_css=config.extra.katex_css | default(value="katex.min.css") -%}
-  {%- if katex_css %}{%- if katex_css is matching("^http[s]?://") %}
-  <link rel="preload" as="style" class="preStyle" href="{{ katex_css | safe }}"{%- if integrity and config.extra.katex_css_integrity %} integrity="{{ config.extra.katex_css_integrity | safe }}"{%- endif %} crossorigin="anonymous" />
-  {%- else %}
-  <link rel="preload" as="style" class="preStyle" href="{{ get_url(path=katex_css, trailing_slash=false) }}"{%- if integrity %} integrity="sha384-{{ get_hash(path=katex_css, sha_type=384, base64=true) | safe }}"{%- endif %} />
-  {%- endif %}{%- endif %}
-
+  {%- set katex_css = config.extra.katex_css | default(value="katex.min.css") -%}
+  {%- if katex_css %}
+    {%- if katex_css is matching("^http[s]?://") %}
+      <link rel="preload" as="style" class="preStyle"
+            href="{{ katex_css | safe }}"
+            {%- if integrity and config.extra.katex_css_integrity %} integrity="{{ config.extra.katex_css_integrity | safe }}"{% endif %}
+            crossorigin="anonymous">
+    {%- else %}
+      <link rel="preload" as="style" class="preStyle"
+            href="{{ get_url(path=katex_css, trailing_slash=false) }}"
+            {%- if integrity %} integrity="sha384-{{ get_hash(path=katex_css, sha_type=384, base64=true) | safe }}"{% endif %}>
+    {%- endif %}
+  {%- endif %}
 {%- endif %}
 
-
-
-
-
-{# choose canonical URL even for pages where `current_url` is undefined (e.g. 404) #}
+{# --- Canonical URL --- #}
 {% if current_url is defined %}
   {% set page_url = current_url %}
 {% else %}
   {% set page_url = config.base_url %}
 {% endif %}
 
-{# --- Open Graph & Twitter meta tags (ctx‑aware) --- #}
+{# --- Open Graph & Twitter --- #}
 <meta property="og:title"       content="{{ ctx.extra.og_title       | default(value=ctx.title) }}">
 <meta property="og:description" content="{{ ctx.extra.og_description | default(value=ctx.description) }}">
 <meta property="og:image"       content="{{ get_url(path=ctx.extra.og_image | default(value=config.extra.default_og_image), trailing_slash=false) | safe }}">
 <meta property="og:url"         content="{{ page_url | safe }}">
-<meta name="twitter:url"        content="{{ page_url | safe }}">
+
 <meta property="og:type"        content="{{ ctx.extra.og_type | default(value='website') }}">
 
 <meta name="twitter:card"        content="{{ ctx.extra.twitter_card        | default(value='summary_large_image') }}">
@@ -203,31 +228,25 @@
 <meta name="twitter:description" content="{{ ctx.extra.twitter_description | default(value=ctx.description) }}">
 <meta name="twitter:image"       content="{{ get_url(path=ctx.extra.twitter_image | default(value=config.extra.default_twitter_image), trailing_slash=false) | safe }}">
 
-{#- Rss / Atom Feed #}
-
-  {%- if config.generate_feeds %}
+{# --- RSS / Atom Feed --- #}
+{%- if config.generate_feeds %}
   {%- for feed in config.feed_filenames %}
-
-  {%- if feed is containing('atom') %}
-  <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Atom Feed" href="{{ get_url(path=feed, trailing_slash=false, lang=lang) | safe }}" />
-  {%- endif %}
-
-  {%- if feed is containing('rss') %}
-  <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS Feed" href="{{ get_url(path=feed, trailing_slash=false, lang=lang) | safe }}" />
-  {%- endif %}
-
+    {%- if feed is containing('atom') %}
+      <link rel="alternate" type="application/atom+xml"
+            title="{{ config.title }} Atom Feed"
+            href="{{ get_url(path=feed, trailing_slash=false, lang=lang) | safe }}">
+    {%- endif %}
+    {%- if feed is containing('rss') %}
+      <link rel="alternate" type="application/rss+xml"
+            title="{{ config.title }} RSS Feed"
+            href="{{ get_url(path=feed, trailing_slash=false, lang=lang) | safe }}">
+    {%- endif %}
   {%- endfor %}
-  {%- endif %}
+{%- endif %}
 
-
-
-
-
-{#- Extra items #}
-  {%- if config.extra.head_extra %}
+{# --- Extra items injected from config --- #}
+{%- if config.extra.head_extra %}
   {{ config.extra.head_extra | safe }}
-  {%- endif %}
+{%- endif %}
 
-
-
-{#- End of head partial -#}
+{# --- End of head partial --- #}

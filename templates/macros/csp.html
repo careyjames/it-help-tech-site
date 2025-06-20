@@ -1,0 +1,5 @@
+
+
+{% macro generate_csp_nonce() %}
+    {{ get_random(start=100000000000, end=999999999999) }}
+{% endmacro %}
