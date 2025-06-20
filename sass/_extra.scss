@@ -12,12 +12,22 @@
   font-display: swap;
 }
 
+/* Fallback with adjusted metrics to prevent layout shift */
+@font-face {
+  font-family: 'JetBrains Mono Fallback';
+  src: local('Arial');
+  size-adjust: 95%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: normal;
+}
+
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 
 body {
   background-color: var(--c1);
   color: var(--f1);
-  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', sans-serif;
   font-size: 1rem !important;
   line-height: 1.6;
 }
