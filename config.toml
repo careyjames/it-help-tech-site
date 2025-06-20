@@ -18,11 +18,6 @@ js_switcher = false
 js_switcher_default = "dark"
 # enable non-blocking stylesheet loading
 js_prestyle = true
-# Preload JetBrains Mono fonts
-fonts = [
-    { url = "fonts/jetbrains/JetBrainsMono-Regular.woff2" },
-    { url = "fonts/jetbrains/JetBrainsMono-Bold.woff2" }
-]
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["abridge.css"]
 author_name = "Carey Balboa"
