@@ -202,6 +202,12 @@
 @use "./_custom" as *;
 @use "./_extra"  as *;
 
+/* --- Anti-CLS: hero headline before paint --- */
+h1.hero{
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  max-width: 40rem;
+}
+
 /* --- Anti-CLS: stop header/hero logo shrinking --- */
 img.logo{
   width: 356px !important;
