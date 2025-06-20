@@ -12,10 +12,3 @@ html { background: var(--bg); color: var(--fg); transition: background .15s; }
 /* Dark-logo inversion so SVGs stay visible */
 [data-t="d"] img.logo,
 [data-t="d"] svg.logo path { filter: invert(1) brightness(1.2); }
-
-/* --- Anti-CLS: fluid logo with early aspect‑ratio --- */
-img.logo{
-  aspect-ratio: 356 / 48;      /* reserves 48 px height before first layout */
-  width: clamp(160px, 25vw, 356px);
-  height: auto;
-}
