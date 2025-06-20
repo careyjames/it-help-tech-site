@@ -47,6 +47,25 @@
 
 
 
+{# --- Critical hero styling: no inline hashes, uses CSP nonce --- #}
+{% if csp_nonce is not defined %}{% set csp_nonce = '' %}{% endif %}
+<style nonce="{{ csp_nonce }}">
+/* === Critical Above‑the‑Fold Rules === */
+.homepage-hero h1{
+  max-width:56rem;
+  font-size:2.25rem;           /* desktop */
+  line-height:1.15;
+  margin:2rem auto 0;
+  text-align:center;
+  white-space:nowrap;          /* prevent wrap on wide screens */
+}
+@media (max-width:48rem){
+  .homepage-hero h1{
+    font-size:1.5rem;          /* mobile */
+    white-space:normal;
+  }
+}
+</style>
 {#- Style Sheets #}
   {%- set stylesheets=config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
   {%- if stylesheets %}{%- for i in stylesheets %}

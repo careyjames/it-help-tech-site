@@ -122,9 +122,9 @@ twitter_card        = "summary_large_image"
   </h1>
 </section>
 
-<p style="max-width:56rem">
-San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service.  
-**We solve tech problems—no monthly retainers.** <a class="phone-line" href="tel:16198535008">(619) 853-5008</a>  
+<p class="intro">
+San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Mac, Wi‑Fi, DNS & Email issues. We fix macOS/iOS glitches, eliminate Wi‑Fi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—on‑site, in‑home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service.<br>
+<strong>We solve tech problems—no monthly retainers.</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
 </p>
 
 <p><a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" class="cta-button">Read Verified Reviews</a></p>    
@@ -148,7 +148,7 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
-<ul style="max-width:56rem">
+<ul class="content-max">
   <li><strong>Wireless Wi‑Fi Mesh, Fix Dead Zones</strong></li>
   <li><strong>Network setup and home network security</strong></li>
   <li><strong>Network design &amp; infrastructure planning</strong></li>

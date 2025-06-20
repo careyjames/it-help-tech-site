@@ -24,3 +24,10 @@ img.logo{
   height: 48px !important;
   max-width: none !important;/* defeat generic img{max-width:100%} */
 }
+
+/* Generic max‑width utility for lists and paragraphs */
+.content-max {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
