@@ -1,23 +1,8 @@
-/* ─── Self-hosted JetBrains Mono ─────────────────────────────── */
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains/JetBrainsMono-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: fallback;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains/JetBrainsMono-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-display: fallback;
-}
-
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 
 body {
   background-color: var(--c1);
   color: var(--f1);
-  font-family: "JetBrains Mono", "Courier New", monospace;
   font-size: 1rem !important;
   line-height: 1.6;
 }
