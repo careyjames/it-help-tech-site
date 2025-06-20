@@ -251,9 +251,9 @@ section > h1 {
   font-size: 2.5rem; /* adjust to match your design */
 }
 
-/* --- Anti‑CLS: fix intrinsic logo size --- */
-.site-logo img.logo{
-  width: 356px !important;   /* lock to intrinsic size */
+/* --- Anti-CLS: lock intrinsic logo size everywhere --- */
+img.logo{
+  width: 356px !important;   /* match HTML attrs */
   height: 48px !important;
-  max-width: none !important;  /* prevent responsive shrink in critical render */
+  max-width: none !important;/* stop responsive shrink */
 }
