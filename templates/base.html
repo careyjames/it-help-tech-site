@@ -23,7 +23,7 @@
 <body>
 
 {%- block header %}
-<header class="site-header">
+<header class="site-header" role="banner" style="min-height:65px">
   <div class="site-logo">
     {%- if config.extra.logo.file %}
       <a href="{{ get_url(path='/') }}">
