@@ -116,7 +116,7 @@ twitter_card        = "summary_large_image"
 
 
 <!-- Homepage hero heading -->
-<h1 style="white-space:nowrap;font-size:2.25rem;line-height:1.15;margin-top:2rem;text-align:center">
+<h1 style="max-width:56rem;font-size:2.25rem;line-height:1.15;margin:2rem auto 0;text-align:center">
   Expert Mac IT Support—Complex Tech Challenges
 </h1>
 
