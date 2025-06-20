@@ -24,7 +24,7 @@ fonts = [
     { url = "fonts/jetbrains/JetBrainsMono-Bold.woff2" }
 ]
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
-stylesheets = ["css/abridge.min.css"]
+stylesheets = ["abridge.css"]
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
