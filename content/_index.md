@@ -116,11 +116,11 @@ twitter_card        = "summary_large_image"
 
 
 <!-- Homepage hero heading -->
-<h1 class="home-headline hero" style="max-width:40rem">
+<h1 class="home-headline hero" style="max-width:56rem">
   Expert Mac IT Support—Complex Tech Challenges
 </h1>
 
-<p style="max-width:40rem">
+<p style="max-width:56rem">
 San Diego’s Apple-centric IT support for homes & SMBs. 25+ years fixing Mac, WiFi, DNS & Email issues. We fix macOS/iOS glitches, eliminate WiFi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)— on-site, in-home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service.  
 **We solve tech problems—no monthly retainers.** <a class="phone-line" href="tel:16198535008">(619) 853-5008</a>  
 </p>
@@ -146,15 +146,15 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
-<ul style="max-width:40rem">
-* **Wireless WiFi Mesh, Fix Dead Zones**
-* **Network setup and home network security with secure Wi-Fi setup**
-* **Network design & Infrastructure planning**
-* **Network Troubleshooting**
-* **Static IP configuration & troubleshooting**
-* **Port Forwarding & Double NAT**
-* **Network printer sharing**
-* **Switch, Gateway, and Firewall programming and troubleshooting**
+<ul style="max-width:56rem">
+  <li><strong>Wireless Wi‑Fi Mesh, Fix Dead Zones</strong></li>
+  <li><strong>Network setup and home network security</strong></li>
+  <li><strong>Network design &amp; infrastructure planning</strong></li>
+  <li><strong>Network troubleshooting</strong></li>
+  <li><strong>Static‑IP configuration &amp; troubleshooting</strong></li>
+  <li><strong>Port forwarding &amp; double NAT</strong></li>
+  <li><strong>Network printer sharing</strong></li>
+  <li><strong>Switch, gateway &amp; firewall programming</strong></li>
 </ul>
 
 ### Advanced Email, Domain, & DNS Solutions
