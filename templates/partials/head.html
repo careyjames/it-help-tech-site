@@ -64,7 +64,7 @@
 
 {# --- Critical hero styling uses CSP nonce --- #}
 {% if csp_nonce is not defined %}{% set csp_nonce = '' %}{% endif %}
-<style nonce="{{ csp_nonce }}">
+<style nonce="{{ csp_nonce | trim }}">
 /* === Critical Above‑the‑Fold Rules === */
 .homepage-hero h1{
   max-width:56rem;
@@ -130,8 +130,8 @@
 <meta http-equiv="Content-Security-Policy"
       content="default-src 'self';
                img-src     'self' data:;
-               style-src   'self' 'nonce-{{ csp_nonce }}';
-               script-src  'self' 'nonce-{{ csp_nonce }}';">
+               style-src   'self' 'nonce-{{ csp_nonce | trim }}';
+               script-src  'self' 'nonce-{{ csp_nonce | trim }}';">
 
 {# --- Favicons etc. --- #}
 {%- if config.extra.favicon_theme_color %}
