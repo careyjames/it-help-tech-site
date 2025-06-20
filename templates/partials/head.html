@@ -37,6 +37,7 @@
 {%- endif %}
 <link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <noscript>
+<link rel="stylesheet" href="{{ get_url(path="css/critical-inline.css") | safe }}">
   <link rel="stylesheet" href="/css/critical.min.css">
 </noscript>
 
@@ -200,11 +201,6 @@
 
 
 
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
-  }
-</style>
 
 {#- Extra items #}
   {%- if config.extra.head_extra %}
