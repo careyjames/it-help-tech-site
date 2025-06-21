@@ -91,6 +91,7 @@ header > nav > div:nth-child(2) {
 /* --- HEADER & NAVIGATION STYLES ------------------------------- */
 
 .site-header {
+  min-height: 65px;
   padding-top: 0.25rem !important;
   margin: 0 0 0.25rem 0 !important;
   position: relative !important;
@@ -118,6 +119,13 @@ header > nav > div:nth-child(2) {
   height: 45px !important;
   width: auto !important;
   border-radius: 0 !important;
+}
+
+/* Footer owl graphic */
+.owl {
+  width: 100px;
+  height: 100px;
+  max-width: none;
 }
 
 /* Nav list */

@@ -251,3 +251,12 @@ section > h1 {
   font-size: 2.5rem; /* adjust to match your design */
 }
 
+header.site-header{
+  min-height:65px;
+}
+.owl{
+  width:100px;
+  height:100px;
+  max-width:none;
+}
+

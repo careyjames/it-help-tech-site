@@ -69,24 +69,7 @@
 </noscript>
 
 {# --- Critical hero styling uses CSP nonce --- #}
-{% if csp_nonce is not defined %}{% set csp_nonce = '' %}{% endif %}
-<style nonce="{{ csp_nonce | trim }}">
-/* === Critical Above‑the‑Fold Rules === */
-.homepage-hero h1{
-  max-width:56rem;
-  font-size:2.25rem;           /* desktop */
-  line-height:1.15;
-  margin:2rem auto 0;
-  text-align:center;
-  white-space:nowrap;          /* prevent wrap on wide screens */
-}
-@media (max-width:48rem){
-  .homepage-hero h1{
-    font-size:1.5rem;          /* mobile */
-    white-space:normal;
-  }
-}
-</style>
+
 
 {# --- Style Sheets --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
@@ -136,8 +119,8 @@
 <meta http-equiv="Content-Security-Policy"
       content="default-src 'self';
                img-src     'self' data:;
-               style-src   'self' 'nonce-{{ csp_nonce | trim }}';
-               script-src  'self' 'nonce-{{ csp_nonce | trim }}';">
+               style-src   'self' talk.hyvor.com cdn.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com;
+               script-src  'self';">
 
 {# --- Favicons etc. --- #}
 {%- if config.extra.favicon_theme_color %}
