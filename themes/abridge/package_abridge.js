@@ -64,7 +64,7 @@ async function abridge() {
   // set index_format for chosen search_library accordingly.
   if (search_library === 'offline') {
     replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
-    args = args + " -u \"" + __dirname + '/public\"'//set base_url to the path on disk for offline site.
+    args = args + ` -u "${__dirname}/public"`; // set base_url to the path on disk for offline site.
   } else if (search_library === 'elasticlunrjava') {
     replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
   } else if (search_library === 'elasticlunr') {
@@ -86,10 +86,7 @@ async function abridge() {
     if (e.code != 'EEXIST') throw e;
   }
 
-  let base_url = data.base_url;
-  if (base_url.slice(-1) == "/") {
-    base_url = base_url.slice(0, -1);
-  }
+
 
   if (search_library === 'pagefind') {
     // Generate pagefind index at start, otherwise it happens too late asyncronously.
@@ -101,13 +98,13 @@ async function abridge() {
     // This line in pagefind is causing a problem for the PWA:
     // var e = await (await fetch(this.basePath + "pagefind-entry.json?ts=" + Date.now())).json();
     // instead generate an epoch timestamp at build and add it to the filename.
-    var hash = Math.floor(new Date().getTime() / 1000);
+    const hash = Math.floor(new Date().getTime() / 1000);
     fs.renameSync(path.join(__dirname, "static/js/pagefind-entry.json"), path.join(__dirname, "static/js/pagefind-entry-" + hash + ".json"));
 
     // original: var e=await(await fetch(this.basePath+"pagefind-entry.json?ts="+Date.now())).json();
     //      new: var e=await(await fetch(this.basePath+"pagefind-entry-1723268715.json")).json();
     // Tricky regex, so I split it into two replaceInFileSync() calls, pull requests welcome if you can improve this.
-    replaceInFileSync({ files: path.join(__dirname, "static/js/pagefind_search.js"), from: /pagefind-entry\.json\?ts=/g, to: "pagefind-entry-" + hash + "\.json" });
+    replaceInFileSync({ files: path.join(__dirname, 'static/js/pagefind_search.js'), from: /pagefind-entry\.json\?ts=/g, to: `pagefind-entry-${hash}.json` });
     replaceInFileSync({ files: path.join(__dirname, "static/js/pagefind_search.js"), from: /Date.now\(\)/g, to: "\"\"" });
 
     //copy to public so the files are included in the PWA cache list if necessary.
@@ -140,6 +137,7 @@ async function abridge() {
         replaceInFileSync({ files: 'static/sw.js', from: /TTL_EXEMPT.*=.*/g, to: "TTL_EXEMPT = [" + pwa_TTL_EXEMPT + "];" });
       }
 
+      let cache = '';
       if (pwa_cache_all === true) {
         console.log('info: pwa_cache_all = true in config.toml, so caching the entire site.\n');
         // Generate array from the list of files, for the entire site.
@@ -150,9 +148,8 @@ async function abridge() {
         } catch (e) {
           if (e.code != 'EEXIST') throw e;
         }
-        const path = './public/';
-        let cache = '';
-        const files = fs.readdirSync(path, { recursive: true, withFileTypes: false })
+          const path = './public/';
+          fs.readdirSync(path, { recursive: true, withFileTypes: false })
           .forEach(
             (file) => {
               // check if is directory, if not then add the path/file
@@ -182,7 +179,7 @@ async function abridge() {
       cache = cache.split(",").sort().join(",")//sort the cache list, this should help keep the commit history cleaner.
       cache = 'this.BASE_CACHE_FILES = [' + cache + '];';
       // update the BASE_CACHE_FILES variable in the sw.js service worker file
-      const results = replaceInFileSync({
+      replaceInFileSync({
         files: 'static/sw.js',
         from: /this\.BASE_CACHE_FILES =.*/g,
         to: cache,
@@ -357,7 +354,7 @@ function minify(fileA, outfile) {
 
 async function searchChange(searchOption) {
   const { replaceInFileSync } = await import('replace-in-file');
-  replaceInFileSync({ files: 'config.toml', from: /search_library.*=.*/g, to: 'search_library = \"' + searchOption + '\"' });
+  replaceInFileSync({ files: 'config.toml', from: /search_library.*=.*/g, to: 'search_library = "' + searchOption + '"' });
 }
 
 if (args === ' offline') {
