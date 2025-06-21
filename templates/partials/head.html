@@ -90,11 +90,11 @@
   {%- endfor %}
 {%- endif %}
 
-<link rel="preload"
+<link id="ovr"
+      rel="preload"
       href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
-      class="preStyle">
-<link rel="stylesheet" href="/css/override.min.css">
+      fetchpriority="high">
 
 <noscript>
   {%- for i in stylesheets %}
@@ -233,5 +233,7 @@
 {%- if config.extra.head_extra %}
   {{ config.extra.head_extra | safe }}
 {%- endif %}
+
+<script defer src="{{ get_url(path='js/preload-promote.min.js', trailing_slash=false, cachebust=true) | safe }}"></script>
 
 {# --- End of head partial --- #}
