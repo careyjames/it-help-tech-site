@@ -246,6 +246,9 @@ html body .blockdiv.sticky {
 section > h1 {
   font-size: 2.5rem; /* adjust to match your design */
 }
+article > h1 {
+  font-size: 2rem;
+}
 
 header.site-header{
   min-height:65px;
