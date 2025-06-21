@@ -103,6 +103,7 @@ body { overflow-x: hidden; }
     position: relative;
     top: 1px;
     margin-right: -6px;
+    font-size: 1.9rem !important;
   }
   .nav-wrapper ul{
     gap: 0.75rem !important;
@@ -123,7 +124,6 @@ body { overflow-x: hidden; }
       transform: none !important;
       position: absolute !important;
       column-count: 1 !important;
-      columns: 1 auto !important;
       column-width: auto !important;
       column-gap: 0 !important;
       display: flex !important;
@@ -139,7 +139,6 @@ body { overflow-x: hidden; }
   }
   .dropdown-content ul{
     column-count: 1 !important;
-    columns: 1 auto !important;
     column-width: auto !important;
     column-gap: 0 !important;
     display: flex !important;
@@ -160,9 +159,6 @@ body { overflow-x: hidden; }
     width: 30px !important;
     height: 30px !important;
     margin-top: 0px !important;
-  }
-  .mode-btn{
-    font-size: 1.9rem !important;
   }
 }
 article ul, article ol{
@@ -258,5 +254,9 @@ header.site-header{
   width:100px;
   height:100px;
   max-width:none;
+}
+
+.big{
+  font-size: larger;
 }
 

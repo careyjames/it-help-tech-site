@@ -34,10 +34,10 @@ const pwa_IGNORE_FILES = data.extra.pwa_IGNORE_FILES;
 
 // This is used to pass arguments to zola via npm, for example:
 // npm run abridge -- "--base-url https://abridge.pages.dev"
-var args = process.argv[2] ? ' ' + process.argv[2] : '';
+let args = process.argv[2] ? ' ' + process.argv[2] : '';
 
 // check if abridge is used directly or as a theme.
-bpath = '';
+let bpath = '';
 if (fs.existsSync('./themes')) {
   bpath = 'themes/abridge/';
 }
@@ -64,7 +64,7 @@ async function abridge() {
   // set index_format for chosen search_library accordingly.
   if (search_library === 'offline') {
     replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
-    args = args + " -u \"" + __dirname + "\/public\""//set base_url to the path on disk for offline site.
+    args = args + " -u \"" + __dirname + '/public\"'//set base_url to the path on disk for offline site.
   } else if (search_library === 'elasticlunrjava') {
     replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
   } else if (search_library === 'elasticlunr') {
@@ -79,14 +79,14 @@ async function abridge() {
   await execWrapper('zola build' + args);
 
   //check that static/js exists, do this after zola build, it will handle creating static if missing.
-  var jsdir = 'static/js';
+  const jsdir = 'static/js';
   try {
     fs.mkdirSync(jsdir);
   } catch (e) {
     if (e.code != 'EEXIST') throw e;
   }
 
-  base_url = data.base_url;
+  let base_url = data.base_url;
   if (base_url.slice(-1) == "/") {
     base_url = base_url.slice(0, -1);
   }
@@ -126,7 +126,7 @@ async function abridge() {
       fs.copyFileSync(bpath + 'static/js/sw_load.js', 'static/js/sw_load.js');
       // Update settings in PWA javascript file, using options parsed from config.toml.  sw.min.js?v=3.10.0",  "++"
       if (fs.existsSync('static/js/sw_load.js')) {
-        sw_load_min = '.js?v=';
+        let sw_load_min = '.js?v=';
         if (js_bundle) {
           sw_load_min = '.min.js?v=';
         }
@@ -144,26 +144,26 @@ async function abridge() {
         console.log('info: pwa_cache_all = true in config.toml, so caching the entire site.\n');
         // Generate array from the list of files, for the entire site.
 
-        var dir = 'public';
+        const dir = 'public';
         try {
           fs.mkdirSync(dir);
         } catch (e) {
           if (e.code != 'EEXIST') throw e;
         }
         const path = './public/';
-        cache = '';
-        files = fs.readdirSync(path, { recursive: true, withFileTypes: false })
+        let cache = '';
+        const files = fs.readdirSync(path, { recursive: true, withFileTypes: false })
           .forEach(
             (file) => {
               // check if is directory, if not then add the path/file
               if (!fs.lstatSync(path + file).isDirectory()) {
                 // format output
-                item = "/" + file.replace(/index\.html$/i, '');// strip index.html from path
+                let item = "/" + file.replace(/index\.html$/i, '');// strip index.html from path
                 item = item.replace(/\\/g, '/');// replace backslash with forward slash for Windows
 
-                var arrayLength = pwa_IGNORE_FILES.length;
-                for (var i = 0; i < arrayLength; i++) {
-                    regex = new RegExp(`^\/${pwa_IGNORE_FILES[i]}`, `i`);
+                const arrayLength = pwa_IGNORE_FILES.length;
+                for (let i = 0; i < arrayLength; i++) {
+                    const regex = new RegExp(`^/${pwa_IGNORE_FILES[i]}`, `i`);
                     item = item.replace(regex, '');// dont cache files in the pwa_IGNORE_FILES array
                 }
 
@@ -182,7 +182,7 @@ async function abridge() {
       cache = cache.split(",").sort().join(",")//sort the cache list, this should help keep the commit history cleaner.
       cache = 'this.BASE_CACHE_FILES = [' + cache + '];';
       // update the BASE_CACHE_FILES variable in the sw.js service worker file
-      results = replaceInFileSync({
+      const results = replaceInFileSync({
         files: 'static/sw.js',
         from: /this\.BASE_CACHE_FILES =.*/g,
         to: cache,
@@ -222,7 +222,7 @@ async function abridge() {
     fs.writeFileSync('static/manifest.min.json', out);
   }
 
-  abridge_bundle = bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, false);
+  let abridge_bundle = bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, false);
   minify(abridge_bundle, 'static/js/abridge_nopwa.min.js');
 
   abridge_bundle = bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, pwa);
@@ -286,7 +286,7 @@ function _cpRegex(source, dest, regex) {
 }
 
 function bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, pwa) {
-  minify_files = [];
+  let minify_files = [];
 
   if (js_prestyle) {
     minify_files.push(path.join(bpath, 'static/js/prestyle.js'));
@@ -346,11 +346,11 @@ function minify(fileA, outfile) {
   if (!outfile) {// outfile parameter omitted, infer based on input
     outfile = fileA[0].slice(0, -2) + 'min.js';
   }
-  var filesContents = fileA.map(function (file) {// array input to support multiple files
+  const filesContents = fileA.map(function (file) {// array input to support multiple files
     return fs.readFileSync(file, 'utf8');
   });
 
-  result = UglifyJS.minify(filesContents, options);
+  const result = UglifyJS.minify(filesContents, options);
   fs.writeFileSync(outfile, result.code);
 
 }

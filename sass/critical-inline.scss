@@ -22,7 +22,8 @@ html { background: var(--bg); color: var(--fg); transition: background .15s; }
 img.logo{
   width: 356px !important;   /* intrinsic header size */
   height: 48px !important;
-  max-width: none !important;/* defeat generic img{max-width:100%} */
+  /* defeat generic rule that sets img max-width to 100% */
+  max-width: none !important;
 }
 
 /* Generic max‑width utility for lists and paragraphs */

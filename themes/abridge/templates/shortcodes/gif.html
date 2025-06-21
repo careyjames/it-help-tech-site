@@ -24,6 +24,12 @@
   {%- if type is matching("^mov$") %}{% set type = "quicktime" %}{% endif -%}
   <source src="{{ path | safe }}{{ video | safe }}" type="{{ 'video/' ~ type }}" />
   {% endfor -%}
+  {% if subtitles %}
+  <track kind="captions" src="{{ subtitles }}" srclang="{{ lang | default(value='en') }}" label="English" />
+  {% endif %}
+  {% if descriptions %}
+  <track kind="descriptions" src="{{ descriptions }}" srclang="{{ lang | default(value='en') }}" label="Description" />
+  {% endif %}
   Your browser doesn't support the video tag and/or the video formats in use here – sorry!
 </video>
 {%- if caption %}<figcaption>{{caption}}</figcaption></figure>{% endif -%}
