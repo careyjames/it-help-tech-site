@@ -99,6 +99,11 @@ body { overflow-x: hidden; }
     margin-left: 0 !important;
     margin-right: 4px !important;
   }
+  .mode-btn{
+    position: relative;
+    top: 1px;
+    margin-right: -6px;
+  }
   .nav-wrapper ul{
     gap: 0.75rem !important;
     font-size: 1.15rem !important;
@@ -118,6 +123,7 @@ body { overflow-x: hidden; }
       transform: none !important;
       position: absolute !important;
       column-count: 1 !important;
+      columns: 1 auto !important;
       column-width: auto !important;
       column-gap: 0 !important;
       display: flex !important;
@@ -133,6 +139,7 @@ body { overflow-x: hidden; }
   }
   .dropdown-content ul{
     column-count: 1 !important;
+    columns: 1 auto !important;
     column-width: auto !important;
     column-gap: 0 !important;
     display: flex !important;
@@ -155,9 +162,6 @@ body { overflow-x: hidden; }
     margin-top: 0px !important;
   }
   .mode-btn{
-    position: relative;
-    top: 1px;
-    margin-right: -6px;
     font-size: 1.9rem !important;
   }
 }
