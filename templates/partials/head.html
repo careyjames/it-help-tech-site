@@ -93,7 +93,9 @@
 <link rel="preload"
       href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
+      class="preStyle">
+<link rel="stylesheet" href="/css/override.min.css">
+
 <noscript>
   {%- for i in stylesheets %}
     <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
