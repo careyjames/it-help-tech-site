@@ -1,6 +1,6 @@
 {# === CSP Nonce Helpers === #}
 {%- macro generate_csp_nonce() %}
-  {% set_global csp_nonce = get_random(length=16, kind="alphanumeric") %}
+  {% set_global csp_nonce = get_random(start=100000000000, end=999999999999) %}
 {%- endmacro %}
 
 {%- macro csp_nonce() %}{{ csp_nonce }}{%- endmacro %}
