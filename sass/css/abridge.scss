@@ -183,7 +183,22 @@
   //$embedded: true,//Embedded content, iframe, video, images, etc.
   //$table: true,//table specific elements
   //$code: true,//codeblocks, code, pre, kbd
+  //$hr: true,//Horizontal Rule
+  //$scroller: true,//Horizontal scroller (<figure>)
+  //$button: true,//Form elements (button)
+  //$form: true,//Form elements (non-button)
+  //$top: true,//back to top button using CSS
+  //$search: true,//search feature
+  //$blocks: true,//css classes for block formatting, eg: recent posts, table of contents, series navigation
+  //$series: true,//series navigation list
+  //$modifiers: true,//tiny modifier classes for sizing, spacing, etc.
+  //$misc: false,
+  //$grid: true,//Infinity Grid, column based layouts.
+  //$syntax: true,//syntax highlighting for code blocks
+  //$coderoundhighlight: false,//round corners on highlighted code blocks
 );
+//@use "fonts/Roboto";
+//@use "fonts/Arimo";
 @use "../_custom" as *;
 @use "../_extra"  as *;
 
