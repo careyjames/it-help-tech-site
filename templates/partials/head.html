@@ -54,8 +54,8 @@
   </script>
 {%- endif %}
 
-<!-- critical CSS -->
-<link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
+<!-- critical CSS (tiny, allowed to block) -->
+<link rel="stylesheet" href="/css/critical.min.css" fetchpriority="high">
 <link rel="preload"
       href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
@@ -233,7 +233,7 @@
 {%- if config.extra.head_extra %}
   {{ config.extra.head_extra | safe }}
 {%- endif %}
-
+<!-- keep the override.min.css promoter – needed for large sheet -->
 <script defer src="{{ get_url(path='js/preload-promote.min.js', trailing_slash=false, cachebust=true) | safe }}"></script>
 
 {# --- End of head partial --- #}
