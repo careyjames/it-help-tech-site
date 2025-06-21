@@ -116,18 +116,6 @@
   <meta name="referrer" content="{{ config.extra.security_header_referrer | safe }}">
 {%- endif %}
 
-<meta http-equiv="Content-Security-Policy"
-      content="default-src 'none';
-               base-uri 'self';
-               script-src 'self';
-               style-src 'self' 'nonce-{{ csp_nonce | safe }}';
-               img-src 'self' data:;
-               font-src 'self';
-               connect-src 'self';
-               form-action 'self';
-               frame-ancestors 'none';
-               object-src 'none';
-               upgrade-insecure-requests">
 
 {# --- Favicons etc. --- #}
 {%- if config.extra.favicon_theme_color %}

@@ -107,7 +107,13 @@
 {%- macro title_index(page, config) %}
 {%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
 {%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif %}{% endif %}
-        <big>{% if config.extra.title_size_index %}<span class="{{ config.extra.title_size_index }}">{% endif %}{{ page.title | markdown(inline=true) | safe }}{% if config.extra.title_size_index %}</span>{% endif %}</big>
+{%- if config.extra.title_size_index -%}
+  <span class="{{ config.extra.title_size_index }}">
+    {{ page.title | markdown(inline=true) | safe }}
+  </span>
+{%- else -%}
+  {{ page.title | markdown(inline=true) | safe }}
+{%- endif -%}
 {%- endmacro title_index %}
 
 
