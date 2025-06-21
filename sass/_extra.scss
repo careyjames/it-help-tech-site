@@ -12,14 +12,6 @@ h1 {
   font-size: 2rem;
 }
 
-/* Ensure headings inside structural elements have a defined size */
-article h1,
-section h1,
-nav h1,
-aside h1 {
-  font-size: 2rem;
-}
-
 a          { color: var(--a1); }
 a:hover    { text-decoration: underline; color: var(--a2); }
 
