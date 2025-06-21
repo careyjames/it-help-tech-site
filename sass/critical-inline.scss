@@ -5,6 +5,7 @@ body {
   /* Home hero headline */
 .homepage-hero h1 {
   text-align: center !important;
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
 }
 
 /* === Light/Dark tokens (first paint) === */
@@ -31,3 +32,6 @@ img.logo{
   margin-left: auto;
   margin-right: auto;
 }
+
+.page-title, .post-title { font-size: 2rem; }
+
