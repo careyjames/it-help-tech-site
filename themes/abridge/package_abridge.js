@@ -157,8 +157,8 @@ async function updatePwaSettings() {
       if (!fs.lstatSync(basePath + file).isDirectory()) {
         let item = '/' + file.replace(/index\.html$/i, '');
         item = item.replace(/\\/g, '/');
-        for (let i = 0; i < pwa_IGNORE_FILES.length; i++) {
-          const regex = new RegExp(`^/${pwa_IGNORE_FILES[i]}`, 'i');
+        for (const ignore of pwa_IGNORE_FILES) {
+          const regex = new RegExp(`^/${ignore}`, 'i');
           item = item.replace(regex, '');
         }
         if (item !== '') {
@@ -218,7 +218,6 @@ async function abridge() {
     _headersWASM();
     minify(['static/js/theme.js']);
     minify(['static/js/theme_light.js']);
-    // minify(['static/js/katex.min.js','static/js/mathtex-script-type.min.js','static/js/katex-auto-render.min.js','static/js/katexoptions.js'],'static/js/katexbundle.min.js');
     minify(['static/js/elasticlunr.min.js', 'static/js/search.js'], 'static/js/search_elasticlunr.min.js');
     minify(['static/js/tinysearch.js'], 'static/js/search_tinysearch.min.js');
     minify(['static/js/prestyle.js', 'static/js/theme_button.js', 'static/js/email.js', 'static/js/codecopy.js', 'static/js/sw_load.js'], 'static/js/abridge_nosearch.min.js');
@@ -519,7 +518,7 @@ async function sync() {
   // Check for changes in dependencies - prompting an npm update
   let checkPackageVersion = function (content) {
     let matches = content.match(/"dependencies": \{([^}]+)\}/)[1]; // Look in the dependencies section
-    return [...matches.matchAll(/"(\w+-\w+|\w+)": "[^0-9]*([0-9])/g)].map(match => ({ // Extract all packages and their major version number (aka for breaking changes which need an update)
+    return [...matches.matchAll(/"(\w+-\w+|\w+)": "\D*(\d)/g)].map((match) => ({ // Extract all packages and their major version number (aka for breaking changes which need an update)
       name: match[1],
       majorVersion: match[2]
     })).sort((a, b) => a.name.localeCompare(b.name));
@@ -546,7 +545,7 @@ async function sync() {
 
   let adjustTomlContent = function (content) {
     content = content.replace(/^\s+|\s+$|\s+(?=\s)/g, ""); // Remove all leading and trailing whitespaces and multiple whitespaces
-    content = content.replace(/(^#(?=\s*\w+\s*=\s*)|[[:blank:]]*#.*$)/gm, ""); // A regex to selectively remove all comments, and to uncomment all commented config lines
+    content = content.replace(/(^#(?=\s*\w+\s*=\s*)|\s*#.*$)/gm, ""); // A regex to selectively remove all comments, and to uncomment all commented config lines
     content = content.replace(/(\[([^]]*)\])|(\{([^}]*)\})/gs, ""); // A regex to remove all tables and arrays
     content = content.replace(
       /(^#.*$|(["']).*?\2|(?<=\s)#.*$|\b(?:true|false)\b)/gm,
