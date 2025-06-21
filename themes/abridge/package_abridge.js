@@ -18,7 +18,6 @@ const js_switcher = data.extra.js_switcher;
 const js_email_encode = data.extra.js_email_encode;
 const js_copycode = data.extra.js_copycode;
 const search_library = data.extra.search_library;
-const index_format = data.search.index_format;
 const uglyurls = data.extra.uglyurls;
 const js_bundle = data.extra.js_bundle;
 const pwa = data.extra.pwa;
@@ -58,144 +57,167 @@ async function execWrapper(cmd) {
   }
 }
 
-async function abridge() {
-  await sync();
+async function setIndexFormat() {
   const { replaceInFileSync } = await import('replace-in-file');
-  // set index_format for chosen search_library accordingly.
-  if (search_library === 'offline') {
-    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
-    args = args + ` -u "${__dirname}/public"`; // set base_url to the path on disk for offline site.
-  } else if (search_library === 'elasticlunrjava') {
-    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_javascript\"" });
-  } else if (search_library === 'elasticlunr') {
-    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"elasticlunr_json\"" });
-  } else if (search_library === 'pagefind') {
-    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"fuse_json\"" });
-  } else if (search_library === 'tinysearch') {
-    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: "index_format = \"fuse_json\"" });
+  const map = {
+    offline: 'elasticlunr_javascript',
+    elasticlunrjava: 'elasticlunr_javascript',
+    elasticlunr: 'elasticlunr_json',
+    pagefind: 'fuse_json',
+    tinysearch: 'fuse_json',
+  };
+  const format = map[search_library];
+  if (format) {
+    replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: `index_format = "${format}"` });
   }
+  if (search_library === 'offline') {
+    args = args + ` -u "${__dirname}/public"`;
+  }
+}
 
-  console.log('Zola Build to generate files for minification:');
-  await execWrapper('zola build' + args);
-
-  //check that static/js exists, do this after zola build, it will handle creating static if missing.
+function ensureStaticJsDir() {
   const jsdir = 'static/js';
   try {
     fs.mkdirSync(jsdir);
   } catch (e) {
-    if (e.code != 'EEXIST') throw e;
+    if (e.code !== 'EEXIST') throw e;
+  }
+}
+
+async function handlePagefindOps() {
+  const { replaceInFileSync } = await import('replace-in-file');
+  await createPagefindIndex();
+  _rmRegex(path.join(__dirname, 'static/js/'), /^pagefind\.js$/);
+  _rmRegex(path.join(__dirname, 'static/js/'), /^pagefind-.*\.js$/);
+  _rmRegex(path.join(__dirname, 'static/js/'), /^pagefind-.*\.css$/);
+
+  const hash = Math.floor(new Date().getTime() / 1000);
+  fs.renameSync(
+    path.join(__dirname, 'static/js/pagefind-entry.json'),
+    path.join(__dirname, `static/js/pagefind-entry-${hash}.json`)
+  );
+  replaceInFileSync({ files: path.join(__dirname, 'static/js/pagefind_search.js'), from: /pagefind-entry\.json\?ts=/g, to: `pagefind-entry-${hash}.json` });
+  replaceInFileSync({ files: path.join(__dirname, 'static/js/pagefind_search.js'), from: /Date.now\(\)/g, to: '""' });
+
+  fs.copyFileSync(
+    path.join(__dirname, `static/js/pagefind-entry-${hash}.json`),
+    path.join(__dirname, `public/js/pagefind-entry-${hash}.json`)
+  );
+  _cpRegex(path.join(__dirname, 'static/js/'), path.join(__dirname, 'public/js/'), /^pagefind-entry\.json$/);
+  _cpRegex(path.join(__dirname, 'static/js/'), path.join(__dirname, 'public/js/'), /^pagefind.*pf_meta$/);
+  _cpRegex(path.join(__dirname, 'static/js/'), path.join(__dirname, 'public/js/'), /^wasm.*pagefind$/);
+  _cpRecursive(path.join(__dirname, 'static/js/index'), path.join(__dirname, 'public/js/index'));
+  _cpRecursive(path.join(__dirname, 'static/js/fragment'), path.join(__dirname, 'public/js/fragment'));
+}
+
+async function updatePwaSettings() {
+  const { replaceInFileSync } = await import('replace-in-file');
+  if (
+    typeof pwa_VER === 'undefined' ||
+    typeof pwa_NORM_TTL === 'undefined' ||
+    typeof pwa_LONG_TTL === 'undefined' ||
+    typeof pwa_TTL_NORM === 'undefined' ||
+    typeof pwa_TTL_LONG === 'undefined' ||
+    typeof pwa_TTL_EXEMPT === 'undefined'
+  ) {
+    throw new Error(
+      'ERROR: pwa requires that pwa_VER, pwa_NORM_TTL, pwa_LONG_TTL, pwa_TTL_NORM, pwa_TTL_LONG, pwa_TTL_EXEMPT are set in config.toml.'
+    );
   }
 
+  fs.copyFileSync(bpath + 'static/sw.js', 'static/sw.js');
+  fs.copyFileSync(bpath + 'static/js/sw_load.js', 'static/js/sw_load.js');
 
+  if (fs.existsSync('static/js/sw_load.js')) {
+    let sw_load_min = '.js?v=';
+    if (js_bundle) {
+      sw_load_min = '.min.js?v=';
+    }
+    replaceInFileSync({ files: 'static/js/sw_load.js', from: /sw.*v=.*/g, to: 'sw' + sw_load_min + pwa_VER + ',' });
+  }
+  if (fs.existsSync('static/sw.js')) {
+    replaceInFileSync({ files: 'static/sw.js', from: /NORM_TTL.*=.*/g, to: 'NORM_TTL = ' + pwa_NORM_TTL + ';' });
+    replaceInFileSync({ files: 'static/sw.js', from: /LONG_TTL.*=.*/g, to: 'LONG_TTL = ' + pwa_LONG_TTL + ';' });
+    replaceInFileSync({ files: 'static/sw.js', from: /TTL_NORM.*=.*/g, to: 'TTL_NORM = [' + pwa_TTL_NORM + '];' });
+    replaceInFileSync({ files: 'static/sw.js', from: /TTL_LONG.*=.*/g, to: 'TTL_LONG = [' + pwa_TTL_LONG + '];' });
+    replaceInFileSync({ files: 'static/sw.js', from: /TTL_EXEMPT.*=.*/g, to: 'TTL_EXEMPT = [' + pwa_TTL_EXEMPT + '];' });
+  }
+
+  let cache = '';
+  if (pwa_cache_all === true) {
+    console.log('info: pwa_cache_all = true in config.toml, so caching the entire site.\n');
+    const dir = 'public';
+    try {
+      fs.mkdirSync(dir);
+    } catch (e) {
+      if (e.code !== 'EEXIST') throw e;
+    }
+    const basePath = './public/';
+    fs.readdirSync(basePath, { recursive: true, withFileTypes: false }).forEach((file) => {
+      if (!fs.lstatSync(basePath + file).isDirectory()) {
+        let item = '/' + file.replace(/index\.html$/i, '');
+        item = item.replace(/\\/g, '/');
+        for (let i = 0; i < pwa_IGNORE_FILES.length; i++) {
+          const regex = new RegExp(`^/${pwa_IGNORE_FILES[i]}`, 'i');
+          item = item.replace(regex, '');
+        }
+        if (item !== '') {
+          cache = cache + "'" + item + "',";
+        }
+      }
+    });
+    cache = cache.slice(0, -1);
+  } else if (pwa_BASE_CACHE_FILES) {
+    cache = pwa_BASE_CACHE_FILES;
+  }
+
+  cache = cache
+    .split(',')
+    .sort((a, b) => a.localeCompare(b))
+    .join(',');
+  cache = 'this.BASE_CACHE_FILES = [' + cache + '];';
+
+  replaceInFileSync({
+    files: 'static/sw.js',
+    from: /this\.BASE_CACHE_FILES =.*/g,
+    to: cache,
+    countMatches: true,
+  });
+}
+
+function minifyManifest() {
+  if (fs.existsSync('static/manifest.json')) {
+    let out;
+    try {
+      out = JSON.minify(fs.readFileSync('static/manifest.json', { encoding: 'utf-8' }));
+    } catch (err) {
+      console.log(err);
+    }
+    fs.writeFileSync('static/manifest.min.json', out);
+  }
+}
+
+async function abridge() {
+  await sync();
+  await setIndexFormat();
+
+  console.log('Zola Build to generate files for minification:');
+  await execWrapper('zola build' + args);
+
+  ensureStaticJsDir();
 
   if (search_library === 'pagefind') {
-    // Generate pagefind index at start, otherwise it happens too late asyncronously.
-    await createPagefindIndex(); // makes program wait for pagefind build execution
-    _rmRegex(path.join(__dirname, "static/js/"), /^pagefind\.js$/);//pagefind temporary intermediate files
-    _rmRegex(path.join(__dirname, "static/js/"), /^pagefind-.*\.js$/);//pagefind temporary intermediate files
-    _rmRegex(path.join(__dirname, "static/js/"), /^pagefind-.*\.css$/);//pagefind temporary intermediate files
-
-    // This line in pagefind is causing a problem for the PWA:
-    // var e = await (await fetch(this.basePath + "pagefind-entry.json?ts=" + Date.now())).json();
-    // instead generate an epoch timestamp at build and add it to the filename.
-    const hash = Math.floor(new Date().getTime() / 1000);
-    fs.renameSync(path.join(__dirname, "static/js/pagefind-entry.json"), path.join(__dirname, "static/js/pagefind-entry-" + hash + ".json"));
-
-    // original: var e=await(await fetch(this.basePath+"pagefind-entry.json?ts="+Date.now())).json();
-    //      new: var e=await(await fetch(this.basePath+"pagefind-entry-1723268715.json")).json();
-    // Tricky regex, so I split it into two replaceInFileSync() calls, pull requests welcome if you can improve this.
-    replaceInFileSync({ files: path.join(__dirname, 'static/js/pagefind_search.js'), from: /pagefind-entry\.json\?ts=/g, to: `pagefind-entry-${hash}.json` });
-    replaceInFileSync({ files: path.join(__dirname, "static/js/pagefind_search.js"), from: /Date.now\(\)/g, to: "\"\"" });
-
-    //copy to public so the files are included in the PWA cache list if necessary.
-    fs.copyFileSync(path.join(__dirname, "static/js/pagefind-entry-" + hash + ".json"), path.join(__dirname, "public/js/pagefind-entry-" + hash + ".json"))
-    _cpRegex(path.join(__dirname, "static/js/"), path.join(__dirname, "public/js/"), /^pagefind-entry\.json$/);
-    _cpRegex(path.join(__dirname, "static/js/"), path.join(__dirname, "public/js/"), /^pagefind.*pf_meta$/);
-    _cpRegex(path.join(__dirname, "static/js/"), path.join(__dirname, "public/js/"), /^wasm.*pagefind$/);
-    _cpRecursive(path.join(__dirname, "static/js/index"), path.join(__dirname, "public/js/index"));
-    _cpRecursive(path.join(__dirname, "static/js/fragment"), path.join(__dirname, "public/js/fragment"));
+    await handlePagefindOps();
   }
 
-  if (pwa) {// Update pwa settings, file list, and hashes.
-    if (typeof pwa_VER !== 'undefined' && typeof pwa_NORM_TTL !== 'undefined' && typeof pwa_LONG_TTL !== 'undefined' && typeof pwa_TTL_NORM !== 'undefined' && typeof pwa_TTL_LONG !== 'undefined' && typeof pwa_TTL_EXEMPT !== 'undefined') {
-      // update from abridge theme.
-      fs.copyFileSync(bpath + 'static/sw.js', 'static/sw.js');
-      fs.copyFileSync(bpath + 'static/js/sw_load.js', 'static/js/sw_load.js');
-      // Update settings in PWA javascript file, using options parsed from config.toml.  sw.min.js?v=3.10.0",  "++"
-      if (fs.existsSync('static/js/sw_load.js')) {
-        let sw_load_min = '.js?v=';
-        if (js_bundle) {
-          sw_load_min = '.min.js?v=';
-        }
-        replaceInFileSync({ files: 'static/js/sw_load.js', from: /sw.*v=.*/g, to: "sw" + sw_load_min + pwa_VER + "\"," });
-      }
-      if (fs.existsSync('static/sw.js')) {
-        replaceInFileSync({ files: 'static/sw.js', from: /NORM_TTL.*=.*/g, to: "NORM_TTL = " + pwa_NORM_TTL + ";" });
-        replaceInFileSync({ files: 'static/sw.js', from: /LONG_TTL.*=.*/g, to: "LONG_TTL = " + pwa_LONG_TTL + ";" });
-        replaceInFileSync({ files: 'static/sw.js', from: /TTL_NORM.*=.*/g, to: "TTL_NORM = [" + pwa_TTL_NORM + "];" });
-        replaceInFileSync({ files: 'static/sw.js', from: /TTL_LONG.*=.*/g, to: "TTL_LONG = [" + pwa_TTL_LONG + "];" });
-        replaceInFileSync({ files: 'static/sw.js', from: /TTL_EXEMPT.*=.*/g, to: "TTL_EXEMPT = [" + pwa_TTL_EXEMPT + "];" });
-      }
-
-      let cache = '';
-      if (pwa_cache_all === true) {
-        console.log('info: pwa_cache_all = true in config.toml, so caching the entire site.\n');
-        // Generate array from the list of files, for the entire site.
-
-        const dir = 'public';
-        try {
-          fs.mkdirSync(dir);
-        } catch (e) {
-          if (e.code != 'EEXIST') throw e;
-        }
-          const path = './public/';
-          fs.readdirSync(path, { recursive: true, withFileTypes: false })
-          .forEach(
-            (file) => {
-              // check if is directory, if not then add the path/file
-              if (!fs.lstatSync(path + file).isDirectory()) {
-                // format output
-                let item = "/" + file.replace(/index\.html$/i, '');// strip index.html from path
-                item = item.replace(/\\/g, '/');// replace backslash with forward slash for Windows
-
-                const arrayLength = pwa_IGNORE_FILES.length;
-                for (let i = 0; i < arrayLength; i++) {
-                    const regex = new RegExp(`^/${pwa_IGNORE_FILES[i]}`, `i`);
-                    item = item.replace(regex, '');// dont cache files in the pwa_IGNORE_FILES array
-                }
-
-                // if formatted output is not empty line then append it to cache var
-                if (item != '') {// skip empty lines
-                  cache = cache + "'" + item + "',";
-                }
-              }
-            }
-          );
-        cache = cache.slice(0, -1)// remove the last comma
-      } else if (pwa_BASE_CACHE_FILES) {
-        cache = pwa_BASE_CACHE_FILES;
-      }
-
-      cache = cache.split(",").sort().join(",")//sort the cache list, this should help keep the commit history cleaner.
-      cache = 'this.BASE_CACHE_FILES = [' + cache + '];';
-      // update the BASE_CACHE_FILES variable in the sw.js service worker file
-      replaceInFileSync({
-        files: 'static/sw.js',
-        from: /this\.BASE_CACHE_FILES =.*/g,
-        to: cache,
-        countMatches: true,
-      });
-    } else {
-      throw new Error('ERROR: pwa requires that pwa_VER, pwa_NORM_TTL, pwa_LONG_TTL, pwa_TTL_NORM, pwa_TTL_LONG, pwa_TTL_EXEMPT are set in config.toml.');
-    }
+  if (pwa) {
+    await updatePwaSettings();
   }
 
-  if (bpath === '') {// abridge used directly
+  if (bpath === '') {
     _headersWASM();
-    // These are truely static js files, so they should only need to be updated by the abridge maintainer or contributors.
     minify(['static/js/theme.js']);
     minify(['static/js/theme_light.js']);
-    // Something went wrong with minifying katexbundle, so commenting this out for now
     // minify(['static/js/katex.min.js','static/js/mathtex-script-type.min.js','static/js/katex-auto-render.min.js','static/js/katexoptions.js'],'static/js/katexbundle.min.js');
     minify(['static/js/elasticlunr.min.js', 'static/js/search.js'], 'static/js/search_elasticlunr.min.js');
     minify(['static/js/tinysearch.js'], 'static/js/search_tinysearch.min.js');
@@ -208,25 +230,15 @@ async function abridge() {
     minify(['static/sw.js']);
   }
 
-  // if manifest.json is present, then minify it.
-  if (fs.existsSync('static/manifest.json')) {
-    let out;
-    try {
-      out = JSON.minify(fs.readFileSync('static/manifest.json', { encoding: "utf-8" }));
-    } catch (err) {
-      console.log(err);
-    }
-    fs.writeFileSync('static/manifest.min.json', out);
-  }
+  minifyManifest();
 
-  let abridge_bundle = bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, false);
+  let abridge_bundle = bundle(bpath, { js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, uglyurls, pwa: false });
   minify(abridge_bundle, 'static/js/abridge_nopwa.min.js');
 
-  abridge_bundle = bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, pwa);
+  abridge_bundle = bundle(bpath, { js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, uglyurls, pwa });
   minify(abridge_bundle, 'static/js/abridge.min.js');
 
-  // cleanup
-  _rmRegex(path.join(__dirname, "static/js/"), /^pagefind_search\.js$/);//pagefind intermediate file that is now in bundle.
+  _rmRegex(path.join(__dirname, 'static/js/'), /^pagefind_search\.js$/);
 
   console.log('Zola Build to generate new integrity hashes for the previously minified files:');
   await execWrapper('zola build' + args);
@@ -282,7 +294,17 @@ function _cpRegex(source, dest, regex) {
   }
 }
 
-function bundle(bpath, js_prestyle, js_switcher, js_email_encode, js_copycode, search_library, index_format, uglyurls, pwa) {
+function bundle(bpath, options = {}) {
+  const {
+    js_prestyle,
+    js_switcher,
+    js_email_encode,
+    js_copycode,
+    search_library,
+    uglyurls,
+    pwa,
+  } = options;
+
   let minify_files = [];
 
   if (js_prestyle) {
@@ -524,10 +546,10 @@ async function sync() {
 
   let adjustTomlContent = function (content) {
     content = content.replace(/^\s+|\s+$|\s+(?=\s)/g, ""); // Remove all leading and trailing whitespaces and multiple whitespaces
-    content = content.replace(/(^#)(?=\s*\w+\s*=\s*)|[[:blank:]]*#.*$/gm, ""); // A regex to selectively remove all comments, and to uncomment all commented config lines
+    content = content.replace(/(^#(?=\s*\w+\s*=\s*)|[[:blank:]]*#.*$)/gm, ""); // A regex to selectively remove all comments, and to uncomment all commented config lines
     content = content.replace(/(\[([^]]*)\])|(\{([^}]*)\})/gs, ""); // A regex to remove all tables and arrays
     content = content.replace(
-      /(^#.*$|(["']).*?\2|(?<=\s)#.*$|\btrue\b|\bfalse\b)/gm,
+      /(^#.*$|(["']).*?\2|(?<=\s)#.*$|\b(?:true|false)\b)/gm,
       ""
     ); // A regex to remove all user added content, (so you can tell if the .toml format has changed)
     return content.trim(); // Finally remove any leading or trailing white spaces

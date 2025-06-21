@@ -14,7 +14,6 @@
  *     use the section at the bottom of your root sass/abridge.scss
  *   I measured the least Cumulative Layout Shift with: Roboto, Lato, Arimo
  *****************************************************************************/
-//@use "fonts/Roboto";
 
 /******************************************************************************
  *   Variables
@@ -1383,7 +1382,7 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     width: var(--fs);
     height: var(--fs);
     display: inline-block;
-    //overflow: hidden;
+    
     text-align: center;
     vertical-align: middle;
   }
@@ -1482,19 +1481,15 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
   .z-keyword.z-operator {
     color: var(--h9);
   }
-  // separators: commas, colons, etc.  terminator:  endline semicolon, etc.
   .z-punctuation.z-separator, .z-punctuation.z-terminator {
     color: var(--h1);
   }
-  // () [] {}
   .z-punctuation.z-section {
     color: var(--h1);
   }
-  //  .  ::
   .z-punctuation.z-accessor {
     color: var(--h4);
   }
-  //  #  (#[cfg(test)])
   .z-punctuation.z-definition.z-annotation {
     color: var(--h1);
   }
@@ -1550,11 +1545,9 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     color: var(--h8);
     font-style: italic;
   }
-  // property name, eg css: font-size, text-align, etc.
   .z-support.z-type.z-property-name {
     color: var(--h8);
   }
-  //json
   .z-key.z-json {
     color: var(--h4);
   }
