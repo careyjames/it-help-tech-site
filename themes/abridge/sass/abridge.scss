@@ -1540,7 +1540,6 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     color: var(--h3);
   }
   // type: Vec, Some, str, int
-  // class:  Config  ($CONF = Config::getInstance()->getAll();)
   .z-support.z-type, .z-support.z-class {
     color: var(--h8);
     font-style: italic;
