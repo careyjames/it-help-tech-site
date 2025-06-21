@@ -626,8 +626,6 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
         @if map-get($breakpoints, "sm") and $enable-viewport {
           @media (min-width: map-get($breakpoints, "sm")) {
             max-width: map-get($viewports, "sm");
-            //padding-right: 0;
-            //padding-left: 0;
             .toc {
               display: none;
             }
@@ -1043,11 +1041,9 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
   [type="button" i],
   [type="submit" i],
   [type="reset" i] {
-    //-webkit-appearance: button;
     display: inline-block;
     text-align: center;
     white-space: nowrap;
-    //background: var(--c2);
     color: var(--f1);
     border: 0;
     cursor: pointer;
@@ -1081,10 +1077,6 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     margin-bottom: .25rem;
   }
   // flagged by yellow lab tools, and not entirely necessary, so disabled for now.
-  //select,
-  //input:not([size]) input:not([type="button" i]) input:not([type="submit" i]) input:not([type="reset" i]) input:not([type="checkbox" i]) input:not([type="radio" i]) {
-  //  width: 100%;
-  //}
   [type="color" i] {
     min-height: 2.125rem;
   }
@@ -1384,7 +1376,6 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     width: 1.8rem;
     height: 1.8rem;
     display: inline-block;
-    //overflow: hidden;
     text-align: center;
     vertical-align: middle;
   }
@@ -1397,7 +1388,6 @@ $coderoundhighlight: false !default;//round corners on highlighted code blocks
     vertical-align: middle;
   }
   .svgm {
-    //set minimum width and height for items with insufficient spacings
     min-width: 24px;
     min-height: 24px;
   }

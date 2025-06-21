@@ -100,7 +100,7 @@
 {%- macro title_index(page, config) %}
 {%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
 {%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif %}{% endif %}
-        <big>{% if config.extra.title_size_index %}<span class="{{ config.extra.title_size_index }}">{% endif %}<a href="{{ page.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ page.title | markdown(inline=true) | safe }}</a>{% if config.extra.title_size_index %}</span>{% endif %}</big>
+        <span class="big">{% if config.extra.title_size_index %}<span class="{{ config.extra.title_size_index }}">{% endif %}<a href="{{ page.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">{{ page.title | markdown(inline=true) | safe }}</a>{% if config.extra.title_size_index %}</span>{% endif %}</span>
 {%- endmacro title_index %}
 
 
@@ -177,7 +177,7 @@
       {#- prev/next content page nextprev title pagination #}
       {%- if not config.extra.hide_page_nextprev_titles | default(value=false) %}
       {%- if page.lower or page.higher %}
-      <nav>
+      <nav aria-label="Previous and next pages">
         <div>
           {%- if page.lower %}
           <a href="{{ page.lower.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">&#8249; {{ page.lower.title | truncate(length=100) | markdown(inline=true) | safe }}</a>
@@ -226,7 +226,7 @@
                     {%- set end = paginator.number_pagers %}
                 {%- endif %}
             {%- endif %}
-      <nav class="vpad">
+      <nav class="vpad" aria-label="Pagination">
         {%- set icon_first=config.extra.icon_first | default(value="svgs svgh angll") -%}
         {%- set icon_prev=config.extra.icon_prev | default(value="svgs svgh angl") -%}
         {%- set icon_next=config.extra.icon_next | default(value="svgs svgh angr") -%}
@@ -333,7 +333,7 @@
                     {%- set end = paginator.number_pagers %}
                 {%- endif %}
             {%- endif %}
-      <nav class="vpad">
+      <nav class="vpad" aria-label="Pagination">
         {%- if paginator.current_index > 6 and paginator.number_pagers > 7 %}
           <a class="inp on" href="{{ paginator.first | safe }}{%- if uglyurls %}index.html{%- endif %}" aria-label="First Page">1</a>
           <a class="inp on" href="{{ paginator.base_url | safe }}{{ 2 ~ '/' }}{%- if uglyurls %}index.html{%- endif %}" aria-label="Page 2">2</a>
