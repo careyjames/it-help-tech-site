@@ -55,10 +55,11 @@
 {%- endif %}
 
 <!-- critical CSS -->
-<link rel="preload" href="/css/critical.min.css" as="style">
+<link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <link rel="preload"
       href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style">
+      as="style"
+      class="preStyle">
 
 <noscript>
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
@@ -70,52 +71,42 @@
 {# --- Critical hero styling uses CSP nonce --- #}
 
 
-{# --- Style Sheets (theme) --- #}
-{%- set stylesheets = config.extra.stylesheets
-     | default(value=[ "css/abridge.css" ]) -%}
+{# --- Style Sheets --- #}
+{%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
 {%- for i in stylesheets %}
-  <!-- load theme CSS immediately -->
-  <link rel="stylesheet"
-        href="{{ get_url(path=i,
-                         trailing_slash=false,
-                         cachebust=true) | safe }}">
-  <!-- also preload it for priority -->
   <link rel="preload"
-        href="{{ get_url(path=i,
-                         trailing_slash=false,
-                         cachebust=true) | safe }}"
-        as="style">
+        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+        as="style"
+        class="preStyle">
 {%- endfor %}
 
 {%- if ctx.extra.stylesheets %}
   {% set pagestylesheets = ctx.extra.stylesheets %}
   {%- for i in pagestylesheets %}
-    <!-- load page-specific CSS immediately -->
-    <link rel="stylesheet"
-          href="{{ get_url(path=i,
-                           trailing_slash=false,
-                           cachebust=true) | safe }}">
-    <!-- preload it too -->
     <link rel="preload"
-          href="{{ get_url(path=i,
-                           trailing_slash=false,
-                           cachebust=true) | safe }}"
-          as="style">
+          href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+          as="style"
+          class="preStyle">
   {%- endfor %}
 {%- endif %}
 
-{# --- Overrides: non-blocking preload + onload switch --- #}
 <link rel="preload"
-      href="{{ get_url(path='css/override.min.css',
-                       trailing_slash=false,
-                       cachebust=true) | safe }}"
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
+      class="preStyle">
+<link rel="stylesheet" href="/css/override.min.css">
+
 <noscript>
+  {%- for i in stylesheets %}
+    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+  {%- endfor %}
+  {%- if pagestylesheets %}
+    {%- for i in pagestylesheets %}
+      <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+    {%- endfor %}
+  {%- endif %}
   <link rel="stylesheet"
-        href="{{ get_url(path='css/override.min.css',
-                         trailing_slash=false,
-                         cachebust=true) | safe }}">
+        href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 </noscript>
 
 {# --- Meta tags --- #}
@@ -170,7 +161,7 @@
 {%- if config.extra.fonts %}
   {%- for i in config.extra.fonts %}
     {%- if i.url is matching("^http[s]?://") %}
-      <link rel="preload" as="style" href="{{ i.url | safe }}" crossorigin="anonymous">
+      <link rel="preload" as="style" class="preStyle" href="{{ i.url | safe }}" crossorigin="anonymous">
     {%- else %}
       <link rel="preload" as="font"
             href="{{ get_url(path=i.url, trailing_slash=false) | safe }}"
@@ -181,7 +172,7 @@
 {%- endif %}
 
 {%- if config.extra.fontawesome %}
-  <link rel="preload" as="style"
+  <link rel="preload" as="style" class="preStyle"
         href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous">
 {%- endif %}
 
@@ -190,12 +181,12 @@
   {%- set katex_css = config.extra.katex_css | default(value="katex.min.css") -%}
   {%- if katex_css %}
     {%- if katex_css is matching("^http[s]?://") %}
-      <link rel="preload" as="style"
+      <link rel="preload" as="style" class="preStyle"
             href="{{ katex_css | safe }}"
             {%- if integrity and config.extra.katex_css_integrity %} integrity="{{ config.extra.katex_css_integrity | safe }}"{% endif %}
             crossorigin="anonymous">
     {%- else %}
-      <link rel="preload" as="style"
+      <link rel="preload" as="style" class="preStyle"
             href="{{ get_url(path=katex_css, trailing_slash=false) }}"
             {%- if integrity %} integrity="sha384-{{ get_hash(path=katex_css, sha_type=384, base64=true) | safe }}"{% endif %}>
     {%- endif %}
