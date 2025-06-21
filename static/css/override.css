@@ -156,7 +156,7 @@ header > nav > div:nth-child(2) {
 }
 
 /* Nav list */
-.nav-wrapper > ul {
+.nav-wrapper ul {
   display: flex !important;
   flex-wrap: nowrap;
   justify-content: center;
@@ -199,11 +199,7 @@ header > nav > div:nth-child(2) {
   margin-top: -0.25rem;
 }
 
-.dropdown-content {
-  display: flex;
-  flex-direction: column;
-  position: static;
-}
+.dropdown-content { /* stays unchanged */ }
 
 /* Hide orphan anchors injected by the theme */
 body > a.anchor {
