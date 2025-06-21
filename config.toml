@@ -20,7 +20,6 @@ js_switcher_default = "dark"
 js_prestyle = true
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["css/cls-fixes.css", "css/abridge.css"]
-csp_nonce = "{% set _ = macros::generate_csp_nonce() %}{{ macros::csp_nonce }}"
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
