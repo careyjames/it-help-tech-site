@@ -1,3 +1,15 @@
+<script>
+  // Prevent a flash of the wrong theme.
+  // Adds the 'switch' class to <html> before styles load when the user
+  // previously selected the light theme.
+  (function () {
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('switch');
+      }
+    } catch (e) {}
+  })();
+</script>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
@@ -94,7 +106,6 @@
       href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
       class="preStyle">
-<link rel="stylesheet" href="/css/override.min.css">
 
 <noscript>
   {%- for i in stylesheets %}
