@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /draft/
-Sitemap: https://www.it-help.tech/sitemap.xml
+Disallow: /
