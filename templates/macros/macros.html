@@ -136,7 +136,7 @@
       {#- prev/next content page nextprev title pagination #}
       {%- if not config.extra.hide_page_nextprev_titles | default(value=false) %}
       {%- if page.lower or page.higher %}
-      <nav>
+      <nav aria-label="Adjacent page navigation">
         <div>
           {%- if page.lower %}
           <a href="{{ page.lower.permalink | safe }}{%- if uglyurls %}index.html{%- endif %}">&#8249; {{ page.lower.title | truncate(length=100) | markdown(inline=true) | safe }}</a>
@@ -182,7 +182,7 @@
       {%- endif -%}
     {%- endif -%}
     {# --- END of common logic --- #}
-    <nav class="vpad">
+    <nav class="vpad" aria-label="Pagination navigation">
       {%- if style == "arrows" -%}
         {# --- Logic from original 'pagination' macro --- #}
         {%- set icon_first=config.extra.icon_first | default(value="svgs svgh angll") -%}
