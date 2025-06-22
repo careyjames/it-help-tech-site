@@ -17,7 +17,7 @@ external_links_no_referrer  = true      # strip Referer header
 js_switcher = false
 js_switcher_default = "dark"
 # enable non-blocking stylesheet loading
-js_prestyle = true
+js_prestyle = false
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["css/cls-fixes.css", "css/abridge.css"]
 author_name = "Carey Balboa"

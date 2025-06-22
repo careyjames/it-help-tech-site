@@ -61,18 +61,10 @@
         {%- if integrity %} integrity="sha384-{{ get_hash(path='js/nav-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}>
 </script>
 
-{%- if config.extra.js_prestyle | default(value=false) %}
-  <script defer
-          src="{{ get_url(path='js/prestyle.js', trailing_slash=false) | safe }}"
-          {%- if integrity %} integrity="sha384-{{ get_hash(path='js/prestyle.js', sha_type=384, base64=true) | safe }}"{% endif %}>
-  </script>
-{%- endif %}
 
 <!-- critical CSS -->
-<link rel="preload"
-      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style"
-      class="preStyle">
+<link rel="stylesheet"
+      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
@@ -86,26 +78,19 @@
 {# --- Style Sheets --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
 {%- for i in stylesheets %}
-  <link rel="preload"
-        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
-        as="style"
-        class="preStyle">
+  <link rel="stylesheet"
+        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
 {%- endfor %}
 
 {%- if ctx.extra.stylesheets %}
   {% set pagestylesheets = ctx.extra.stylesheets %}
   {%- for i in pagestylesheets %}
-    <link rel="preload"
-          href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
-          as="style"
-          class="preStyle">
+    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
   {%- endfor %}
 {%- endif %}
 
-<link rel="preload"
-      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style"
-      class="preStyle">
+<link rel="stylesheet"
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   {%- for i in stylesheets %}
@@ -172,7 +157,7 @@
 {%- if config.extra.fonts %}
   {%- for i in config.extra.fonts %}
     {%- if i.url is matching("^http[s]?://") %}
-      <link rel="preload" as="style" class="preStyle" href="{{ i.url | safe }}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ i.url | safe }}" crossorigin="anonymous">
     {%- else %}
       <link rel="preload" as="font"
             href="{{ get_url(path=i.url, trailing_slash=false) | safe }}"
@@ -183,8 +168,7 @@
 {%- endif %}
 
 {%- if config.extra.fontawesome %}
-  <link rel="preload" as="style" class="preStyle"
-        href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous">
 {%- endif %}
 
 {# --- KaTeX (math) --- #}
@@ -192,12 +176,11 @@
   {%- set katex_css = config.extra.katex_css | default(value="katex.min.css") -%}
   {%- if katex_css %}
     {%- if katex_css is matching("^http[s]?://") %}
-      <link rel="preload" as="style" class="preStyle"
-            href="{{ katex_css | safe }}"
+      <link rel="stylesheet" href="{{ katex_css | safe }}"
             {%- if integrity and config.extra.katex_css_integrity %} integrity="{{ config.extra.katex_css_integrity | safe }}"{% endif %}
             crossorigin="anonymous">
     {%- else %}
-      <link rel="preload" as="style" class="preStyle"
+      <link rel="stylesheet"
             href="{{ get_url(path=katex_css, trailing_slash=false) }}"
             {%- if integrity %} integrity="sha384-{{ get_hash(path=katex_css, sha_type=384, base64=true) | safe }}"{% endif %}>
     {%- endif %}
