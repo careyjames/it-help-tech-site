@@ -199,3 +199,8 @@ img.logo{
   height: 48px !important;
   max-width: none !important;
 }
+
+/* two-column intro on large screens */
+@media (min-width: 48rem) {
+  .intro { column-count: 2; column-gap: 1.5rem; }
+}
