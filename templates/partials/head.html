@@ -1,15 +1,9 @@
-<script>
-  // Prevent a flash of the wrong theme.
-  // Adds the 'switch' class to <html> before styles load when the user
-  // previously selected the light theme.
+
   (function () {
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.classList.add('switch');
       }
-    } catch (e) {}
-  })();
-</script>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
@@ -67,7 +61,6 @@
 {%- endif %}
 
 <!-- critical CSS -->
-<link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <link rel="preload"
       href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
@@ -77,7 +70,6 @@
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
   <link rel="stylesheet"
         href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
-  <link rel="stylesheet" href="/css/critical.min.css">
 </noscript>
 
 {# --- Critical hero styling uses CSP nonce --- #}
