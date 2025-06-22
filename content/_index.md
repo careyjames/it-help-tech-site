@@ -69,17 +69,26 @@ twitter_card        = "summary_large_image"
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
   "telephone": "+1-619-853-5008",
   "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "888 Prospect Street Suite 200",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "postalCode": "92037"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.8450,
+    "longitude": -117.2760
+  },
   "areaServed": {
     "@type": "Place",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "San Diego",
-      "addressRegion": "CA",
-      "postalCode": "92037",
-      "streetAddress": "888 Prospect Street Suite 200"
+      "addressRegion": "CA"
     }
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 32.8450, "longitude": -117.2760 },
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego",
     "https://g.page/r/CaF_LIXG2uLzEB0/review"
