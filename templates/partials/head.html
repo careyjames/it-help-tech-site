@@ -1,9 +1,17 @@
-
+{% set critical_css = load_data(path="static/css/critical.min.css") %}
+<script>
+  // Prevent a flash of the wrong theme before CSS loads.
   (function () {
     try {
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.classList.add('switch');
       }
+    } catch (e) {
+      console.warn('Could not read theme preference from localStorage.', e);
+    }
+  })();
+</script>
+<style>{{- critical_css | safe -}}</style>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
