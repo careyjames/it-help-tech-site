@@ -47,7 +47,9 @@
     <p class="post-image">
         <img
           src="{{ get_url(path=page.extra.image) }}"
-          {%- if page.extra.image_alt %} alt="{{ page.extra.image_alt }}"{% else %} alt=""{% endif %}
+          {%- if page.extra.image_alt %}
+          alt="{{ page.extra.image_alt | regex_replace(pattern='(?i)\\bimage\\b', rep='') | trim }}"
+          {%- else %} alt=""{% endif %}
           class="hero-portrait"
           width="200" height="200"
           loading="eager" fetchpriority="high">
