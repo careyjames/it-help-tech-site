@@ -1,3 +1,17 @@
+{% set critical_css = load_data(path="static/css/critical.min.css") %}
+<script>
+  // Prevent a flash of the wrong theme before CSS loads.
+  (function () {
+    try {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('switch');
+      }
+    } catch (e) {
+      console.warn('Could not read theme preference from localStorage.', e);
+    }
+  })();
+</script>
+<style>{{- critical_css | safe -}}</style>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
@@ -55,7 +69,6 @@
 {%- endif %}
 
 <!-- critical CSS -->
-<link rel="preload" href="/css/critical.min.css" as="style" class="preStyle">
 <link rel="preload"
       href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
@@ -65,7 +78,6 @@
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
   <link rel="stylesheet"
         href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
-  <link rel="stylesheet" href="/css/critical.min.css">
 </noscript>
 
 {# --- Critical hero styling uses CSP nonce --- #}
@@ -94,7 +106,6 @@
       href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
       class="preStyle">
-<link rel="stylesheet" href="/css/override.min.css">
 
 <noscript>
   {%- for i in stylesheets %}
