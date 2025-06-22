@@ -90,12 +90,6 @@
   {%- endfor %}
 {%- endif %}
 
-<link id="ovr"
-      rel="preload"
-      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style"
-      fetchpriority="high">
-
 <noscript>
   {%- for i in stylesheets %}
     <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
@@ -234,6 +228,5 @@
   {{ config.extra.head_extra | safe }}
 {%- endif %}
 <!-- keep the override.min.css promoter – needed for large sheet -->
-<script defer src="{{ get_url(path='js/preload-promote.min.js', trailing_slash=false, cachebust=true) | safe }}"></script>
 
 {# --- End of head partial --- #}
