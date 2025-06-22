@@ -389,3 +389,23 @@
       </nav>
   {%- endif %}
 {%- endmacro %}
+
+{%- macro generate_seo_for_section(section, config) -%}
+  {%- import "macros/seo.html" as macros_seo -%}
+  {%- if config.extra.title_separator -%}
+    {%- set title_separator = " " ~ config.extra.title_separator ~ " " -%}
+  {%- else -%}
+    {%- set title_separator = " | " -%}
+  {%- endif -%}
+  {%- set title = section.title | default(value=config.title) -%}
+  {%- set title_addition = "" -%}
+  {%- if config.extra.title_addition and title -%}
+    {%- set title_addition = title_separator ~ config.extra.title_addition -%}
+  {%- elif config.extra.title_addition -%}
+    {%- set title_addition = config.extra.title_addition -%}
+  {%- endif -%}
+  {%- set description = section.description | default(value=config.description) -%}
+  {%- set_global page = section -%}
+
+  {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
+{%- endmacro -%}
