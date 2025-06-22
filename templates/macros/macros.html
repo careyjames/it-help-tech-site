@@ -1,3 +1,4 @@
+{%- import "macros/seo.html" as macros_seo -%}
 {# === CSP Nonce Helpers === #}
 {%- macro generate_csp_nonce() %}
   {% set_global csp_nonce = get_random(start=100000000000, end=999999999999) %}
@@ -391,7 +392,6 @@
 {%- endmacro %}
 
 {%- macro generate_seo_for_section(section, config) -%}
-  {%- import "macros/seo.html" as macros_seo -%}
   {%- if config.extra.title_separator -%}
     {%- set title_separator = " " ~ config.extra.title_separator ~ " " -%}
   {%- else -%}
