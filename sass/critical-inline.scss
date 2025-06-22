@@ -7,6 +7,16 @@ body {
   text-align: center !important;
 }
 
+/* Explicitly size H1s inside structural elements to avoid Chrome's deprecation warning */
+h1,
+article h1,
+section h1,
+nav h1,
+aside h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
 /* === Light/Dark tokens (first paint) === */
 :root      { color-scheme: light dark; }
 [data-t="d"] { --bg: #111; --fg: #eee; }

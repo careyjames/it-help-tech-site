@@ -1,4 +1,5 @@
 {% set critical_css = load_data(path="static/css/critical.min.css") %}
+<meta charset="utf-8" />
 <script>
   // Prevent a flash of the wrong theme before CSS loads.
   (function () {
@@ -12,7 +13,6 @@
   })();
 </script>
 <style>{{- critical_css | safe -}}</style>
-<meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
 <!-- LCP image -->
