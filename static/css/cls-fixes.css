@@ -1,3 +1,1 @@
-/* --- stop layout shift --- */
-img.logo{width:356px;height:48px;max-width:none !important}
-h1.hero{font-size:clamp(1.6rem,2.5vw,2.25rem);max-width:40rem}
+/ * placeholders only – all critical CLS rules are now in critical.min.css * /
