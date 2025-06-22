@@ -74,7 +74,8 @@ twitter_card        = "summary_large_image"
     "streetAddress": "888 Prospect Street Suite 200",
     "addressLocality": "San Diego",
     "addressRegion": "CA",
-    "postalCode": "92037"
+    "postalCode": "92037",
+    "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -86,7 +87,8 @@ twitter_card        = "summary_large_image"
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "San Diego",
-      "addressRegion": "CA"
+      "addressRegion": "CA",
+      "addressCountry": "US"
     }
   },
   "sameAs": [
