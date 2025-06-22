@@ -55,7 +55,7 @@
 {%- endif %}
 
 <!-- critical CSS (tiny, allowed to block) -->
-<link rel="stylesheet" href="/css/critical.min.css" fetchpriority="high">
+<link rel="stylesheet" href="{{ get_url(path='css/critical.min.css', trailing_slash=false, cachebust=true) | safe }}" fetchpriority="high">
 <link rel="preload"
       href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
       as="style"
