@@ -63,9 +63,9 @@ This Template can also be used directly for the index eg: example.com/ or as the
       </article>
     {%- endfor %}
     {%- if config.extra.arrow_pagination %}
-    {{- macros::pagination(paginator=paginator, config=config) }}
+    {{- macros::pagination(paginator=paginator, config=config, style="arrows") }}
     {%- else %}
-    {{- macros::numpagination(paginator=paginator, config=config) }}
+    {{- macros::pagination(paginator=paginator, config=config, style="numbers") }}
     {%- endif %}
     </div>
 {%- endblock content %}
