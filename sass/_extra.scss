@@ -32,6 +32,10 @@ h1, h2, h3, h4,
 .tagline {
   text-wrap: balance;
 }
+.hero {
+  min-height: clamp(300px, 35vh, 480px);
+}
+
 
 /* Long-form content */
 p,

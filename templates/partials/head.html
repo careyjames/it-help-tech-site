@@ -77,6 +77,7 @@
 
 {# --- Style Sheets --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
+  <link rel="preload" as="style" href="/css/abridge.css" />
 {%- for i in stylesheets %}
   <link rel="stylesheet"
         href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
