@@ -171,7 +171,7 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 </ul>
 
 ### Advanced Email, Domain, & DNS Solutions
-Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace (and escape systems like Exchange!), so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
+Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 * **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
 * **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
 * **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.

@@ -46,10 +46,6 @@ This policy covers real operational costs and ensures continued reliability.
 * We have never had a data leak or spoken with paparazzi/journalists.  
 Your trust is paramount.
 
-## Business Ethics: Carey’s Promise {#business-ethics-carey’s-promise-}
-
-As the Founder of IT Help San Diego Inc., I see my role as a scientist, not a salesperson. My recommendations are based on transparent, verifiable data, not opinions or distributor deals. <strong class="ethics-statement">We don’t sell products, and we don’t accept commissions, affiliate fees, or kickbacks.</strong> We don’t depend upon a 40% markup (from a limited catalog) for survival, and thus are not restricted to lower-spec gear. If we recommend a solution, whether it's Route 53, SentinelOne, or 1Password, it's because we believe it's the best tool for the job. We'll show you the options, explain the *why*, and you'll typically purchase directly from the vendor. Our only revenue comes from our time and expertise dedicated to implementing these solutions effectively for you. My focus is always on your long-term reliability—truly listening so I can help you understand exactly what you want—and delivering real value.
-
 ## Final Notes
 
 Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end tech solutions. We provide discreet cyber-security and crisis response services, backed by nearly two decades of hands-on experience.
