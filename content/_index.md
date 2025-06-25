@@ -129,7 +129,7 @@ twitter_card        = "summary_large_image"
 <!-- Homepage hero heading -->
 <section class="homepage-hero">
   <h1 class="hero">
-    Expert Mac IT Support 
+    Expert Mac IT Support<br>
     Complex Tech Challenges
   </h1>
 </section>
