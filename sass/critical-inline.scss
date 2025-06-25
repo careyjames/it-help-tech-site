@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --ff: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
   --fm: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Courier New", monospace;
 }
@@ -21,8 +22,6 @@ aside h1 {
   line-height: 1.2;
 }
 
-/* === Light/Dark tokens (first paint) === */
-:root      { color-scheme: light dark; }
 [data-t="d"] { --bg: #111; --fg: #eee; }
 [data-t="l"] { --bg: #fff; --fg: #111; }
 
