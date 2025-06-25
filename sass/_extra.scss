@@ -149,7 +149,7 @@ header > nav > div:nth-child(2) {
 /* Nav list */
 .nav-wrapper ul {
   display: flex !important;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   list-style: none;

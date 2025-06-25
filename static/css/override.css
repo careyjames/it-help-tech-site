@@ -106,6 +106,7 @@ body { overflow-x: hidden; }
     font-size: 1.9rem !important;
   }
   .nav-wrapper ul{
+    flex-wrap: nowrap !important;
     gap: 0.75rem !important;
     font-size: 1.15rem !important;
   }
