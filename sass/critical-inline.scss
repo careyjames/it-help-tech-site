@@ -1,6 +1,16 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
-  }
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Modern monospace stack for code blocks */
+pre,
+code,
+kbd,
+samp,
+tt,
+var {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Courier New", monospace;
+}
 
   /* Home hero headline */
 .homepage-hero h1 {
