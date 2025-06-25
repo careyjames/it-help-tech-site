@@ -15,13 +15,19 @@
 <style>{{- critical_css | safe -}}</style>
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-<!-- LCP image -->
-<link rel="preload"
-      as="image"
-      href="/images/carey-256.avif"
-      fetchpriority="high"
-      imagesrcset="/images/carey-256.avif 200w"
-      imagesizes="200px">
+{#
+  Preload the page's main portrait image only when it exists. This
+  prevents needless preloading on pages that don't include the image
+  (which triggered warnings in Lighthouse and Safari).
+#}
+{% if page and page.extra and page.extra.image %}
+  <link rel="preload"
+        as="image"
+        href="{{ get_url(path=page.extra.image) }}"
+        fetchpriority="high"
+        imagesrcset="{{ get_url(path=page.extra.image) }} 200w"
+        imagesizes="200px">
+{% endif %}
 
 {% if page.title %}
   <title>{{ page.title }} – {{ config.title }}</title>
