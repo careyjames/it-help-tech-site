@@ -160,16 +160,14 @@ This allows us to be free from the distribution channels that most IT/AV compani
 We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
 (at the speed you're paying for) everywhere in your location.
 
-<ul class="content-max">
-  <li><strong>Wireless Wi‑Fi Mesh, Fix Dead Zones</strong></li>
-  <li><strong>Network setup and home network security</strong></li>
-  <li><strong>Network design &amp; infrastructure planning</strong></li>
-  <li><strong>Network troubleshooting</strong></li>
-  <li><strong>Static‑IP configuration &amp; troubleshooting</strong></li>
-  <li><strong>Port forwarding &amp; double NAT</strong></li>
-  <li><strong>Network printer sharing</strong></li>
-  <li><strong>Switch, gateway &amp; firewall programming</strong></li>
-</ul>
+* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
+* **Network setup and home network security**
+* **Network design &amp; infrastructure planning**
+* **Network troubleshooting**
+* **Static‑IP configuration &amp; troubleshooting**
+* **Port forwarding &amp; double NAT**
+* **Network printer sharing**
+* **Switch, gateway &amp; firewall programming**
 
 ### Advanced Email, Domain, & DNS Solutions
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
