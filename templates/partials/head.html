@@ -69,9 +69,8 @@
 
 
 <!-- critical CSS -->
-<link rel="preload"
-      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet"
+      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
@@ -85,46 +84,19 @@
 {# --- Style Sheets --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
 {%- for i in stylesheets %}
-  <link rel="preload"
-        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet"
+        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
 {%- endfor %}
 
 {%- if ctx.extra.stylesheets %}
   {% set pagestylesheets = ctx.extra.stylesheets %}
   {%- for i in pagestylesheets %}
-    <link rel="preload" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
   {%- endfor %}
 {%- endif %}
 
-<link rel="preload"
-      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
-<script>
-  (function () {
-    function supportsRelPreload() {
-      var link = document.createElement('link');
-      return link.relList && link.relList.supports && link.relList.supports('preload');
-    }
-
-    if (supportsRelPreload()) {
-      return;
-    }
-
-    function applyPreloadPolyfill() {
-      var links = document.querySelectorAll('link[rel="preload"][as="style"]');
-      links.forEach(function (link) {
-        link.rel = 'stylesheet';
-      });
-    }
-
-    if (document.readyState === 'complete') {
-      applyPreloadPolyfill();
-    } else {
-      window.addEventListener('load', applyPreloadPolyfill);
-    }
-  })();
-</script>
+<link rel="stylesheet"
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   {%- for i in stylesheets %}

@@ -39,19 +39,6 @@ img.logo{
   max-width: none !important;
 }
 
-/* Navigation dropdown basics for initial render */
-.nav-wrapper ul {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.75rem;
-  font-size: 1.15rem;
-}
-.dropdown-content,
-.dropdown-content ul {
-  display: flex;
-  flex-direction: column;
-}
-
 /* Generic max‑width utility for lists and paragraphs */
 .content-max {
   max-width: 56rem;
