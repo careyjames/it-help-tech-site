@@ -103,11 +103,8 @@
 <script>
   (function () {
     function supportsRelPreload() {
-      try {
-        return document.createElement('link').relList.supports('preload');
-      } catch (err) {
-        return false;
-      }
+      var link = document.createElement('link');
+      return link.relList && link.relList.supports && link.relList.supports('preload');
     }
 
     if (supportsRelPreload()) {
@@ -116,9 +113,9 @@
 
     function applyPreloadPolyfill() {
       var links = document.querySelectorAll('link[rel="preload"][as="style"]');
-      for (var i = 0; i < links.length; i++) {
-        links[i].rel = 'stylesheet';
-      }
+      links.forEach(function (link) {
+        link.rel = 'stylesheet';
+      });
     }
 
     if (document.readyState === 'complete') {
