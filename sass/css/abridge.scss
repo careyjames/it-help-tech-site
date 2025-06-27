@@ -9,9 +9,9 @@
   $font: -apple-system system-ui BlinkMacSystemFont "SF Pro Text" "SF Pro Icons" "Helvetica Neue" Helvetica Arial sans-serif,
   //$mb: 1200px,// value at which to switch from fluid layout to max-width
 
-  $abridgeMode: "dark",// enforce dark mode
-  $syntax-mode: "dark",// keep code blocks in dark theme
-  $switcherDefault: "dark",// default nojs switcher mode: dark, light
+  $abridgeMode: "switcher",//valid values: switcher, auto, dark, light
+  $syntax-mode: "auto",// Force syntax mode: auto, dark, light
+  $switcherDefault: "dark",// default nojs switcher mode: dark, light (make sure to also set js_switcher_default in config.toml)
 
   $color: "orange",// color template to use/override: orange, blue, blueshade
 
@@ -77,18 +77,18 @@
   /// The colors below can be overrided individually as needed.
 
   /// Dark Colors
-  $f1d: #E8E8E8,// Font Color Primary
-  $f2d: #E8E8E8,// Font Color Headers
-  $c1d: #0A0A0A,// Background Color Primary
-  $c2d: #1A1A1A,// Background Color Secondary
-  $c3d: #2A2A2A,// Table Rows, Block quote edge, Borders
-  $c4d: #2A2A2A,// Disabled Buttons, Borders, mark background
-  $a1d: #FFD700,// link color
-  $a2d: #D5AD36,// link hover/focus color
-  $a3d: #FFD700,// link h1-h2 hover/focus color
-  $a4d: #FFD700,// link visited color
-  $cgd: #5AFE73,// ins green, success
-  $crd: #FF5555,// del red, errors
+  //$f1d: #ccc,// Font Color Primary
+  //$f2d: #ddd,// Font Color Headers
+  //$c1d: #111,// Background Color Primary
+  //$c2d: #222,// Background Color Secondary
+  //$c3d: #333,// Table Rows, Block quote edge, Borders
+  //$c4d: #777,// Disabled Buttons, Borders, mark background
+  //$a1d: #f90,// link color
+  //$a2d: #fb0,// link hover/focus color
+  //$a3d: #f90,// link h1-h2 hover/focus color
+  //$a4d: #f90,// link visited color
+  //$cgd: #593,// ins green, success
+  //$crd: #e33,// del red, errors
 
   /// Light Colors
   //$f1: #333,// Font Color Primary
@@ -105,17 +105,17 @@
   //$cr: #d33,// del red, errors
 
   /// Dark Syntax Colors
-  $h0d: #1E1E1E,// background color
-  $h1d: #E8E8E8,// unstyled text
-  $h2d: #A0A0A0,// comments
-  $h3d: #FF5555,// red, support function
-  $h4d: #FFA500,// orange, punctuation, constant, variable, json-key
-  $h5d: #D5AD36,// tan, entity/function name
-  $h6d: #5AFE73,// green, string
-  $h7d: #4D9FFF,// teal, escape character
-  $h8d: #003366,// blue, declaration, tag, property
-  $h9d: #D5AD36,// purple, operators
-  $had: 160%,// mark/highlight line
+  //$h0d: #191919,// background color
+  //$h1d: #ddd,// unstyled text
+  //$h2d: #888,// comments
+  //$h3d: #e65,// red, support function
+  //$h4d: #e83,// orange, punctuation, constant, variable, json-key
+  //$h5d: #eb6,// tan, entity/function name
+  //$h6d: #ac3,// green, string
+  //$h7d: #8db,// teal, escape character
+  //$h8d: #6ae,// blue, declaration, tag, property
+  //$h9d: #d6e,// purple, operators
+  //$had: 160%,// mark/highlight line
 
   /// Light Syntax Colors
   //$h0: #f7f7f7,// background color
