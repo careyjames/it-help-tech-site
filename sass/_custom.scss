@@ -1,26 +1,4 @@
 // site-specific tweaks
-
-// theme color variables
-:root:not(.switch) {
-  --bg-primary: #0A0A0A;
-  --bg-elevated: #1A1A1A;
-  --text-primary: #E8E8E8;
-  --text-secondary: #A0A0A0;
-  --gold-primary: #FFD700;
-  --gold-secondary: #D5AD36;
-  --navy: #003366;
-  --border-color: #2A2A2A;
-}
-:root.switch {
-  --bg-primary: #FFFFFF;
-  --bg-elevated: #F8F9FA;
-  --text-primary: #0A0A0A;
-  --text-secondary: #4A5568;
-  --navy-primary: #001F3F;
-  --navy-secondary: #003366;
-  --gold-primary: #D5AD36;
-  --border-color: #E1E4E8;
-}
 /* Force a single-column layout for the hero section */
 .homepage-hero {
   display: flex;
@@ -29,7 +7,6 @@
   max-width: 60rem;   /* ~960 px */
   margin-inline: auto;
   padding-inline: 0;
-  background: linear-gradient(180deg, var(--bg-primary), var(--navy-secondary));
 }
 
 /* Center only the main hero heading, phone, and button */
@@ -53,20 +30,6 @@
 /* ensure phone number line has breathing room */
 .phone-line {
   margin: 0.5rem 0 1rem;
-  color: var(--gold-primary);
-  transition: color .3s;
-}
-
-.cta-button {
-  color: var(--gold-secondary);
-  border: 1px solid var(--gold-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: background-color .3s, color .3s, border-color .3s;
-}
-.cta-button:hover {
-  border-color: var(--gold-primary);
-  border-width: 2px;
 }
 
 /* Center the profile image on the About page */

@@ -25,11 +25,7 @@ aside h1 {
 [data-t="d"] { --bg: #0A0A0A; --fg: #E8E8E8; }
 [data-t="l"] { --bg: #FFFFFF; --fg: #0A0A0A; }
 
-html {
-  background: var(--bg);
-  color: var(--fg);
-  transition: background-color .3s, color .3s, border-color .3s;
-}
+html { background: var(--bg); color: var(--fg); transition: background .15s; }
 
 /* Dark-logo inversion so SVGs stay visible */
 [data-t="d"] img.logo,
