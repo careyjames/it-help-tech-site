@@ -261,6 +261,12 @@ details[open] summary::before {
   border-radius: 0.25rem;
 }
 
+@media (min-width: 700px) {
+  :root.switch .schedule-link {
+    color: #fff !important;
+  }
+}
+
 .schedule-link:hover {
   color: var(--a2);
 }
