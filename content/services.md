@@ -256,4 +256,4 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 
 ---
 Need expert Mac IT help to solve your tech challenges?
-[Book an on-site Appointment Now](https://schedule.it-help.tech/)
+<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an on-site Appointment Now</a></p>
