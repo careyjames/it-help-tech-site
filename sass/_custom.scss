@@ -34,6 +34,14 @@
   color: #FFD700;
 }
 
+:root.switch .phone-line {
+  color: #001F3F;
+}
+
+:root.switch .homepage-hero > h1.hero {
+  color: #D5AD36;
+}
+
 /* Center the profile image on the About page */
 .post-image img {
   display: block;

@@ -256,9 +256,13 @@ details[open] summary::before {
 
 .schedule-link {
   background-color: #003366;
-  color: #FFD700;
+  color: #fff;
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
+}
+
+.schedule-link:hover {
+  color: var(--a2);
 }
 
 .nav-wrapper ul li a:hover {
@@ -269,4 +273,9 @@ details[open] summary::before {
 section h2 {
   border-left: 4px solid #003366;
   padding-left: 0.5rem;
+}
+
+/* footer phone color in dark mode */
+:root:not(.switch) .footer-nap a {
+  color: #FFD700;
 }
