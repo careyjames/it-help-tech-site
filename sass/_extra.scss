@@ -265,6 +265,9 @@ details[open] summary::before {
   :root.switch .schedule-link {
     color: #fff !important;
   }
+  :root.switch .schedule-link:hover {
+    color: var(--a2) !important;
+  }
 }
 
 .schedule-link:hover {
