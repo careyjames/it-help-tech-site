@@ -13,7 +13,7 @@ body { overflow-x: hidden; }
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;
+    color: #0A0A0A !important;
   }
 }
 .homepage-hero .phone-line,
@@ -136,7 +136,7 @@ body { overflow-x: hidden; }
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;
+    color: #0A0A0A !important;
   }
   .dropdown-content ul{
     column-count: 1 !important;

@@ -22,8 +22,8 @@ aside h1 {
   line-height: 1.2;
 }
 
-[data-t="d"] { --bg: #111; --fg: #eee; }
-[data-t="l"] { --bg: #fff; --fg: #111; }
+[data-t="d"] { --bg: #0A0A0A; --fg: #E8E8E8; }
+[data-t="l"] { --bg: #FFFFFF; --fg: #0A0A0A; }
 
 html { background: var(--bg); color: var(--fg); transition: background .15s; }
 
