@@ -279,6 +279,11 @@ details[open] summary::before {
   border-bottom: 2px solid #003366;
 }
 
+/* Change 'More' dropdown label to gold on hover */
+.dropdown-toggle:hover {
+  color: var(--a2);
+}
+
 section h2 {
   border-left: 4px solid #003366;
   padding-left: 0.5rem;
