@@ -157,8 +157,8 @@ body { overflow-x: hidden; }
     margin-top: 0 !important;
   }
   .nav-wrapper .home-icon svg{
-    width: 35px !important;
-    height: 35px !important;
+    width: 45px !important;
+    height: 45px !important;
     margin-top: 0px !important;
   }
 }
@@ -185,10 +185,10 @@ main {
 }
 @media (min-width: 700px){
   .nav-wrapper .home-icon svg{
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     margin-top: 0px;
-    margin-right: 0px; 
+    margin-right: 0px;
   }
   .nav-wrapper{
     width: 348px !important;
