@@ -7,7 +7,6 @@ body { overflow-x: hidden; }
   max-width:100% !important;
   padding-inline:0 !important;
   box-sizing:border-box !important;
-  background: linear-gradient(180deg, var(--bg-primary), var(--navy-secondary));
   html.switch .dropdown-content{
     background: rgba(255,255,255,0.95) !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
@@ -264,6 +263,4 @@ header.site-header{
 .big{
   font-size: larger;
 }
-
-
 
