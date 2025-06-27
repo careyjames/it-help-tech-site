@@ -7,6 +7,7 @@
   max-width: 60rem;   /* ~960 px */
   margin-inline: auto;
   padding-inline: 0;
+  background: linear-gradient(180deg, #111111, #001F3F);
 }
 
 /* Center only the main hero heading, phone, and button */
@@ -30,6 +31,7 @@
 /* ensure phone number line has breathing room */
 .phone-line {
   margin: 0.5rem 0 1rem;
+  color: #FFD700;
 }
 
 /* Center the profile image on the About page */
