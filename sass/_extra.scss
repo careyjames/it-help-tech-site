@@ -163,6 +163,10 @@ header > nav > div:nth-child(2) {
 /* Edit house icon on mobile nav here */
 .home-icon svg           { display: block; width: 28px; height: 28px; margin-top: 8px; }
 #mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
+.mode-btn               { background: none; border: none; cursor: pointer; padding: 0; }
+.mode-btn svg           { width: 1.25rem; height: 1.25rem; }
+html.switch .moon-icon  { display: none; }
+html:not(.switch) .sun-icon { display: none; }
 .dropdown-content        { /* stays unchanged */ }
 
 /* Hide orphan anchors injected by the theme */
