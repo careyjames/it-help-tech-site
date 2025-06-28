@@ -16,6 +16,13 @@ body { overflow-x: hidden; }
     color: #111 !important;
   }
 }
+
+/* Remove border and background from hero section */
+.homepage-hero {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
 .homepage-hero .phone-line,
 .homepage-hero .cta-button{
   text-align:center !important;
