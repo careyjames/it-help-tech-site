@@ -246,6 +246,19 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
   .dropdown-content a:hover {
     background: #333;
   }
+
+  /* Light mode adjustments */
+  :root:not(.switch) .dropdown-content {
+    background: #fff;
+    color: #001F3F;
+  }
+  :root:not(.switch) .dropdown-content a {
+    color: #001F3F;
+  }
+  :root:not(.switch) .dropdown-content a:hover {
+    color: var(--a2);
+    background: #fff;
+  }
 }
 
 /* ---------- MOBILE (<600 px) ---------------------------------- */
@@ -315,7 +328,7 @@ details[open] summary::before {
 
 .schedule-link {
   background-color: #003366;
-  color: #fff;
+  color: #fff !important;
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
 }
