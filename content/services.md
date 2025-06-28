@@ -206,7 +206,7 @@ extra:
 </script>
 
 
-We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting. Our expertise ensures your critical systems run smoothly, securely, and efficiently.
+We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting.  Our expertise ensures your critical systems run smoothly, securely, and efficiently.
 
 ## Advanced Email, Domain, & DNS Solutions
 
