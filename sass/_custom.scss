@@ -26,16 +26,19 @@
 }
 
 /* ensure phone number line has breathing room */
+/* Style phone links consistently */
 .phone-line {
   margin: 0.5rem 0 1rem;
-  color: #FFD700;
 }
 
-:root.switch .phone-line {
-  color: #FFD700;
+/* Blue for light mode, gold for dark mode */
+:root.switch .phone-line,
+html.switch .phone-line {
+  color: #0074D9 !important;
 }
 
-:root:not(.switch) .phone-line {
+:root:not(.switch) .phone-line,
+html:not(.switch) .phone-line {
   color: #FFD700 !important;
 }
 

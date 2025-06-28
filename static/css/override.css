@@ -23,7 +23,7 @@ body { overflow-x: hidden; }
     background: #fff !important;
   }
 }
-.homepage-hero .phone-line,
+.phone-line,
 .homepage-hero .cta-button{
   text-align:center !important;
   margin-inline:auto !important;
@@ -32,8 +32,13 @@ body { overflow-x: hidden; }
   word-break:break-word !important;
 }
 
-/* Ensure the phone number is gold in dark mode */
-:root:not(.switch) .homepage-hero .phone-line{
+/* Phone number color by mode */
+:root.switch .phone-line,
+html.switch .phone-line{
+  color:#0074D9 !important;
+}
+:root:not(.switch) .phone-line,
+html:not(.switch) .phone-line{
   color:#FFD700 !important;
 }
 .homepage-hero h1 {
