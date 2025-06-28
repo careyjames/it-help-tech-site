@@ -3,4 +3,4 @@ body{overflow-x:hidden}.homepage-hero{display:block!important;align-items:flex-s
 @media (min-width:700px){.page-title,.post-title,h1.page-title,h1.post-title{text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%!important;max-width:100%!important;overflow-wrap:break-word!important;word-break:break-word!important}}
 
 html.switch .dropdown-content li a:hover{color:var(--a2)!important;background:#fff!important}
-html.switch .phone-line,:root.switch .phone-line{color:#0074D9!important}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:#FFD700!important}
+:root.switch{--phone-line-color:#0074D9}:root:not(.switch){--phone-line-color:#FFD700}.phone-line{color:var(--phone-line-color)!important}

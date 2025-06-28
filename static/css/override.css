@@ -31,6 +31,9 @@ body { overflow-x: hidden; }
   overflow-wrap:break-word !important;
   word-break:break-word !important;
 }
+.phone-line {
+  color: var(--phone-line-color) !important;
+}
 
 .homepage-hero h1 {
   max-width: 100% !important;
@@ -356,12 +359,10 @@ header.site-header{
   }
 }
 
-/* Phone number color by mode - ensure final override */
-html.switch .phone-line,
-:root.switch .phone-line {
-  color: #0074D9 !important;
+/* Phone number color variables */
+:root.switch {
+  --phone-line-color: #0074D9;
 }
-html:not(.switch) .phone-line,
-:root:not(.switch) .phone-line {
-  color: #FFD700 !important;
+:root:not(.switch) {
+  --phone-line-color: #FFD700;
 }
