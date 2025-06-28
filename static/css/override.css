@@ -356,8 +356,7 @@ header.site-header{
   }
 }
 
-
-/* Ensure phone link color overrides */
+/* Phone number color by mode - ensure final override */
 html.switch .phone-line,
 :root.switch .phone-line {
   color: #0074D9 !important;
