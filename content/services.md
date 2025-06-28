@@ -1,5 +1,5 @@
 ---
-title: On-site, In-home IT Services & Expert Solutions
+title: On-site, In-home IT Services
 path: services
 description: "Apple‑centric on‑site IT services for homes & SMBs across San Diego: Mac & Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers."
 extra:
