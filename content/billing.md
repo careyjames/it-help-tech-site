@@ -9,39 +9,39 @@ extra:
 
 
 
-We follow clear policies for our IT support services. No monthly retainers!
+We follow clear policies for our IT support services. **No monthly retainers!**
 
-## IT Consulting & Support Rate {#it-consulting--support-rate}
+## IT Consulting & Support Rate  
 
 * **Base Rate:** $275 per hour.
-* **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote/phone.
-* **Billing Increments:** We bill precisely in **1-minute increments**, based on call/session timers or time tracked for offline tasks.
-* **Travel:** $1.50 per mile for every on‑site visit. For sites within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time.
+* **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote or phone support.
+* **Billing Increments:** We bill precisely in **1-minute increments**, based on call or session timers or time tracked for offline tasks.
+* **Travel:** $1.50 per mile for every on‑site visit. For sites under 15 miles, we bill one-way mileage; for sites above 15 miles, we bill round-trip mileage plus drive time.
 
 This policy covers real operational costs and ensures continued reliability.
 
-## Payment Policy {#payment-policy}
+## Payment Policy  
 
 * **Method:** We require a valid credit card on file before services are rendered.
 * **Billing Cycle:** Billing occurs automatically **at the end of each session or day's work** to the authorized card on file.
-* **Terms:** We do not accept checks or offer net payment terms. **No card, no service—no exceptions.**
+* **Terms:** We do not accept checks and do not offer net payment terms. **No card, no service—no exceptions.**
 
-## Scheduling & Cancellation Policy {#scheduling--cancellation-policy}
+## Scheduling & Cancellation Policy  
 
 * **Booking:** Appointments are booked with a 30-minute minimum charge (deposit) for remote sessions, which reserves that time specifically for you.
 * **Billing:** You are only billed for the time used beyond the initial 30-minute minimum.
 * **Notice:** To reschedule or cancel without charge, please provide at least **24 hours’ notice**.
 * **Late/No-Show:** Late cancellations (less than 24 hours) or no-shows will be billed for the 30-minute minimum, as that time was held exclusively for you.
 
-## Quick Phone/Text/Email Support {#quick-phonetextemail-support}
+## Quick Phone/Text/Email Support  
 
 * Existing clients are welcome to reach out anytime.
 * We do not charge for brief communications (under 10 minutes).
 * All calls, remote sessions, or other time spent rendering services lasting more than 10 minutes are billed at our standard rate, subject to the 30-minute minimum.
 
-## Privacy & Security {#privacy--security-}
+## Privacy & Security  
 
-* All client data (login credentials, network configurations, etc.) is encrypted and is never shared or sold.
+* All client data (login credentials, network configurations, etc.) is encrypted and is NEVER shared or sold.
 * We have served high-profile, sensitive security and entertainment businesses for 25 years.
 * We have never had a data leak or spoken with paparazzi/journalists.  
 Your trust is paramount.
