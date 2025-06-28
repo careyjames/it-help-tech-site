@@ -107,7 +107,7 @@ body { overflow-x: hidden; }
   .mode-btn{
     position: relative;
     top: 1px;
-    margin-right: 4px;
+    margin-right: -6px;
     font-size: 1.9rem !important;
   }
   .nav-wrapper ul{
