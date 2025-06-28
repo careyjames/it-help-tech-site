@@ -146,7 +146,8 @@ Our premium, concierge-level on-site service is designed for individuals, execut
 
 ## Core Expertise
 
-While we can tackle a vast array of IT challenges and are deeply comfortable in the terminal using command line, our key areas of deep expertise include:
+We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
+Our key areas of deep expertise include:
 
 ### Network Infrastructure & WiFi Troubleshooting
 
