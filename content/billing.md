@@ -16,7 +16,7 @@ We follow clear policies for our IT support services. **No monthly retainers!**
 * **Base Rate:** $275 per hour.
 * **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote or phone support.
 * **Billing Increments:** We bill precisely in **1-minute increments**, based on call or session timers or time tracked for offline tasks.
-* **Travel:** $1.50 per mile for every on‑site visit. For sites under 15 miles, we bill one-way mileage; for sites above 15 miles, we bill round-trip mileage plus drive time.
+* **Travel:** $1.50 per mile for every on‑site visit. For sites under 15 miles, we bill one-way mileage; for sites above 15 miles, we bill round-trip mileage plus drive time.
 
 This policy covers real operational costs and ensures continued reliability.
 
