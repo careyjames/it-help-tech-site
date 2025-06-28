@@ -36,7 +36,7 @@
 }
 
 :root:not(.switch) .phone-line {
-  color: #FFD700;
+  color: #FFD700 !important;
 }
 
 :root.switch .homepage-hero > h1.hero {

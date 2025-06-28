@@ -31,6 +31,11 @@ body { overflow-x: hidden; }
   overflow-wrap:break-word !important;
   word-break:break-word !important;
 }
+
+/* Ensure the phone number is gold in dark mode */
+:root:not(.switch) .homepage-hero .phone-line{
+  color:#FFD700 !important;
+}
 .homepage-hero h1 {
   max-width: 100% !important;
   overflow-wrap: break-word !important;
