@@ -121,7 +121,6 @@ body { overflow-x: hidden; }
     max-width: 100vw;
     padding-left: 1rem;
     padding-right: 1rem;
-    overflow-x: hidden;
   }
   .nav-wrapper ul li{
     margin-right: 0 !important;
@@ -199,7 +198,7 @@ li strong{
 main {
     display: block !important;
 }
-@media (min-width: 700px){
+  @media (min-width: 700px){
   .nav-wrapper .home-icon svg{
     width: 35px;
     height: 35px;
@@ -226,12 +225,18 @@ main {
     margin-left: 0px;
     margin-right: 0px;
   }
-  .mode-btn{
-    position: static !important;
-    top: 2px;
-    margin-right: 0 !important;
+    .mode-btn{
+      position: static !important;
+      top: 2px;
+      margin-right: 0 !important;
+    }
+    .nav-wrapper ul{
+      justify-content: center !important;
+      padding-left: 0;
+      padding-right: 0;
+      max-width: none;
+    }
   }
-}
 .page-title, .post-title {
     max-width: 100%;
     overflow-wrap: break-word;
