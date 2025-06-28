@@ -215,7 +215,7 @@ Having trouble with your email or website? We ensure your digital communications
 * **Email Migration & Setup:** Expert assistance with email system migrations (e.g., to Google Workspace from legacy systems like Exchange) and comprehensive setup & troubleshooting for all your email needs.
 * **Mac & iOS Mail Support:** Specialized configuration and troubleshooting for Apple Mail on macOS and iOS, ensuring seamless iCloud synchronization and resolving intricate mail issues.
 * **Advanced DNS Management:** Precision edits and strategic configuration for all critical DNS records, including MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
-* **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC (`p=reject`) implementations, transforming complex email security into unmatched reliability.
+* **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex email security into unmatched reliability.
 * **Website & Domain Recovery:** Assisting you in regaining access and control over your website and domain names when issues arise.
 
 ## Cybersecurity & Data Protection
