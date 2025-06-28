@@ -11,12 +11,16 @@ body { overflow-x: hidden; }
   background: none !important;
   box-shadow: none !important;
   html.switch .dropdown-content{
-    background: rgba(255,255,255,0.95) !important;
+    background: #fff !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;
+    color: #001F3F !important;
+  }
+  html.switch .dropdown-content li a:hover{
+    color: var(--a2) !important;
+    background: #fff !important;
   }
 }
 .homepage-hero .phone-line,
@@ -149,12 +153,16 @@ body { overflow-x: hidden; }
       flex-direction: column !important;
   }
   html.switch .dropdown-content{
-    background: rgba(255,255,255,0.95) !important;
+    background: #fff !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
   }
   html.switch .dropdown-content li a,
   html.switch .dropdown-content li span{
-    color: #111 !important;
+    color: #001F3F !important;
+  }
+  html.switch .dropdown-content li a:hover{
+    color: var(--a2) !important;
+    background: #fff !important;
   }
   .dropdown-content ul{
     column-count: 1 !important;
