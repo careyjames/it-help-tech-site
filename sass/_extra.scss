@@ -161,6 +161,7 @@ header > nav > div:nth-child(2) {
 .nav-wrapper ul li a     { display: flex; align-items: center; }
 .dropdown-toggle         { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; }
 /* Edit home icon on mobile nav here */
+.home-icon               { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; }
 .home-icon svg           { display: block; width: 45px; height: 45px; margin-top: 0; }
 #mode                    { display: flex; align-items: center; margin-top: -0.25rem; }
 .dropdown-content        { /* stays unchanged */ }
@@ -186,6 +187,13 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+  .home-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

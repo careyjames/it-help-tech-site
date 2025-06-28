@@ -96,6 +96,11 @@ body { overflow-x: hidden; }
     padding-right: 14px !important;
   }
   .nav-wrapper .home-icon{
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     margin-left: 0 !important;
     margin-right: 4px !important;
   }
@@ -199,6 +204,11 @@ main {
     width: 348px !important;
   }
   .nav-wrapper .home-icon{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 0px;
     margin-right: 0px;
   }
