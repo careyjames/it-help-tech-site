@@ -210,9 +210,9 @@ We offer specialized IT support solutions focused on robust infrastructure, adva
 
 ## Advanced Email, Domain, & DNS Solutions
 
-Having trouble with your email or website? We ensure your digital communications and online presence are reliable and secure. We specialize in solving complex email deliverability issues, getting your emails out of spam folders, and fortifying your domain against spoofing and phishing attacks.
+We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
 
-* **Email Migration & Setup:** Expert assistance with email system migrations (e.g., to Google Workspace from legacy systems like Exchange) and comprehensive setup & troubleshooting for all your email needs.
+* **Email Migration & Setup:** Expert assistance with Email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting for all your Email needs.
 * **Mac & iOS Mail Support:** Specialized configuration and troubleshooting for Apple Mail on macOS and iOS, ensuring seamless iCloud synchronization and resolving intricate mail issues.
 * **Advanced DNS Management:** Precision edits and strategic configuration for all critical DNS records, including MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
 * **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex Email security into unmatched reliability.
@@ -220,7 +220,7 @@ Having trouble with your email or website? We ensure your digital communications
 
 ## Cybersecurity & Data Protection
 
-Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, email phishing, browser blocks, and more.
+Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, Email phishing, browser blocks, and more.
 
 * **Endpoint Security:** Setup and management of leading endpoint protection for macOS, Windows, and Linux.
 * **Mobile Device Security (iOS):** Advising on best practices and tools to secure your iPhones and iPads.
@@ -238,13 +238,13 @@ We provide expert troubleshooting for a variety of system-level and application-
 
 ## Specialized Services
 
-* **iPhone Text Message Extraction for Law Firms:** We specialize in the extraction of iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is clearly documented. We can do this **on-site at your Lawfirm on your computer so the data never leaves your office,** after we setup the process, you'll be empowered to never hire help again for this task.
+* **iPhone Text Message Extraction for Law Firms:** We specialize in extracting iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
 
 ## Our Recommendations
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
 
-* **[Cloudflare](https://www.cloudflare.com/):** For DNS, WAF, CDN, and Zero Trust security.
+* **[Cloudflare](https://www.cloudflare.com/):** For DNS, WAF, CDN.
 * **[Amazon Route 53](https://aws.amazon.com/route53/):** For highly available and scalable DNS services.
 * **[Google Advanced Protection Program](https://landing.google.com/advancedprotection/):** For Google's strongest account security.
 * **[RedSift OnDMARC](https://redsift.com/pulse-platform/ondmarc):** For advanced DMARC deployment and management.
