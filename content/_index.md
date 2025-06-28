@@ -189,7 +189,7 @@ We provide robust Mac defenses against viruses, Email phishing, browser blocks, 
 
 ## Frequently Asked Questions
 
-### Can you help with Mac, iOS, PC, or mixed computer environments?
+### Can you help with PC, Linux, or mixed computer environments?
 Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support diverse tech environments effectively.  
 
 ### How is your service different from a Managed Service Provider (MSP)?
