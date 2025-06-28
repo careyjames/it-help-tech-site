@@ -7,6 +7,9 @@ body { overflow-x: hidden; }
   max-width:100% !important;
   padding-inline:0 !important;
   box-sizing:border-box !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
   html.switch .dropdown-content{
     background: rgba(255,255,255,0.95) !important;
     border: 1px solid rgba(0,0,0,0.20) !important;
@@ -15,13 +18,6 @@ body { overflow-x: hidden; }
   html.switch .dropdown-content li span{
     color: #111 !important;
   }
-}
-
-/* Remove border and background from hero section */
-.homepage-hero {
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
 }
 .homepage-hero .phone-line,
 .homepage-hero .cta-button{
