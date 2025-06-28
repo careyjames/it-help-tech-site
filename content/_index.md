@@ -184,7 +184,7 @@ We provide robust Mac defenses against viruses, Email phishing, browser blocks, 
 ## Why Choose IT Help San Diego?
 
 * **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
-* **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable remote support.
+* **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable support.
 * **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or offering swift resolutions through secure screen sharing and other remote tools.
 
 ## Frequently Asked Questions
