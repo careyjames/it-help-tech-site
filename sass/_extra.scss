@@ -248,14 +248,14 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
   }
 
   /* Light mode adjustments */
-  :root:not(.switch) .dropdown-content {
+  :root.switch .dropdown-content {
     background: #fff;
     color: #001F3F;
   }
-  :root:not(.switch) .dropdown-content a {
+  :root.switch .dropdown-content a {
     color: #001F3F;
   }
-  :root:not(.switch) .dropdown-content a:hover {
+  :root.switch .dropdown-content a:hover {
     color: var(--a2);
     background: #fff;
   }
