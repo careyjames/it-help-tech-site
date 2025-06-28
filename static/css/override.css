@@ -107,7 +107,7 @@ body { overflow-x: hidden; }
   .mode-btn{
     position: relative;
     top: 1px;
-    margin-right: -6px;
+    margin-right: 0;
     font-size: 1.9rem !important;
   }
   .nav-wrapper ul{
@@ -215,7 +215,7 @@ main {
   .mode-btn{
     position: relative;
     top: 2px;
-    margin-right: -10px;
+    margin-right: 0;
   }
 }
 .page-title, .post-title {
