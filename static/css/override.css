@@ -206,8 +206,8 @@ main {
     margin-right: 0px; 
   }
   .nav-wrapper{
-    width: 100% !important;
-    max-width: 100vw !important;
+    width: 348px !important;
+    max-width: 95vw !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
     margin-left: auto !important;
