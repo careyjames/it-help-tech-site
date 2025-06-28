@@ -154,20 +154,19 @@ Our key areas of deep expertise include:
 Spend more time at the beach, not fighting your WiFi.
 
 Specializing in large luxury homes and offices with extensive networking and WiFi needs.
-We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego. Leveraging science-based methodologies and enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
-We use science-based methods to solve problems and design networks. We show you options for WiFi gear that can achieve the speeds you want, and you can buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
-This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate to you, using scientific specifications, why you may want specific products.
-We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi.
-(at the speed you're paying for) everywhere in your location.
+We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego. Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
+We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
+This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products.
+We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you're paying for) everywhere in your location.
 
 * **Wireless Wi‑Fi Mesh, Fix Dead Zones**
-* **Network setup and home network security**
-* **Network design &amp; infrastructure planning**
+* **Network setup & home/office network security**
+* **Network design & infrastructure planning**
 * **Network troubleshooting**
-* **Static‑IP configuration &amp; troubleshooting**
-* **Port forwarding &amp; double NAT**
+* **Static‑IP configuration & troubleshooting**
+* **Port forwarding & double NAT**
 * **Network printer sharing**
-* **Switch, gateway &amp; firewall programming**
+* **Switch, gateway & firewall programming and lost credential recovery**
 
 ### Advanced Email, Domain, & DNS Solutions
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
@@ -175,7 +174,7 @@ Struggling with Email deliverability, domain security, or complex DNS configurat
 * **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
 * **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
 * **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
-* **Bulletproof DNS & DMARC Security**: We architect security-compliant DNS solutions with robust DMARC implementations (p=reject), moving beyond <span class="dmarc-tag">p=none</span> to actively protect your domain from spoofing and phishing attacks.
+* **Bulletproof DNS & DMARC Security**: We architect security-compliant DNS solutions with robust DMARC implementations moving beyond <span class="dmarc-tag">p=none</span> to protect your domain from spoofing and phishing attacks.
 
 ### Cybersecurity & Ethical Screen Sharing
 We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
@@ -185,19 +184,19 @@ We provide robust Mac defenses against viruses, Email phishing, browser blocks, 
 
 * **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
 * **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable support.
-* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or offering swift resolutions through secure screen sharing and other remote tools.
+* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or assist via secure screen sharing and other remote tools.
 
 ## Frequently Asked Questions
 
 ### Can you help with PC, Linux, or mixed computer environments?
-Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support diverse tech environments effectively.  
+Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support a diverse range of technical environments effectively.  
 
 ### How is your service different from a Managed Service Provider (MSP)?
-We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust, since our incentive is to solve issues efficiently, not to pad hours. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
+We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust. Our goal is to resolve issues efficiently and effectively. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
 
 ### Do you fix cracked iPhone screens?
 
-**We’re not a hardware repair shop**—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+**No, we’re not a hardware repair shop.** We specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
 
 ---
 Tired of paying for a month of IT service when nothing happened?
