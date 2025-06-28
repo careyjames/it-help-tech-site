@@ -129,7 +129,7 @@ Beyond email security, a Brand Indicators for Message Identification (BIMI) reco
 
 ### Statistical Urgency
 
-The FBI's 2023 Internet Crime Report reveals a surge in cybercrime, with a record 880,418 complaints and over $12.5 billion in losses, highlighting California as the most affected state. *(Note: The link in your original text to the "FBI's 2024 Internet Crime Report" might be premature for May 2025; typically, these reports are released later. I've kept the 2023 mention).*
+The FBI's 2023 Internet Crime Report reveals a surge in cybercrime, with a record 880,418 complaints and over $12.5 billion in losses, highlighting California as the most affected state.  
 
 ### Conclusion
 
