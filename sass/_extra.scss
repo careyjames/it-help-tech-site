@@ -340,6 +340,9 @@ details[open] summary::before {
   :root.switch .schedule-link:hover {
     color: var(--a2) !important;
   }
+  :root:not(.switch) .schedule-link:hover {
+    color: var(--a2) !important;
+  }
 }
 
 .schedule-link:hover {
