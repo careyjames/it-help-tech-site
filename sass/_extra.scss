@@ -33,7 +33,9 @@ h1, h2, h3, h4,
   text-wrap: balance;
 }
 .hero {
-  min-height: clamp(300px, 35vh, 480px);
+  /* Remove large minimum height so the hero heading only takes
+     up the space it needs without leaving a huge blank area. */
+  min-height: auto;
 }
 
 
