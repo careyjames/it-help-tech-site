@@ -31,16 +31,6 @@
   margin: 0.5rem 0 1rem;
 }
 
-/* Blue for light mode, gold for dark mode */
-:root.switch .phone-line,
-html.switch .phone-line {
-  color: #0074D9 !important;
-}
-
-:root:not(.switch) .phone-line,
-html:not(.switch) .phone-line {
-  color: #FFD700 !important;
-}
 
 :root.switch .homepage-hero > h1.hero {
   color: #D5AD36;
@@ -55,4 +45,14 @@ html:not(.switch) .phone-line {
 /* Portrait images for expertise section */
 .expertise-portrait {
   max-width: 220px;
+}
+
+/* Phone number color by mode - ensure final override */
+html.switch .phone-line,
+:root.switch .phone-line {
+  color: #0074D9 !important;
+}
+html:not(.switch) .phone-line,
+:root:not(.switch) .phone-line {
+  color: #FFD700 !important;
 }
