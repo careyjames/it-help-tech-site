@@ -32,7 +32,7 @@ jobs:
       - name: Purge unused CSS
         run: |
           npm install -g purgecss
-          purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
+          purgecss --css public/css/*.css --content public/**/*.html --output public/css/
       - name: Copy images and root files
         run: |
           cp -r static/images public/
