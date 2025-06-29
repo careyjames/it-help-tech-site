@@ -152,29 +152,12 @@ Our key areas of deep expertise include:
 ### Network Infrastructure & WiFi Troubleshooting
 
 Spend more time at the beach, not fighting your WiFi.
-
 Specializing in large luxury homes and offices with extensive networking and WiFi needs.
-We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego. Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
-We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
-This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products.
-We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you're paying for) everywhere in your location.
-
-* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
-* **Network setup & home/office network security**
-* **Network design & infrastructure planning**
-* **Network troubleshooting**
-* **Static‑IP configuration & troubleshooting**
-* **Port forwarding & double NAT**
-* **Network printer sharing**
-* **Switch, gateway & firewall programming and lost credential recovery**
+We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
 
 ### Advanced Email, Domain, & DNS Solutions
+
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
-* **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
-* **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
-* **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
-* **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
-* **Bulletproof DNS & DMARC Security**: We architect security-compliant DNS solutions with robust DMARC implementations moving beyond <span class="dmarc-tag">p=none</span> to protect your domain from spoofing and phishing attacks.
 
 ### Cybersecurity & Ethical Screen Sharing
 We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
