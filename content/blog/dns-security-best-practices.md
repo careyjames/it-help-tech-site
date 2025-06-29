@@ -42,10 +42,11 @@ include:spf-00376703.gpphosted.com -all"
 ✅ SPF found => "Good, there is only one!"
 
 🔍 DKIM (common selectors): selector1._domainkey
-"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv32BRAJaAOsxAp31ZqQwd7RYfbYowvb3F7lq8WQEyasI6w7Gm0bx<br>
-PW57TFM04fM5flf1PYyCDSa3ckQzSQLYmMx9HiXYJYF1Dpk9PnjTarbdR9mm9fc7iBXT2pTFNJw+SRMH3NRrbkefv8GqqLdJotgCl2vWoyRlfKCANCF<br>
-q5Bbq4qaztXqU/cHRurG8ZVSF7ZrhY4EBKvpzAyIisrf2g2Gky+vO4LTMrgZeNnA/OyHmWmvlUC58e06jBLSysYyh19O4MiU5eUhuT7MYTLWz6fIOl4<br>
-PaT9HkmM0rH/fgcGSYc8ajCsrvxYA8LgoWR9IzYq5vYzDWLxSo/J0c+6pVWQIDAQAB;"
+"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv32BRAJaAOsxAp31ZqQwd7RYfbYowvb3F<br>
+7lq8WQEyasI6w7Gm0bxPW57TFM04fM5flf1PYyCDSa3ckQzSQLYmMx9HiXYJYF1Dpk9PnjTarbdR9mm9fc7iBXT2pTFNJw+S<br>
+RMH3NRrbkefv8GqqLdJotgCl2vWoyRlfKCANCFq5Bbq4qaztXqU/cHRurG8ZVSF7ZrhY4EBKvpzAyIisrf2g2Gky+vO4LTMr<br>
+gZeNnA/OyHmWmvlUC58e06jBLSysYyh19O4MiU5eUhuT7MYTLWz6fIOl4PaT9HkmM0rH/fgcGSYc8ajCsrvxYA8LgoWR9IzY<br>
+q5vYzDWLxSo/J0c+6pVWQIDAQAB;"
 
 ✅ DKIM at selector1._domainkey
 
