@@ -4,4 +4,4 @@ body{overflow-x:hidden}.homepage-hero{display:block!important;align-items:flex-s
 
 html.switch .dropdown-content li a:hover{color:var(--a2)!important;background:#fff!important}
 :html.switch .phone-line,:root.switch .phone-line{color:#0074D9!important}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:#FFD700!important}
-html:not(.switch) .homepage-hero h3 a{color:#fff!important}html:not(.switch) .homepage-hero h3 a:hover{color:#FFD700!important}
+html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:not(.switch) h3 a:hover,html:not(.switch) h3 a:active,html:not(.switch) h3 a:focus{color:#FFD700!important}
