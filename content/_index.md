@@ -45,7 +45,7 @@ twitter_card        = "summary_large_image"
       "name": "Do you fix cracked iPhone screens?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We’re not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, we offer a concierge swap: we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician."
+        "text": "No, we’re not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, we offer a concierge swap: we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician."
       }
     },
     {
