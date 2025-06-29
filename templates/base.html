@@ -28,12 +28,16 @@
 <header class="site-header" role="banner">
   <div class="site-logo">
     {%- if config.extra.logo.file %}
-      <a href="{{ get_url(path='/') }}">
-        <img src="{{ get_url(path='logo.svg') }}"
-             width="356" height="48"
-             alt="IT Help San Diego"
-             class="logo" decoding="async">
-      </a>
+        <a href="{{ get_url(path='/') }}" class="logo-link">
+          <img src="{{ get_url(path='logo.svg') }}"
+               width="356" height="48"
+               alt="IT Help San Diego"
+               class="logo logo-dark" decoding="async">
+          <img src="{{ get_url(path='logo-light.svg') }}"
+               width="356" height="48"
+               alt="IT Help San Diego"
+               class="logo logo-light" decoding="async">
+        </a>
     {%- endif %}
   </div>
 

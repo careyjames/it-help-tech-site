@@ -376,3 +376,8 @@ html:not(.switch) h3 a:active,
 html:not(.switch) h3 a:focus {
   color: #FFD700 !important;
 }
+
+/* Logo swap for light mode */
+.logo-light{display:none}
+html.switch .logo-dark{display:none}
+html.switch .logo-light{display:block}

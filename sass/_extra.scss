@@ -142,6 +142,11 @@ header > nav > div:nth-child(2) {
   border-radius: 0 !important;
 }
 
+/* Swap logos based on light/dark mode */
+.logo-light { display: none; }
+html.switch .logo-dark { display: none; }
+html.switch .logo-light { display: block; }
+
 /* Footer owl graphic */
 .owl {
   width: 100px;
