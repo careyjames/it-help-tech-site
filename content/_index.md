@@ -155,7 +155,7 @@ Spend more time at the beach, not fighting your WiFi.
 Specializing in large luxury homes and offices with extensive networking and WiFi needs.
 We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
 
-[### Advanced Email, Domain, & DNS Solutions](@/services.md#email-domain-dns)
+### [Advanced Email, Domain, & DNS Solutions](@/services.md#email-domain-dns)
 
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 
