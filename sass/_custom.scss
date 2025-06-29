@@ -61,13 +61,3 @@ html:not(.switch) .phone-line,
 /* Gold colored links for recommended services */
 .gold-link { color: var(--a2) !important; }
 
-/* Home page expertise links: white text in dark mode with gold hover */
-html:not(.switch) .homepage-hero h3 > a,
-:root:not(.switch) .homepage-hero h3 > a {
-  color: #ffffff !important;
-}
-html:not(.switch) .homepage-hero h3 > a:hover,
-:root:not(.switch) .homepage-hero h3 > a:hover {
-  color: var(--a2) !important;
-}
-
