@@ -36,7 +36,7 @@ jobs:
       - name: Copy images and root files
         run: |
           cp -r static/images public/
-          cp static/robots.txt static/red-plus.ico static/bimi-logo.svg static/logo.svg public/
+          cp static/robots.txt static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
 
       - name: Upload immutable assets
         run: |
