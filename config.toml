@@ -11,6 +11,8 @@ generate_sitemap = true
 insert_anchor_links = "none"   # disable auto “##” anchors globally
 external_links_target_blank = true      # force target="_blank"
 external_links_no_referrer  = true      # strip Referer header
+highlight_code  = true
+highlight_theme = "base16-ocean-dark"
 
 [extra]
 #abridgeMode = "switcher"
