@@ -212,11 +212,11 @@ We offer specialized IT support solutions focused on robust infrastructure, adva
 
 We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
 
-* **Email Migration & Setup:** Expert assistance with Email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting for all your Email needs.
-* **Mac & iOS Mail Support:** Specialized configuration and troubleshooting for Apple Mail on macOS and iOS, ensuring seamless iCloud synchronization and resolving intricate mail issues.
-* **Advanced DNS Management:** Precision edits and strategic configuration for all critical DNS records, including MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
+* **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
+* **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
+* **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
+* **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
 * **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex Email security into unmatched reliability.
-* **Website & Domain Recovery:** Assisting you in regaining access and control over your website and domain names in the event of issues.
 
 ## Cybersecurity & Data Protection
 
@@ -235,6 +235,22 @@ We provide expert troubleshooting for a variety of system-level and application-
 * **Apple Time Machine Backups:** Setup, troubleshooting, and ensuring your backup strategy is sound.
 * **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
 * **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
+
+## Network Infrastructure & WiFi Troubleshooting
+
+Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
+We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
+This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products.
+We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you’re paying for) everywhere in your location.
+
+* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
+* **Network setup & home/office network security**
+* **Network design & infrastructure planning**
+* **Network troubleshooting**
+* **Static‑IP configuration & troubleshooting**
+* **Port forwarding & double NAT**
+* **Network printer sharing**
+* **Switch, gateway & firewall programming and lost credential recovery**
 
 ## Specialized Services
 
