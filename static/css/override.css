@@ -254,8 +254,6 @@ sup {
 
 details summary {
   cursor: pointer;
-  display: flex;
-  align-items: center;
 }
 
 address,
@@ -302,6 +300,10 @@ main article, main div {
   min-width: 0;
 }
 
+body {
+  width: 100%;
+  margin: 0;
+}
 
 header,
 main,
@@ -349,10 +351,8 @@ header > nav, header > nav > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center !important; /* override theme’s space-between */
+  justify-content: space-between;
   align-items: center;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
 header > nav ul {
@@ -586,8 +586,6 @@ pre {
   overflow-x: auto;
   -ms-overflow-style: scrollbar;
   white-space: pre;
-  background-color: #282c34 !important;
-  color: #abb2bf !important;
 }
 pre > code {
   display: grid;
@@ -1326,8 +1324,6 @@ html:not(.switch) .homepage-hero h3 > a:hover,
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 body {
   background-color: var(--c1);
-  width: 100%;
-  margin: 0;
   color: var(--f1);
   font-size: 1rem !important;
   line-height: 1.6;
@@ -1347,6 +1343,14 @@ aside h1 {
   line-height: 1.2;
 }
 
+a {
+  color: var(--a1);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--a2);
+}
 
 /* --- TYPOGRAPHIC POLISH: widows & hyphenation ---------------- */
 /* Headings & short blurbs */
@@ -1420,6 +1424,10 @@ code {
   border-radius: 6px;
 }
 
+pre {
+  background-color: #282c34 !important;
+  color: #abb2bf !important;
+}
 
 /* Footer brag text */
 .footer-brag {
@@ -1429,6 +1437,13 @@ code {
   margin-top: 0.5rem;
 }
 
+/* ---- HEADER ALIGNMENT HOT-FIX -------------------------------- */
+header > nav,
+header > nav > div:nth-child(2) {
+  justify-content: center !important; /* override theme’s space-between */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
 /* --- HEADER & NAVIGATION STYLES ------------------------------- */
 .site-header {
@@ -1535,6 +1550,7 @@ code {
   position: static !important;
 }
 
+.dropdown-content { /* stays unchanged */ }
 
 /* Hide orphan anchors injected by the theme */
 body > a.anchor {
@@ -1659,6 +1675,12 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
+/* border‑based chevron on the LEFT */
+details summary {
+  display: flex;
+  align-items: center;
+}
+
 details summary::before {
   content: "" !important;
   display: inline-block;
@@ -1732,5 +1754,11 @@ h1.hero {
   max-width: 40rem;
 }
 
+/* --- Anti-CLS: stop header/hero logo shrinking --- */
+img.logo {
+  width: 356px !important;
+  height: 48px !important;
+  max-width: none !important;
+}
 
 /*# sourceMappingURL=override.css.map */
