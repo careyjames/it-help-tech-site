@@ -151,6 +151,8 @@ Our key areas of deep expertise include:
 
 ### [macOS System & Application Support](@/services.md#macos-system)
 
+We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+
 ### [Network Infrastructure & WiFi Troubleshooting](@/services.md#network-wifi)
 
 Spend more time at the beach, not fighting your WiFi.
