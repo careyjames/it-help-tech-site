@@ -365,3 +365,11 @@ html:not(.switch) .phone-line,
 :root:not(.switch) .phone-line {
   color: #FFD700 !important;
 }
+
+/* Home page service links: dark mode */
+html:not(.switch) .homepage-hero h3 > a {
+  color: #fff !important;
+}
+html:not(.switch) .homepage-hero h3 > a:hover {
+  color: #FFD700 !important;
+}
