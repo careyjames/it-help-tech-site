@@ -244,15 +244,15 @@ We provide expert troubleshooting for a variety of system-level and application-
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
 
-* **<a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Cloudflare</a>:** For DNS, WAF, CDN.
-* **<a href="https://aws.amazon.com/route53/" target="_blank" rel="noopener noreferrer" class="gold-link">Amazon Route 53</a>:** For highly available and scalable DNS services.
-* **<a href="https://landing.google.com/advancedprotection/" target="_blank" rel="noopener noreferrer" class="gold-link">Google Advanced Protection Program</a>:** For Google's strongest account security.
-* **<a href="https://redsift.com/pulse-platform/ondmarc" target="_blank" rel="noopener noreferrer" class="gold-link">RedSift OnDMARC</a>:** For advanced DMARC deployment and management.
-* **<a href="https://www.crowdstrike.com/en-us/" target="_blank" rel="noopener noreferrer" class="gold-link">CrowdStrike</a>:** For AI-native endpoint detection and response (EDR).
-* **<a href="https://www.sentinelone.com/" target="_blank" rel="noopener noreferrer" class="gold-link">SentinelOne</a>:** For autonomous endpoint protection.
-* **<a href="https://www.threatdown.com/" target="_blank" rel="noopener noreferrer" class="gold-link">ThreatDown by Malwarebytes</a>:** For simplified EDR and MDR solutions.
-* **<a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Yubico Security Keys</a>:** For hardware-based multi-factor authentication.
-* **<a href="https://1password.com/" target="_blank" rel="noopener noreferrer" class="gold-link">1Password</a>:** For secure password and credential management.
+* **<a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Cloudflare:</a>** For DNS, WAF, CDN.
+* **<a href="https://aws.amazon.com/route53/" target="_blank" rel="noopener noreferrer" class="gold-link">Amazon Route 53:</a>** For highly available and scalable DNS services.
+* **<a href="https://landing.google.com/advancedprotection/" target="_blank" rel="noopener noreferrer" class="gold-link">Google Advanced Protection Program:</a>** For Google's strongest account security.
+* **<a href="https://redsift.com/pulse-platform/ondmarc" target="_blank" rel="noopener noreferrer" class="gold-link">RedSift OnDMARC:</a>** For advanced DMARC deployment and management.
+* **<a href="https://www.crowdstrike.com/en-us/" target="_blank" rel="noopener noreferrer" class="gold-link">CrowdStrike:</a>** For AI-native endpoint detection and response (EDR).
+* **<a href="https://www.sentinelone.com/" target="_blank" rel="noopener noreferrer" class="gold-link">SentinelOne:</a>** For autonomous endpoint protection.
+* **<a href="https://www.threatdown.com/" target="_blank" rel="noopener noreferrer" class="gold-link">ThreatDown by Malwarebytes:</a>** For simplified EDR and MDR solutions.
+* **<a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Yubico Security Keys:</a>** For hardware-based multi-factor authentication.
+* **<a href="https://1password.com/" target="_blank" rel="noopener noreferrer" class="gold-link">1Password:</a>** For secure password and credential management.
 
 ---
 Need expert Mac IT help to solve your tech challenges?
