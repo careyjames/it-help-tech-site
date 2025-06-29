@@ -24,7 +24,7 @@ This policy covers real operational costs and ensures continued reliability.
 
 * **Method:** We require a valid credit card on file before services are rendered.
 * **Billing Cycle:** Billing occurs automatically **at the end of each session or day's work** to the authorized card on file.
-* **Terms:** We do not accept checks and do not offer net payment terms. **No card, no service—no exceptions.**
+* **Terms:** We do not accept checks and do not offer net payment terms. **No card, no service, no exceptions.**
 
 ## Scheduling & Cancellation Policy  
 
