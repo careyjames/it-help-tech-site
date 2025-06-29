@@ -208,7 +208,7 @@ extra:
 
 We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting.<br>Our expertise ensures your critical systems run smoothly, securely, and efficiently.
 
-## Advanced Email, Domain, & DNS Solutions
+## Advanced Email, Domain, & DNS Solutions {#email-domain-dns}
 
 We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
 
