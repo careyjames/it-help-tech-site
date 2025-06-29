@@ -367,9 +367,9 @@ html:not(.switch) .phone-line,
 }
 
 /* Home page service links: dark mode */
-html:not(.switch) .homepage-hero h3 > a {
+html:not(.switch) .homepage-hero h3 a {
   color: #fff !important;
 }
-html:not(.switch) .homepage-hero h3 > a:hover {
+html:not(.switch) .homepage-hero h3 a:hover {
   color: #FFD700 !important;
 }
