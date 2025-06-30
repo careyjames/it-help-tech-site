@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT+HELP San Diego - Modern Logo</title>
+    <title>IT+HELP San Diego - Logo v2</title>
     
     <style>
         * {
@@ -15,7 +15,7 @@
         body {
             background: #0a0a0a;
             color: white;
-            font-family: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Helvetica Neue', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -47,64 +47,64 @@
         
         .glitch-container {
             position: relative;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+            filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.4));
+            text-align: center;
         }
         
-        /* Layered text for sharp outline without artifacts */
-        .logo-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-        
+        /* Main logo wrapper */
         .main-logo {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
             font-weight: 900;
             font-size: 5rem;
             letter-spacing: -0.02em;
             position: relative;
             display: inline-block;
+            line-height: 1;
+            margin: 0;
+            white-space: nowrap;
+            text-align: center;
+        }
+        
+        /* IT and HELP with animated gradient */
+        .logo-it, .logo-help {
             background: linear-gradient(45deg, #00ffff, #ff0066, #ffff00, #00ffff);
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             -moz-background-clip: text;
             -moz-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
             animation: gradient-shift 3s ease infinite;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            -webkit-text-stroke: 0.3px #00ffff;
+            text-stroke: 0.3px #00ffff;
         }
         
-        /* Clean outline using absolute positioned layer */
-        .main-logo::after {
-            content: 'IT+HELP';
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            color: #00ffff;
-            font-weight: 900;
-            -webkit-text-stroke: 1.5px #00ffff;
-            -webkit-text-fill-color: transparent;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        @supports (font: -apple-system-body) {
-            .main-logo {
-                font-weight: 800;
-                letter-spacing: -0.03em;
-            }
+        /* Red plus sign - very subtle outline */
+        .logo-plus {
+            color: #ff0066;
+            display: inline-block;
+            margin: 0 0.02em;
+            text-shadow: 
+                -0.3px -0.3px 0 #00ffff,  
+                 0.3px -0.3px 0 #00ffff,
+                -0.3px  0.3px 0 #00ffff,
+                 0.3px  0.3px 0 #00ffff;
         }
         
         @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% { 
+                background-position: 0% 50%;
+            }
+            50% { 
+                background-position: 100% 50%;
+            }
+            100% { 
+                background-position: 0% 50%;
+            }
         }
         
-        /* Glitch effects on separate layer to avoid conflicts */
+        /* Glitch effects - as a separate layer */
         .glitch-layer {
             position: absolute;
             top: 0;
@@ -120,7 +120,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
             font-weight: 900;
             font-size: 5rem;
             letter-spacing: -0.02em;
@@ -129,8 +129,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            z-index: -1;
             animation: glitch 2s infinite;
             opacity: 0;
+            line-height: 1;
         }
         
         .glitch-layer::before {
@@ -173,25 +175,10 @@
             background-size: 200% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            -moz-background-clip: text;
-            -moz-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
             animation: shine 3s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
-        }
-        
-        .location::after {
-            content: 'SAN DIEGO';
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            color: #00ffff;
-            font-weight: 600;
-            -webkit-text-stroke: 1px #00ffff;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.5;
+            -webkit-text-stroke: 0.3px #00ffff;
+            text-stroke: 0.3px #00ffff;
         }
         
         @keyframes shine {
@@ -203,9 +190,9 @@
             margin-top: 30px;
             text-align: center;
             font-size: 1.1rem;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
             position: relative;
-            font-weight: 500;
+            font-family: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
         }
         
         .tagline-text {
@@ -255,12 +242,13 @@
         
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             background: #00ffff;
             border-radius: 50%;
             opacity: 0;
             animation: float-up 4s infinite;
+            box-shadow: 0 0 3px #00ffff;
         }
         
         @keyframes float-up {
@@ -278,9 +266,13 @@
             }
         }
         
-        .logo-container:hover .main-logo {
-            animation-duration: 0.5s;
-            filter: drop-shadow(0 0 20px rgba(255, 0, 102, 0.8));
+        .logo-container:hover .logo-it,
+        .logo-container:hover .logo-help {
+            animation-duration: 0.8s;
+        }
+        
+        .logo-container:hover .glitch-container {
+            filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.5));
         }
         
         .hex-decoration {
@@ -316,6 +308,23 @@
             -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
+        
+        /* Special handling for Apple devices */
+        @supports (font: -apple-system-body) {
+            .main-logo, .logo-it, .logo-help, .logo-plus {
+                font-weight: 800;
+            }
+            .main-logo {
+                letter-spacing: -0.03em;
+            }
+        }
+        
+        /* Logo wrapper for better structure */
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -331,7 +340,9 @@
         
         <div class="glitch-container">
             <div class="logo-wrapper">
-                <h1 class="main-logo">IT+HELP</h1>
+                <h1 class="main-logo">
+                    <span class="logo-it">IT</span><span class="logo-plus">+</span><span class="logo-help">HELP</span>
+                </h1>
                 <div class="glitch-layer"></div>
             </div>
             <div class="location">SAN DIEGO</div>
@@ -348,12 +359,13 @@
     </div>
     
     <script>
-        // Optimized particle creation
+        // Particle animation - Math.random() is safe here as it's only for visual effects
         const particlesContainer = document.querySelector('.tech-particles');
         
         function createParticle() {
             const particle = document.createElement('div');
             particle.className = 'particle';
+            // Safe usage: visual-only positioning, no security implications
             particle.style.left = Math.random() * 100 + '%';
             particle.style.animationDelay = Math.random() * 4 + 's';
             particle.style.animationDuration = (3 + Math.random() * 2) + 's';
@@ -364,10 +376,8 @@
             }, 5000);
         }
         
-        // Start particles after initial render
-        setTimeout(() => {
-            setInterval(createParticle, 500);
-        }, 100);
+        // Create particles at optimized intervals
+        setInterval(createParticle, 600);
         
         // Interactive hover effect
         const logoContainer = document.querySelector('.logo-container');
