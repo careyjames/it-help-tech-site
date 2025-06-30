@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT+HELP San Diego - Modern Logo</title>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +15,7 @@
         body {
             background: #0a0a0a;
             color: white;
-            font-family: 'Space Mono', monospace;
+            font-family: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,13 +47,20 @@
         
         .glitch-container {
             position: relative;
-            filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.5));
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+        }
+        
+        /* Layered text for sharp outline without artifacts */
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
         }
         
         .main-logo {
-            font-family: 'Orbitron', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
             font-weight: 900;
             font-size: 5rem;
+            letter-spacing: -0.02em;
             position: relative;
             display: inline-block;
             background: linear-gradient(45deg, #00ffff, #ff0066, #ffff00, #00ffff);
@@ -66,16 +72,29 @@
             background-clip: text;
             color: transparent;
             animation: gradient-shift 3s ease infinite;
-            /* Fallback for browsers that don't support background-clip */
-            -webkit-text-stroke: 1px #00ffff;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* Fallback styles for browsers without background-clip support */
-        @supports not (background-clip: text) and not (-webkit-background-clip: text) {
+        /* Clean outline using absolute positioned layer */
+        .main-logo::after {
+            content: 'IT+HELP';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            color: #00ffff;
+            font-weight: 900;
+            -webkit-text-stroke: 1.5px #00ffff;
+            -webkit-text-fill-color: transparent;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        @supports (font: -apple-system-body) {
             .main-logo {
-                background: none;
-                color: #00ffff;
-                text-shadow: 0 0 20px #00ffff, 0 0 40px #ff0066;
+                font-weight: 800;
+                letter-spacing: -0.03em;
             }
         }
         
@@ -85,27 +104,36 @@
             100% { background-position: 0% 50%; }
         }
         
-        .main-logo::before,
-        .main-logo::after {
-            content: 'IT+HELP';
+        /* Glitch effects on separate layer to avoid conflicts */
+        .glitch-layer {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+        }
+        
+        .glitch-layer::before,
+        .glitch-layer::after {
+            content: 'IT+HELP';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'Roboto', sans-serif;
+            font-weight: 900;
+            font-size: 5rem;
+            letter-spacing: -0.02em;
             background: linear-gradient(45deg, #ff0066, #00ffff, #ffff00, #ff0066);
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            -moz-background-clip: text;
-            -moz-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
-            z-index: -1;
             animation: glitch 2s infinite;
+            opacity: 0;
         }
         
-        .main-logo::before {
+        .glitch-layer::before {
             animation-delay: 0.1s;
             animation-duration: 2.3s;
         }
@@ -137,9 +165,10 @@
         .location {
             font-size: 2.5rem;
             margin-top: -10px;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             position: relative;
+            font-weight: 600;
             background: linear-gradient(90deg, #ffffff, #00ffff, #ffffff);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -149,8 +178,20 @@
             background-clip: text;
             color: transparent;
             animation: shine 3s linear infinite;
-            /* Fallback */
-            -webkit-text-stroke: 0.5px #00ffff;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+        }
+        
+        .location::after {
+            content: 'SAN DIEGO';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            color: #00ffff;
+            font-weight: 600;
+            -webkit-text-stroke: 1px #00ffff;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.5;
         }
         
         @keyframes shine {
@@ -162,8 +203,9 @@
             margin-top: 30px;
             text-align: center;
             font-size: 1.1rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             position: relative;
+            font-weight: 500;
         }
         
         .tagline-text {
@@ -274,15 +316,6 @@
             -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
-        
-        /* Font loading fallback */
-        .main-logo, .location {
-            font-family: 'Orbitron', 'Arial Black', sans-serif;
-        }
-        
-        .tagline {
-            font-family: 'Space Mono', 'Courier New', monospace;
-        }
     </style>
 </head>
 <body>
@@ -297,7 +330,10 @@
         </div>
         
         <div class="glitch-container">
-            <h1 class="main-logo">IT+HELP</h1>
+            <div class="logo-wrapper">
+                <h1 class="main-logo">IT+HELP</h1>
+                <div class="glitch-layer"></div>
+            </div>
             <div class="location">SAN DIEGO</div>
         </div>
         
@@ -312,12 +348,7 @@
     </div>
     
     <script>
-        // Wait for fonts to load
-        document.fonts.ready.then(function() {
-            console.log('Fonts loaded');
-        });
-        
-        // Create floating particles
+        // Optimized particle creation
         const particlesContainer = document.querySelector('.tech-particles');
         
         function createParticle() {
@@ -333,9 +364,12 @@
             }, 5000);
         }
         
-        setInterval(createParticle, 300);
+        // Start particles after initial render
+        setTimeout(() => {
+            setInterval(createParticle, 500);
+        }, 100);
         
-        // Add interactive hover effect
+        // Interactive hover effect
         const logoContainer = document.querySelector('.logo-container');
         
         logoContainer.addEventListener('mousemove', (e) => {
