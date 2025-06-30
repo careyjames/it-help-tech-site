@@ -65,8 +65,8 @@
             text-align: center;
         }
         
-        /* IT and HELP with animated gradient */
-        .logo-it, .logo-help {
+        /* IT with animated gradient and stroke */
+        .logo-it {
             background: linear-gradient(45deg, #00ffff, #ff0066, #ffff00, #00ffff);
             background-size: 400% 400%;
             -webkit-background-clip: text;
@@ -78,6 +78,20 @@
             display: inline-block;
             -webkit-text-stroke: 0.3px #00ffff;
             text-stroke: 0.3px #00ffff;
+        }
+        
+        /* HELP with animated gradient, NO stroke to avoid P artifacts */
+        .logo-help {
+            background: linear-gradient(45deg, #00ffff, #ff0066, #ffff00, #00ffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+            animation: gradient-shift 3s ease infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 0.5px #00ffff);
         }
         
         /* Red plus sign - very subtle outline */
