@@ -12,13 +12,6 @@ categories = ["Security", "Threat Intelligence"]
 tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 +++
 <!-- more -->
-<style>
-/* Hide the auto‑inserted featured image at the very top of the post */
-.post-header img[src*="evil-fake-search-highlighted.png"],
-header img[src*="evil-fake-search-highlighted.png"] {
-  display: none;
-}
-</style>
 
 
 ## The Anatomy of a Modern Malvertising Funnel
@@ -145,6 +138,14 @@ Cut through the “user error” narrative. The culprits are the platforms that 
 
 
 ## Footnotes & Sources
+
+<style>
+/* Post‑specific tweak: hide the auto‑injected featured thumbnail so we don’t see the image twice */
+.post-header img[src*="evil-fake-search-highlighted.png"],
+header img[src*="evil-fake-search-highlighted.png"] {
+  display: none;
+}
+</style>
 
 [^malwarebytes]: <a href="https://kcpolice.org/crime/prevention-and-safety-tips/cyber-crime-prevention/scam-of-the-week-fake-ads-real-fraud/" target="_blank" rel="noopener noreferrer">“Scam of the Week: Fake Ads, Real Fraud”</a>, Kansas City Police Cyber‑Crime Prevention Unit, 03 Apr 2025.  
 [^hackernews]: <a href="https://thehackernews.com/2025/02/malvertising-scam-uses-fake-google-ads.html" target="_blank" rel="noopener noreferrer">“Malvertising Scam Uses Fake Google Ads to Hijack Microsoft Advertising Accounts”</a>, *The Hacker News*, 01 Feb 2025.  
