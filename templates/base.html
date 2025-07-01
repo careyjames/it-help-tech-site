@@ -28,9 +28,9 @@
 
   {# ---------- HERO LOGO (no inline CSS/JS) ---------- #}
 
-  <div class="hero-wrapper">
+  <section class="hero-wrapper">
     {% include "partials/hero_logo.html" %}
-  </div>
+  </section>
 
   {# defer → non-blocking; keeps Lighthouse happy #}
   <script src="{{ get_url(path=`/js/hero-logo.js`) }}" defer></script>
