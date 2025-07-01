@@ -10,7 +10,6 @@ tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 
 TL;DR – If you still trust the first result in a search engine or the community standards team at a social-network giant, you’re playing Russian roulette with your credentials. This post walks through exactly how scammers abuse paid ads and social-media blind spots, shows live evidence, and closes with a pragmatic hardening checklist you can implement today.
 
-⸻
 
 1  The Anatomy of a Modern Malvertising Funnel
 
@@ -34,8 +33,6 @@ TL;DR – If you still trust the first result in a search engine or the communit
 Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surface.
 
 
-⸻
-
 2  Tech-Support Pop-Ups: Old Tricks, New Skins
 
  - The page weaponises JavaScript alert loops to lock the browser, then abuses Apple’s brand to coerce a phone call.  
@@ -47,9 +44,6 @@ Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surfa
 </audio>
 
 
-
-⸻
-
 3  Facebook’s Reporting Black-Hole
 
 Despite clear evidence of credential theft:
@@ -58,7 +52,6 @@ Despite clear evidence of credential theft:
 
 Translation: At scale, reactive moderation is theatre. Attackers move faster than the appeals queue.
 
-⸻
 
 4  Why This Persists
 
@@ -70,7 +63,6 @@ Translation: At scale, reactive moderation is theatre. Attackers move faster tha
 
 Until the economics change (e.g. **strong** financial liability for enabling fraud), the cycle repeats.
 
-⸻
 
 5  Hardening Checklist (10-Minute Audit)
 	1.	Stop relying on search for logins. Bookmark the canonical domain or use a password-manager vault link.
@@ -81,13 +73,11 @@ Until the economics change (e.g. **strong** financial liability for enabling fra
 	6.	On macOS: enable Lockdown Mode for high-risk users, and keep Gatekeeper + XProtect signatures current.
 	7.	For orgs: ingest ad-click telemetry into your SIEM and auto-isolate hosts that resolve known rogue domains.
 
-⸻
 
 6  Share & Amplify
 
 Cut through the “user error” narrative. The culprits are the platforms that monetize first and moderate later. Feel free to re-share these assets (attribution appreciated) and let’s keep the pressure on.
 
-⸻
 
 Footnotes & Sources
 
