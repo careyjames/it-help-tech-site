@@ -1,5 +1,13 @@
 
 /* Scope box-sizing to the hero so global layout remains untouched */
+
+/* Logo wrapper for better structure */
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
 .logo-container,
 .logo-container * {
     box-sizing: border-box;
@@ -11,6 +19,30 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     margin-top: 0;
+    width: 100%;
+}
+
+/* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
+.hero-wrapper{
+  background:#0a0a0a;          /* same as demo */
+  text-align:center;
+  padding:80px 0 64px;
+  overflow:visible;            /* let bubbles float */
+}
+
+/* coloured spinning disc */
+.blob{
+  position:absolute;
+  width:160px;height:160px;
+  top:70%;left:85%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 30% 30%,#ff0066 0%,rgba(255,0,102,0) 70%);
+  filter:blur(14px);
+  animation:blob 25s linear infinite;
+  pointer-events:none;
+}
+@keyframes blob{
+  to{transform:translate(-50%,-50%) rotate(360deg);}
 }
 
 .circuit-bg {
@@ -177,7 +209,7 @@
 }
 
 .tagline-text {
-    display: block;
+    display: inline-block; /* pill snaps to content width */
     padding: 10px 20px;
     border: 2px solid transparent;
     background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
