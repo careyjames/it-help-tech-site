@@ -2,6 +2,8 @@
 title = "Malvertising & Platform Negligence: Big Tech’s Complicity in Modern Phishing"
 date = 2025-07-01
 draft = false
+[extra]
+og_image = "/images/malvertising-2025/evil-fake-search-highlighted.png"
 description = "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
 [taxonomies]
 categories = ["Security", "Threat Intelligence"]
@@ -11,9 +13,9 @@ tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 ## The Anatomy of a Modern Malvertising Funnel
 
 <div style="text-align:center">
-  <img src="/images/malvertising-2025/evil-fake-search-results.png"
-       alt="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site."
-       title="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site."
+  <img src="/images/malvertising-2025/evil-fake-search-highlighted.png"
+       alt="Annotated Google ad: shows a fake 'Sponsored' facebook.com result with red arrows pointing out the dodgy grammar ('FacebookMarketplace' run‑together) and the fact it's not the real login link."
+       title="Fake Facebook ad—note the sloppy grammar and run‑together words: dead giveaways you’re looking at a scam."
        width="600"
        style="max-width:100%;height:auto" />
 </div>
