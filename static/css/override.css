@@ -69,6 +69,7 @@ body { overflow-x: hidden; }
     width:350px !important;
     margin:0 auto !important;
     max-width:none !important;
+    padding-top:0 !important;
   }
 }
 @media (max-width:699px){
@@ -227,6 +228,7 @@ main {
   }
   header.site-header{
     width: 348px !important;
+    padding-top:0 !important;
   }
   .nav-wrapper .home-icon{
     width: 35px;
@@ -330,6 +332,7 @@ article > h1 {
 
 header.site-header{
   min-height:65px;
+  padding-top:0;
 }
 .owl{
   width:100px;

@@ -112,7 +112,7 @@ header > nav > div:nth-child(2) {
 
 .site-header {
   min-height: 65px;
-  padding-top: 0.25rem !important;
+  padding-top: 0 !important;      /* tighter gap below logo */
   margin: 0 0 0.25rem 0 !important;
   position: relative !important;
   display: flex !important;
