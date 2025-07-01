@@ -60,7 +60,6 @@
     animation: gradient-shift 3s ease infinite;
     display: inline-block;
     -webkit-text-stroke: 0.3px #00ffff;
-    text-stroke: 0.3px #00ffff;
 }
 
 /* HELP with animated gradient, NO stroke to avoid P artifacts */
@@ -175,7 +174,6 @@
     background-clip: text;
     animation: shine 3s linear infinite;
     -webkit-text-stroke: 0.3px #00ffff;
-    text-stroke: 0.3px #00ffff;
 }
 
 @keyframes shine {
