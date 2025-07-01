@@ -252,9 +252,9 @@ We architect secure, robust networks that seamlessly integrate advanced technolo
 * **Network printer sharing**
 * **Switch, gateway & firewall programming and lost credential recovery**
 
-## Specialized Services
+## Specialized Data Extraction Services {#data-discovery}
 
-* **iPhone Text Message Extraction for Law Firms:** We specialize in extracting iPhone text messages and iMessages for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
+* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
 
 ## Our Recommendations
 
