@@ -14,7 +14,7 @@ TL;DR – If you still trust the first result in a search engine or the communit
 
 1  The Anatomy of a Modern Malvertising Funnel
 
-![Sponsored Google result leading to a fake Facebook login](/images/malvertising-2025/evil-fake-search-results.png “A “Sponsored” result for “Facebook” that actually routes through linkshrinker.net before landing on a credential-harvesting page.”)
+![Sponsored Google result leading to a fake Facebook login](/images/malvertising-2025/evil-fake-search-results.png "A \"Sponsored\" result for \"Facebook\" that actually routes through linkshrinker.net before landing on a credential‑harvesting page.")
 	1.	Paid Placement – Attackers buy a “Sponsored” slot for a high-value keyword (e.g. facebook). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
 	2. **Staging hop** – Two common flavours  
    * **External redirect:** Ad -> throw-away domain (often Cloudflare-fronted) -> fake login.  
@@ -30,8 +30,8 @@ Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surfa
 
 2  Tech-Support Pop-Ups: Old Tricks, New Skins
 
-	•	The page weaponises JavaScript alert loops to lock the browser, then abuses Apple’s brand to coerce a phone call.
-	•	Call-centre scripts typically walk victims through installing remote-desktop tooling or paying for bogus “clean-up” software. (Hear the recorded call below.)
+ - The page weaponises JavaScript alert loops to lock the browser, then abuses Apple’s brand to coerce a phone call.  
+ - Call‑centre scripts typically walk victims through installing remote‑desktop tooling or paying for bogus “clean‑up” software. (Hear the recorded call below.)
 
 <audio controls preload="none">
   <source src="/audio/malvertising-2025/when-you-call-the-scammers.mp3" type="audio/mpeg">
@@ -45,8 +45,8 @@ Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surfa
 3  Facebook’s Reporting Black-Hole
 
 Despite clear evidence of credential theft:
-	•	Support Inbox Shrug: The platform replies “Doesn’t go against our Community Standards.”
-	•	Lifeboating: Even when a single post is nuked, the same advertiser spins up a new account minutes later – a problem the UK FCA publicly called Meta out for in April 2025.[^guardian]
+ - **Support Inbox Shrug:** The platform replies “Doesn’t go against our Community Standards.”  
+ - **Lifeboating:** Even when a single post is nuked, the same advertiser spins up a new account minutes later – a problem the UK FCA publicly called Meta out for in April 2025.[^guardian]
 
 Translation: At scale, reactive moderation is theatre. Attackers move faster than the appeals queue.
 
@@ -54,12 +54,13 @@ Translation: At scale, reactive moderation is theatre. Attackers move faster tha
 
 4  Why This Persists
 
-Actor	Incentive	Outcome
-Search-engine ad platform	Revenue per click; speed over scrutiny	Malvertising accepted by default
-Social network	Engagement metrics; legal safe-harbour mindset	Slow or no takedown of scam content
-User	Convenience bias; search-navigation habit	Credentials & money stolen
+| Actor | Incentive | Outcome |
+|-------|-----------|---------|
+| Search‑engine ad platform | Revenue per click; speed over scrutiny | Malvertising accepted by default |
+| Social network | Engagement metrics; legal safe‑harbour mindset | Slow or no takedown of scam content |
+| User | Convenience bias; search‑navigation habit | Credentials & money stolen |
 
-Until the economics change (e.g. strong financial liability for enabling fraud), the cycle repeats.
+Until the economics change (e.g. **strong** financial liability for enabling fraud), the cycle repeats.
 
 ⸻
 
