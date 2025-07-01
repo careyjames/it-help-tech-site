@@ -1,0 +1,24 @@
+<div class="logo-container">
+  <div class="circuit-bg"></div>
+
+  {# Two rotating hexes without duplicate markup #}
+  {% for i in [1, 2] %}
+    <div class="hex-decoration"><div class="hex"></div></div>
+  {% endfor %}
+
+  <div class="glitch-container">
+    <h1 class="main-logo">
+      <span class="logo-it">IT</span><span class="logo-plus">+</span><span class="logo-help">HELP</span>
+    </h1>
+    <div class="location">SAN DIEGO</div>
+  </div>
+
+  <div class="tagline">
+    <span class="tagline-text">
+      We solve <span class="highlight">tech problems</span>.<br>
+      No monthly <span class="highlight">retainers</span>.
+    </span>
+  </div>
+
+  <div class="tech-particles"></div>
+</div>

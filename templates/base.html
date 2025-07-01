@@ -20,23 +20,35 @@
   <link rel="icon" href="/red-plus.ico" type="image/x-icon">
   {# SEO macro will handle <title> and meta tags; no manual fallback here #}
   {%- block comments_init %}{%- endblock comments_init %}
+  <link rel="stylesheet"
+        href="{{ get_url(path=`/css/hero-logo.css`) }}">
   {%- include "partials/head_js.html" %}
 </head>
 <body>
+
+  {# ---------- HERO LOGO (no inline CSS/JS) ---------- #}
+
+  {% include "partials/hero_logo.html" %}
+
+  {# defer → non-blocking; keeps Lighthouse happy #}
+  <script src="{{ get_url(path=`/js/hero-logo.js`) }}" defer></script>
+  {# ---------- /HERO LOGO ---------- #}
 
 {%- block header %}
 <header class="site-header" role="banner">
   <div class="site-logo">
     {%- if config.extra.logo.file %}
         <a href="{{ get_url(path='/') }}" class="logo-link">
-          <img src="{{ get_url(path='logo.svg') }}"
-               width="356" height="48"
-               alt="IT Help San Diego"
-               class="logo logo-dark" decoding="async">
-          <img src="{{ get_url(path='logo-light.svg') }}"
-               width="356" height="48"
-               alt="IT Help San Diego"
-               class="logo logo-light" decoding="async">
+          <noscript>
+            <img src="{{ get_url(path='logo.svg') }}"
+                 width="356" height="48"
+                 alt="IT Help San Diego"
+                 class="logo logo-dark" decoding="async">
+            <img src="{{ get_url(path='logo-light.svg') }}"
+                 width="356" height="48"
+                 alt="IT Help San Diego"
+                 class="logo logo-light" decoding="async">
+          </noscript>
         </a>
     {%- endif %}
   </div>
