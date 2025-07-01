@@ -40,7 +40,9 @@
 <header class="site-header" role="banner">
   <div class="site-logo">
     {%- if config.extra.logo.file %}
-        <a href="{{ get_url(path='/') }}" class="logo-link">
+        <a href="{{ get_url(path='/') }}"
+           class="logo-link"
+           aria-label="IT Help San Diego — home">
           <noscript>
             <img src="{{ get_url(path='logo.svg') }}"
                  width="356" height="48"

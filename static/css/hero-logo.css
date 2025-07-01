@@ -21,14 +21,16 @@
     width: 100%;
     max-width: 560px;              /* matches original */
     margin: 0 auto;
+    min-height: 360px;         /* space for particles & grid */
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
 .hero-wrapper{
-  background:#0a0a0a;           /* demo backdrop */
+  /* inherit whatever bg the rest of the site uses */
+  background:inherit;
   display:flex;flex-direction:column;
   align-items:center;
-  padding:96px 0 72px;
+  padding:56px 0 40px;     /* tighter gap desktop */
   overflow:visible;             /* let bubbles float */
 }
 
@@ -247,13 +249,11 @@
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
-.tech-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+/* particles cover full logo box */
+.tech-particles{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
 }
 
 .particle {
@@ -337,8 +337,9 @@
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .main-logo   {font-size:12vw;}
-  .location    {font-size:6vw;}
-  .tagline     {font-size:4.2vw;}
+  .hero-wrapper{padding:40px 0 32px;}  /* tighter gap mobile */
+  .main-logo  {font-size:12vw;}
+  .location   {font-size:6vw;}
+  .tagline    {font-size:4.2vw;}
 }
 

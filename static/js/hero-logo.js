@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const particlesContainer = document.querySelector('.tech-particles');
+  if(particlesContainer){            // defensive
 
   function createParticle(){
     const p=document.createElement('div');
@@ -10,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     particlesContainer.appendChild(p);
     setTimeout(()=>p.remove(),5000);
   }
-  setInterval(createParticle,600);
+    /* first burst immediately, then every 600 ms */
+    createParticle();
+    setInterval(createParticle,600);
+  }                                   // if container exists
 
   /* hover-tilt */
   const logo=document.querySelector('.logo-container');
