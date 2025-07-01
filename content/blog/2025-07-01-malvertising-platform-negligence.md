@@ -14,7 +14,7 @@ TL;DR – If you still trust the first result in a search engine or the communit
 
 1  The Anatomy of a Modern Malvertising Funnel
 
-![Sponsored Google result landing on a rogue Facebook page](/images/malvertising-2025/evil-fake-search-results.png "Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential‑harvesting site.")
+<img src="/images/malvertising-2025/evil-fake-search-results.png" alt="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential‑harvesting site." title="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site." width="600" />
 	1.	Paid Placement – Attackers buy a “Sponsored” slot for a high-value keyword (e.g. facebook). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
 	2. **Staging hop** – Two common flavours  
    * **External redirect:** Ad -> throw-away domain (often Cloudflare-fronted) -> fake login.  
