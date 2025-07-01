@@ -87,11 +87,32 @@ Translation: At scale, reactive moderation is theatre. Attackers move faster tha
 
 ## Why This Persists
 
-| Actor | Incentive | Outcome |
-|-------|-----------|---------|
-| Search‑engine ad platform | Revenue per click; speed over scrutiny | Malvertising accepted by default |
-| Social network | Engagement metrics; legal safe‑harbour mindset | Slow or no takedown of scam content |
-| User | Convenience bias; search‑navigation habit | Credentials & money stolen |
+<table style="width:100%; border-collapse:collapse; margin-bottom:1rem;">
+  <thead>
+    <tr>
+      <th style="padding:0.4rem 1rem; text-align:left;">Actor</th>
+      <th style="padding:0.4rem 1rem; text-align:left;">Incentive</th>
+      <th style="padding:0.4rem 1rem; text-align:left;">Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:0.4rem 1rem;">Search‑engine ad platform</td>
+      <td style="padding:0.4rem 1rem;">Revenue per click; speed over scrutiny</td>
+      <td style="padding:0.4rem 1rem;">Malvertising accepted by default</td>
+    </tr>
+    <tr>
+      <td style="padding:0.4rem 1rem;">Social network</td>
+      <td style="padding:0.4rem 1rem;">Engagement metrics; legal safe‑harbour mindset</td>
+      <td style="padding:0.4rem 1rem;">Slow or no takedown of scam content</td>
+    </tr>
+    <tr>
+      <td style="padding:0.4rem 1rem;">User</td>
+      <td style="padding:0.4rem 1rem;">Convenience bias; search‑navigation habit</td>
+      <td style="padding:0.4rem 1rem;">Credentials & money stolen</td>
+    </tr>
+  </tbody>
+</table>
 
 Until the economics change (e.g. **strong** financial liability for enabling fraud), the cycle repeats.
 
