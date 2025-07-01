@@ -18,15 +18,15 @@ twitter_card        = "summary_large_image"
   "@type": "FAQPage",
   "speakable": {
     "@type": "SpeakableSpecification",
-    "xpath": [
-      "//h3[@id='can-you-help-with-mac-ios-pc-or-mixed-computer-environments']",
-      "//h3[@id='how-is-your-service-different-from-a-managed-service-provider-msp']"
-    ]
+      "xpath": [
+        "//h3[@id='can-you-help-with-pc-linux-or-mixed-computer-environments']",
+        "//h3[@id='how-is-your-service-different-from-a-managed-service-provider-msp']"
+      ]
   },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can you help with Mac, iOS, PC, or mixed computer environments remotely?",
+        "name": "Can you help with PC, Linux, or mixed computer environments?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at remote troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Windows and Linux systems, enabling us to support diverse tech environments effectively. My daily driver is Kali Purple Linux (a specialized security-focused operating system), so we're comfortable across platforms."
