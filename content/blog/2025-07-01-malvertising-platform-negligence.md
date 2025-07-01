@@ -14,14 +14,22 @@ TL;DR – If you still trust the first result in a search engine or the communit
 
 1  The Anatomy of a Modern Malvertising Funnel
 
-<img src="/images/malvertising-2025/evil-fake-search-results.png" alt="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential‑harvesting site." title="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site." width="600" />
-	1.	Paid Placement – Attackers buy a “Sponsored” slot for a high-value keyword (e.g. facebook). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
-	2. **Staging hop** – Two common flavours  
-   * **External redirect:** Ad -> throw-away domain (often Cloudflare-fronted) -> fake login.  
-   * **Platform-internal:** Ad lands on an attacker-controlled Facebook Page (still
-     `facebook.com`), which then bounce-redirects visitors to the phishing host
-     via a disguised “Continue” button or OG preview.
-3. **Credential Harvest** – Typing your username + password into the cloned form sends them straight to the attacker. SMS/TOTP codes can be replay‑proxied, but hardware FIDO2 / security‑key challenges **cannot** be intercepted—so if you logged into the real Facebook page with your USB-Security key, the phish failed.
+<div style="text-align:center">
+  <img src="/images/malvertising-2025/evil-fake-search-results.png"
+       alt="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site."
+       title="Sponsored ad opens a facebook.com page controlled by scammers; the embedded Continue button redirects out to linkshrinker.net and then the credential-harvesting site."
+       width="600"
+       style="max-width:100%;height:auto" />
+</div>
+
+
+1. **Paid Placement** – Attackers buy a “Sponsored” slot for a high‑value keyword (e.g. *facebook*). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
+
+2. **Staging hop** – Two common flavours  
+   * **External redirect:** Ad → throw‑away domain (often Cloudflare‑fronted) → fake login.  
+   * **Platform‑internal:** Ad lands on an attacker‑controlled Facebook Page (still `facebook.com`), which then bounce‑redirects visitors to the phishing host via a disguised “Continue” button or OG preview.
+
+3. **Credential Harvest** – Typing your username + password into the cloned form sends them straight to the attacker. SMS/TOTP codes can be replay‑proxied, but hardware FIDO2 / security‑key challenges **cannot** be intercepted—so if you logged into the real Facebook page with your USB‑Security key, the phish failed.
 
 Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surface.
 
