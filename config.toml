@@ -7,6 +7,14 @@ title         = "IT Help San Diego Inc."
 description   = "Apple-centric IT support across San Diego."
 generate_sitemap = true
 
+[[taxonomies]]
+name = "categories"
+feed = true
+
+[[taxonomies]]
+name = "tags"
+feed = true
+
 [markdown]
 insert_anchor_links = "none"   # disable auto “##” anchors globally
 external_links_target_blank = true      # force target="_blank"
