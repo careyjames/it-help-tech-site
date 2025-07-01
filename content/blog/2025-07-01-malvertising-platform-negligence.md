@@ -11,12 +11,15 @@ summary = "Screenshots & audio expose how paid search ads, fake Facebook pages, 
 categories = ["Security", "Threat Intelligence"]
 tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 +++
+<!-- more -->
 <style>
-/* Hide the featured thumbnail only for this post */
+/* Hide the auto‑inserted featured image at the very top of the post */
+.post-header img[src*="evil-fake-search-highlighted.png"],
 header img[src*="evil-fake-search-highlighted.png"] {
   display: none;
 }
 </style>
+
 
 ## The Anatomy of a Modern Malvertising Funnel
 
