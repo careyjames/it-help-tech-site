@@ -19,6 +19,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     margin-top: 0;
+    width: 100%;
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -28,8 +29,6 @@
   padding:80px 0 64px;
   overflow:visible;            /* let bubbles float */
 }
-.logo-container{width:100%;}
-.tagline-text{display:inline-block;}   /* pill snaps to content width */
 
 /* coloured spinning disc */
 .blob{
@@ -210,7 +209,7 @@
 }
 
 .tagline-text {
-    display: block;
+    display: inline-block; /* pill snaps to content width */
     padding: 10px 20px;
     border: 2px solid transparent;
     background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
