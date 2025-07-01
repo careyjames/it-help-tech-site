@@ -30,7 +30,7 @@
   background:inherit;
   display:flex;flex-direction:column;
   align-items:center;
-  padding:32px 0 24px;      /* even tighter desktop */
+  padding:0 0 24px;            /* flush to top on desktop */
   overflow:visible;             /* let bubbles float */
 }
 
@@ -204,7 +204,7 @@
 }
 
 .tagline {
-    margin-top: 12px;         /* closer to logo */
+    margin-top: 8px;          /* closer to logo */
     text-align: center;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -238,6 +238,16 @@
     background:linear-gradient(#000000,#000000) padding-box,
                linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
   }
+}
+html.switch .tagline-text{
+  color:#000;
+  background:linear-gradient(#ffffff,#ffffff) padding-box,
+             linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+}
+html:not(.switch) .tagline-text{
+  color:#fff;
+  background:linear-gradient(#000000,#000000) padding-box,
+             linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
 }
 
 .tagline-text::before {
@@ -353,10 +363,10 @@
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .hero-wrapper{padding:0 0 12px;}      /* flush to top, 12 px bottom */
+  .hero-wrapper{padding:0 0 12px;}      /* flush to top, tighter bottom */
 
   /* bigger, bolder */
-  .main-logo {font-size:14vw;}
+  .main-logo {font-size:20vw;}
   .location  {font-size:7vw;}
   .tagline   {font-size:4.6vw;}
 
