@@ -15,13 +15,13 @@
 
 .logo-container {
     position: relative;
-    padding: 60px;
+    padding: 32px;             /* –8 px top & bottom */
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 100%;
     max-width: 560px;              /* matches original */
     margin: 0 auto;
-    min-height: 360px;         /* space for particles & grid */
+    min-height: 320px;
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -30,7 +30,7 @@
   background:inherit;
   display:flex;flex-direction:column;
   align-items:center;
-  padding:56px 0 40px;     /* tighter gap desktop */
+  padding:32px 0 24px;      /* even tighter desktop */
   overflow:visible;             /* let bubbles float */
 }
 
@@ -204,7 +204,7 @@
 }
 
 .tagline {
-    margin-top: 30px;
+    margin-top: 12px;         /* closer to logo */
     text-align: center;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -214,6 +214,7 @@
 
 .tagline-text {
     display: inline-block; /* pill snaps to content width */
+    color: #fff;               /* keep visible on dark- or light-mode */
     white-space: nowrap;           /* pill never wraps */
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -222,6 +223,15 @@
     border-radius: 30px;
     position: relative;
     overflow: hidden;
+}
+
+/* ——— light-mode pill background so text stays visible ——— */
+@media (prefers-color-scheme:light){
+  .tagline-text{
+    background:linear-gradient(#ffffff,#ffffff) padding-box,
+               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+    color:#000;
+  }
 }
 
 .tagline-text::before {
@@ -337,7 +347,7 @@
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .hero-wrapper{padding:40px 0 32px;}  /* tighter gap mobile */
+  .hero-wrapper{padding:24px 0 16px;}   /* tighter on phones */
   .main-logo  {font-size:12vw;}
   .location   {font-size:6vw;}
   .tagline    {font-size:4.2vw;}
