@@ -91,6 +91,6 @@ Cut through the “user error” narrative. The culprits are the platforms that 
 
 Footnotes & Sources
 
-[^malwarebytes]: “Scam of the Week: Fake Ads, Real Fraud”, Kansas City Police Cyber-Crime Prevention Unit, 03 Apr 2025.(kcpolice.org)
+[^malwarebytes]: [“Scam of the Week: Fake Ads, Real Fraud”](https://kcpolice.org/crime/prevention-and-safety-tips/cyber-crime-prevention/scam-of-the-week-fake-ads-real-fraud/), Kansas City Police Cyber‑Crime Prevention Unit, 03 Apr 2025.
 [^hackernews]: Ravie Lakshmanan, “Malvertising Scam Uses Fake Google Ads to Hijack Microsoft Advertising Accounts”, The Hacker News, 01 Feb 2025.(thehackernews.com)
 [^guardian]: Rupert Jones, “Meta slowest to remove scam content, says City watchdog”, The Guardian, 30 Apr 2025.(theguardian.com)
