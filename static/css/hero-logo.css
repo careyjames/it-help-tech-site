@@ -21,7 +21,7 @@
     width: 100%;
     max-width: 560px;              /* matches original */
     margin: 0 auto;
-    min-height: 320px;
+    min-height: 280px;          /* keeps bubbles but trims gap */
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -214,7 +214,6 @@
 
 .tagline-text {
     display: inline-block; /* pill snaps to content width */
-    color: #fff;               /* keep visible on dark- or light-mode */
     white-space: nowrap;           /* pill never wraps */
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -225,12 +224,19 @@
     overflow: hidden;
 }
 
-/* ——— light-mode pill background so text stays visible ——— */
+/* colour-scheme specific pill styling */
+@media (prefers-color-scheme:dark){
+  .tagline-text{
+    color:#fff;
+    background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,
+               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+  }
+}
 @media (prefers-color-scheme:light){
   .tagline-text{
+    color:#000;
     background:linear-gradient(#ffffff,#ffffff) padding-box,
                linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
-    color:#000;
   }
 }
 
@@ -347,9 +353,15 @@
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .hero-wrapper{padding:24px 0 16px;}   /* tighter on phones */
-  .main-logo  {font-size:12vw;}
-  .location   {font-size:6vw;}
-  .tagline    {font-size:4.2vw;}
+  .hero-wrapper{padding:24px 0 12px;}   /* crush vertical gap */
+
+  /* bigger, bolder */
+  .main-logo {font-size:14vw;}
+  .location  {font-size:7vw;}
+  .tagline   {font-size:4.8vw;}
+
+  /* pull pill closer and shrink inner padding */
+  .logo-container{padding:24px;}
+  .tagline-text{padding:8px 18px;}
 }
 
