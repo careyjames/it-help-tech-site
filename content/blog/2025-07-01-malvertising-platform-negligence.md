@@ -10,6 +10,12 @@ description = "Real-world screenshots show how fake support pop-ups, malicious F
 categories = ["Security", "Threat Intelligence"]
 tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 +++
+<style>
+/* Hide the featured thumbnail only for this post */
+header img[src*="evil-fake-search-highlighted.png"] {
+  display: none;
+}
+</style>
 
 ## The Anatomy of a Modern Malvertising Funnel
 
