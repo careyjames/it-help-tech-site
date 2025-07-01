@@ -24,9 +24,15 @@ TL;DR – If you still trust the first result in a search engine or the communit
 
 1. **Paid Placement** – Attackers buy a “Sponsored” slot for a high‑value keyword (e.g. *facebook*). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
 
-2. **Staging hop** – Two common flavours  
-   * **External redirect:** Ad → throw‑away domain (often Cloudflare‑fronted) → fake login.  
-   * **Platform‑internal:** Ad lands on an attacker‑controlled Facebook Page (still `facebook.com`), which then bounce‑redirects visitors to the phishing host via a disguised “Continue” button or OG preview.
+
+<div style="text-align:center; margin-top:1rem; margin-bottom:1rem;">
+  <img src="/images/malvertising-2025/login-accounts-scam-embedded-profile.png"
+       alt="Attacker‑controlled Facebook Page titled 'Login Accounts' embedding a malicious Continue button."
+       title="Attacker‑controlled Facebook Page titled 'Login Accounts' embedding a malicious Continue button."
+       width="600"
+       style="max-width:100%;height:auto" />
+  <p style="font-size:0.9em;"><em>Above: The ad lands on an innocuous‑looking <strong>facebook.com</strong> URL. But the page is a throw‑away profile (“Login Accounts”) the scammers fully control. The blue ‘Continue’ button is wired to an off‑site credential‑harvesting server.</em></p>
+</div>
 
 3. **Credential Harvest** – Typing your username + password into the cloned form sends them straight to the attacker. SMS/TOTP codes can be replay‑proxied, but hardware FIDO2 / security‑key challenges **cannot** be intercepted—so if you logged into the real Facebook page with your USB‑Security key, the phish failed.
 
