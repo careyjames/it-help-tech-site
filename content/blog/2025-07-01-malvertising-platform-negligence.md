@@ -3,6 +3,7 @@ title = "Malvertising & Platform Negligence: Big Tech’s Complicity in Modern P
 date = 2025-07-01
 draft = false
 [extra]
+image = "images/malvertising-2025/evil-fake-search-highlighted.png"
 og_image = "/images/malvertising-2025/evil-fake-search-highlighted.png"
 description = "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
 [taxonomies]
