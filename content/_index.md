@@ -168,6 +168,10 @@ Struggling with Email deliverability, domain security, or complex DNS configurat
 We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
 * **Ethical Screen Sharing:** We adhere to the highest security and ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
 
+### [Specialized Data Extraction Services](@/services.md#data-discovery)
+
+* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals.
+
 ## Why Choose IT Help San Diego?
 
 * **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
