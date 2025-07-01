@@ -15,7 +15,7 @@
 
 .logo-container {
     position: relative;
-    padding: 20px;              /* tightens block on all viewports */
+    padding: 20px 20px 4px;     /* less bottom space below tagline */
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 100%;
