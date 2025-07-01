@@ -30,7 +30,7 @@
   background:inherit;
   display:flex;flex-direction:column;
   align-items:center;
-  padding:0 0 12px;            /* tighter bottom spacing */
+  padding:0 0 0px;            /* tighter bottom spacing */
   overflow:visible;             /* let bubbles float */
 }
 
@@ -363,7 +363,7 @@ html:not(.switch) .tagline-text{
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .hero-wrapper{padding:0 0 6px;}       /* flush to top, even tighter bottom */
+  .hero-wrapper{padding:0 0 0px;}       /* flush to top, even tighter bottom */
 
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
