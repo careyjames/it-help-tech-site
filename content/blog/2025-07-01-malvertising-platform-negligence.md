@@ -6,6 +6,7 @@ draft = false
 image = "images/malvertising-2025/evil-fake-search-highlighted.png"
 og_image = "/images/malvertising-2025/evil-fake-search-highlighted.png"
 description = "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
+summary = "Screenshots & audio expose how paid search ads, fake Facebook pages, and tech‑support pop‑ups work together—plus a rapid hardening checklist."
 [taxonomies]
 categories = ["Security", "Threat Intelligence"]
 tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
