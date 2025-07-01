@@ -30,7 +30,7 @@ TL;DR – If you still trust the first result in a search engine or the communit
 
 3. **Credential Harvest** – Typing your username + password into the cloned form sends them straight to the attacker. SMS/TOTP codes can be replay‑proxied, but hardware FIDO2 / security‑key challenges **cannot** be intercepted—so if you logged into the real Facebook page with your USB‑Security key, the phish failed.
 
-Take-away: The blue “Ad” tag is not a trust seal – it’s the attack surface.
+Take‑away: The “Sponsored” label — is not a trust seal ‑ it’s the attack surface!
 
 
 2  Tech-Support Pop-Ups: Old Tricks, New Skins
