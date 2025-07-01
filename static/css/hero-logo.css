@@ -15,13 +15,13 @@
 
 .logo-container {
     position: relative;
-    padding: 32px;             /* –8 px top & bottom */
+    padding: 20px;              /* tightens block on all viewports */
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 100%;
     max-width: 560px;              /* matches original */
     margin: 0 auto;
-    min-height: 280px;          /* keeps bubbles but trims gap */
+    /* no explicit min-height → let content decide */
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -214,7 +214,7 @@
 
 .tagline-text {
     display: inline-block; /* pill snaps to content width */
-    white-space: nowrap;           /* pill never wraps */
+    white-space:nowrap;
     padding: 10px 20px;
     border: 2px solid transparent;
     background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
@@ -225,17 +225,17 @@
 }
 
 /* colour-scheme specific pill styling */
-@media (prefers-color-scheme:dark){
-  .tagline-text{
-    color:#fff;
-    background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,
-               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
-  }
-}
 @media (prefers-color-scheme:light){
   .tagline-text{
     color:#000;
     background:linear-gradient(#ffffff,#ffffff) padding-box,
+               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+  }
+}
+@media (prefers-color-scheme:dark){
+  .tagline-text{
+    color:#fff;
+    background:linear-gradient(#000000,#000000) padding-box,
                linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
   }
 }
@@ -353,15 +353,14 @@
 
 /* ↓ responsive font-sizes stop word-wrap on mobile */
 @media(max-width:640px){
-  .hero-wrapper{padding:24px 0 12px;}   /* crush vertical gap */
+  .hero-wrapper{padding:0 0 12px;}      /* flush to top, 12 px bottom */
 
   /* bigger, bolder */
   .main-logo {font-size:14vw;}
   .location  {font-size:7vw;}
-  .tagline   {font-size:4.8vw;}
+  .tagline   {font-size:4.6vw;}
 
-  /* pull pill closer and shrink inner padding */
-  .logo-container{padding:24px;}
-  .tagline-text{padding:8px 18px;}
+  /* compensate for smaller container padding */
+  .tagline-text{padding:8px 16px;}
 }
 
