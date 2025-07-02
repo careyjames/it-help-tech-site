@@ -10,7 +10,6 @@ taxonomies:
   categories: ["Security", "Threat Intelligence"]
   tags: ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 ---
-<!-- more -->
 
 
 ### The Anatomy of a Modern Malvertising Funnel
