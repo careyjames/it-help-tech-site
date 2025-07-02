@@ -71,9 +71,9 @@ Translation: At scale, reactive moderation is theatre. Attackers move faster tha
 <table style="width:100%; border-collapse:collapse; margin-bottom:1rem;">
   <thead>
     <tr>
-      <th style="padding:0.4rem 1rem; text-align:left;">Actor</th>
-      <th style="padding:0.4rem 1rem; text-align:left;">Incentive</th>
-      <th style="padding:0.4rem 1rem; text-align:left;">Outcome</th>
+      <th style="padding:0.4rem 1rem; text-align:left;">Actor:</th>
+      <th style="padding:0.4rem 1rem; text-align:left;">Incentive:</th>
+      <th style="padding:0.4rem 1rem; text-align:left;">Outcome:</th>
     </tr>
   </thead>
   <tbody>
