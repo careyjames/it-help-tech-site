@@ -1,20 +1,20 @@
-+++
-title = "Malvertising & Platform Negligence: Big Tech’s Complicity in Modern Phishing"
-date = 2025-07-01
-draft = false
-[extra]
-image = "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
-og_image = "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
-description = "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
+---
+title: "Malvertising & Platform Negligence: Big Tech’s Complicity in Modern Phishing"
+date: 2025-07-01
+author: Carey Balboa
+extra:
+  image: "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
+  og_image: "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
+  description: "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
 [taxonomies]
-categories = ["Security", "Threat Intelligence"]
-tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
-+++
+categories: ["Security", "Threat Intelligence"]
+tags: ["malvertising", "facebook", "google", "phishing", "social-engineering"]
+---
 <!-- more -->
 
 
 ### The Anatomy of a Modern Malvertising Funnel
-Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it.
+Real-world screenshots show how sponsored search ads, fake support pop-ups, and malicious Facebook posts  hijack brand trust—and what you can do about it. The culprits are the complicit platforms that monetize first and moderate later.
 
 
 ![Annotated fake Facebook ad — notice the sloppy run‑together words and the misleading Sponsored tag.](/images/malvertising-2025/evil-fake-search-highlighted-1200.webp)
