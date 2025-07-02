@@ -3,8 +3,8 @@ title = "Malvertising & Platform Negligence: Big Tech’s Complicity in Modern P
 date = 2025-07-01
 draft = false
 [extra]
-image = "images/malvertising-2025/evil-fake-search-highlighted.png"
-og_image = "/images/malvertising-2025/evil-fake-search-highlighted.png"
+image = "images/malvertising-2025/evil-fake-search-highlighted-600.webp"
+og_image = "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
 description = "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
 summary = "Screenshots & audio expose how paid search ads, fake Facebook pages, and tech‑support pop‑ups work together—plus a rapid hardening checklist."
 [taxonomies]
@@ -16,24 +16,24 @@ tags = ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 
 ## The Anatomy of a Modern Malvertising Funnel
 
-<div style="text-align:center">
-  <img src="/images/malvertising-2025/evil-fake-search-highlighted.png"
-       alt="Annotated Google ad: shows a fake 'Sponsored' facebook.com result with red arrows pointing out the dodgy grammar ('FacebookMarketplace' run‑together) and the fact it's not the real login link."
-       title="Fake Facebook ad—note the sloppy grammar and run‑together words: dead giveaways you’re looking at a scam."
-       width="600"
-       style="max-width:100%;height:auto" />
-</div>
+
+
+{% responsive
+   src="images/malvertising-2025/evil-fake-search-highlighted"
+   alt="Annotated fake Facebook ad — notice the sloppy run‑together words and the misleading Sponsored tag."
+   widths="380 600 1200"
+%}
+
 
 
 1. **Paid Placement** – Attackers buy a “Sponsored” slot for a high‑value keyword (e.g. *facebook*). Google’s automated auction system accepts the ad because it appears legitimate on the surface.[^malwarebytes]
-<div style="text-align:center; margin-top:1rem; margin-bottom:1rem;">
-  <img src="/images/malvertising-2025/login-accounts-scam-embedded-profile.png"
-       alt="Attacker‑controlled Facebook Page titled 'Login Accounts' embedding a malicious Continue button."
-       title="Attacker‑controlled Facebook Page titled 'Login Accounts' embedding a malicious Continue button."
-       width="600"
-       style="max-width:100%;height:auto" />
-  <p style="font-size:0.9em;"><em>Above: The ad lands on an innocuous‑looking <strong>facebook.com</strong> URL. But the page is a throw‑away profile (“Login Accounts”) the scammers fully control. The blue ‘Continue’ button is wired to an off‑site credential‑harvesting server.</em></p>
-</div>
+{% responsive
+   src="images/malvertising-2025/login-accounts-scam-embedded-profile"
+   alt="Attacker-controlled Facebook Page titled 'Login Accounts' embedding a malicious Continue button."
+   widths="380 600 1200"
+%}
+
+<p style="text-align:center; font-size:0.9em;"><em>Above: The ad lands on an innocuous-looking <strong>facebook.com</strong> URL. But the page is a throw-away profile (“Login Accounts”) the scammers fully control. The blue ‘Continue’ button is wired to an off-site credential-harvesting server.</em></p>
 
 3. **Credential Harvest** – Typing your username + password into the cloned form sends them straight to the attacker. SMS/TOTP codes can be replay‑proxied, but hardware FIDO2 / security‑key challenges **cannot** be intercepted—so if you logged into the real Facebook page with your USB‑Security key, the phish failed.
 
@@ -42,14 +42,13 @@ Take‑away: The “Sponsored” label — whatever colour it may be — is not 
 
 ## Tech‑Support Pop‑Ups: Old Tricks, New Skins
 
-<div style="text-align:center; margin-top:1rem; margin-bottom:1rem;">
-  <img src="/images/malvertising-2025/scam-fake-support-site.png"
-       alt="Fake Apple virus‑alert pop‑up that hijacks the browser and urges a call to fake support."
-       title="Fake Apple virus‑alert pop‑up that hijacks the browser and urges a call to fake support."
-       width="600"
-       style="max-width:100%;height:auto" />
-  <p style="font-size:0.9em;"><em>Above: Classic scare‑ware page. JavaScript alert loops lock your browser while the page blares fake audio warnings.</em></p>
-</div>
+{% responsive
+   src="images/malvertising-2025/scam-fake-support-site"
+   alt="Fake Apple virus-alert pop-up that hijacks the browser and urges a call to fake support."
+   widths="380 600 1200"
+%}
+
+<p style="text-align:center; font-size:0.9em;"><em>Above: Classic scare‑ware page. JavaScript alert loops lock your browser while the page blares fake audio warnings.</em></p>
 
  - The page weaponises JavaScript alert loops to lock the browser, then abuses Apple’s brand to coerce a phone call.  
  - Call‑centre scripts typically walk victims through installing remote‑desktop tooling or paying for bogus “clean‑up” software. (Hear the recorded call below.)
@@ -68,17 +67,17 @@ The agent would walk them through installing a remote‑desktop tool, point to n
 
 ## Facebook’s Reporting Black‑Hole
 
-<div style="text-align:center; margin-top:1rem; margin-bottom:1rem;">
-  <img src="/images/malvertising-2025/facebook-approving-of-the-scam-as-community-friendly.png"
-       alt="Facebook's Support Inbox: 'We didn't remove the post.'"
-       title="Facebook claims the scam post does not violate Community Standards."
-       width="500"
-       style="max-width:100%;height:auto" />
-  <img src="/images/malvertising-2025/reported-to-facebook.png"
-       alt="User interface showing the scam post was reported."
-       title="Even a direct report results in no action."
-       width="500"
-       style="max-width:100%;height:auto; margin-top:0.5rem;" />
+<div style="text-align:center; margin:1rem 0;">
+  {% responsive
+     src="images/malvertising-2025/facebook-approving-of-the-scam-as-community-friendly"
+     alt="Facebook claims the scam post does not violate Community Standards."
+     widths="380 600 1200"
+  %}
+  {% responsive
+     src="images/malvertising-2025/reported-to-facebook"
+     alt="User interface showing the scam post was reported."
+     widths="380 600 1200"
+  %}
   <p style="font-size:0.9em;"><em>Above: A double‑whammy—report filed, but Meta’s moderation AI rubber‑stamps the scam as “community‑friendly.”</em></p>
 </div>
 
@@ -141,8 +140,8 @@ Cut through the “user error” narrative. The culprits are the platforms that 
 
 <style>
 /* Post‑specific tweak: hide the auto‑injected featured thumbnail so we don’t see the image twice */
-.post-header img[src*="evil-fake-search-highlighted.png"],
-header img[src*="evil-fake-search-highlighted.png"] {
+.post-header img[src*="evil-fake-search-highlighted-600.webp"],
+header img[src*="evil-fake-search-highlighted-600.webp"] {
   display: none;
 }
 </style>
