@@ -6,9 +6,9 @@ extra:
   image: "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
   og_image: "/images/malvertising-2025/evil-fake-search-highlighted-1200.webp"
   description: "Real-world screenshots show how fake support pop-ups, malicious Facebook posts, and sponsored search ads hijack brand trust—and what you can do about it."
-[taxonomies]
-categories: ["Security", "Threat Intelligence"]
-tags: ["malvertising", "facebook", "google", "phishing", "social-engineering"]
+taxonomies:
+  categories: ["Security", "Threat Intelligence"]
+  tags: ["malvertising", "facebook", "google", "phishing", "social-engineering"]
 ---
 <!-- more -->
 
