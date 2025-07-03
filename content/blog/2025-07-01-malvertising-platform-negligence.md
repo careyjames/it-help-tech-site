@@ -37,7 +37,8 @@ Take‑away: The “Sponsored” label — whatever colour it may be — is not 
 <p style="text-align:center; font-size:0.9em;"><em>Above: Classic scare‑ware page. JavaScript alert loops lock your browser while the page blares fake audio warnings.</em></p>
 
  - The page weaponises JavaScript alert loops to lock the browser, then abuses Apple’s brand to coerce a phone call.  
- - Call‑centre scripts typically walk victims through installing remote‑desktop tooling or paying for bogus “clean‑up” software. (Hear the recorded call below.)
+ - Call‑centre scripts typically walk victims through installing remote‑desktop tooling or paying for bogus “clean‑up” software. (Hear the recorded call below.)  
+ - Modern Chrome and Firefox display a “Stop this page from creating additional dialogs” link after a few consecutive alerts, but panicked users often miss or ignore it.
 
 <audio controls preload="none">
   <source src="/audio/malvertising-2025/when-you-call-the-scammers.mp3" type="audio/mpeg">
@@ -102,11 +103,11 @@ Until the economics change (e.g. **strong** financial liability for enabling fra
 
 1. Stop relying on search for logins. Bookmark the canonical domain or use a password‑manager vault link.  
 2. Install an ad/tracker blocklist (uBlock Origin, Pi‑hole, NextDNS) and enable EasyPrivacy + Malware domains.  
-3. Force HTTPS & verify EV where applicable. No lock icon ≠ no go.  
+3. Force HTTPS and verify the site’s domain in the address bar (EV indicators are deprecated). No padlock / HTTPS warning ≠ no go.  
 4. Deploy hardware‑bound FIDO2 keys; phishing proxies can’t replay WebAuthn challenges.  
 5. Use DNSSEC‑validated resolvers (Quad9, Cloudflare 1.1.1.1 with DNS over TLS) to blunt typo‑squats.  
 6. On macOS: enable Lockdown Mode for high‑risk users, and keep Gatekeeper + XProtect signatures current.  
-7. For orgs: ingest ad‑click telemetry into your SIEM and auto‑isolate hosts that resolve known rogue domains.  
+7. For orgs: if you operate a secure‑web proxy or browser extension that logs outbound URLs, ingest that telemetry into your SIEM and auto‑isolate hosts that resolve known rogue domains.  
 
 
 ## Share & Amplify
