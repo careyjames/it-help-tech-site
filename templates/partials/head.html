@@ -112,6 +112,19 @@
 </noscript>
 
 {# --- Meta tags --- #}
+{% if page.extra.robots %}
+  <meta name="robots" content="{{ page.extra.robots }}">
+{% else %}
+  <meta name="robots" content="index, follow">
+{% endif %}
+
+<meta name="ChatGPTBot" content="allow">
+<meta name="GPTBot" content="allow">
+<meta name="ClaudeBot" content="allow">
+<meta name="PerplexityBot" content="allow">
+<meta name="GeminiBot" content="allow">
+<meta name="OpenAI-Bot" content="allow">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {# --- Security headers --- #}

@@ -1,4 +1,23 @@
+
 User-agent: *
-Disallow: /admin/
-Disallow: /draft/
+Allow: /
+
+User-agent: ChatGPT
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GeminiBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://www.it-help.tech/sitemap.xml
