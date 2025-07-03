@@ -15,7 +15,7 @@ taxonomies:
 ## Preface
 
 Before diving in, I want to make it clear that I use and appreciate the innovations from major tech companies like Apple and Google. I have immense respect for the people working there, many of whom strive to do good. This article isn’t about vilifying these companies, but about highlighting critical areas where their influence could be harnessed for greater security. If regulations mandated certain protections, these companies would already have compliance budgets in place. It's about pushing for better, not tearing down what's good.
-While Apple and Google often show intrinsic motivation and genuine care for their users, as evidenced by their leadership's commitment to innovation and user privacy, Facebook presents a stark contrast. Facebook has repeatedly faced criticism for its handling of user privacy and the difficulty users face in resolving account issues. This pattern of behavior sets Facebook apart from its peers and places it far from the moral high ground that companies like Apple and Google strive to maintain.
+While Apple and Google often show intrinsic motivation and genuine care for their users, as evidenced by their leadership's commitment to innovation and user privacy, **Facebook presents a stark contrast.** Facebook has repeatedly faced criticism for its handling of user privacy and the difficulty users face in resolving account issues. **This pattern of behavior sets Facebook apart from its peers and places it far from the moral high ground that companies like Apple and Google strive to maintain.**
 
 
 ### The Anatomy of a Modern Malvertising Funnel
