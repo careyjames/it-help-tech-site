@@ -148,7 +148,7 @@ Our premium, concierge-level on-site service is designed for individuals, execut
 We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
 Our key areas of deep expertise include:
 
-### <span class="gold-link">[macOS System & Application Support](@/services.md#macos-system)</span>
+### <a href="/services/#macos-system" class="gold-link">macOS System &amp; Application Support</a>
 
 We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
 
