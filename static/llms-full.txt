@@ -1,0 +1,265 @@
+# IT Help San Diego Inc.
+
+> Apple-centric IT support across San Diego.
+
+## Main
+
+### <img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/logo-light.svg width=356>
+
+Source: [https://www.it-help.tech](https://www.it-help.tech)
+
+# Expert Mac IT Support
+
+San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Mac, Wi‑Fi, DNS & Email issues. We fix macOS/iOS glitches, eliminate Wi‑Fi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—on‑site, in‑home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. [(619) 853‑5008](tel:16198535008)
+
+[Read Verified Reviews](https://8750b1ff89054a2b8a27550322e2ed7c.elf.site)
+
+## Custom Solutions That Work for You
+
+Our premium, concierge-level on-site service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 25 years of experience supporting high-profile clients in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
+
+## Core Expertise
+
+We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
+ Our key areas of deep expertise include:
+
+### [macOS System & Application Support](/services/#macos-system)
+
+We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+
+### [Network Infrastructure & WiFi Troubleshooting](/services/#network-wifi)
+
+Spend more time at the beach, not fighting your WiFi. Specializing in large luxury homes and offices with extensive networking and WiFi needs. We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
+
+### [Advanced Email, Domain, & DNS Solutions](/services/#email-domain-dns)
+
+Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
+
+### [Cybersecurity & Ethical Screen Sharing](/services/#cybersecurity)
+
+We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
+
+* **Ethical Screen Sharing:** We adhere to the highest security and ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
+
+### [Specialized Data Extraction Services](/services/#data-discovery)
+
+* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals.
+
+## Why Choose IT Help San Diego?
+
+* **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
+* **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable support.
+* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or assist via secure screen sharing and other remote tools.
+
+## Frequently Asked Questions
+
+### Can you help with PC, Linux, or mixed computer environments?
+
+Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support a diverse range of technical environments effectively.
+
+### How is your service different from a Managed Service Provider (MSP)?
+
+We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust. Our goal is to resolve issues efficiently and effectively. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
+
+### Do you fix cracked iPhone screens?
+
+**No, we’re not a hardware repair shop.** We specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+
+---
+
+Tired of paying for a month of IT service when nothing happened? Ready to make your tech problems disappear?
+
+[Book an On-Site Visit Now](https://schedule.it-help.tech/)
+
+### Pricing
+
+Source: [https://www.it-help.tech/billing](https://www.it-help.tech/billing)
+
+# Rates & Billing Policies
+
+We follow clear policies for our IT support services. **No monthly retainers!**
+
+## IT Consulting & Support Rate
+
+* **Base Rate:** $275 per hour.
+* **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote or phone support.
+* **Billing Increments:** We bill precisely in **1-minute increments**, based on call or session timers or time tracked for offline tasks.
+* **Travel:** $1.50 per mile for every on‑site visit. For sites under 15 miles, we bill one-way mileage; for sites above 15 miles, we bill round-trip mileage plus drive time.
+
+This policy covers real operational costs and ensures continued reliability.
+
+## Payment Policy
+
+* **Method:** We require a valid credit card on file before services are rendered.
+* **Billing Cycle:** Billing occurs automatically **at the end of each session or day's work** to the authorized card on file.
+* **Terms:** We do not accept checks and do not offer net payment terms. **No card, no service, no exceptions.**
+
+## Scheduling & Cancellation Policy
+
+* **Booking:** Appointments are booked with a 30-minute minimum charge (deposit) for remote sessions, which reserves that time specifically for you.
+* **Billing:** You are only billed for the time used beyond the initial 30-minute minimum.
+* **Notice:** To reschedule or cancel without charge, please provide at least **24 hours’ notice**.
+* **Late/No-Show:** Late cancellations (less than 24 hours) or no-shows will be billed for the 30-minute minimum, as that time was held exclusively for you.
+
+## Quick Phone/Text/Email Support
+
+* Existing clients are welcome to reach out anytime.
+* We do not charge for brief communications (under 10 minutes).
+* All calls, remote sessions, or other time spent rendering services lasting more than 10 minutes are billed at our standard rate, subject to the 30-minute minimum.
+
+## Privacy & Security
+
+* All client data (login credentials, network configurations, etc.) is encrypted and is NEVER shared or sold.
+* We have served high-profile, sensitive security and entertainment businesses for 25 years.
+* We have never had a data leak or spoken with paparazzi/journalists. Your trust is paramount.
+
+## Final Notes
+
+Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end tech solutions. We provide discreet cyber-security and crisis response services, backed by nearly two decades of hands-on experience.
+
+YOUR TECH PROBLEMS ARE ABOUT TO DISAPPEAR. 🚀
+
+### Services
+
+Source: [https://www.it-help.tech/services](https://www.it-help.tech/services)
+
+# On-site, In-home IT Services
+
+We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting.  
+Our expertise ensures your critical systems run smoothly, securely, and efficiently.
+
+## Advanced Email, Domain, & DNS Solutions
+
+We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
+
+* **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
+* **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
+* **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
+* **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
+* **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex Email security into unmatched reliability.
+
+## Cybersecurity & Data Protection
+
+Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, Email phishing, browser blocks, and more.
+
+* **Endpoint Security:** Setup and management of leading endpoint protection for macOS, Windows, and Linux.
+* **Mobile Device Security (iOS):** Advising on best practices and tools to secure your iPhones and iPads.
+* **Data Privacy & Discreet Advisory:** Handling sensitive technical challenges that require deep expertise, discretion, and trust, such as secure data handling and quiet remediation of compromised systems.
+* **Ethical Screen Sharing:** For all remote support, **you, the client, always initiate and approve screen access**. We prioritize your privacy and control.
+
+## macOS System & Application Support
+
+We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+
+* **Mac Performance & Troubleshooting:** Addressing macOS software issues, iCloud synchronization problems, Mac storage warnings (“Your startup disk is almost full”), and system performance concerns.
+* **Apple Time Machine Backups:** Setup, troubleshooting, and ensuring your backup strategy is sound.
+* **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
+* **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
+
+## Network Infrastructure & WiFi Troubleshooting
+
+Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections. We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear. This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products. We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you’re paying for) everywhere in your location.
+
+* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
+* **Network setup & home/office network security**
+* **Network design & infrastructure planning**
+* **Network troubleshooting**
+* **Static‑IP configuration & troubleshooting**
+* **Port forwarding & double NAT**
+* **Network printer sharing**
+* **Switch, gateway & firewall programming and lost credential recovery**
+
+## Specialized Data Extraction Services
+
+* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
+
+## Our Recommendations
+
+We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
+
+* **[Cloudflare:](https://www.cloudflare.com/)** For DNS, WAF, CDN.
+* **[Amazon Route 53:](https://aws.amazon.com/route53/)** For highly available and scalable DNS services.
+* **[Google Advanced Protection Program:](https://landing.google.com/advancedprotection/)** For Google's strongest account security.
+* **[RedSift OnDMARC:](https://redsift.com/pulse-platform/ondmarc)** For advanced DMARC deployment and management.
+* **[CrowdStrike:](https://www.crowdstrike.com/en-us/)** For AI-native endpoint detection and response (EDR).
+* **[SentinelOne:](https://www.sentinelone.com/)** For autonomous endpoint protection.
+* **[ThreatDown by Malwarebytes:](https://www.threatdown.com/)** For simplified EDR and MDR solutions.
+* **[Yubico Security Keys:](https://www.yubico.com/)** For hardware-based multi-factor authentication.
+* **[1Password:](https://1password.com/)** For secure password and credential management.
+
+---
+
+Need expert Mac IT help to solve your tech challenges?
+
+[Book an on-site Appointment Now](https://schedule.it-help.tech/)
+
+### DNS Tool
+
+Source: [https://www.it-help.tech/dns-tool](https://www.it-help.tech/dns-tool)
+
+# DNS Tool - DNS & Email Security Auditor
+
+Tired of juggling a dozen different web tools and `dig` commands just to check if a domain's DNS and email security records were _actually_ set up right? **So was I.** That's why I built **DNS Tool**.
+
+### Why I Built This: The `p=none` Problem
+
+As I always say: **“If your DMARC says `p=none`, your work’s not done—get to `p=reject`!”**
+
+But getting to `p=reject` isn't just about DMARC. It means ensuring SPF is aligned, DKIM is signing correctly, DNSSEC is enabled, and MTA-STS is in place. Before DNS Tool, verifying all this meant a tedious dance across countless browser tabs and terminal windows, especially when waiting for DNS propagation. It was inefficient and far too easy to miss something critical.
+
+### One Tool to Check Them All
+
+DNS Tool is my personal command-line solution born from that frustration. It’s a single, portable binary (thanks to PyInstaller!) that runs on Linux, macOS, and Windows – no Python install needed on the target system. It's my Swiss Army knife for DNS validation.
+
+In one go, it hammers a domain and reports back, with clear ✅ ❌ ⚠️ symbols, on _all_ the important stuff:
+
+* **Core Records:** NS, A, AAAA, MX, TXT, SOA, CAA
+* **Email Security:** SPF (and its lookups!), DMARC (with `p=reject` nagging!), multiple DKIM selectors, MTA-STS, BIMI
+* **Infrastructure:** DNSSEC validation status
+* **Info:** PTR records and even an RDAP/WHOIS lookup.
+
+It works interactively (with history!) or in batch mode. I use it daily to get a quick, comprehensive picture of a domain's DNS health, verify changes _instantly_ as they propagate, and ensure nothing falls through the cracks. It saves me time and gives me confidence that things are _really_ secure and configured correctly.
+
+### Get The Tool & Full Details
+
+Want to try it out, see the code, or dive into the full details on installation and every command-line flag? It's all open-source and waiting for you on GitHub:
+
+* **[Main GitHub Repository (Code & Full README)](https://github.com/careyjames/dns-tool/)**
+* **[Download Pre-compiled Binaries (Releases Page)](https://github.com/careyjames/dns-tool/releases)**
+
+### Our Expertise
+
+Source: [https://www.it-help.tech/about](https://www.it-help.tech/about)
+
+# Our Expertise
+
+![Carey Balboa with service animal Tango](https://www.it-help.tech/images/carey-256.avif)
+
+Hi, I’m Carey Balboa.  
+_(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)_  
+_(Balboa: Like Balboa Park in San Diego)_
+
+I’ve been solving tech problems for 25 years. I love a challenge, solving technical problems, and helping people. I’m committed to mission success, and scientific discovery is my passion. Since 1999, I’ve assisted high-profile clients in the entertainment, medical, and legal sectors, as well as PhDs, with their technology challenges.
+
+## Business Ethics: Carey’s Promise
+
+As the Founder of IT Help San Diego Inc., I see my role as a problem solver, not a salesperson. My recommendations are based on transparent, verifiable data, not opinions or distributor deals. **We don’t sell products, and we don’t accept commissions, affiliate fees, or kickbacks.** If we recommend a solution, whether it's Route 53, SentinelOne, or 1Password, it's because we believe it's the best tool for the job. We'll show you the options, explain the _why_, and you'll purchase directly from the vendor. Our only revenue comes from our time and expertise dedicated to implementing these solutions effectively for you. My focus is always on your long-term reliability—truly listening so I can help you understand exactly what you want—and delivering real value.
+
+I’ve always stayed true to my ethics: no price gouging, no hidden fees, and no cutting corners on quality. That’s who I am, and that’s exactly how I’ll continue to operate.
+
+### Schedule
+
+Source: [https://schedule.it-help.tech/](https://schedule.it-help.tech/)
+
+*Content available at [https://schedule.it-help.tech/](https://schedule.it-help.tech/)*
+
+
+## Optional
+
+### Blog
+
+Source: [https://www.it-help.tech/blog](https://www.it-help.tech/blog)
+
+*Optional content available at [https://www.it-help.tech/blog](https://www.it-help.tech/blog)*
+
+
