@@ -68,7 +68,7 @@ According to RFC 7489, Section 10.1, the use of `-all` can cause messages to be 
 
 ### Practical Tools for DNS Security
 
-I recommend using Red Sift's Investigate, securitytrails.com (I coded a command-line tool, [dns-tool](https://github.com/careyjames/dns-tool), to track DNS changes), and I like Red Sift's OnDmarc to track dynamic DNS records (when you may have a more advanced setup or need more than 10 lookups).
+I recommend using Red Sift's Investigate, securitytrails.com (I coded a command-line tool, <a href="https://github.com/careyjames/dns-tool" target="_blank" rel="noopener noreferrer" class="gold-link">dns-tool</a>, to track DNS changes), and I like Red Sift's OnDmarc to track dynamic DNS records (when you may have a more advanced setup or need more than 10 lookups).
 
 ### Step-by-Step Guide to Setting Up DMARC, SPF, and DKIM
 
