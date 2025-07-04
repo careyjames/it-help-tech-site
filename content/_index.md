@@ -148,26 +148,26 @@ Our premium, concierge-level on-site service is designed for individuals, execut
 We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
 Our key areas of deep expertise include:
 
-### <a href="{{ get_url(path='@/services.md#macos-system') }}" class="gold-link">macOS System &amp; Application Support</a>
+### <span class="gold-link">[macOS System & Application Support](@/services.md#macos-system)</span>
 
 We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
 
-### [Network Infrastructure & WiFi Troubleshooting](@/services.md#network-wifi){.gold-link}
+### [Network Infrastructure & WiFi Troubleshooting](@/services.md#network-wifi)
 
 Spend more time at the beach, not fighting your WiFi.
 Specializing in large luxury homes and offices with extensive networking and WiFi needs.
 We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
 
-### [Advanced Email, Domain, & DNS Solutions](@/services.md#email-domain-dns){.gold-link}
+### [Advanced Email, Domain, & DNS Solutions](@/services.md#email-domain-dns)
 
 Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
 
-### [Cybersecurity & Ethical Screen Sharing](@/services.md#cybersecurity){.gold-link}
+### [Cybersecurity & Ethical Screen Sharing](@/services.md#cybersecurity)
 
 We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
 * **Ethical Screen Sharing:** We adhere to the highest security and ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
 
-### [Specialized Data Extraction Services](@/services.md#data-discovery){.gold-link}
+### [Specialized Data Extraction Services](@/services.md#data-discovery)
 
 * **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals.
 
