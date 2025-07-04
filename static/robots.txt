@@ -14,24 +14,11 @@ User-agent: CCBot
 User-agent: Google-Extended
 User-agent: Googlebot  
 User-agent: Bingbot
-Allow: /
-
 User-agent: ChatGPT
-Allow: /
-
 User-agent: GPTBot
-Allow: /
-
 User-agent: Googlebot
-Allow: /
-
 User-agent: GeminiBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://www.it-help.tech/sitemap.xml
