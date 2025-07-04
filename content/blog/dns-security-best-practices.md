@@ -74,7 +74,8 @@ I recommend using Red Sift's Investigate, securitytrails.com (I coded a command-
 
 If you’re new to DNS security, here’s a simple checklist to help you set up DMARC, SPF, and DKIM:
 
-If you’d like to see the state of your DNS before we get started, visit Red Sift’s Investigate, where you can send a test email from your email client or your marketing platform as a test send.
+If you’d like to see the state of your DNS before we get started, visit <a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift’s Investigate</a>, where you can send a test email from your email client or your marketing platform as a test send.  
+
 
 In brief: SPF specifies which servers can send on your behalf (like a return-address check), DKIM attaches a digital signature to emails (proving the email hasn’t been tampered with), and DMARC ties everything together with a policy and reporting.
 
