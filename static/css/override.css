@@ -58,21 +58,6 @@ body { overflow-x: hidden; }
   overflow-wrap:break-word !important;
   word-break:break-word !important;
 }
-/* force gold on any link carrying the class, regardless of context */
-a.gold-link,
-a.gold-link:hover,
-a.gold-link:focus,
-a.gold-link:active,
-a.gold-link:visited,
-h1 a.gold-link,
-h2 a.gold-link,
-h3 a.gold-link,
-h4 a.gold-link,
-h5 a.gold-link,
-h6 a.gold-link {        /* covers links inside headings */
-    color: #d4af37 !important;   /* same “gold” you use elsewhere */
-    text-decoration: none;       /* optional: keeps it clean */
-}
 
 .homepage-hero ul,
 .homepage-hero ol{ padding-left:1rem !important; }
