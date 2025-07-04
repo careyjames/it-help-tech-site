@@ -373,21 +373,3 @@ html:not(.switch) .tagline-text{
   /* compensate for smaller container padding */
   .tagline-text{padding:8px 16px;}
 }
-
-/* -------------------------------------------------------- */
-/* force gold on any link carrying the class, everywhere    */
-/* -------------------------------------------------------- */
-a.gold-link,
-a.gold-link:hover,
-a.gold-link:focus,
-a.gold-link:active,
-a.gold-link:visited,
-h1 a.gold-link,
-h2 a.gold-link,
-h3 a.gold-link,
-h4 a.gold-link,
-h5 a.gold-link,
-h6 a.gold-link {
-  color: #d4af37 !important;   /* literal hex, no vars */
-  text-decoration: none;       /* optional */
-}
