@@ -41,7 +41,7 @@ jobs:
       - name: Upload immutable assets
         run: |
           aws s3 sync public/ s3://$BUCKET/ \
-            --exclude "*.html" \
+            --exclude "*.html" --exclude "llms*.txt" \
             --cache-control "public,max-age=31536000,immutable" \
             --metadata-directive REPLACE \
             --exact-timestamps \
@@ -55,7 +55,7 @@ jobs:
       - name: Upload HTML (short TTL)
         run: |
           aws s3 sync public/ s3://$BUCKET/ \
-            --include "*.html" \
+            --include "*.html" --exclude "llms*.txt" \
             --cache-control "public,max-age=300" \
             --metadata-directive REPLACE \
             --exact-timestamps
