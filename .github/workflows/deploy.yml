@@ -59,6 +59,15 @@ jobs:
             --cache-control "public,max-age=300" \
             --metadata-directive REPLACE \
             --exact-timestamps
+      
+      - name: Set UTF-8 header for LLMS files
+        run: |
+          find public -maxdepth 1 -name 'llms*.txt' -print0 |
+            xargs -0 -I {} aws s3 cp "{}" "s3://$BUCKET/$(basename {})" \
+              --content-type "text/plain; charset=utf-8" \
+              --cache-control "public,max-age=31536000,immutable" \
+              --metadata-directive REPLACE
+
         env:
           AWS_S3_BUCKET: ${{ env.BUCKET }}
           AWS_REGION: us-east-1
