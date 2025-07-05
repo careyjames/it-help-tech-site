@@ -36,7 +36,7 @@ jobs:
       - name: Copy images and root files
         run: |
           cp -r static/images public/
-          cp static/robots.txt static/llms.txt static/llms-full.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
+          cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
 
       - name: Upload immutable assets
         run: |
@@ -66,11 +66,12 @@ jobs:
       
       - name: Set UTF-8 header for LLMS files
         run: |
-          find public -maxdepth 1 -name 'llms*.txt' -print0 |
-            xargs -0 -I {} aws s3 cp "{}" "s3://$BUCKET/$(basename {})" \
+          for f in static/llms*.txt; do
+            aws s3 cp "$f" "s3://$BUCKET/$(basename "$f")" \
               --content-type "text/plain; charset=utf-8" \
               --cache-control "public,max-age=31536000,immutable" \
               --metadata-directive REPLACE
+          done
 
         env:
           AWS_S3_BUCKET: ${{ env.BUCKET }}
