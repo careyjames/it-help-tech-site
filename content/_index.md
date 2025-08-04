@@ -141,7 +141,7 @@ San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Ma
 
 ## Custom Solutions That Work for You  
 
-Our premium, concierge-level on-site service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 25 years of experience supporting high-profile clients in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
+Our premium, concierge-level on-site tech support service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 25 years of experience supporting high-profile clients in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
 
 ## Core Expertise
 
