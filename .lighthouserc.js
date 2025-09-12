@@ -13,7 +13,7 @@ module.exports = {
         // Desktop testing
         {
           preset: 'desktop',
-          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless',
+          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless --disable-extensions --no-first-run --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-features=VizDisplayCompositor',
           throttling: {
             rttMs: 40,
             throughputKbps: 10240,
@@ -26,7 +26,7 @@ module.exports = {
         // Mobile testing
         {
           preset: 'mobile',
-          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless',
+          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless --disable-extensions --no-first-run --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-features=VizDisplayCompositor',
           throttling: {
             rttMs: 150,
             throughputKbps: 1638,
