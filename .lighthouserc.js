@@ -19,15 +19,15 @@ module.exports = {
       assertions: {
         // CRITICAL (block PR) - Core performance that affects user experience
         'categories:performance': ['error', {minScore: 0.85}],   // 85+ performance (more realistic)
-        'metrics:largest-contentful-paint': ['error', {maxNumericValue: 3000}], // LCP < 3s (Google's "Good" threshold)
-        'metrics:cumulative-layout-shift': ['error', {maxNumericValue: 0.2}],   // CLS < 0.2 (reasonable stability)
+        'largest-contentful-paint': ['error', {maxNumericValue: 3000}], // LCP < 3s (Google's "Good" threshold)
+        'cumulative-layout-shift': ['error', {maxNumericValue: 0.2}],   // CLS < 0.2 (reasonable stability)
         
         // IMPORTANT (warn only) - Issues to track but don't block development
         'categories:accessibility': ['warn', {minScore: 0.85}],  // 85+ accessibility
         'categories:best-practices': ['warn', {minScore: 0.90}], // 90+ best practices
         'categories:seo': ['warn', {minScore: 0.90}],            // 90+ SEO
-        'metrics:first-contentful-paint': ['warn', {maxNumericValue: 1500}],    // FCP < 1.5s
-        'metrics:total-blocking-time': ['warn', {maxNumericValue: 400}],        // TBT < 400ms
+        'first-contentful-paint': ['warn', {maxNumericValue: 1500}],    // FCP < 1.5s
+        'total-blocking-time': ['warn', {maxNumericValue: 400}],        // TBT < 400ms
         
         // RESOURCE BUDGETS (warn only) - Monitor but don't block
         'resource-summary:document:size': ['warn', {maxNumericValue: 75000}],   // HTML < 75KB
