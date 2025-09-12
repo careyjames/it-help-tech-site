@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      // Test key pages
+      // Test key pages on both mobile and desktop
       url: [
         'http://localhost:8080/',           // Homepage
         'http://localhost:8080/services/',  // Services page
@@ -9,18 +9,32 @@ module.exports = {
         'http://localhost:8080/about/',     // About page
         'http://localhost:8080/blog/',      // Blog index
       ],
-      settings: {
-        // Use mobile simulation for primary testing
-        preset: 'desktop', // Test desktop first, can add mobile later
-        throttling: {
-          rttMs: 40,
-          throughputKbps: 10240,
-          cpuSlowdownMultiplier: 1,
-          requestLatencyMs: 0,
-          downloadThroughputKbps: 0,
-          uploadThroughputKbps: 0,
+      settings: [
+        // Desktop testing
+        {
+          preset: 'desktop',
+          throttling: {
+            rttMs: 40,
+            throughputKbps: 10240,
+            cpuSlowdownMultiplier: 1,
+            requestLatencyMs: 0,
+            downloadThroughputKbps: 0,
+            uploadThroughputKbps: 0,
+          },
         },
-      },
+        // Mobile testing
+        {
+          preset: 'mobile',
+          throttling: {
+            rttMs: 150,
+            throughputKbps: 1638,
+            cpuSlowdownMultiplier: 4,
+            requestLatencyMs: 0,
+            downloadThroughputKbps: 0,
+            uploadThroughputKbps: 0,
+          },
+        },
+      ],
     },
     assert: {
       // Performance budgets - realistic targets for initial implementation
