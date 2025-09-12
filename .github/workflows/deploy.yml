@@ -19,7 +19,11 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Install Zola
         uses: taiki-e/install-action@cargo-binstall
@@ -31,12 +35,11 @@ jobs:
 
       - name: Purge unused CSS
         run: |
-          npm install -g purgecss
-          purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
-      - name: Copy images and root files
-        run: |
-          cp -r static/images public/
-          cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
+          npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
+          
+      - name: Copy static assets
+        run: ./scripts/copy-assets.sh
+
 
       - name: Upload immutable assets
         run: |

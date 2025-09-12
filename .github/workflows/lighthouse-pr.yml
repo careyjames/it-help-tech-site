@@ -1,0 +1,198 @@
+name: Lighthouse Performance Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Install Zola
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
+
+      - name: Build site with Zola
+        run: |
+          zola build
+          if [ ! -d "public" ]; then
+            echo "❌ Build failed - public directory not created"
+            exit 1
+          fi
+
+      - name: Purge unused CSS
+        run: |
+          npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
+          
+      - name: Copy static assets
+        run: ./scripts/copy-assets.sh
+
+
+      - name: Run Lighthouse CI Performance Check
+        id: lighthouse
+        run: |
+          # Set up cleanup trap
+          cleanup() {
+            if [ ! -z "$SERVER_PID" ]; then
+              kill $SERVER_PID 2>/dev/null || true
+              echo "🧹 Server cleaned up"
+            fi
+          }
+          trap cleanup EXIT INT TERM
+          
+          # Start HTTP server
+          echo "🚀 Starting server..."
+          npx http-server public -p 8080 -s &
+          SERVER_PID=$!
+          
+          # Wait for server with timeout
+          echo "⏳ Waiting for server to start..."
+          for i in {1..10}; do
+            if curl -s http://localhost:8080/ > /dev/null 2>&1; then
+              echo "✅ Server is ready"
+              break
+            fi
+            if [ $i -eq 10 ]; then
+              echo "❌ Server failed to start"
+              exit 1
+            fi
+            sleep 1
+          done
+          
+          # Run Lighthouse with better error handling
+          echo "🔍 Running Lighthouse CI..."
+          if npx lhci autorun --config=.lighthouserc.js; then
+            echo "✅ Performance gates passed"
+          else
+            echo "❌ Performance gates failed - PR blocked"
+            exit 1
+          fi
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.event.pull_request.head.sha }}
+          LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.pull_request.updated_at }}
+
+      - name: Generate Lighthouse summary
+        if: always()
+        id: lighthouse-summary
+        run: |
+          if [ -d ".lighthouseci" ]; then
+            # Find the latest results
+            RESULTS_DIR=$(find .lighthouseci -name "lhr-*.json" | head -1)
+            if [ -n "$RESULTS_DIR" ]; then
+              # Extract key metrics for summary
+              echo "LIGHTHOUSE_RESULTS_FOUND=true" >> $GITHUB_OUTPUT
+              
+              # Create a simple summary (basic version)
+              echo "## 🔍 Lighthouse Performance Results" > lighthouse-summary.md
+              echo "" >> lighthouse-summary.md
+              
+              if [ "${{ steps.lighthouse.outcome }}" = "success" ]; then
+                echo "✅ **All performance gates passed!**" >> lighthouse-summary.md
+                echo "" >> lighthouse-summary.md
+                echo "Your changes meet the performance requirements:" >> lighthouse-summary.md
+                echo "- Performance: ≥90 ✅" >> lighthouse-summary.md
+                echo "- Accessibility: ≥90 ✅" >> lighthouse-summary.md
+                echo "- Best Practices: ≥95 ✅" >> lighthouse-summary.md
+                echo "- SEO: ≥95 ✅" >> lighthouse-summary.md
+                echo "- LCP: <2.5s ✅" >> lighthouse-summary.md
+                echo "- FCP: <1.2s ✅" >> lighthouse-summary.md
+                echo "- CLS: <0.1 ✅" >> lighthouse-summary.md
+                echo "- TBT: <300ms ✅" >> lighthouse-summary.md
+              else
+                echo "❌ **Performance gates failed**" >> lighthouse-summary.md
+                echo "" >> lighthouse-summary.md
+                echo "Some performance requirements were not met. Please review the detailed reports." >> lighthouse-summary.md
+                echo "" >> lighthouse-summary.md
+                echo "**Required thresholds:**" >> lighthouse-summary.md
+                echo "- Performance: ≥90" >> lighthouse-summary.md
+                echo "- Accessibility: ≥90" >> lighthouse-summary.md
+                echo "- Best Practices: ≥95" >> lighthouse-summary.md
+                echo "- SEO: ≥95" >> lighthouse-summary.md
+                echo "- LCP: <2.5s" >> lighthouse-summary.md
+                echo "- FCP: <1.2s" >> lighthouse-summary.md
+                echo "- CLS: <0.1" >> lighthouse-summary.md
+                echo "- TBT: <300ms" >> lighthouse-summary.md
+                echo "" >> lighthouse-summary.md
+                echo "💡 **Tips for improvement:**" >> lighthouse-summary.md
+                echo "- Run \`./scripts/validate-lighthouse.sh\` locally to test" >> lighthouse-summary.md
+                echo "- Check detailed reports in the workflow artifacts" >> lighthouse-summary.md
+                echo "- Review image optimization and CSS bundle size" >> lighthouse-summary.md
+              fi
+              
+              echo "" >> lighthouse-summary.md
+              echo "📊 **Pages tested:**" >> lighthouse-summary.md
+              echo "- Homepage" >> lighthouse-summary.md
+              echo "- Services page" >> lighthouse-summary.md
+              echo "- Billing page" >> lighthouse-summary.md
+              echo "- About page" >> lighthouse-summary.md
+              echo "- Blog page" >> lighthouse-summary.md
+            else
+              echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment PR with Lighthouse results
+        if: always() && steps.lighthouse-summary.outputs.LIGHTHOUSE_RESULTS_FOUND == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            try {
+              const summary = fs.readFileSync('lighthouse-summary.md', 'utf8');
+              
+              // Find existing comment
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+              
+              const existingComment = comments.find(comment => 
+                comment.body.includes('🔍 Lighthouse Performance Results')
+              );
+              
+              if (existingComment) {
+                // Update existing comment
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                  body: summary
+                });
+              } else {
+                // Create new comment
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: summary
+                });
+              }
+            } catch (error) {
+              console.log('Could not post comment:', error);
+            }
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 30

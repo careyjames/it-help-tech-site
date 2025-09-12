@@ -1,10 +1,25 @@
+# OS generated files
 .DS_Store
+Thumbs.db
+
+# Editor directories and files
 .vscode/
+
+# Build artifacts
 *.map
 
 /public
 sass_OLD/
 templates_OLD/
+
+# Node modules and npm artifacts
+node_modules/
+npm-debug.log*
+.npm
+.eslintcache
+
+# Performance Test Results
+.lighthouseci/
 
 # Terraform/CloudFormation plans
 cf-*.json
@@ -15,21 +30,6 @@ policy*.json
 # Zola cache
 .frontmatter/
 frontmatter.json
-.DS_Store
 csp-*.json
-# ping
-# ping
-# ping
-# ping
-# ping
-# ping
-# ping 10:26
-# ping
-# ping
-# ping
-# ping
-# ping
-# ping
-# ping
 # ping
 # ping
