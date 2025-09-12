@@ -65,8 +65,7 @@ npx purgecss --css public/css/*.css --content public/**/*.html --output public/c
 
 # Copy assets
 echo -e "${YELLOW}📁 Copying assets...${NC}"
-cp -r static/images public/
-cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
+./scripts/copy-assets.sh
 
 echo -e "${GREEN}✅ Assets copied${NC}"
 

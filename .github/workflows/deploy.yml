@@ -37,10 +37,8 @@ jobs:
         run: |
           npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
           
-      - name: Copy images and root files
-        run: |
-          cp -r static/images public/
-          cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
+      - name: Copy static assets
+        run: ./scripts/copy-assets.sh
 
 
       - name: Upload immutable assets
