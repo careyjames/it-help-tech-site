@@ -36,11 +36,11 @@ jobs:
 
       - name: Purge unused CSS
         run: |
+          # Safelist "phone-line": Used in sass/_custom.scss for phone number styling, but PurgeCSS can't detect dynamic usage
           npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
           
       - name: Copy static assets
         run: ./scripts/copy-assets.sh
-
 
       - name: Run Lighthouse CI Performance Check
         id: lighthouse

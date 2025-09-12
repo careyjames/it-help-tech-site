@@ -17,18 +17,20 @@ module.exports = {
             rttMs: 40,
             throughputKbps: 10240,
             cpuSlowdownMultiplier: 1,
+            // Values set to 0 = use preset defaults (more realistic than custom values)
             requestLatencyMs: 0,
             downloadThroughputKbps: 0,
             uploadThroughputKbps: 0,
           },
         },
-        // Mobile testing
+        // Mobile testing - simulates slow 3G conditions
         {
           preset: 'mobile',
           throttling: {
             rttMs: 150,
             throughputKbps: 1638,
             cpuSlowdownMultiplier: 4,
+            // Values set to 0 = use preset defaults (more realistic than custom values)
             requestLatencyMs: 0,
             downloadThroughputKbps: 0,
             uploadThroughputKbps: 0,

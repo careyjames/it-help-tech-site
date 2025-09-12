@@ -61,6 +61,7 @@ echo -e "${GREEN}✅ Site built successfully${NC}"
 
 # Purge CSS
 echo -e "${YELLOW}✂️  Purging unused CSS...${NC}"
+# Safelist "phone-line": Used in sass/_custom.scss for phone number styling, but PurgeCSS can't detect dynamic usage
 npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
 
 # Copy assets
