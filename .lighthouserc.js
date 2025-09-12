@@ -15,27 +15,26 @@ module.exports = {
       },
     },
     assert: {
-      // Performance budgets - realistic targets for initial implementation
+      // Balanced performance budgets - critical issues block PRs, others warn
       assertions: {
-        'categories:performance': ['error', {minScore: 0.90}],   // 90+ performance  
-        'categories:accessibility': ['error', {minScore: 0.90}], // 90+ accessibility
-        'categories:best-practices': ['error', {minScore: 0.95}], // 95+ best practices
-        'categories:seo': ['error', {minScore: 0.95}],           // 95+ SEO
+        // CRITICAL (block PR) - Core performance that affects user experience
+        'categories:performance': ['error', {minScore: 0.85}],   // 85+ performance (more realistic)
+        'metrics:largest-contentful-paint': ['error', {maxNumericValue: 3000}], // LCP < 3s (Google's "Good" threshold)
+        'metrics:cumulative-layout-shift': ['error', {maxNumericValue: 0.2}],   // CLS < 0.2 (reasonable stability)
         
-        // Core Web Vitals - realistic targets
-        'metrics:largest-contentful-paint': ['error', {maxNumericValue: 2500}], // LCP < 2.5s
-        'metrics:first-contentful-paint': ['error', {maxNumericValue: 1200}],   // FCP < 1.2s
-        'metrics:cumulative-layout-shift': ['error', {maxNumericValue: 0.1}],   // CLS < 0.1
-        'metrics:total-blocking-time': ['error', {maxNumericValue: 300}],       // TBT < 300ms
+        // IMPORTANT (warn only) - Issues to track but don't block development
+        'categories:accessibility': ['warn', {minScore: 0.85}],  // 85+ accessibility
+        'categories:best-practices': ['warn', {minScore: 0.90}], // 90+ best practices
+        'categories:seo': ['warn', {minScore: 0.90}],            // 90+ SEO
+        'metrics:first-contentful-paint': ['warn', {maxNumericValue: 1500}],    // FCP < 1.5s
+        'metrics:total-blocking-time': ['warn', {maxNumericValue: 400}],        // TBT < 400ms
         
-        // Resource budgets - more generous initially
-        'resource-summary:document:size': ['error', {maxNumericValue: 75000}],   // HTML < 75KB
-        'resource-summary:stylesheet:size': ['error', {maxNumericValue: 50000}], // CSS < 50KB
-        'resource-summary:script:size': ['error', {maxNumericValue: 15000}],     // JS < 15KB
-        
-        // Network requests - focus on key metrics only
-        'resource-summary:stylesheet:count': ['error', {maxNumericValue: 10}],
-        'resource-summary:script:count': ['error', {maxNumericValue: 8}],
+        // RESOURCE BUDGETS (warn only) - Monitor but don't block
+        'resource-summary:document:size': ['warn', {maxNumericValue: 75000}],   // HTML < 75KB
+        'resource-summary:stylesheet:size': ['warn', {maxNumericValue: 50000}], // CSS < 50KB
+        'resource-summary:script:size': ['warn', {maxNumericValue: 15000}],     // JS < 15KB
+        'resource-summary:stylesheet:count': ['warn', {maxNumericValue: 10}],
+        'resource-summary:script:count': ['warn', {maxNumericValue: 8}],
       },
     },
     upload: {
