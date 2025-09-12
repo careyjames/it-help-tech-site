@@ -13,6 +13,7 @@ module.exports = {
         // Desktop testing
         {
           preset: 'desktop',
+          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless',
           throttling: {
             rttMs: 40,
             throughputKbps: 10240,
@@ -25,6 +26,7 @@ module.exports = {
         // Mobile testing
         {
           preset: 'mobile',
+          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless',
           throttling: {
             rttMs: 150,
             throughputKbps: 1638,
