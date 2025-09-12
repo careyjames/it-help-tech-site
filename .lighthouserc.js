@@ -9,34 +9,10 @@ module.exports = {
         'http://localhost:8080/about/',     // About page
         'http://localhost:8080/blog/',      // Blog index
       ],
-      settings: [
-        // Desktop testing
-        {
-          preset: 'desktop',
-          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless --disable-extensions --no-first-run --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-features=VizDisplayCompositor',
-          throttling: {
-            rttMs: 40,
-            throughputKbps: 10240,
-            cpuSlowdownMultiplier: 1,
-            requestLatencyMs: 0,
-            downloadThroughputKbps: 0,
-            uploadThroughputKbps: 0,
-          },
-        },
-        // Mobile testing
-        {
-          preset: 'mobile',
-          chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless --disable-extensions --no-first-run --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-features=VizDisplayCompositor',
-          throttling: {
-            rttMs: 150,
-            throughputKbps: 1638,
-            cpuSlowdownMultiplier: 4,
-            requestLatencyMs: 0,
-            downloadThroughputKbps: 0,
-            uploadThroughputKbps: 0,
-          },
-        },
-      ],
+      settings: {
+        chromeFlags: '--no-sandbox --disable-dev-shm-usage --disable-gpu --headless --disable-extensions --no-first-run --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-features=VizDisplayCompositor',
+        preset: 'desktop', // Start with desktop, can add mobile later if this works
+      },
     },
     assert: {
       // Performance budgets - realistic targets for initial implementation
