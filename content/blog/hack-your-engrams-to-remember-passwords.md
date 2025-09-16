@@ -6,7 +6,7 @@ categories: [Security, Passwords]
 tags: [passphrase, password security, NIST, memory, negativity bias]
 description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
 extra:
-  image: images/engram-hack.png
+  image: images/engram-hack.jpg
   og_title: "Hack Your Engrams to Remember and Keep Passwords Private"
   og_description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
   twitter_title: "Hack Your Engrams to Remember and Keep Passwords Private"
