@@ -6,7 +6,7 @@ categories: [Apple, Security, Passwords]
 tags: [Apple Account, password reset, account recovery, security keys, passkeys]
 description: "Learn how to unlock your Apple Account after too many failed sign-ins and avoid 'iJail'. Updated for 2025 with passkeys and security key tips."
 extra:
-  image: images/wrong-password.png
+  image: images/wrong-password.jpg
   og_title: "Apple Sends You Directly To \"iJail\" For Too Many Incorrect Password Guesses!"
   og_description: "Learn how to unlock your Apple Account after too many failed sign-ins and avoid 'iJail'. Updated for 2025 with passkeys and security key tips."
   twitter_title: "Apple Sends You Directly To \"iJail\" For Too Many Incorrect Password Guesses!"
