@@ -28,6 +28,8 @@ js_switcher = false
 js_switcher_default = "dark"
 # enable non-blocking stylesheet loading
 js_prestyle = false
+# disable integrity checking for development (avoids CORS issues with zola serve)
+integrity = false
 logo = { file = "logo.svg", height = "48", width = "356", alt = "IT Help San Diego" }
 stylesheets = ["css/cls-fixes.css", "css/abridge.css"]
 author_name = "Carey Balboa"
