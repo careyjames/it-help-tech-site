@@ -1,45 +1,46 @@
 {% extends "base.html" %}
 
 {% block seo %}
-  {{ super() }}
-  {%- set title = section.title | default(value=config.title) -%}
-  {%- if config.extra.title_addition and title %}
-    {%- set title_addition = title_separator ~ config.extra.title_addition -%}
-  {%- elif config.extra.title_addition %}
-    {%- set title_addition = config.extra.title_addition -%}
-  {%- else %}
-    {%- set title_addition = "" -%}
-  {%- endif %}
-  {%- set description = section.description | default(value=config.description) -%}
-  {%- set_global page = section -%}
-  {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
+{{ super() }}
+{%- set title = section.title | default(value=config.title) -%}
+{%- if config.extra.title_addition and title %}
+{%- set title_addition = title_separator ~ config.extra.title_addition -%}
+{%- elif config.extra.title_addition %}
+{%- set title_addition = config.extra.title_addition -%}
+{%- else %}
+{%- set title_addition = "" -%}
+{%- endif %}
+{%- set description = section.description | default(value=config.description) -%}
+{%- set_global page = section -%}
+{{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
 
-  {% set blog_title = section.title | default(value="IT Help San Diego Blog | Tech Insights & Support Tips") %}
-  {% set blog_desc = section.description | default(value="Expert insights on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego.") %}
-  {% set blog_url = section.permalink %}
-  {% set blog_img = config.extra.default_social | default(value="https://www.it-help.tech/images/logo-slogan.jpeg") %}
+{% set blog_title = section.title | default(value="IT Help San Diego Blog | Tech Insights & Support Tips") %}
+{% set blog_desc = section.description | default(value="Expert insights on macOS, Wi-Fi, DNS, email deliverability,
+cybersecurity and more—straight from IT Help San Diego.") %}
+{% set blog_url = section.permalink %}
+{% set blog_img = config.extra.default_social | default(value="https://www.it-help.tech/images/logo-slogan.webp") %}
 
-  <meta name="description" content="{{ blog_desc }}">
-  <meta name="copyright" content="IT Help San Diego Inc.">
+<meta name="description" content="{{ blog_desc }}">
+<meta name="copyright" content="IT Help San Diego Inc.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ blog_title }}">
-  <meta property="og:description" content="{{ blog_desc }}">
-  <meta property="og:image" content="{{ blog_img }}">
-  <meta property="og:url" content="{{ blog_url }}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="IT Help San Diego Inc.">
-  <meta property="og:locale" content="en_US">
+<!-- Open Graph -->
+<meta property="og:title" content="{{ blog_title }}">
+<meta property="og:description" content="{{ blog_desc }}">
+<meta property="og:image" content="{{ blog_img }}">
+<meta property="og:url" content="{{ blog_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IT Help San Diego Inc.">
+<meta property="og:locale" content="en_US">
 
-  <!-- Twitter -->
-  <meta name="twitter:title" content="{{ blog_title }}">
-  <meta name="twitter:description" content="{{ blog_desc }}">
-  <meta name="twitter:image" content="{{ blog_img }}">
-  <meta name="twitter:url" content="{{ blog_url }}">
-  <meta name="twitter:card" content="summary_large_image">
+<!-- Twitter -->
+<meta name="twitter:title" content="{{ blog_title }}">
+<meta name="twitter:description" content="{{ blog_desc }}">
+<meta name="twitter:image" content="{{ blog_img }}">
+<meta name="twitter:url" content="{{ blog_url }}">
+<meta name="twitter:card" content="summary_large_image">
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -65,37 +66,52 @@
 <ul class="post-list">
   {# section.pages is already sorted by date desc in Zola #}
   {% for page in paginator.pages %}
-    <li class="post-item">
+  <li class="post-item">
 
-      <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
 
-      {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
-        <p class="post-meta">
-          {% if page.date -%}
-            <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
-              {{ page.date | date(format="%B %d, %Y") }}
-            </time>
-          {%- endif %}
-          {% if page.author or page.extra.author or config.extra.author_name -%}
-            &nbsp;&mdash; Author: {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name)) }}
-          {%- endif %}
-        </p>
+    {% if page.date or page.author or page.extra.author or config.extra.author_name -%}
+    <p class="post-meta">
+      {% if page.date -%}
+      <time datetime="{{ page.date | date(format=" %Y-%m-%d") }}">
+        {{ page.date | date(format="%B %d, %Y") }}
+      </time>
       {%- endif %}
+      {% if page.author or page.extra.author or config.extra.author_name -%}
+      &nbsp;&mdash; Author: {{ page.author | default(value=page.extra.author | default(value=config.extra.author_name))
+      }}
+      {%- endif %}
+    </p>
+    {%- endif %}
 
-      {# thumbnail: prefer extra.image, fallback to logo #}
-      {% set thumb = page.extra.image
-                      | default(value='images/logo-blue-square.svg') %}
-      <img src="{{ get_url(path=thumb) }}"
-           alt="{{ page.title }} thumbnail"
-           width="200"
-           class="post-thumb">
+    {# thumbnail: prefer extra.image, fallback to logo #}
+    {% set thumb = page.extra.image | default(value='images/logo-blue-square.svg') %}
+    {% set is_raster_image = thumb and not (thumb is containing("svg")) %}
 
-      <div class="post-excerpt">
-        {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
-      </div>
+    {% if is_raster_image %}
+    {# Generate modern format paths for raster images (PNG/JPG/JPEG) #}
+    {% set avif_thumb = thumb | replace(from=".png", to=".avif") | replace(from=".jpg", to=".avif") |
+    replace(from=".jpeg", to=".avif") %}
+    {% set webp_thumb = thumb | replace(from=".png", to=".webp") | replace(from=".jpg", to=".webp") |
+    replace(from=".jpeg", to=".webp") %}
+    <picture>
+      <source srcset="{{ get_url(path=avif_thumb) }}" type="image/avif">
+      <source srcset="{{ get_url(path=webp_thumb) }}" type="image/webp">
+      <img src="{{ get_url(path=thumb) }}" alt="{{ page.title }} thumbnail" width="200" height="200" loading="lazy"
+        decoding="async" class="post-thumb">
+    </picture>
+    {% else %}
+    {# SVG or no image - use standard img tag #}
+    <img src="{{ get_url(path=thumb) }}" alt="{{ page.title }} thumbnail" width="200" height="200" loading="lazy"
+      decoding="async" class="post-thumb">
+    {% endif %}
 
-      <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
-    </li>
+    <div class="post-excerpt">
+      {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
+    </div>
+
+    <a href="{{ page.permalink }}" class="read-more">Read more &rarr;</a>
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}
