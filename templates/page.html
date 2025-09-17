@@ -29,9 +29,45 @@
 
 {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, type="article",
 is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section) }}
+
 {%- endblock seo %}
 
 {%- block content %}
+{# Add JSON-LD structured data for blog articles #}
+{%- if page.date %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | default(value=config.description) | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.extra.author | default(value=config.extra.author_name) | default(value='IT Help San Diego') }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IT Help San Diego Inc.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ get_url(path='logo.svg') }}"
+    }
+  },
+  "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}",
+  {%- if page.updated %}
+  "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%z') }}",
+  {%- endif %}
+  "url": "{{ page.permalink }}",
+  {%- if page.extra.image %}
+  "image": "{{ get_url(path=page.extra.image) }}",
+  {%- endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.permalink }}"
+  }
+}
+</script>
+{%- endif %}
 <article>
   {# Load widont helpers for this template #}
 
