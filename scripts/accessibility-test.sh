@@ -66,7 +66,8 @@ for url in "${URLS[@]}"; do
         PASSED_TESTS=$((PASSED_TESTS + 1))
     elif [ $PA11Y_EXIT_CODE -eq 2 ]; then
         # Pa11y found accessibility issues (exit code 2)
-        ISSUE_COUNT=$(cat ".accessibility-results/pa11y-${PAGE_NAME}.json" | grep -o '"code"' | wc -l || echo "0")
+        ISSUE_COUNT=$(grep -c '"code":' ".accessibility-results/pa11y-${PAGE_NAME}.json" 2>/dev/null || echo "0")
+        ISSUE_COUNT=$(echo "$ISSUE_COUNT" | head -1)  # Take only first number if multiple lines
         echo -e "${RED}  ❌ Pa11y: ${ISSUE_COUNT} issues found${NC}"
         PA11Y_FAILED=true
         # Generate human-readable report
@@ -108,7 +109,9 @@ for url in "${URLS[@]}"; do
 
     # Check axe-core results
     if [ -f ".accessibility-results/axe-${PAGE_NAME}.json" ]; then
-        VIOLATIONS=$(cat ".accessibility-results/axe-${PAGE_NAME}.json" | grep -o '"violations":\[' | wc -l || echo "0")
+        # Count actual violation objects by looking for violation IDs
+        VIOLATIONS=$(grep -c '"id":.*"impact"' ".accessibility-results/axe-${PAGE_NAME}.json" 2>/dev/null || echo "0")
+        VIOLATIONS=$(echo "$VIOLATIONS" | head -1)  # Take only first number if multiple lines
         if [ "$VIOLATIONS" -eq 0 ]; then
             echo "- **axe-core**: ✅ No violations" >> .accessibility-results/summary.md
         else
@@ -120,7 +123,9 @@ for url in "${URLS[@]}"; do
 
     # Check Pa11y results
     if [ -f ".accessibility-results/pa11y-${PAGE_NAME}.json" ]; then
-        ISSUE_COUNT=$(cat ".accessibility-results/pa11y-${PAGE_NAME}.json" | grep -o '"code"' | wc -l || echo "0")
+        # Count actual Pa11y issues by looking for code field
+        ISSUE_COUNT=$(grep -c '"code":' ".accessibility-results/pa11y-${PAGE_NAME}.json" 2>/dev/null || echo "0")
+        ISSUE_COUNT=$(echo "$ISSUE_COUNT" | head -1)  # Take only first number if multiple lines
         if [ "$ISSUE_COUNT" -eq 0 ]; then
             echo "- **Pa11y**: ✅ No issues" >> .accessibility-results/summary.md
         else
