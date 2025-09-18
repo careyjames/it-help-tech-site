@@ -1,4 +1,4 @@
-name: Lighthouse Performance Check
+name: Performance Testing
 
 on:
   pull_request:
@@ -40,7 +40,6 @@ jobs:
           
       - name: Copy static assets
         run: ./scripts/copy-assets.sh
-
 
       - name: Run Lighthouse CI Performance Check
         id: lighthouse
@@ -85,61 +84,51 @@ jobs:
           LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.event.pull_request.head.sha }}
           LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.pull_request.updated_at }}
 
-      - name: Generate Lighthouse summary
+      - name: Generate Performance Summary
         if: always()
-        id: lighthouse-summary
+        id: performance-summary
         run: |
+          # Start building the performance report
+          echo "## 🚀 Lighthouse Performance Results" > performance-summary.md
+          echo "" >> performance-summary.md
+
+          # Add Lighthouse results section
           if [ -d ".lighthouseci" ]; then
             # Find the latest results
             RESULTS_DIR=$(find .lighthouseci -name "lhr-*.json" | head -1)
             if [ -n "$RESULTS_DIR" ]; then
               # Extract key metrics for summary
               echo "LIGHTHOUSE_RESULTS_FOUND=true" >> $GITHUB_OUTPUT
-              
-              # Create a simple summary (basic version)
-              echo "## 🔍 Lighthouse Performance Results" > lighthouse-summary.md
-              echo "" >> lighthouse-summary.md
-              
               if [ "${{ steps.lighthouse.outcome }}" = "success" ]; then
-                echo "✅ **All performance gates passed!**" >> lighthouse-summary.md
-                echo "" >> lighthouse-summary.md
-                echo "Your changes meet the performance requirements:" >> lighthouse-summary.md
-                echo "- Performance: ≥90 ✅" >> lighthouse-summary.md
-                echo "- Accessibility: ≥90 ✅" >> lighthouse-summary.md
-                echo "- Best Practices: ≥95 ✅" >> lighthouse-summary.md
-                echo "- SEO: ≥95 ✅" >> lighthouse-summary.md
-                echo "- LCP: <2.5s ✅" >> lighthouse-summary.md
-                echo "- FCP: <1.2s ✅" >> lighthouse-summary.md
-                echo "- CLS: <0.1 ✅" >> lighthouse-summary.md
-                echo "- TBT: <300ms ✅" >> lighthouse-summary.md
+                echo "✅ **All performance gates passed!**" >> performance-summary.md
+                echo "" >> performance-summary.md
+                echo "Your changes meet the performance requirements:" >> performance-summary.md
+                echo "- Performance: ≥85 ✅" >> performance-summary.md
+                echo "- Best Practices: ≥90 ✅" >> performance-summary.md
+                echo "- SEO: ≥90 ✅" >> performance-summary.md
+                echo "- LCP: <3.0s ✅" >> performance-summary.md
+                echo "- CLS: <0.2 ✅" >> performance-summary.md
               else
-                echo "❌ **Performance gates failed**" >> lighthouse-summary.md
-                echo "" >> lighthouse-summary.md
-                echo "Some performance requirements were not met. Please review the detailed reports." >> lighthouse-summary.md
-                echo "" >> lighthouse-summary.md
-                echo "**Required thresholds:**" >> lighthouse-summary.md
-                echo "- Performance: ≥90" >> lighthouse-summary.md
-                echo "- Accessibility: ≥90" >> lighthouse-summary.md
-                echo "- Best Practices: ≥95" >> lighthouse-summary.md
-                echo "- SEO: ≥95" >> lighthouse-summary.md
-                echo "- LCP: <2.5s" >> lighthouse-summary.md
-                echo "- FCP: <1.2s" >> lighthouse-summary.md
-                echo "- CLS: <0.1" >> lighthouse-summary.md
-                echo "- TBT: <300ms" >> lighthouse-summary.md
-                echo "" >> lighthouse-summary.md
-                echo "💡 **Tips for improvement:**" >> lighthouse-summary.md
-                echo "- Run \`./scripts/validate-lighthouse.sh\` locally to test" >> lighthouse-summary.md
-                echo "- Check detailed reports in the workflow artifacts" >> lighthouse-summary.md
-                echo "- Review image optimization and CSS bundle size" >> lighthouse-summary.md
+                echo "❌ **Performance gates failed**" >> performance-summary.md
+                echo "" >> performance-summary.md
+                echo "Some performance requirements were not met. Please review the detailed reports." >> performance-summary.md
+                echo "" >> performance-summary.md
+                echo "**Required thresholds:**" >> performance-summary.md
+                echo "- Performance: ≥85" >> performance-summary.md
+                echo "- Best Practices: ≥90" >> performance-summary.md
+                echo "- SEO: ≥90" >> performance-summary.md
+                echo "- LCP: <3.0s" >> performance-summary.md
+                echo "- CLS: <0.2" >> performance-summary.md
+                echo "" >> performance-summary.md
+                echo "💡 **Tips for improvement:**" >> performance-summary.md
+                echo "- Run \`./scripts/validate-lighthouse.sh\` locally to test" >> performance-summary.md
+                echo "- Check detailed reports in the workflow artifacts" >> performance-summary.md
+                echo "- Review image optimization and CSS bundle size" >> performance-summary.md
               fi
-              
-              echo "" >> lighthouse-summary.md
-              echo "📊 **Pages tested:**" >> lighthouse-summary.md
-              echo "- Homepage" >> lighthouse-summary.md
-              echo "- Services page" >> lighthouse-summary.md
-              echo "- Billing page" >> lighthouse-summary.md
-              echo "- About page" >> lighthouse-summary.md
-              echo "- Blog page" >> lighthouse-summary.md
+
+              echo "" >> performance-summary.md
+              echo "📊 **Pages tested:**" >> performance-summary.md
+              echo "- Homepage, Services, Billing, About, Blog" >> performance-summary.md
             else
               echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
             fi
@@ -147,25 +136,25 @@ jobs:
             echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Comment PR with Lighthouse results
-        if: always() && steps.lighthouse-summary.outputs.LIGHTHOUSE_RESULTS_FOUND == 'true'
+      - name: Comment PR with Performance Results
+        if: always() && steps.performance-summary.outputs.LIGHTHOUSE_RESULTS_FOUND == 'true'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            
+
             try {
-              const summary = fs.readFileSync('lighthouse-summary.md', 'utf8');
-              
-              // Find existing comment
+              const summary = fs.readFileSync('performance-summary.md', 'utf8');
+
+              // Find existing performance comment
               const { data: comments } = await github.rest.issues.listComments({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
               });
-              
-              const existingComment = comments.find(comment => 
-                comment.body.includes('🔍 Lighthouse Performance Results')
+
+              const existingComment = comments.find(comment =>
+                comment.body.includes('🚀 Lighthouse Performance Results')
               );
               
               if (existingComment) {
@@ -196,3 +185,4 @@ jobs:
           name: lighthouse-reports
           path: .lighthouseci/
           retention-days: 30
+
