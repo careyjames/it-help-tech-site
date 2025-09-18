@@ -23,7 +23,6 @@ module.exports = {
         'cumulative-layout-shift': ['error', {maxNumericValue: 0.2}],   // CLS < 0.2 (reasonable stability)
         
         // IMPORTANT (warn only) - Issues to track but don't block development
-        'categories:accessibility': ['warn', {minScore: 0.85}],  // 85+ accessibility
         'categories:best-practices': ['warn', {minScore: 0.90}], // 90+ best practices
         'categories:seo': ['warn', {minScore: 0.90}],            // 90+ SEO
         'first-contentful-paint': ['warn', {maxNumericValue: 1500}],    // FCP < 1.5s

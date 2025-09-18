@@ -21,6 +21,9 @@ npm-debug.log*
 # Performance Test Results
 .lighthouseci/
 
+# Accessibility Test Results
+.accessibility-results/
+
 # Terraform/CloudFormation plans
 cf-*.json
 dist*.json

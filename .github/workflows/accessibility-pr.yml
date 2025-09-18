@@ -1,0 +1,179 @@
+name: Accessibility Testing
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Install Zola
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
+
+      - name: Build site with Zola
+        run: |
+          zola build
+          if [ ! -d "public" ]; then
+            echo "❌ Build failed - public directory not created"
+            exit 1
+          fi
+
+      - name: Purge unused CSS
+        run: |
+          npx purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
+
+      - name: Copy static assets
+        run: ./scripts/copy-assets.sh
+
+      - name: Run Enhanced Accessibility Tests
+        id: accessibility
+        run: |
+          # Set up cleanup trap
+          cleanup() {
+            if [ ! -z "$SERVER_PID" ]; then
+              kill $SERVER_PID 2>/dev/null || true
+              echo "🧹 Server cleaned up"
+            fi
+          }
+          trap cleanup EXIT INT TERM
+
+          # Start HTTP server for accessibility testing
+          echo "🚀 Starting server for accessibility tests..."
+          npx http-server public -p 8080 -s &
+          SERVER_PID=$!
+
+          # Wait for server with timeout
+          echo "⏳ Waiting for accessibility test server..."
+          for i in {1..10}; do
+            if curl -s http://localhost:8080/ > /dev/null 2>&1; then
+              echo "✅ Accessibility test server ready"
+              break
+            fi
+            if [ $i -eq 10 ]; then
+              echo "❌ Accessibility test server failed to start"
+              exit 1
+            fi
+            sleep 1
+          done
+
+          # Run accessibility tests
+          echo "♿ Running enhanced accessibility tests..."
+          if ./scripts/accessibility-test.sh; then
+            echo "✅ Enhanced accessibility tests passed"
+            echo "ACCESSIBILITY_PASSED=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Enhanced accessibility tests found issues"
+            echo "ACCESSIBILITY_PASSED=false" >> $GITHUB_OUTPUT
+            # Don't exit here - we want to generate reports even with issues
+          fi
+
+      - name: Generate Accessibility Summary
+        if: always()
+        id: accessibility-summary
+        run: |
+          # Start building the accessibility report
+          echo "## ♿ Accessibility Test Results" > accessibility-summary.md
+          echo "" >> accessibility-summary.md
+
+          # Add accessibility results section
+          if [ -f ".accessibility-results/summary.md" ]; then
+            if [ "${{ steps.accessibility.outputs.ACCESSIBILITY_PASSED }}" = "true" ]; then
+              echo "✅ **All enhanced accessibility tests passed!**" >> accessibility-summary.md
+              echo "" >> accessibility-summary.md
+              echo "Your changes meet enhanced accessibility standards:" >> accessibility-summary.md
+              echo "- **axe-core**: Comprehensive accessibility rule checking ✅" >> accessibility-summary.md
+              echo "- **Pa11y**: Additional accessibility validation ✅" >> accessibility-summary.md
+            else
+              echo "⚠️ **Accessibility tests found issues**" >> accessibility-summary.md
+              echo "" >> accessibility-summary.md
+              echo "Some accessibility requirements were not met. Please review the detailed reports." >> accessibility-summary.md
+              echo "" >> accessibility-summary.md
+              echo "**Tools used:**" >> accessibility-summary.md
+              echo "- **axe-core**: Industry-standard accessibility testing" >> accessibility-summary.md
+              echo "- **Pa11y**: Command-line accessibility testing" >> accessibility-summary.md
+            fi
+
+            echo "" >> accessibility-summary.md
+            echo "**Pages tested:**" >> accessibility-summary.md
+            echo "- Homepage, Services, Billing, About, Blog" >> accessibility-summary.md
+            echo "" >> accessibility-summary.md
+            echo "📋 **Detailed accessibility report**: Check workflow artifacts for \`.accessibility-results/\`" >> accessibility-summary.md
+            echo "" >> accessibility-summary.md
+            echo "💡 **Tips for improvement:**" >> accessibility-summary.md
+            echo "- Run \`npm run accessibility\` locally to test before pushing" >> accessibility-summary.md
+            echo "- Use browser extensions like axe DevTools for real-time testing" >> accessibility-summary.md
+            echo "- Check the [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) for best practices" >> accessibility-summary.md
+
+            echo "ACCESSIBILITY_RESULTS_FOUND=true" >> $GITHUB_OUTPUT
+          else
+            echo "ACCESSIBILITY_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
+            echo "❌ **Accessibility test results not found**" >> accessibility-summary.md
+            echo "" >> accessibility-summary.md
+            echo "The accessibility testing script may have encountered an error." >> accessibility-summary.md
+          fi
+
+      - name: Comment PR with Accessibility Results
+        if: always() && steps.accessibility-summary.outputs.ACCESSIBILITY_RESULTS_FOUND == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            try {
+              const summary = fs.readFileSync('accessibility-summary.md', 'utf8');
+
+              // Find existing accessibility comment
+              const { data: comments } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+              });
+
+              const existingComment = comments.find(comment =>
+                comment.body.includes('♿ Accessibility Test Results')
+              );
+
+              if (existingComment) {
+                // Update existing comment
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                  body: summary
+                });
+              } else {
+                // Create new comment
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: summary
+                });
+              }
+            } catch (error) {
+              console.log('Could not post accessibility comment:', error);
+            }
+
+      - name: Upload Accessibility Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-reports
+          path: .accessibility-results/
+          retention-days: 30
