@@ -41,18 +41,58 @@ OBSERVATORY_FAILED=false
 
 # Server detection and management
 EXTERNAL_SERVER=false
+SERVER_PID=""
 
 # Check if server is already running on the target port
 if curl -s "${BASE_URL}/" > /dev/null 2>&1; then
     echo -e "${GREEN}✅ Using existing server on port ${PORT}${NC}"
     EXTERNAL_SERVER=true
 else
-    echo -e "${RED}❌ No server detected on port ${PORT}${NC}"
-    echo -e "${YELLOW}💡 Please start a server first:${NC}"
-    echo -e "${YELLOW}   npx http-server public -p ${PORT}${NC}"
-    echo -e "${YELLOW}   OR run the complete QA suite: npm run quality${NC}"
-    exit 1
+    echo -e "${YELLOW}⚡ Starting secure server for security testing...${NC}"
+
+    # Check if site is built
+    if [ ! -d "public" ]; then
+        echo -e "${YELLOW}🔧 Building site first...${NC}"
+        zola build
+    fi
+
+    # Start secure server with security headers in background
+    node scripts/secure-server.js ${PORT} > /dev/null 2>&1 &
+    SERVER_PID=$!
+
+    # Wait for server to start
+    echo -e "${YELLOW}⏳ Waiting for server to be ready...${NC}"
+    for i in {1..15}; do
+        if curl -s "${BASE_URL}/" > /dev/null 2>&1; then
+            echo -e "${GREEN}✅ Secure server started on port ${PORT}${NC}"
+            EXTERNAL_SERVER=false
+            break
+        fi
+        sleep 1
+        if [ $i -eq 15 ]; then
+            echo -e "${RED}❌ Failed to start server on port ${PORT}${NC}"
+            if [ ! -z "$SERVER_PID" ]; then
+                kill $SERVER_PID 2>/dev/null || true
+            fi
+            exit 1
+        fi
+    done
 fi
+
+# Cleanup function
+cleanup() {
+    if [ "$EXTERNAL_SERVER" = false ] && [ ! -z "$SERVER_PID" ]; then
+        echo -e "\n${YELLOW}🧹 Stopping test server...${NC}"
+        kill $SERVER_PID 2>/dev/null || true
+        # Wait a moment for graceful shutdown
+        sleep 1
+        # Force kill if still running
+        kill -9 $SERVER_PID 2>/dev/null || true
+    fi
+}
+
+# Set trap to cleanup on script exit
+trap cleanup EXIT INT TERM
 
 # Mozilla Observatory test (only test main domain)
 echo -e "${BLUE}🌐 Testing with Mozilla Observatory...${NC}"
