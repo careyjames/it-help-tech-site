@@ -15,14 +15,30 @@ NC='\033[0m' # No Color
 echo -e "${BLUE}♿ IT Help Tech - Enhanced Accessibility Testing${NC}"
 echo "=================================================="
 
-# Test URLs
+# Test URLs - use PORT environment variable if set, default to 8081
+PORT=${PORT:-8081}
 URLS=(
-    "http://localhost:8080/"
-    "http://localhost:8080/services/"
-    "http://localhost:8080/billing/"
-    "http://localhost:8080/about/"
-    "http://localhost:8080/blog/"
+    "http://localhost:${PORT}/"
+    "http://localhost:${PORT}/services/"
+    "http://localhost:${PORT}/billing/"
+    "http://localhost:${PORT}/about/"
+    "http://localhost:${PORT}/blog/"
 )
+
+# Server detection and management
+EXTERNAL_SERVER=false
+
+# Check if server is already running on the target port
+if curl -s "http://localhost:${PORT}/" > /dev/null 2>&1; then
+    echo -e "${GREEN}✅ Using existing server on port ${PORT}${NC}"
+    EXTERNAL_SERVER=true
+else
+    echo -e "${RED}❌ No server detected on port ${PORT}${NC}"
+    echo -e "${YELLOW}💡 Please start a server first:${NC}"
+    echo -e "${YELLOW}   npx http-server public -p ${PORT}${NC}"
+    echo -e "${YELLOW}   OR run the complete QA suite: npm run quality${NC}"
+    exit 1
+fi
 
 # Create results directory
 mkdir -p .accessibility-results
@@ -38,7 +54,7 @@ PA11Y_FAILED=false
 
 # Test each URL with both tools
 for url in "${URLS[@]}"; do
-    PAGE_NAME=$(echo "$url" | sed 's|http://localhost:8080/||' | sed 's|/$||' | sed 's|^$|homepage|')
+    PAGE_NAME=$(echo "$url" | sed "s|http://localhost:${PORT}/||" | sed 's|/$||' | sed 's|^$|homepage|')
     echo -e "${BLUE}Testing: ${url} (${PAGE_NAME})${NC}"
 
     # axe-core testing
@@ -100,7 +116,7 @@ EOF
 
 # Add detailed results for each page
 for url in "${URLS[@]}"; do
-    PAGE_NAME=$(echo "$url" | sed 's|http://localhost:8080/||' | sed 's|/$||' | sed 's|^$|homepage|')
+    PAGE_NAME=$(echo "$url" | sed "s|http://localhost:${PORT}/||" | sed 's|/$||' | sed 's|^$|homepage|')
     DISPLAY_NAME=$(echo "$PAGE_NAME" | sed 's|^homepage$|Homepage|' | sed 's|\b\w|\U&|g')
 
     echo "### ${DISPLAY_NAME}" >> .accessibility-results/summary.md

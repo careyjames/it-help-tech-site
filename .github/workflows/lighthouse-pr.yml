@@ -1,11 +1,11 @@
-name: Performance Testing
+name: Quality Assurance
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  lighthouse:
+  quality-assurance:
     runs-on: ubuntu-latest
     
     steps:
@@ -40,6 +40,90 @@ jobs:
           
       - name: Copy static assets
         run: ./scripts/copy-assets.sh
+
+      - name: Run Accessibility Tests
+        id: accessibility
+        run: |
+          # Set up cleanup trap for accessibility tests
+          cleanup_accessibility() {
+            if [ ! -z "$ACCESSIBILITY_SERVER_PID" ]; then
+              kill $ACCESSIBILITY_SERVER_PID 2>/dev/null || true
+              echo "🧹 Accessibility server cleaned up"
+            fi
+          }
+          trap cleanup_accessibility EXIT INT TERM
+          
+          # Start HTTP server for accessibility testing
+          echo "🚀 Starting server for accessibility tests..."
+          npx http-server public -p 8081 -s &
+          ACCESSIBILITY_SERVER_PID=$!
+          
+          # Wait for server with timeout
+          echo "⏳ Waiting for accessibility server to start..."
+          for i in {1..10}; do
+            if curl -s http://localhost:8081/ > /dev/null 2>&1; then
+              echo "✅ Accessibility server is ready"
+              break
+            fi
+            if [ $i -eq 10 ]; then
+              echo "❌ Accessibility server failed to start"
+              exit 1
+            fi
+            sleep 1
+          done
+          
+          # Run accessibility tests
+          echo "♿ Running WCAG 2.2 AA compliance tests..."
+          if ./scripts/accessibility-test.sh; then
+            echo "✅ Accessibility compliance passed"
+            echo "ACCESSIBILITY_STATUS=passed" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Accessibility compliance failed - PR blocked"
+            echo "ACCESSIBILITY_STATUS=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Run Security Tests
+        id: security
+        run: |
+          # Set up cleanup trap for security tests
+          cleanup_security() {
+            if [ ! -z "$SECURITY_SERVER_PID" ]; then
+              kill $SECURITY_SERVER_PID 2>/dev/null || true
+              echo "🧹 Security server cleaned up"
+            fi
+          }
+          trap cleanup_security EXIT INT TERM
+          
+          # Start HTTP server for security testing
+          echo "🚀 Starting server for security tests..."
+          npx http-server public -p 8082 -s &
+          SECURITY_SERVER_PID=$!
+          
+          # Wait for server with timeout
+          echo "⏳ Waiting for security server to start..."
+          for i in {1..10}; do
+            if curl -s http://localhost:8082/ > /dev/null 2>&1; then
+              echo "✅ Security server is ready"
+              break
+            fi
+            if [ $i -eq 10 ]; then
+              echo "❌ Security server failed to start"
+              exit 1
+            fi
+            sleep 1
+          done
+          
+          # Run security tests
+          echo "🔒 Running security compliance tests..."
+          if ./scripts/security-test.sh; then
+            echo "✅ Security compliance passed"
+            echo "SECURITY_STATUS=passed" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Security compliance failed - PR blocked"
+            echo "SECURITY_STATUS=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
 
       - name: Run Lighthouse CI Performance Check
         id: lighthouse
@@ -84,15 +168,55 @@ jobs:
           LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.event.pull_request.head.sha }}
           LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.pull_request.updated_at }}
 
-      - name: Generate Performance Summary
+      - name: Generate Quality Assurance Summary
         if: always()
-        id: performance-summary
+        id: qa-summary
         run: |
-          # Start building the performance report
-          echo "## 🚀 Lighthouse Performance Results" > performance-summary.md
-          echo "" >> performance-summary.md
+          # Start building the comprehensive QA report
+          echo "## 🛡️ Quality Assurance Results" > qa-summary.md
+          echo "" >> qa-summary.md
+          
+          # Add overall status
+          OVERALL_SUCCESS=true
+          if [ "${{ steps.accessibility.outcome }}" != "success" ] || [ "${{ steps.security.outcome }}" != "success" ] || [ "${{ steps.lighthouse.outcome }}" != "success" ]; then
+            OVERALL_SUCCESS=false
+          fi
+          
+          if [ "$OVERALL_SUCCESS" = true ]; then
+            echo "✅ **All quality gates passed!** This PR meets all performance, accessibility, and security standards." >> qa-summary.md
+          else
+            echo "❌ **Quality gates failed** - Some requirements were not met. Please review the detailed results below." >> qa-summary.md
+          fi
+          echo "" >> qa-summary.md
+          
+          # Add Accessibility Results
+          echo "### ♿ Accessibility (WCAG 2.2 AA)" >> qa-summary.md
+          if [ "${{ steps.accessibility.outcome }}" = "success" ]; then
+            echo "✅ **PASSED** - All accessibility tests passed" >> qa-summary.md
+            echo "- axe-core: No violations detected" >> qa-summary.md
+            echo "- Pa11y: WCAG 2.2 AA compliance verified" >> qa-summary.md
+          else
+            echo "❌ **FAILED** - Accessibility issues detected" >> qa-summary.md
+            echo "- Review accessibility reports in workflow artifacts" >> qa-summary.md
+            echo "- Run \`npm run accessibility\` locally to debug" >> qa-summary.md
+          fi
+          echo "" >> qa-summary.md
+          
+          # Add Security Results
+          echo "### 🔒 Security" >> qa-summary.md
+          if [ "${{ steps.security.outcome }}" = "success" ]; then
+            echo "✅ **PASSED** - Security checks passed" >> qa-summary.md
+            echo "- Security headers properly configured" >> qa-summary.md
+            echo "- No baseline security issues detected" >> qa-summary.md
+          else
+            echo "❌ **FAILED** - Security issues detected" >> qa-summary.md
+            echo "- Review security reports in workflow artifacts" >> qa-summary.md
+            echo "- Run \`npm run security\` locally to debug" >> qa-summary.md
+          fi
+          echo "" >> qa-summary.md
 
           # Add Lighthouse results section
+          echo "### 🚀 Performance (Lighthouse)" >> qa-summary.md
           if [ -d ".lighthouseci" ]; then
             # Find the latest results
             RESULTS_DIR=$(find .lighthouseci -name "lhr-*.json" | head -1)
@@ -100,53 +224,47 @@ jobs:
               # Extract key metrics for summary
               echo "LIGHTHOUSE_RESULTS_FOUND=true" >> $GITHUB_OUTPUT
               if [ "${{ steps.lighthouse.outcome }}" = "success" ]; then
-                echo "✅ **All performance gates passed!**" >> performance-summary.md
-                echo "" >> performance-summary.md
-                echo "Your changes meet the performance requirements:" >> performance-summary.md
-                echo "- Performance: ≥85 ✅" >> performance-summary.md
-                echo "- Best Practices: ≥90 ✅" >> performance-summary.md
-                echo "- SEO: ≥90 ✅" >> performance-summary.md
-                echo "- LCP: <3.0s ✅" >> performance-summary.md
-                echo "- CLS: <0.2 ✅" >> performance-summary.md
+                echo "✅ **PASSED** - All performance gates passed" >> qa-summary.md
+                echo "- Performance: ≥85 ✅" >> qa-summary.md
+                echo "- Best Practices: ≥90 ✅" >> qa-summary.md
+                echo "- SEO: ≥90 ✅" >> qa-summary.md
+                echo "- LCP: <3.0s ✅" >> qa-summary.md
+                echo "- CLS: <0.2 ✅" >> qa-summary.md
               else
-                echo "❌ **Performance gates failed**" >> performance-summary.md
-                echo "" >> performance-summary.md
-                echo "Some performance requirements were not met. Please review the detailed reports." >> performance-summary.md
-                echo "" >> performance-summary.md
-                echo "**Required thresholds:**" >> performance-summary.md
-                echo "- Performance: ≥85" >> performance-summary.md
-                echo "- Best Practices: ≥90" >> performance-summary.md
-                echo "- SEO: ≥90" >> performance-summary.md
-                echo "- LCP: <3.0s" >> performance-summary.md
-                echo "- CLS: <0.2" >> performance-summary.md
-                echo "" >> performance-summary.md
-                echo "💡 **Tips for improvement:**" >> performance-summary.md
-                echo "- Run \`./scripts/validate-lighthouse.sh\` locally to test" >> performance-summary.md
-                echo "- Check detailed reports in the workflow artifacts" >> performance-summary.md
-                echo "- Review image optimization and CSS bundle size" >> performance-summary.md
+                echo "❌ **FAILED** - Performance requirements not met" >> qa-summary.md
+                echo "" >> qa-summary.md
+                echo "**Required thresholds:**" >> qa-summary.md
+                echo "- Performance: ≥85" >> qa-summary.md
+                echo "- Best Practices: ≥90" >> qa-summary.md
+                echo "- SEO: ≥90" >> qa-summary.md
+                echo "- LCP: <3.0s" >> qa-summary.md
+                echo "- CLS: <0.2" >> qa-summary.md
+                echo "" >> qa-summary.md
+                echo "💡 **Tips:** Run \`npm run lighthouse\` locally to test" >> qa-summary.md
               fi
-
-              echo "" >> performance-summary.md
-              echo "📊 **Pages tested:**" >> performance-summary.md
-              echo "- Homepage, Services, Billing, About, Blog" >> performance-summary.md
             else
               echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
             fi
           else
             echo "LIGHTHOUSE_RESULTS_FOUND=false" >> $GITHUB_OUTPUT
           fi
+          
+          echo "" >> qa-summary.md
+          echo "---" >> qa-summary.md
+          echo "📊 **Pages tested:** Homepage, Services, Billing, About, Blog" >> qa-summary.md
+          echo "🛠️ **Local testing:** \`npm run quality\` runs all checks" >> qa-summary.md
 
-      - name: Comment PR with Performance Results
-        if: always() && steps.performance-summary.outputs.LIGHTHOUSE_RESULTS_FOUND == 'true'
+      - name: Comment PR with Quality Assurance Results
+        if: always()
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
 
             try {
-              const summary = fs.readFileSync('performance-summary.md', 'utf8');
+              const summary = fs.readFileSync('qa-summary.md', 'utf8');
 
-              // Find existing performance comment
+              // Find existing QA comment
               const { data: comments } = await github.rest.issues.listComments({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -154,7 +272,7 @@ jobs:
               });
 
               const existingComment = comments.find(comment =>
-                comment.body.includes('🚀 Lighthouse Performance Results')
+                comment.body.includes('🛡️ Quality Assurance Results')
               );
               
               if (existingComment) {
@@ -175,14 +293,18 @@ jobs:
                 });
               }
             } catch (error) {
-              console.log('Could not post comment:', error);
+              console.log('Could not post QA comment:', error);
             }
 
-      - name: Upload Lighthouse reports
+      - name: Upload Quality Assurance Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-reports
-          path: .lighthouseci/
+          name: qa-reports
+          path: |
+            .lighthouseci/
+            .accessibility-results/
+            .security-results/
+            qa-summary.md
           retention-days: 30
 
