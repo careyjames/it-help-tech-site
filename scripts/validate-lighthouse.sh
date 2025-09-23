@@ -69,33 +69,43 @@ echo -e "${YELLOW}📁 Copying assets...${NC}"
 
 echo -e "${GREEN}✅ Assets copied${NC}"
 
-# Setup cleanup
-cleanup() {
-    if [ ! -z "$SERVER_PID" ]; then
-        kill $SERVER_PID 2>/dev/null || true
-        echo -e "${BLUE}🧹 Server cleaned up${NC}"
-    fi
-}
-trap cleanup EXIT INT TERM
+# Server detection and management
+EXTERNAL_SERVER=false
+SERVER_PID=""
 
-# Start server
-echo -e "${YELLOW}🚀 Starting development server...${NC}"
-npx http-server public -p 8080 -s &
-SERVER_PID=$!
+# Check if server is already running on port 8080
+if curl -s http://localhost:8080/ > /dev/null 2>&1; then
+    echo -e "${GREEN}✅ Using existing server on port 8080${NC}"
+    EXTERNAL_SERVER=true
+else
+    # Setup cleanup only if we start our own server
+    cleanup() {
+        if [ ! -z "$SERVER_PID" ]; then
+            kill $SERVER_PID 2>/dev/null || true
+            echo -e "${BLUE}🧹 Server cleaned up${NC}"
+        fi
+    }
+    trap cleanup EXIT INT TERM
 
-# Wait for server
-echo -e "${YELLOW}⏳ Waiting for server to start...${NC}"
-for i in {1..10}; do
-    if curl -s http://localhost:8080/ > /dev/null 2>&1; then
-        echo -e "${GREEN}✅ Server is ready at http://localhost:8080${NC}"
-        break
-    fi
-    if [ $i -eq 10 ]; then
-        echo -e "${RED}❌ Server failed to start${NC}"
-        exit 1
-    fi
-    sleep 1
-done
+    # Start our own server with security headers for realistic testing
+    echo -e "${YELLOW}🚀 Starting secure development server...${NC}"
+    node scripts/secure-server.js 8080 &
+    SERVER_PID=$!
+
+    # Wait for server
+    echo -e "${YELLOW}⏳ Waiting for server to start...${NC}"
+    for i in {1..10}; do
+        if curl -s http://localhost:8080/ > /dev/null 2>&1; then
+            echo -e "${GREEN}✅ Server is ready at http://localhost:8080${NC}"
+            break
+        fi
+        if [ $i -eq 10 ]; then
+            echo -e "${RED}❌ Server failed to start${NC}"
+            exit 1
+        fi
+        sleep 1
+    done
+fi
 
 # Run Lighthouse
 echo -e "${YELLOW}🔍 Running Lighthouse performance tests...${NC}"

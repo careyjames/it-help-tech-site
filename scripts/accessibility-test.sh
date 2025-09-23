@@ -15,14 +15,70 @@ NC='\033[0m' # No Color
 echo -e "${BLUE}♿ IT Help Tech - Enhanced Accessibility Testing${NC}"
 echo "=================================================="
 
-# Test URLs
+# Test URLs - use PORT environment variable if set, default to 8081
+PORT=${PORT:-8081}
 URLS=(
-    "http://localhost:8080/"
-    "http://localhost:8080/services/"
-    "http://localhost:8080/billing/"
-    "http://localhost:8080/about/"
-    "http://localhost:8080/blog/"
+    "http://localhost:${PORT}/"
+    "http://localhost:${PORT}/services/"
+    "http://localhost:${PORT}/billing/"
+    "http://localhost:${PORT}/about/"
+    "http://localhost:${PORT}/blog/"
 )
+
+# Server detection and management
+EXTERNAL_SERVER=false
+SERVER_PID=""
+
+# Check if server is already running on the target port
+if curl -s "http://localhost:${PORT}/" > /dev/null 2>&1; then
+    echo -e "${GREEN}✅ Using existing server on port ${PORT}${NC}"
+    EXTERNAL_SERVER=true
+else
+    echo -e "${YELLOW}⚡ Starting server for accessibility testing...${NC}"
+
+    # Check if site is built
+    if [ ! -d "public" ]; then
+        echo -e "${YELLOW}🔧 Building site first...${NC}"
+        zola build
+    fi
+
+    # Start http-server in background (accessibility doesn't need security headers)
+    npx http-server public -p ${PORT} --silent > /dev/null 2>&1 &
+    SERVER_PID=$!
+
+    # Wait for server to start
+    echo -e "${YELLOW}⏳ Waiting for server to be ready...${NC}"
+    for i in {1..15}; do
+        if curl -s "http://localhost:${PORT}/" > /dev/null 2>&1; then
+            echo -e "${GREEN}✅ Server started on port ${PORT}${NC}"
+            EXTERNAL_SERVER=false
+            break
+        fi
+        sleep 1
+        if [ $i -eq 15 ]; then
+            echo -e "${RED}❌ Failed to start server on port ${PORT}${NC}"
+            if [ ! -z "$SERVER_PID" ]; then
+                kill $SERVER_PID 2>/dev/null || true
+            fi
+            exit 1
+        fi
+    done
+fi
+
+# Cleanup function
+cleanup() {
+    if [ "$EXTERNAL_SERVER" = false ] && [ ! -z "$SERVER_PID" ]; then
+        echo -e "\n${YELLOW}🧹 Stopping test server...${NC}"
+        kill $SERVER_PID 2>/dev/null || true
+        # Wait a moment for graceful shutdown
+        sleep 1
+        # Force kill if still running
+        kill -9 $SERVER_PID 2>/dev/null || true
+    fi
+}
+
+# Set trap to cleanup on script exit
+trap cleanup EXIT INT TERM
 
 # Create results directory
 mkdir -p .accessibility-results
@@ -38,7 +94,7 @@ PA11Y_FAILED=false
 
 # Test each URL with both tools
 for url in "${URLS[@]}"; do
-    PAGE_NAME=$(echo "$url" | sed 's|http://localhost:8080/||' | sed 's|/$||' | sed 's|^$|homepage|')
+    PAGE_NAME=$(echo "$url" | sed "s|http://localhost:${PORT}/||" | sed 's|/$||' | sed 's|^$|homepage|')
     echo -e "${BLUE}Testing: ${url} (${PAGE_NAME})${NC}"
 
     # axe-core testing
@@ -100,7 +156,7 @@ EOF
 
 # Add detailed results for each page
 for url in "${URLS[@]}"; do
-    PAGE_NAME=$(echo "$url" | sed 's|http://localhost:8080/||' | sed 's|/$||' | sed 's|^$|homepage|')
+    PAGE_NAME=$(echo "$url" | sed "s|http://localhost:${PORT}/||" | sed 's|/$||' | sed 's|^$|homepage|')
     DISPLAY_NAME=$(echo "$PAGE_NAME" | sed 's|^homepage$|Homepage|' | sed 's|\b\w|\U&|g')
 
     echo "### ${DISPLAY_NAME}" >> .accessibility-results/summary.md

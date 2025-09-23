@@ -25,7 +25,7 @@
       "Override": true
     },
     "ContentSecurityPolicy": {
-      "ContentSecurityPolicy": "default-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'; connect-src 'self' *.hyvor.com ws://*.hyvor.com; script-src 'self' 'sha256-4L6CYUCil+93AnlG8NEx1PqaZ/qpwrd119aq9gkEtK0=' 'unsafe-hashes'; img-src 'self' data: talk.hyvor.com cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com streamable.com www.streamable.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net; style-src 'self' 'sha256-KisXi0RQ10fMQdKNf73sFU3AayJlg7f1iU0XbtKkRv0=' talk.hyvor.com cdn.cloudflare.com cdn.jsdelivr.net;",
+      "ContentSecurityPolicy": "default-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'; connect-src 'self' *.hyvor.com ws://*.hyvor.com; script-src 'self' 'sha256-4L6CYUCil+93AnlG8NEx1PqaZ/qpwrd119aq9gkEtK0=' 'unsafe-hashes'; img-src 'self' data: talk.hyvor.com cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com streamable.com www.streamable.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net; style-src 'self' talk.hyvor.com cdn.cloudflare.com cdn.jsdelivr.net;",
       "Override": true
     }
   },
@@ -35,8 +35,23 @@
         "Header": "Permissions-Policy",
         "Value": "interest-cohort=(), accelerometer=(), ambient-light-sensor=(), battery=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), storage-access=(), sync-xhr=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()",
         "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Embedder-Policy",
+        "Value": "require-corp",
+        "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Opener-Policy",
+        "Value": "same-origin",
+        "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Resource-Policy",
+        "Value": "same-origin",
+        "Override": true
       }
     ],
-    "Quantity": 1
+    "Quantity": 4
   }
 }
