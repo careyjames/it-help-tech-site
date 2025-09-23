@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
 const express = require('express');
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 // Read security headers configuration
 const headersConfig = JSON.parse(fs.readFileSync('headers.json', 'utf8'));
 
 function createSecureServer(port) {
   const app = express();
+
+  // Disable Express version disclosure for security
+  app.disable('x-powered-by');
 
   // Apply security headers middleware
   app.use((req, res, next) => {
@@ -50,10 +53,10 @@ function createSecureServer(port) {
     }
 
     // Custom headers (Permissions-Policy, COEP, COOP, CORP)
-    if (headersConfig.CustomHeadersConfig && headersConfig.CustomHeadersConfig.Items) {
-      headersConfig.CustomHeadersConfig.Items.forEach(item => {
+    if (headersConfig.CustomHeadersConfig?.Items) {
+      for (const item of headersConfig.CustomHeadersConfig.Items) {
         res.setHeader(item.Header, item.Value);
-      });
+      }
     }
 
     next();
@@ -126,7 +129,9 @@ if (require.main === module) {
     // Graceful shutdown
     process.on('SIGINT', () => {
       console.log('\n🧹 Shutting down secure servers...');
-      servers.forEach(server => server.close());
+      for (const server of servers) {
+        server.close();
+      }
       process.exit(0);
     });
   })().catch(err => {
