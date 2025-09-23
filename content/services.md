@@ -12,194 +12,190 @@ extra:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "IT Services Offered",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
+      "@type": "ItemList",
+      "name": "IT Services Offered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Email Migration & Setup",
+            "description": "Expert assistance with email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Mac & iOS Mail Support",
+            "description": "Specialized configuration and troubleshooting for Apple Mail on macOS and iOS.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Advanced DNS Troubleshooting",
+            "description": "Precision edits and strategic configuration for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "DMARC & Email Security Implementation",
+            "description": "Architecting bulletproof, security-compliant DNS solutions with robust DMARC (p=reject) implementations.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Website & Domain Recovery",
+            "description": "Assisting you in regaining access and control over your website and domain names.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "Endpoint Security",
+            "description": "Setup and management of leading endpoint protection for macOS, Windows, and Linux.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Mobile Device Security (iOS)",
+            "description": "Advising on best practices and tools to secure your iPhones and iPads.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Data Privacy & Discreet Advisory",
+            "description": "Handling sensitive technical challenges requiring expertise, discretion, and trust.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "name": "Mac Performance & Troubleshooting",
+            "description": "Addressing macOS software issues, iCloud problems, storage warnings, and performance concerns.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Service",
+            "name": "Apple Time Machine Backups",
+            "description": "Setup, troubleshooting, and ensuring your backup strategy is sound.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Service",
+            "name": "Cloud Storage Solutions",
+            "description": "Setup, troubleshooting, and advice on services like Dropbox.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Service",
+            "name": "Disaster Recovery Planning",
+            "description": "Helping you prepare for and recover from data loss scenarios.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Service",
+            "name": "iPhone Text Message Extraction for Law Firms",
+            "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
+            "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
         "@type": "Service",
-        "name": "Email Migration & Setup",
-        "description": "Expert assistance with email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "name": "Apple‑centric on‑site IT support & consulting",
+        "serviceType": "On‑site IT Support & Consulting",
+        "provider": { "@id": "https://www.it-help.tech/#identity" },
+        "areaServed": "San Diego",
+        "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "275",
+        "priceCurrency": "USD",
+        "unitCode": "HUR",
+        "valueAddedTaxIncluded": false,
+        "description": "Per hour rate for on‑site support."
       }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "name": "Mac & iOS Mail Support",
-        "description": "Specialized configuration and troubleshooting for Apple Mail on macOS and iOS.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Service",
-        "name": "Advanced DNS Troubleshooting",
-        "description": "Precision edits and strategic configuration for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Service",
-        "name": "DMARC & Email Security Implementation",
-        "description": "Architecting bulletproof, security-compliant DNS solutions with robust DMARC (p=reject) implementations.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "Service",
-        "name": "Website & Domain Recovery",
-        "description": "Assisting you in regaining access and control over your website and domain names.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "item": {
-        "@type": "Service",
-        "name": "Endpoint Security",
-        "description": "Setup and management of leading endpoint protection for macOS, Windows, and Linux.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Service",
-        "name": "Mobile Device Security (iOS)",
-        "description": "Advising on best practices and tools to secure your iPhones and iPads.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "item": {
-        "@type": "Service",
-        "name": "Data Privacy & Discreet Advisory",
-        "description": "Handling sensitive technical challenges requiring expertise, discretion, and trust.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-     {
-      "@type": "ListItem",
-      "position": 9,
-      "item": {
-        "@type": "Service",
-        "name": "Mac Performance & Troubleshooting",
-        "description": "Addressing macOS software issues, iCloud problems, storage warnings, and performance concerns.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "item": {
-        "@type": "Service",
-        "name": "Apple Time Machine Backups",
-        "description": "Setup, troubleshooting, and ensuring your backup strategy is sound.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "item": {
-        "@type": "Service",
-        "name": "Cloud Storage Solutions",
-        "description": "Setup, troubleshooting, and advice on services like Dropbox.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 12,
-      "item": {
-        "@type": "Service",
-        "name": "Disaster Recovery Planning",
-        "description": "Helping you prepare for and recover from data loss scenarios.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 13,
-      "item": {
-        "@type": "Service",
-        "name": "iPhone Text Message Extraction for Law Firms",
-        "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
-      }
-    }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "itemOffered": {
-    "@type": "Service",
-    "name": "Apple‑centric on‑site IT support & consulting",
-    "serviceType": "On‑site IT Support & Consulting",
-    "provider": { "@id": "https://www.it-help.tech/#identity" },
-    "areaServed": "San Diego",
-    "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
-  },
-  "priceSpecification": {
-    "@type": "PriceSpecification",
-    "price": "275",
-    "priceCurrency": "USD",
-    "unitCode": "HUR",
-    "valueAddedTaxIncluded": false,
-    "description": "Per hour rate for on‑site support."
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you support Windows or mixed environments?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. While we specialize in macOS and iOS, we’re fluent in Windows and Linux and regularly manage mixed networks."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your on-site hourly rate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our standard rate is $275 per hour with a 1‑hour on‑site minimum."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you charge a travel fee?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Travel is billed at $1.50 per mile. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you support Windows or mixed environments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While we specialize in macOS and iOS, we're fluent in Windows and Linux and regularly manage mixed networks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your on-site hourly rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our standard rate is $275 per hour with a 1‑hour on‑site minimum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you charge a travel fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Travel is billed at $1.50 per mile. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time."
+          }
+        }
+      ]
     }
   ]
 }
