@@ -136,10 +136,15 @@ if (require.main === module) {
     });
   }
 
-  startServers().catch(err => {
-    console.error('❌ Server startup failed:', err);
-    process.exit(1);
-  });
+  // Handle async startup with proper error handling
+  (async function handleServerStartup() {
+    try {
+      await startServers();
+    } catch (err) {
+      console.error('❌ Server startup failed:', err);
+      process.exit(1);
+    }
+  })();
 }
 
 module.exports = createSecureServer;
