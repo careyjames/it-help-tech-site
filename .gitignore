@@ -18,11 +18,11 @@ npm-debug.log*
 .npm
 .eslintcache
 
-# Performance Test Results
+# Pe Test Results
 .lighthouseci/
-
-# Accessibility Test Results
 .accessibility-results/
+.qa-results/
+.security-results/
 
 # Terraform/CloudFormation plans
 cf-*.json
