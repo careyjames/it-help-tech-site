@@ -104,7 +104,7 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  (async () => {
+  async function startServers() {
     const servers = [];
 
     // Start servers sequentially to avoid race conditions
@@ -134,7 +134,9 @@ if (require.main === module) {
       }
       process.exit(0);
     });
-  })().catch(err => {
+  }
+
+  startServers().catch(err => {
     console.error('❌ Server startup failed:', err);
     process.exit(1);
   });
