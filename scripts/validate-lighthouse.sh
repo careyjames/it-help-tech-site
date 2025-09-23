@@ -87,9 +87,9 @@ else
     }
     trap cleanup EXIT INT TERM
 
-    # Start our own server
-    echo -e "${YELLOW}🚀 Starting development server...${NC}"
-    npx http-server public -p 8080 -s &
+    # Start our own server with security headers for realistic testing
+    echo -e "${YELLOW}🚀 Starting secure development server...${NC}"
+    node scripts/secure-server.js 8080 &
     SERVER_PID=$!
 
     # Wait for server
