@@ -75,16 +75,16 @@ jobs:
             echo "" >> lighthouse-summary.md
           fi
 
-          # Add performance thresholds information
+          # Add performance thresholds information (updated to match .lighthouserc.js)
           echo "**Performance Requirements:**" >> lighthouse-summary.md
-          echo "- **Performance**: ≥90" >> lighthouse-summary.md
-          echo "- **Accessibility**: ≥90" >> lighthouse-summary.md
-          echo "- **Best Practices**: ≥95" >> lighthouse-summary.md
-          echo "- **SEO**: ≥95" >> lighthouse-summary.md
-          echo "- **LCP**: <2.5s" >> lighthouse-summary.md
-          echo "- **FCP**: <1.2s" >> lighthouse-summary.md
-          echo "- **CLS**: <0.1" >> lighthouse-summary.md
-          echo "- **TBT**: <300ms" >> lighthouse-summary.md
+          echo "- **Performance**: ≥90 (blocks PR)" >> lighthouse-summary.md
+          echo "- **LCP**: <2.5s (blocks PR)" >> lighthouse-summary.md
+          echo "- **FCP**: <1.2s (blocks PR)" >> lighthouse-summary.md
+          echo "- **CLS**: <0.1 (blocks PR)" >> lighthouse-summary.md
+          echo "- **Accessibility**: ≥95 (warning)" >> lighthouse-summary.md
+          echo "- **Best Practices**: ≥95 (warning)" >> lighthouse-summary.md
+          echo "- **SEO**: ≥95 (warning)" >> lighthouse-summary.md
+          echo "- **TBT**: <300ms (warning)" >> lighthouse-summary.md
           echo "" >> lighthouse-summary.md
 
           # Add lighthouse reports links if available
