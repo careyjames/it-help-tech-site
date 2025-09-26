@@ -6,7 +6,7 @@
   /// Fluid layout until a defined size, then becomes centered viewport.
   //$enable-maxwidth: true,
   $mw: 70%,// max-width
-  $font: -apple-system system-ui BlinkMacSystemFont "SF Pro Text" "SF Pro Icons" "Helvetica Neue" Helvetica Arial sans-serif,
+  $font: system-ui -apple-system BlinkMacSystemFont "Segoe UI" "Helvetica Neue" Arial sans-serif,
   //$mb: 1200px,// value at which to switch from fluid layout to max-width
 
   $abridgeMode: "switcher",//valid values: switcher, auto, dark, light
@@ -144,7 +144,7 @@
 
   /// If relying on installed fonts alone, then the above is all you need, if the visiting system has the intended font installed then it will use it!
   /// However, if you want to load the Font File resource to ensure it is loaded if they do not have it, then use @use at the VERY Bottom of this file.
-  /// For a Sans based system font stack, I measured the least Cumulative Layout Shift with: Roboto, Lato, Arimo
+  /// Using system fonts eliminates font loading delays and provides optimal cross-platform consistency
 
   /// If prepending/appending fonts above, then no need to change them with the 2 below lines.
   /// The following 2 below lines give a way to hard code a font list if you prefer.

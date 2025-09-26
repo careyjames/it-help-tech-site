@@ -1,4 +1,4 @@
-{% set critical_css = load_data(path="static/css/critical.min.css") %}
+{% set critical_css = load_data(path="static/css/critical-enhanced.min.css") %}
 <meta charset="utf-8" />
 <script>
   // Prevent a flash of the wrong theme before CSS loads.
@@ -77,22 +77,29 @@
 {# --- Critical hero styling uses CSP nonce --- #}
 
 
-{# --- Style Sheets --- #}
+{# --- Style Sheets - Async Loading for Non-Critical CSS --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
 {%- for i in stylesheets %}
-  <link rel="stylesheet"
-        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+  <link rel="preload" as="style"
+        href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"></noscript>
 {%- endfor %}
 
 {%- if ctx.extra.stylesheets %}
   {% set pagestylesheets = ctx.extra.stylesheets %}
   {%- for i in pagestylesheets %}
-    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+    <link rel="preload" as="style"
+          href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"></noscript>
   {%- endfor %}
 {%- endif %}
 
-<link rel="stylesheet"
-      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
+<link rel="preload" as="style"
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}"></noscript>
 
 <noscript>
   {%- for i in stylesheets %}
