@@ -45,9 +45,9 @@ fi
 echo -e "${YELLOW}🧹 Cleaning previous build...${NC}"
 rm -rf public/
 
-# Build site
-echo -e "${YELLOW}🏗️  Building site with Zola...${NC}"
-if ! zola build; then
+# Build site with localhost base URL for proper CSP compliance
+echo -e "${YELLOW}🏗️  Building site with Zola (localhost URLs for testing)...${NC}"
+if ! zola build --base-url "http://localhost:8080"; then
     echo -e "${RED}❌ Zola build failed${NC}"
     exit 1
 fi

@@ -26,9 +26,9 @@ jobs:
         with:
           tool: zola
 
-      - name: Build site with Zola
+      - name: Build site with Zola (localhost URLs for CSP compliance)
         run: |
-          zola build
+          zola build --base-url "http://localhost:8080"
           if [ ! -d "public" ]; then
             echo "❌ Build failed - public directory not created"
             exit 1
