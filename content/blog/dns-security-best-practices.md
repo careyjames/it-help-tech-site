@@ -16,6 +16,38 @@ extra:
 
 Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will show you how to set up DMARC to protect your business email system from spoofing and phishing attacks. If you feel lost, call 619-853-5008. I’m happy to help.
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM",
+  "description": "Step-by-step setup guide for DMARC, SPF, DKIM, and DNSSEC to prevent spoofing and phishing.",
+  "author": { "@type": "Person", "name": "Carey Balboa" },
+  "publisher": { "@type": "Organization", "name": "IT Help San Diego Inc.", "url": "https://www.it-help.tech" },
+  "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
+  "datePublished": "2025-05-25",
+  "mainEntityOfPage": "https://www.it-help.tech/blog/dns-security-best-practices/",
+  "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "IT Help San Diego",
+  "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "888 Prospect St Suite 200",
+    "addressLocality": "La Jolla",
+    "addressRegion": "CA",
+    "postalCode": "92037"
+  },
+  "telephone": "+16198535008",
+  "url": "https://www.it-help.tech"
+}
+</script>
+
 ### The Challenge: Ensuring DNS Security and Combating Email Vulnerabilities
 
 Your Domain Name System (DNS) security protocols, such as DMARC (Domain-based Message Authentication, Reporting, and Conformance), SPF (Sender Policy Framework), and DKIM (DomainKeys Identified Mail), are crucial for safeguarding your business against email vulnerabilities.
@@ -120,6 +152,31 @@ When setting up DMARC and SPF, watch out for these common mistakes:
 * Setting overly strict policies initially.
 * You will find quite a few website platforms that offer to log in to your DNS and automatically adjust or add the needed records for their needs; I can’t tell you how many times I get a call about email and websites being down because one of these tools erased and reset the entire zone file. If you care about security and zero downtime, DO NOT TRUST THESE TOOLS. They are far from perfect and are often coded by those who don’t understand DNS zone files.
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I set up DMARC and SPF myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but it’s advisable to consult a DNS security expert if you are unsure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I don’t set up DMARC or SPF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your domain can be spoofed or phished, leading to Business Email Compromise attacks."
+      }
+    }
+  ]
+}
+</script>
+
 ### FAQs: Your DNS Security Questions Answered
 
 * **Can I set up DMARC and SPF myself?**
@@ -140,3 +197,5 @@ The FBI's 2023 Internet Crime Report reveals a surge in cybercrime, with a recor
 Securing your domain and email system is not just a technical requirement but a business imperative. Implementing DMARC, SPF, and DKIM can significantly reduce the risk of email spoofing and BEC phishing attacks.
 Don’t be a statistic—take action today.
 We can help you secure your email and DNS records. Call 619-853-5008.
+
+*Last updated October 2025 — verified with current CISA DNS security guidelines.*
