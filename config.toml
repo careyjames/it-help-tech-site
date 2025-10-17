@@ -4,7 +4,7 @@ compile_sass  = true
 minify_html   = true
 base_url      = "https://www.it-help.tech"
 title         = "IT Help San Diego Inc."
-description   = "Apple-centric IT support across San Diego."
+description   = "Expert Apple IT support in San Diego for homes and businesses. No monthly retainers!"
 generate_sitemap = true
 
 [[taxonomies]]
