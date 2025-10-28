@@ -3,7 +3,7 @@ body{overflow-x:hidden}body .homepage-hero, main .homepage-hero{display:block;al
 @media (min-width:700px){.page-title,.post-title,h1.page-title,h1.post-title{text-align:center;margin-left:auto;margin-right:auto;width:100%;max-width:100%;overflow-wrap:break-word;word-break:break-word}}
 
 html.switch .dropdown-content li a:hover{color:var(--a2);background:#fff}
-:html.switch .phone-line,:root.switch .phone-line{color:#0074D9}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:#FFD700}
+html.switch .phone-line,:root.switch .phone-line{color:var(--a1)}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:var(--a2)}
 html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff}html:not(.switch) h3 a:hover,html:not(.switch) h3 a:active,html:not(.switch) h3 a:focus{color:#FFD700}
 .logo-light{display:none}.logo-dark{display:block}html.switch .logo-dark{display:none}html.switch .logo-light{display:block}
 .read-more{color:#4da6ff;text-decoration:underline}
