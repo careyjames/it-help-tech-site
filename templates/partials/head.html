@@ -193,22 +193,6 @@
   <link rel="stylesheet" href="{{ config.extra.fontawesome | safe }}" crossorigin="anonymous">
 {%- endif %}
 
-{# --- KaTeX (math) --- #}
-{%- if config.extra.math or ctx.extra.math %}
-  {%- set katex_css = config.extra.katex_css | default(value="katex.min.css") -%}
-  {%- if katex_css %}
-    {%- if katex_css is matching("^http[s]?://") %}
-      <link rel="stylesheet" href="{{ katex_css | safe }}"
-            {%- if integrity and config.extra.katex_css_integrity %} integrity="{{ config.extra.katex_css_integrity | safe }}"{% endif %}
-            crossorigin="anonymous">
-    {%- else %}
-      <link rel="stylesheet"
-            href="{{ get_url(path=katex_css, trailing_slash=false) }}"
-            {%- if integrity %} integrity="sha384-{{ get_hash(path=katex_css, sha_type=384, base64=true) | safe }}"{% endif %}>
-    {%- endif %}
-  {%- endif %}
-{%- endif %}
-
 {# --- Canonical URL --- #}
 {% if current_url is defined %}
   {% set page_url = current_url %}
