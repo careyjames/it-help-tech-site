@@ -3,13 +3,15 @@
   --ff: -apple-system, system-ui, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --fm: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Courier New", monospace;
 }
-body {
-    font-family: var(--ff) !important;
-  }
 
-  /* Home hero headline */
-.homepage-hero h1 {
-  text-align: center !important;
+/* High specificity for critical above-the-fold styles */
+html body {
+  font-family: var(--ff);
+}
+
+/* Home hero headline */
+html body .homepage-hero h1 {
+  text-align: center;
 }
 
 /* Explicitly size H1s inside structural elements to avoid Chrome's deprecation warning */
@@ -32,11 +34,11 @@ html { background: var(--bg); color: var(--fg); transition: background .15s; }
 [data-t="d"] svg.logo path { filter: invert(1) brightness(1.2); }
 
 /* --- Anti‑CLS: lock logo size before first paint --- */
-img.logo{
-  width: 356px !important;   /* intrinsic header size */
-  height: 48px !important;
-  /* defeat generic rule that sets img max-width to 100% */
-  max-width: none !important;
+/* High specificity to defeat generic img max-width rule */
+html body img.logo {
+  width: 356px;   /* intrinsic header size */
+  height: 48px;
+  max-width: none;  /* defeat generic rule that sets img max-width to 100% */
 }
 
 /* Generic max‑width utility for lists and paragraphs */

@@ -57,3 +57,30 @@ html:not(.switch) h6 a.gold-link:active {
     text-decoration-thickness: 1px; /* optional: tweak as you like */
     text-underline-offset: 2px;     /* lowers the line a bit (nice on Retina) */
 }
+
+/* ---- Force theme colors for accessibility compliance (high specificity) -------- */
+html:not(.switch) body main a.phone-line,
+html:not(.switch) body main a.phone-line:link,
+html:not(.switch) body main a.phone-line:visited,
+html:not(.switch) body footer a.phone-line,
+html:not(.switch) body footer a.phone-line:link,
+html:not(.switch) body footer a.phone-line:visited {
+    color: var(--a2);
+}
+
+html.switch body main a.phone-line,
+html.switch body main a.phone-line:link,
+html.switch body main a.phone-line:visited,
+html.switch body footer a.phone-line,
+html.switch body footer a.phone-line:link,
+html.switch body footer a.phone-line:visited {
+    color: var(--a1);
+}
+
+html body main a.cta-button,
+html body main a.cta-button:link,
+html body main a.cta-button:visited {
+    background-color: var(--a2);
+    color: var(--c1);
+    text-decoration: none;
+}

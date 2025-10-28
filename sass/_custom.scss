@@ -1,4 +1,16 @@
-// site-specific tweaks
+/* =================================================================
+   IT HELP TECH - CONTENT STYLES
+   =================================================================
+
+   Site-specific content and typography styles.
+
+   ARCHITECTURE NOTES:
+   - All !important removed (uses high specificity instead)
+   - Consolidated gold-override.css rules here
+   - Phone number and CTA button styling with accessibility focus
+   - Gold link styling for special emphasis links
+
+   ================================================================= */
 /* Force a single-column layout for the hero section */
 .homepage-hero {
   display: flex;
@@ -48,16 +60,104 @@
   max-width: 220px;
 }
 
-/* Phone number color by mode - ensure final override */
-html.switch .phone-line,
-:root.switch .phone-line {
-  color: #0074D9 !important;
+/* Phone number color by mode - using theme variables with high specificity */
+html.switch body .phone-line,
+html.switch :root .phone-line {
+  color: var(--a1);
 }
-html:not(.switch) .phone-line,
-:root:not(.switch) .phone-line {
-  color: #FFD700 !important;
+html:not(.switch) body .phone-line,
+html:not(.switch) :root .phone-line {
+  color: var(--a2);
 }
 
-/* Gold colored links for recommended services */
-.gold-link { color: var(--a2) !important; }
+/* Gold colored links for recommended services - using theme variable with high specificity */
+html body .gold-link { color: var(--a2); }
+
+/* ---- GOLD LINK OVERRIDES (consolidated from gold-override.css) -------- */
+/* Force gold on any .gold-link, including inside headings */
+html:not(.switch) h1 a.gold-link,
+html:not(.switch) h1 a.gold-link:link,
+html:not(.switch) h1 a.gold-link:visited,
+html:not(.switch) h1 a.gold-link:hover,
+html:not(.switch) h1 a.gold-link:focus,
+html:not(.switch) h1 a.gold-link:active,
+html:not(.switch) h2 a.gold-link,
+html:not(.switch) h2 a.gold-link:link,
+html:not(.switch) h2 a.gold-link:visited,
+html:not(.switch) h2 a.gold-link:hover,
+html:not(.switch) h2 a.gold-link:focus,
+html:not(.switch) h2 a.gold-link:active,
+html:not(.switch) h3 a.gold-link,
+html:not(.switch) h3 a.gold-link:link,
+html:not(.switch) h3 a.gold-link:visited,
+html:not(.switch) h3 a.gold-link:hover,
+html:not(.switch) h3 a.gold-link:focus,
+html:not(.switch) h3 a.gold-link:active,
+html:not(.switch) h4 a.gold-link,
+html:not(.switch) h5 a.gold-link,
+html:not(.switch) h6 a.gold-link,
+a.gold-link,
+a.gold-link:link,
+a.gold-link:visited,
+a.gold-link:hover,
+a.gold-link:focus,
+a.gold-link:active {
+    color: #d4af37;
+    text-decoration: none;          /* default: no line */
+}
+
+/* Gold underline on interactive states */
+a.gold-link:hover,
+a.gold-link:focus,
+a.gold-link:active,
+html:not(.switch) h1 a.gold-link:hover,
+html:not(.switch) h2 a.gold-link:hover,
+html:not(.switch) h3 a.gold-link:hover,
+html:not(.switch) h4 a.gold-link:hover,
+html:not(.switch) h5 a.gold-link:hover,
+html:not(.switch) h6 a.gold-link:hover,
+html:not(.switch) h1 a.gold-link:focus,
+html:not(.switch) h2 a.gold-link:focus,
+html:not(.switch) h3 a.gold-link:focus,
+html:not(.switch) h4 a.gold-link:focus,
+html:not(.switch) h5 a.gold-link:focus,
+html:not(.switch) h6 a.gold-link:focus,
+html:not(.switch) h1 a.gold-link:active,
+html:not(.switch) h2 a.gold-link:active,
+html:not(.switch) h3 a.gold-link:active,
+html:not(.switch) h4 a.gold-link:active,
+html:not(.switch) h5 a.gold-link:active,
+html:not(.switch) h6 a.gold-link:active {
+    text-decoration: underline;
+    text-decoration-color: #d4af37;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+/* Force theme colors for accessibility compliance (high specificity) */
+html:not(.switch) body main a.phone-line,
+html:not(.switch) body main a.phone-line:link,
+html:not(.switch) body main a.phone-line:visited,
+html:not(.switch) body footer a.phone-line,
+html:not(.switch) body footer a.phone-line:link,
+html:not(.switch) body footer a.phone-line:visited {
+    color: var(--a2);
+}
+
+html.switch body main a.phone-line,
+html.switch body main a.phone-line:link,
+html.switch body main a.phone-line:visited,
+html.switch body footer a.phone-line,
+html.switch body footer a.phone-line:link,
+html.switch body footer a.phone-line:visited {
+    color: var(--a1);
+}
+
+html body main a.cta-button,
+html body main a.cta-button:link,
+html body main a.cta-button:visited {
+    background-color: var(--a2);
+    color: var(--c1);
+    text-decoration: none;
+}
 
