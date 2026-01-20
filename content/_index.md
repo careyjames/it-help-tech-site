@@ -26,7 +26,7 @@ twitter_card        = "summary_large_image"
   "mainEntity": [
     {
       "@type": "Question",
-        "name": "Can you help with PC, Linux, or mixed computer environments?",
+        "name": "Can you help with Windows PC, Linux, or mixed computer environments?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at remote troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Windows and Linux systems, enabling us to support diverse tech environments effectively."
