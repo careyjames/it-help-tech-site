@@ -16,7 +16,9 @@ name = "tags"
 feed = true
 
 [markdown.highlighting]
-theme = "base16-ocean-dark"
+# NOTE: In recent Zola builds, Syntect theme names use a dot, not a dash.
+# Use `zola highlight themes` locally (or in CI) to list available themes.
+theme = "base16-ocean.dark"
 # optional:
 # style = "inline"
 # error_on_missing_language = false
