@@ -29,7 +29,7 @@ twitter_card        = "summary_large_image"
         "name": "Can you help with PC, Linux, or mixed computer environments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at remote troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Windows and Linux systems, enabling us to support diverse tech environments effectively. My daily driver is Kali Purple Linux (a specialized security-focused operating system), so we're comfortable across platforms."
+        "text": "Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at remote troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Windows and Linux systems, enabling us to support diverse tech environments effectively."
       }
     },
     {
@@ -120,7 +120,7 @@ twitter_card        = "summary_large_image"
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "reviewCount": "188"
+    "reviewCount": "193"
   }
 }
 </script>
