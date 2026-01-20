@@ -15,12 +15,11 @@ feed = true
 name = "tags"
 feed = true
 
-[markdown]
-insert_anchor_links = "none"   # disable auto “##” anchors globally
-external_links_target_blank = true      # force target="_blank"
-external_links_no_referrer  = true      # strip Referer header
-highlighting  = true
+[markdown.highlighting]
 theme = "base16-ocean-dark"
+# optional:
+# style = "inline"
+# error_on_missing_language = false
 
 [extra]
 #abridgeMode = "switcher"
