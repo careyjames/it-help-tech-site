@@ -15,14 +15,6 @@ feed = true
 name = "tags"
 feed = true
 
-[markdown.highlighting]
-# Theme names are dependent on the Zola build's bundled Syntect themes.
-# "InspiredGitHub" is widely available across Syntect/Zola builds.
-theme = "InspiredGitHub"
-# optional:
-# style = "inline"
-# error_on_missing_language = false
-
 [extra]
 #abridgeMode = "switcher"
 js_switcher = false
