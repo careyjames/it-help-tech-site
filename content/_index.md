@@ -65,7 +65,7 @@ twitter_card        = "summary_large_image"
   "url": "https://www.it-help.tech/",
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
   "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
-  "hasMap": "https://www.google.com/maps?cid=173698940547158593",
+  "hasMap": "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9",
   "telephone": "+1-619-853-5008",
   "priceRange": "$$$",
   "address": {
@@ -94,7 +94,7 @@ twitter_card        = "summary_large_image"
   ],
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego",
-    "https://www.google.com/maps?cid=173698940547158593"
+    "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9"
   ],
   "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
   "knowsAbout": [
@@ -227,7 +227,7 @@ San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Ma
 </p>
 
 <p class="nap">
-<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a> • <a href="https://www.google.com/maps?cid=173698940547158593" target="_blank" rel="noopener noreferrer">Google Maps</a><br>
+<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a> • <a href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer">Google Maps</a><br>
 <strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
 </p>
 
