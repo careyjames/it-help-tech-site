@@ -1,13 +1,13 @@
 +++
-title       = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
 description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 
 [extra]
-og_title        = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+og_title        = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
 og_description  = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 og_image        = "/images/logo-slogan.jpeg"
 
-twitter_title       = "Apple-Centric Tech Help for Homes & SMBs – San Diego"
+twitter_title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
 twitter_description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
 twitter_image       = "/images/logo-slogan.jpeg"
 twitter_card        = "summary_large_image"
@@ -192,7 +192,7 @@ twitter_card        = "summary_large_image"
       "@type": "WebPage",
       "@id": "https://www.it-help.tech/#webpage",
       "url": "https://www.it-help.tech/",
-      "name": "Apple-Centric Tech Help for Homes & SMBs – San Diego",
+      "name": "Mac IT Support San Diego (La Jolla) | IT Help San Diego",
       "description": "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers.",
       "inLanguage": "en-US",
       "isPartOf": {
@@ -218,12 +218,12 @@ twitter_card        = "summary_large_image"
 <!-- Homepage hero heading -->
 <section class="homepage-hero">
   <h1 class="hero">
-    Expert Mac IT Support
+    Mac IT Support in San Diego (La Jolla)
   </h1>
 </section>
 
 <p class="intro">
-San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Mac, Wi‑Fi, DNS & Email issues. We fix macOS/iOS glitches, eliminate Wi‑Fi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—on‑site, in‑home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
+Apple-centric IT support for homes &amp; SMBs across San Diego County. macOS/iOS, Wi‑Fi, DNS, and email deliverability (SPF/DKIM/DMARC). On‑site, in‑home, or La Jolla office by appointment. Clear answers &amp; discreet service. <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
 </p>
 
 <p class="nap">
@@ -231,7 +231,7 @@ San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Ma
 <strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
 </p>
 
-<p><a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" rel="noopener noreferrer" class="cta-button">Read Verified Reviews</a></p>    
+<p><a href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer" class="cta-button">Read Google Reviews</a></p>    
 
 ## Custom Solutions That Work for You  
 
@@ -274,14 +274,13 @@ We provide robust Mac defenses against viruses, Email phishing, browser blocks, 
 ## Frequently Asked Questions
 
 ### Can you help with PC, Linux, or mixed computer environments?
-Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support a diverse range of technical environments effectively.  
+Yes. Our primary expertise is macOS and iOS, including secure remote troubleshooting (including iPhone/iPad screen sharing when appropriate). We also support Windows and Linux in mixed environments, especially where identity, networking, and email deliverability overlap.
 
 ### How is your service different from a Managed Service Provider (MSP)?
-We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust. Our goal is to resolve issues efficiently and effectively. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
+We focus on transparent, on-demand help instead of locking clients into monthly fees. No long-term contracts or retainers—just clear billing for actual work performed. The incentive is to solve problems efficiently, not pad hours.
 
 ### Do you fix cracked iPhone screens?
-
-**No, we’re not a hardware repair shop.** We specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+No. We are not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients, we can do a concierge replacement: pick up a factory-fresh iPhone from Apple and migrate your data on-site while you watch. Prefer glass replacement? We can refer you to a vetted local technician.
 
 ### Do you provide same-day service in La Jolla?
 Yes—schedule permitting. For most Mac, Wi‑Fi, or email issues we can often dispatch to La Jolla the same day.
