@@ -44,8 +44,31 @@ extra:
       "@id": "https://www.it-help.tech/#business",
       "name": "IT Help San Diego",
       "url": "https://www.it-help.tech/",
+      "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
       "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
-      "telephone": "+1-619-853-5008"
+      "hasMap": "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9",
+      "telephone": "+1-619-853-5008",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "888 Prospect Street Suite 200",
+        "addressLocality": "La Jolla",
+        "addressRegion": "CA",
+        "postalCode": "92037",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.845,
+        "longitude": -117.276
+      },
+      "areaServed": [
+        { "@type": "City", "name": "San Diego" },
+        { "@type": "AdministrativeArea", "name": "San Diego County" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/it-help-san-diego"
+      ]
     }
   ]
 }
