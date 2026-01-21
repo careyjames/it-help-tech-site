@@ -227,7 +227,7 @@ Apple-centric IT support for homes &amp; SMBs across San Diego County. macOS/iOS
 </p>
 
 <p class="nap">
-<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a> • <a href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer" class="cta-button">Google Maps</a><br>
+<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a> • <br>
 <strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
 </p>
 
