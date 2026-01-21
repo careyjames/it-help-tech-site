@@ -71,7 +71,8 @@ twitter_card        = "summary_large_image"
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "888 Prospect Street Suite 200",
-    "addressLocality": "San Diego",
+    "addressLocality": "La Jolla",
+    "addressNeighborhood": "La Jolla",
     "addressRegion": "CA",
     "postalCode": "92037",
     "addressCountry": "US"
@@ -93,7 +94,7 @@ twitter_card        = "summary_large_image"
   ],
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego",
-    "https://g.page/r/CaF_LIXG2uLzEB0/review"
+    "https://www.google.com/maps?cid=173698940547158593"
   ],
   "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
   "knowsAbout": [
@@ -173,6 +174,46 @@ twitter_card        = "summary_large_image"
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.it-help.tech/#website",
+      "url": "https://www.it-help.tech/",
+      "name": "IT Help San Diego",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://www.it-help.tech/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.it-help.tech/#webpage",
+      "url": "https://www.it-help.tech/",
+      "name": "Apple-Centric Tech Help for Homes & SMBs – San Diego",
+      "description": "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.it-help.tech/#website"
+      },
+      "about": {
+        "@id": "https://www.it-help.tech/#business"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.it-help.tech/#primaryimage"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.it-help.tech/#primaryimage",
+      "url": "https://www.it-help.tech/images/logo-slogan.jpeg"
+    }
+  ]
+}
+</script>
+
 
 <!-- Homepage hero heading -->
 <section class="homepage-hero">
@@ -183,6 +224,11 @@ twitter_card        = "summary_large_image"
 
 <p class="intro">
 San Diego’s Apple‑centric IT support for homes & SMBs. 25+ years fixing Mac, Wi‑Fi, DNS & Email issues. We fix macOS/iOS glitches, eliminate Wi‑Fi dead zones, boost security, and ensure Email delivery (SPF/DKIM/DMARC)—on‑site, in‑home or meet at our office (by appointment) in La Jolla. Clear answers & discreet service. <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
+</p>
+
+<p class="nap">
+<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a> • <a href="https://www.google.com/maps?cid=173698940547158593" target="_blank" rel="noopener noreferrer">Google Maps</a><br>
+<strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
 </p>
 
 <p><a href="https://8750b1ff89054a2b8a27550322e2ed7c.elf.site" target="_blank" rel="noopener noreferrer" class="cta-button">Read Verified Reviews</a></p>    
