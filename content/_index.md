@@ -60,7 +60,6 @@ twitter_card        = "summary_large_image"
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://www.it-help.tech/#business",
-  "inLanguage": "en-US",
   "name": "IT Help San Diego",
   "url": "https://www.it-help.tech/",
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
@@ -72,7 +71,6 @@ twitter_card        = "summary_large_image"
     "@type": "PostalAddress",
     "streetAddress": "888 Prospect Street Suite 200",
     "addressLocality": "La Jolla",
-    "addressNeighborhood": "La Jolla",
     "addressRegion": "CA",
     "postalCode": "92037",
     "addressCountry": "US"
