@@ -93,8 +93,7 @@ twitter_card        = "summary_large_image"
     }
   ],
   "sameAs": [
-    "https://www.linkedin.com/company/it-help-san-diego",
-    "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9"
+    "https://www.linkedin.com/company/it-help-san-diego"
   ],
   "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
   "knowsAbout": [
@@ -223,15 +222,16 @@ twitter_card        = "summary_large_image"
 </section>
 
 <p class="intro">
-Apple-centric IT support for homes &amp; SMBs across San Diego County. macOS/iOS, Wi‑Fi, DNS, and email deliverability (SPF/DKIM/DMARC). On‑site, in‑home, or La Jolla office by appointment. Clear answers &amp; discreet service. 
+Apple-centric IT support for homes &amp; SMBs across San Diego County. macOS/iOS, Wi‑Fi, DNS, and email deliverability (SPF/DKIM/DMARC). On‑site, in‑home, or La Jolla office by appointment. Clear answers &amp; discreet service. <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
 </p>
 
 <p class="nap">
-<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a><br>
+<strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <a class="gold-link" href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer">Google Maps</a><br>
 <strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
 </p>
 
-<p><a href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer" class="cta-button">Read Google Reviews</a></p>    
+<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On‑Site Visit</a></p>
+<p><a class="gold-link" href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer">Read Google Reviews</a></p>    
 
 ## Custom Solutions That Work for You  
 
