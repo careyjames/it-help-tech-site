@@ -16,20 +16,15 @@ twitter_card        = "summary_large_image"
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-      "xpath": [
-        "//h3[@id='can-you-help-with-pc-linux-or-mixed-computer-environments']",
-        "//h3[@id='how-is-your-service-different-from-a-managed-service-provider-msp']"
-      ]
-  },
+  "@id": "https://www.it-help.tech/#faq",
+  "inLanguage": "en-US",
   "mainEntity": [
     {
       "@type": "Question",
-        "name": "Can you help with Windows PC, Linux, or mixed computer environments?",
+      "name": "Can you help with PC, Linux, or mixed computer environments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at remote troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Windows and Linux systems, enabling us to support diverse tech environments effectively."
+        "text": "Yes. Our primary expertise is macOS and iOS, including secure remote troubleshooting (including iPhone/iPad screen sharing when appropriate). We also support Windows and Linux in mixed environments, especially where identity, networking, and email deliverability overlap."
       }
     },
     {
@@ -37,7 +32,7 @@ twitter_card        = "summary_large_image"
       "name": "How is your service different from a Managed Service Provider (MSP)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, we believe you should only pay for IT help when needed. There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust, since our incentive is to solve issues efficiently, not to pad hours. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model."
+        "text": "We focus on transparent, on-demand help instead of locking clients into monthly fees. No long-term contracts or retainers—just clear billing for actual work performed. The incentive is to solve problems efficiently, not pad hours."
       }
     },
     {
@@ -45,7 +40,7 @@ twitter_card        = "summary_large_image"
       "name": "Do you fix cracked iPhone screens?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, we’re not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, we offer a concierge swap: we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your hands, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician."
+        "text": "No. We are not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients, we can do a concierge replacement: pick up a factory-fresh iPhone from Apple and migrate your data on-site while you watch. Prefer glass replacement? We can refer you to a vetted local technician."
       }
     },
     {
@@ -53,7 +48,7 @@ twitter_card        = "summary_large_image"
       "name": "Do you provide same-day service in La Jolla?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. For most Mac, Wi‑Fi or email issues we can dispatch to La Jolla the same day, schedule permitting."
+        "text": "Often yes, schedule permitting—especially for Mac, Wi‑Fi, and email issues. Call or book and we’ll confirm the earliest available slot."
       }
     }
   ]
@@ -64,9 +59,13 @@ twitter_card        = "summary_large_image"
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://www.it-help.tech/#business",
+  "inLanguage": "en-US",
   "name": "IT Help San Diego",
   "url": "https://www.it-help.tech/",
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
+  "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
+  "hasMap": "https://www.google.com/maps?cid=173698940547158593",
   "telephone": "+1-619-853-5008",
   "priceRange": "$$$",
   "address": {
@@ -82,20 +81,74 @@ twitter_card        = "summary_large_image"
     "latitude": 32.8450,
     "longitude": -117.2760
   },
-  "areaServed": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Diego",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "San Diego"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "San Diego County"
     }
-  },
+  ],
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego",
     "https://g.page/r/CaF_LIXG2uLzEB0/review"
   ],
   "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
+  "knowsAbout": [
+    "macOS troubleshooting",
+    "iOS troubleshooting",
+    "Wi‑Fi design and troubleshooting",
+    "DNS",
+    "SPF",
+    "DKIM",
+    "DMARC",
+    "Google Workspace migrations",
+    "endpoint security",
+    "data extraction for legal matters"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Core Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "macOS & iOS troubleshooting"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Wi‑Fi / network troubleshooting and design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email deliverability and domain security (SPF/DKIM/DMARC)"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cybersecurity hardening and ethical remote support"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data extraction (email and iMessage) for law firms"
+        }
+      }
+    ]
+  },
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
@@ -116,11 +169,6 @@ twitter_card        = "summary_large_image"
     "telephone": "+1-619-853-5008",
     "contactType": "customer support",
     "areaServed": "US-CA"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "193"
   }
 }
 </script>
@@ -188,6 +236,9 @@ We take a different approach focused on transparency and on-demand support. Unli
 ### Do you fix cracked iPhone screens?
 
 **No, we’re not a hardware repair shop.** We specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+
+### Do you provide same-day service in La Jolla?
+Yes—schedule permitting. For most Mac, Wi‑Fi, or email issues we can often dispatch to La Jolla the same day.
 
 ---
 Tired of paying for a month of IT service when nothing happened?
