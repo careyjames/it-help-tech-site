@@ -1,5 +1,5 @@
 ---
-title: On-site, In-home IT Services
+title: On-site IT Services San Diego (La Jolla) | IT Help San Diego
 path: services
 description: "Apple‑centric on‑site IT services for homes & SMBs across San Diego: Mac & Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers."
 extra:
@@ -7,8 +7,49 @@ extra:
   skip_author: true
   og_description: "Apple‑centric on‑site IT services: Mac & Wi‑Fi troubleshooting, DNS/email security, data recovery—no monthly retainers."
   twitter_description: "Apple‑centric on‑site IT services: Mac & Wi‑Fi troubleshooting, DNS/email security, data recovery—no monthly retainers."
+  og_title: "On-site IT Services San Diego (La Jolla) | IT Help San Diego"
+  twitter_title: "On-site IT Services San Diego (La Jolla) | IT Help San Diego"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.it-help.tech/#website",
+      "url": "https://www.it-help.tech/",
+      "name": "IT Help San Diego",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://www.it-help.tech/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.it-help.tech/services/#webpage",
+      "url": "https://www.it-help.tech/services",
+      "name": "On-site IT Services San Diego (La Jolla) | IT Help San Diego",
+      "description": "Apple-centric on-site IT services across San Diego County: Mac & Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://www.it-help.tech/#website"
+      },
+      "about": {
+        "@id": "https://www.it-help.tech/#business"
+      }
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.it-help.tech/#business",
+      "name": "IT Help San Diego",
+      "url": "https://www.it-help.tech/",
+      "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
+      "telephone": "+1-619-853-5008"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +63,7 @@ extra:
         "@type": "Service",
         "name": "Email Migration & Setup",
         "description": "Expert assistance with email system migrations (e.g., to Google Workspace) and comprehensive setup & troubleshooting.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -32,7 +73,7 @@ extra:
         "@type": "Service",
         "name": "Mac & iOS Mail Support",
         "description": "Specialized configuration and troubleshooting for Apple Mail on macOS and iOS.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -42,7 +83,7 @@ extra:
         "@type": "Service",
         "name": "Advanced DNS Troubleshooting",
         "description": "Precision edits and strategic configuration for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -52,7 +93,7 @@ extra:
         "@type": "Service",
         "name": "DMARC & Email Security Implementation",
         "description": "Architecting bulletproof, security-compliant DNS solutions with robust DMARC (p=reject) implementations.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -62,7 +103,7 @@ extra:
         "@type": "Service",
         "name": "Website & Domain Recovery",
         "description": "Assisting you in regaining access and control over your website and domain names.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -72,7 +113,7 @@ extra:
         "@type": "Service",
         "name": "Endpoint Security",
         "description": "Setup and management of leading endpoint protection for macOS, Windows, and Linux.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -82,7 +123,7 @@ extra:
         "@type": "Service",
         "name": "Mobile Device Security (iOS)",
         "description": "Advising on best practices and tools to secure your iPhones and iPads.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -92,7 +133,7 @@ extra:
         "@type": "Service",
         "name": "Data Privacy & Discreet Advisory",
         "description": "Handling sensitive technical challenges requiring expertise, discretion, and trust.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
      {
@@ -102,7 +143,7 @@ extra:
         "@type": "Service",
         "name": "Mac Performance & Troubleshooting",
         "description": "Addressing macOS software issues, iCloud problems, storage warnings, and performance concerns.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -112,7 +153,7 @@ extra:
         "@type": "Service",
         "name": "Apple Time Machine Backups",
         "description": "Setup, troubleshooting, and ensuring your backup strategy is sound.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -122,7 +163,7 @@ extra:
         "@type": "Service",
         "name": "Cloud Storage Solutions",
         "description": "Setup, troubleshooting, and advice on services like Dropbox.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -132,7 +173,7 @@ extra:
         "@type": "Service",
         "name": "Disaster Recovery Planning",
         "description": "Helping you prepare for and recover from data loss scenarios.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     },
     {
@@ -142,7 +183,7 @@ extra:
         "@type": "Service",
         "name": "iPhone Text Message Extraction for Law Firms",
         "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
-        "provider": { "@type": "Organization", "name": "IT Help San Diego" }
+        "provider": { "@id": "https://www.it-help.tech/#business" }
       }
     }
   ]
@@ -157,17 +198,21 @@ extra:
     "@type": "Service",
     "name": "Apple‑centric on‑site IT support & consulting",
     "serviceType": "On‑site IT Support & Consulting",
-    "provider": { "@id": "https://www.it-help.tech/#identity" },
-    "areaServed": "San Diego",
+    "provider": { "@id": "https://www.it-help.tech/#business" },
+    "areaServed": [
+      { "@type": "City", "name": "San Diego" },
+      { "@type": "AdministrativeArea", "name": "San Diego County" }
+    ],
     "description": "Expert Mac, Wi‑Fi, DNS, and cybersecurity services for homes & SMBs — no retainers."
   },
   "priceSpecification": {
-    "@type": "PriceSpecification",
-    "price": "275",
+    "@type": "UnitPriceSpecification",
+    "price": 275,
     "priceCurrency": "USD",
     "unitCode": "HUR",
+    "unitText": "hour",
     "valueAddedTaxIncluded": false,
-    "description": "Per hour rate for on‑site support."
+    "description": "Per hour rate for on-site support."
   }
 }
 </script>
