@@ -56,7 +56,7 @@ DMARC, SPF, and DKIM offer a robust defense for your email system by authenticat
 
 Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and Infrastructure Security Agency), the US cyber intelligence agency:
 
-![DNS Tool record showing CISA DMARC, SPF, and DKIM enforcement](/images/cisa-dns.png)
+<img src="/images/cisa-dns.png" alt="DNS Tool record showing CISA DMARC, SPF, and DKIM enforcement" width="2302" height="1298">
 
 
 
