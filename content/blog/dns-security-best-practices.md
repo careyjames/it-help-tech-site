@@ -14,8 +14,7 @@ extra:
   canonical_url: "https://www.it-help.tech/blog/dns-security-best-practices/"
 ---
 
-Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will show you how to set up DMARC to protect your business email system from spoofing and phishing attacks. If you feel lost, call 619-853-5008. I’m happy to help.
-
+Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will show you how to set up DMARC to protect your business email system from spoofing and phishing attacks.
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
