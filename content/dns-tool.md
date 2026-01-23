@@ -15,7 +15,7 @@ DNS Tool is no longer just a command-line helper — it’s a **full, authoritat
 
 This is the version I use now. It’s faster, clearer, and far more opinionated—in the right ways.
 
-### What This Tool Actually Solves
+## What This Tool Actually Solves
 
 Most DNS tools dump raw records and expect you to “interpret” them. That’s how people end up thinking they’re secure when they’re not.
 
@@ -29,7 +29,7 @@ DNS Tool answers the *real* questions:
 
 It distinguishes *configured* vs *enforced*, *unsigned* vs *broken*, and *missing* vs *intentionally absent*. That nuance is where most tools fail.
 
-### What the Web Version Audits (In One Pass)
+## What the Web Version Audits (In One Pass)
 
 **DNS & Domain Security**
 * NS delegation correctness
@@ -55,7 +55,7 @@ It distinguishes *configured* vs *enforced*, *unsigned* vs *broken*, and *missin
 
 The output is a **single, defensible report**—not a pile of green and red checkboxes.
 
-### Why This Version Is Better Than the CLI
+## Why This Version Is Better Than the CLI
 
 The original command-line tool still exists and is useful for scripting and offline checks, but the **web version is the authoritative one**:
 
@@ -66,7 +66,7 @@ The original command-line tool still exists and is useful for scripting and offl
 
 If you’re evaluating DNS posture, this is the version you want.
 
-### Command-Line Version (Still Available)
+## Command-Line Version (Still Available)
 
 The CLI tool is open-source and maintained for those who want it:
 
