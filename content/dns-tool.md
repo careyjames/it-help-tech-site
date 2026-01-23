@@ -11,7 +11,7 @@ extra:
 
 DNS Tool is no longer just a command-line helper — it’s a **full, authoritative DNS and email security auditor** available directly on the web:
 
-👉 **https://dnstool.it-help.tech/**
+👉 <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>
 
 This is the version I use now. It’s faster, clearer, and far more opinionated—in the right ways.
 
@@ -70,8 +70,8 @@ If you’re evaluating DNS posture, this is the version you want.
 
 The CLI tool is open-source and maintained for those who want it:
 
-* **GitHub (Source & Docs):** https://github.com/careyjames/dns-tool/
-* **CLI Releases:** https://github.com/careyjames/dns-tool/releases
+* <a href="https://github.com/careyjames/dns-tool/" target="_blank" rel="noopener noreferrer">GitHub (Source & Docs)</a>
+* <a href="https://github.com/careyjames/dns-tool/releases" target="_blank" rel="noopener noreferrer">CLI Releases</a>
 
 Think of it as a sharp pocket knife.
 
@@ -156,7 +156,7 @@ The web version is the full diagnostic bench.
           "name": "Is there still a command-line version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The CLI remains available on GitHub for scripting and offline checks, but the web version is the authoritative auditor: https://github.com/careyjames/dns-tool/"
+            "text": "Yes. The CLI remains available on GitHub for scripting and offline checks, but the web version is the authoritative auditor."
           }
         },
         {
@@ -164,7 +164,7 @@ The web version is the full diagnostic bench.
           "name": "Where can I run the web version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Run the web version at https://dnstool.it-help.tech/."
+            "text": "Run the web version at dnstool.it-help.tech."
           }
         }
       ]
