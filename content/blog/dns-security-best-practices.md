@@ -92,7 +92,7 @@ If you’re new to DNS security, here’s a simple checklist to help you set up 
 
 If you’d like to see the state of your DNS before we get started, visit **<a href="https://dnstool.it-help.tech/" class="gold-link">dnstool.it-help.tech</a>**, enter your domain, and keep that tab open. It will tell you exactly what is missing or broken in clear English.
 
-If you want to test how your emails are currently landing (e.g. Inbox vs Spam), visit **<a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift's Investigate</a>**, copy their test email address, and send an email to it from your system.  
+If you want to test how your emails are currently landing (e.g. Inbox vs Spam), visit **<a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift's Investigate</a>**, copy their test email address, and send an email to it from your **CRM, newsletter platform, or invoicing system**. Testing from your actual business tools is critical to spotting third-party delivery issues.  
 
 
 In brief: SPF specifies which servers can send on your behalf (like a return-address check), DKIM attaches a digital signature to emails (proving the email hasn’t been tampered with), and DMARC ties everything together with a policy and reporting.
@@ -181,7 +181,7 @@ When setting up DMARC and SPF, watch out for these common mistakes:
     {
       "@type": "HowToStep",
       "name": "Send a Test Email",
-      "text": "Use Red Sift Investigate to generate a test email address. Send an email to it to verify your current delivery headers and path."
+      "text": "Use Red Sift Investigate to generate a test email address. Send an email to it from your CRM or marketing platform to verify delivery headers from those specific services."
     },
     {
       "@type": "HowToStep",
