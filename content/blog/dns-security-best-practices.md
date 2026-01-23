@@ -61,7 +61,7 @@ Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and
 
 Notice that their policy is set to reject 100% of unauthorized messages.
 
-We proudly participate as a stakeholder in CISA's Cyber Hygiene program for critical cyber infrastructure. We have learned so much from our assigned feds, and I love experiencing the red team, where hackers at CISA hack your company and show you what they could steal and how to prevent it. One cool macOS security tool we had installed that gave our fed, who was red-teaming us the most trouble, was LuLu by Objective See.
+We participate as a stakeholder in CISA’s Cyber Hygiene program and have gained significant insight from their red team exercises, including how attackers approach DNS and email infrastructure in real-world environments.
 
 ## Common SPF Misconceptions
 
@@ -70,6 +70,7 @@ Contrary to some misunderstandings, the `-all` tag in an SPF record does not pre
 ## Alternate Viewpoints
 
 Mail Hardener recommends using SPF `~all` (Softfail) over `-all` (Fail) for better compatibility and fewer delivery issues.
+This guidance prioritizes delivery stability over strict impersonation resistance, which may be appropriate in some operational contexts.
 
 ## Scientific Backing
 
@@ -213,6 +214,8 @@ Beyond email security, a Brand Indicators for Message Identification (BIMI) reco
 The FBI's 2023 Internet Crime Report reveals a surge in cybercrime, with a record 880,418 complaints and over $12.5 billion in losses, highlighting California as the most affected state.  
 
 ## Conclusion
+
+DNS security failures are rarely caused by missing records; they are caused by misinterpreting what those records actually enforce.
 
 Securing your domain and email system is not just a technical requirement but a business imperative. Implementing DMARC, SPF, and DKIM can significantly reduce the risk of email spoofing and BEC phishing attacks.
 Don’t be a statistic—take action today.
