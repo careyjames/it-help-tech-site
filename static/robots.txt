@@ -1,31 +1,24 @@
-# Default: allow all crawlers
+
 User-agent: *
 Allow: /
-
-# AI/LLM Search Bots - explicitly allowed
-User-agent: GPTBot
-User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
-User-agent: ClaudeBot
+User-agent: ChatGPT-User  
 User-agent: PerplexityBot
-User-agent: GeminiBot
-User-agent: Google-Extended
-User-agent: CCBot
-User-agent: YouBot
-User-agent: PhindBot
-User-agent: ExaBot
-User-agent: AndiBot
 User-agent: FirecrawlAgent
-Allow: /
-Allow: /services/
-Allow: /blog/
-Allow: /about/
-Allow: /billing/
-Allow: /dns-tool/
-
-# Traditional Search Bots
-User-agent: Googlebot
+User-agent: AndiBot
+User-agent: ExaBot
+User-agent: PhindBot
+User-agent: YouBot
+User-agent: GPTBot  
+User-agent: CCBot  
+User-agent: Google-Extended
+User-agent: Googlebot  
 User-agent: Bingbot
+User-agent: ChatGPT
+User-agent: GPTBot
+User-agent: Googlebot
+User-agent: GeminiBot
+User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://www.it-help.tech/sitemap.xml
