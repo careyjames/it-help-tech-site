@@ -62,25 +62,12 @@ DMARC, SPF, and DKIM offer a robust defense for your email system by authenticat
 
 ### Sample DMARC, SPF, and DKIM Records: Key Elements of DNS Security
 
+
 Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and Infrastructure Security Agency), the US cyber intelligence agency:
 
-🔍 DMARC: "v=DMARC1; p=reject; pct=100; rua=mailto:DMARC@hq.dhs.gov, mailto:reports@dmarc.cyber.dhs.gov"
+![DNS Tool record showing CISA DMARC, SPF, and DKIM enforcement](/images/cisa-dns.png)
 
-✅ DMARC p=reject => Great anti-spoof!
 
-🔍 SPF (Sender Policy Framework): "v=spf1 include:spf.dhs.gov include:spf.protection.outlook.com<br>
-include:spf-00376703.gpphosted.com -all"
-
-✅ SPF found => "Good, there is only one!"
-
-🔍 DKIM (common selectors): selector1._domainkey
-"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv32BRAJaAOsxAp31ZqQwd7RYfbYowvb3F<br>
-7lq8WQEyasI6w7Gm0bxPW57TFM04fM5flf1PYyCDSa3ckQzSQLYmMx9HiXYJYF1Dpk9PnjTarbdR9mm9fc7iBXT2pTFNJw+S<br>
-RMH3NRrbkefv8GqqLdJotgCl2vWoyRlfKCANCFq5Bbq4qaztXqU/cHRurG8ZVSF7ZrhY4EBKvpzAyIisrf2g2Gky+vO4LTMr<br>
-gZeNnA/OyHmWmvlUC58e06jBLSysYyh19O4MiU5eUhuT7MYTLWz6fIOl4PaT9HkmM0rH/fgcGSYc8ajCsrvxYA8LgoWR9IzY<br>
-q5vYzDWLxSo/J0c+6pVWQIDAQAB;"
-
-✅ DKIM at selector1._domainkey
 
 Notice that their policy is set to reject 100% of unauthorized messages.
 
@@ -100,7 +87,7 @@ According to RFC 7489, Section 10.1, the use of `-all` can cause messages to be 
 
 ### Practical Tools for DNS Security
 
-I recommend using Red Sift's Investigate, securitytrails.com (I coded a command-line tool, <a href="https://github.com/careyjames/dns-tool" target="_blank" rel="noopener noreferrer" class="gold-link">dns-tool</a>, to track DNS changes), and I like Red Sift's OnDmarc to track dynamic DNS records (when you may have a more advanced setup or need more than 10 lookups).
+I recommend using Red Sift's Investigate, securitytrails.com (I coded a Comprehensive DNS record analysis, email security validation, and domain information lookup, <a href="https://dnstool.it-help.tech" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool</a>, to track DNS changes), and I like Red Sift's OnDmarc to track dynamic DNS records (when you may have a more advanced setup or need more than 10 lookups).
 
 ### Step-by-Step Guide to Setting Up DMARC, SPF, and DKIM
 
