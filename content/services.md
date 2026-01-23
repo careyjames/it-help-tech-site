@@ -37,6 +37,10 @@ extra:
       },
       "about": {
         "@id": "https://www.it-help.tech/#business"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3", ".intro"]
       }
     },
     {
@@ -268,6 +272,45 @@ extra:
         "@type": "Answer",
         "text": "Yes. Travel is billed at $1.50 per mile. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time."
       }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "macOS System & Application Support",
+      "serviceType": "IT Support",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Expert troubleshooting for system-level and application-specific macOS issues, iCloud sync, and storage optimization.",
+      "url": "https://www.it-help.tech/services/#macos-system"
+    },
+    {
+      "@type": "Service",
+      "name": "Network Infrastructure & WiFi Troubleshooting",
+      "serviceType": "Networking Service",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Enterprise-grade Wi-Fi design, dead zone elimination, and network security for large homes and offices.",
+      "url": "https://www.it-help.tech/services/#network-wifi"
+    },
+    {
+      "@type": "Service",
+      "name": "Advanced Email, Domain, & DNS Solutions",
+      "serviceType": "Email Security Service",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Resolution of email deliverability issues, DMARC/SPF/DKIM configuration, and Google Workspace migration.",
+      "url": "https://www.it-help.tech/services/#email-domain-dns"
+    },
+    {
+      "@type": "Service",
+      "name": "Cybersecurity & Data Protection",
+      "serviceType": "Cybersecurity Service",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Endpoint protection, mobile device security, and ethical screen sharing support.",
+      "url": "https://www.it-help.tech/services/#cybersecurity"
     }
   ]
 }
