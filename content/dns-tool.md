@@ -172,3 +172,35 @@ The web version is the full diagnostic bench.
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Validate Your Domain Security (SPF, DKIM, DMARC)",
+  "description": "A step-by-step guide to auditing your domain's email security and DNS configuration using the automated DNS Tool.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter Your Domain",
+      "text": "Go to dnstool.it-help.tech and enter your domain name (e.g., example.com) in the search box.",
+      "url": "https://dnstool.it-help.tech/"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check Email Security (SPF/DKIM/DMARC)",
+      "text": "Review the 'Email Security' section. Ensure SPF is valid (green), DMARC is set to 'reject' or 'quarantine', and DKIM selectors are active.",
+      "image": "https://www.it-help.tech/images/og/dns-tool.png"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Verify DNS Propagation",
+      "text": "Look for any warnings about matching records. The tool compares authoritative nameservers with public resolvers to spot propagation delays."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Analyze Brand Security (BIMI/CAA)",
+      "text": "Check the 'Brand Security' section to see if your logo is verified (BIMI) and if you have CAA records restricting certificate issuance."
+    }
+  ]
+}
+</script>

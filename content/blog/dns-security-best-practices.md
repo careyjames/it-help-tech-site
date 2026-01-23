@@ -22,29 +22,20 @@ Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will 
   "@type": "TechArticle",
   "headline": "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM",
   "description": "Step-by-step setup guide for DMARC, SPF, DKIM, and DNSSEC to prevent spoofing and phishing.",
-  "author": { "@type": "Person", "name": "Carey Balboa" },
-  "publisher": { "@type": "Organization", "name": "IT Help San Diego Inc.", "url": "https://www.it-help.tech" },
+  "proficiencyLevel": "Intermediate",
+  "author": { 
+    "@type": "Person", 
+    "name": "Carey Balboa",
+    "url": "https://www.it-help.tech/about/"
+  },
+  "publisher": { 
+    "@id": "https://www.it-help.tech/#business"
+  },
   "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
   "datePublished": "2025-05-25",
+  "dateModified": "2025-05-25",
   "mainEntityOfPage": "https://www.it-help.tech/blog/dns-security-best-practices/",
   "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "IT Help San Diego",
-  "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "888 Prospect St Suite 200",
-    "addressLocality": "La Jolla",
-    "addressRegion": "CA",
-    "postalCode": "92037"
-  },
-  "telephone": "+16198535008",
-  "url": "https://www.it-help.tech"
 }
 </script>
 
