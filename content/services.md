@@ -40,7 +40,7 @@ extra:
       },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", "h2", "h3", ".intro"]
+        "cssSelector": ["h1", "h2"]
       }
     },
     {
