@@ -39,19 +39,19 @@ Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will 
 }
 </script>
 
-### The Challenge: Ensuring DNS Security and Combating Email Vulnerabilities
+## The Challenge: Ensuring DNS Security and Combating Email Vulnerabilities
 
 Your Domain Name System (DNS) security protocols, such as DMARC (Domain-based Message Authentication, Reporting, and Conformance), SPF (Sender Policy Framework), and DKIM (DomainKeys Identified Mail), are crucial for safeguarding your business against email vulnerabilities.
 
-### Why DNS Security Matters
+## Why DNS Security Matters
 
 Without proper DNS security and email authentication, your business is susceptible to email spoofing and phishing attacks. This could lead to unauthorized access to sensitive information, financial loss, and a tarnished domain reputation. Adequately configured DNS records not only secure email but also improve deliverability. Emails from properly authenticated domains are less likely to be marked as spam, thus improving overall deliverability rates.
 
-### How to set up DMARC, SPF, and DKIM for Optimal DNS Security
+## How to set up DMARC, SPF, and DKIM for Optimal DNS Security
 
 DMARC, SPF, and DKIM offer a robust defense for your email system by authenticating the messages sent from your domain and providing a policy for handling messages that fail authentication. DMARC itself doesn’t “authenticate messages” but rather uses SPF/DKIM results to decide enforcement.
 
-### Sample DMARC, SPF, and DKIM Records: Key Elements of DNS Security
+## Sample DMARC, SPF, and DKIM Records: Key Elements of DNS Security
 
 
 Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and Infrastructure Security Agency), the US cyber intelligence agency:
@@ -64,23 +64,23 @@ Notice that their policy is set to reject 100% of unauthorized messages.
 
 We proudly participate as a stakeholder in CISA's Cyber Hygiene program for critical cyber infrastructure. We have learned so much from our assigned feds, and I love experiencing the red team, where hackers at CISA hack your company and show you what they could steal and how to prevent it. One cool macOS security tool we had installed that gave our fed, who was red-teaming us the most trouble, was LuLu by Objective See.
 
-### Common SPF Misconceptions
+## Common SPF Misconceptions
 
 Contrary to some misunderstandings, the `-all` tag in an SPF record does not prevent internal users from sending or receiving emails. Instead, it mandates that only explicitly allowed sources can send emails on behalf of the domain. Email newsletters sent with Mailchimp or Zendesk, for example, cannot successfully send emails that arrive from your domain without having an "include:" entry. So you allow them with an "include:" entry.
 
-### Alternate Viewpoints
+## Alternate Viewpoints
 
 Mail Hardener recommends using SPF `~all` (Softfail) over `-all` (Fail) for better compatibility and fewer delivery issues.
 
-### Scientific Backing
+## Scientific Backing
 
 According to RFC 7489, Section 10.1, the use of `-all` can cause messages to be rejected before DMARC processing, something operators should be aware of.
 
-### Practical Tools for DNS Security
+## Practical Tools for DNS Security
 
 I recommend using Red Sift's Investigate, securitytrails.com (I coded a Comprehensive DNS record analysis, email security validation, and domain information lookup, <a href="https://dnstool.it-help.tech" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool</a>, to track DNS changes), and I like Red Sift's OnDmarc to track dynamic DNS records (when you may have a more advanced setup or need more than 10 lookups).
 
-### Step-by-Step Guide to Setting Up DMARC, SPF, and DKIM
+## Step-by-Step Guide to Setting Up DMARC, SPF, and DKIM
 
 If you’re new to DNS security, here’s a simple checklist to help you set up DMARC, SPF, and DKIM:
 
@@ -118,11 +118,11 @@ Test the setup using Red Sift's Investigate, the web-browser-based Cyber Allianc
 
 Monitor and adjust as needed.
 
-### DNSSEC for extra security
+## DNSSEC for extra security
 
 Additional DNS security measures, such as DNSSEC (DNS Security Extensions), protect against DNS spoofing by ensuring the DNS responses are authenticated. DNSSEC is a suite of extensions that provides DNS clients (resolvers) with origin authentication of DNS data, authenticated denial of existence, and data integrity.
 
-### Common Pitfalls to Avoid
+## Common Pitfalls to Avoid
 
 When setting up DMARC and SPF, watch out for these common mistakes:
 * Incorrectly formatted DNS records, spaces left before or after, or incorrect format.
@@ -155,22 +155,22 @@ When setting up DMARC and SPF, watch out for these common mistakes:
 }
 </script>
 
-### FAQs: Your DNS Security Questions Answered
+## FAQs: Your DNS Security Questions Answered
 
 * **Can I set up DMARC and SPF myself?**
     Yes, but it’s advisable to <a href="/services/" class="gold-link">consult a DNS security expert</a> if you are unsure.
 * **What happens if I don’t set up DMARC or SPF?**
     Your email system will be more susceptible to phishing and spoofing attacks. Evil criminals can send emails as you! They use you@company.com to email your bank or friends and ask for money or worse. These are called BEC Attacks (Business Email Compromise).
 
-### BIMI
+## BIMI
 
 Beyond email security, a Brand Indicators for Message Identification (BIMI) record can validate your company’s logo on platforms like Gmail and more. Learn how to set it up at bimigroup.org. Here is Apple’s: `https://www.apple.com/bimi/v2/apple.svg`. It’s a rock-solid way to protect your intellectual property on the web.
 
-### Statistical Urgency
+## Statistical Urgency
 
 The FBI's 2023 Internet Crime Report reveals a surge in cybercrime, with a record 880,418 complaints and over $12.5 billion in losses, highlighting California as the most affected state.  
 
-### Conclusion
+## Conclusion
 
 Securing your domain and email system is not just a technical requirement but a business imperative. Implementing DMARC, SPF, and DKIM can significantly reduce the risk of email spoofing and BEC phishing attacks.
 Don’t be a statistic—take action today.

@@ -16,31 +16,31 @@ extra:
 
 Have you ever faced the frustration of slow or unreliable Wi-Fi in your home or office? You’re not alone. The secret to a robust and speedy wireless network lies in an overlooked component: the Ethernet backbone.
 
-### Why Ethernet Backbone Matters
+## Why Ethernet Backbone Matters
 
 You’ll often find Ethernet cables in many modern buildings, even in areas with wireless access points. These cables are more than just physical connections; they are the backbone of a solid wireless network. Here’s why:
 
-### 1. Stability and Speed:
+## 1. Stability and Speed:
 
 Imagine your wireless network as a busy highway. Without a solid infrastructure, it’s like having a road full of potholes and detours. An Ethernet backbone serves as this highway, ensuring a smooth and fast data traffic flow. This setup enables your devices, such as smartphones and laptops, to enjoy higher WiFi speeds and more reliable connections.
 
-### 2. Overcoming the Weak Links:
+## 2. Overcoming the Weak Links:
 
 Wireless extenders and standalone Wi-Fi access points seem like convenient solutions, but they’re often the weakest links in your network. When these devices aren’t connected to an Ethernet backbone, they rely heavily on their internal radios. It’s like asking a single traffic cop to manage an entire city’s traffic – it’s inefficient and leads to congestion.
 
 When we see clients with multiple wireless extenders plugged into electrical outlets that do not have Ethernet ports, we immediately know how to fix it. If the access point isn’t connected to the Ethernet backbone, it must use its radios for the wireless backhaul in a wasteful manner. Because no Ethernet cable is providing the source (internet), it must utilize its radios to establish that connection before it even considers passing the internet to your device.
 
-### 3. The “Copy of a Copy” Phenomenon:
+## 3. The “Copy of a Copy” Phenomenon:
 
 Each wireless extender without an Ethernet connection can halve your network’s efficiency. It’s like making a photocopy of a photocopy; the quality degrades with each iteration. Connecting these devices directly to an Ethernet source maintains the original quality of your internet connection.
 
 Here is some scientific proof: [IEEE Xplore Document 8718141](https://ieeexplore.ieee.org/document/8718141/references#references)
 
-### Real-World Impact
+## Real-World Impact
 
 In my on-site experience, over 90% of customer calls regarding internet issues are attributed to a lack of Ethernet infrastructure. Once we introduce an Ethernet backbone and real switches that can handle an enterprise backplane (not cheap, low-spec consumer-grade gear from an exclusive AV distributor), the improvement in network performance is both immediate and significant. Your smart home is an enterprise; it needs the gear to match.
 
-### How to Upgrade Your Network
+## How to Upgrade Your Network
 
 Upgrading to an Ethernet-backed wireless network might sound daunting, but it’s feasible for most homes and offices.  
 Consider [consulting with a professional](/services/) to plan the layout and installation.
@@ -61,7 +61,7 @@ Cat8 is the current highest Ethernet cable standard used in data centers, luxury
 
 Remember, we DO NOT accept payments from companies to recommend their products.
 
-### Conclusion
+## Conclusion
 
 Why does your wireless network suck? Often, it's the lack of an Ethernet backbone.
 Embracing an Ethernet backbone might be the game-changer your wireless network needs. If you’re tired of the spinning loading icon or the dreaded ‘no internet’ message, it might be time to rethink your network setup.

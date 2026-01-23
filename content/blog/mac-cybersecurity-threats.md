@@ -21,7 +21,7 @@ Mac computers are secure, with built-in security features that provide adequate 
 
 Macs are more secure if you compare them with Windows devices that can get infected with viruses or malware. A report by Malwarebytes in 2020 asserted that Mac devices faced twice as many threats as Windows PCs. However, recent events have revealed vulnerabilities in Mac computers, debunking the myth that hackers can never hack a Mac device.
 
-### The Ethical Hacking of a 'Billionaire's' Mac
+## The Ethical Hacking of a 'Billionaire's' Mac
 
 Recently, two security researchers managed to hack the Mac of film producer Jeffrey Katzenberg. They exploited a vulnerability in Safari's sharing preferences. The incident shows that Evildoers can hack Mac computers.
 
@@ -29,7 +29,7 @@ They hacked the device and also accessed the microphone to hear conversations. T
 
 They could hack Katzenberg's Mac because he had not updated it for a while. Tech-savvy hackers know that out-of-date OS and applications pose cyber security threats. Most laypeople don't realize the importance of timely updates, which leaves their devices vulnerable to attacks. Security Researchers attempted this ethical hacking process to show proof of identity theft. They succeeded in establishing Apple's cybersecurity flaw.
 
-### Mac Cybersecurity Threats and Vulnerabilities for Mac Users
+## Mac Cybersecurity Threats and Vulnerabilities for Mac Users
 
 Despite the myth that Mac devices are impenetrable, there are Mac Cybersecurity threats and vulnerabilities that these machines face. These threats have increased, even while overall security has improved. Viruses, malware, and other cyber threats like ransomware have become more sophisticated. With the Mac market share increasing, hackers focus on MacOS, not just Windows PCs, which have primarily faced more threats because of their sheer market size.
 
@@ -55,13 +55,13 @@ There is an ever-growing threat to users in general. However, Mac users are not 
 **Apple's Resistance to Work with Security Researchers**
 Remember the case of Charlie Miller, when Apple banned him from the Apple Developer Program on discovering an iOS flaw? The company has a history of neglecting third-party advice. There's a need for Apple to be more inclusive of third-party researchers and analysts. It can improve security features further, discover issues, and resolve them with the cyber security research community.
 
-### Conclusion: Apple Cybersecurity threats
+## Conclusion: Apple Cybersecurity threats
 
 The Mac, although a fantastic computer, is not foolproof in security. Hackers are now targeting macOS, and Mac computers can now get infected with viruses, malware, or other cyberattacks. Mac Cybersecurity threats are real.
 
 Stay up to date and have an antivirus program installed.
 
-### To prevent most attacks, we recommend the following Magic Combo (Mac or PC)
+## To prevent most attacks, we recommend the following Magic Combo (Mac or PC)
 
 **What is the best endpoint protection for Mac Cybersecurity Threats?**
 * **SentinelOne:** Its AI-powered security platform is used by some of the world’s largest and most security-conscious organizations, including Fortune 500 companies, government agencies, and financial institutions. It is trusted to protect against the most sophisticated cyber threats, including ransomware, zero-day attacks, and nation-state-sponsored attacks.
