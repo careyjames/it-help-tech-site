@@ -61,12 +61,19 @@ twitter_card        = "summary_large_image"
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://www.it-help.tech/#business",
   "name": "IT Help San Diego",
+  "legalName": "IT Help San Diego Inc.",
   "url": "https://www.it-help.tech/",
   "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
   "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
   "hasMap": "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9",
   "telephone": "+1-619-853-5008",
   "priceRange": "$$$",
+  "slogan": "Apple-centric IT support—no monthly retainers",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Carey Balboa"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "888 Prospect Street Suite 200",
@@ -190,7 +197,7 @@ twitter_card        = "summary_large_image"
       "@id": "https://www.it-help.tech/#webpage",
       "url": "https://www.it-help.tech/",
       "name": "Mac IT Support San Diego (La Jolla) | IT Help San Diego",
-      "description": "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers.",
+      "description": "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://www.it-help.tech/#website"
@@ -200,6 +207,10 @@ twitter_card        = "summary_large_image"
       },
       "primaryImageOfPage": {
         "@id": "https://www.it-help.tech/#primaryimage"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".homepage-hero h1", ".intro", "h2", ".nap"]
       }
     },
     {
