@@ -66,6 +66,12 @@ The original command-line tool still exists and is useful for scripting and offl
 
 If you’re evaluating DNS posture, this is the version you want.
 
+## Need Help Fixing Issues?
+
+The report tells you *what* is wrong, but if you need help fixing it, we have a comprehensive guide:
+
+👉 **[Read: DNS Security Best Practices (Step-by-Step Guide)](/blog/dns-security-best-practices/)**
+
 ## Command-Line Version (Still Available)
 
 The CLI tool is open-source and maintained for those who want it:
