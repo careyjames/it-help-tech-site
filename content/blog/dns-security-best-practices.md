@@ -78,11 +78,11 @@ According to RFC 7489, Section 10.1, the use of `-all` can cause messages to be 
 
 ## Practical Tools for DNS Security
 
-I recommend using my own **[DNS Tool](https://dnstool.it-help.tech/)** for a complete, one-page audit of your security posture. It's the most authoritative way to check your work because it mimics how email providers actually see you.
+I recommend using my own **<a href="https://dnstool.it-help.tech/" class="gold-link">DNS Tool</a>** for a complete, one-page audit of your security posture. It's the most authoritative way to check your work because it mimics how email providers actually see you.
 
-I also use **Red Sift's Investigate** specifically when I need to **send a test email** to verify delivery path and headers. Their tool provides a special email address you can send to, which is a fantastic way to see exactly how your emails are arriving.
+I also use **<a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift's Investigate</a>** specifically when I need to **send a test email** to verify delivery path and headers. Their tool provides a special email address you can send to, which is a fantastic way to see exactly how your emails are arriving.
 
-For tracking historical DNS changes, **SecurityTrails** is my go-to.
+For tracking historical DNS changes, **<a href="https://securitytrails.com/" target="_blank" rel="noopener noreferrer" class="gold-link">SecurityTrails</a>** is my go-to.
 
 ## Step-by-Step Guide to Setting Up DMARC, SPF, and DKIM
 
@@ -90,9 +90,9 @@ If you’re new to DNS security, here’s a simple checklist to help you set up 
 
 > **Note:** This guide is for **custom domain owners** (e.g. `you@yourbusiness.com`). If you use a free address like `@gmail.com` or `@yahoo.com`, you cannot edit these records—this guide is not for you.
 
-If you’d like to see the state of your DNS before we get started, visit **[dnstool.it-help.tech](https://dnstool.it-help.tech/)**, enter your domain, and keep that tab open. It will tell you exactly what is missing or broken in clear English.
+If you’d like to see the state of your DNS before we get started, visit **<a href="https://dnstool.it-help.tech/" class="gold-link">dnstool.it-help.tech</a>**, enter your domain, and keep that tab open. It will tell you exactly what is missing or broken in clear English.
 
-If you want to test how your emails are currently landing (e.g. Inbox vs Spam), visit **Red Sift's Investigate**, copy their test email address, and send an email to it from your system.  
+If you want to test how your emails are currently landing (e.g. Inbox vs Spam), visit **<a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift's Investigate</a>**, copy their test email address, and send an email to it from your system.  
 
 
 In brief: SPF specifies which servers can send on your behalf (like a return-address check), DKIM attaches a digital signature to emails (proving the email hasn’t been tampered with), and DMARC ties everything together with a policy and reporting.
@@ -122,9 +122,9 @@ In brief: SPF specifies which servers can send on your behalf (like a return-add
     b.  After you find your DKIM keys, copy them into your DNS. When setting up DKIM, it's recommended that you use a key length of at least 2048 bits. Shorter keys, such as 1024 bits, are no longer considered secure enough against brute-force attacks.
     c.  Make sure you hit Activate or Start Authentication in Google or Publish in Exchange.
 
-Test the setup using **[DNS Tool](https://dnstool.it-help.tech/)**. It will verify that your SPF, DKIM, and DMARC records are actually propagating and being enforced correctly. Use this to confirm that your edits "took" and that the world sees the correct records.
+Test the setup using **<a href="https://dnstool.it-help.tech/" class="gold-link">DNS Tool</a>**. It will verify that your SPF, DKIM, and DMARC records are actually propagating and being enforced correctly. Use this to confirm that your edits "took" and that the world sees the correct records.
 
-To do a final delivery test, go back to **Red Sift Investigate** and send another email to their test address to confirm your new authentication is passing.
+To do a final delivery test, go back to **<a href="https://redsift.com/tools/investigate" target="_blank" rel="noopener noreferrer" class="gold-link">Red Sift Investigate</a>** and send another email to their test address to confirm your new authentication is passing.
 
 Monitor and adjust as needed.
 
