@@ -1,212 +1,136 @@
 ---
 title: DNS Tool - DNS & Email Security Auditor
-description: "Authoritative DNS, email, and domain security analysis. One report that tells you—clearly and correctly—whether a domain is actually secure."
+description: "Comprehensive DNS intelligence and email security auditor. Analyzes SPF, DMARC, DKIM, DNSSEC, MTA-STS, TLS-RPT, BIMI, and CAA records. Detects enterprise DNS providers, government entities, and self-hosted infrastructure. Generates printable security posture reports for IT professionals and executives."
 path: dns-tool
 extra:
   skip_image: true
   skip_author: true
 ---
 
+# DNS Tool - DNS & Email Security Auditor
 
+DNS Tool is no longer just a command-line helper — it's a **full, authoritative DNS and email security auditor** available directly on the web:
 
-DNS Tool is no longer just a command-line helper — it’s a **full, authoritative DNS and email security auditor** available directly on the web:
+👉 [dnstool.it-help.tech](https://dnstool.it-help.tech/)
 
-👉 <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer" class="gold-link">dnstool.it-help.tech</a>
-
-This is the version I use now. It’s faster, clearer, and far more opinionated—in the right ways.
+This is the version I use now. It's faster, clearer, and far more opinionated—in the right ways.
 
 ## What This Tool Actually Solves
 
-Most DNS tools dump raw records and expect you to “interpret” them. That’s how people end up thinking they’re secure when they’re not.
+Most DNS tools dump raw records and expect you to "interpret" them. That's how people end up thinking they're secure when they're not.
 
-DNS Tool answers the *real* questions:
+DNS Tool answers the _real_ questions:
 
-* **Can this domain be impersonated by email?**
-* **Can this brand be convincingly faked?**
-* **Can DNS itself be tampered with?**
-* **Are security controls enforced, or just declared?**
-* **Is what the world sees the same as what the nameserver is publishing?**
+- **Can this domain be impersonated by email?**
+- **Can this brand be convincingly faked?**
+- **Can DNS itself be tampered with?**
+- **Are security controls enforced, or just declared?**
+- **Is what the world sees the same as what the nameserver is publishing?**
 
-It distinguishes *configured* vs *enforced*, *unsigned* vs *broken*, and *missing* vs *intentionally absent*. That nuance is where most tools fail.
+It distinguishes _configured_ vs _enforced_, _unsigned_ vs _broken_, and _missing_ vs _intentionally absent_. That nuance is where most tools fail.
 
 ## What the Web Version Audits (In One Pass)
 
 **DNS & Domain Security**
-* NS delegation correctness
-* DNSSEC chain-of-trust validation (root → TLD → domain)
-* Resolver vs authoritative record diffing (propagation & split-brain detection)
-* CAA parsing with authorized CA attribution
+
+- NS delegation correctness
+- DNSSEC chain-of-trust validation (root → TLD → domain)
+- DNS Infrastructure Analysis — detects enterprise-grade providers (Cloudflare, AWS Route 53, Akamai, Google Cloud DNS, Azure, UltraDNS, Verisign, NS1) and self-hosted enterprise DNS (Apple, Microsoft, Meta, Amazon, Netflix, Oracle, Cisco, Salesforce)
+- Government Entity Recognition — automatically identifies .gov, .mil, .gov.uk, .gov.au, and .gc.ca domains with compliance context (FISMA, DoD, NCSC)
+- Resolver vs authoritative record diffing (propagation & split-brain detection)
+- CAA parsing with authorized CA attribution
 
 **Email Security**
-* SPF validation (including lookup counts and strict vs soft fail)
-* DMARC policy interpretation (`none` vs `quarantine` vs `reject`)
-* DKIM discovery with hyperscaler-aware logic (no false alarms)
-* MTA-STS policy retrieval and enforcement validation
-* TLS-RPT configuration
+
+- SPF validation (including lookup counts and strict vs soft fail)
+- DMARC policy interpretation (`none` vs `quarantine` vs `reject`)
+- DKIM discovery with hyperscaler-aware logic (no false alarms)
+- MTA-STS policy retrieval and enforcement validation
+- TLS-RPT configuration
+- SMTP Transport Verification — checks MX server STARTTLS support, TLS version, cipher strength, and certificate validity
 
 **Brand Security**
-* BIMI detection
-* VMC awareness (works without VMC, explains when it matters)
-* Certificate issuance control (CAA)
+
+- BIMI detection with logo preview
+- VMC certificate validation (Verified Mark Certificates from DigiCert, Entrust)
+- Certificate issuance control (CAA)
 
 **Traffic & Services**
-* A / AAAA / MX routing
-* SRV records (SIP, federation, CalDAV/CardDAV, etc.)—shown, not overreacted to
+
+- A / AAAA / MX routing
+- SRV records (SIP, federation, CalDAV/CardDAV, etc.)—shown, not overreacted to
 
 The output is a **single, defensible report**—not a pile of green and red checkboxes.
+
+## DNS Infrastructure Intelligence
+
+DNS Tool doesn't just check if DNSSEC is enabled—it understands **real-world security postures**:
+
+- **Enterprise DNS Providers** — Cloudflare, AWS Route 53, Akamai, Google Cloud DNS, Azure DNS, UltraDNS, Verisign, NS1
+- **Self-Hosted Enterprise** — Apple, Microsoft, Meta, Amazon, Netflix, Oracle, Cisco, Intel, Salesforce, Adobe
+- **Government Entities** — .gov (FISMA), .mil (DoD), .gov.uk (NCSC), .gov.au (ASD), .gc.ca (GC)
+
+When DNSSEC isn't enabled, the tool explains *why that might be acceptable*—enterprise providers with DDoS protection, Anycast, and CAA records provide alternative security layers. This is the "symbiotic security" approach: work with the ecosystem, not against it.
 
 ## Why This Version Is Better Than the CLI
 
 The original command-line tool still exists and is useful for scripting and offline checks, but the **web version is the authoritative one**:
 
-* Clear verdicts instead of raw dumps
-* Policy-aware logic (no misleading “monitoring” nonsense)
-* Real-time propagation comparison
-* Printable, shareable reports suitable for audits and clients
+- Clear verdicts instead of raw dumps
+- Policy-aware logic (no misleading "monitoring" nonsense)
+- Real-time propagation comparison
+- Printable, shareable reports suitable for audits and clients
 
-If you’re evaluating DNS posture, this is the version you want.
+If you're evaluating DNS posture, this is the version you want.
 
 ## Need Help Fixing Issues?
 
-The report tells you *what* is wrong, but if you need help fixing it, we have a comprehensive guide:
+The report tells you _what_ is wrong, but if you need help fixing it, we have a comprehensive guide:
 
-👉 **[Read: DNS Security Best Practices (Step-by-Step Guide)](/blog/dns-security-best-practices/)**
+👉 **[Read: DNS Security Best Practices (Step-by-Step Guide)](https://www.it-help.tech/blog/dns-security-best-practices/)**
 
 ## Command-Line Version (Still Available)
 
 The CLI tool is open-source and maintained for those who want it:
 
-* <a href="https://github.com/careyjames/dns-tool/" target="_blank" rel="noopener noreferrer" class="gold-link">GitHub (Source & Docs)</a>
-* <a href="https://github.com/careyjames/dns-tool/releases" target="_blank" rel="noopener noreferrer" class="gold-link">CLI Releases</a>
+- [GitHub (Source & Docs)](https://github.com/careyjames/dns-tool/)
+- [CLI Releases](https://github.com/careyjames/dns-tool/releases)
 
 Think of it as a sharp pocket knife.
 
-
 The web version is the full diagnostic bench.
 
-<!-- SEO: Structured Data (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.it-help.tech/#organization",
-      "name": "IT Help San Diego Inc.",
-      "url": "https://www.it-help.tech/",
-      "logo": "https://www.it-help.tech/images/logo.png"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.it-help.tech/#website",
-      "url": "https://www.it-help.tech/",
-      "name": "IT Help San Diego Inc.",
-      "publisher": { "@id": "https://www.it-help.tech/#organization" }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.it-help.tech/dns-tool/#webpage",
-      "url": "https://www.it-help.tech/dns-tool",
-      "name": "DNS Tool - DNS & Email Security Auditor",
-      "description": "Authoritative DNS, email, and domain security analysis. One report that tells you—clearly and correctly—whether a domain is actually secure.",
-      "isPartOf": { "@id": "https://www.it-help.tech/#website" },
-      "about": { "@id": "https://www.it-help.tech/dns-tool/#software" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://www.it-help.tech/images/og/dns-tool.png" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://www.it-help.tech/dns-tool/#software",
-      "name": "DNS Tool",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": "Web",
-      "url": "https://dnstool.it-help.tech/",
-      "description": "A web-based DNS and email security auditor that validates SPF, DKIM, DMARC, MTA-STS, TLS-RPT, DNSSEC, CAA, BIMI, and propagation by comparing resolver vs authoritative answers.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "publisher": { "@id": "https://www.it-help.tech/#organization" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.it-help.tech/dns-tool/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does DNS Tool do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "DNS Tool produces a single, defensible report about a domain’s DNS and email security posture. It checks SPF, DKIM, DMARC, MTA-STS, TLS-RPT, DNSSEC, CAA, BIMI, and compares what public resolvers return versus what the authoritative nameservers publish."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is this different from typical DNS checkers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most tools dump raw records. DNS Tool interprets policy and enforcement correctly (configured vs enforced, unsigned vs broken) and surfaces clear verdicts like whether the domain can be impersonated by email and whether DNS responses can be tampered with."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does DNS Tool check DNS propagation and split-brain conditions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. DNS Tool diffs resolver answers against authoritative answers to spot propagation delays, stale cache, and misconfigurations where different parts of the internet see different records."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is there still a command-line version?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The CLI remains available on GitHub for scripting and offline checks, but the web version is the authoritative auditor."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where can I run the web version?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Run the web version at dnstool.it-help.tech."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to Validate Your Domain Security (SPF, DKIM, DMARC)",
-  "description": "A step-by-step guide to auditing your domain's email security and DNS configuration using the automated DNS Tool.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Enter Your Domain",
-      "text": "Go to dnstool.it-help.tech and enter your domain name (e.g., example.com) in the search box.",
-      "url": "https://dnstool.it-help.tech/"
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Check Email Security (SPF/DKIM/DMARC)",
-      "text": "Review the 'Email Security' section. Ensure SPF is valid (green), DMARC is set to 'reject' or 'quarantine', and DKIM selectors are active.",
-      "image": "https://www.it-help.tech/images/og/dns-tool.png"
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Verify DNS Propagation",
-      "text": "Look for any warnings about matching records. The tool compares authoritative nameservers with public resolvers to spot propagation delays."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Analyze Brand Security (BIMI/CAA)",
-      "text": "Check the 'Brand Security' section to see if your logo is verified (BIMI) and if you have CAA records restricting certificate issuance."
-    }
-  ]
+  "@type": "SoftwareApplication",
+  "name": "DNS Tool - DNS & Email Security Auditor",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Web Browser",
+  "url": "https://dnstool.it-help.tech/",
+  "description": "Comprehensive DNS intelligence and email security auditor. Analyzes SPF, DMARC, DKIM, DNSSEC, MTA-STS, TLS-RPT, BIMI, and CAA records. Detects enterprise DNS providers, government entities, and self-hosted infrastructure. Generates printable security posture reports for IT professionals and executives.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "SPF, DMARC, DKIM email security analysis",
+    "DNSSEC chain-of-trust validation",
+    "Enterprise DNS provider detection (Cloudflare, AWS, Akamai, Google, Azure)",
+    "Self-hosted enterprise DNS recognition (Apple, Microsoft, Meta, Amazon)",
+    "Government entity detection (.gov, .mil, .gov.uk)",
+    "MTA-STS and TLS-RPT policy validation",
+    "BIMI and VMC certificate verification",
+    "CAA record parsing with CA attribution",
+    "SMTP transport security verification",
+    "Printable PDF security reports"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "IT Help San Diego Inc.",
+    "url": "https://www.it-help.tech/",
+    "telephone": "+1-619-853-5008"
+  }
 }
 </script>
