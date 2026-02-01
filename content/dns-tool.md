@@ -11,7 +11,7 @@ extra:
 
 DNS Tool is no longer just a command-line helper — it's a **full, authoritative DNS and email security auditor** available directly on the web:
 
-👉 [dnstool.it-help.tech](https://dnstool.it-help.tech/)
+👉 <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer" class="gold-link">dnstool.it-help.tech</a>
 
 This is the version I use now. It's faster, clearer, and far more opinionated—in the right ways.
 
@@ -87,14 +87,14 @@ If you're evaluating DNS posture, this is the version you want.
 
 The report tells you _what_ is wrong, but if you need help fixing it, we have a comprehensive guide:
 
-👉 **[Read: DNS Security Best Practices (Step-by-Step Guide)](https://www.it-help.tech/blog/dns-security-best-practices/)**
+👉 <a href="https://www.it-help.tech/blog/dns-security-best-practices/" target="_blank" rel="noopener noreferrer" class="gold-link"><strong>Read: DNS Security Best Practices (Step-by-Step Guide)</strong></a>
 
 ## Command-Line Version (Still Available)
 
 The CLI tool is open-source and maintained for those who want it:
 
-- [GitHub (Source & Docs)](https://github.com/careyjames/dns-tool/)
-- [CLI Releases](https://github.com/careyjames/dns-tool/releases)
+- <a href="https://github.com/careyjames/dns-tool/" target="_blank" rel="noopener noreferrer" class="gold-link">GitHub (Source & Docs)</a>
+- <a href="https://github.com/careyjames/dns-tool/releases" target="_blank" rel="noopener noreferrer" class="gold-link">CLI Releases</a>
 
 Think of it as a sharp pocket knife.
 
