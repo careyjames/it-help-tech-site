@@ -18,7 +18,6 @@ import argparse
 import base64
 import hashlib
 import json
-import os
 import re
 import sys
 from dataclasses import dataclass
@@ -35,6 +34,30 @@ class InlineScript:
     file: Path
     attrs: str
     body: str
+
+
+def _repo_root() -> Path:
+    # This script lives at infra/cloudfront/generate_policy.py
+    # so the repo root is three levels up.
+    return Path(__file__).resolve().parents[2]
+
+
+def _resolve_under_repo_root(path: Path, *, repo_root: Path, label: str) -> Path:
+    """
+    Resolve a user-supplied path safely under the repo root.
+
+    This script is typically run in CI, but we still validate paths to avoid
+    accidental writes outside the repository (e.g., via `--policy-file ../../...`).
+    """
+    if not path.is_absolute():
+        path = (repo_root / path).resolve()
+    else:
+        path = path.resolve()
+
+    if path != repo_root and repo_root not in path.parents:
+        raise ValueError(f"{label} must be within repo root: {repo_root} (got: {path})")
+
+    return path
 
 
 def _sha256_base64(text: str) -> str:
@@ -133,8 +156,24 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    public_dir = Path(args.public_dir)
-    policy_file = Path(args.policy_file)
+    repo_root = _repo_root()
+    allowed_public_dir = (repo_root / "public").resolve()
+    allowed_policy_file = (repo_root / "infra" / "cloudfront" / "csp-policy-v1.json").resolve()
+    try:
+        public_dir = _resolve_under_repo_root(Path(args.public_dir), repo_root=repo_root, label="public dir")
+        policy_file = _resolve_under_repo_root(Path(args.policy_file), repo_root=repo_root, label="policy file")
+    except ValueError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 2
+
+    if public_dir != allowed_public_dir:
+        print(f"error: public dir must be {allowed_public_dir} (got: {public_dir})", file=sys.stderr)
+        return 2
+
+    if policy_file != allowed_policy_file:
+        print(f"error: policy file must be {allowed_policy_file} (got: {policy_file})", file=sys.stderr)
+        return 2
+
     merge_csp_file = Path(args.merge_script_hashes_from_csp_file) if args.merge_script_hashes_from_csp_file else None
 
     if not public_dir.exists():
