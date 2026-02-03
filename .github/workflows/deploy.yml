@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     env:
       BUCKET: www.it-help.tech  # <--- CHANGED for your new S3 bucket
@@ -38,7 +42,16 @@ jobs:
           cp -r static/images public/
           cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
 
-      - name: Update CloudFront security headers policy (CSP)
+      - name: Update CloudFront signature-pages security headers policy (CSP)
+        if: ${{ secrets.CF_HEADERS_POLICY_ID_SIGNATURES != '' }}
+        run: ./infra/cloudfront/update_policy_signatures.sh
+        env:
+          POLICY_ID_SIGNATURES: ${{ secrets.CF_HEADERS_POLICY_ID_SIGNATURES }}
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Update CloudFront site security headers policy (CSP)
         run: ./infra/cloudfront/update_policy.sh
         env:
           AWS_REGION: us-east-1
@@ -95,3 +108,10 @@ jobs:
           AWS_REGION: us-east-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  pr-note:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Note
+        run: echo "Deploy runs only on push to main; this PR job exists so GitHub doesn't report 'No jobs were run'."

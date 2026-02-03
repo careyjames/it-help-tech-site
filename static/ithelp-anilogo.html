@@ -373,16 +373,24 @@
     </div>
     
     <script>
-        // Particle animation - Math.random() is safe here as it's only for visual effects
+        // Particle animation (visual-only). Prefer CSPRNG to avoid weak-PRNG warnings.
         const particlesContainer = document.querySelector('.tech-particles');
+        const cryptoObj = globalThis.crypto;
+        const hasCSPRNG = cryptoObj && typeof cryptoObj.getRandomValues === 'function';
+        const rand = () => {
+            if (!hasCSPRNG) { return 0; }
+            const buf = new Uint32Array(1);
+            cryptoObj.getRandomValues(buf);
+            return buf[0] / 2 ** 32;
+        };
         
         function createParticle() {
+            if (!particlesContainer || !hasCSPRNG) { return; }
             const particle = document.createElement('div');
             particle.className = 'particle';
-            // Safe usage: visual-only positioning, no security implications
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 4 + 's';
-            particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+            particle.style.left = rand() * 100 + '%';
+            particle.style.animationDelay = rand() * 4 + 's';
+            particle.style.animationDuration = (3 + rand() * 2) + 's';
             particlesContainer.appendChild(particle);
             
             setTimeout(() => {
@@ -391,7 +399,9 @@
         }
         
         // Create particles at optimized intervals
-        setInterval(createParticle, 600);
+        if (hasCSPRNG) {
+            setInterval(createParticle, 600);
+        }
         
         // Interactive hover effect
         const logoContainer = document.querySelector('.logo-container');

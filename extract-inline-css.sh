@@ -34,9 +34,9 @@ awk -v tag='<link rel="stylesheet" href="{{ get_url(path="css/critical-inline.cs
 ' "$HEAD" > "$HEAD.tmp" && mv "$HEAD.tmp" "$HEAD"
 
 # verify build
-command -v zola >/dev/null || { echo "Error: zola not installed"; mv "$backup" "$HEAD"; exit 1; }
+command -v zola >/dev/null || { echo "Error: zola not installed" >&2; mv "$backup" "$HEAD"; exit 1; }
 if ! zola build >/dev/null; then
-    echo "Error: zola build failed — reverted."; mv "$backup" "$HEAD"; exit 1;
+    echo "Error: zola build failed — reverted." >&2; mv "$backup" "$HEAD"; exit 1;
 fi
 
 printf '✓ Extracted inline CSS to %s and updated %s\n' "$CRITICAL_SCSS" "$HEAD"

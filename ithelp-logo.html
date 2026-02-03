@@ -371,16 +371,28 @@
     </div>
     
     <script>
-        // Particle animation - Math.random() is safe here as it's only for visual effects
+        // Particle animation - use CSPRNG when available (not security-sensitive either way).
         const particlesContainer = document.querySelector('.tech-particles');
         
         function createParticle() {
             const particle = document.createElement('div');
             particle.className = 'particle';
             // Safe usage: visual-only positioning, no security implications
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 4 + 's';
-            particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+            let lcgState = Date.now() >>> 0;
+            const cryptoObj = globalThis.crypto;
+            const hasCSPRNG = cryptoObj && typeof cryptoObj.getRandomValues === 'function';
+            const rand = () => {
+                if (hasCSPRNG) {
+                    const buf = new Uint32Array(1);
+                    cryptoObj.getRandomValues(buf);
+                    return buf[0] / 2 ** 32;
+                }
+                lcgState = (1664525 * lcgState + 1013904223) >>> 0;
+                return lcgState / 2 ** 32;
+            };
+            particle.style.left = rand() * 100 + '%';
+            particle.style.animationDelay = rand() * 4 + 's';
+            particle.style.animationDuration = (3 + rand() * 2) + 's';
             particlesContainer.appendChild(particle);
             
             setTimeout(() => {
