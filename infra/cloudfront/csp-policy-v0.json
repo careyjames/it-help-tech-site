@@ -1,0 +1,43 @@
+{
+  "Name": "security-headers",
+  "Comment": "Baseline security headers for it-help.tech (snapshot of CSP before CSP automation changes)",
+  "SecurityHeadersConfig": {
+    "XSSProtection": {
+      "Protection": true,
+      "ModeBlock": true,
+      "Override": true
+    },
+    "FrameOptions": {
+      "FrameOption": "DENY",
+      "Override": true
+    },
+    "ContentTypeOptions": {
+      "Override": true
+    },
+    "ReferrerPolicy": {
+      "ReferrerPolicy": "strict-origin-when-cross-origin",
+      "Override": true
+    },
+    "StrictTransportSecurity": {
+      "AccessControlMaxAgeSec": 63072000,
+      "IncludeSubdomains": true,
+      "Preload": true,
+      "Override": true
+    },
+    "ContentSecurityPolicy": {
+      "ContentSecurityPolicy": "default-src 'none'; base-uri 'self'; script-src 'self' 'sha256-3b4JmXQaF6GkDrgL0EoOxEJ4iFIsz3PSzqSr6Chfw0M=' 'sha256-zmJcuYFqbhUdE8nE3A9SVnbgj9/eayrqapjf7JYNgGQ=' 'sha256-Kas7aeRg8YpNNs9Lqw5NS7rT/OZQePFfpwC+2Lv4+Nk=' 'sha256-iFUBBcXpGzF73sJv6FaLHxgP6dG9uMbtNlYiBxnUowk=' 'sha256-B9y8gOkZxrZDtSyozgzIcQnh3LpU6WufxIHzJHXUNMA=' 'sha256-tPZ6eB/ns/BNeIn3eJpW8ZmDAmeFg0ut2M7a49uFA38='; style-src 'self' https://fonts.googleapis.com 'unsafe-hashes' 'sha256-rmFkoeWzpfseoSdthyKRPTaaDuZj78JIwL1MtruG4/w=' 'sha256-GPXNEnOHKwYIi0Wj257pwAM3TrbVEVd41c7pCSADFq4=' 'sha256-WbPiy3OjRckbGIupDmSBJeIJ/AmaLq1FV7ZR1gVglvY=' 'sha256-9q/pDZY1Klw6TfQXr5jE3oLTatOQkZDW4ac6aDDstK0=' 'sha256-gSwlAIWSmKR1T4FU1Px+RurocnpuZ+RAGFQaQcjrtao=' 'sha256-uqdc6DAQ3TfYVo3llAtXZdY19khFbOkeckw8W4xGNGk=' 'sha256-6VPjnMVqDjUf+wOQJ3xyU0ohNgIqtNpiVfcdYorKQ7k=' 'sha256-kLhk/+emDCnqXBNap6yjSk9aLYHb7ueYgF23YLCqcDU=' 'sha256-r4179xFwYGiqnSs+39qz7ptis5rICDOyXCzvX0XVgwQ=' 'sha256-wrJpsJWtwWqrWKfRX2mDdkzyzqoJf/GV6ecFHaavyLw=' 'sha256-sIwLHtkMBuexlpZPvXMXP1WkoR0fvB1QYQqiXO0NOWc=' 'sha256-5/JvQ0DdKr9OV+Ly/vjap6PWUuffZ7v8CM0esctfBVA=' 'sha256-g9JlwTPPui1VR9az/d5SbQLP8QxqxJPR88UVXW0tPzY=' 'sha256-kFAIUwypIt04FgLyVU63Lcmp2AQimPh/TdYjy04Flxs=' 'sha256-lk0oigID2NkUb/I6NR7shN1brFzJeHNiffMobG7odqI=' 'sha256-OFZH/KmE1spbRSh4CjNax9vyG1iEwWYtQyOeXApqoN4=' 'sha256-wTb3PwhHdgpeR6SZQQcQ4y5gzcRItg8Ms7GcWGeLV14=' 'sha256-q051qONXIF0c8S9B+nObQpQs7HbzCjzF+JM76NQwTkw=' 'sha256-qHOBGHlNBx9kwNmIR96OV7hiafAiY2RtwWc6W8VUhZY=' 'sha256-br7Q3dJQrYjslUFBopgIsKqSJlhNE2BPsBDyhRKRMR8='; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; media-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests",
+      "Override": true
+    }
+  },
+  "CustomHeadersConfig": {
+    "Items": [
+      {
+        "Header": "Permissions-Policy",
+        "Value": "interest-cohort=(), accelerometer=(), ambient-light-sensor=(), battery=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), storage-access=(), sync-xhr=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()",
+        "Override": true
+      }
+    ],
+    "Quantity": 1
+  }
+}
+
