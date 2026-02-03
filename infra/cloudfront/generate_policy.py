@@ -42,24 +42,6 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def _resolve_under_repo_root(path: Path, *, repo_root: Path, label: str) -> Path:
-    """
-    Resolve a user-supplied path safely under the repo root.
-
-    This script is typically run in CI, but we still validate paths to avoid
-    accidental writes outside the repository (e.g., via `--policy-file ../../...`).
-    """
-    if not path.is_absolute():
-        path = (repo_root / path).resolve()
-    else:
-        path = path.resolve()
-
-    if path != repo_root and repo_root not in path.parents:
-        raise ValueError(f"{label} must be within repo root: {repo_root} (got: {path})")
-
-    return path
-
-
 def _sha256_base64(text: str) -> str:
     digest = hashlib.sha256(text.encode("utf-8")).digest()
     return base64.b64encode(digest).decode("ascii")
@@ -137,44 +119,28 @@ def update_policy_file(policy_file: Path, *, csp: str) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate CloudFront CSP (hash allowlist) from built HTML.")
-    parser.add_argument("--public-dir", default="public", help="Zola build output directory (default: public)")
-    parser.add_argument(
-        "--policy-file",
-        default=str(Path("infra") / "cloudfront" / "csp-policy-v1.json"),
-        help="CloudFront ResponseHeadersPolicyConfig JSON to update in-place",
-    )
     parser.add_argument(
         "--max-length",
         type=int,
         default=2048,
         help="Fail if generated CSP exceeds this length (conservative CloudFront safety check)",
     )
-    parser.add_argument(
-        "--merge-script-hashes-from-csp-file",
+    merge_group = parser.add_mutually_exclusive_group()
+    merge_group.add_argument(
+        "--merge-script-hashes-from-csp",
         default=None,
-        help="Optional file containing the current CSP. Any `script-src` sha256 hashes found will be merged in.",
+        help="Merge in sha256 hashes from an existing CSP string (parses only `script-src`).",
+    )
+    merge_group.add_argument(
+        "--merge-script-hashes-from-stdin",
+        action="store_true",
+        help="Read a CSP string from stdin and merge in any `script-src` sha256 hashes found.",
     )
     args = parser.parse_args()
 
     repo_root = _repo_root()
-    allowed_public_dir = (repo_root / "public").resolve()
-    allowed_policy_file = (repo_root / "infra" / "cloudfront" / "csp-policy-v1.json").resolve()
-    try:
-        public_dir = _resolve_under_repo_root(Path(args.public_dir), repo_root=repo_root, label="public dir")
-        policy_file = _resolve_under_repo_root(Path(args.policy_file), repo_root=repo_root, label="policy file")
-    except ValueError as e:
-        print(f"error: {e}", file=sys.stderr)
-        return 2
-
-    if public_dir != allowed_public_dir:
-        print(f"error: public dir must be {allowed_public_dir} (got: {public_dir})", file=sys.stderr)
-        return 2
-
-    if policy_file != allowed_policy_file:
-        print(f"error: policy file must be {allowed_policy_file} (got: {policy_file})", file=sys.stderr)
-        return 2
-
-    merge_csp_file = Path(args.merge_script_hashes_from_csp_file) if args.merge_script_hashes_from_csp_file else None
+    public_dir = (repo_root / "public").resolve()
+    policy_file = (repo_root / "infra" / "cloudfront" / "csp-policy-v1.json").resolve()
 
     if not public_dir.exists():
         print(f"error: public dir not found: {public_dir}", file=sys.stderr)
@@ -182,14 +148,16 @@ def main() -> int:
     if not policy_file.exists():
         print(f"error: policy file not found: {policy_file}", file=sys.stderr)
         return 2
-    if merge_csp_file and not merge_csp_file.exists():
-        print(f"error: merge CSP file not found: {merge_csp_file}", file=sys.stderr)
-        return 2
 
     script_hashes = collect_script_hashes(public_dir)
     merged_in = 0
-    if merge_csp_file:
-        existing_hashes = _extract_script_hashes_from_csp(merge_csp_file.read_text(encoding="utf-8"))
+    if args.merge_script_hashes_from_csp is not None or args.merge_script_hashes_from_stdin:
+        if args.merge_script_hashes_from_stdin:
+            existing_csp = sys.stdin.read()
+        else:
+            existing_csp = args.merge_script_hashes_from_csp or ""
+
+        existing_hashes = _extract_script_hashes_from_csp(existing_csp)
         merged_in = len(existing_hashes.difference(set(script_hashes)))
         script_hashes = sorted(set(script_hashes).union(existing_hashes))
 
@@ -208,7 +176,7 @@ def main() -> int:
 
     print(f"Updated {policy_file}")
     print(f"- inline script hashes: {len(script_hashes)}")
-    if merge_csp_file:
+    if args.merge_script_hashes_from_csp is not None or args.merge_script_hashes_from_stdin:
         print(f"- merged existing hashes: {merged_in}")
     print(f"- CSP length: {len(csp)}")
 

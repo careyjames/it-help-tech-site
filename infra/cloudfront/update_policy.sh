@@ -7,22 +7,10 @@ POLICY_ID=521afb15-34af-416e-980a-f5bf48c8f71e     # CloudFront policy UUID
 
 # Refresh CSP hashes from the current build output before pushing the policy.
 # Requires `public/` to be up to date (run `zola build` first, or rely on CI build output).
-CURRENT_CSP_FILE="$(mktemp)"
-cleanup() {
-  rm -f "${CURRENT_CSP_FILE}" || true
-  return 0
-}
-trap cleanup EXIT
-
 aws cloudfront get-response-headers-policy \
   --id "$POLICY_ID" \
   --query "ResponseHeadersPolicy.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy" \
-  --output text > "${CURRENT_CSP_FILE}"
-
-python3 "${SCRIPT_DIR}/generate_policy.py" \
-  --public-dir "${REPO_ROOT}/public" \
-  --policy-file "${SCRIPT_DIR}/csp-policy-v1.json" \
-  --merge-script-hashes-from-csp-file "${CURRENT_CSP_FILE}"
+  --output text | python3 "${SCRIPT_DIR}/generate_policy.py" --merge-script-hashes-from-stdin
 
 ETAG=$(aws cloudfront get-response-headers-policy \
         --id "$POLICY_ID" \
