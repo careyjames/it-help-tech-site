@@ -38,6 +38,13 @@ jobs:
           cp -r static/images public/
           cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
 
+      - name: Update CloudFront security headers policy (CSP)
+        run: ./infra/cloudfront/update_policy.sh
+        env:
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       - name: Upload immutable assets
         run: |
           aws s3 sync public/ s3://$BUCKET/ \

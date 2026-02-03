@@ -1,6 +1,8 @@
 .DS_Store
 .vscode/
 *.map
+__pycache__/
+*.py[cod]
 
 /public
 sass_OLD/
@@ -17,6 +19,8 @@ policy*.json
 frontmatter.json
 .DS_Store
 csp-*.json
+!infra/cloudfront/csp-policy-v0.json
+!infra/cloudfront/csp-policy-v1.json
 # ping
 # ping
 # ping
