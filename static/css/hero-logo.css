@@ -212,51 +212,50 @@
     font-family: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
 }
 
-.tagline-text {
+.tagline-border {
     display: inline-block; /* pill snaps to content width */
-    white-space:nowrap;
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-                linear-gradient(90deg, #00ffff, #ff0066, #ffff00) border-box;
+    padding: 2px; /* border thickness */
     border-radius: 30px;
+    background: linear-gradient(90deg, #00ffff, #ff0066, #ffff00);
     position: relative;
-    overflow: hidden;
+    z-index: 0;
+}
+
+.tagline-text {
+    display: block;
+    white-space: nowrap;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #0a0a0a;
+    border-radius: 28px;
 }
 
 /* colour-scheme specific pill styling */
 @media (prefers-color-scheme:light){
   .tagline-text{
     color:#000;
-    background:linear-gradient(#ffffff,#ffffff) padding-box,
-               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+    background-color:#ffffff;
   }
 }
 @media (prefers-color-scheme:dark){
   .tagline-text{
     color:#fff;
-    background:linear-gradient(#000000,#000000) padding-box,
-               linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+    background-color:#000000;
   }
 }
 html.switch .tagline-text{
   color:#000;
-  background:linear-gradient(#ffffff,#ffffff) padding-box,
-             linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+  background-color:#ffffff;
 }
 html:not(.switch) .tagline-text{
   color:#fff;
-  background:linear-gradient(#000000,#000000) padding-box,
-             linear-gradient(90deg,#00ffff,#ff0066,#ffff00) border-box;
+  background-color:#000000;
 }
 
-.tagline-text::before {
+.tagline-border::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    inset: -2px;
     background: linear-gradient(90deg, #00ffff, #ff0066, #ffff00);
     border-radius: 30px;
     opacity: 0;
@@ -265,7 +264,7 @@ html:not(.switch) .tagline-text{
     filter: blur(10px);
 }
 
-.logo-container:hover .tagline-text::before {
+.logo-container:hover .tagline-border::before {
     opacity: 0.7;
 }
 
@@ -284,13 +283,15 @@ html:not(.switch) .tagline-text{
 
 .particle {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 3px;
     height: 3px;
     background: #00ffff;
     border-radius: 50%;
     opacity: 0;
-    animation: float-up 4s infinite;
     box-shadow: 0 0 3px #00ffff;
+    will-change: transform, opacity;
 }
 
 @keyframes float-up {

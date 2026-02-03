@@ -22,10 +22,12 @@
   {%- block comments_init %}{%- endblock comments_init %}
 
   <!-- theme / animation styles -->
-  <link rel="stylesheet" href="{{ get_url(path=`/css/hero-logo.css`) }}">
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/hero-logo.css', trailing_slash=false, cachebust=true) | safe }}">
 
   <!-- LAST sheet: forces gold colour on any .gold-link, incl. inside headings -->
-  <link rel="stylesheet" href="{{ get_url(path=`/css/gold-override.css`) }}">
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/gold-override.css', trailing_slash=false, cachebust=true) | safe }}">
 
   {%- include "partials/head_js.html" %}
 </head>
@@ -38,7 +40,8 @@
   </section>
 
   {# defer → non-blocking; keeps Lighthouse happy #}
-  <script src="{{ get_url(path=`/js/hero-logo.js`) }}" defer></script>
+  <script defer
+          src="{{ get_url(path='js/hero-logo.js', trailing_slash=false, cachebust=true) | safe }}"></script>
   {# ---------- /HERO LOGO ---------- #}
 
 {%- block header %}
