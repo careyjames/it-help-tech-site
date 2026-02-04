@@ -15,9 +15,16 @@ globalThis.addEventListener('DOMContentLoaded', () => {
 
   // Cache container width to avoid forced reflow on every particle
   let containerWidth = particlesContainer.offsetWidth;
-  globalThis.addEventListener('resize', () => {
-    containerWidth = particlesContainer.offsetWidth;
-  }, { passive: true });
+  // Use ResizeObserver for robust width tracking (catches font load, CSS changes, not just window resize)
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(entries => {
+      containerWidth = entries[0].contentRect.width;
+    }).observe(particlesContainer);
+  } else {
+    globalThis.addEventListener('resize', () => {
+      containerWidth = particlesContainer.offsetWidth;
+    }, { passive: true });
+  }
 
   function createParticle(){
     const p=document.createElement('div');
