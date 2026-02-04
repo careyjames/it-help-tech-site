@@ -52,7 +52,7 @@ zola serve --interface 0.0.0.0 --port 5000
 - Work on `replit/working` branch
 - Push to GitHub and create PRs
 - Merge to main via squash and merge
-- GitHub Actions deploys automatically
+- **After merging:** Reset replit/working to origin/main to avoid duplicate commits
 
 ## Site Philosophy
 - No tracking, no cookies, no frameworks
@@ -65,5 +65,6 @@ zola serve --interface 0.0.0.0 --port 5000
 Site maintains 98-100 scores. All changes must preserve these.
 
 ## Recent Changes
+- 2026-02-04: Cleaned up unused files, created WebP image alternatives, fixed git workflow
 - 2026-02-04: Reordered nav dropdown: Services, Pricing, Our Expertise, Blog, DNS Tool
 - 2026-02-03: Configured for Replit environment with Zola static site generator
