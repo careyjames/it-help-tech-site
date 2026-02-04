@@ -37,6 +37,18 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line"
+
+      - name: Remove KaTeX assets when unused
+        run: |
+          if find public -name '*.html' -print0 | xargs -0 grep -qi "katex"; then
+            echo "KaTeX detected in HTML; keeping assets."
+          else
+            echo "No KaTeX references found; removing KaTeX assets."
+            rm -f public/katex.min.css
+            rm -f public/js/katex*.js public/js/katexoptions.js
+            find public -type f -name 'KaTeX*' -delete
+          fi
+
       - name: Copy images and root files
         run: |
           cp -r static/images public/
