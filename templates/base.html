@@ -21,7 +21,15 @@
   {# SEO macro will handle <title> and meta tags; no manual fallback here #}
   {%- block comments_init %}{%- endblock comments_init %}
 
-  {# hero-logo.css and gold-override.css now in site-overrides.min.css #}
+  <!-- theme / animation styles -->
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/hero-logo.css', trailing_slash=false, cachebust=true) | safe }}">
+
+  <!-- LAST sheet: forces gold colour on any .gold-link, incl. inside headings -->
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/gold-override.css', trailing_slash=false, cachebust=true) | safe }}">
+
+  {%- include "partials/head_js.html" %}
 </head>
 <body>
 
