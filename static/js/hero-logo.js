@@ -13,13 +13,18 @@ globalThis.addEventListener('DOMContentLoaded', () => {
   const particlesContainer = document.querySelector('.tech-particles');
   if (particlesContainer && hasCSPRNG) { // defensive
 
+  // Cache container width to avoid forced reflow on every particle
+  let containerWidth = particlesContainer.offsetWidth;
+  globalThis.addEventListener('resize', () => {
+    containerWidth = particlesContainer.offsetWidth;
+  }, { passive: true });
+
   function createParticle(){
     const p=document.createElement('div');
     p.className='particle';
     particlesContainer.appendChild(p);
     if(typeof p.animate!=='function'){p.remove();return;}
-    const r=particlesContainer.getBoundingClientRect();
-    const x=randomFloat()*r.width;
+    const x=randomFloat()*containerWidth;
     const delay=randomFloat()*4000;              // ms
     const duration=3000+randomFloat()*2000;      // ms
     p.animate([
