@@ -68,16 +68,15 @@
 </script>
 
 
-{# cls-fixes now merged into critical.min.css (inlined above) #}
+<!-- critical CSS -->
+<link rel="stylesheet"
+      href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
+  <link rel="stylesheet"
+        href="{{ get_url(path='css/cls-fixes.css', trailing_slash=false, cachebust=true) | safe }}">
 </noscript>
-
-{# preload main stylesheet for faster rendering #}
-<link rel="preload"
-      as="style"
-      href="{{ get_url(path='css/abridge.css', trailing_slash=false, cachebust=true) | safe }}">
 
 {# --- Critical hero styling uses CSP nonce --- #}
 
@@ -96,9 +95,8 @@
   {%- endfor %}
 {%- endif %}
 
-{# combined overrides: override + hero-logo + gold-override #}
 <link rel="stylesheet"
-      href="{{ get_url(path='css/site-overrides.min.css', trailing_slash=false, cachebust=true) | safe }}">
+      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
 <noscript>
   {%- for i in stylesheets %}
@@ -110,7 +108,7 @@
     {%- endfor %}
   {%- endif %}
   <link rel="stylesheet"
-        href="{{ get_url(path='css/site-overrides.min.css', trailing_slash=false, cachebust=true) | safe }}">
+        href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 </noscript>
 
 {# --- Meta tags --- #}
