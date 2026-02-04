@@ -45,8 +45,23 @@ zola serve --interface 0.0.0.0 --port 5000
 
 ## Build & Deploy
 - Build: `zola build` → outputs to `public/`
-- Deploy: GitHub Actions workflow (`.github/workflows/zola.yml`)
+- Deploy: GitHub Actions workflow (`.github/workflows/deploy.yml`)
 - **NEVER use Replit's "Publish" button** (causes SEO collision with production)
+
+### Deploy Pipeline (Automatic on merge to main)
+1. Zola build
+2. PurgeCSS removes unused styles
+3. KaTeX assets removed if unused
+4. **CSP hashes auto-regenerated** via `infra/cloudfront/update_policy.sh`
+5. S3 sync with proper cache headers
+6. CloudFront invalidation
+
+### CSS Architecture (load order matters!)
+1. `critical.min.css` - inlined in head
+2. `cls-fixes.css` - prevents layout shift
+3. `abridge.css` - theme base styles
+4. `override.min.css` - homepage/nav/mobile overrides (complex, don't merge)
+5. `late-overrides.css` - hero animation + gold links (combined from hero-logo.css + gold-override.css)
 
 ## Branching Workflow
 - Work on `replit/working` branch
@@ -74,6 +89,8 @@ Then click "Pull" in Replit to sync. This prevents duplicate commits in future P
 Site maintains 98-100 scores. All changes must preserve these.
 
 ## Recent Changes
+- 2026-02-04: Combined hero-logo.css + gold-override.css into late-overrides.css (5→4 CSS requests)
+- 2026-02-04: Optimized hero-logo.js to cache dimensions, eliminating forced reflows
 - 2026-02-04: Cleaned up unused files, created WebP image alternatives, fixed git workflow
 - 2026-02-04: Reordered nav dropdown: Services, Pricing, Our Expertise, Blog, DNS Tool
 - 2026-02-03: Configured for Replit environment with Zola static site generator
