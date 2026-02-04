@@ -263,7 +263,7 @@ We design and implement bespoke high-performance WiFi networks for large La Joll
 
 ### <a href="/services/#email-domain-dns" class="gold-link">Advanced Email, Domain, &amp; DNS Solutions</a>
 
-Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
+Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery. 
 
 ### <a href="/services/#cybersecurity" class="gold-link">Cybersecurity &amp; Ethical Screen Sharing</a>
 
