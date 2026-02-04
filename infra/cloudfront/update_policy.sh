@@ -7,11 +7,9 @@ POLICY_ID="${POLICY_ID:-521afb15-34af-416e-980a-f5bf48c8f71e}" # CloudFront poli
 
 # Refresh CSP hashes from the current build output before pushing the policy.
 # Requires `public/` to be up to date (run `zola build` first, or rely on CI build output).
+# NOTE: Do NOT merge old hashes from CloudFront - use only current build hashes to prevent accumulation.
 cd "$REPO_ROOT"
-aws cloudfront get-response-headers-policy \
-  --id "$POLICY_ID" \
-  --query "ResponseHeadersPolicy.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy" \
-  --output text | python3 "${SCRIPT_DIR}/generate_policy.py" --mode site --merge-hashes-from-stdin
+python3 "${SCRIPT_DIR}/generate_policy.py" --mode site
 
 ETAG=$(aws cloudfront get-response-headers-policy \
         --id "$POLICY_ID" \
