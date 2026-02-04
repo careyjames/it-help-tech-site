@@ -73,7 +73,18 @@ Then click "Pull" in Replit to sync. This prevents duplicate commits in future P
 ## Lighthouse Scores
 Site maintains 98-100 scores. All changes must preserve these.
 
+## CSS Architecture
+- `static/css/critical.min.css` - Inlined in `<head>` (includes CLS fixes)
+- `static/css/abridge.css` - Main theme styles (preloaded)
+- `static/css/site-overrides.min.css` - Combined overrides (hero-logo, layout, gold-links)
+
+## CSP / Security
+- CSP hashes auto-generated via `python3 infra/cloudfront/generate_policy.py --mode all`
+- Run after any inline script/style changes
+- Observatory score: 130
+
 ## Recent Changes
+- 2026-02-04: CSS optimization - merged 5 files into 2, added preload, 38% size reduction
 - 2026-02-04: Cleaned up unused files, created WebP image alternatives, fixed git workflow
 - 2026-02-04: Reordered nav dropdown: Services, Pricing, Our Expertise, Blog, DNS Tool
 - 2026-02-03: Configured for Replit environment with Zola static site generator
