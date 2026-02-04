@@ -26,8 +26,8 @@ stylesheets = ["css/cls-fixes.css", "css/abridge.css"]
 author_name = "Carey Balboa"
 copyright = false
 footer_credit = false
-default_og_image      = "/images/logo-slogan.jpeg"
-default_twitter_image = "/images/logo-slogan.jpeg"
+default_og_image      = "/images/og-home.png"
+default_twitter_image = "/images/og-home.png"
 
 [[extra.menu]]
 name   = "Home"
