@@ -5,11 +5,11 @@ description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fix
 [extra]
 og_title        = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
 og_description  = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
-og_image        = "/images/logo-slogan.jpeg"
+og_image        = "/images/og-home.png"
 
 twitter_title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
 twitter_description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
-twitter_image       = "/images/logo-slogan.jpeg"
+twitter_image       = "/images/og-home.png"
 twitter_card        = "summary_large_image"
 +++
 <script type="application/ld+json">
@@ -63,8 +63,8 @@ twitter_card        = "summary_large_image"
   "name": "IT Help San Diego",
   "legalName": "IT Help San Diego Inc.",
   "url": "https://www.it-help.tech/",
-  "image": "https://www.it-help.tech/images/logo-slogan.jpeg",
-  "logo": "https://www.it-help.tech/images/logo-slogan.jpeg",
+  "image": "https://www.it-help.tech/images/og-home.png",
+  "logo": "https://www.it-help.tech/images/og-home.png",
   "hasMap": "https://maps.app.goo.gl/hXw49HPZZkWU7s5E9",
   "telephone": "+1-619-853-5008",
   "priceRange": "$$$",
@@ -216,7 +216,7 @@ twitter_card        = "summary_large_image"
     {
       "@type": "ImageObject",
       "@id": "https://www.it-help.tech/#primaryimage",
-      "url": "https://www.it-help.tech/images/logo-slogan.jpeg"
+      "url": "https://www.it-help.tech/images/og-home.png"
     }
   ]
 }
