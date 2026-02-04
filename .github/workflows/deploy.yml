@@ -43,8 +43,12 @@ jobs:
           cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg static/logo.svg static/logo-light.svg public/
 
       - name: Update CloudFront signature-pages security headers policy (CSP)
-        if: ${{ secrets.CF_HEADERS_POLICY_ID_SIGNATURES != '' }}
-        run: ./infra/cloudfront/update_policy_signatures.sh
+        run: |
+          if [ -n "${POLICY_ID_SIGNATURES:-}" ]; then
+            ./infra/cloudfront/update_policy_signatures.sh
+          else
+            echo "CF_HEADERS_POLICY_ID_SIGNATURES not set; skipping signature CSP update."
+          fi
         env:
           POLICY_ID_SIGNATURES: ${{ secrets.CF_HEADERS_POLICY_ID_SIGNATURES }}
           AWS_REGION: us-east-1
