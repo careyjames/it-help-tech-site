@@ -52,7 +52,16 @@ zola serve --interface 0.0.0.0 --port 5000
 - Work on `replit/working` branch
 - Push to GitHub and create PRs
 - Merge to main via squash and merge
-- **After merging:** Reset replit/working to origin/main to avoid duplicate commits
+
+### IMPORTANT: After Every PR Merge
+Run these commands locally after each squash-merge to reset the working branch:
+```bash
+git fetch origin
+git checkout replit/working
+git reset --hard origin/main
+git push --force origin replit/working
+```
+Then click "Pull" in Replit to sync. This prevents duplicate commits in future PRs.
 
 ## Site Philosophy
 - No tracking, no cookies, no frameworks
