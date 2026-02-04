@@ -4,6 +4,9 @@
 __pycache__/
 *.py[cod]
 
+# Replit conversation attachments
+attached_assets/
+
 /public
 sass_OLD/
 templates_OLD/
