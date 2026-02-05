@@ -86,58 +86,34 @@
 
 /* IT with animated gradient and stroke */
 .logo-it {
-    color: #003366; /* fallback */
-    background-image:
-        linear-gradient(180deg,
-            #003366 0%,
-            #003366 100%),
-        linear-gradient(110deg,
-            rgba(213, 173, 54, 0) 0%,
-            rgba(213, 173, 54, 0) 46%,
-            rgba(213, 173, 54, 0.2) 49%,
-            rgba(213, 173, 54, 0.7) 50%,
-            rgba(213, 173, 54, 0.2) 51%,
-            rgba(213, 173, 54, 0) 54%,
-            rgba(213, 173, 54, 0) 100%);
-    background-size: 100% 100%, 240% 240%;
-    background-position: 0 0, -160% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #003366;
+    -webkit-text-fill-color: #003366;
+    background: none;
     display: inline-block;
     text-shadow:
-        0 -0.6px 0 rgba(69, 139, 213, 0.9),
-        0 0.7px 0 rgba(0, 24, 51, 0.95);
-    animation: specular-sweep 7s ease-in-out infinite;
+        -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+         0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+        -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+         0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+         0 -0.8px 0 rgba(213, 173, 54, 0);
+    animation: logo-gleam 7s ease-in-out infinite;
     position: relative;
     z-index: 2;
 }
 
 /* HELP with animated gradient, NO stroke to avoid P artifacts */
 .logo-help {
-    color: #003366; /* fallback */
-    background-image:
-        linear-gradient(180deg,
-            #003366 0%,
-            #003366 100%),
-        linear-gradient(110deg,
-            rgba(213, 173, 54, 0) 0%,
-            rgba(213, 173, 54, 0) 46%,
-            rgba(213, 173, 54, 0.2) 49%,
-            rgba(213, 173, 54, 0.7) 50%,
-            rgba(213, 173, 54, 0.2) 51%,
-            rgba(213, 173, 54, 0) 54%,
-            rgba(213, 173, 54, 0) 100%);
-    background-size: 100% 100%, 240% 240%;
-    background-position: 0 0, -160% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #003366;
+    -webkit-text-fill-color: #003366;
+    background: none;
     display: inline-block;
     text-shadow:
-        0 -0.6px 0 rgba(69, 139, 213, 0.9),
-        0 0.7px 0 rgba(0, 24, 51, 0.95);
-    animation: specular-sweep 7s ease-in-out infinite;
+        -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+         0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+        -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+         0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+         0 -0.8px 0 rgba(213, 173, 54, 0);
+    animation: logo-gleam 7s ease-in-out infinite;
     position: relative;
     z-index: 2;
 }
@@ -180,6 +156,25 @@
     100% { background-position: 0 0, -160% 50%; }
 }
 
+@keyframes logo-gleam {
+    0%, 70%, 100% {
+        text-shadow:
+            -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+             0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
+            -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+             0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
+             0 -0.8px 0 rgba(213, 173, 54, 0);
+    }
+    78%, 82% {
+        text-shadow:
+            -0.35px -0.35px 0 rgba(84, 159, 230, 0.9),
+             0.35px -0.35px 0 rgba(84, 159, 230, 0.9),
+            -0.35px  0.35px 0 rgba(84, 159, 230, 0.9),
+             0.35px  0.35px 0 rgba(84, 159, 230, 0.9),
+             0 -0.8px 0 rgba(213, 173, 54, 0.55);
+    }
+}
+
 /* Glitch effect now handled with pseudo-elements */
 .main-logo::before,
 .main-logo::after {
@@ -197,28 +192,16 @@
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #003366; /* fallback */
-    background-image:
-        linear-gradient(180deg,
-            #003366 0%,
-            #003366 100%),
-        linear-gradient(110deg,
-            rgba(213, 173, 54, 0) 0%,
-            rgba(213, 173, 54, 0) 46%,
-            rgba(213, 173, 54, 0.2) 49%,
-            rgba(213, 173, 54, 0.7) 50%,
-            rgba(213, 173, 54, 0.2) 51%,
-            rgba(213, 173, 54, 0) 54%,
-            rgba(213, 173, 54, 0) 100%);
-    background-size: 100% 100%, 240% 240%;
-    background-position: 0 0, -160% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #003366;
+    -webkit-text-fill-color: #003366;
+    background: none;
     text-shadow:
-        0 -0.6px 0 rgba(69, 139, 213, 0.85),
-        0 0.7px 0 rgba(0, 24, 51, 0.9);
-    animation: specular-sweep 7s ease-in-out infinite;
+        -0.35px -0.35px 0 rgba(84, 159, 230, 0.8),
+         0.35px -0.35px 0 rgba(84, 159, 230, 0.8),
+        -0.35px  0.35px 0 rgba(84, 159, 230, 0.8),
+         0.35px  0.35px 0 rgba(84, 159, 230, 0.8),
+         0 -0.8px 0 rgba(213, 173, 54, 0);
+    animation: logo-gleam 7s ease-in-out infinite;
 }
 
 .main-logo::after {
@@ -422,7 +405,7 @@ html:not(.switch) .tagline-text{
 
 .logo-container:hover .logo-it,
 .logo-container:hover .logo-help {
-    animation-duration: 3.5s;
+    animation-duration: 4s;
 }
 
 .logo-container:hover .glitch-container {
