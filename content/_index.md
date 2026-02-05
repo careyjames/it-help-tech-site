@@ -294,7 +294,6 @@ No. We are not a hardware repair shop—we specialize in operating systems, soft
 ### Do you provide same-day service in La Jolla?
 Yes—schedule permitting. For most Mac, Wi‑Fi, or email issues we can often dispatch to La Jolla the same day.
 
----
 Tired of paying for a month of IT service when nothing happened?
 Ready to make your tech problems disappear?  
 
