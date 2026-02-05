@@ -90,7 +90,7 @@
     font-size: 5rem;
     letter-spacing: 0;
     --logo-letter-spacing: 0.012em;
-    --logo-plus-gap: 0.006em;
+    --logo-plus-gap: 0em;
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -125,7 +125,7 @@
              0 0 1.8px rgba(213, 173, 54, 0.45);
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
-    left: 0.075em;
+    left: 0.1em;
     z-index: 2;
 }
 
@@ -159,7 +159,7 @@
          0 0 1.8px rgba(213, 173, 54, 0.45);
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
-    left: -0.01em;
+    left: -0.03em;
     z-index: 2;
 }
 
