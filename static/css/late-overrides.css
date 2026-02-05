@@ -160,15 +160,15 @@
     color: transparent;
     background: linear-gradient(110deg,
         transparent 0%,
-        rgba(213, 173, 54, 0.0) 35%,
-        rgba(213, 173, 54, 0.85) 50%,
-        rgba(213, 173, 54, 0.0) 65%,
+        rgba(213, 173, 54, 0.0) 32%,
+        rgba(213, 173, 54, 0.95) 50%,
+        rgba(213, 173, 54, 0.0) 68%,
         transparent 100%);
     -webkit-background-clip: text;
     background-clip: text;
     opacity: 0;
-    transform: translateX(-30%);
-    animation: logo-sheen 7.5s ease-in-out infinite;
+    transform: translateX(-35%);
+    animation: logo-sheen 6.4s ease-in-out infinite;
     pointer-events: none;
     z-index: 3;
     font: inherit;
@@ -248,36 +248,29 @@
 }
 
 @keyframes logo-sheen {
-    0%, 68% {
+    0%, 60% {
         opacity: 0;
-        transform: translateX(-30%);
+        transform: translateX(-35%);
     }
-    72% {
-        opacity: 0.85;
+    66% {
+        opacity: 0.95;
     }
-    82% {
-        opacity: 0.85;
-        transform: translateX(30%);
+    80% {
+        opacity: 0.95;
+        transform: translateX(35%);
     }
     86%, 100% {
         opacity: 0;
-        transform: translateX(30%);
+        transform: translateX(35%);
     }
 }
 
 /* Glitch effect now handled with pseudo-elements */
 .main-logo::before,
 .main-logo::after {
-    content: 'IT+HELP';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: rgba(120, 180, 255, 0.12);
-    pointer-events: none;
-    animation: glitch 2s infinite;
+    content: none;
+    animation: none;
     opacity: 0;
-    z-index: 3;
-    text-shadow: none;
 }
 
 html.switch .logo-it,
@@ -301,33 +294,6 @@ html.switch .logo-help {
     animation: logo-gleam 6s ease-in-out infinite;
 }
 
-.main-logo::after {
-    animation-delay: .15s;
-}
-
-@keyframes glitch {
-    0%, 100% { 
-        opacity: 0;
-        transform: translate(0);
-    }
-    20% {
-        opacity: 0.5;
-        transform: translate(-1px, 1px);
-    }
-    21% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    52% {
-        opacity: 0.45;
-        transform: translate(1px, -1px);
-    }
-    53% {
-        opacity: 0;
-    }
-}
 
 .location {
     font-size: 2.5rem;
@@ -479,7 +445,7 @@ html:not(.switch) .tagline-text{
 .tech-particles .particle:nth-child(5)  { left: 40%; top: 68%; --size: 2.2px; --alpha: 0.62; --glow: 6px;  --blur: 0.5px; --dur: 5.6s; --delay: 2.6s; --hue: 205; --s1: 0.95;--s2: 0.85;--dx1: -16px; --dy1: -20px; --dx2: -2px;  --dy2: -90px;  --dx3: -24px; --dy3: -145px; }
 .tech-particles .particle:nth-child(6)  { left: 48%; top: 52%; --size: 2.2px; --alpha: 0.75; --glow: 9px;  --blur: 0.2px; --dur: 6.4s; --delay: 1.5s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 195; --s1: 1;   --s2: 0.95;--dx1: 18px;  --dy1: -26px; --dx2: -10px; --dy2: -110px; --dx3: 22px;  --dy3: -170px; }
 .tech-particles .particle:nth-child(7)  { left: 56%; top: 74%; --size: 2.2px; --alpha: 0.82; --glow: 10px; --blur: 0px;   --dur: 5.8s; --delay: 3s;   --hue: 188; --s1: 1.05;--s2: 0.95;--dx1: -26px; --dy1: -30px; --dx2: -6px;  --dy2: -118px; --dx3: -32px; --dy3: -175px; }
-.tech-particles .particle:nth-child(8)  { left: 64%; top: 58%; --size: 2.1px; --alpha: 0.7;  --glow: 8px;  --blur: 0.3px; --dur: 6.9s; --delay: 0.3s; --hue: 210; --s1: 1;   --s2: 0.9; --dx1: 26px;  --dy1: -34px; --dx2: 12px;  --dy2: -130px; --dx3: 36px;  --dy3: -195px; }
+.tech-particles .particle:nth-child(8)  { left: 64%; top: 58%; --size: 2.1px; --alpha: 0.7;  --glow: 8px;  --blur: 0.3px; --dur: 6.9s; --delay: 0.3s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 210; --s1: 1;   --s2: 0.9; --dx1: 26px;  --dy1: -34px; --dx2: 12px;  --dy2: -130px; --dx3: 36px;  --dy3: -195px; }
 .tech-particles .particle:nth-child(9)  { left: 72%; top: 66%; --size: 2.1px; --alpha: 0.6;  --glow: 6px;  --blur: 0.6px; --dur: 5.7s; --delay: 1.9s; --hue: 190; --s1: 0.9; --s2: 0.85;--dx1: -14px; --dy1: -20px; --dx2: 4px;   --dy2: -95px;  --dx3: -20px; --dy3: -150px; }
 .tech-particles .particle:nth-child(10) { left: 80%; top: 54%; --size: 2.2px; --alpha: 0.85; --glow: 12px; --blur: 0px;   --dur: 6.6s; --delay: 0.8s; --hue: 200; --s1: 1.2; --s2: 1;   --dx1: 20px;  --dy1: -30px; --dx2: -8px;  --dy2: -125px; --dx3: 30px;  --dy3: -185px; }
 .tech-particles .particle:nth-child(11) { left: 88%; top: 76%; --size: 2.2px; --alpha: 0.65; --glow: 7px;  --blur: 0.5px; --dur: 6.1s; --delay: 2.5s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 215; --s1: 0.95;--s2: 0.85;--dx1: -22px; --dy1: -26px; --dx2: -4px;  --dy2: -110px; --dx3: -28px; --dy3: -165px; }

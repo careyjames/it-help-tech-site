@@ -31,7 +31,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 
 ## Motion
 - Particles: subtle motion, visible but not distracting.
-- Particle colors: mostly Primary Blue with ~25% Gold accents for sparkle.
+- Particle colors: mostly Primary Blue with ~30% Gold accents for sparkle.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
 
 ## Key Files
