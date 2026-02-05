@@ -112,16 +112,46 @@ function nodeCountForArea(area) {
   return 30;
 }
 
+const PHI = (1 + Math.sqrt(5)) / 2;
+const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
+const INVERSE_PHI = 1 / PHI;
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function seededSpiralPoint(index, count, width, height) {
+  const centerX = width * 0.5;
+  const centerY = height * 0.5;
+  const maxRadius = Math.hypot(width, height) * (0.45 + INVERSE_PHI * 0.15);
+
+  const normalized = (index + 0.5) / count;
+  const radial = Math.sqrt(normalized) * maxRadius;
+  const angle = index * GOLDEN_ANGLE;
+
+  const jitterRadius = (Math.random() - 0.5) * maxRadius * 0.07;
+  const jitterAngle = (Math.random() - 0.5) * 0.28;
+  const offsetX = Math.cos(angle + jitterAngle) * (radial + jitterRadius);
+  const offsetY = Math.sin(angle + jitterAngle) * (radial + jitterRadius);
+
+  return {
+    x: clamp(centerX + offsetX, 0, width),
+    y: clamp(centerY + offsetY, 0, height),
+    angle,
+  };
+}
+
 function createNodes(count, width, height) {
   const nodes = [];
   for (let index = 0; index < count; index += 1) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = 0.05 + Math.random() * 0.11;
+    const seed = seededSpiralPoint(index, count, width, height);
+    const driftAngle = seed.angle + Math.PI * 0.5 + (Math.random() - 0.5) * 1.15;
+    const speed = 0.048 + Math.random() * 0.108;
     nodes.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
+      x: seed.x,
+      y: seed.y,
+      vx: Math.cos(driftAngle) * speed,
+      vy: Math.sin(driftAngle) * speed,
       depth: 0.35 + Math.random() * 0.85,
       radius: 0.75 + Math.random() * 1.25,
       gold: Math.random() < 0.3,
@@ -134,8 +164,8 @@ function createNodes(count, width, height) {
 
 function clampNodes(nodes, width, height) {
   for (const node of nodes) {
-    node.x = Math.min(Math.max(node.x, 0), width);
-    node.y = Math.min(Math.max(node.y, 0), height);
+    node.x = clamp(node.x, 0, width);
+    node.y = clamp(node.y, 0, height);
   }
 }
 
@@ -184,12 +214,12 @@ function updateNodes(state, frameScale) {
 
     if (node.x < 0 || node.x > state.width) {
       node.vx *= -1;
-      node.x = Math.min(Math.max(node.x, 0), state.width);
+      node.x = clamp(node.x, 0, state.width);
     }
 
     if (node.y < 0 || node.y > state.height) {
       node.vy *= -1;
-      node.y = Math.min(Math.max(node.y, 0), state.height);
+      node.y = clamp(node.y, 0, state.height);
     }
 
     node.ox = node.x + parallaxX * node.depth;
