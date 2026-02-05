@@ -104,6 +104,9 @@
     background: none;
     display: inline-block;
     text-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.55),
+        0 3px 6px rgba(0, 0, 0, 0.35),
+        0 -1px 0 rgba(255, 255, 255, 0.12),
         -0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
          0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
         -0.16px  0.16px 0 rgba(120, 180, 255, 0.3),
@@ -132,6 +135,9 @@
     background: none;
     display: inline-block;
     text-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.55),
+        0 3px 6px rgba(0, 0, 0, 0.35),
+        0 -1px 0 rgba(255, 255, 255, 0.12),
         -0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
          0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
         -0.16px  0.16px 0 rgba(120, 180, 255, 0.3),
@@ -153,6 +159,33 @@
     content: "HELP";
 }
 
+.logo-it::before {
+    content: "IT";
+}
+
+.logo-help::before {
+    content: "HELP";
+}
+
+.logo-it::before,
+.logo-help::before {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.08) 30%,
+        rgba(255, 255, 255, 0) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 3;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+}
+
 .logo-it::after,
 .logo-help::after {
     position: absolute;
@@ -170,7 +203,7 @@
     transform: translateX(-35%);
     animation: logo-sheen 6.4s ease-in-out infinite;
     pointer-events: none;
-    z-index: 3;
+    z-index: 4;
     font: inherit;
     letter-spacing: inherit;
     line-height: inherit;
@@ -217,6 +250,9 @@
 @keyframes logo-gleam {
     0%, 70%, 100% {
         text-shadow:
+            0 1px 0 rgba(0, 0, 0, 0.55),
+            0 3px 6px rgba(0, 0, 0, 0.35),
+            0 -1px 0 rgba(255, 255, 255, 0.12),
             -0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
              0.16px -0.16px 0 rgba(120, 180, 255, 0.3),
             -0.16px  0.16px 0 rgba(120, 180, 255, 0.3),
@@ -232,6 +268,9 @@
     }
     78%, 82% {
         text-shadow:
+            0 1px 0 rgba(0, 0, 0, 0.55),
+            0 3px 6px rgba(0, 0, 0, 0.35),
+            0 -1px 0 rgba(255, 255, 255, 0.12),
             -0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
              0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
             -0.2px  0.2px 0 rgba(120, 180, 255, 0.4),
@@ -279,6 +318,9 @@ html.switch .logo-help {
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     text-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.45),
+        0 2px 5px rgba(0, 0, 0, 0.28),
+        0 -1px 0 rgba(255, 255, 255, 0.1),
         -0.16px -0.16px 0 rgba(120, 180, 255, 0.28),
          0.16px -0.16px 0 rgba(120, 180, 255, 0.28),
         -0.16px  0.16px 0 rgba(120, 180, 255, 0.28),
