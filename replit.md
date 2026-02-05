@@ -89,6 +89,8 @@ Then click "Pull" in Replit to sync. This prevents duplicate commits in future P
 Site maintains 98-100 scores. All changes must preserve these.
 
 ## Recent Changes
+- 2026-02-04: Fixed CSP pipeline to prevent hash accumulation (removed --merge-hashes-from-stdin)
+- 2026-02-04: Created og-home.png (1200x630px, 498KB) with tagline for OG/Twitter sharing
 - 2026-02-04: Combined hero-logo.css + gold-override.css into late-overrides.css (5→4 CSS requests)
 - 2026-02-04: Optimized hero-logo.js to cache dimensions, eliminating forced reflows
 - 2026-02-04: Cleaned up unused files, created WebP image alternatives, fixed git workflow
