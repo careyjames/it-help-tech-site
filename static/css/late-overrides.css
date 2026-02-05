@@ -66,7 +66,7 @@
 
 .glitch-container {
     position: relative;
-    filter: drop-shadow(0 0 10px rgba(0, 51, 102, 0.35));
+    filter: drop-shadow(0 0 14px rgba(0, 51, 102, 0.35));
     text-align: center;
 }
 
@@ -86,28 +86,46 @@
 
 /* IT with animated gradient and stroke */
 .logo-it {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
+    color: #003366; /* fallback */
+    background: linear-gradient(180deg,
+        #1b4f9a 0%,
+        #003366 55%,
+        #00264a 100%);
+    background-size: 100% 140%;
+    background-position: 50% 35%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: inline-block;
     text-shadow:
-        0.25px 0 0 rgba(93, 152, 219, 0.45),
-        -0.25px 0 0 rgba(93, 152, 219, 0.45),
-        0 0.25px 0 rgba(93, 152, 219, 0.45),
-        0 -0.25px 0 rgba(93, 152, 219, 0.45);
+        0 0 6px rgba(0, 51, 102, 0.65),
+        0 0 12px rgba(28, 107, 209, 0.35),
+        0 -0.5px 0 rgba(93, 152, 219, 0.45),
+        0 0.6px 0 rgba(0, 24, 51, 0.85);
+    filter: drop-shadow(0 2px 6px rgba(0, 51, 102, 0.35));
     position: relative;
     z-index: 2;
 }
 
 /* HELP with animated gradient, NO stroke to avoid P artifacts */
 .logo-help {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
+    color: #003366; /* fallback */
+    background: linear-gradient(180deg,
+        #1b4f9a 0%,
+        #003366 55%,
+        #00264a 100%);
+    background-size: 100% 140%;
+    background-position: 50% 35%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: inline-block;
     text-shadow:
-        0.25px 0 0 rgba(93, 152, 219, 0.45),
-        -0.25px 0 0 rgba(93, 152, 219, 0.45),
-        0 0.25px 0 rgba(93, 152, 219, 0.45),
-        0 -0.25px 0 rgba(93, 152, 219, 0.45);
+        0 0 6px rgba(0, 51, 102, 0.65),
+        0 0 12px rgba(28, 107, 209, 0.35),
+        0 -0.5px 0 rgba(93, 152, 219, 0.45),
+        0 0.6px 0 rgba(0, 24, 51, 0.85);
+    filter: drop-shadow(0 2px 6px rgba(0, 51, 102, 0.35));
     position: relative;
     z-index: 2;
 }
@@ -150,25 +168,33 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(255, 255, 255, 0.05);
+    color: rgba(93, 152, 219, 0.12);
     pointer-events: none;
     animation: glitch 2s infinite;
     opacity: 0;
     z-index: 3;
     text-shadow:
-      0 0 1px rgba(255, 255, 255, 0.12),
-      0 0 3px rgba(255, 255, 255, 0.08);
+      0 0 2px rgba(28, 107, 209, 0.25),
+      0 0 6px rgba(0, 51, 102, 0.2);
 }
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
+    color: #003366; /* fallback */
+    background: linear-gradient(180deg,
+        #1b4f9a 0%,
+        #003366 55%,
+        #00264a 100%);
+    background-size: 100% 140%;
+    background-position: 50% 35%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow:
-        0.25px 0 0 rgba(93, 152, 219, 0.35),
-        -0.25px 0 0 rgba(93, 152, 219, 0.35),
-        0 0.25px 0 rgba(93, 152, 219, 0.35),
-        0 -0.25px 0 rgba(93, 152, 219, 0.35);
+        0 0 6px rgba(0, 51, 102, 0.6),
+        0 0 12px rgba(28, 107, 209, 0.3),
+        0 -0.5px 0 rgba(93, 152, 219, 0.4),
+        0 0.6px 0 rgba(0, 24, 51, 0.8);
 }
 
 .main-logo::after {
@@ -181,7 +207,7 @@ html.switch .logo-help {
         transform: translate(0);
     }
     20% {
-        opacity: 0.35;
+        opacity: 0.5;
         transform: translate(-1px, 1px);
     }
     21% {
@@ -191,7 +217,7 @@ html.switch .logo-help {
         opacity: 0;
     }
     52% {
-        opacity: 0.3;
+        opacity: 0.45;
         transform: translate(1px, -1px);
     }
     53% {
