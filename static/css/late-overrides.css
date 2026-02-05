@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+:root {
+    --brand-blue: #0B4DB1;
+}
+
 .logo-container,
 .logo-container * {
     box-sizing: border-box;
@@ -22,6 +26,10 @@
     max-width: 560px;              /* matches original */
     margin: 0 auto;
     /* no explicit min-height → let content decide */
+}
+
+.schedule-link {
+    background-color: var(--brand-blue) !important;
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -86,34 +94,62 @@
 
 /* IT with animated gradient and stroke */
 .logo-it {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
-    background: none;
+    color: var(--brand-blue);
+    background-image:
+        linear-gradient(180deg,
+            var(--brand-blue) 0%,
+            var(--brand-blue) 100%),
+        linear-gradient(110deg,
+            rgba(213, 173, 54, 0) 0%,
+            rgba(213, 173, 54, 0) 46%,
+            rgba(213, 173, 54, 0.2) 49%,
+            rgba(213, 173, 54, 0.85) 50%,
+            rgba(213, 173, 54, 0.2) 51%,
+            rgba(213, 173, 54, 0) 54%,
+            rgba(213, 173, 54, 0) 100%);
+    background-size: 100% 100%, 220% 220%;
+    background-position: 0 0, -160% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: inline-block;
     text-shadow:
-        -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-         0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-        -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-         0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-         0 -0.8px 0 rgba(213, 173, 54, 0);
-    animation: logo-gleam 7s ease-in-out infinite;
+        -0.3px -0.3px 0 rgba(111, 180, 255, 0.9),
+         0.3px -0.3px 0 rgba(111, 180, 255, 0.9),
+        -0.3px  0.3px 0 rgba(111, 180, 255, 0.9),
+         0.3px  0.3px 0 rgba(111, 180, 255, 0.9);
+    animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
 }
 
 /* HELP with animated gradient, NO stroke to avoid P artifacts */
 .logo-help {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
-    background: none;
+    color: var(--brand-blue);
+    background-image:
+        linear-gradient(180deg,
+            var(--brand-blue) 0%,
+            var(--brand-blue) 100%),
+        linear-gradient(110deg,
+            rgba(213, 173, 54, 0) 0%,
+            rgba(213, 173, 54, 0) 46%,
+            rgba(213, 173, 54, 0.2) 49%,
+            rgba(213, 173, 54, 0.85) 50%,
+            rgba(213, 173, 54, 0.2) 51%,
+            rgba(213, 173, 54, 0) 54%,
+            rgba(213, 173, 54, 0) 100%);
+    background-size: 100% 100%, 220% 220%;
+    background-position: 0 0, -160% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: inline-block;
     text-shadow:
-        -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-         0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-        -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-         0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-         0 -0.8px 0 rgba(213, 173, 54, 0);
-    animation: logo-gleam 7s ease-in-out infinite;
+        -0.3px -0.3px 0 rgba(111, 180, 255, 0.9),
+         0.3px -0.3px 0 rgba(111, 180, 255, 0.9),
+        -0.3px  0.3px 0 rgba(111, 180, 255, 0.9),
+         0.3px  0.3px 0 rgba(111, 180, 255, 0.9);
+    animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
 }
@@ -157,22 +193,10 @@
 }
 
 @keyframes logo-gleam {
-    0%, 70%, 100% {
-        text-shadow:
-            -0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-             0.35px -0.35px 0 rgba(84, 159, 230, 0.85),
-            -0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-             0.35px  0.35px 0 rgba(84, 159, 230, 0.85),
-             0 -0.8px 0 rgba(213, 173, 54, 0);
-    }
-    78%, 82% {
-        text-shadow:
-            -0.35px -0.35px 0 rgba(84, 159, 230, 0.9),
-             0.35px -0.35px 0 rgba(84, 159, 230, 0.9),
-            -0.35px  0.35px 0 rgba(84, 159, 230, 0.9),
-             0.35px  0.35px 0 rgba(84, 159, 230, 0.9),
-             0 -0.8px 0 rgba(213, 173, 54, 0.55);
-    }
+    0%, 55% { background-position: 0 0, -160% 50%; }
+    75% { background-position: 0 0, 20% 50%; }
+    85% { background-position: 0 0, 160% 50%; }
+    100% { background-position: 0 0, -160% 50%; }
 }
 
 /* Glitch effect now handled with pseudo-elements */
@@ -192,16 +216,30 @@
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #003366;
-    -webkit-text-fill-color: #003366;
-    background: none;
+    color: var(--brand-blue);
+    background-image:
+        linear-gradient(180deg,
+            var(--brand-blue) 0%,
+            var(--brand-blue) 100%),
+        linear-gradient(110deg,
+            rgba(213, 173, 54, 0) 0%,
+            rgba(213, 173, 54, 0) 46%,
+            rgba(213, 173, 54, 0.2) 49%,
+            rgba(213, 173, 54, 0.85) 50%,
+            rgba(213, 173, 54, 0.2) 51%,
+            rgba(213, 173, 54, 0) 54%,
+            rgba(213, 173, 54, 0) 100%);
+    background-size: 100% 100%, 220% 220%;
+    background-position: 0 0, -160% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow:
-        -0.35px -0.35px 0 rgba(84, 159, 230, 0.8),
-         0.35px -0.35px 0 rgba(84, 159, 230, 0.8),
-        -0.35px  0.35px 0 rgba(84, 159, 230, 0.8),
-         0.35px  0.35px 0 rgba(84, 159, 230, 0.8),
-         0 -0.8px 0 rgba(213, 173, 54, 0);
-    animation: logo-gleam 7s ease-in-out infinite;
+        -0.3px -0.3px 0 rgba(111, 180, 255, 0.85),
+         0.3px -0.3px 0 rgba(111, 180, 255, 0.85),
+        -0.3px  0.3px 0 rgba(111, 180, 255, 0.85),
+         0.3px  0.3px 0 rgba(111, 180, 255, 0.85);
+    animation: logo-gleam 6s ease-in-out infinite;
 }
 
 .main-logo::after {
