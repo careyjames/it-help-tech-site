@@ -1,0 +1,39 @@
+# Style Guide (Living)
+Last updated: 2026-02-05
+
+Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
+
+## Brand Colors
+- Primary Blue (logo + primary CTA): `#2D7AE9`  
+  - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
+  - If changed, also update:
+    - `--brand-blue-rgb` (comma RGB)
+    - `--brand-blue-glow` (particle glow)
+- Gold Accent (borders + highlights): `#D5AD36`
+- Plus Red (plus symbol only): `#FF0066`
+- Dark Background: `#0B0B0B`
+- Light Text: `#FFFFFF`
+- Secondary Text: `#B2BAC5` (e.g., "SAN DIEGO")
+
+## Usage Rules
+- Use Primary Blue for logo text and main CTA (Schedule).
+- Use Gold as an accent only (borders, highlights, thin outlines).
+- Red is reserved for the plus sign.
+- Avoid introducing new colors without updating this guide.
+
+## Accessibility
+- Minimum contrast ratio for normal text: 4.5:1 (WCAG).
+- Re-run Lighthouse when changing the palette or text colors.
+
+## Typography
+- Logo: heavy system display (`SF Pro Display` / system stack).
+- Body: site default; keep headings bold and legible.
+
+## Motion
+- Particles: subtle motion, visible but not distracting.
+- Avoid aggressive glitch effects; prioritize clarity and polish.
+
+## Key Files
+- Hero/logo styles: `static/css/late-overrides.css`
+- Logo markup: `templates/partials/hero_logo.html`
+
