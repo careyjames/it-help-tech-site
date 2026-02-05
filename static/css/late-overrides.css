@@ -88,18 +88,17 @@
 .logo-it {
     background: linear-gradient(90deg,
         #003366 0%,
-        #003366 35%,
-        #2f6bff 48%,
-        #d4af37 58%,
-        #2f6bff 70%,
+        #2f6bff 18%,
+        #d4af37 48%,
+        #2f6bff 72%,
         #003366 100%);
-    background-size: 260% 260%;
+    background-size: 220% 220%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    animation: gradient-shift 6s ease infinite;
+    animation: gradient-shift 5s ease-in-out infinite;
     display: inline-block;
     -webkit-text-stroke: 0.35px rgba(0, 180, 255, 0.9);
     position: relative;
@@ -110,20 +109,20 @@
 .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #003366 35%,
-        #2f6bff 48%,
-        #d4af37 58%,
-        #2f6bff 70%,
+        #2f6bff 18%,
+        #d4af37 48%,
+        #2f6bff 72%,
         #003366 100%);
-    background-size: 260% 260%;
+    background-size: 220% 220%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    animation: gradient-shift 6s ease infinite;
+    animation: gradient-shift 5s ease-in-out infinite;
     display: inline-block;
     filter: drop-shadow(0 0 0.25px rgba(0, 180, 255, 0.8));
+    -webkit-text-stroke: 0.35px rgba(0, 180, 255, 0.9);
     position: relative;
     z-index: 2;
 }
@@ -140,6 +139,16 @@
          0.3px  0.3px 0 #00ffff;
     position: relative;
     z-index: 4;
+    animation: plus-jitter 3.5s ease-in-out infinite;
+}
+
+@keyframes plus-jitter {
+  0%, 70% { transform: translate3d(0, 0, 0); }
+  72% { transform: translate3d(0.3px, -0.2px, 0); }
+  74% { transform: translate3d(-0.3px, 0.2px, 0); }
+  76% { transform: translate3d(0.2px, 0.1px, 0); }
+  78% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 @keyframes gradient-shift {
@@ -156,35 +165,27 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg,
-        #003366 0%,
-        #003366 35%,
-        #2f6bff 48%,
-        #d4af37 58%,
-        #2f6bff 70%,
-        #003366 100%);
-    background-size: 260% 260%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: rgba(0, 229, 255, 0.9);
     pointer-events: none;
     animation: glitch 2s infinite;
     opacity: 0;
     z-index: 3;
+    text-shadow:
+      0 0 6px rgba(0, 229, 255, 0.6),
+      0 0 14px rgba(0, 229, 255, 0.35);
 }
 
 html.switch .logo-it,
 html.switch .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #003366 40%,
-        #2f6bff 52%,
-        #d4af37 62%,
-        #2f6bff 72%,
+        #2f6bff 22%,
+        #d4af37 52%,
+        #2f6bff 74%,
         #003366 100%);
     -webkit-text-stroke: 0.4px rgba(0, 30, 60, 0.6);
     filter: drop-shadow(0 0 0.2px rgba(0, 30, 60, 0.35));
+    animation: gradient-shift 5s ease-in-out infinite;
 }
 
 .main-logo::after {
@@ -223,11 +224,12 @@ html.switch .logo-help {
     font-weight: 600;
     color: #1c6bd1;
     letter-spacing: 0.18em;
-    -webkit-text-stroke: 0;
+    -webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.2);
 }
 
 html.switch .location {
     color: #003366;
+    -webkit-text-stroke: 0.25px rgba(0, 35, 70, 0.25);
 }
 
 @keyframes shine {
