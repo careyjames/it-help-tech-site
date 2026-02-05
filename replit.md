@@ -52,9 +52,11 @@ zola serve --interface 0.0.0.0 --port 5000
 1. Zola build
 2. PurgeCSS removes unused styles
 3. KaTeX assets removed if unused
-4. **CSP hashes auto-regenerated** via `infra/cloudfront/update_policy.sh`
+4. **CSP hashes auto-regenerated** via `infra/cloudfront/update_policy.sh` (signature pages use `infra/cloudfront/update_policy_signatures.sh` when `POLICY_ID_SIGNATURES` is set)
 5. S3 sync with proper cache headers
 6. CloudFront invalidation
+
+**Local/Replit note:** `update_policy_signatures.sh` requires AWS credentials + `POLICY_ID_SIGNATURES`. If those secrets aren't available, the signature CSP update will fail or be skipped—this is expected outside CI.
 
 ### CSS Architecture (load order matters!)
 1. `critical.min.css` - inlined in head

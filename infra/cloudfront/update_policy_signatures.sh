@@ -7,11 +7,9 @@ POLICY_ID_SIGNATURES="${POLICY_ID_SIGNATURES:?POLICY_ID_SIGNATURES is required}"
 
 # Refresh signature-page CSP hashes from the current build output before pushing the policy.
 # Requires `public/` to be up to date (run `zola build` first).
+# NOTE: Do NOT merge old hashes from CloudFront - use only current build hashes to prevent accumulation.
 cd "$REPO_ROOT"
-aws cloudfront get-response-headers-policy \
-  --id "$POLICY_ID_SIGNATURES" \
-  --query "ResponseHeadersPolicy.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy" \
-  --output text | python3 "${SCRIPT_DIR}/generate_policy.py" --mode signatures --merge-hashes-from-stdin
+python3 "${SCRIPT_DIR}/generate_policy.py" --mode signatures
 
 ETAG=$(aws cloudfront get-response-headers-policy \
         --id "$POLICY_ID_SIGNATURES" \
