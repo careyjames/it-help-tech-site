@@ -9,9 +9,9 @@
 }
 
 :root {
-    --brand-blue: #0B4DB1;
-    --brand-blue-rgb: 11, 77, 177;
-    --brand-blue-glow: 90, 160, 255;
+    --brand-blue: #2D7AE9;
+    --brand-blue-rgb: 45, 122, 233;
+    --brand-blue-glow: 120, 190, 255;
 }
 
 .logo-container,
@@ -101,14 +101,12 @@
     background: none;
     display: inline-block;
     text-shadow:
-        -0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-         0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-        -0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-         0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-        -0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-         0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-        -0.2px  0.2px 0 rgba(120, 180, 255, 0.45),
-         0.2px  0.2px 0 rgba(120, 180, 255, 0.45);
+        0 0 1.2px rgba(213, 173, 54, 0.55),
+        0 0 2px rgba(213, 173, 54, 0.25),
+        -0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+         0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+        -0.2px  0.2px 0 rgba(120, 180, 255, 0.4),
+         0.2px  0.2px 0 rgba(120, 180, 255, 0.4);
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
@@ -121,14 +119,12 @@
     background: none;
     display: inline-block;
     text-shadow:
-        -0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-         0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-        -0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-         0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-        -0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-         0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-        -0.2px  0.2px 0 rgba(120, 180, 255, 0.45),
-         0.2px  0.2px 0 rgba(120, 180, 255, 0.45);
+        0 0 1.2px rgba(213, 173, 54, 0.55),
+        0 0 2px rgba(213, 173, 54, 0.25),
+        -0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+         0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+        -0.2px  0.2px 0 rgba(120, 180, 255, 0.4),
+         0.2px  0.2px 0 rgba(120, 180, 255, 0.4);
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
@@ -175,25 +171,21 @@
 @keyframes logo-gleam {
     0%, 70%, 100% {
         text-shadow:
-            -0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-             0.3px -0.3px 0 rgba(213, 173, 54, 0.42),
-            -0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-             0.3px  0.3px 0 rgba(213, 173, 54, 0.42),
-            -0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-             0.2px -0.2px 0 rgba(120, 180, 255, 0.45),
-            -0.2px  0.2px 0 rgba(120, 180, 255, 0.45),
-             0.2px  0.2px 0 rgba(120, 180, 255, 0.45);
+            0 0 1.2px rgba(213, 173, 54, 0.55),
+            0 0 2px rgba(213, 173, 54, 0.25),
+            -0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+             0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
+            -0.2px  0.2px 0 rgba(120, 180, 255, 0.4),
+             0.2px  0.2px 0 rgba(120, 180, 255, 0.4);
     }
     78%, 82% {
         text-shadow:
-            -0.35px -0.35px 0 rgba(213, 173, 54, 0.6),
-             0.35px -0.35px 0 rgba(213, 173, 54, 0.6),
-            -0.35px  0.35px 0 rgba(213, 173, 54, 0.6),
-             0.35px  0.35px 0 rgba(213, 173, 54, 0.6),
-            -0.2px -0.2px 0 rgba(120, 180, 255, 0.55),
-             0.2px -0.2px 0 rgba(120, 180, 255, 0.55),
-            -0.2px  0.2px 0 rgba(120, 180, 255, 0.55),
-             0.2px  0.2px 0 rgba(120, 180, 255, 0.55);
+            0 0 1.6px rgba(213, 173, 54, 0.7),
+            0 0 2.6px rgba(213, 173, 54, 0.35),
+            -0.2px -0.2px 0 rgba(120, 180, 255, 0.5),
+             0.2px -0.2px 0 rgba(120, 180, 255, 0.5),
+            -0.2px  0.2px 0 rgba(120, 180, 255, 0.5),
+             0.2px  0.2px 0 rgba(120, 180, 255, 0.5);
     }
 }
 
@@ -218,14 +210,12 @@ html.switch .logo-help {
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     text-shadow:
-        -0.3px -0.3px 0 rgba(213, 173, 54, 0.38),
-         0.3px -0.3px 0 rgba(213, 173, 54, 0.38),
-        -0.3px  0.3px 0 rgba(213, 173, 54, 0.38),
-         0.3px  0.3px 0 rgba(213, 173, 54, 0.38),
-        -0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
-         0.2px -0.2px 0 rgba(120, 180, 255, 0.4),
-        -0.2px  0.2px 0 rgba(120, 180, 255, 0.4),
-         0.2px  0.2px 0 rgba(120, 180, 255, 0.4);
+        0 0 1.1px rgba(213, 173, 54, 0.5),
+        0 0 2px rgba(213, 173, 54, 0.2),
+        -0.2px -0.2px 0 rgba(120, 180, 255, 0.35),
+         0.2px -0.2px 0 rgba(120, 180, 255, 0.35),
+        -0.2px  0.2px 0 rgba(120, 180, 255, 0.35),
+         0.2px  0.2px 0 rgba(120, 180, 255, 0.35);
     animation: logo-gleam 6s ease-in-out infinite;
 }
 
