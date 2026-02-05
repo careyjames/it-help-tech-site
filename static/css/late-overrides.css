@@ -86,6 +86,21 @@
     z-index: 1;
 }
 
+/* Light backgrounds need extra contrast so the constellation pattern reads clearly. */
+html.switch .logo-constellation {
+    opacity: 0.82;
+    mix-blend-mode: multiply;
+    filter: saturate(1.26) contrast(1.14);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.switch) .logo-constellation {
+    opacity: 0.82;
+    mix-blend-mode: multiply;
+    filter: saturate(1.26) contrast(1.14);
+  }
+}
+
 @keyframes circuit-flow {
     0% { transform: translate(0, 0); }
     100% { transform: translate(40px, 40px); }
@@ -481,6 +496,16 @@ html:not(.switch) .tagline-text{
     will-change: transform, opacity;
     animation: particle-drift var(--dur, 6s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
     animation-delay: var(--delay, 0s);
+}
+
+html.switch .particle {
+    box-shadow: 0 0 calc(var(--glow, 8px) + 7px) rgba(var(--particle-glow, var(--brand-blue-glow)), 0.9);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.switch) .particle {
+    box-shadow: 0 0 calc(var(--glow, 8px) + 7px) rgba(var(--particle-glow, var(--brand-blue-glow)), 0.9);
+  }
 }
 
 @keyframes particle-drift {

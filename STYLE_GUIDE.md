@@ -34,6 +34,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Particle colors: mostly Primary Blue with ~30% Gold accents for sparkle.
 - Constellation canvas: subtle drifting nodes + connecting lines behind the hero logo only.
 - Constellation layout seed: golden-angle (Fibonacci/phyllotaxis-inspired) distribution for an intentional mathematical pattern.
+- Light mode: increase constellation/particle contrast so motion remains visible on white backgrounds.
 - Respect `prefers-reduced-motion`: disable decorative hero motion effects when reduction is requested.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
 
