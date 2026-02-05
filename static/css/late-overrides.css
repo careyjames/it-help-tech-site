@@ -88,11 +88,11 @@
 .logo-it {
     background: linear-gradient(90deg,
         #003366 0%,
-        #0b4db1 42%,
-        #d5ad36 50%,
-        #0b4db1 58%,
+        #0b4db1 45%,
+        #d5ad36 52%,
+        #0b4db1 60%,
         #003366 100%);
-    background-size: 220% 220%;
+    background-size: 240% 240%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -101,10 +101,10 @@
     animation: gradient-shift 6s ease-in-out infinite;
     display: inline-block;
     text-shadow:
-        0.35px 0 0 rgba(255, 255, 255, 0.9),
-        -0.35px 0 0 rgba(255, 255, 255, 0.9),
-        0 0.35px 0 rgba(255, 255, 255, 0.9),
-        0 -0.35px 0 rgba(255, 255, 255, 0.9);
+        0.25px 0 0 rgba(120, 170, 255, 0.65),
+        -0.25px 0 0 rgba(120, 170, 255, 0.65),
+        0 0.25px 0 rgba(120, 170, 255, 0.65),
+        0 -0.25px 0 rgba(120, 170, 255, 0.65);
     position: relative;
     z-index: 2;
 }
@@ -113,11 +113,11 @@
 .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #0b4db1 42%,
-        #d5ad36 50%,
-        #0b4db1 58%,
+        #0b4db1 45%,
+        #d5ad36 52%,
+        #0b4db1 60%,
         #003366 100%);
-    background-size: 220% 220%;
+    background-size: 240% 240%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -126,10 +126,10 @@
     animation: gradient-shift 6s ease-in-out infinite;
     display: inline-block;
     text-shadow:
-        0.35px 0 0 rgba(255, 255, 255, 0.9),
-        -0.35px 0 0 rgba(255, 255, 255, 0.9),
-        0 0.35px 0 rgba(255, 255, 255, 0.9),
-        0 -0.35px 0 rgba(255, 255, 255, 0.9);
+        0.25px 0 0 rgba(120, 170, 255, 0.65),
+        -0.25px 0 0 rgba(120, 170, 255, 0.65),
+        0 0.25px 0 rgba(120, 170, 255, 0.65),
+        0 -0.25px 0 rgba(120, 170, 255, 0.65);
     position: relative;
     z-index: 2;
 }
@@ -160,8 +160,8 @@
 
 @keyframes gradient-shift {
     0% { background-position: 0% 50%; }
-    10% { background-position: 0% 50%; }
-    60% { background-position: 100% 50%; }
+    35% { background-position: 0% 50%; }
+    80% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
@@ -172,29 +172,29 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.35);
     pointer-events: none;
     animation: glitch 2s infinite;
     opacity: 0;
     z-index: 3;
     text-shadow:
-      0 0 6px rgba(255, 255, 255, 0.6),
-      0 0 12px rgba(255, 255, 255, 0.35);
+      0 0 4px rgba(255, 255, 255, 0.25),
+      0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 html.switch .logo-it,
 html.switch .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #0b4db1 44%,
+        #0b4db1 46%,
         #d5ad36 52%,
-        #0b4db1 60%,
+        #0b4db1 58%,
         #003366 100%);
     text-shadow:
-        0.35px 0 0 rgba(0, 40, 80, 0.6),
-        -0.35px 0 0 rgba(0, 40, 80, 0.6),
-        0 0.35px 0 rgba(0, 40, 80, 0.6),
-        0 -0.35px 0 rgba(0, 40, 80, 0.6);
+        0.25px 0 0 rgba(0, 40, 80, 0.55),
+        -0.25px 0 0 rgba(0, 40, 80, 0.55),
+        0 0.25px 0 rgba(0, 40, 80, 0.55),
+        0 -0.25px 0 rgba(0, 40, 80, 0.55);
     animation: gradient-shift 6s ease-in-out infinite;
 }
 
