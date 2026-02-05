@@ -218,12 +218,11 @@ html.switch .logo-help {
 .location {
     font-size: 2.5rem;
     margin-top: -10px;
-    letter-spacing: 0.15em;
     text-transform: uppercase;
     position: relative;
     font-weight: 600;
     color: #1c6bd1;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     -webkit-text-stroke: 0;
 }
 
