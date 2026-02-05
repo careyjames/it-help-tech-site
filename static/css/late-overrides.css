@@ -12,6 +12,9 @@
     --brand-blue: #2D7AE9;
     --brand-blue-rgb: 45, 122, 233;
     --brand-blue-glow: 120, 190, 255;
+    --accent-gold: #D5AD36;
+    --accent-gold-rgb: 213, 173, 54;
+    --accent-gold-glow: 245, 205, 90;
 }
 
 .logo-container,
@@ -118,6 +121,10 @@
     z-index: 2;
 }
 
+.logo-it::after {
+    content: "IT";
+}
+
 /* HELP with animated gradient, NO stroke to avoid P artifacts */
 .logo-help {
     color: var(--brand-blue);
@@ -140,6 +147,33 @@
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
+}
+
+.logo-help::after {
+    content: "HELP";
+}
+
+.logo-it::after,
+.logo-help::after {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background: linear-gradient(110deg,
+        transparent 0%,
+        rgba(213, 173, 54, 0.0) 35%,
+        rgba(213, 173, 54, 0.85) 50%,
+        rgba(213, 173, 54, 0.0) 65%,
+        transparent 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: 0;
+    transform: translateX(-30%);
+    animation: logo-sheen 7.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 3;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
 }
 
 /* Red plus sign - very subtle outline */
@@ -210,6 +244,24 @@
              0.48px -0.48px 0 rgba(213, 173, 54, 0.95),
             -0.48px  0.48px 0 rgba(213, 173, 54, 0.95),
              0.48px  0.48px 0 rgba(213, 173, 54, 0.95);
+    }
+}
+
+@keyframes logo-sheen {
+    0%, 68% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    72% {
+        opacity: 0.85;
+    }
+    82% {
+        opacity: 0.85;
+        transform: translateX(30%);
+    }
+    86%, 100% {
+        opacity: 0;
+        transform: translateX(30%);
     }
 }
 
@@ -385,10 +437,10 @@ html:not(.switch) .tagline-text{
     width: calc(var(--size, 2.5px) + 0.4px);
     height: calc(var(--size, 2.5px) + 0.4px);
     --alpha-boosted: clamp(0, calc(var(--alpha, 0.7) + 0.18), 1);
-    background: rgba(var(--brand-blue-rgb), 1);
+    background: rgba(var(--particle-rgb, var(--brand-blue-rgb)), 1);
     border-radius: 50%;
     opacity: 0;
-    box-shadow: 0 0 calc(var(--glow, 8px) + 5px) rgba(var(--brand-blue-glow), 0.75);
+    box-shadow: 0 0 calc(var(--glow, 8px) + 5px) rgba(var(--particle-glow, var(--brand-blue-glow)), 0.75);
     filter: blur(var(--blur, 0px));
     will-change: transform, opacity;
     animation: particle-drift var(--dur, 6s) cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -421,20 +473,20 @@ html:not(.switch) .tagline-text{
 
 /* Staggered particles for a richer field */
 .tech-particles .particle:nth-child(1)  { left: 8%;  top: 78%; --size: 2.1px; --alpha: 0.65; --glow: 7px;  --blur: 0px;   --dur: 5.4s; --delay: 0s;   --hue: 190; --s1: 1;   --s2: 0.9; --dx1: -18px; --dy1: -18px; --dx2: -26px; --dy2: -95px;  --dx3: -34px; --dy3: -150px; }
-.tech-particles .particle:nth-child(2)  { left: 16%; top: 62%; --size: 2.2px; --alpha: 0.8;  --glow: 11px; --blur: 0px;   --dur: 6.3s; --delay: 1.1s; --hue: 195; --s1: 1.1; --s2: 1;   --dx1: 20px;  --dy1: -28px; --dx2: 10px;  --dy2: -120px; --dx3: 28px;  --dy3: -175px; }
+.tech-particles .particle:nth-child(2)  { left: 16%; top: 62%; --size: 2.2px; --alpha: 0.8;  --glow: 11px; --blur: 0px;   --dur: 6.3s; --delay: 1.1s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 195; --s1: 1.1; --s2: 1;   --dx1: 20px;  --dy1: -28px; --dx2: 10px;  --dy2: -120px; --dx3: 28px;  --dy3: -175px; }
 .tech-particles .particle:nth-child(3)  { left: 24%; top: 72%; --size: 2.1px; --alpha: 0.6;  --glow: 6px;  --blur: 0.4px; --dur: 5.9s; --delay: 2.2s; --hue: 200; --s1: 0.9; --s2: 0.85;--dx1: -22px; --dy1: -22px; --dx2: -8px;  --dy2: -100px; --dx3: -30px; --dy3: -155px; }
 .tech-particles .particle:nth-child(4)  { left: 32%; top: 56%; --size: 2.2px; --alpha: 0.85; --glow: 12px; --blur: 0px;   --dur: 6.8s; --delay: 0.6s; --hue: 185; --s1: 1.2; --s2: 1;   --dx1: 24px;  --dy1: -32px; --dx2: 6px;   --dy2: -115px; --dx3: 34px;  --dy3: -185px; }
 .tech-particles .particle:nth-child(5)  { left: 40%; top: 68%; --size: 2.2px; --alpha: 0.62; --glow: 6px;  --blur: 0.5px; --dur: 5.6s; --delay: 2.6s; --hue: 205; --s1: 0.95;--s2: 0.85;--dx1: -16px; --dy1: -20px; --dx2: -2px;  --dy2: -90px;  --dx3: -24px; --dy3: -145px; }
-.tech-particles .particle:nth-child(6)  { left: 48%; top: 52%; --size: 2.2px; --alpha: 0.75; --glow: 9px;  --blur: 0.2px; --dur: 6.4s; --delay: 1.5s; --hue: 195; --s1: 1;   --s2: 0.95;--dx1: 18px;  --dy1: -26px; --dx2: -10px; --dy2: -110px; --dx3: 22px;  --dy3: -170px; }
+.tech-particles .particle:nth-child(6)  { left: 48%; top: 52%; --size: 2.2px; --alpha: 0.75; --glow: 9px;  --blur: 0.2px; --dur: 6.4s; --delay: 1.5s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 195; --s1: 1;   --s2: 0.95;--dx1: 18px;  --dy1: -26px; --dx2: -10px; --dy2: -110px; --dx3: 22px;  --dy3: -170px; }
 .tech-particles .particle:nth-child(7)  { left: 56%; top: 74%; --size: 2.2px; --alpha: 0.82; --glow: 10px; --blur: 0px;   --dur: 5.8s; --delay: 3s;   --hue: 188; --s1: 1.05;--s2: 0.95;--dx1: -26px; --dy1: -30px; --dx2: -6px;  --dy2: -118px; --dx3: -32px; --dy3: -175px; }
 .tech-particles .particle:nth-child(8)  { left: 64%; top: 58%; --size: 2.1px; --alpha: 0.7;  --glow: 8px;  --blur: 0.3px; --dur: 6.9s; --delay: 0.3s; --hue: 210; --s1: 1;   --s2: 0.9; --dx1: 26px;  --dy1: -34px; --dx2: 12px;  --dy2: -130px; --dx3: 36px;  --dy3: -195px; }
 .tech-particles .particle:nth-child(9)  { left: 72%; top: 66%; --size: 2.1px; --alpha: 0.6;  --glow: 6px;  --blur: 0.6px; --dur: 5.7s; --delay: 1.9s; --hue: 190; --s1: 0.9; --s2: 0.85;--dx1: -14px; --dy1: -20px; --dx2: 4px;   --dy2: -95px;  --dx3: -20px; --dy3: -150px; }
 .tech-particles .particle:nth-child(10) { left: 80%; top: 54%; --size: 2.2px; --alpha: 0.85; --glow: 12px; --blur: 0px;   --dur: 6.6s; --delay: 0.8s; --hue: 200; --s1: 1.2; --s2: 1;   --dx1: 20px;  --dy1: -30px; --dx2: -8px;  --dy2: -125px; --dx3: 30px;  --dy3: -185px; }
-.tech-particles .particle:nth-child(11) { left: 88%; top: 76%; --size: 2.2px; --alpha: 0.65; --glow: 7px;  --blur: 0.5px; --dur: 6.1s; --delay: 2.5s; --hue: 215; --s1: 0.95;--s2: 0.85;--dx1: -22px; --dy1: -26px; --dx2: -4px;  --dy2: -110px; --dx3: -28px; --dy3: -165px; }
+.tech-particles .particle:nth-child(11) { left: 88%; top: 76%; --size: 2.2px; --alpha: 0.65; --glow: 7px;  --blur: 0.5px; --dur: 6.1s; --delay: 2.5s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 215; --s1: 0.95;--s2: 0.85;--dx1: -22px; --dy1: -26px; --dx2: -4px;  --dy2: -110px; --dx3: -28px; --dy3: -165px; }
 .tech-particles .particle:nth-child(12) { left: 94%; top: 60%; --size: 2.2px; --alpha: 0.7;  --glow: 8px;  --blur: 0.2px; --dur: 6.5s; --delay: 1.3s; --hue: 195; --s1: 1;   --s2: 0.9; --dx1: 18px;  --dy1: -24px; --dx2: 6px;   --dy2: -118px; --dx3: 26px;  --dy3: -175px; }
 .tech-particles .particle:nth-child(13) { left: 12%; top: 46%; --size: 2px;  --alpha: 0.55; --glow: 5px;  --blur: 0.7px; --dur: 7.4s; --delay: 3.3s; --hue: 205; --s1: 0.85;--s2: 0.8; --dx1: -12px; --dy1: -14px; --dx2: 6px;   --dy2: -85px;  --dx3: -18px; --dy3: -135px; }
 .tech-particles .particle:nth-child(14) { left: 28%; top: 42%; --size: 2.1px; --alpha: 0.6;  --glow: 7px;  --blur: 0.3px; --dur: 6.7s; --delay: 1.7s; --hue: 190; --s1: 0.95;--s2: 0.9; --dx1: 22px;  --dy1: -20px; --dx2: 4px;   --dy2: -105px; --dx3: 28px;  --dy3: -160px; }
-.tech-particles .particle:nth-child(15) { left: 60%; top: 44%; --size: 2.1px; --alpha: 0.58; --glow: 6px;  --blur: 0.6px; --dur: 6s;   --delay: 3.5s; --hue: 210; --s1: 0.9; --s2: 0.85;--dx1: -10px; --dy1: -16px; --dx2: 8px;   --dy2: -95px;  --dx3: -16px; --dy3: -145px; }
+.tech-particles .particle:nth-child(15) { left: 60%; top: 44%; --size: 2.1px; --alpha: 0.58; --glow: 6px;  --blur: 0.6px; --dur: 6s;   --delay: 3.5s; --particle-rgb: var(--accent-gold-rgb); --particle-glow: var(--accent-gold-glow); --hue: 210; --s1: 0.9; --s2: 0.85;--dx1: -10px; --dy1: -16px; --dx2: 8px;   --dy2: -95px;  --dx3: -16px; --dy3: -145px; }
 .tech-particles .particle:nth-child(16) { left: 84%; top: 40%; --size: 2.2px; --alpha: 0.7;  --glow: 8px;  --blur: 0.2px; --dur: 6.9s; --delay: 2.1s; --hue: 195; --s1: 1;   --s2: 0.9; --dx1: 16px;  --dy1: -22px; --dx2: -6px;  --dy2: -110px; --dx3: 22px;  --dy3: -165px; }
 
 @media (max-width: 640px) {
@@ -456,6 +508,11 @@ html:not(.switch) .tagline-text{
   .particle {
     animation: none;
     opacity: 0.15;
+  }
+  .logo-it::after,
+  .logo-help::after {
+    animation: none;
+    opacity: 0;
   }
 }
 
