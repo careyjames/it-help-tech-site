@@ -201,29 +201,44 @@ function drawNodeLinks(state, maxDistSq) {
   for (let index = 0; index < state.nodes.length; index += 1) {
     const a = state.nodes[index];
     for (let pair = index + 1; pair < state.nodes.length; pair += 1) {
-      const b = state.nodes[pair];
-      const dx = a.ox - b.ox;
-      const dy = a.oy - b.oy;
-      const distSq = dx * dx + dy * dy;
-      if (distSq > maxDistSq) {
-        continue;
-      }
-
-      const intensity = 1 - distSq / maxDistSq;
-      const warm = a.gold || b.gold;
-      const red = warm ? 207 : 84;
-      const green = warm ? 173 : 154;
-      const blue = warm ? 105 : 229;
-      const alpha = intensity * (warm ? 0.24 : 0.2);
-
-      state.context.beginPath();
-      state.context.moveTo(a.ox, a.oy);
-      state.context.lineTo(b.ox, b.oy);
-      state.context.strokeStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
-      state.context.lineWidth = warm ? 0.8 : 0.68;
-      state.context.stroke();
+      drawNodeLink(state, a, state.nodes[pair], maxDistSq);
     }
   }
+}
+
+function drawNodeLink(state, a, b, maxDistSq) {
+  const distSq = linkDistanceSquared(a, b);
+  if (distSq > maxDistSq) {
+    return;
+  }
+
+  const intensity = 1 - distSq / maxDistSq;
+  const style = resolveNodeLinkStyle(a, b, intensity);
+
+  state.context.beginPath();
+  state.context.moveTo(a.ox, a.oy);
+  state.context.lineTo(b.ox, b.oy);
+  state.context.strokeStyle = style.strokeStyle;
+  state.context.lineWidth = style.lineWidth;
+  state.context.stroke();
+}
+
+function linkDistanceSquared(a, b) {
+  const dx = a.ox - b.ox;
+  const dy = a.oy - b.oy;
+  return dx * dx + dy * dy;
+}
+
+function resolveNodeLinkStyle(a, b, intensity) {
+  const warm = a.gold || b.gold;
+  const red = warm ? 207 : 84;
+  const green = warm ? 173 : 154;
+  const blue = warm ? 105 : 229;
+  const alpha = intensity * (warm ? 0.24 : 0.2);
+  return {
+    strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
+    lineWidth: warm ? 0.8 : 0.68,
+  };
 }
 
 function drawNodeDots(state) {
