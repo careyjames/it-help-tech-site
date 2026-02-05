@@ -88,7 +88,8 @@
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 900;
     font-size: 5rem;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+    --logo-letter-spacing: 0.02em;
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -103,6 +104,7 @@
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     display: inline-block;
+    letter-spacing: var(--logo-letter-spacing);
     text-shadow:
         0 1px 0 rgba(0, 0, 0, 0.55),
         0 3px 6px rgba(0, 0, 0, 0.35),
@@ -135,6 +137,7 @@
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     display: inline-block;
+    letter-spacing: var(--logo-letter-spacing);
     text-shadow:
         0 1px 0 rgba(0, 0, 0, 0.55),
         0 3px 6px rgba(0, 0, 0, 0.35),
@@ -215,7 +218,7 @@
 .logo-plus {
     color: #ff0066;
     display: inline-block;
-    margin: 0 0.02em;
+    margin: 0 var(--logo-letter-spacing);
     text-shadow: 
         -0.3px -0.3px 0 #00ffff,  
          0.3px -0.3px 0 #00ffff,
