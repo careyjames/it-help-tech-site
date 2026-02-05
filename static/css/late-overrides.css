@@ -88,24 +88,23 @@
 .logo-it {
     background: linear-gradient(90deg,
         #003366 0%,
-        #1c6bd1 22%,
-        #d5ad36 46%,
-        #d5ad36 58%,
-        #1c6bd1 78%,
+        #0b4db1 18%,
+        #d5ad36 52%,
+        #0b4db1 82%,
         #003366 100%);
-    background-size: 200% 200%;
+    background-size: 180% 180%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    animation: gradient-shift 4.6s ease-in-out infinite;
+    animation: gradient-shift 4.2s ease-in-out infinite;
     display: inline-block;
     text-shadow:
-        0.35px 0 0 rgba(0, 200, 255, 0.9),
-        -0.35px 0 0 rgba(0, 200, 255, 0.9),
-        0 0.35px 0 rgba(0, 200, 255, 0.9),
-        0 -0.35px 0 rgba(0, 200, 255, 0.9);
+        0.35px 0 0 rgba(120, 210, 255, 0.85),
+        -0.35px 0 0 rgba(120, 210, 255, 0.85),
+        0 0.35px 0 rgba(120, 210, 255, 0.85),
+        0 -0.35px 0 rgba(120, 210, 255, 0.85);
     position: relative;
     z-index: 2;
 }
@@ -114,24 +113,23 @@
 .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #1c6bd1 22%,
-        #d5ad36 46%,
-        #d5ad36 58%,
-        #1c6bd1 78%,
+        #0b4db1 18%,
+        #d5ad36 52%,
+        #0b4db1 82%,
         #003366 100%);
-    background-size: 200% 200%;
+    background-size: 180% 180%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    animation: gradient-shift 4.6s ease-in-out infinite;
+    animation: gradient-shift 4.2s ease-in-out infinite;
     display: inline-block;
     text-shadow:
-        0.35px 0 0 rgba(0, 200, 255, 0.9),
-        -0.35px 0 0 rgba(0, 200, 255, 0.9),
-        0 0.35px 0 rgba(0, 200, 255, 0.9),
-        0 -0.35px 0 rgba(0, 200, 255, 0.9);
+        0.35px 0 0 rgba(120, 210, 255, 0.85),
+        -0.35px 0 0 rgba(120, 210, 255, 0.85),
+        0 0.35px 0 rgba(120, 210, 255, 0.85),
+        0 -0.35px 0 rgba(120, 210, 255, 0.85);
     position: relative;
     z-index: 2;
 }
@@ -162,7 +160,7 @@
 
 @keyframes gradient-shift {
     0% { background-position: 0% 50%; }
-    20% { background-position: 0% 50%; }
+    10% { background-position: 0% 50%; }
     60% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
@@ -188,16 +186,16 @@ html.switch .logo-it,
 html.switch .logo-help {
     background: linear-gradient(90deg,
         #003366 0%,
-        #1c6bd1 24%,
-        #d5ad36 50%,
-        #1c6bd1 76%,
+        #0b4db1 22%,
+        #d5ad36 52%,
+        #0b4db1 78%,
         #003366 100%);
     text-shadow:
-        0.35px 0 0 rgba(0, 40, 80, 0.55),
-        -0.35px 0 0 rgba(0, 40, 80, 0.55),
-        0 0.35px 0 rgba(0, 40, 80, 0.55),
-        0 -0.35px 0 rgba(0, 40, 80, 0.55);
-    animation: gradient-shift 4.6s ease-in-out infinite;
+        0.35px 0 0 rgba(0, 40, 80, 0.6),
+        -0.35px 0 0 rgba(0, 40, 80, 0.6),
+        0 0.35px 0 rgba(0, 40, 80, 0.6),
+        0 -0.35px 0 rgba(0, 40, 80, 0.6);
+    animation: gradient-shift 4.2s ease-in-out infinite;
 }
 
 .main-logo::after {
@@ -233,15 +231,15 @@ html.switch .logo-help {
     margin-top: -10px;
     text-transform: lowercase;
     position: relative;
-    font-weight: 500;
-    color: #1c6bd1;
+    font-weight: 600;
+    color: #8b94a1;
     letter-spacing: 0.08em;
-    text-shadow: 0 0 8px rgba(28, 107, 209, 0.35);
+    text-shadow: 0 0 6px rgba(139, 148, 161, 0.35);
 }
 
 html.switch .location {
-    color: #003366;
-    text-shadow: 0 0 6px rgba(0, 51, 102, 0.25);
+    color: #6f7783;
+    text-shadow: 0 0 6px rgba(111, 119, 131, 0.3);
 }
 
 @keyframes shine {
