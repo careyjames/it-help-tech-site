@@ -32,8 +32,11 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 ## Motion
 - Particles: subtle motion, visible but not distracting.
 - Particle colors: mostly Primary Blue with ~30% Gold accents for sparkle.
+- Constellation canvas: subtle drifting nodes + connecting lines behind the hero logo only.
+- Respect `prefers-reduced-motion`: disable decorative hero motion effects when reduction is requested.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
 
 ## Key Files
 - Hero/logo styles: `static/css/late-overrides.css`
 - Logo markup: `templates/partials/hero_logo.html`
+- Hero logo behavior: `static/js/hero-logo.js`

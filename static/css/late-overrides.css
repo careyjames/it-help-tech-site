@@ -57,6 +57,7 @@
   filter:blur(14px);
   animation:blob 25s linear infinite;
   pointer-events:none;
+  z-index: 1;
 }
 @keyframes blob{
   to{transform:translate(-50%,-50%) rotate(360deg);}
@@ -66,10 +67,23 @@
     position: absolute;
     inset: 0;
     opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
     background-image: 
         repeating-linear-gradient(0deg, #00ffff 0, #00ffff 1px, transparent 1px, transparent 40px),
         repeating-linear-gradient(90deg, #00ffff 0, #00ffff 1px, transparent 1px, transparent 40px);
     animation: circuit-flow 20s linear infinite;
+}
+
+.logo-constellation {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.42;
+    pointer-events: none;
+    display: block;
+    z-index: 1;
 }
 
 @keyframes circuit-flow {
@@ -81,6 +95,7 @@
     position: relative;
     filter: none;
     text-align: center;
+    z-index: 3;
 }
 
 /* Main logo wrapper */
@@ -376,6 +391,7 @@ html.switch .location {
     letter-spacing: 0.05em;
     position: relative;
     font-family: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Courier New', monospace;
+    z-index: 3;
 }
 
 .tagline-border {
@@ -447,6 +463,7 @@ html:not(.switch) .tagline-text{
   pointer-events:none;
   animation: particle-orbit 70s linear infinite;
   transform-origin: 50% 50%;
+  z-index: 2;
 }
 
 .particle {
@@ -521,6 +538,9 @@ html:not(.switch) .tagline-text{
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .logo-constellation {
+    display: none;
+  }
   .tech-particles {
     animation: none;
   }
@@ -550,6 +570,7 @@ html:not(.switch) .tagline-text{
     height: 60px;
     opacity: 0.3;
     animation: rotate 10s linear infinite;
+    z-index: 2;
 }
 
 .hex-decoration:nth-child(1) {
