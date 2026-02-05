@@ -34,17 +34,9 @@ globalThis.addEventListener('DOMContentLoaded', () => {
     const x=randomFloat()*containerWidth;
     const delay=randomFloat()*4000;              // ms
     const duration=3000+randomFloat()*2000;      // ms
-    if(typeof p.animate==='function'){
-      p.animate([
-        {opacity:0,transform:`translate3d(${x}px,100px,0) scale(0)`},
-        {opacity:1,transform:`translate3d(${x}px,0,0) scale(1)`,offset:.2},
-        {opacity:0,transform:`translate3d(${x}px,-100px,0) scale(0)`}
-      ],{duration,delay,iterations:1,fill:'forwards'});
-    } else {
-      // Fallback to CSS animation when Web Animations API isn't available.
-      p.style.left=`${x}px`;
-      p.style.animation=`float-up ${duration}ms ${delay}ms 1 forwards`;
-    }
+    // Use CSS keyframes for broad compatibility (Safari-friendly).
+    p.style.left=`${x}px`;
+    p.style.animation=`float-up ${duration}ms ${delay}ms 1 forwards`;
     setTimeout(()=>p.remove(),delay+duration);
   }
     /* first burst immediately, then every 600 ms */
