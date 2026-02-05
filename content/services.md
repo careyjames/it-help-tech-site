@@ -381,6 +381,5 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 * **<a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Yubico Security Keys:</a>** For hardware-based multi-factor authentication.
 * **<a href="https://1password.com/" target="_blank" rel="noopener noreferrer" class="gold-link">1Password:</a>** For secure password and credential management.
 
----
 Need expert Mac IT help to solve your tech challenges?
 <p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an on-site Appointment Now</a></p>

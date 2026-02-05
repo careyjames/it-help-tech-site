@@ -2,16 +2,17 @@ globalThis.addEventListener('DOMContentLoaded', () => {
   const cryptoObj = globalThis.crypto;
   const hasCSPRNG = cryptoObj && typeof cryptoObj.getRandomValues === 'function';
   const randomFloat = () => {
-    if (!hasCSPRNG) {
-      return 0;
+    if (hasCSPRNG) {
+      const buf = new Uint32Array(1);
+      cryptoObj.getRandomValues(buf);
+      return buf[0] / 2 ** 32;
     }
-    const buf = new Uint32Array(1);
-    cryptoObj.getRandomValues(buf);
-    return buf[0] / 2 ** 32;
+    // Visual-only fallback for environments without Web Crypto (e.g., some http dev contexts).
+    return Math.random();
   };
 
   const particlesContainer = document.querySelector('.tech-particles');
-  if (particlesContainer && hasCSPRNG) { // defensive
+  if (particlesContainer) { // defensive
 
   // Cache container width to avoid forced reflow on every particle
   let containerWidth = particlesContainer.offsetWidth;
@@ -30,15 +31,20 @@ globalThis.addEventListener('DOMContentLoaded', () => {
     const p=document.createElement('div');
     p.className='particle';
     particlesContainer.appendChild(p);
-    if(typeof p.animate!=='function'){p.remove();return;}
     const x=randomFloat()*containerWidth;
     const delay=randomFloat()*4000;              // ms
     const duration=3000+randomFloat()*2000;      // ms
-    p.animate([
-      {opacity:0,transform:`translate3d(${x}px,100px,0) scale(0)`},
-      {opacity:1,transform:`translate3d(${x}px,0,0) scale(1)`,offset:.2},
-      {opacity:0,transform:`translate3d(${x}px,-100px,0) scale(0)`}
-    ],{duration,delay,iterations:1,fill:'forwards'});
+    if(typeof p.animate==='function'){
+      p.animate([
+        {opacity:0,transform:`translate3d(${x}px,100px,0) scale(0)`},
+        {opacity:1,transform:`translate3d(${x}px,0,0) scale(1)`,offset:.2},
+        {opacity:0,transform:`translate3d(${x}px,-100px,0) scale(0)`}
+      ],{duration,delay,iterations:1,fill:'forwards'});
+    } else {
+      // Fallback to CSS animation when Web Animations API isn't available.
+      p.style.left=`${x}px`;
+      p.style.animation=`float-up ${duration}ms ${delay}ms 1 forwards`;
+    }
     setTimeout(()=>p.remove(),delay+duration);
   }
     /* first burst immediately, then every 600 ms */
