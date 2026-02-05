@@ -124,7 +124,7 @@
              0 0 1.8px rgba(213, 173, 54, 0.45);
     animation: logo-gleam 6s ease-in-out infinite;
     position: relative;
-    left: 0.03em;
+    left: 0.045em;
     z-index: 2;
 }
 
