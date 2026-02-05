@@ -8,7 +8,7 @@
       - HELP group:  translate(-20,0)  (loosen PLUS↔HELP)
     These are pure path translations; geometry is unchanged.
   -->
-  <g id="bimi-safe" transform="translate(70,170) scale(0.85)">
+  <g id="bimi-safe" transform="translate(60,160) scale(0.90)">
   <g id="wordmark-it" transform="translate(0,0)">
     <path fill="#2D7AE9" d="M165 358.992h109.014v29.12h-50.365v138.443h-35.12V388.338h-50.355v-29.346H165z"></path>
     <path fill="#2D7AE9" d="M94.948 423v-63.707h34.729V526.51h-34.73V423z"></path>
