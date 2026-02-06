@@ -122,10 +122,13 @@ function matchesMediaQuery(query) {
 }
 
 function isTouchDarkMode() {
+  const viewportWidth = Math.min(
+    globalThis.innerWidth || Number.POSITIVE_INFINITY,
+    (globalThis.screen && globalThis.screen.width) || Number.POSITIVE_INFINITY
+  );
   return (
-    matchesMediaQuery('(pointer: coarse)') &&
-    matchesMediaQuery('(hover: none)') &&
     matchesMediaQuery('(prefers-color-scheme: dark)') &&
+    (viewportWidth <= 900 || matchesMediaQuery('(pointer: coarse)')) &&
     !document.documentElement.classList.contains('switch')
   );
 }
@@ -280,8 +283,8 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
   const red = warm ? 207 : 84;
   const green = warm ? 173 : 154;
   const blue = warm ? 105 : 229;
-  const alphaScale = touchDarkBoost ? 1.55 : 1;
-  const widthScale = touchDarkBoost ? 1.2 : 1;
+  const alphaScale = touchDarkBoost ? 1.9 : 1;
+  const widthScale = touchDarkBoost ? 1.32 : 1;
   const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
@@ -290,8 +293,8 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
 }
 
 function drawNodeDots(state) {
-  const alphaBoost = state.touchDarkBoost ? 1.2 : 1;
-  const radiusBoost = state.touchDarkBoost ? 1.12 : 1;
+  const alphaBoost = state.touchDarkBoost ? 1.34 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.2 : 1;
   for (const node of state.nodes) {
     const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
     const color = node.gold ? '213, 173, 54' : '97, 173, 250';

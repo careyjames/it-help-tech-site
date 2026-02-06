@@ -562,12 +562,12 @@ html.switch .particle {
   }
 }
 
-/* iPhone/touch dark mode: make constellation math visibly readable at page load. */
-@media (pointer: coarse) and (hover: none) and (prefers-color-scheme: dark) {
-  .logo-constellation {
-    opacity: 0.96;
-    mix-blend-mode: screen;
-    filter: saturate(1.34) contrast(1.26) brightness(1.3);
+/* iPhone/narrow dark mode: make constellation math visibly readable at page load. */
+@media (max-width: 900px) and (prefers-color-scheme: dark) {
+  html:not(.switch) .logo-constellation {
+    opacity: 0.94;
+    mix-blend-mode: normal;
+    filter: saturate(1.22) contrast(1.3) brightness(1.34);
   }
 }
 
