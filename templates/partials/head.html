@@ -7,9 +7,11 @@
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.classList.add('switch');
       }
-    } catch (e) {
+    } catch (error) {
       // localStorage can throw in privacy-restricted contexts; keep default theme.
-      document.documentElement.classList.remove('switch');
+      if (typeof console !== 'undefined' && typeof console.debug === 'function') {
+        console.debug('Theme preference storage unavailable:', error);
+      }
     }
   })();
 </script>
