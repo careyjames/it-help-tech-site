@@ -198,7 +198,7 @@ function resizeConstellation(state) {
   state.context.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
 
   const baseNodeCount = nodeCountForArea(state.width * state.height);
-  const neededNodes = state.touchDarkBoost ? baseNodeCount + 4 : baseNodeCount;
+  const neededNodes = state.touchDarkBoost ? baseNodeCount + 8 : baseNodeCount;
   if (state.nodes.length !== neededNodes) {
     state.nodes = createNodes(neededNodes, state.width, state.height);
     return;
@@ -283,8 +283,8 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
   const red = warm ? 207 : 84;
   const green = warm ? 173 : 154;
   const blue = warm ? 105 : 229;
-  const alphaScale = touchDarkBoost ? 1.9 : 1;
-  const widthScale = touchDarkBoost ? 1.32 : 1;
+  const alphaScale = touchDarkBoost ? 2.4 : 1;
+  const widthScale = touchDarkBoost ? 1.6 : 1;
   const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
@@ -293,8 +293,8 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
 }
 
 function drawNodeDots(state) {
-  const alphaBoost = state.touchDarkBoost ? 1.34 : 1;
-  const radiusBoost = state.touchDarkBoost ? 1.2 : 1;
+  const alphaBoost = state.touchDarkBoost ? 1.55 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.35 : 1;
   for (const node of state.nodes) {
     const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
     const color = node.gold ? '213, 173, 54' : '97, 173, 250';
@@ -315,7 +315,8 @@ function renderConstellationFrame(timestamp, state) {
 
   state.context.clearRect(0, 0, state.width, state.height);
 
-  const maxDist = Math.max(78, Math.min(132, state.width * 0.27));
+  const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
+  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.2 : baseMaxDist;
   const maxDistSq = maxDist * maxDist;
 
   updateNodes(state, frameScale);
@@ -339,7 +340,11 @@ function stopConstellation(state) {
 }
 
 function startConstellation(state) {
-  if (state.running || state.reducedMotion || !state.inView || document.hidden) {
+  if (state.running || state.reducedMotion || document.hidden) {
+    return;
+  }
+
+  if (!state.touchDarkBoost && !state.inView) {
     return;
   }
 
@@ -418,7 +423,7 @@ function bindResizeEvents(state) {
 }
 
 function bindIntersectionEvents(state) {
-  if (typeof IntersectionObserver !== 'function') {
+  if (typeof IntersectionObserver !== 'function' || state.touchDarkBoost) {
     return;
   }
 
