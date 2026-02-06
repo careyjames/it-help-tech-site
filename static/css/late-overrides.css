@@ -562,6 +562,14 @@ html.switch .particle {
   }
 }
 
+/* iPhone/compact dark mode: raise constellation contrast without touching desktop dark mode. */
+@media (max-width: 640px) {
+  html:not(.switch) .logo-constellation {
+    opacity: 0.76;
+    filter: saturate(1.22) contrast(1.18) brightness(1.18);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-constellation {
     display: none;
