@@ -255,6 +255,41 @@ function drawNodeLinks(state, maxDistSq) {
   }
 }
 
+function drawFixedLink(state, a, b, strokeStyle, lineWidth) {
+  state.context.beginPath();
+  state.context.moveTo(a.ox, a.oy);
+  state.context.lineTo(b.ox, b.oy);
+  state.context.strokeStyle = strokeStyle;
+  state.context.lineWidth = lineWidth;
+  state.context.stroke();
+}
+
+function drawPhyllotaxisLinks(state) {
+  if (!state.touchDarkBoost || state.nodes.length < 4) {
+    return;
+  }
+
+  for (let index = 0; index < state.nodes.length - 2; index += 1) {
+    drawFixedLink(
+      state,
+      state.nodes[index],
+      state.nodes[index + 1],
+      'rgba(164, 220, 255, 0.38)',
+      1.65
+    );
+
+    if (index % 2 === 0) {
+      drawFixedLink(
+        state,
+        state.nodes[index],
+        state.nodes[index + 2],
+        'rgba(255, 223, 138, 0.26)',
+        1.25
+      );
+    }
+  }
+}
+
 function drawNodeLink(state, a, b, maxDistSq, touchDarkBoost) {
   const distSq = linkDistanceSquared(a, b);
   if (distSq > maxDistSq) {
@@ -322,11 +357,12 @@ function renderConstellationFrame(timestamp, state) {
   state.context.clearRect(0, 0, state.width, state.height);
 
   const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
-  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.2 : baseMaxDist;
+  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.85 : baseMaxDist;
   const maxDistSq = maxDist * maxDist;
 
   updateNodes(state, frameScale);
   drawNodeLinks(state, maxDistSq);
+  drawPhyllotaxisLinks(state);
   drawNodeDots(state);
 
   state.frameHandle = globalThis.requestAnimationFrame(state.renderFrame);
