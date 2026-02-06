@@ -89,7 +89,10 @@
       <img src="{{ get_url(path=thumb) }}"
            alt="{{ page.title }} thumbnail"
            width="200"
-           class="post-thumb">
+           class="post-thumb"
+           loading="lazy"
+           decoding="async"
+           fetchpriority="low">
 
       <div class="post-excerpt">
         {{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}
