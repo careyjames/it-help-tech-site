@@ -197,7 +197,7 @@ function resizeConstellation(state) {
   state.context.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
 
   const baseNodeCount = nodeCountForArea(state.width * state.height);
-  const neededNodes = state.touchDarkBoost ? baseNodeCount + 8 : baseNodeCount;
+  const neededNodes = state.touchDarkBoost ? baseNodeCount + 3 : baseNodeCount;
   if (state.nodes.length !== neededNodes) {
     state.nodes = createNodes(neededNodes, state.width, state.height);
     return;
@@ -269,21 +269,25 @@ function drawPhyllotaxisLinks(state) {
   }
 
   for (let index = 0; index < state.nodes.length - 2; index += 1) {
+    if (index % 3 !== 0) {
+      continue;
+    }
+
     drawFixedLink(
       state,
       state.nodes[index],
       state.nodes[index + 1],
-      'rgba(164, 220, 255, 0.38)',
-      1.65
+      'rgba(164, 220, 255, 0.18)',
+      0.96
     );
 
-    if (index % 2 === 0) {
+    if (index % 6 === 0) {
       drawFixedLink(
         state,
         state.nodes[index],
         state.nodes[index + 2],
-        'rgba(255, 223, 138, 0.26)',
-        1.25
+        'rgba(255, 223, 138, 0.12)',
+        0.74
       );
     }
   }
@@ -317,18 +321,18 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
   const red = touchDarkBoost ? (warm ? 255 : 168) : warm ? 207 : 84;
   const green = touchDarkBoost ? (warm ? 219 : 214) : warm ? 173 : 154;
   const blue = touchDarkBoost ? (warm ? 142 : 255) : warm ? 105 : 229;
-  const alphaScale = touchDarkBoost ? 2.7 : 1;
-  const widthScale = touchDarkBoost ? 2.15 : 1;
+  const alphaScale = touchDarkBoost ? 1.55 : 1;
+  const widthScale = touchDarkBoost ? 1.35 : 1;
   const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
-    lineWidth: (warm ? 0.84 : 0.72) * widthScale,
+    lineWidth: (warm ? 0.82 : 0.7) * widthScale,
   };
 }
 
 function drawNodeDots(state) {
-  const alphaBoost = state.touchDarkBoost ? 1.75 : 1;
-  const radiusBoost = state.touchDarkBoost ? 1.55 : 1;
+  const alphaBoost = state.touchDarkBoost ? 1.2 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.18 : 1;
   for (const node of state.nodes) {
     const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
     const color = state.touchDarkBoost
@@ -356,7 +360,7 @@ function renderConstellationFrame(timestamp, state) {
   state.context.clearRect(0, 0, state.width, state.height);
 
   const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
-  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.85 : baseMaxDist;
+  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.35 : baseMaxDist;
   const maxDistSq = maxDist * maxDist;
 
   updateNodes(state, frameScale);
