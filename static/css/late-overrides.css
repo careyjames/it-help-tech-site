@@ -570,7 +570,7 @@ html.switch .particle {
     filter: saturate(1.55) contrast(1.28);
   }
   html:not(.switch) .logo-constellation {
-    opacity: 0.9;
+    opacity: 0.86;
     mix-blend-mode: normal;
     filter: none;
     z-index: 2;
