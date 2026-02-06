@@ -127,7 +127,6 @@ function isTouchDarkMode() {
     (globalThis.screen && globalThis.screen.width) || Number.POSITIVE_INFINITY
   );
   return (
-    matchesMediaQuery('(prefers-color-scheme: dark)') &&
     (viewportWidth <= 900 || matchesMediaQuery('(pointer: coarse)')) &&
     !document.documentElement.classList.contains('switch')
   );
