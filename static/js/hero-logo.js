@@ -260,13 +260,46 @@ function drawNodeLinks(state, maxDistSq) {
   }
 }
 
-function drawFixedLink(state, a, b, strokeStyle, lineWidth) {
-  state.context.beginPath();
-  state.context.moveTo(a.ox, a.oy);
-  state.context.lineTo(b.ox, b.oy);
-  state.context.strokeStyle = strokeStyle;
-  state.context.lineWidth = lineWidth;
-  state.context.stroke();
+function pairKey(indexA, indexB) {
+  return indexA < indexB ? `${indexA}:${indexB}` : `${indexB}:${indexA}`;
+}
+
+function nearestNodeIndexes(state, fromIndex, maxDistSq, limit) {
+  const source = state.nodes[fromIndex];
+  const candidates = [];
+  for (const [index, node] of state.nodes.entries()) {
+    if (index === fromIndex) {
+      continue;
+    }
+    const distSq = linkDistanceSquared(source, node);
+    if (distSq > maxDistSq) {
+      continue;
+    }
+    candidates.push({ index, distSq });
+  }
+
+  candidates.sort((a, b) => a.distSq - b.distSq);
+  return candidates.slice(0, limit).map((entry) => entry.index);
+}
+
+function drawMobileDarkLink(state, drawnPairs, indexA, indexB, maxDistSq) {
+  if (indexA === indexB || indexB < 0 || indexB >= state.nodes.length) {
+    return;
+  }
+
+  const key = pairKey(indexA, indexB);
+  if (drawnPairs.has(key)) {
+    return;
+  }
+
+  const fromNode = state.nodes[indexA];
+  const toNode = state.nodes[indexB];
+  if (linkDistanceSquared(fromNode, toNode) > maxDistSq) {
+    return;
+  }
+
+  drawnPairs.add(key);
+  drawNodeLink(state, fromNode, toNode, maxDistSq, true);
 }
 
 function drawMobileDarkSequenceLinks(state, maxDistSq) {
@@ -274,24 +307,27 @@ function drawMobileDarkSequenceLinks(state, maxDistSq) {
     return;
   }
 
-  const sparseMaxDistSq = maxDistSq * 0.96;
-  const backboneColor = 'rgba(172, 228, 255, 0.105)';
+  const localMaxDistSq = maxDistSq * 0.5;
+  const fibMaxDistSq = maxDistSq * 0.62;
+  const fibOffsets = [2, 3, 5];
+  const drawnPairs = new Set();
 
-  for (let index = 0; index < state.nodes.length - 1; index += 1) {
-    const node = state.nodes[index];
-    drawFixedLink(state, node, state.nodes[index + 1], backboneColor, 0.62);
-
-    if (index + 2 < state.nodes.length && index % 2 === 0) {
-      drawNodeLink(state, node, state.nodes[index + 2], sparseMaxDistSq, true);
+  for (const [index] of state.nodes.entries()) {
+    const nearestLimit = index % 2 === 0 ? 2 : 1;
+    for (const neighborIndex of nearestNodeIndexes(state, index, localMaxDistSq, nearestLimit)) {
+      drawMobileDarkLink(state, drawnPairs, index, neighborIndex, localMaxDistSq);
     }
 
-    if (index + 3 < state.nodes.length && index % 3 === 0) {
-      drawNodeLink(state, node, state.nodes[index + 3], sparseMaxDistSq, true);
+    for (const offset of fibOffsets) {
+      if (offset === 5 && index % 2 !== 0) {
+        continue;
+      }
+      drawMobileDarkLink(state, drawnPairs, index, index + offset, fibMaxDistSq);
     }
+  }
 
-    if (index + 5 < state.nodes.length && index % 4 === 0) {
-      drawNodeLink(state, node, state.nodes[index + 5], sparseMaxDistSq, true);
-    }
+  for (let index = 0; index + 2 < state.nodes.length; index += 3) {
+    drawMobileDarkLink(state, drawnPairs, index, index + 2, fibMaxDistSq);
   }
 }
 
@@ -370,7 +406,7 @@ function renderConstellationFrame(timestamp, state) {
   const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
   const touchLightBoost = state.touchViewport && !state.touchDarkBoost;
   const maxDist = state.touchDarkBoost
-    ? baseMaxDist * 1.14
+    ? baseMaxDist * 1.08
     : touchLightBoost
       ? baseMaxDist * 1.24
       : baseMaxDist;
