@@ -44,7 +44,7 @@ jobs:
 
           # Minify CSS in place after PurgeCSS so source files stay readable in git.
           find public/css -type f -name '*.css' -print0 | while IFS= read -r -d '' f; do
-            cleancss -O1 --skip-rebase -o "$f" "$f"
+            cleancss -O1 -o "$f" "$f"
           done
 
           # Minify the custom hero animation script shipped to browsers.
