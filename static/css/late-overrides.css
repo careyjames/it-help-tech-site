@@ -564,7 +564,7 @@ html.switch .particle {
 
 /* iPhone/touch dark mode: make constellation math visibly readable at page load. */
 @media (pointer: coarse) and (hover: none) and (prefers-color-scheme: dark) {
-  html:not(.switch) .logo-constellation {
+  .logo-constellation {
     opacity: 0.96;
     mix-blend-mode: screen;
     filter: saturate(1.34) contrast(1.26) brightness(1.3);

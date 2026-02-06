@@ -97,6 +97,7 @@ function createConstellationState(logo, canvas, context, motionQuery) {
     pointerTargetY: 0,
     pointerX: 0,
     pointerY: 0,
+    touchDarkBoost: isTouchDarkMode(),
     nodes: [],
     renderFrame: null,
   };
@@ -115,6 +116,19 @@ function nodeCountForArea(area) {
 const PHI = (1 + Math.sqrt(5)) / 2;
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const INVERSE_PHI = 1 / PHI;
+
+function matchesMediaQuery(query) {
+  return typeof globalThis.matchMedia === 'function' && globalThis.matchMedia(query).matches;
+}
+
+function isTouchDarkMode() {
+  return (
+    matchesMediaQuery('(pointer: coarse)') &&
+    matchesMediaQuery('(hover: none)') &&
+    matchesMediaQuery('(prefers-color-scheme: dark)') &&
+    !document.documentElement.classList.contains('switch')
+  );
+}
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
@@ -174,12 +188,14 @@ function resizeConstellation(state) {
   state.width = Math.max(1, Math.floor(rect.width));
   state.height = Math.max(1, Math.floor(rect.height));
   state.dpr = Math.min(globalThis.devicePixelRatio || 1, 2);
+  state.touchDarkBoost = isTouchDarkMode();
 
   state.canvas.width = Math.max(1, Math.floor(state.width * state.dpr));
   state.canvas.height = Math.max(1, Math.floor(state.height * state.dpr));
   state.context.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
 
-  const neededNodes = nodeCountForArea(state.width * state.height);
+  const baseNodeCount = nodeCountForArea(state.width * state.height);
+  const neededNodes = state.touchDarkBoost ? baseNodeCount + 4 : baseNodeCount;
   if (state.nodes.length !== neededNodes) {
     state.nodes = createNodes(neededNodes, state.width, state.height);
     return;
@@ -231,19 +247,19 @@ function drawNodeLinks(state, maxDistSq) {
   for (let index = 0; index < state.nodes.length; index += 1) {
     const a = state.nodes[index];
     for (let pair = index + 1; pair < state.nodes.length; pair += 1) {
-      drawNodeLink(state, a, state.nodes[pair], maxDistSq);
+      drawNodeLink(state, a, state.nodes[pair], maxDistSq, state.touchDarkBoost);
     }
   }
 }
 
-function drawNodeLink(state, a, b, maxDistSq) {
+function drawNodeLink(state, a, b, maxDistSq, touchDarkBoost) {
   const distSq = linkDistanceSquared(a, b);
   if (distSq > maxDistSq) {
     return;
   }
 
   const intensity = 1 - distSq / maxDistSq;
-  const style = resolveNodeLinkStyle(a, b, intensity);
+  const style = resolveNodeLinkStyle(a, b, intensity, touchDarkBoost);
 
   state.context.beginPath();
   state.context.moveTo(a.ox, a.oy);
@@ -259,24 +275,28 @@ function linkDistanceSquared(a, b) {
   return dx * dx + dy * dy;
 }
 
-function resolveNodeLinkStyle(a, b, intensity) {
+function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
   const warm = a.gold || b.gold;
   const red = warm ? 207 : 84;
   const green = warm ? 173 : 154;
   const blue = warm ? 105 : 229;
-  const alpha = intensity * (warm ? 0.24 : 0.2);
+  const alphaScale = touchDarkBoost ? 1.55 : 1;
+  const widthScale = touchDarkBoost ? 1.2 : 1;
+  const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
-    lineWidth: warm ? 0.8 : 0.68,
+    lineWidth: (warm ? 0.8 : 0.68) * widthScale,
   };
 }
 
 function drawNodeDots(state) {
+  const alphaBoost = state.touchDarkBoost ? 1.2 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.12 : 1;
   for (const node of state.nodes) {
-    const alpha = node.gold ? 0.82 : 0.72;
+    const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
     const color = node.gold ? '213, 173, 54' : '97, 173, 250';
     state.context.beginPath();
-    state.context.arc(node.ox, node.oy, node.radius, 0, Math.PI * 2);
+    state.context.arc(node.ox, node.oy, node.radius * radiusBoost, 0, Math.PI * 2);
     state.context.fillStyle = `rgba(${color}, ${alpha})`;
     state.context.fill();
   }
