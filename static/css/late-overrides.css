@@ -568,6 +568,10 @@ html.switch .particle {
     opacity: 1;
     mix-blend-mode: normal;
     filter: none;
+    z-index: 2;
+  }
+  html:not(.switch) .tech-particles {
+    z-index: 1;
   }
 }
 

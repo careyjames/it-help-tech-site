@@ -280,24 +280,30 @@ function linkDistanceSquared(a, b) {
 
 function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
   const warm = a.gold || b.gold;
-  const red = warm ? 207 : 84;
-  const green = warm ? 173 : 154;
-  const blue = warm ? 105 : 229;
-  const alphaScale = touchDarkBoost ? 2.4 : 1;
-  const widthScale = touchDarkBoost ? 1.6 : 1;
+  const red = touchDarkBoost ? (warm ? 255 : 168) : warm ? 207 : 84;
+  const green = touchDarkBoost ? (warm ? 219 : 214) : warm ? 173 : 154;
+  const blue = touchDarkBoost ? (warm ? 142 : 255) : warm ? 105 : 229;
+  const alphaScale = touchDarkBoost ? 2.7 : 1;
+  const widthScale = touchDarkBoost ? 2.15 : 1;
   const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
-    lineWidth: (warm ? 0.8 : 0.68) * widthScale,
+    lineWidth: (warm ? 0.84 : 0.72) * widthScale,
   };
 }
 
 function drawNodeDots(state) {
-  const alphaBoost = state.touchDarkBoost ? 1.55 : 1;
-  const radiusBoost = state.touchDarkBoost ? 1.35 : 1;
+  const alphaBoost = state.touchDarkBoost ? 1.75 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.55 : 1;
   for (const node of state.nodes) {
     const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
-    const color = node.gold ? '213, 173, 54' : '97, 173, 250';
+    const color = state.touchDarkBoost
+      ? node.gold
+        ? '255, 223, 138'
+        : '156, 214, 255'
+      : node.gold
+        ? '213, 173, 54'
+        : '97, 173, 250';
     state.context.beginPath();
     state.context.arc(node.ox, node.oy, node.radius * radiusBoost, 0, Math.PI * 2);
     state.context.fillStyle = `rgba(${color}, ${alpha})`;

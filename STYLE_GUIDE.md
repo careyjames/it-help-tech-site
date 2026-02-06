@@ -36,6 +36,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Constellation layout seed: golden-angle (Fibonacci/phyllotaxis-inspired) distribution for an intentional mathematical pattern.
 - Light mode: increase constellation/particle contrast so motion remains visible on white backgrounds.
 - Mobile dark mode: on narrow viewports, boost constellation visibility with stronger node/link rendering (without blend-mode dependence).
+- Mobile dark layering: place constellation above particles on narrow dark viewports so line geometry remains visible.
 - Respect `prefers-reduced-motion`: disable decorative hero motion effects when reduction is requested.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
 
