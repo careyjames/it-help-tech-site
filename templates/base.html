@@ -20,10 +20,6 @@
   <link rel="icon" href="/red-plus.ico" type="image/x-icon">
   {# SEO macro will handle <title> and meta tags; no manual fallback here #}
   {%- block comments_init %}{%- endblock comments_init %}
-
-  <!-- combined late overrides: hero-logo + gold-override (load last) -->
-  <link rel="stylesheet"
-        href="{{ get_url(path='css/late-overrides.css', trailing_slash=false, cachebust=true) | safe }}">
 </head>
 <body>
 
