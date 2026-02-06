@@ -246,10 +246,9 @@ function updateNodes(state, frameScale) {
 }
 
 function drawNodeLinks(state, maxDistSq) {
-  for (let index = 0; index < state.nodes.length; index += 1) {
-    const a = state.nodes[index];
-    for (let pair = index + 1; pair < state.nodes.length; pair += 1) {
-      drawNodeLink(state, a, state.nodes[pair], maxDistSq, state.touchDarkBoost);
+  for (const [index, a] of state.nodes.entries()) {
+    for (const b of state.nodes.slice(index + 1)) {
+      drawNodeLink(state, a, b, maxDistSq, false);
     }
   }
 }
@@ -263,23 +262,35 @@ function drawFixedLink(state, a, b, strokeStyle, lineWidth) {
   state.context.stroke();
 }
 
-function drawPhyllotaxisLinks(state) {
-  if (!state.touchDarkBoost || state.nodes.length < 4) {
+function drawMobileDarkSequenceLinks(state, maxDistSq) {
+  if (!state.touchDarkBoost || state.nodes.length < 6) {
     return;
   }
 
-  for (let index = 0; index < state.nodes.length - 2; index += 1) {
-    if (index % 8 !== 0) {
+  const sparseMaxDistSq = maxDistSq * 0.62;
+  const offsets = [1, 2, 3, 5];
+
+  for (const [index, node] of state.nodes.entries()) {
+    if (index % 2 !== 0) {
       continue;
     }
 
-    drawFixedLink(
-      state,
-      state.nodes[index],
-      state.nodes[index + 1],
-      'rgba(164, 220, 255, 0.09)',
-      0.62
-    );
+    for (const offset of offsets) {
+      const pairIndex = index + offset;
+      if (pairIndex >= state.nodes.length) {
+        break;
+      }
+
+      if (offset > 2 && index % 3 !== 0) {
+        continue;
+      }
+
+      drawNodeLink(state, node, state.nodes[pairIndex], sparseMaxDistSq, true);
+    }
+  }
+
+  for (let index = 0; index + 8 < state.nodes.length; index += 7) {
+    drawFixedLink(state, state.nodes[index], state.nodes[index + 8], 'rgba(170, 224, 255, 0.085)', 0.6);
   }
 }
 
@@ -350,12 +361,15 @@ function renderConstellationFrame(timestamp, state) {
   state.context.clearRect(0, 0, state.width, state.height);
 
   const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
-  const maxDist = state.touchDarkBoost ? baseMaxDist * 1.15 : baseMaxDist;
+  const maxDist = state.touchDarkBoost ? baseMaxDist * 0.92 : baseMaxDist;
   const maxDistSq = maxDist * maxDist;
 
   updateNodes(state, frameScale);
-  drawNodeLinks(state, maxDistSq);
-  drawPhyllotaxisLinks(state);
+  if (state.touchDarkBoost) {
+    drawMobileDarkSequenceLinks(state, maxDistSq);
+  } else {
+    drawNodeLinks(state, maxDistSq);
+  }
   drawNodeDots(state);
 
   state.frameHandle = globalThis.requestAnimationFrame(state.renderFrame);
