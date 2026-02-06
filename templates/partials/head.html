@@ -7,9 +7,7 @@
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.classList.add('switch');
       }
-    } catch (e) {
-      console.warn('Could not read theme preference from localStorage.', e);
-    }
+    } catch (e) {}
   })();
 </script>
 <style>{{- critical_css | safe -}}</style>
