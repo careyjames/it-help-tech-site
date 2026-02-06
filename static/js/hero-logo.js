@@ -97,6 +97,7 @@ function createConstellationState(logo, canvas, context, motionQuery) {
     pointerTargetY: 0,
     pointerX: 0,
     pointerY: 0,
+    touchViewport: isTouchViewport(),
     touchDarkBoost: isTouchDarkMode(),
     nodes: [],
     renderFrame: null,
@@ -121,15 +122,16 @@ function matchesMediaQuery(query) {
   return typeof globalThis.matchMedia === 'function' && globalThis.matchMedia(query).matches;
 }
 
-function isTouchDarkMode() {
+function isTouchViewport() {
   const viewportWidth = Math.min(
     globalThis.innerWidth || Number.POSITIVE_INFINITY,
     (globalThis.screen && globalThis.screen.width) || Number.POSITIVE_INFINITY
   );
-  return (
-    (viewportWidth <= 900 || matchesMediaQuery('(pointer: coarse)')) &&
-    !document.documentElement.classList.contains('switch')
-  );
+  return viewportWidth <= 900 || matchesMediaQuery('(pointer: coarse)');
+}
+
+function isTouchDarkMode() {
+  return isTouchViewport() && !document.documentElement.classList.contains('switch');
 }
 
 function clamp(value, min, max) {
@@ -190,6 +192,7 @@ function resizeConstellation(state) {
   state.width = Math.max(1, Math.floor(rect.width));
   state.height = Math.max(1, Math.floor(rect.height));
   state.dpr = Math.min(globalThis.devicePixelRatio || 1, 2);
+  state.touchViewport = isTouchViewport();
   state.touchDarkBoost = isTouchDarkMode();
 
   state.canvas.width = Math.max(1, Math.floor(state.width * state.dpr));
@@ -267,21 +270,17 @@ function drawMobileDarkSequenceLinks(state, maxDistSq) {
     return;
   }
 
-  const sparseMaxDistSq = maxDistSq * 0.62;
+  const sparseMaxDistSq = maxDistSq * 0.82;
   const offsets = [1, 2, 3, 5];
 
   for (const [index, node] of state.nodes.entries()) {
-    if (index % 2 !== 0) {
-      continue;
-    }
-
     for (const offset of offsets) {
       const pairIndex = index + offset;
       if (pairIndex >= state.nodes.length) {
         break;
       }
 
-      if (offset > 2 && index % 3 !== 0) {
+      if (offset > 2 && index % 2 !== 0) {
         continue;
       }
 
@@ -289,8 +288,8 @@ function drawMobileDarkSequenceLinks(state, maxDistSq) {
     }
   }
 
-  for (let index = 0; index + 8 < state.nodes.length; index += 7) {
-    drawFixedLink(state, state.nodes[index], state.nodes[index + 8], 'rgba(170, 224, 255, 0.085)', 0.6);
+  for (let index = 0; index + 8 < state.nodes.length; index += 8) {
+    drawFixedLink(state, state.nodes[index], state.nodes[index + 8], 'rgba(170, 224, 255, 0.11)', 0.68);
   }
 }
 
@@ -301,7 +300,7 @@ function drawNodeLink(state, a, b, maxDistSq, touchDarkBoost) {
   }
 
   const intensity = 1 - distSq / maxDistSq;
-  const style = resolveNodeLinkStyle(a, b, intensity, touchDarkBoost);
+  const style = resolveNodeLinkStyle(state, a, b, intensity, touchDarkBoost);
 
   state.context.beginPath();
   state.context.moveTo(a.ox, a.oy);
@@ -317,13 +316,14 @@ function linkDistanceSquared(a, b) {
   return dx * dx + dy * dy;
 }
 
-function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
+function resolveNodeLinkStyle(state, a, b, intensity, touchDarkBoost) {
+  const touchLightBoost = state.touchViewport && !touchDarkBoost;
   const warm = touchDarkBoost ? a.gold && b.gold : a.gold || b.gold;
-  const red = touchDarkBoost ? (warm ? 232 : 105) : warm ? 207 : 84;
-  const green = touchDarkBoost ? (warm ? 198 : 186) : warm ? 173 : 154;
-  const blue = touchDarkBoost ? (warm ? 116 : 244) : warm ? 105 : 229;
-  const alphaScale = touchDarkBoost ? 1.24 : 1;
-  const widthScale = touchDarkBoost ? 1.15 : 1;
+  const red = touchDarkBoost ? (warm ? 232 : 105) : warm ? 207 : touchLightBoost ? 78 : 84;
+  const green = touchDarkBoost ? (warm ? 198 : 186) : warm ? 173 : touchLightBoost ? 164 : 154;
+  const blue = touchDarkBoost ? (warm ? 116 : 244) : warm ? 105 : touchLightBoost ? 243 : 229;
+  const alphaScale = touchDarkBoost ? 1.24 : touchLightBoost ? 1.34 : 1;
+  const widthScale = touchDarkBoost ? 1.15 : touchLightBoost ? 1.2 : 1;
   const alpha = Math.min(1, intensity * (warm ? 0.24 : 0.2) * alphaScale);
   return {
     strokeStyle: `rgba(${red}, ${green}, ${blue}, ${alpha})`,
@@ -332,14 +332,19 @@ function resolveNodeLinkStyle(a, b, intensity, touchDarkBoost) {
 }
 
 function drawNodeDots(state) {
-  const alphaBoost = state.touchDarkBoost ? 1.08 : 1;
-  const radiusBoost = state.touchDarkBoost ? 1.08 : 1;
+  const touchLightBoost = state.touchViewport && !state.touchDarkBoost;
+  const alphaBoost = state.touchDarkBoost ? 1.08 : touchLightBoost ? 1.22 : 1;
+  const radiusBoost = state.touchDarkBoost ? 1.08 : touchLightBoost ? 1.1 : 1;
   for (const node of state.nodes) {
     const alpha = Math.min(1, (node.gold ? 0.82 : 0.72) * alphaBoost);
     const color = state.touchDarkBoost
       ? node.gold
         ? '255, 223, 138'
         : '156, 214, 255'
+      : touchLightBoost
+        ? node.gold
+          ? '223, 184, 70'
+          : '78, 161, 250'
       : node.gold
         ? '213, 173, 54'
         : '97, 173, 250';
@@ -361,7 +366,12 @@ function renderConstellationFrame(timestamp, state) {
   state.context.clearRect(0, 0, state.width, state.height);
 
   const baseMaxDist = Math.max(78, Math.min(132, state.width * 0.27));
-  const maxDist = state.touchDarkBoost ? baseMaxDist * 0.92 : baseMaxDist;
+  const touchLightBoost = state.touchViewport && !state.touchDarkBoost;
+  const maxDist = state.touchDarkBoost
+    ? baseMaxDist * 1.08
+    : touchLightBoost
+      ? baseMaxDist * 1.16
+      : baseMaxDist;
   const maxDistSq = maxDist * maxDist;
 
   updateNodes(state, frameScale);

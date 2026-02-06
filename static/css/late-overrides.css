@@ -564,8 +564,13 @@ html.switch .particle {
 
 /* iPhone/narrow dark mode (site theme): make constellation math visibly readable at page load. */
 @media (max-width: 900px) {
+  html.switch .logo-constellation {
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+    filter: saturate(1.4) contrast(1.2);
+  }
   html:not(.switch) .logo-constellation {
-    opacity: 0.72;
+    opacity: 0.82;
     mix-blend-mode: normal;
     filter: none;
     z-index: 2;

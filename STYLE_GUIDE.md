@@ -35,6 +35,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Constellation canvas: subtle drifting nodes + connecting lines behind the hero logo only.
 - Constellation layout seed: golden-angle (Fibonacci/phyllotaxis-inspired) distribution for an intentional mathematical pattern.
 - Light mode: increase constellation/particle contrast so motion remains visible on white backgrounds.
+- Mobile light mode: on touch/narrow viewports, increase constellation contrast and link visibility so geometry reads clearly.
 - Mobile dark mode: on narrow viewports, boost constellation visibility based on site theme state (`html:not(.switch)`), not OS color-scheme.
 - Mobile dark layering: place constellation above particles on narrow dark viewports so line geometry remains visible.
 - Mobile dark rendering: use sparse Fibonacci neighbor links (`+1,+2,+3,+5`) instead of full mesh links to avoid dense webbing.
