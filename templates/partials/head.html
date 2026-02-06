@@ -11,7 +11,6 @@
   })();
 </script>
 <style>{{- critical_css | safe -}}</style>
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
 
 {#
   Preload the page's main portrait image only when it exists. This
@@ -90,32 +89,12 @@
 <link rel="stylesheet"
       href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
-<noscript>
-  {%- for i in stylesheets %}
-    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
-  {%- endfor %}
-  {%- if pagestylesheets %}
-    {%- for i in pagestylesheets %}
-      <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
-    {%- endfor %}
-  {%- endif %}
-  <link rel="stylesheet"
-        href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
-</noscript>
-
 {# --- Meta tags --- #}
 {% if page.extra.robots %}
   <meta name="robots" content="{{ page.extra.robots }}">
 {% else %}
   <meta name="robots" content="index, follow">
 {% endif %}
-
-<meta name="ChatGPTBot" content="allow">
-<meta name="GPTBot" content="allow">
-<meta name="ClaudeBot" content="allow">
-<meta name="PerplexityBot" content="allow">
-<meta name="GeminiBot" content="allow">
-<meta name="OpenAI-Bot" content="allow">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
