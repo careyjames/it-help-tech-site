@@ -38,6 +38,20 @@ jobs:
           npm install -g purgecss
           purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line" --safelist "particle"
 
+      - name: Minify CSS and hero JS (safe ship-time optimization)
+        run: |
+          npm install -g clean-css-cli terser
+
+          # Minify CSS in place after PurgeCSS so source files stay readable in git.
+          find public/css -type f -name '*.css' -print0 | while IFS= read -r -d '' f; do
+            cleancss -O1 --skip-rebase -o "$f" "$f"
+          done
+
+          # Minify the custom hero animation script shipped to browsers.
+          if [ -f public/js/hero-logo.js ]; then
+            terser public/js/hero-logo.js --compress --output public/js/hero-logo.js
+          fi
+
       - name: Remove KaTeX assets when unused
         run: |
           if find public -name '*.html' -print0 | xargs -0 grep -qi "katex"; then
