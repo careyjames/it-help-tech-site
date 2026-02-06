@@ -86,9 +86,6 @@
   {%- endfor %}
 {%- endif %}
 
-<link rel="stylesheet"
-      href="{{ get_url(path='css/override.min.css', trailing_slash=false, cachebust=true) | safe }}">
-
 {# --- Meta tags --- #}
 {% if page.extra.robots %}
   <meta name="robots" content="{{ page.extra.robots }}">
