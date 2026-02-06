@@ -97,6 +97,7 @@ function createConstellationState(logo, canvas, context, motionQuery) {
     pointerTargetY: 0,
     pointerX: 0,
     pointerY: 0,
+    logoRect: null,
     touchViewport: isTouchViewport(),
     touchDarkBoost: isTouchDarkMode(),
     nodes: [],
@@ -188,12 +189,15 @@ function clampNodes(nodes, width, height) {
 }
 
 function resizeConstellation(state) {
+  state.logoRect = state.logo.getBoundingClientRect();
   const rect = state.canvas.getBoundingClientRect();
   state.width = Math.max(1, Math.floor(rect.width));
   state.height = Math.max(1, Math.floor(rect.height));
-  state.dpr = Math.min(globalThis.devicePixelRatio || 1, 2);
   state.touchViewport = isTouchViewport();
   state.touchDarkBoost = isTouchDarkMode();
+  state.dpr = state.touchViewport
+    ? Math.min(globalThis.devicePixelRatio || 1, 1.5)
+    : Math.min(globalThis.devicePixelRatio || 1, 2);
 
   state.canvas.width = Math.max(1, Math.floor(state.width * state.dpr));
   state.canvas.height = Math.max(1, Math.floor(state.height * state.dpr));
@@ -261,12 +265,16 @@ function drawNodeLinks(state, maxDistSq) {
 }
 
 function pairKey(indexA, indexB) {
-  return indexA < indexB ? `${indexA}:${indexB}` : `${indexB}:${indexA}`;
+  const a = indexA < indexB ? indexA : indexB;
+  const b = indexA < indexB ? indexB : indexA;
+  return (a << 8) | b;
 }
 
 function nearestNodeIndexes(state, fromIndex, maxDistSq, limit) {
   const source = state.nodes[fromIndex];
-  const candidates = [];
+  const nearest = new Array(limit).fill(-1);
+  const nearestDist = new Array(limit).fill(Number.POSITIVE_INFINITY);
+
   for (const [index, node] of state.nodes.entries()) {
     if (index === fromIndex) {
       continue;
@@ -275,11 +283,24 @@ function nearestNodeIndexes(state, fromIndex, maxDistSq, limit) {
     if (distSq > maxDistSq) {
       continue;
     }
-    candidates.push({ index, distSq });
+
+    for (let slot = 0; slot < limit; slot += 1) {
+      if (distSq >= nearestDist[slot]) {
+        continue;
+      }
+
+      for (let shift = limit - 1; shift > slot; shift -= 1) {
+        nearest[shift] = nearest[shift - 1];
+        nearestDist[shift] = nearestDist[shift - 1];
+      }
+
+      nearest[slot] = index;
+      nearestDist[slot] = distSq;
+      break;
+    }
   }
 
-  candidates.sort((a, b) => a.distSq - b.distSq);
-  return candidates.slice(0, limit).map((entry) => entry.index);
+  return nearest.filter((index) => index >= 0);
 }
 
 function drawMobileDarkLink(state, drawnPairs, indexA, indexB, maxDistSq) {
@@ -441,7 +462,7 @@ function startConstellation(state) {
     return;
   }
 
-  if (!state.touchDarkBoost && !state.inView) {
+  if (!state.inView) {
     return;
   }
 
@@ -464,7 +485,7 @@ function applyMotionPreference(state) {
 }
 
 function updatePointerTarget(state, event) {
-  const rect = state.logo.getBoundingClientRect();
+  const rect = state.logoRect || state.logo.getBoundingClientRect();
   state.pointerTargetX = (event.clientX - rect.left) / rect.width - 0.5;
   state.pointerTargetY = (event.clientY - rect.top) / rect.height - 0.5;
 }
@@ -520,7 +541,7 @@ function bindResizeEvents(state) {
 }
 
 function bindIntersectionEvents(state) {
-  if (typeof IntersectionObserver !== 'function' || state.touchDarkBoost) {
+  if (typeof IntersectionObserver !== 'function') {
     return;
   }
 
