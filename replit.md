@@ -1,5 +1,25 @@
 # IT Help San Diego Inc. Site
 
+## AI Agent Mandatory Context (Read First)
+- Source of truth for all AI agents: `AGENTS.md`
+- Required pre-read before edits:
+  - `STYLE_GUIDE.md`
+  - `PROJECT_EVOLUTION_LOG.md`
+  - `replit.md`
+- If you change visual system, tokens, or hero/logo treatment:
+  - Update `STYLE_GUIDE.md`
+  - Add an entry to `PROJECT_EVOLUTION_LOG.md`
+  - Run `zola build`
+
+## Engineering Bar (No-Compromise)
+- Aim for Lighthouse perfection on meaningful pages; do not accept regressions casually.
+- Maintain Observatory A+ posture with target score >=120.
+- Maintain strict security/privacy posture: no trackers, no cookies, no unnecessary frameworks.
+- Build cleanly from the start; avoid "ship now, fix later" practices.
+- Prioritize readable, maintainable foundations over flashy shortcuts.
+- Treat best practices as symbiotic: security, speed, accessibility, UX psychology, and maintainability must all reinforce each other.
+- Do not optimize one axis while degrading another and call it "done."
+
 ## Overview
 A static website for IT Help San Diego Inc., built with Zola static site generator and the Abridge theme. Privacy-first, no-tracking, no-cookies design. Production site: https://www.it-help.tech/
 
