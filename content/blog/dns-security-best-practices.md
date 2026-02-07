@@ -62,7 +62,7 @@ Here is a DNS Tool record snip-it from a trusted source, CISA (Cybersecurity and
 <img
   src="/images/cisa-dns.png"
   alt="DNS Tool record showing CISA DMARC, SPF, and DKIM enforcement"
-  style="max-width: 600px; width: 100%; height: auto; margin: 0 auto; display: block;"
+  style="width: 520px !important; max-width: 100% !important; height: auto; margin: 0 auto; display: block;"
   loading="lazy"
   decoding="async">
 
