@@ -29,8 +29,10 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should use the same indigo ramp family for immediate visual consistency.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
+- Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
+- Gold-forward fallback snapshot (if we intentionally choose that direction): `main@a3b9ea2` from PR `#430`; use it as the restore baseline for logo color treatment.
 - Use Gold in controlled doses: CTA button style and restrained logo trim only.
 - Red is reserved for the plus sign.
 - Avoid introducing new colors without updating this guide.
