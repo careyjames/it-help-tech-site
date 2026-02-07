@@ -1,6 +1,7 @@
 ---
 title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
 date: 2025-05-25
+last_modified: 2026-02-06
 author: Carey Balboa
 categories: [DNS Security, Email Security]
 tags: [DMARC, SPF, DKIM, DNSSEC, email deliverability, cybersecurity, BEC]
@@ -21,6 +22,7 @@ Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will 
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
+  "isAccessibleForFree": true,
   "headline": "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM",
   "description": "Step-by-step setup guide for DMARC, SPF, DKIM, and DNSSEC to prevent spoofing and phishing.",
   "proficiencyLevel": "Intermediate",
@@ -34,7 +36,7 @@ Looking to bolster your DNS Security with DMARC, SPF, and DKIM? This guide will 
   },
   "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
   "datePublished": "2025-05-25",
-  "dateModified": "2025-05-25",
+  "dateModified": "2026-02-06",
   "mainEntityOfPage": "https://www.it-help.tech/blog/dns-security-best-practices/",
   "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
 }
@@ -67,16 +69,39 @@ We participate as a stakeholder in CISA’s Cyber Hygiene program and have gaine
 
 ## Common SPF Misconceptions
 
-Contrary to some misunderstandings, the `-all` tag in an SPF record does not prevent internal users from sending or receiving emails. Instead, it mandates that only explicitly allowed sources can send emails on behalf of the domain. Email newsletters sent with Mailchimp or Zendesk, for example, cannot successfully send emails that arrive from your domain without having an "include:" entry. So you allow them with an "include:" entry.
+Contrary to some misunderstandings, the `-all` tag in an SPF record does not prevent internal users from sending or receiving email. Instead, it mandates that only explicitly authorized sources are allowed to send email on behalf of the domain. If a service is not listed in the SPF record, mail it sends claiming to be from your domain will fail SPF.
 
-## Alternate Viewpoints
+This is why third‑party services such as Mailchimp, Zendesk, CRMs, ticketing systems, and invoicing platforms must be explicitly allowed using `include:` mechanisms. Without those entries, their messages will fail SPF regardless of whether the mail itself is legitimate.
 
-Mail Hardener recommends using SPF `~all` (Softfail) over `-all` (Fail) for better compatibility and fewer delivery issues.
-This guidance prioritizes delivery stability over strict impersonation resistance, which may be appropriate in some operational contexts.
+Where confusion arises is enforcement. SPF `-all` (hard fail) is often assumed to be “more secure,” but RFC 7489 §10.1 explicitly warns that hard fail can cause receiving servers to reject messages before DKIM is evaluated and before DMARC can make a policy decision.
 
-## Scientific Backing
+This creates a failure mode where a message that fails SPF but would otherwise pass DMARC via DKIM alignment is rejected prematurely. In effect, SPF `-all` can short‑circuit DMARC, undermining the protocol designed to make final disposition decisions.
 
-According to RFC 7489, Section 10.1, the use of `-all` can cause messages to be rejected before DMARC processing, something operators should be aware of.
+SPF was designed as an authorization signal, not a standalone enforcement mechanism. DMARC is the layer that evaluates SPF and DKIM together and applies policy (`p=none`, `quarantine`, or `reject`). Any configuration that prevents DMARC evaluation reduces overall security and breaks standards‑compliant mail flow.
+
+
+## Modern Best Practice vs Legacy Guidance
+
+For active sending domains, the strongest standards-compliant configuration is:
+
+- SPF with `~all` (soft fail)
+- DKIM properly deployed and aligned
+- DMARC set to `p=reject`
+
+This combination ensures that all authentication mechanisms are fully evaluated before a final decision is made. DMARC alignment, not raw SPF or DKIM pass/fail alone, is what ultimately determines message acceptance. SPF `~all` allows DKIM to run, and DMARC acts as the sole enforcement layer, as intended by the protocol design.
+
+Some guidance, including older federal and enterprise deployments, historically favored SPF `-all` as a defense-in-depth measure. This was largely pragmatic: in 2017, when CISA Binding Operational Directive 18-01 was issued, most domains had not yet deployed DMARC, and SPF hard fail acted as a coarse enforcement mechanism.
+
+Today, DMARC `p=reject` is widely deployed across federal and commercial domains, and DKIM is universally relied upon for message authentication. In this modern context, SPF `-all` becomes redundant and introduces the RFC 7489 §10.1 risk of premature rejection. Federal infrastructure often tolerates this due to tightly controlled sending paths, but that model does not generalize to commercial, multi-vendor, or cloud-based email environments.
+
+Major mailbox providers now treat DMARC as the authoritative enforcement signal. The combination of SPF `~all` with DMARC `p=reject` provides stronger, more reliable protection than SPF hard fail alone, while remaining fully compatible with modern email authentication flows.
+
+This guidance applies to active sending domains; parked or non-sending domains may safely use SPF `-all`.
+
+## Standards Reference (RFC 7489 §10.1)
+
+According to RFC 7489, Section 10.1, the use of SPF `-all` can cause messages to be rejected before DMARC processing occurs, preventing DKIM evaluation and DMARC policy enforcement.  
+Primary source: https://datatracker.ietf.org/doc/html/rfc7489#section-10.1
 
 ## Practical Tools for DNS Security
 
@@ -107,7 +132,7 @@ In brief: SPF specifies which servers can send on your behalf (like a return-add
 2.  Create an SPF record listing authorized email servers:
     a.  The two most typical are:
         * `v=spf1 include:_spf.google.com ~all` (for Google guidance)
-        * `v=spf1 include:spf.protection.outlook.com -all` (for Microsoft guidance)
+        * `v=spf1 include:spf.protection.outlook.com -all` (Microsoft’s historical default; in modern DMARC-enforced domains, `~all` is often safer)
     b.  After you construct your policy, copy it into your DNS.
     c.  Note that the two above records do not have entries for other things that may need to send email as your domain (Email Marketing, receipts, and invoices).
     d.  DNS lookup limit is 10. This means that if the SPF record causes more than 10 DNS lookups, it could lead to some emails failing SPF validation due to exceeding this limit. If you encounter this problem, you may need a Dynamic DNS service like Red Sift. We have a portal with them and can help you set it up.
@@ -152,7 +177,7 @@ When setting up DMARC and SPF, watch out for these common mistakes:
       "name": "Can I set up DMARC and SPF myself?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, but it’s advisable to consult a DNS security expert if you are unsure."
+        "text": "Yes, but only if you fully understand how SPF, DKIM, and DMARC interact. Misconfigurations are common and can silently break email delivery or weaken spoofing protection."
       }
     },
     {
@@ -160,7 +185,7 @@ When setting up DMARC and SPF, watch out for these common mistakes:
       "name": "What happens if I don’t set up DMARC or SPF?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your domain can be spoofed or phished, leading to Business Email Compromise attacks."
+        "text": "Your domain becomes vulnerable to spoofing and phishing attacks, including Business Email Compromise (BEC). Attackers can impersonate your domain with little resistance, damaging trust and potentially causing financial loss."
       }
     }
   ]
@@ -223,4 +248,4 @@ Securing your domain and email system is not just a technical requirement but a 
 Don’t be a statistic—take action today.
 We can help you secure your email and DNS records. Call 619-853-5008.
 
-*Last updated October 2025 — verified with current CISA DNS security guidelines.*
+*Last updated February 2026 — verified against RFC 7489 and current CISA DNS security guidance.*
