@@ -9,11 +9,13 @@ extra:
 
 # DNS Tool - DNS & Email Security Auditor
 
-DNS Tool is no longer just a command-line helper — it's a **full, authoritative DNS and email security auditor** available directly on the web:
+DNS Tool is a **professional-grade DNS, email, and brand security auditor** designed to answer one question clearly: *can this domain be trusted on the internet today?*
+
+It analyzes real-world DNS behavior, not just static records, and presents the results in a single, defensible report.
 
 👉 <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer" class="gold-link">dnstool.it-help.tech</a>
 
-This is the version I use now. It's faster, clearer, and far more opinionated—in the right ways.
+This is the authoritative version of the tool. It prioritizes clarity, correctness, and defensible conclusions over raw record dumps.
 
 ## What This Tool Actually Solves
 
