@@ -102,3 +102,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Split logo and Schedule into dedicated indigo depth ramps, reduced muddy/gray cast in IT/HELP lettering by tuning shadow/overlay balance, and removed logo gleam animation on the base letterforms for steadier type color.
 - Why: Improve perceived quality and type-consistent blue identity while preserving trust posture and technical score gates.
 - Rollback: this branch/PR (`codex/ithelp-logo-color-consistency-v2`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP logo de-silver correction
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Increased logo indigo saturation and reduced cool overlay intensity so IT/HELP letters read as blue (not silver/steel), while preserving gold edge and plus-sign treatment.
+- Why: Match intended brand blue expression and improve perceived type consistency against the Schedule CTA.
+- Rollback: this branch/PR (`codex/ithelp-logo-blue-de-silver`).
