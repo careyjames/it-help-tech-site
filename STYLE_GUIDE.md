@@ -4,7 +4,7 @@ Last updated: 2026-02-07
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (logo + navigation CTA): `#2B6FC8`  
+- Primary Blue (logo + navigation CTA): `#3A56D8`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
@@ -17,6 +17,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 
 ## Usage Rules
 - Use Primary Blue for links, logo text, and navigation CTA (Schedule).
+- Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
 - Use Gold in controlled doses: CTA button style and restrained logo trim only.
 - Red is reserved for the plus sign.
 - Avoid introducing new colors without updating this guide.

@@ -70,3 +70,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Applied a small follow-up reduction (about 8-10% from the previous tuned state) to IT/HELP edge and sheen alpha values while preserving thickness/geometry for readability.
 - Why: Keep dimensional clarity for older eyes while reducing remaining visual shine/noise.
 - Rollback: this branch/PR (`codex/ithelp-logo-edge-micro-tune`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Indigo blue token shift (no glow/glass pivot)
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/_extra.scss`
+  - `sass/css/abridge.scss`
+  - `STYLE_GUIDE.md`
+- Change: Shifted primary blue/link tokens from cyan-leaning web blue to a deeper indigo-leaning blue system for higher perceived depth and modernity, without adding glow effects or changing logo geometry.
+- Why: Reduce "legacy/web-default blue" feel while preserving trust posture and readability.
+- Rollback: this branch/PR (`codex/ithelp-indigo-blue-shift`).
