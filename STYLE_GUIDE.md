@@ -9,10 +9,14 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
-- Indigo Depth Ramp (logo fill + Schedule button):
-  - Top: `#4A66E6` (`--brand-blue-top`)
-  - Base: `#3A56D8` (`--brand-blue`)
-  - Bottom: `#2B44B4` (`--brand-blue-bottom`)
+- Logo Indigo Depth Ramp:
+  - Top: `#5B74F0` (`--logo-blue-top`)
+  - Mid: `#4A63DE` (`--logo-blue-mid`)
+  - Bottom: `#354AB8` (`--logo-blue-bottom`)
+- Schedule Indigo Depth Ramp:
+  - Top: `#4B64E0` (`--schedule-blue-top`)
+  - Mid: `#3E56CB` (`--schedule-blue-mid`)
+  - Bottom: `#2F45AE` (`--schedule-blue-bottom`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -22,7 +26,8 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 ## Usage Rules
 - Use Primary Blue for links, logo text, and navigation CTA (Schedule).
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
-- High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should use the 3-step indigo ramp for depth, not a flat fill.
+- High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should use dedicated indigo ramps for depth, not a flat fill.
+- IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Use Gold in controlled doses: CTA button style and restrained logo trim only.
 - Red is reserved for the plus sign.
 - Avoid introducing new colors without updating this guide.
