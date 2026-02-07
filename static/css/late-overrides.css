@@ -20,9 +20,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 :root {
-    --brand-blue: #2B6FC8;
-    --brand-blue-rgb: 43, 111, 200;
-    --brand-blue-glow: 126, 181, 242;
+    --brand-blue: #3A56D8;
+    --brand-blue-rgb: 58, 86, 216;
+    --brand-blue-glow: 142, 162, 255;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
     --accent-gold-glow: 224, 197, 138;
