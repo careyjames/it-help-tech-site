@@ -49,6 +49,7 @@ It distinguishes _configured_ vs _enforced_, _unsigned_ vs _broken_, and _missin
 - DKIM discovery with hyperscaler-aware logic (no false alarms)
 - MTA-STS policy retrieval and enforcement validation
 - TLS-RPT configuration
+- Email security & DMARC management provider identification (where visible in DNS)
 - SMTP Transport Verification — checks MX server STARTTLS support, TLS version, cipher strength, and certificate validity
 
 **Brand Security**
@@ -123,6 +124,7 @@ The web version is the full diagnostic bench.
     "Self-hosted enterprise DNS recognition (Apple, Microsoft, Meta, Amazon)",
     "Government entity detection (.gov, .mil, .gov.uk)",
     "MTA-STS and TLS-RPT policy validation",
+    "Email security and DMARC management provider identification",
     "BIMI and VMC certificate verification",
     "CAA record parsing with CA attribution",
     "SMTP transport security verification",
