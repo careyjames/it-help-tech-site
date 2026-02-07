@@ -23,9 +23,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --brand-blue: #3A56D8;
     --brand-blue-rgb: 58, 86, 216;
     --brand-blue-glow: 142, 162, 255;
-    --logo-blue-top: #5B74F0;
-    --logo-blue-mid: #4A63DE;
-    --logo-blue-bottom: #354AB8;
+    --logo-blue-top: #6A84FF;
+    --logo-blue-mid: #5070F0;
+    --logo-blue-bottom: #3855CF;
     --schedule-blue-top: #4B64E0;
     --schedule-blue-mid: #3E56CB;
     --schedule-blue-bottom: #2F45AE;
@@ -170,21 +170,21 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.44),
-        0 3px 7px rgba(2, 8, 26, 0.34),
-        -0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
-         0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
-        -0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
-         0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
-            -0.54px  0 0 rgba(194, 161, 90, 0.69),
-             0.54px  0 0 rgba(194, 161, 90, 0.69),
-             0 -0.54px 0 rgba(194, 161, 90, 0.69),
-             0  0.54px 0 rgba(194, 161, 90, 0.69),
-            -0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
-             0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
-            -0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
-             0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
-             0 0 1.5px rgba(194, 161, 90, 0.30);
+        0 1px 0 rgba(0, 0, 0, 0.34),
+        0 2px 5px rgba(2, 8, 26, 0.26),
+        -0.15px -0.15px 0 rgba(140, 165, 255, 0.52),
+         0.15px -0.15px 0 rgba(140, 165, 255, 0.52),
+        -0.15px  0.15px 0 rgba(140, 165, 255, 0.52),
+         0.15px  0.15px 0 rgba(140, 165, 255, 0.52),
+            -0.52px  0 0 rgba(194, 161, 90, 0.66),
+             0.52px  0 0 rgba(194, 161, 90, 0.66),
+             0 -0.52px 0 rgba(194, 161, 90, 0.66),
+             0  0.52px 0 rgba(194, 161, 90, 0.66),
+            -0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
+             0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
+            -0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
+             0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
+             0 0 1.35px rgba(194, 161, 90, 0.26);
     animation: none;
     position: relative;
     left: 0.1em;
@@ -203,21 +203,21 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.44),
-        0 3px 7px rgba(2, 8, 26, 0.34),
-        -0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
-         0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
-        -0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
-         0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
-        -0.54px  0 0 rgba(194, 161, 90, 0.69),
-         0.54px  0 0 rgba(194, 161, 90, 0.69),
-         0 -0.54px 0 rgba(194, 161, 90, 0.69),
-         0  0.54px 0 rgba(194, 161, 90, 0.69),
-        -0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
-         0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
-        -0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
-         0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
-         0 0 1.5px rgba(194, 161, 90, 0.30);
+        0 1px 0 rgba(0, 0, 0, 0.34),
+        0 2px 5px rgba(2, 8, 26, 0.26),
+        -0.15px -0.15px 0 rgba(140, 165, 255, 0.52),
+         0.15px -0.15px 0 rgba(140, 165, 255, 0.52),
+        -0.15px  0.15px 0 rgba(140, 165, 255, 0.52),
+         0.15px  0.15px 0 rgba(140, 165, 255, 0.52),
+        -0.52px  0 0 rgba(194, 161, 90, 0.66),
+         0.52px  0 0 rgba(194, 161, 90, 0.66),
+         0 -0.52px 0 rgba(194, 161, 90, 0.66),
+         0  0.52px 0 rgba(194, 161, 90, 0.66),
+        -0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
+         0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
+        -0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
+         0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
+         0 0 1.35px rgba(194, 161, 90, 0.26);
     animation: none;
     position: relative;
     left: -0.03em;
@@ -242,12 +242,12 @@ html.switch .logo-constellation {
     inset: 0;
     color: transparent;
     background: linear-gradient(180deg,
-        rgba(178, 196, 255, 0.22) 0%,
-        rgba(153, 175, 255, 0.08) 36%,
-        rgba(153, 175, 255, 0) 68%);
+        rgba(138, 165, 255, 0.14) 0%,
+        rgba(126, 154, 246, 0.06) 36%,
+        rgba(126, 154, 246, 0) 68%);
     -webkit-background-clip: text;
     background-clip: text;
-    opacity: 0.44;
+    opacity: 0.26;
     pointer-events: none;
     z-index: 3;
     font: inherit;
@@ -389,21 +389,21 @@ html.switch .logo-help {
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.42),
-        0 2px 5px rgba(2, 8, 24, 0.30),
-        -0.15px -0.15px 0 rgba(158, 176, 252, 0.38),
-         0.15px -0.15px 0 rgba(158, 176, 252, 0.38),
-        -0.15px  0.15px 0 rgba(158, 176, 252, 0.38),
-         0.15px  0.15px 0 rgba(158, 176, 252, 0.38),
-        -0.48px  0 0 rgba(194, 161, 90, 0.64),
-         0.48px  0 0 rgba(194, 161, 90, 0.64),
-         0 -0.48px 0 rgba(194, 161, 90, 0.64),
-         0  0.48px 0 rgba(194, 161, 90, 0.64),
-        -0.48px -0.48px 0 rgba(194, 161, 90, 0.64),
-         0.48px -0.48px 0 rgba(194, 161, 90, 0.64),
-        -0.48px  0.48px 0 rgba(194, 161, 90, 0.64),
-         0.48px  0.48px 0 rgba(194, 161, 90, 0.64),
-         0 0 1.35px rgba(194, 161, 90, 0.28);
+        0 1px 0 rgba(0, 0, 0, 0.32),
+        0 2px 4px rgba(2, 8, 24, 0.24),
+        -0.15px -0.15px 0 rgba(136, 160, 245, 0.46),
+         0.15px -0.15px 0 rgba(136, 160, 245, 0.46),
+        -0.15px  0.15px 0 rgba(136, 160, 245, 0.46),
+         0.15px  0.15px 0 rgba(136, 160, 245, 0.46),
+        -0.48px  0 0 rgba(194, 161, 90, 0.62),
+         0.48px  0 0 rgba(194, 161, 90, 0.62),
+         0 -0.48px 0 rgba(194, 161, 90, 0.62),
+         0  0.48px 0 rgba(194, 161, 90, 0.62),
+        -0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
+         0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
+        -0.48px  0.48px 0 rgba(194, 161, 90, 0.62),
+         0.48px  0.48px 0 rgba(194, 161, 90, 0.62),
+         0 0 1.25px rgba(194, 161, 90, 0.24);
     animation: none;
 }
 
