@@ -165,3 +165,12 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted logo and Schedule to the same stronger indigo ramp, removed `background-clip:text` logo rendering to eliminate Safari glyph artifacts, tuned logo depth shadows to stay blue-led, and changed the decorative hero logo wrapper from `h1` to a non-heading element so content pages keep one primary heading.
 - Why: Deliver clear logo/button color cohesion, prevent `P`/glyph rendering artifacts, and keep SEO/accessibility heading structure cleaner.
 - Rollback: this branch/PR (`codex/ithelp-blue-unify-v3`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Sonar accessibility cleanup for decorative hero mark
+- Files:
+  - `templates/partials/hero_logo.html`
+- Change: Removed `role="img"` usage on the hero logo wrapper and marked the logo/location cluster as decorative with `aria-hidden="true"`.
+- Why: Clear Sonar rule violation and keep semantic accessibility output clean.
+- Rollback: this branch/PR (`codex/ithelp-blue-unify-v3`).
