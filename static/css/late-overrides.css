@@ -20,12 +20,12 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 :root {
-    --brand-blue: #2D7AE9;
-    --brand-blue-rgb: 45, 122, 233;
-    --brand-blue-glow: 120, 190, 255;
-    --accent-gold: #D5AD36;
-    --accent-gold-rgb: 213, 173, 54;
-    --accent-gold-glow: 245, 205, 90;
+    --brand-blue: #2B6FC8;
+    --brand-blue-rgb: 43, 111, 200;
+    --brand-blue-glow: 126, 181, 242;
+    --accent-gold: #C2A15A;
+    --accent-gold-rgb: 194, 161, 90;
+    --accent-gold-glow: 224, 197, 138;
 }
 
 .logo-container,
@@ -64,7 +64,7 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
   width:160px;height:160px;
   top:70%;left:85%;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 30% 30%,#ff0066 0%,rgba(255,0,102,0) 70%);
+  background:radial-gradient(circle at 30% 30%,rgba(var(--brand-blue-rgb),0.55) 0%,rgba(var(--brand-blue-rgb),0) 70%);
   filter:blur(14px);
   animation:blob 25s linear infinite;
   pointer-events:none;
@@ -81,8 +81,8 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     pointer-events: none;
     z-index: 0;
     background-image: 
-        repeating-linear-gradient(0deg, #00ffff 0, #00ffff 1px, transparent 1px, transparent 40px),
-        repeating-linear-gradient(90deg, #00ffff 0, #00ffff 1px, transparent 1px, transparent 40px);
+        repeating-linear-gradient(0deg, rgba(var(--brand-blue-rgb), 0.46) 0, rgba(var(--brand-blue-rgb), 0.46) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(var(--brand-blue-rgb), 0.46) 0, rgba(var(--brand-blue-rgb), 0.46) 1px, transparent 1px, transparent 40px);
     animation: circuit-flow 20s linear infinite;
 }
 
@@ -264,10 +264,10 @@ html.switch .logo-constellation {
     display: inline-block;
     margin: 0 var(--logo-plus-gap);
     text-shadow: 
-        -0.3px -0.3px 0 #00ffff,  
-         0.3px -0.3px 0 #00ffff,
-        -0.3px  0.3px 0 #00ffff,
-         0.3px  0.3px 0 #00ffff;
+        -0.3px -0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
+         0.3px -0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
+        -0.3px  0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
+         0.3px  0.3px 0 rgba(var(--brand-blue-rgb), 0.7);
     position: relative;
     z-index: 4;
     animation: plus-jitter 3.5s ease-in-out infinite;
@@ -424,7 +424,7 @@ html.switch .location {
     display: inline-block; /* pill snaps to content width */
     padding: 2px; /* border thickness */
     border-radius: 30px;
-    background: #D5AD36;
+    background: var(--accent-gold);
     position: relative;
     z-index: 0;
 }
@@ -464,7 +464,7 @@ html:not(.switch) .tagline-text{
     content: '';
     position: absolute;
     inset: -2px;
-    background: #D5AD36;
+    background: var(--accent-gold);
     border-radius: 30px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -477,7 +477,7 @@ html:not(.switch) .tagline-text{
 }
 
 .highlight {
-    color: #d5ad36;
+    color: var(--accent-gold);
     font-weight: 700;
     text-shadow: 0 0 10px rgba(213, 173, 54, 0.5);
 }
@@ -648,7 +648,7 @@ html.switch .particle {
 .hex {
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #00ffff, #ff0066);
+    background: linear-gradient(45deg, var(--brand-blue), var(--accent-gold));
     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
@@ -675,7 +675,7 @@ html.switch .particle {
   /* compensate for smaller container padding */
   .tagline-text{padding:8px 16px;}
 }
-/* ---- force gold on any .gold-link, incl. inside headings -------- */
+/* ---- keep .gold-link in the controlled interaction palette -------- */
 html:not(.switch) h1 a.gold-link,
 html:not(.switch) h1 a.gold-link:link,
 html:not(.switch) h1 a.gold-link:visited,
@@ -703,7 +703,7 @@ a.gold-link:visited,
 a.gold-link:hover,
 a.gold-link:focus,
 a.gold-link:active {
-    color: #d4af37 !important;
+    color: var(--a1) !important;
     text-decoration: none;          /* default: no line */
 }
 
@@ -730,7 +730,29 @@ html:not(.switch) h4 a.gold-link:active,
 html:not(.switch) h5 a.gold-link:active,
 html:not(.switch) h6 a.gold-link:active {
     text-decoration: underline;     /* one-pixel underline */
-    text-decoration-color: #d4af37; /* same gold */
+    text-decoration-color: var(--a2);
     text-decoration-thickness: 1px; /* optional: tweak as you like */
     text-underline-offset: 2px;     /* lowers the line a bit (nice on Retina) */
+}
+
+/* Palette discipline overrides: keep accent usage intentional. */
+html.switch .phone-line,
+:root.switch .phone-line {
+  color: #1F6BB8 !important;
+}
+
+html:not(.switch) .phone-line,
+:root:not(.switch) .phone-line {
+  color: #8BC3FF !important;
+}
+
+html:not(.switch) h3 a,
+html:not(.switch) h3 a:visited {
+  color: #fff !important;
+}
+
+html:not(.switch) h3 a:hover,
+html:not(.switch) h3 a:active,
+html:not(.switch) h3 a:focus {
+  color: var(--a2) !important;
 }
