@@ -1,5 +1,25 @@
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 
+:root {
+  --brand-primary: #2B6FC8;
+  --brand-primary-rgb: 43, 111, 200;
+  --brand-primary-glow: 126, 181, 242;
+  --brand-accent: #C2A15A;
+  --brand-accent-rgb: 194, 161, 90;
+  --brand-accent-glow: 224, 197, 138;
+  --brand-accent-ink: #16120A;
+}
+
+:root:not(.switch) {
+  --a1-rgb: 105, 170, 255;
+  --surface-rgb: 23, 23, 23;
+}
+
+:root.switch {
+  --a1-rgb: 15, 78, 138;
+  --surface-rgb: 245, 245, 247;
+}
+
 body {
   background-color: var(--c1);
   color: var(--f1);
@@ -326,52 +346,63 @@ details[open] summary::before {
 
 /* Luxury theme accents */
 .cta-button {
-  background-color: #D5AD36;
-  color: #111111;
+  background-color: var(--brand-accent);
+  border: 1px solid rgba(var(--brand-accent-rgb), 0.7);
+  color: var(--brand-accent-ink);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   display: inline-block;
 }
 
 .schedule-link {
-  background-color: #003366;
-  color: #fff !important;
+  background-color: var(--brand-primary);
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.55);
+  color: #f7fbff !important;
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
 }
 
 @media (min-width: 700px) {
   :root.switch .schedule-link {
-    color: #fff !important;
+    color: #f7fbff !important;
   }
   :root.switch .schedule-link:hover {
-    color: var(--a2) !important;
+    color: #f7fbff !important;
   }
   :root:not(.switch) .schedule-link:hover {
-    color: var(--a2) !important;
+    color: #f7fbff !important;
   }
 }
 
 .schedule-link:hover {
-  color: var(--a2);
+  color: #f7fbff;
+  filter: brightness(1.08);
+  text-decoration: none;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  color: var(--brand-accent-ink);
+  filter: brightness(1.06);
+  text-decoration: none;
 }
 
 .nav-wrapper ul li a:hover {
   text-decoration: none;
-  border-bottom: 2px solid #003366;
+  border-bottom: 2px solid var(--brand-primary);
 }
 
-/* Change 'More' dropdown label to gold on hover */
+/* Match dropdown hover color to the primary interaction palette */
 .dropdown-toggle:hover {
   color: var(--a2);
 }
 
 section h2 {
-  border-left: 4px solid #003366;
+  border-left: 4px solid var(--brand-primary);
   padding-left: 0.5rem;
 }
 
 /* footer phone color in dark mode */
 :root:not(.switch) .footer-nap a {
-  color: #FFD700;
+  color: var(--a2);
 }

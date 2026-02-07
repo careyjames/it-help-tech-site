@@ -34,7 +34,7 @@
 
 
 :root.switch .homepage-hero > h1.hero {
-  color: #D5AD36;
+  color: var(--a1);
 }
 
 /* Center the profile image on the About page */
@@ -51,13 +51,12 @@
 /* Phone number color by mode - ensure final override */
 html.switch .phone-line,
 :root.switch .phone-line {
-  color: #0074D9 !important;
+  color: #1F6BB8 !important;
 }
 html:not(.switch) .phone-line,
 :root:not(.switch) .phone-line {
-  color: #FFD700 !important;
+  color: #8BC3FF !important;
 }
 
 /* Gold colored links for recommended services */
 .gold-link { color: var(--a2) !important; }
-
