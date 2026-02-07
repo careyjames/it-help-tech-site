@@ -162,120 +162,39 @@ html.switch .logo-constellation {
     text-align: center;
 }
 
-/* IT with animated gradient and stroke */
-.logo-it {
-    color: var(--brand-blue);
-    -webkit-text-fill-color: var(--brand-blue);
-    background: none;
-    display: inline-block;
-    letter-spacing: var(--logo-letter-spacing);
-    text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.30),
-        0 2px 4px rgba(2, 8, 26, 0.22),
-        -0.15px -0.15px 0 rgba(122, 147, 255, 0.34),
-         0.15px -0.15px 0 rgba(122, 147, 255, 0.34),
-        -0.15px  0.15px 0 rgba(122, 147, 255, 0.34),
-         0.15px  0.15px 0 rgba(122, 147, 255, 0.34),
-            -0.52px  0 0 rgba(194, 161, 90, 0.66),
-             0.52px  0 0 rgba(194, 161, 90, 0.66),
-             0 -0.52px 0 rgba(194, 161, 90, 0.66),
-             0  0.52px 0 rgba(194, 161, 90, 0.66),
-            -0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
-             0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
-            -0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
-             0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
-             0 0 1.35px rgba(194, 161, 90, 0.26);
-    animation: none;
-    position: relative;
-    left: 0.1em;
-    z-index: 2;
-}
-
-.logo-it::after {
-    content: "IT";
-}
-
-/* HELP with animated gradient, NO stroke to avoid P artifacts */
+/* Keep logo typography as a single rendered layer for clarity. */
+.logo-it,
 .logo-help {
-    color: var(--brand-blue);
-    -webkit-text-fill-color: var(--brand-blue);
+    color: var(--logo-blue-mid);
+    -webkit-text-fill-color: currentColor;
     background: none;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.30),
-        0 2px 4px rgba(2, 8, 26, 0.22),
-        -0.15px -0.15px 0 rgba(122, 147, 255, 0.34),
-         0.15px -0.15px 0 rgba(122, 147, 255, 0.34),
-        -0.15px  0.15px 0 rgba(122, 147, 255, 0.34),
-         0.15px  0.15px 0 rgba(122, 147, 255, 0.34),
-        -0.52px  0 0 rgba(194, 161, 90, 0.66),
-         0.52px  0 0 rgba(194, 161, 90, 0.66),
-         0 -0.52px 0 rgba(194, 161, 90, 0.66),
-         0  0.52px 0 rgba(194, 161, 90, 0.66),
-        -0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
-         0.52px -0.52px 0 rgba(194, 161, 90, 0.66),
-        -0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
-         0.52px  0.52px 0 rgba(194, 161, 90, 0.66),
-         0 0 1.35px rgba(194, 161, 90, 0.26);
+        0 1px 0 rgba(0, 0, 0, 0.26),
+        0 2px 4px rgba(2, 8, 26, 0.18),
+        0 0 0.9px rgba(194, 161, 90, 0.26);
+    -webkit-text-stroke: 0.48px rgba(194, 161, 90, 0.58);
     animation: none;
     position: relative;
-    left: -0.03em;
     z-index: 2;
 }
 
-.logo-help::after {
-    content: "HELP";
+.logo-it {
+    left: 0.1em;
 }
 
-.logo-it::before {
-    content: "IT";
-}
-
-.logo-help::before {
-    content: "HELP";
+.logo-help {
+    left: -0.03em;
 }
 
 .logo-it::before,
-.logo-help::before {
-    position: absolute;
-    inset: 0;
-    color: transparent;
-    background: linear-gradient(180deg,
-        rgba(124, 148, 240, 0.08) 0%,
-        rgba(118, 144, 236, 0.03) 36%,
-        rgba(118, 144, 236, 0) 68%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    opacity: 0.14;
-    pointer-events: none;
-    z-index: 3;
-    font: inherit;
-    letter-spacing: inherit;
-    line-height: inherit;
-}
-
 .logo-it::after,
+.logo-help::before,
 .logo-help::after {
-    position: absolute;
-    inset: 0;
-    color: transparent;
-    background: linear-gradient(110deg,
-        transparent 0%,
-        rgba(194, 161, 90, 0.0) 32%,
-        rgba(194, 161, 90, 0.71) 50%,
-        rgba(194, 161, 90, 0.0) 68%,
-        transparent 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    opacity: 0;
-    transform: translateX(-35%);
-    animation: logo-sheen 6.4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 4;
-    font: inherit;
-    letter-spacing: inherit;
-    line-height: inherit;
+    content: none !important;
+    animation: none !important;
+    opacity: 0 !important;
 }
 
 /* Red plus sign - very subtle outline */
@@ -385,25 +304,14 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: var(--brand-blue);
-    -webkit-text-fill-color: var(--brand-blue);
+    color: var(--logo-blue-mid);
+    -webkit-text-fill-color: currentColor;
     background: none;
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.30),
-        0 2px 4px rgba(2, 8, 24, 0.22),
-        -0.15px -0.15px 0 rgba(118, 143, 232, 0.30),
-         0.15px -0.15px 0 rgba(118, 143, 232, 0.30),
-        -0.15px  0.15px 0 rgba(118, 143, 232, 0.30),
-         0.15px  0.15px 0 rgba(118, 143, 232, 0.30),
-        -0.48px  0 0 rgba(194, 161, 90, 0.62),
-         0.48px  0 0 rgba(194, 161, 90, 0.62),
-         0 -0.48px 0 rgba(194, 161, 90, 0.62),
-         0  0.48px 0 rgba(194, 161, 90, 0.62),
-        -0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
-         0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
-        -0.48px  0.48px 0 rgba(194, 161, 90, 0.62),
-         0.48px  0.48px 0 rgba(194, 161, 90, 0.62),
-         0 0 1.25px rgba(194, 161, 90, 0.24);
+        0 1px 0 rgba(0, 0, 0, 0.22),
+        0 2px 4px rgba(2, 8, 24, 0.14),
+        0 0 0.8px rgba(194, 161, 90, 0.24);
+    -webkit-text-stroke: 0.44px rgba(194, 161, 90, 0.54);
     animation: none;
 }
 

@@ -122,3 +122,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Aligned IT/HELP logo ramp directly to the Schedule button ramp and reduced cool overlay/shadow wash that desaturated the logo letters.
 - Why: Deliver clear, unmistakable blue identity with immediate color parity between logo and Schedule CTA.
 - Rollback: this branch/PR (`codex/ithelp-logo-button-blue-unify`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP clean typography pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Replaced multi-layer pseudo-text rendering on IT/HELP with single-layer letter rendering, retained indigo ramp fill, and kept restrained gold edge via stroke/shadow to remove ghosting/double-glyph artifacts.
+- Why: Improve professional finish and color clarity while preventing visual duplication artifacts in real-world browsers/screenshots.
+- Rollback: this branch/PR (`codex/ithelp-logo-clean-typography`).
