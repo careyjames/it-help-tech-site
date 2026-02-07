@@ -82,3 +82,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted primary blue/link tokens from cyan-leaning web blue to a deeper indigo-leaning blue system for higher perceived depth and modernity, without adding glow effects or changing logo geometry.
 - Why: Reduce "legacy/web-default blue" feel while preserving trust posture and readability.
 - Rollback: this branch/PR (`codex/ithelp-indigo-blue-shift`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP and Schedule blue depth pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Kept the existing primary blue token but introduced a tonal indigo ramp on the IT/HELP letter fill and Schedule button, added subtle dimensional button treatment, and replaced cyan-leaning micro highlights with indigo-leaning highlights.
+- Why: Remove remaining flat/"Windows 95" blue impression while preserving accessibility, performance, and calm authority.
+- Rollback: this branch/PR (`codex/ithelp-blue-depth-pass`).
