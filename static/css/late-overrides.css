@@ -20,15 +20,15 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 :root {
-    --brand-blue: #3A56D8;
-    --brand-blue-rgb: 58, 86, 216;
-    --brand-blue-glow: 142, 162, 255;
-    --schedule-blue-top: #4B64E0;
-    --schedule-blue-mid: #3E56CB;
-    --schedule-blue-bottom: #2F45AE;
-    --logo-blue-top: #4B64E0;
-    --logo-blue-mid: #3E56CB;
-    --logo-blue-bottom: #2F45AE;
+    --brand-blue: #445FE4;
+    --brand-blue-rgb: 68, 95, 228;
+    --brand-blue-glow: 156, 177, 255;
+    --schedule-blue-top: #5A72F2;
+    --schedule-blue-mid: #445FE4;
+    --schedule-blue-bottom: #3149BB;
+    --logo-blue-top: #5A72F2;
+    --logo-blue-mid: #445FE4;
+    --logo-blue-bottom: #3149BB;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -54,18 +54,18 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 .schedule-link {
     background-color: var(--schedule-blue-mid) !important;
     background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(146, 164, 255, 0.58) !important;
+    border: 1px solid rgba(170, 186, 255, 0.6) !important;
     color: var(--brand-blue-ink) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
       0 1px 2px rgba(0, 0, 0, 0.34),
-      0 7px 16px rgba(45, 72, 177, 0.34) !important;
+      0 7px 16px rgba(45, 72, 177, 0.36) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #516AE7 0%, #455ED3 52%, #344CB8 100%) !important;
+    background-image: linear-gradient(180deg, #657CF8 0%, #4E68EA 52%, #394FC8 100%) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }
@@ -171,13 +171,12 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.24),
-        0 2px 4px rgba(2, 8, 26, 0.16),
-        -0.24px  0 0 rgba(194, 161, 90, 0.24),
-         0.24px  0 0 rgba(194, 161, 90, 0.24),
-         0 -0.24px 0 rgba(194, 161, 90, 0.24),
-         0  0.24px 0 rgba(194, 161, 90, 0.24),
-         0 0 0.72px rgba(122, 147, 255, 0.26);
+        0 -0.55px 0 rgba(205, 218, 255, 0.34),
+        0 1.1px 0 rgba(28, 40, 96, 0.74),
+        0 2px 4px rgba(2, 8, 26, 0.26),
+        0 7px 16px rgba(7, 13, 36, 0.36),
+       -0.2px 0 0 rgba(122, 147, 255, 0.24),
+        0.2px 0 0 rgba(122, 147, 255, 0.24);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -313,34 +312,13 @@ html.switch .logo-help {
     -webkit-text-fill-color: currentColor;
     background: none;
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.20),
-        0 2px 4px rgba(2, 8, 24, 0.12),
-        -0.22px  0 0 rgba(194, 161, 90, 0.22),
-         0.22px  0 0 rgba(194, 161, 90, 0.22),
-         0 -0.22px 0 rgba(194, 161, 90, 0.22),
-         0  0.22px 0 rgba(194, 161, 90, 0.22),
-         0 0 0.68px rgba(118, 143, 232, 0.24);
+        0 -0.45px 0 rgba(207, 219, 255, 0.3),
+        0 1px 0 rgba(31, 45, 108, 0.64),
+        0 2px 4px rgba(2, 8, 24, 0.2),
+        0 0 0.68px rgba(118, 143, 232, 0.28);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
-}
-
-/* Indigo tonal fill adds depth without introducing glow effects. */
-@supports (-webkit-background-clip: text) {
-    .logo-it,
-    .logo-help,
-    html.switch .logo-it,
-    html.switch .logo-help {
-        background: linear-gradient(
-            180deg,
-            var(--logo-blue-top) 0%,
-            var(--logo-blue-mid) 46%,
-            var(--logo-blue-bottom) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
 }
 
 
@@ -570,7 +548,7 @@ html.switch .particle {
 }
 
 .logo-container:hover .glitch-container {
-    filter: drop-shadow(0 0 10px rgba(213, 173, 54, 0.18));
+    filter: drop-shadow(0 0 10px rgba(108, 136, 255, 0.2));
 }
 
 .hex-decoration {

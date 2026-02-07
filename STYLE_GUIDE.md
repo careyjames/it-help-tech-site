@@ -4,19 +4,19 @@ Last updated: 2026-02-07
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (logo + navigation CTA): `#3A56D8`  
+- Primary Blue (logo + navigation CTA): `#445FE4`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Indigo Depth Ramp:
-  - Top: `#4B64E0` (`--logo-blue-top`)
-  - Mid: `#3E56CB` (`--logo-blue-mid`)
-  - Bottom: `#2F45AE` (`--logo-blue-bottom`)
+  - Top: `#5A72F2` (`--logo-blue-top`)
+  - Mid: `#445FE4` (`--logo-blue-mid`)
+  - Bottom: `#3149BB` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#4B64E0` (`--schedule-blue-top`)
-  - Mid: `#3E56CB` (`--schedule-blue-mid`)
-  - Bottom: `#2F45AE` (`--schedule-blue-bottom`)
+  - Top: `#5A72F2` (`--schedule-blue-top`)
+  - Mid: `#445FE4` (`--schedule-blue-mid`)
+  - Bottom: `#3149BB` (`--schedule-blue-bottom`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -32,6 +32,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
+- Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
 - Gold-forward fallback snapshot (if we intentionally choose that direction): `main@a3b9ea2` from PR `#430`; use it as the restore baseline for logo color treatment.
 - Use Gold in controlled doses: CTA button style and restrained logo trim only.
 - Red is reserved for the plus sign.
