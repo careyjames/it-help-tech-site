@@ -112,3 +112,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Increased logo indigo saturation and reduced cool overlay intensity so IT/HELP letters read as blue (not silver/steel), while preserving gold edge and plus-sign treatment.
 - Why: Match intended brand blue expression and improve perceived type consistency against the Schedule CTA.
 - Rollback: this branch/PR (`codex/ithelp-logo-blue-de-silver`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP + Schedule hard blue alignment
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Aligned IT/HELP logo ramp directly to the Schedule button ramp and reduced cool overlay/shadow wash that desaturated the logo letters.
+- Why: Deliver clear, unmistakable blue identity with immediate color parity between logo and Schedule CTA.
+- Rollback: this branch/PR (`codex/ithelp-logo-button-blue-unify`).
