@@ -92,3 +92,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Kept the existing primary blue token but introduced a tonal indigo ramp on the IT/HELP letter fill and Schedule button, added subtle dimensional button treatment, and replaced cyan-leaning micro highlights with indigo-leaning highlights.
 - Why: Remove remaining flat/"Windows 95" blue impression while preserving accessibility, performance, and calm authority.
 - Rollback: this branch/PR (`codex/ithelp-blue-depth-pass`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP + Schedule color consistency refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Split logo and Schedule into dedicated indigo depth ramps, reduced muddy/gray cast in IT/HELP lettering by tuning shadow/overlay balance, and removed logo gleam animation on the base letterforms for steadier type color.
+- Why: Improve perceived quality and type-consistent blue identity while preserving trust posture and technical score gates.
+- Rollback: this branch/PR (`codex/ithelp-logo-color-consistency-v2`).

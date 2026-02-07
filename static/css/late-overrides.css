@@ -23,8 +23,12 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --brand-blue: #3A56D8;
     --brand-blue-rgb: 58, 86, 216;
     --brand-blue-glow: 142, 162, 255;
-    --brand-blue-top: #4A66E6;
-    --brand-blue-bottom: #2B44B4;
+    --logo-blue-top: #5B74F0;
+    --logo-blue-mid: #4A63DE;
+    --logo-blue-bottom: #354AB8;
+    --schedule-blue-top: #4B64E0;
+    --schedule-blue-mid: #3E56CB;
+    --schedule-blue-bottom: #2F45AE;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -48,20 +52,20 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 .schedule-link {
-    background-color: var(--brand-blue) !important;
-    background-image: linear-gradient(180deg, var(--brand-blue-top) 0%, var(--brand-blue) 52%, var(--brand-blue-bottom) 100%) !important;
-    border: 1px solid rgba(160, 176, 255, 0.55) !important;
+    background-color: var(--schedule-blue-mid) !important;
+    background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
+    border: 1px solid rgba(146, 164, 255, 0.58) !important;
     color: var(--brand-blue-ink) !important;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.18),
-      0 1px 2px rgba(0, 0, 0, 0.35),
-      0 8px 18px rgba(var(--brand-blue-rgb), 0.28) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.20),
+      0 1px 2px rgba(0, 0, 0, 0.34),
+      0 7px 16px rgba(45, 72, 177, 0.34) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #516DF0 0%, #4360E2 52%, #314EC3 100%) !important;
+    background-image: linear-gradient(180deg, #516AE7 0%, #455ED3 52%, #344CB8 100%) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }
@@ -166,23 +170,22 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.55),
-        0 3px 6px rgba(0, 0, 0, 0.35),
-        0 -1px 0 rgba(255, 255, 255, 0.12),
-        -0.16px -0.16px 0 rgba(132, 152, 255, 0.34),
-         0.16px -0.16px 0 rgba(132, 152, 255, 0.34),
-        -0.16px  0.16px 0 rgba(132, 152, 255, 0.34),
-         0.16px  0.16px 0 rgba(132, 152, 255, 0.34),
-            -0.56px  0 0 rgba(194, 161, 90, 0.73),
-             0.56px  0 0 rgba(194, 161, 90, 0.73),
-             0 -0.56px 0 rgba(194, 161, 90, 0.73),
-             0  0.56px 0 rgba(194, 161, 90, 0.73),
-            -0.56px -0.56px 0 rgba(194, 161, 90, 0.73),
-             0.56px -0.56px 0 rgba(194, 161, 90, 0.73),
-            -0.56px  0.56px 0 rgba(194, 161, 90, 0.73),
-             0.56px  0.56px 0 rgba(194, 161, 90, 0.73),
-             0 0 1.8px rgba(194, 161, 90, 0.34);
-    animation: logo-gleam 6s ease-in-out infinite;
+        0 1px 0 rgba(0, 0, 0, 0.44),
+        0 3px 7px rgba(2, 8, 26, 0.34),
+        -0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
+         0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
+        -0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
+         0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
+            -0.54px  0 0 rgba(194, 161, 90, 0.69),
+             0.54px  0 0 rgba(194, 161, 90, 0.69),
+             0 -0.54px 0 rgba(194, 161, 90, 0.69),
+             0  0.54px 0 rgba(194, 161, 90, 0.69),
+            -0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
+             0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
+            -0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
+             0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
+             0 0 1.5px rgba(194, 161, 90, 0.30);
+    animation: none;
     position: relative;
     left: 0.1em;
     z-index: 2;
@@ -200,23 +203,22 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.55),
-        0 3px 6px rgba(0, 0, 0, 0.35),
-        0 -1px 0 rgba(255, 255, 255, 0.12),
-        -0.16px -0.16px 0 rgba(132, 152, 255, 0.34),
-         0.16px -0.16px 0 rgba(132, 152, 255, 0.34),
-        -0.16px  0.16px 0 rgba(132, 152, 255, 0.34),
-         0.16px  0.16px 0 rgba(132, 152, 255, 0.34),
-        -0.56px  0 0 rgba(194, 161, 90, 0.73),
-         0.56px  0 0 rgba(194, 161, 90, 0.73),
-         0 -0.56px 0 rgba(194, 161, 90, 0.73),
-         0  0.56px 0 rgba(194, 161, 90, 0.73),
-        -0.56px -0.56px 0 rgba(194, 161, 90, 0.73),
-         0.56px -0.56px 0 rgba(194, 161, 90, 0.73),
-        -0.56px  0.56px 0 rgba(194, 161, 90, 0.73),
-         0.56px  0.56px 0 rgba(194, 161, 90, 0.73),
-         0 0 1.8px rgba(194, 161, 90, 0.34);
-    animation: logo-gleam 6s ease-in-out infinite;
+        0 1px 0 rgba(0, 0, 0, 0.44),
+        0 3px 7px rgba(2, 8, 26, 0.34),
+        -0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
+         0.15px -0.15px 0 rgba(164, 182, 255, 0.42),
+        -0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
+         0.15px  0.15px 0 rgba(164, 182, 255, 0.42),
+        -0.54px  0 0 rgba(194, 161, 90, 0.69),
+         0.54px  0 0 rgba(194, 161, 90, 0.69),
+         0 -0.54px 0 rgba(194, 161, 90, 0.69),
+         0  0.54px 0 rgba(194, 161, 90, 0.69),
+        -0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
+         0.54px -0.54px 0 rgba(194, 161, 90, 0.69),
+        -0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
+         0.54px  0.54px 0 rgba(194, 161, 90, 0.69),
+         0 0 1.5px rgba(194, 161, 90, 0.30);
+    animation: none;
     position: relative;
     left: -0.03em;
     z-index: 2;
@@ -240,12 +242,12 @@ html.switch .logo-constellation {
     inset: 0;
     color: transparent;
     background: linear-gradient(180deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0.08) 30%,
-        rgba(255, 255, 255, 0) 60%);
+        rgba(178, 196, 255, 0.22) 0%,
+        rgba(153, 175, 255, 0.08) 36%,
+        rgba(153, 175, 255, 0) 68%);
     -webkit-background-clip: text;
     background-clip: text;
-    opacity: 0.6;
+    opacity: 0.44;
     pointer-events: none;
     z-index: 3;
     font: inherit;
@@ -387,23 +389,22 @@ html.switch .logo-help {
     -webkit-text-fill-color: var(--brand-blue);
     background: none;
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.45),
-        0 2px 5px rgba(0, 0, 0, 0.28),
-        0 -1px 0 rgba(255, 255, 255, 0.1),
-        -0.16px -0.16px 0 rgba(126, 145, 244, 0.3),
-         0.16px -0.16px 0 rgba(126, 145, 244, 0.3),
-        -0.16px  0.16px 0 rgba(126, 145, 244, 0.3),
-         0.16px  0.16px 0 rgba(126, 145, 244, 0.3),
-        -0.48px  0 0 rgba(194, 161, 90, 0.66),
-         0.48px  0 0 rgba(194, 161, 90, 0.66),
-         0 -0.48px 0 rgba(194, 161, 90, 0.66),
-         0  0.48px 0 rgba(194, 161, 90, 0.66),
-        -0.48px -0.48px 0 rgba(194, 161, 90, 0.66),
-         0.48px -0.48px 0 rgba(194, 161, 90, 0.66),
-        -0.48px  0.48px 0 rgba(194, 161, 90, 0.66),
-         0.48px  0.48px 0 rgba(194, 161, 90, 0.66),
-         0 0 1.4px rgba(194, 161, 90, 0.30);
-    animation: logo-gleam 6s ease-in-out infinite;
+        0 1px 0 rgba(0, 0, 0, 0.42),
+        0 2px 5px rgba(2, 8, 24, 0.30),
+        -0.15px -0.15px 0 rgba(158, 176, 252, 0.38),
+         0.15px -0.15px 0 rgba(158, 176, 252, 0.38),
+        -0.15px  0.15px 0 rgba(158, 176, 252, 0.38),
+         0.15px  0.15px 0 rgba(158, 176, 252, 0.38),
+        -0.48px  0 0 rgba(194, 161, 90, 0.64),
+         0.48px  0 0 rgba(194, 161, 90, 0.64),
+         0 -0.48px 0 rgba(194, 161, 90, 0.64),
+         0  0.48px 0 rgba(194, 161, 90, 0.64),
+        -0.48px -0.48px 0 rgba(194, 161, 90, 0.64),
+         0.48px -0.48px 0 rgba(194, 161, 90, 0.64),
+        -0.48px  0.48px 0 rgba(194, 161, 90, 0.64),
+         0.48px  0.48px 0 rgba(194, 161, 90, 0.64),
+         0 0 1.35px rgba(194, 161, 90, 0.28);
+    animation: none;
 }
 
 /* Indigo tonal fill adds depth without introducing glow effects. */
@@ -414,9 +415,9 @@ html.switch .logo-help {
     html.switch .logo-help {
         background: linear-gradient(
             180deg,
-            var(--brand-blue-top) 0%,
-            var(--brand-blue) 46%,
-            var(--brand-blue-bottom) 100%
+            var(--logo-blue-top) 0%,
+            var(--logo-blue-mid) 46%,
+            var(--logo-blue-bottom) 100%
         );
         -webkit-background-clip: text;
         background-clip: text;
