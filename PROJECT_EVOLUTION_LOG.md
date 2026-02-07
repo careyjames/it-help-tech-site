@@ -143,3 +143,14 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Replaced stroke-based logo edge with shadow-based edge treatment to prevent Safari glyph artifacts (notably on `P`), and removed the in-content top-level DNS Tool heading so the template `h1` is the single visible page title.
 - Why: Improve rendering reliability and keep SEO/semantic heading structure clean with one `h1` per page.
 - Rollback: this branch/PR (`codex/ithelp-logo-p-artifact-fix`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Blue-led cohesion refinement for IT/HELP logo
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Reduced gold edge-shadow intensity on IT/HELP lettering and increased subtle blue edge support so the logo reads clearly blue while retaining a restrained gold trim.
+- Why: Improve color cohesion with the Schedule CTA and preserve a cleaner, more professional blue-first visual system.
+- Rollback: this branch/PR (`codex/ithelp-color-cohesion-blue-led`).
+- Gold fallback reference: `main@a3b9ea2` (PR `#430`) preserves the current gold-forward logo treatment if we decide to revert to that direction.

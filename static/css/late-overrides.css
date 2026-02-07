@@ -171,13 +171,13 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.26),
-        0 2px 4px rgba(2, 8, 26, 0.18),
-        -0.34px  0 0 rgba(194, 161, 90, 0.56),
-         0.34px  0 0 rgba(194, 161, 90, 0.56),
-         0 -0.34px 0 rgba(194, 161, 90, 0.56),
-         0  0.34px 0 rgba(194, 161, 90, 0.56),
-         0 0 0.8px rgba(194, 161, 90, 0.22);
+        0 1px 0 rgba(0, 0, 0, 0.24),
+        0 2px 4px rgba(2, 8, 26, 0.16),
+        -0.24px  0 0 rgba(194, 161, 90, 0.24),
+         0.24px  0 0 rgba(194, 161, 90, 0.24),
+         0 -0.24px 0 rgba(194, 161, 90, 0.24),
+         0  0.24px 0 rgba(194, 161, 90, 0.24),
+         0 0 0.72px rgba(122, 147, 255, 0.26);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -313,13 +313,13 @@ html.switch .logo-help {
     -webkit-text-fill-color: currentColor;
     background: none;
     text-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.22),
-        0 2px 4px rgba(2, 8, 24, 0.14),
-        -0.30px  0 0 rgba(194, 161, 90, 0.50),
-         0.30px  0 0 rgba(194, 161, 90, 0.50),
-         0 -0.30px 0 rgba(194, 161, 90, 0.50),
-         0  0.30px 0 rgba(194, 161, 90, 0.50),
-         0 0 0.75px rgba(194, 161, 90, 0.20);
+        0 1px 0 rgba(0, 0, 0, 0.20),
+        0 2px 4px rgba(2, 8, 24, 0.12),
+        -0.22px  0 0 rgba(194, 161, 90, 0.22),
+         0.22px  0 0 rgba(194, 161, 90, 0.22),
+         0 -0.22px 0 rgba(194, 161, 90, 0.22),
+         0  0.22px 0 rgba(194, 161, 90, 0.22),
+         0 0 0.68px rgba(118, 143, 232, 0.24);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
