@@ -21,6 +21,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Red is reserved for the plus sign.
 - Avoid introducing new colors without updating this guide.
 - Do not use gold as a general link/highlight color across body content.
+- Keep the red plus sign unchanged; it is a core identity anchor.
+- Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
+- Current target is a subdued edge treatment (~18% quieter than prior) in `static/css/late-overrides.css`.
 
 ## Accessibility
 - Minimum contrast ratio for normal text: 4.5:1 (WCAG).
@@ -43,9 +46,15 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Respect `prefers-reduced-motion`: disable decorative hero motion effects when reduction is requested.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
 
+## Change Tracking
+- AI agent entry point is `AGENTS.md`.
+- Log visual-system changes in `PROJECT_EVOLUTION_LOG.md`.
+- Each entry should include: date, actor (AI/dev), files changed, rationale, and rollback notes.
+
 ## Key Files
 - Hero/logo styles: `static/css/late-overrides.css`
 - Palette + component tokens: `sass/_extra.scss`
 - Theme link colors: `sass/css/abridge.scss`
 - Logo markup: `templates/partials/hero_logo.html`
 - Hero logo behavior: `static/js/hero-logo.js`
+- Evolution log: `PROJECT_EVOLUTION_LOG.md`
