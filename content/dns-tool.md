@@ -7,8 +7,6 @@ extra:
   skip_author: true
 ---
 
-# DNS Tool - DNS & Email Security Auditor
-
 DNS Tool is a **professional-grade DNS, email, and brand security auditor** designed to answer one question clearly: *can this domain be trusted on the internet today?*
 
 It analyzes real-world DNS behavior, not just static records, and presents the results in a single, defensible report.

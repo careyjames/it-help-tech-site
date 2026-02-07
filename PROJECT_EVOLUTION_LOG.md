@@ -132,3 +132,14 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Replaced multi-layer pseudo-text rendering on IT/HELP with single-layer letter rendering, retained indigo ramp fill, and kept restrained gold edge via stroke/shadow to remove ghosting/double-glyph artifacts.
 - Why: Improve professional finish and color clarity while preventing visual duplication artifacts in real-world browsers/screenshots.
 - Rollback: this branch/PR (`codex/ithelp-logo-clean-typography`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Safari glyph artifact fix + DNS Tool heading hierarchy cleanup
+- Files:
+  - `static/css/late-overrides.css`
+  - `content/dns-tool.md`
+  - `STYLE_GUIDE.md`
+- Change: Replaced stroke-based logo edge with shadow-based edge treatment to prevent Safari glyph artifacts (notably on `P`), and removed the in-content top-level DNS Tool heading so the template `h1` is the single visible page title.
+- Why: Improve rendering reliability and keep SEO/semantic heading structure clean with one `h1` per page.
+- Rollback: this branch/PR (`codex/ithelp-logo-p-artifact-fix`).
