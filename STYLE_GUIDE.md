@@ -23,7 +23,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Do not use gold as a general link/highlight color across body content.
 - Keep the red plus sign unchanged; it is a core identity anchor.
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
-- Current target is a subdued edge treatment (~18% quieter than prior) in `static/css/late-overrides.css`.
+- Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
 
 ## Accessibility
 - Minimum contrast ratio for normal text: 4.5:1 (WCAG).

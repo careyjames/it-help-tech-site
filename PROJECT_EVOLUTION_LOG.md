@@ -60,3 +60,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Added non-negotiable quality philosophy and measurable acceptance gates (Lighthouse, Observatory, security, accessibility, performance, trust/psychology), with explicit "symbiotic best-practices" guidance across all systems.
 - Why: Make standards explicit for all AI/dev contributors and prevent "fix later" development drift.
 - Rollback: this branch/PR (separate from base palette PR).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: IT/HELP logo-edge micro-tune (post-merge refinement)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Applied a small follow-up reduction (about 8-10% from the previous tuned state) to IT/HELP edge and sheen alpha values while preserving thickness/geometry for readability.
+- Why: Keep dimensional clarity for older eyes while reducing remaining visual shine/noise.
+- Rollback: this branch/PR (`codex/ithelp-logo-edge-micro-tune`).
