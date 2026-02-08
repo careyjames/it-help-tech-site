@@ -339,6 +339,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero pill surface cleanup v4 (stroke ring + flat navy interior)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Replaced the gold fill-band ring with a strict 2px gold stroke, removed hover glow/bevel artifacts, and converted the interior from beveled gradient to a flatter translucent navy surface to reduce dirty/tilted edge perception on mobile and desktop.
+- Why: User reported the previous pass looked worse and still felt noisy/unclean, especially on iPhone.
+- Rollback: this branch/PR (`codex/hero-pill-clean-surface-v4`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero pill edge-cleanup pass (remove inner seam artifact)
 - Files:
   - `static/css/late-overrides.css`

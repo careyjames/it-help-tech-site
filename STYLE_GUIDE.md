@@ -59,6 +59,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero tagline gold frame should read as a crisp solid perimeter on mobile and desktop.
 - Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
 - Avoid inner highlight seams on the hero pill: no inset white line or inner blue border on the panel interior.
+- Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
 - Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
 - Keep nav icon slots symmetric; if house vs sun optical size diverges, tune glyph size/stroke, not whitespace hacks.
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
