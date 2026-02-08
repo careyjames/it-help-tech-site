@@ -246,3 +246,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Introduced a role-based blue system within one hue family: deeper logo ramp for authority, brighter Schedule/link ramp for action clarity, and matching shadow/border tuning for cleaner depth.
 - Why: Preserve full color cohesion while reducing “flat/boring default blue” perception and keeping trust-oriented visual psychology.
 - Rollback: this branch/PR (`codex/ithelp-role-based-blue-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Signal-cobalt signature pass (higher energy, no purple cast)
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Shifted shared blue tokens to a brighter signal-cobalt family, increased logo letter depth via highlight/shadow tuning, and aligned Schedule + link ramps to the same hue family with stronger action contrast.
+- Why: Keep cohesion while pushing the palette away from “boring/default blue” toward a cleaner premium look.
+- Rollback: this branch/PR (`codex/ithelp-blue-signature-v5`).
