@@ -349,6 +349,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero pill seam removal + Schedule CTA depth polish v5
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Moved the hero pill to a single-surface shell model (outer wrapper owns border+translucent fill, inner text layer is transparent) to eliminate inner-gap/tilt artifacts on desktop/mobile; also deepened and restrained the Schedule CTA gradient, border, and relief so it reads more premium and less toy-like.
+- Why: User reported a visible inner gap/outline in the pill and requested a more professional, deeper Schedule button finish.
+- Rollback: this branch/PR (`codex/hero-pill-and-schedule-polish-v5`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero pill edge-cleanup pass (remove inner seam artifact)
 - Files:
   - `static/css/late-overrides.css`

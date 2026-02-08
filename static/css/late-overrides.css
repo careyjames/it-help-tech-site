@@ -52,20 +52,22 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 .schedule-link {
-    background-color: var(--schedule-blue-mid) !important;
-    background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(138, 186, 238, 0.62) !important;
+    background-color: #3C73B5 !important;
+    background-image: linear-gradient(180deg, #5F97D3 0%, #3C73B5 52%, #274F8E 100%) !important;
+    border: 1px solid rgba(120, 167, 226, 0.54) !important;
     color: var(--brand-blue-ink) !important;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+    text-shadow: 0 1px 0 rgba(1, 8, 18, 0.42);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.18),
-      0 1px 2px rgba(0, 0, 0, 0.34),
-      0 8px 18px rgba(18, 52, 110, 0.42) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      inset 0 -1px 0 rgba(5, 16, 34, 0.42),
+      0 1px 2px rgba(0, 0, 0, 0.32),
+      0 7px 16px rgba(8, 24, 52, 0.34) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #7ABDF8 0%, #4C95E2 52%, #2D68BC 100%) !important;
+    background-image: linear-gradient(180deg, #70A7E1 0%, #4A82C4 52%, #2F62A4 100%) !important;
+    border-color: rgba(138, 188, 245, 0.62) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }
@@ -361,11 +363,12 @@ html.switch .location {
 
 .tagline-border {
     display: inline-block; /* pill snaps to content width */
-    padding: 0;
+    padding: 10px 20px;
     border-radius: 30px;
     border: 2px solid #D2B56F;
-    background: transparent;
-    box-shadow: none;
+    background-color: rgba(8, 24, 48, 0.52);
+    box-shadow: 0 5px 10px rgba(2, 8, 18, 0.16);
+    overflow: hidden;
     position: relative;
     z-index: 0;
 }
@@ -373,44 +376,62 @@ html.switch .location {
 .tagline-text {
     display: block;
     white-space: nowrap;
-    margin: 2px;
+    margin: 0;
     color: #fff;
-    padding: 10px 20px;
-    background-color: rgba(8, 24, 48, 0.58);
+    padding: 0;
+    background-color: transparent;
     background-image: none;
-    border-radius: 26px;
+    border-radius: 0;
     border: 0;
-    box-shadow: 0 6px 12px rgba(3, 8, 19, 0.18);
+    box-shadow: none;
 }
 
 /* colour-scheme specific pill styling */
 @media (prefers-color-scheme:light){
+  .tagline-border{
+    background-color:#ffffff;
+    border-color: rgba(165, 175, 188, 0.62);
+    box-shadow: 0 2px 6px rgba(80, 95, 120, 0.14);
+  }
   .tagline-text{
     color:#000;
-    background-color:#ffffff;
-    border-color: rgba(165, 175, 188, 0.45);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
   }
 }
 @media (prefers-color-scheme:dark){
+  .tagline-border{
+    background-color: rgba(8, 24, 48, 0.52);
+    border-color: #D2B56F;
+  }
   .tagline-text{
     color:#fff;
-    background-color: rgba(8, 24, 48, 0.58);
+    background-color: transparent;
     background-image: none;
   }
 }
 html.switch .tagline-text{
   color:#000;
-  background-color:#ffffff;
-  border-color: rgba(165, 175, 188, 0.45);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background-color:transparent;
+  border-color: transparent;
+  box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+html.switch .tagline-border{
+  background-color:#ffffff;
+  border-color: rgba(165, 175, 188, 0.62);
+  box-shadow: 0 2px 6px rgba(80, 95, 120, 0.14);
+}
 html:not(.switch) .tagline-text{
   color:#fff;
-  background-color: rgba(8, 24, 48, 0.58);
+  background-color: transparent;
   background-image: none;
+}
+html:not(.switch) .tagline-border{
+  background-color: rgba(8, 24, 48, 0.52);
+  border-color: #D2B56F;
 }
 
 .tagline-border::before {
@@ -631,7 +652,7 @@ html.switch .particle {
   }
 
   /* compensate for smaller container padding */
-  .tagline-text{padding:8px 16px;}
+  .tagline-border{padding:8px 16px;}
 }
 /* ---- keep .gold-link in the controlled interaction palette -------- */
 html:not(.switch) h1 a.gold-link,

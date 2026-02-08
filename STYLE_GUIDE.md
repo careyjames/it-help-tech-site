@@ -60,10 +60,12 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
 - Avoid inner highlight seams on the hero pill: no inset white line or inner blue border on the panel interior.
 - Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
+- Keep hero pill as a single-surface shell (border + translucent fill on outer wrapper, transparent text layer) to prevent inner-gap artifacts.
 - Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
 - Keep nav icon slots symmetric; if house vs sun optical size diverges, tune glyph size/stroke, not whitespace hacks.
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
+- Schedule CTA should favor deeper, restrained blue depth (not bright toy-like highlights) with subtle professional relief.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
 - Hero vertical rhythm should use micro-adjustments only: reduce dead air above the logo and tighten `san diego` under IT+HELP, while preserving clear separation between logo block, tagline pill, and nav row.
 
