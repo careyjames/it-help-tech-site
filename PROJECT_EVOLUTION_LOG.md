@@ -258,3 +258,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted shared blue tokens to a brighter signal-cobalt family, increased logo letter depth via highlight/shadow tuning, and aligned Schedule + link ramps to the same hue family with stronger action contrast.
 - Why: Keep cohesion while pushing the palette away from “boring/default blue” toward a cleaner premium look.
 - Rollback: this branch/PR (`codex/ithelp-blue-signature-v5`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Royal-cobalt depth pass (bigger visible shift)
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Darkened and saturated the shared blue family to a royal-cobalt profile, deepened logo letter shadows for stronger dimensionality, and retuned Schedule/link blues to remain cohesive while reading less “default sky blue.”
+- Why: Address user feedback that prior changes looked too subtle and still felt visually generic.
+- Rollback: this branch/PR (`codex/ithelp-blue-royal-cobalt-v6`).

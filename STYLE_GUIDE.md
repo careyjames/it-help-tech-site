@@ -4,24 +4,24 @@ Last updated: 2026-02-08
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (shared hue anchor): `#3E98FF`  
+- Primary Blue (shared hue anchor): `#2F7DF4`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#71B8FF` (`--logo-blue-top`)
-  - Mid: `#3A7EE6` (`--logo-blue-mid`)
-  - Bottom: `#1B469B` (`--logo-blue-bottom`)
+  - Top: `#66A7FF` (`--logo-blue-top`)
+  - Mid: `#2F6FDB` (`--logo-blue-mid`)
+  - Bottom: `#183C8F` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#89CCFF` (`--schedule-blue-top`)
-  - Mid: `#4AA3FF` (`--schedule-blue-mid`)
-  - Bottom: `#2E73E7` (`--schedule-blue-bottom`)
+  - Top: `#6AAFFF` (`--schedule-blue-top`)
+  - Mid: `#337FF5` (`--schedule-blue-mid`)
+  - Bottom: `#1F55C8` (`--schedule-blue-bottom`)
 - Body/Utility Link Blue (same hue family, action-biased):
-  - Dark mode link: `#9DD7FF` (`$a1d`)
-  - Dark mode hover: `#C9E9FF` (`$a2d`)
-  - Light mode link: `#2372DE` (`$a1`)
-  - Light mode hover: `#3A8AEE` (`$a2`)
+  - Dark mode link: `#87C3FF` (`$a1d`)
+  - Dark mode hover: `#B1DAFF` (`$a2d`)
+  - Light mode link: `#1C58C2` (`$a1`)
+  - Light mode hover: `#2B6FD8` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -35,7 +35,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should remain in the same family even when depth differs by role.
 - Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
-- Current blue target: signal-cobalt with stronger clarity/energy, no purple cast, and no neon glow.
+- Current blue target: royal-cobalt depth with stronger authority and no purple cast.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
