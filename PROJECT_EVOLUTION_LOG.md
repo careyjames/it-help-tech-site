@@ -294,3 +294,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Anchored IT/HELP + Schedule + links to DNS Tool’s non-purple blue family (`#58A6FF` anchor), and shifted site dark surfaces from flat black to deep navy-charcoal (`#0D1117` / `#161B22`) for cleaner contrast and less muddiness.
 - Why: User requested a non-purple blue outcome and approved background changes if needed to reach a polished final look.
 - Rollback: this branch/PR (`codex/ithelp-true-blue-v8`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Darken Schedule CTA on navy background
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Darkened Schedule button gradient, border, and glow/shadow intensity to fit the new deep navy surface while preserving high-contrast text and hover affordance.
+- Why: User reported the Schedule button still looked too light against the darker page and wanted a darker, more polished CTA.
+- Rollback: this branch/PR (`codex/ithelp-schedule-darken-v1`).
