@@ -620,18 +620,16 @@ html.switch .particle {
     padding: 12px 14px 2px;
   }
 
-  .location {
-    margin-top: -12px;
-  }
-
-  .tagline {
-    margin-top: 3px;
-  }
-
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
-  .location  {font-size:7vw;}
-  .tagline   {font-size:4.6vw;}
+  .location  {
+    margin-top: -12px;
+    font-size:7vw;
+  }
+  .tagline   {
+    margin-top: 3px;
+    font-size:4.6vw;
+  }
 
   /* compensate for smaller container padding */
   .tagline-text{padding:8px 16px;}
