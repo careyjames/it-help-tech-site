@@ -234,3 +234,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted shared blue tokens to a crisper ice-cobalt family, increased blue energy in logo/CTA gradients, and aligned link tokens to the same hue family with contrast-safe light-mode values.
 - Why: Keep cohesive control while pushing toward a more exciting, less “generic” blue impression.
 - Rollback: this branch/PR (`codex/ithelp-ice-cobalt-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Role-based blue depth pass (authority logo + action CTA/links)
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Introduced a role-based blue system within one hue family: deeper logo ramp for authority, brighter Schedule/link ramp for action clarity, and matching shadow/border tuning for cleaner depth.
+- Why: Preserve full color cohesion while reducing “flat/boring default blue” perception and keeping trust-oriented visual psychology.
+- Rollback: this branch/PR (`codex/ithelp-role-based-blue-v1`).
