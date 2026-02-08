@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: San Diego hierarchy correction (subdued under primary mark)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Reduced `san diego` brightness/glow and lowered visual weight so it stays legible but clearly subordinate to `IT+HELP`.
+- Why: User feedback showed `san diego` was reading too close to white and visually competing with the main brand text.
+- Rollback: this branch/PR (`codex/plus-jiggle-logo-depth-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: San Diego lockup proportional consistency + tighter vertical relationship
 - Files:
   - `static/css/late-overrides.css`
