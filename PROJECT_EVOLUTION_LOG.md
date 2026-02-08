@@ -318,6 +318,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero readability/breathing correction pass on PR #445
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Removed blur-prone treatment from the hero tagline panel, increased true dark-mode translucency so constellation particles read through cleanly, removed glow blur from tagline highlight words for sharper legibility, restored breathing space between tagline pill and nav row, and increased mobile `san diego` size/placement for better logo ratio.
+- Why: User reported muddy/brown panel tone, blurred highlight words, cramped pill-to-nav spacing, and undersized mobile `san diego`.
+- Rollback: this branch/PR (`codex/hero-panel-and-icon-balance-v1`), commit `58147f3` as immediate pre-fix reference.
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero control-row geometry + icon modernization
 - Files:
   - `templates/base.html`

@@ -54,6 +54,8 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
 - Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
 - Hero tagline panel should remain dark-first and high-legibility, but may use light translucency in dark mode; do not make it fully transparent.
+- Hero tagline panel should be translucent enough to reveal background motion subtly, but never use backdrop blur that softens tagline readability.
+- Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
 - Keep nav icon slots symmetric; if house vs sun optical size diverges, tune glyph size/stroke, not whitespace hacks.
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
