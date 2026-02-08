@@ -336,3 +336,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Rebuilt the nav pill layout as fixed CSS slots (home/more/schedule/mode) so icon spacing is deterministic without manual text spaces, moved `More` + chevron into the same blue family as Schedule, added a deeper nav-shell treatment, and replaced the old filled home glyph with a cleaner outline house icon.
 - Why: User reported spacing fragility and requested a tighter, more modern control row while preserving dark-mode polish and mobile tap ergonomics.
 - Rollback: this branch/PR (`codex/nav-grid-modern-icon-blue-more`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Hero tagline pill de-muddy pass (blue translucency + crisp gold perimeter)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Kept the hero pill gold frame but made it crisper and more stable, then shifted the dark-mode pill interior from warm/muddy tint to a cool navy-blue translucent gradient so constellation/particle motion remains visible while text contrast stays strong.
+- Why: User reported brown/muddy pill fill and requested a blue-toned transparent interior with clear background-motion visibility, especially on mobile.
+- Rollback: this branch/PR (`codex/hero-pill-blue-translucency-v1`).
