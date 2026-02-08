@@ -361,11 +361,11 @@ html.switch .location {
 
 .tagline-border {
     display: inline-block; /* pill snaps to content width */
-    padding: 2px;
+    padding: 0;
     border-radius: 30px;
-    border: 0;
-    background: #D2B56F;
-    box-shadow: 0 0 0 1px rgba(45, 33, 12, 0.34);
+    border: 2px solid #D2B56F;
+    background: transparent;
+    box-shadow: none;
     position: relative;
     z-index: 0;
 }
@@ -373,13 +373,14 @@ html.switch .location {
 .tagline-text {
     display: block;
     white-space: nowrap;
-    margin: 0;
+    margin: 2px;
     color: #fff;
     padding: 10px 20px;
-    background: linear-gradient(180deg, rgba(8, 22, 44, 0.76) 0%, rgba(5, 14, 30, 0.70) 100%);
-    border-radius: 28px;
+    background-color: rgba(8, 24, 48, 0.58);
+    background-image: none;
+    border-radius: 26px;
     border: 0;
-    box-shadow: 0 8px 14px rgba(3, 8, 19, 0.22);
+    box-shadow: 0 6px 12px rgba(3, 8, 19, 0.18);
 }
 
 /* colour-scheme specific pill styling */
@@ -394,7 +395,8 @@ html.switch .location {
 @media (prefers-color-scheme:dark){
   .tagline-text{
     color:#fff;
-    background: linear-gradient(180deg, rgba(8, 22, 44, 0.76) 0%, rgba(5, 14, 30, 0.70) 100%);
+    background-color: rgba(8, 24, 48, 0.58);
+    background-image: none;
   }
 }
 html.switch .tagline-text{
@@ -407,23 +409,12 @@ html.switch .tagline-text{
 }
 html:not(.switch) .tagline-text{
   color:#fff;
-  background: linear-gradient(180deg, rgba(8, 22, 44, 0.76) 0%, rgba(5, 14, 30, 0.70) 100%);
+  background-color: rgba(8, 24, 48, 0.58);
+  background-image: none;
 }
 
 .tagline-border::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: var(--accent-gold);
-    border-radius: 30px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: -1;
-    filter: blur(3px);
-}
-
-.logo-container:hover .tagline-border::before {
-    opacity: 0.12;
+    content: none;
 }
 
 .highlight {
