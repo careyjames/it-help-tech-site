@@ -23,9 +23,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --brand-blue: #58A6FF;
     --brand-blue-rgb: 88, 166, 255;
     --brand-blue-glow: 176, 218, 255;
-    --schedule-blue-top: #8FD7FF;
-    --schedule-blue-mid: #58A6FF;
-    --schedule-blue-bottom: #2F74CF;
+    --schedule-blue-top: #6CAFEF;
+    --schedule-blue-mid: #3F86D8;
+    --schedule-blue-bottom: #2359A9;
     --logo-blue-top: #8ED6FF;
     --logo-blue-mid: #58A6FF;
     --logo-blue-bottom: #2E72C9;
@@ -54,18 +54,18 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 .schedule-link {
     background-color: var(--schedule-blue-mid) !important;
     background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(185, 226, 255, 0.66) !important;
+    border: 1px solid rgba(138, 186, 238, 0.62) !important;
     color: var(--brand-blue-ink) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
       0 1px 2px rgba(0, 0, 0, 0.34),
-      0 8px 18px rgba(34, 100, 196, 0.44) !important;
+      0 8px 18px rgba(18, 52, 110, 0.42) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #A2DFFF 0%, #68B4FF 52%, #3E86DC 100%) !important;
+    background-image: linear-gradient(180deg, #7ABDF8 0%, #4C95E2 52%, #2D68BC 100%) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }

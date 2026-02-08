@@ -14,9 +14,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - Mid: `#58A6FF` (`--logo-blue-mid`)
   - Bottom: `#2E72C9` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#8FD7FF` (`--schedule-blue-top`)
-  - Mid: `#58A6FF` (`--schedule-blue-mid`)
-  - Bottom: `#2F74CF` (`--schedule-blue-bottom`)
+  - Top: `#6CAFEF` (`--schedule-blue-top`)
+  - Mid: `#3F86D8` (`--schedule-blue-mid`)
+  - Bottom: `#2359A9` (`--schedule-blue-bottom`)
 - Body/Utility Link Blue (same hue family, action-biased):
   - Dark mode link: `#79B8FF` (`$a1d`)
   - Dark mode hover: `#A5D0FF` (`$a2d`)
@@ -31,7 +31,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 ## Usage Rules
 - Keep one hue family but use role-based depth:
   - Logo = deeper authority blue.
-  - Schedule/link actions = brighter action blue.
+  - Schedule/link actions = clearly actionable blue, but on dark pages prefer a darker CTA tone to avoid glowing too bright.
 - IT/HELP lettering should use a 3-stop gradient fill (top/mid/bottom logo ramp) for clear dimensionality at a glance.
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
 - Current lock target: true non-purple blue aligned to DNS Tool `--status-info` (`#58A6FF`) as the anchor.
