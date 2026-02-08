@@ -56,18 +56,27 @@
   </div>
 
   <nav class="nav-wrapper">
-    <ul>
+    <ul class="nav-pill-list">
       <!-- home icon -->
-      <li>
+      <li class="nav-home">
         <a href="{{ get_url(path='/') }}" aria-label="Home" class="home-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.9"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M3.5 10.5 12 3.5l8.5 7"/>
+            <path d="M5.5 9.5V20.5h13V9.5"/>
+            <path d="M9.5 20.5v-5h5v5"/>
           </svg>
         </a>
       </li>
 
       <!-- dropdown -->
-      <li class="dropdown">
+      <li class="nav-more dropdown">
         <details>
           <summary class="dropdown-toggle">More</summary>
           <ul class="dropdown-content">
@@ -81,14 +90,14 @@
       </li>
 
       <!-- schedule -->
-      <li>
+      <li class="nav-schedule">
         <a href="https://schedule.it-help.tech/" target="_blank" rel="noopener" class="schedule-link">
           Schedule
         </a>
       </li>
 
       <!-- ALWAYS-ON sun / moon toggle -->
-      <li><button id="mode" class="mode-btn" type="button" aria-label="Toggle dark / light"></button></li>
+      <li class="nav-mode"><button id="mode" class="mode-btn" type="button" aria-label="Toggle dark / light"></button></li>
     </ul>
   </nav>
 </header>
