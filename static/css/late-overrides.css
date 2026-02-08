@@ -673,15 +673,12 @@ html:not(.switch) h6 a.gold-link:active {
 }
 
 /* Control-deck nav geometry: fixed icon slots, no text spacing hacks. */
-:root {
+.nav-wrapper {
     --nav-slot-size-mobile: 2.75rem;
     --nav-slot-size-desktop: 2.45rem;
     --nav-row-gap-mobile: 0.58rem;
     --nav-row-gap-desktop: 0.56rem;
     --nav-more-blue: var(--schedule-blue-top);
-}
-
-.nav-wrapper {
     --nav-slot-size: var(--nav-slot-size-mobile);
     --nav-row-gap: var(--nav-row-gap-mobile);
     background: linear-gradient(180deg, rgba(24, 38, 60, 0.95) 0%, rgba(13, 23, 38, 0.96) 100%) !important;
