@@ -190,11 +190,11 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.44px 0 rgba(192, 220, 248, 0.38),
-        0 1.08px 0 rgba(5, 19, 56, 0.9),
-        0 2px 5px rgba(2, 8, 24, 0.36),
-        0 9px 20px rgba(4, 12, 32, 0.44),
-        0 0 10px rgba(74, 142, 242, 0.18);
+        0 -0.5px 0 rgba(206, 230, 252, 0.42),
+        0 1.14px 0 rgba(4, 17, 52, 0.92),
+        0 2.4px 6px rgba(2, 8, 24, 0.40),
+        0 10px 22px rgba(4, 12, 32, 0.46),
+        0 0 8px rgba(74, 142, 242, 0.14);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -226,20 +226,24 @@ html.switch .logo-constellation {
     margin: 0 var(--logo-plus-gap);
     top: -0.055em;
     text-shadow: 
-        -0.3px -0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
-         0.3px -0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
-        -0.3px  0.3px 0 rgba(var(--brand-blue-rgb), 0.7),
-         0.3px  0.3px 0 rgba(var(--brand-blue-rgb), 0.7);
+        0 0 0.36px rgba(255, 230, 241, 0.24),
+        -0.42px -0.42px 0 rgba(34, 62, 108, 0.68),
+         0.42px -0.42px 0 rgba(34, 62, 108, 0.68),
+        -0.42px  0.42px 0 rgba(34, 62, 108, 0.68),
+         0.42px  0.42px 0 rgba(34, 62, 108, 0.68),
+         0 1px 2px rgba(8, 14, 30, 0.34);
     position: relative;
     z-index: 4;
-    animation: plus-jitter 3.5s ease-in-out infinite;
+    animation: plus-jitter 2.8s ease-in-out infinite;
 }
 
 @keyframes plus-jitter {
-  0%, 70% { transform: translate3d(0, 0, 0); }
-  72% { transform: translate3d(0.3px, -0.2px, 0); }
-  74% { transform: translate3d(-0.3px, 0.2px, 0); }
-  76% { transform: translate3d(0.2px, 0.1px, 0); }
+  0%, 54%, 100% { transform: translate3d(0, 0, 0); }
+  58% { transform: translate3d(0.50px, -0.34px, 0); }
+  62% { transform: translate3d(-0.50px, 0.30px, 0); }
+  66% { transform: translate3d(0.34px, 0.20px, 0); }
+  70% { transform: translate3d(-0.22px, -0.12px, 0); }
+  74% { transform: translate3d(0.12px, 0.04px, 0); }
   78% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(0, 0, 0); }
 }
@@ -344,21 +348,24 @@ html.switch .logo-help {
 
 
 .location {
-    font-size: 2.5rem;
-    margin-top: -16px;
+    font-size: clamp(2.35rem, 4.75vw, 2.95rem);
+    margin-top: -17px;
     text-transform: lowercase;
     position: relative;
     font-weight: 600;
-    color: #b2bac5;
-    letter-spacing: 0.06em;
+    color: #a8b9cc;
+    letter-spacing: 0.042em;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 0 6px rgba(178, 186, 197, 0.35);
+    text-shadow:
+        0 -0.32px 0 rgba(214, 226, 240, 0.25),
+        0 1px 0 rgba(7, 17, 34, 0.64),
+        0 0 7px rgba(138, 166, 198, 0.32);
 }
 
 html.switch .location {
-    color: #4b5563;
-    text-shadow: 0 0 5px rgba(75, 85, 99, 0.25);
+    color: #4d5c6d;
+    text-shadow: 0 0 5px rgba(86, 103, 126, 0.22);
 }
 
 @keyframes shine {
@@ -588,6 +595,9 @@ html.switch .particle {
     animation: none;
     opacity: 0.15;
   }
+  .logo-plus {
+    animation: none;
+  }
   .logo-it::after,
   .logo-help::after {
     animation: none;
@@ -660,9 +670,9 @@ html.switch .particle {
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
   .location  {
-    margin-top: -15px;
-    font-size:7.8vw;
-    letter-spacing: 0.045em;
+    margin-top: -16px;
+    font-size: clamp(1.95rem, 8.7vw, 2.32rem);
+    letter-spacing: 0.042em;
   }
   .tagline   {
     margin-top: 5px;

@@ -51,8 +51,10 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Do not use gold as a general link/highlight color across body content.
 - Keep the red plus sign unchanged; it is a core identity anchor.
 - Plus symbol vertical alignment target: `top: -0.055em` on `.logo-plus` to keep optical center aligned with IT/HELP cap height.
+- Plus motion should remain subtle-but-visible in normal mode (a brief micro-jitter pulse), and be disabled only when `prefers-reduced-motion` is set.
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
 - Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
+- `san diego` lockup should read as steel-blue gray (not flat gray), with a tight optical gap under IT/HELP and consistent desktop/mobile proportion.
 - Hero tagline panel should remain dark-first and high-legibility, but may use light translucency in dark mode; do not make it fully transparent.
 - Hero tagline panel should be translucent enough to reveal background motion subtly, but never use backdrop blur that softens tagline readability.
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
