@@ -339,6 +339,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero pill v2 anti-mud pass (true gold stroke + cooler translucency)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Converted hero pill perimeter to an explicit 2px gold border stroke and retuned the interior to a cooler, lighter navy-blue translucent gradient with reduced warm influence, preserving text crispness and particle visibility.
+- Why: User reported the previous pill still read muddy/brown on iPhone and requested a clearer blue-translucent interior with a solid gold line.
+- Rollback: this branch/PR (`codex/hero-pill-cool-blue-v2`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero tagline pill de-muddy pass (blue translucency + crisp gold perimeter)
 - Files:
   - `static/css/late-overrides.css`

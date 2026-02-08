@@ -57,6 +57,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero tagline panel should be translucent enough to reveal background motion subtly, but never use backdrop blur that softens tagline readability.
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
 - Hero tagline gold frame should read as a crisp solid perimeter on mobile and desktop.
+- Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
 - Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
 - Keep nav icon slots symmetric; if house vs sun optical size diverges, tune glyph size/stroke, not whitespace hacks.
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
