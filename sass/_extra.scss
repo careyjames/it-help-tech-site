@@ -1,9 +1,9 @@
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 
 :root {
-  --brand-primary: #6570FF;
-  --brand-primary-rgb: 101, 112, 255;
-  --brand-primary-glow: 188, 197, 255;
+  --brand-primary: #3D74FF;
+  --brand-primary-rgb: 61, 116, 255;
+  --brand-primary-glow: 156, 205, 255;
   --brand-accent: #C2A15A;
   --brand-accent-rgb: 194, 161, 90;
   --brand-accent-glow: 224, 197, 138;
@@ -11,12 +11,12 @@
 }
 
 :root:not(.switch) {
-  --a1-rgb: 170, 183, 255;
+  --a1-rgb: 144, 187, 255;
   --surface-rgb: 23, 23, 23;
 }
 
 :root.switch {
-  --a1-rgb: 64, 80, 199;
+  --a1-rgb: 46, 88, 194;
   --surface-rgb: 245, 245, 247;
 }
 

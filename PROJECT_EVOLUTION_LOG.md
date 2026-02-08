@@ -210,3 +210,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Moved the shared blue system to a stronger cobalt-indigo palette, increased top/bottom depth contrast in IT/HELP lettering shadows, and boosted Schedule CTA gradient contrast while keeping all links in the same hue family.
 - Why: Address remaining “boring/default blue” perception without introducing glow-heavy effects or breaking cohesion.
 - Rollback: this branch/PR (`codex/ithelp-cobalt-indigo-v2`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: De-purple to clean cobalt-blue pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Reduced purple hue bias across shared blue tokens, shifted logo/button/link palette to a cleaner cobalt-blue family, and retuned logo shadow tint channels to cool-blue values.
+- Why: Correct user-reported purple cast while preserving cohesion and depth.
+- Rollback: this branch/PR (`codex/ithelp-cobalt-no-purple`).

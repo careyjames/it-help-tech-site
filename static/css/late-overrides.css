@@ -20,15 +20,15 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 :root {
-    --brand-blue: #6570FF;
-    --brand-blue-rgb: 101, 112, 255;
-    --brand-blue-glow: 188, 197, 255;
-    --schedule-blue-top: #8795FF;
-    --schedule-blue-mid: #6570FF;
-    --schedule-blue-bottom: #424EDB;
-    --logo-blue-top: #8795FF;
-    --logo-blue-mid: #6570FF;
-    --logo-blue-bottom: #424EDB;
+    --brand-blue: #3D74FF;
+    --brand-blue-rgb: 61, 116, 255;
+    --brand-blue-glow: 156, 205, 255;
+    --schedule-blue-top: #5E90FF;
+    --schedule-blue-mid: #3D74FF;
+    --schedule-blue-bottom: #244CC9;
+    --logo-blue-top: #5E90FF;
+    --logo-blue-mid: #3D74FF;
+    --logo-blue-bottom: #244CC9;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -54,18 +54,18 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 .schedule-link {
     background-color: var(--schedule-blue-mid) !important;
     background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(189, 201, 255, 0.68) !important;
+    border: 1px solid rgba(170, 206, 255, 0.62) !important;
     color: var(--brand-blue-ink) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.24),
       0 1px 2px rgba(0, 0, 0, 0.34),
-      0 8px 18px rgba(57, 79, 204, 0.44) !important;
+      0 8px 18px rgba(37, 80, 214, 0.42) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #94A0FF 0%, #7280FF 52%, #5563EA 100%) !important;
+    background-image: linear-gradient(180deg, #6EA0FF 0%, #4E84FF 52%, #305FDA 100%) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }
@@ -171,12 +171,12 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.65px 0 rgba(227, 234, 255, 0.46),
-        0 1.15px 0 rgba(24, 33, 96, 0.88),
+        0 -0.65px 0 rgba(223, 237, 255, 0.46),
+        0 1.15px 0 rgba(20, 41, 110, 0.88),
         0 2px 4px rgba(2, 8, 26, 0.33),
-        0 8px 18px rgba(7, 13, 36, 0.42),
-       -0.22px 0 0 rgba(155, 178, 255, 0.34),
-        0.22px 0 0 rgba(155, 178, 255, 0.34);
+        0 8px 18px rgba(6, 16, 42, 0.42),
+       -0.22px 0 0 rgba(129, 180, 255, 0.34),
+        0.22px 0 0 rgba(129, 180, 255, 0.34);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -313,10 +313,10 @@ html.switch .logo-help {
     -webkit-text-fill-color: currentColor;
     background: none;
     text-shadow:
-        0 -0.5px 0 rgba(219, 229, 255, 0.35),
-        0 1.05px 0 rgba(30, 43, 112, 0.7),
+        0 -0.5px 0 rgba(212, 230, 255, 0.35),
+        0 1.05px 0 rgba(25, 45, 120, 0.7),
         0 2px 4px rgba(2, 8, 24, 0.24),
-        0 0 0.72px rgba(138, 161, 255, 0.32);
+        0 0 0.72px rgba(125, 172, 255, 0.32);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
