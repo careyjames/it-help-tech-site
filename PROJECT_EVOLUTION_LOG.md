@@ -270,3 +270,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Darkened and saturated the shared blue family to a royal-cobalt profile, deepened logo letter shadows for stronger dimensionality, and retuned Schedule/link blues to remain cohesive while reading less “default sky blue.”
 - Why: Address user feedback that prior changes looked too subtle and still felt visually generic.
 - Rollback: this branch/PR (`codex/ithelp-blue-royal-cobalt-v6`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Electric-cobalt dimensional pass (non-subtle)
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Switched IT/HELP letters from flat fill to a 3-stop electric-cobalt gradient fill, boosted schedule/button contrast in the same family, and retuned link blues for full-page cohesion.
+- Why: Prior passes were perceived as too subtle/boring; this pass is intentionally obvious while staying performant and accessibility-safe.
+- Rollback: this branch/PR (`codex/ithelp-logo-dimension-v7`).
