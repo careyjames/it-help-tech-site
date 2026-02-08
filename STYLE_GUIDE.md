@@ -1,27 +1,27 @@
 # Style Guide (Living)
-Last updated: 2026-02-07
+Last updated: 2026-02-08
 
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (logo + navigation CTA): `#2E86FF`  
+- Primary Blue (shared hue anchor): `#3A86F0`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
-- Logo Indigo Depth Ramp:
-  - Top: `#64ACFF` (`--logo-blue-top`)
-  - Mid: `#2E86FF` (`--logo-blue-mid`)
-  - Bottom: `#1E58D6` (`--logo-blue-bottom`)
+- Logo Authority Blue Ramp (deeper tone for premium trust feel):
+  - Top: `#5B9CF2` (`--logo-blue-top`)
+  - Mid: `#3470D3` (`--logo-blue-mid`)
+  - Bottom: `#1D4DA9` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#64ACFF` (`--schedule-blue-top`)
-  - Mid: `#2E86FF` (`--schedule-blue-mid`)
-  - Bottom: `#1E58D6` (`--schedule-blue-bottom`)
-- Body/Utility Link Blue (same hue family):
-  - Dark mode link: `#8CCBFF` (`$a1d`)
-  - Dark mode hover: `#B4DFFF` (`$a2d`)
-  - Light mode link: `#225FCB` (`$a1`)
-  - Light mode hover: `#2C73E8` (`$a2`)
+  - Top: `#72B9FF` (`--schedule-blue-top`)
+  - Mid: `#3E95FF` (`--schedule-blue-mid`)
+  - Bottom: `#2A68E0` (`--schedule-blue-bottom`)
+- Body/Utility Link Blue (same hue family, action-biased):
+  - Dark mode link: `#8DCAFF` (`$a1d`)
+  - Dark mode hover: `#B6E1FF` (`$a2d`)
+  - Light mode link: `#1F63CF` (`$a1`)
+  - Light mode hover: `#2D79EA` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -29,11 +29,13 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Secondary Text: `#B2BAC5` (e.g., "SAN DIEGO")
 
 ## Usage Rules
-- Use Primary Blue for links, logo text, and navigation CTA (Schedule).
+- Keep one hue family but use role-based depth:
+  - Logo = deeper authority blue.
+  - Schedule/link actions = brighter action blue.
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
-- High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should use the same indigo ramp family for immediate visual consistency.
-- Standard text links (including phone/map links) should stay in the same indigo hue family as logo/Schedule, with brightness shifts only for contrast by theme.
-- Current blue target: ice-cobalt blue (crisper and more energetic) while avoiding purple cast and neon glow.
+- High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should remain in the same family even when depth differs by role.
+- Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
+- Current blue target: premium cobalt-indigo with no purple cast and no neon glow.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
