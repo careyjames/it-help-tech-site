@@ -58,7 +58,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
 - Hero tagline gold frame should read as a crisp solid perimeter on mobile and desktop.
 - Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
-- Avoid inner highlight seams on the hero pill: no inset white line or inner blue border on the panel interior.
+- Avoid inner highlight seams on the hero pill: no inset white line, inset border ring, or inner blue edge that can read as a gap on mobile.
 - Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
 - Keep hero pill as a single-surface shell (border + translucent fill on outer wrapper, transparent text layer) to prevent inner-gap artifacts.
 - Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
@@ -66,6 +66,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
 - Schedule CTA should favor deeper, restrained blue depth (not bright toy-like highlights) with subtle professional relief.
+- Keep Schedule CTA slightly shorter than icon slots so the control row height is driven by 44px-class tap targets, not by the button block.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
 - Hero vertical rhythm should use micro-adjustments only: reduce dead air above the logo and tighten `san diego` under IT+HELP, while preserving clear separation between logo block, tagline pill, and nav row.
 
