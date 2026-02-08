@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: San Diego lockup proportional consistency + tighter vertical relationship
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Raised `san diego` closer to `IT+HELP` and adjusted its desktop/mobile sizing so both breakpoints read as the same proportional lockup.
+- Why: Remove remaining mismatch in logo representation between desktop and mobile while keeping clean hero spacing.
+- Rollback: this branch/PR (`codex/plus-jiggle-logo-depth-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero pill edge cleanup + Schedule CTA depth/geometry refinement
 - Files:
   - `static/css/late-overrides.css`

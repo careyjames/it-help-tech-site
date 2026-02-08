@@ -348,19 +348,20 @@ html.switch .logo-help {
 
 
 .location {
-    font-size: clamp(2.35rem, 4.75vw, 2.95rem);
-    margin-top: -17px;
+    font-size: clamp(2.22rem, 4.35vw, 2.72rem);
+    margin-top: -20px;
+    line-height: 0.94;
     text-transform: lowercase;
     position: relative;
     font-weight: 600;
     color: #a8b9cc;
-    letter-spacing: 0.042em;
+    letter-spacing: 0.038em;
     margin-left: auto;
     margin-right: auto;
     text-shadow:
         0 -0.32px 0 rgba(214, 226, 240, 0.25),
-        0 1px 0 rgba(7, 17, 34, 0.64),
-        0 0 7px rgba(138, 166, 198, 0.32);
+        0 1px 0 rgba(7, 17, 34, 0.66),
+        0 0 6px rgba(138, 166, 198, 0.28);
 }
 
 html.switch .location {
@@ -670,9 +671,10 @@ html.switch .particle {
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
   .location  {
-    margin-top: -16px;
-    font-size: clamp(1.95rem, 8.7vw, 2.32rem);
-    letter-spacing: 0.042em;
+    margin-top: -20px;
+    font-size: clamp(2.08rem, 9.5vw, 2.40rem);
+    line-height: 0.94;
+    letter-spacing: 0.038em;
   }
   .tagline   {
     margin-top: 5px;
