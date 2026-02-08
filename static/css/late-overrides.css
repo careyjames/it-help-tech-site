@@ -4,7 +4,7 @@ body{overflow-x:hidden}.homepage-hero{display:block!important;align-items:flex-s
 @media (min-width:700px){.page-title,.post-title,h1.page-title,h1.post-title{text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%!important;max-width:100%!important;overflow-wrap:break-word!important;word-break:break-word!important}}
 
 html.switch .dropdown-content li a:hover{color:var(--a2)!important;background:#fff!important}
-html.switch .phone-line,:root.switch .phone-line{color:#1F6BB8!important}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:#8BC3FF!important}
+html.switch .phone-line,:root.switch .phone-line{color:var(--a1)!important}html:not(.switch) .phone-line,:root:not(.switch) .phone-line{color:var(--a1)!important}
 html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:not(.switch) h3 a:hover,html:not(.switch) h3 a:active,html:not(.switch) h3 a:focus{color:var(--a2)!important}
 .logo-light{display:none!important}.logo-dark{display:block!important}html.switch .logo-dark{display:none!important}html.switch .logo-light{display:block!important}
 

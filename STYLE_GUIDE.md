@@ -17,6 +17,11 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - Top: `#5A72F2` (`--schedule-blue-top`)
   - Mid: `#445FE4` (`--schedule-blue-mid`)
   - Bottom: `#3149BB` (`--schedule-blue-bottom`)
+- Body/Utility Link Blue (same hue family):
+  - Dark mode link: `#7F97FF` (`$a1d`)
+  - Dark mode hover: `#A8BAFF` (`$a2d`)
+  - Light mode link: `#3048AF` (`$a1`)
+  - Light mode hover: `#445FE4` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -27,6 +32,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Use Primary Blue for links, logo text, and navigation CTA (Schedule).
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should use the same indigo ramp family for immediate visual consistency.
+- Standard text links (including phone/map links) should stay in the same indigo hue family as logo/Schedule, with brightness shifts only for contrast by theme.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
