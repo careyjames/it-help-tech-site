@@ -53,6 +53,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Plus symbol vertical alignment target: `top: -0.055em` on `.logo-plus` to keep optical center aligned with IT/HELP cap height.
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
 - Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
+- Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
+- `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
+- Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
 
 ## Accessibility
 - Minimum contrast ratio for normal text: 4.5:1 (WCAG).

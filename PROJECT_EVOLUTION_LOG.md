@@ -304,3 +304,14 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Darkened Schedule button gradient, border, and glow/shadow intensity to fit the new deep navy surface while preserving high-contrast text and hover affordance.
 - Why: User reported the Schedule button still looked too light against the darker page and wanted a darker, more polished CTA.
 - Rollback: this branch/PR (`codex/ithelp-schedule-darken-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Hero control-row geometry + icon modernization
+- Files:
+  - `templates/base.html`
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Rebuilt the nav pill layout as fixed CSS slots (home/more/schedule/mode) so icon spacing is deterministic without manual text spaces, moved `More` + chevron into the same blue family as Schedule, added a deeper nav-shell treatment, and replaced the old filled home glyph with a cleaner outline house icon.
+- Why: User reported spacing fragility and requested a tighter, more modern control row while preserving dark-mode polish and mobile tap ergonomics.
+- Rollback: this branch/PR (`codex/nav-grid-modern-icon-blue-more`).

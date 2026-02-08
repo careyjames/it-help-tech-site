@@ -671,3 +671,120 @@ html:not(.switch) h6 a.gold-link:active {
     text-decoration-thickness: 1px; /* optional: tweak as you like */
     text-underline-offset: 2px;     /* lowers the line a bit (nice on Retina) */
 }
+
+/* Control-deck nav geometry: fixed icon slots, no text spacing hacks. */
+:root {
+    --nav-slot-size-mobile: 2.75rem;
+    --nav-slot-size-desktop: 2.45rem;
+    --nav-row-gap-mobile: 0.58rem;
+    --nav-row-gap-desktop: 0.56rem;
+    --nav-more-blue: var(--schedule-blue-top);
+}
+
+.nav-wrapper {
+    --nav-slot-size: var(--nav-slot-size-mobile);
+    --nav-row-gap: var(--nav-row-gap-mobile);
+    background: linear-gradient(180deg, rgba(24, 38, 60, 0.95) 0%, rgba(13, 23, 38, 0.96) 100%) !important;
+    border: 1px solid rgba(130, 172, 228, 0.26) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        inset 0 -1px 0 rgba(2, 8, 18, 0.6),
+        0 10px 24px rgba(2, 8, 18, 0.50),
+        0 2px 6px rgba(0, 0, 0, 0.34) !important;
+}
+
+.nav-wrapper .nav-pill-list {
+    display: grid !important;
+    grid-template-columns: var(--nav-slot-size) max-content max-content var(--nav-slot-size);
+    align-items: center !important;
+    justify-content: center !important;
+    column-gap: var(--nav-row-gap) !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0.08rem 0.56rem !important;
+    margin: 0 !important;
+}
+
+.nav-wrapper .nav-pill-list > li {
+    margin: 0 !important;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-wrapper .nav-home,
+.nav-wrapper .nav-mode {
+    width: var(--nav-slot-size);
+    height: var(--nav-slot-size);
+}
+
+.nav-wrapper .home-icon {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #F5FAFF !important;
+    border-radius: 0.7rem;
+}
+
+.nav-wrapper .home-icon svg {
+    width: calc(var(--nav-slot-size) * 0.68) !important;
+    height: calc(var(--nav-slot-size) * 0.68) !important;
+    margin: 0 !important;
+    display: block;
+}
+
+.nav-wrapper .nav-mode .mode-btn {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.9rem !important;
+    line-height: 1 !important;
+}
+
+.nav-wrapper .nav-more details {
+    display: flex;
+    align-items: center;
+}
+
+.nav-wrapper .dropdown-toggle {
+    color: var(--nav-more-blue) !important;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1 !important;
+}
+
+.nav-wrapper .dropdown-toggle:hover,
+.nav-wrapper details[open] .dropdown-toggle {
+    color: #A8D7FF !important;
+}
+
+.nav-wrapper details summary {
+    list-style: none;
+}
+
+.nav-wrapper details summary::before {
+    border-right: 2.1px solid currentColor !important;
+    border-bottom: 2.1px solid currentColor !important;
+}
+
+.nav-wrapper ul li a:hover,
+.nav-wrapper ul li a:focus-visible {
+    border-bottom: 0 !important;
+}
+
+@media (min-width: 700px) {
+    .nav-wrapper {
+        --nav-slot-size: var(--nav-slot-size-desktop);
+        --nav-row-gap: var(--nav-row-gap-desktop);
+        width: 352px !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+}
