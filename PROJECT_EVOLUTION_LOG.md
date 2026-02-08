@@ -222,3 +222,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Reduced purple hue bias across shared blue tokens, shifted logo/button/link palette to a cleaner cobalt-blue family, and retuned logo shadow tint channels to cool-blue values.
 - Why: Correct user-reported purple cast while preserving cohesion and depth.
 - Rollback: this branch/PR (`codex/ithelp-cobalt-no-purple`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Ice-cobalt energy pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Shifted shared blue tokens to a crisper ice-cobalt family, increased blue energy in logo/CTA gradients, and aligned link tokens to the same hue family with contrast-safe light-mode values.
+- Why: Keep cohesive control while pushing toward a more exciting, less “generic” blue impression.
+- Rollback: this branch/PR (`codex/ithelp-ice-cobalt-v1`).
