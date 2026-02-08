@@ -339,6 +339,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero pill edge-cleanup pass (remove inner seam artifact)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Removed the inner blue border/inset highlight that created a white seam on iPhone, switched to a cleaner single-surface navy translucent interior, and tightened the gold perimeter into a solid clean ring.
+- Why: User reported the hero pill still looked dirty on mobile and not solid on desktop.
+- Rollback: this branch/PR (`codex/hero-pill-clean-edges-v3`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero pill v2 anti-mud pass (true gold stroke + cooler translucency)
 - Files:
   - `static/css/late-overrides.css`
