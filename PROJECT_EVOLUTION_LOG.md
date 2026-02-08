@@ -307,6 +307,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: Hero panel translucency + icon parity + darker IT/HELP blue + vertical rhythm tune
+- Files:
+  - `static/css/late-overrides.css`
+  - `templates/base.html`
+  - `STYLE_GUIDE.md`
+- Change: Darkened the IT/HELP logo blue ramp one step, made the hero “We solve tech problems” inner panel subtly translucent in dark mode (while preserving high contrast), increased home icon visual size/stroke to better match the sun glyph in the nav control row, and applied a micro-compression to hero spacing (logo block up slightly, `san diego` closer/centered under the mark, tagline/nav stack nudged upward).
+- Why: User requested tighter icon parity, improved hero panel depth integration with the moving background, a less “light/boring” IT/HELP blue, and better vertical balance without losing premium whitespace.
+- Rollback: this branch/PR (`codex/hero-panel-and-icon-balance-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: Hero control-row geometry + icon modernization
 - Files:
   - `templates/base.html`

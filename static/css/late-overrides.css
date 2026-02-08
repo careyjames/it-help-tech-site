@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #8ED6FF;
-    --logo-blue-mid: #58A6FF;
-    --logo-blue-bottom: #2E72C9;
+    --logo-blue-top: #7FBDFE;
+    --logo-blue-mid: #4A8EF2;
+    --logo-blue-bottom: #225CAE;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -42,7 +42,7 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 
 .logo-container {
     position: relative;
-    padding: 20px 20px 4px;     /* less bottom space below tagline */
+    padding: 14px 20px 2px;     /* micro-compressed hero spacing */
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 100%;
@@ -173,11 +173,11 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.44px 0 rgba(205, 232, 255, 0.42),
-        0 1.08px 0 rgba(6, 23, 64, 0.88),
-        0 2px 5px rgba(2, 8, 24, 0.34),
-        0 9px 20px rgba(4, 12, 32, 0.42),
-        0 0 10px rgba(88, 166, 255, 0.2);
+        0 -0.44px 0 rgba(192, 220, 248, 0.38),
+        0 1.08px 0 rgba(5, 19, 56, 0.9),
+        0 2px 5px rgba(2, 8, 24, 0.36),
+        0 9px 20px rgba(4, 12, 32, 0.44),
+        0 0 10px rgba(74, 142, 242, 0.18);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -311,7 +311,7 @@ html.switch .logo-constellation {
 html.switch .logo-it,
 html.switch .logo-help {
     color: var(--logo-blue-mid);
-    background-image: linear-gradient(180deg, #84CCFF 0%, #4B97FF 52%, #2B6BC3 100%);
+    background-image: linear-gradient(180deg, #78B7EB 0%, #3E7FDC 52%, #2156A7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -328,12 +328,14 @@ html.switch .logo-help {
 
 .location {
     font-size: 2.5rem;
-    margin-top: -10px;
+    margin-top: -14px;
     text-transform: lowercase;
     position: relative;
     font-weight: 600;
     color: #b2bac5;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
+    margin-left: auto;
+    margin-right: auto;
     text-shadow: 0 0 6px rgba(178, 186, 197, 0.35);
 }
 
@@ -348,7 +350,7 @@ html.switch .location {
 }
 
 .tagline {
-    margin-top: 8px;          /* closer to logo */
+    margin-top: 4px;          /* closer to logo */
     text-align: center;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -371,8 +373,12 @@ html.switch .location {
     white-space: nowrap;
     color: #fff;
     padding: 10px 20px;
-    background-color: #0a0a0a;
+    background-color: rgba(8, 14, 24, 0.9);
     border-radius: 28px;
+    border: 1px solid rgba(124, 162, 220, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(1.5px) saturate(110%);
+    -webkit-backdrop-filter: blur(1.5px) saturate(110%);
 }
 
 /* colour-scheme specific pill styling */
@@ -380,21 +386,27 @@ html.switch .location {
   .tagline-text{
     color:#000;
     background-color:#ffffff;
+    border-color: rgba(165, 175, 188, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
 }
 @media (prefers-color-scheme:dark){
   .tagline-text{
     color:#fff;
-    background-color:#000000;
+    background-color:rgba(8, 14, 24, 0.9);
   }
 }
 html.switch .tagline-text{
   color:#000;
   background-color:#ffffff;
+  border-color: rgba(165, 175, 188, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 html:not(.switch) .tagline-text{
   color:#fff;
-  background-color:#000000;
+  background-color:rgba(8, 14, 24, 0.9);
 }
 
 .tagline-border::before {
@@ -604,10 +616,20 @@ html.switch .particle {
 @media(max-width:640px){
   .hero-wrapper{padding:0 0 0px;}       /* flush to top, even tighter bottom */
 
+  .logo-container {
+    padding: 12px 14px 2px;
+  }
+
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
-  .location  {font-size:7vw;}
-  .tagline   {font-size:4.6vw;}
+  .location  {
+    margin-top: -12px;
+    font-size:7vw;
+  }
+  .tagline   {
+    margin-top: 3px;
+    font-size:4.6vw;
+  }
 
   /* compensate for smaller container padding */
   .tagline-text{padding:8px 16px;}
@@ -690,6 +712,10 @@ html:not(.switch) h6 a.gold-link:active {
         0 2px 6px rgba(0, 0, 0, 0.34) !important;
 }
 
+.site-logo {
+    margin: 0.06rem auto 0.02rem !important;
+}
+
 .nav-wrapper .nav-pill-list {
     display: grid !important;
     grid-template-columns: var(--nav-slot-size) max-content max-content var(--nav-slot-size);
@@ -728,8 +754,8 @@ html:not(.switch) h6 a.gold-link:active {
 }
 
 .nav-wrapper .home-icon svg {
-    width: calc(var(--nav-slot-size) * 0.68) !important;
-    height: calc(var(--nav-slot-size) * 0.68) !important;
+    width: calc(var(--nav-slot-size) * 0.76) !important;
+    height: calc(var(--nav-slot-size) * 0.76) !important;
     margin: 0 !important;
     display: block;
 }
