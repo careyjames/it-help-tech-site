@@ -186,3 +186,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted dark/light link tokens to the same indigo hue family used by IT/HELP and Schedule, and updated phone-link override to follow shared link tokens instead of a separate cyan-leaning blue.
 - Why: Remove color mismatch between logo/button and in-content links while keeping contrast-safe per-theme brightness.
 - Rollback: this branch/PR (`codex/ithelp-link-blue-cohesion-v1`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Premium-electric indigo refresh + plus vertical centering
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Shifted the shared blue system to a richer electric-indigo ramp for logo/Schedule/links and moved `.logo-plus` up (`top: -0.055em`) for better vertical optical centering between `IT` and `HELP`.
+- Why: Keep full color cohesion while removing the “boring/default blue” feel and tightening logo geometry.
+- Rollback: this branch/PR (`codex/ithelp-premium-indigo-plus-align`).
