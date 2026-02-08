@@ -174,3 +174,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Removed `role="img"` usage on the hero logo wrapper and marked the logo/location cluster as decorative with `aria-hidden="true"`.
 - Why: Clear Sonar rule violation and keep semantic accessibility output clean.
 - Rollback: this branch/PR (`codex/ithelp-blue-unify-v3`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Link-palette indigo cohesion pass (logo/button/link alignment)
+- Files:
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Shifted dark/light link tokens to the same indigo hue family used by IT/HELP and Schedule, and updated phone-link override to follow shared link tokens instead of a separate cyan-leaning blue.
+- Why: Remove color mismatch between logo/button and in-content links while keeping contrast-safe per-theme brightness.
+- Rollback: this branch/PR (`codex/ithelp-link-blue-cohesion-v1`).
