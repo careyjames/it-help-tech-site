@@ -348,25 +348,26 @@ html.switch .logo-help {
 
 
 .location {
-    font-size: clamp(2.22rem, 4.35vw, 2.72rem);
-    margin-top: -20px;
+    font-size: clamp(2.08rem, 4.05vw, 2.52rem);
+    margin-top: -26px;
     line-height: 0.94;
     text-transform: lowercase;
     position: relative;
     font-weight: 560;
-    color: #8fa2b8;
+    color: #879ab0;
     letter-spacing: 0.038em;
     margin-left: auto;
     margin-right: auto;
+    transform: translateX(0.015em);
     text-shadow:
-        0 -0.24px 0 rgba(198, 214, 232, 0.14),
-        0 1px 0 rgba(5, 14, 29, 0.78),
-        0 0 3px rgba(116, 140, 168, 0.18);
+        0 -0.22px 0 rgba(196, 212, 230, 0.12),
+        0 1px 0 rgba(5, 14, 29, 0.80),
+        0 0 2px rgba(110, 134, 162, 0.16);
 }
 
 html.switch .location {
-    color: #4b5b6d;
-    text-shadow: 0 0 4px rgba(86, 103, 126, 0.18);
+    color: #48586b;
+    text-shadow: 0 0 3px rgba(86, 103, 126, 0.15);
 }
 
 @keyframes shine {
@@ -671,10 +672,11 @@ html.switch .particle {
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
   .location  {
-    margin-top: -20px;
-    font-size: clamp(2.08rem, 9.5vw, 2.40rem);
+    margin-top: -24px;
+    font-size: clamp(2.22rem, 10.2vw, 2.58rem);
     line-height: 0.94;
     letter-spacing: 0.038em;
+    transform: translateX(0.01em);
   }
   .tagline   {
     margin-top: 5px;
