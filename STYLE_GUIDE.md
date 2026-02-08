@@ -4,24 +4,24 @@ Last updated: 2026-02-07
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (logo + navigation CTA): `#445FE4`  
+- Primary Blue (logo + navigation CTA): `#536CFF`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Indigo Depth Ramp:
-  - Top: `#5A72F2` (`--logo-blue-top`)
-  - Mid: `#445FE4` (`--logo-blue-mid`)
-  - Bottom: `#3149BB` (`--logo-blue-bottom`)
+  - Top: `#6E84FF` (`--logo-blue-top`)
+  - Mid: `#536CFF` (`--logo-blue-mid`)
+  - Bottom: `#3D53CF` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#5A72F2` (`--schedule-blue-top`)
-  - Mid: `#445FE4` (`--schedule-blue-mid`)
-  - Bottom: `#3149BB` (`--schedule-blue-bottom`)
+  - Top: `#6E84FF` (`--schedule-blue-top`)
+  - Mid: `#536CFF` (`--schedule-blue-mid`)
+  - Bottom: `#3D53CF` (`--schedule-blue-bottom`)
 - Body/Utility Link Blue (same hue family):
-  - Dark mode link: `#7F97FF` (`$a1d`)
-  - Dark mode hover: `#A8BAFF` (`$a2d`)
-  - Light mode link: `#3048AF` (`$a1`)
-  - Light mode hover: `#445FE4` (`$a2`)
+  - Dark mode link: `#97ABFF` (`$a1d`)
+  - Dark mode hover: `#B8C7FF` (`$a2d`)
+  - Light mode link: `#3B53BC` (`$a1`)
+  - Light mode hover: `#536CFF` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0B0B0B`
@@ -45,6 +45,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Avoid introducing new colors without updating this guide.
 - Do not use gold as a general link/highlight color across body content.
 - Keep the red plus sign unchanged; it is a core identity anchor.
+- Plus symbol vertical alignment target: `top: -0.055em` on `.logo-plus` to keep optical center aligned with IT/HELP cap height.
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
 - Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
 
