@@ -4,27 +4,27 @@ Last updated: 2026-02-08
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
 ## Brand Colors
-- Primary Blue (shared hue anchor): `#3A85FF`  
+- Primary Blue (shared hue anchor): `#58A6FF`  
   - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#A9DEFF` (`--logo-blue-top`)
-  - Mid: `#4A8FFF` (`--logo-blue-mid`)
-  - Bottom: `#1F4EC0` (`--logo-blue-bottom`)
+  - Top: `#8ED6FF` (`--logo-blue-top`)
+  - Mid: `#58A6FF` (`--logo-blue-mid`)
+  - Bottom: `#2E72C9` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
-  - Top: `#8BCBFF` (`--schedule-blue-top`)
-  - Mid: `#4A9CFF` (`--schedule-blue-mid`)
-  - Bottom: `#245FD1` (`--schedule-blue-bottom`)
+  - Top: `#8FD7FF` (`--schedule-blue-top`)
+  - Mid: `#58A6FF` (`--schedule-blue-mid`)
+  - Bottom: `#2F74CF` (`--schedule-blue-bottom`)
 - Body/Utility Link Blue (same hue family, action-biased):
-  - Dark mode link: `#9FD8FF` (`$a1d`)
-  - Dark mode hover: `#CAE9FF` (`$a2d`)
-  - Light mode link: `#2A6FDC` (`$a1`)
-  - Light mode hover: `#3F88EE` (`$a2`)
+  - Dark mode link: `#79B8FF` (`$a1d`)
+  - Dark mode hover: `#A5D0FF` (`$a2d`)
+  - Light mode link: `#2B6FCD` (`$a1`)
+  - Light mode hover: `#4A8EDF` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
 - Plus Red (plus symbol only): `#FF0066`
-- Dark Background: `#0B0B0B`
+- Dark Background: `#0D1117` (primary), `#161B22` (elevated surface)
 - Light Text: `#FFFFFF`
 - Secondary Text: `#B2BAC5` (e.g., "SAN DIEGO")
 
@@ -34,9 +34,10 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - Schedule/link actions = brighter action blue.
 - IT/HELP lettering should use a 3-stop gradient fill (top/mid/bottom logo ramp) for clear dimensionality at a glance.
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
+- Current lock target: true non-purple blue aligned to DNS Tool `--status-info` (`#58A6FF`) as the anchor.
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should remain in the same family even when depth differs by role.
 - Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
-- Current blue target: electric-cobalt clarity with visible depth and no purple cast.
+- Current blue target: DNS-aligned true blue (non-purple), with depth from shading rather than violet tint.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.

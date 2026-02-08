@@ -282,3 +282,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Switched IT/HELP letters from flat fill to a 3-stop electric-cobalt gradient fill, boosted schedule/button contrast in the same family, and retuned link blues for full-page cohesion.
 - Why: Prior passes were perceived as too subtle/boring; this pass is intentionally obvious while staying performant and accessibility-safe.
 - Rollback: this branch/PR (`codex/ithelp-logo-dimension-v7`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: DNS-aligned true blue + deep navy background pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Anchored IT/HELP + Schedule + links to DNS Tool’s non-purple blue family (`#58A6FF` anchor), and shifted site dark surfaces from flat black to deep navy-charcoal (`#0D1117` / `#161B22`) for cleaner contrast and less muddiness.
+- Why: User requested a non-purple blue outcome and approved background changes if needed to reach a polished final look.
+- Rollback: this branch/PR (`codex/ithelp-true-blue-v8`).
