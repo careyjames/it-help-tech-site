@@ -13,6 +13,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Hero pill edge cleanup + Schedule CTA depth/geometry refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Removed inset-ring pill treatment in favor of a true gold border + cool translucent navy fill to eliminate inner-gap/tilt artifacts on mobile and desktop. Deepened and compacted the Schedule CTA so it reads more professional while keeping touch-target-safe nav geometry.
+- Why: Improve perceived polish and readability under real iPhone rendering while keeping the control row cohesive and less visually airy.
+- Rollback: this branch/PR (`codex/nav-row-schedule-depth-v6`).
+
 ### 2026-02-07
 - Actor: AI+Developer
 - Scope: IT+HELP color-system discipline
