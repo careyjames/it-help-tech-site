@@ -198,3 +198,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Shifted the shared blue system to a richer electric-indigo ramp for logo/Schedule/links and moved `.logo-plus` up (`top: -0.055em`) for better vertical optical centering between `IT` and `HELP`.
 - Why: Keep full color cohesion while removing the “boring/default blue” feel and tightening logo geometry.
 - Rollback: this branch/PR (`codex/ithelp-premium-indigo-plus-align`).
+
+### 2026-02-07
+- Actor: AI+Developer
+- Scope: Cobalt-indigo high-chroma depth pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `sass/css/abridge.scss`
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Moved the shared blue system to a stronger cobalt-indigo palette, increased top/bottom depth contrast in IT/HELP lettering shadows, and boosted Schedule CTA gradient contrast while keeping all links in the same hue family.
+- Why: Address remaining “boring/default blue” perception without introducing glow-heavy effects or breaking cohesion.
+- Rollback: this branch/PR (`codex/ithelp-cobalt-indigo-v2`).
