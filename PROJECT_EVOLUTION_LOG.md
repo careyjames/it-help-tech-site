@@ -23,6 +23,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Why: Improve perceived polish and readability under real iPhone rendering while keeping the control row cohesive and less visually airy.
 - Rollback: this branch/PR (`codex/nav-row-schedule-depth-v6`).
 
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Plus micro-motion visibility + San Diego lockup consistency pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Increased plus micro-jitter visibility slightly (still subtle), sharpened plus edge definition, and tuned `san diego` to a steel-blue gray with tighter spacing and proportional sizing for closer desktop/mobile representation consistency.
+- Why: Preserve calm polish while making the brand mark feel intentionally alive and visually consistent across devices.
+- Rollback: this branch/PR (`codex/plus-jiggle-logo-depth-v1`).
+
 ### 2026-02-07
 - Actor: AI+Developer
 - Scope: IT+HELP color-system discipline
