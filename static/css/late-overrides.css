@@ -20,15 +20,15 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 :root {
-    --brand-blue: #3A86F0;
-    --brand-blue-rgb: 58, 134, 240;
-    --brand-blue-glow: 151, 208, 255;
-    --schedule-blue-top: #72B9FF;
-    --schedule-blue-mid: #3E95FF;
-    --schedule-blue-bottom: #2A68E0;
-    --logo-blue-top: #5B9CF2;
-    --logo-blue-mid: #3470D3;
-    --logo-blue-bottom: #1D4DA9;
+    --brand-blue: #3E98FF;
+    --brand-blue-rgb: 62, 152, 255;
+    --brand-blue-glow: 160, 216, 255;
+    --schedule-blue-top: #89CCFF;
+    --schedule-blue-mid: #4AA3FF;
+    --schedule-blue-bottom: #2E73E7;
+    --logo-blue-top: #71B8FF;
+    --logo-blue-mid: #3A7EE6;
+    --logo-blue-bottom: #1B469B;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -54,18 +54,18 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 .schedule-link {
     background-color: var(--schedule-blue-mid) !important;
     background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(162, 215, 255, 0.62) !important;
+    border: 1px solid rgba(171, 221, 255, 0.66) !important;
     color: var(--brand-blue-ink) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
       0 1px 2px rgba(0, 0, 0, 0.34),
-      0 8px 18px rgba(27, 84, 214, 0.42) !important;
+      0 8px 18px rgba(28, 89, 221, 0.44) !important;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #84C5FF 0%, #53A4FF 52%, #3679EA 100%) !important;
+    background-image: linear-gradient(180deg, #97D4FF 0%, #5BB0FF 52%, #3D83EE 100%) !important;
     color: var(--brand-blue-ink) !important;
     filter: none !important;
 }
@@ -171,12 +171,13 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.58px 0 rgba(208, 230, 255, 0.42),
-        0 1.12px 0 rgba(10, 33, 92, 0.86),
+        0 -0.62px 0 rgba(218, 238, 255, 0.48),
+        0 1.16px 0 rgba(8, 30, 86, 0.88),
         0 2px 4px rgba(2, 8, 24, 0.34),
-        0 8px 18px rgba(5, 14, 38, 0.42),
-       -0.2px 0 0 rgba(95, 166, 255, 0.28),
-        0.2px 0 0 rgba(95, 166, 255, 0.28);
+        0 8px 18px rgba(5, 14, 38, 0.4),
+       -0.22px 0 0 rgba(111, 181, 255, 0.32),
+        0.22px 0 0 rgba(111, 181, 255, 0.32),
+        0 0 1px rgba(88, 165, 255, 0.24);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -313,10 +314,10 @@ html.switch .logo-help {
     -webkit-text-fill-color: currentColor;
     background: none;
     text-shadow:
-        0 -0.46px 0 rgba(200, 228, 255, 0.34),
-        0 1px 0 rgba(13, 39, 108, 0.68),
-        0 2px 4px rgba(2, 8, 24, 0.25),
-        0 0 0.7px rgba(94, 160, 248, 0.3);
+        0 -0.5px 0 rgba(210, 233, 255, 0.4),
+        0 1.04px 0 rgba(11, 36, 102, 0.72),
+        0 2px 4px rgba(2, 8, 24, 0.26),
+        0 0 0.72px rgba(104, 173, 255, 0.34);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
