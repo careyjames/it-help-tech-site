@@ -61,6 +61,8 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
 - Hero vertical rhythm should use micro-adjustments only: reduce dead air above the logo and tighten `san diego` under IT+HELP, while preserving clear separation between logo block, tagline pill, and nav row.
+- Schedule CTA uses a modern 3D treatment (button-33 style family) but remains blue and contrast-safe for dark mode.
+- Hero gold frame can use a subtle gold gradient; avoid flat brown tones in framed hero elements.
 
 ## Accessibility
 - Minimum contrast ratio for normal text: 4.5:1 (WCAG).

@@ -52,22 +52,32 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 }
 
 .schedule-link {
+    padding: 0.42rem 1.02rem !important;
+    border-radius: 12px !important;
+    font-weight: 800;
     background-color: var(--schedule-blue-mid) !important;
-    background-image: linear-gradient(180deg, var(--schedule-blue-top) 0%, var(--schedule-blue-mid) 52%, var(--schedule-blue-bottom) 100%) !important;
-    border: 1px solid rgba(138, 186, 238, 0.62) !important;
+    background-image: linear-gradient(180deg, #76C1FF 0%, var(--schedule-blue-mid) 52%, #2A66BC 100%) !important;
+    border: 1px solid rgba(171, 213, 255, 0.62) !important;
     color: var(--brand-blue-ink) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.18),
-      0 1px 2px rgba(0, 0, 0, 0.34),
-      0 8px 18px rgba(18, 52, 110, 0.42) !important;
+      rgba(255, 255, 255, 0.22) 0 1px 1px 0 inset,
+      0 1px 3px 0 rgba(0, 0, 0, 0.18),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08),
+      rgba(4, 16, 42, 0.88) 0 0 0 1px,
+      0 10px 20px rgba(9, 34, 79, 0.46) !important;
+    transition: all 150ms ease-in-out;
 }
 
 .schedule-link:hover,
 .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #7ABDF8 0%, #4C95E2 52%, #2D68BC 100%) !important;
+    background-image: linear-gradient(180deg, #81C8FF 0%, #4E98E8 52%, #2F6BC3 100%) !important;
     color: var(--brand-blue-ink) !important;
-    filter: none !important;
+    filter: brightness(1.06) !important;
+}
+
+.schedule-link:active {
+    transform: scale(0.97);
 }
 
 /* ───────── LAYOUT / RESTORE DEMO LOOK ───────── */
@@ -363,7 +373,7 @@ html.switch .location {
     display: inline-block; /* pill snaps to content width */
     padding: 2px; /* border thickness */
     border-radius: 30px;
-    background: var(--accent-gold);
+    background: linear-gradient(180deg, #E0C789 0%, #C6A45E 100%);
     position: relative;
     z-index: 0;
 }
@@ -373,12 +383,12 @@ html.switch .location {
     white-space: nowrap;
     color: #fff;
     padding: 10px 20px;
-    background-color: rgba(7, 13, 23, 0.78);
+    background-color: rgba(7, 14, 24, 0.56);
     border-radius: 28px;
-    border: 1px solid rgba(120, 161, 220, 0.30);
+    border: 1px solid rgba(132, 175, 234, 0.34);
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.07),
-        0 8px 16px rgba(3, 8, 19, 0.34);
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 6px 14px rgba(3, 8, 19, 0.26);
 }
 
 /* colour-scheme specific pill styling */
@@ -393,7 +403,7 @@ html.switch .location {
 @media (prefers-color-scheme:dark){
   .tagline-text{
     color:#fff;
-    background-color:rgba(7, 13, 23, 0.78);
+    background-color:rgba(7, 14, 24, 0.56);
   }
 }
 html.switch .tagline-text{
@@ -406,7 +416,7 @@ html.switch .tagline-text{
 }
 html:not(.switch) .tagline-text{
   color:#fff;
-  background-color:rgba(7, 13, 23, 0.78);
+  background-color:rgba(7, 14, 24, 0.56);
 }
 
 .tagline-border::before {
@@ -433,7 +443,7 @@ html:not(.switch) .tagline-text{
 
 /* Keep tagline highlights crisp: no glow blur on key words. */
 .tagline .highlight {
-    color: #C8A961;
+    color: #D4BC79;
     text-shadow: none;
 }
 
