@@ -358,7 +358,7 @@ html.switch .logo-help {
     letter-spacing: 0.038em;
     margin-left: auto;
     margin-right: auto;
-    transform: translateX(0.015em);
+    transform: translateX(-0.012em);
     text-shadow:
         0 -0.22px 0 rgba(196, 212, 230, 0.12),
         0 1px 0 rgba(5, 14, 29, 0.80),
@@ -676,7 +676,7 @@ html.switch .particle {
     font-size: clamp(2.22rem, 10.2vw, 2.58rem);
     line-height: 0.94;
     letter-spacing: 0.038em;
-    transform: translateX(0.01em);
+    transform: translateX(-0.018em);
   }
   .tagline   {
     margin-top: 5px;

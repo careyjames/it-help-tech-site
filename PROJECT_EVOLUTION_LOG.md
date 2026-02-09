@@ -15,6 +15,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: San Diego optical center correction (left shift)
+- Files:
+  - `static/css/late-overrides.css`
+- Change: Shifted `san diego` slightly left at desktop and mobile breakpoints to better align with the composite `IT+HELP` glyph mass.
+- Why: Screenshot review showed lockup still reading off-center even after spacing/size corrections.
+- Rollback: this branch/PR (`codex/san-diego-optical-center-v3`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: San Diego vertical overshoot correction
 - Files:
   - `static/css/late-overrides.css`
