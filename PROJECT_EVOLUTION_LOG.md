@@ -15,6 +15,25 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: San Diego vertical overshoot correction
+- Files:
+  - `static/css/late-overrides.css`
+- Change: Reduced the prior upward shift of `san diego` to restore breathing room under `IT+HELP` while keeping the lockup tighter than the earlier baseline.
+- Why: Screenshot review showed the previous pass pushed `san diego` too close to the main mark.
+- Rollback: this branch/PR (`codex/san-diego-lockup-align-v2`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: San Diego lockup alignment correction (visible pass)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Made a stronger lockup adjustment by raising `san diego` closer to `IT+HELP`, reducing luminance/glow further, rebalancing desktop/mobile size ratio, and adding a slight optical center nudge for better alignment under the composite mark.
+- Why: User feedback indicated previous adjustments were too subtle and still looked misaligned across desktop/mobile.
+- Rollback: this branch/PR (`codex/san-diego-lockup-align-v2`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: San Diego hierarchy correction (subdued under primary mark)
 - Files:
   - `static/css/late-overrides.css`
