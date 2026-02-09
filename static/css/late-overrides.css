@@ -349,7 +349,7 @@ html.switch .logo-help {
 
 .location {
     font-size: clamp(2.08rem, 4.05vw, 2.52rem);
-    margin-top: -9px;
+    margin-top: -6px;
     line-height: 0.94;
     text-transform: lowercase;
     position: relative;
@@ -376,7 +376,7 @@ html.switch .location {
 }
 
 .tagline {
-    margin-top: 6px;          /* preserve breathing room under location */
+    margin-top: 10px;         /* preserve clear descender clearance under "san diego" */
     text-align: center;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -672,14 +672,14 @@ html.switch .particle {
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
   .location  {
-    margin-top: -9px;
+    margin-top: -6px;
     font-size: clamp(2.22rem, 10.2vw, 2.58rem);
     line-height: 0.94;
     letter-spacing: 0.038em;
     transform: translateX(-0.01em);
   }
   .tagline   {
-    margin-top: 5px;
+    margin-top: 8px;
     font-size:4.6vw;
   }
 
@@ -762,7 +762,7 @@ html:not(.switch) h6 a.gold-link:active {
         inset 0 -1px 0 rgba(2, 8, 18, 0.66),
         0 7px 16px rgba(2, 8, 18, 0.45),
         0 2px 5px rgba(0, 0, 0, 0.30) !important;
-    margin: 0.44rem auto 0 !important;
+    margin: 0.56rem auto 0 !important;
 }
 
 .site-logo {
