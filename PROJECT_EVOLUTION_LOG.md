@@ -15,6 +15,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-08
 - Actor: AI+Developer
+- Scope: San Diego vertical overshoot correction
+- Files:
+  - `static/css/late-overrides.css`
+- Change: Reduced the prior upward shift of `san diego` to restore breathing room under `IT+HELP` while keeping the lockup tighter than the earlier baseline.
+- Why: Screenshot review showed the previous pass pushed `san diego` too close to the main mark.
+- Rollback: this branch/PR (`codex/san-diego-lockup-align-v2`).
+
+### 2026-02-08
+- Actor: AI+Developer
 - Scope: San Diego lockup alignment correction (visible pass)
 - Files:
   - `static/css/late-overrides.css`
