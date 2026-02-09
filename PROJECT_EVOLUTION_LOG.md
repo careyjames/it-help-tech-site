@@ -454,3 +454,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Kept the hero pill gold frame but made it crisper and more stable, then shifted the dark-mode pill interior from warm/muddy tint to a cool navy-blue translucent gradient so constellation/particle motion remains visible while text contrast stays strong.
 - Why: User reported brown/muddy pill fill and requested a blue-toned transparent interior with clear background-motion visibility, especially on mobile.
 - Rollback: this branch/PR (`codex/hero-pill-blue-translucency-v1`).
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: San Diego lockup de-compression and hierarchy correction
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Lowered `san diego` placement on desktop/mobile to remove the scrunched look under `IT+HELP`, and reduced its luminance/glow so it stays visibly subordinate to the primary logo text.
+- Why: User feedback showed the lockup was over-tight and `san diego` was popping too close to body-white levels.
+- Rollback: this branch/PR (`codex/san-diego-optical-center-v3`), commit `02ef35b` as pre-adjust reference.
