@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#7FBDFE` (`--logo-blue-top`)
-  - Mid: `#4A8EF2` (`--logo-blue-mid`)
-  - Bottom: `#225CAE` (`--logo-blue-bottom`)
+  - Top: `#8FC9FF` (`--logo-blue-top`)
+  - Mid: `#5A9CF6` (`--logo-blue-mid`)
+  - Bottom: `#2B68BF` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
