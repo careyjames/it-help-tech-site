@@ -376,7 +376,7 @@ html.switch .location {
 }
 
 .tagline {
-    margin-top: 10px;         /* preserve clear descender clearance under "san diego" */
+    margin-top: 13px;         /* extra clearance below descenders in "san diego" */
     text-align: center;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -679,7 +679,7 @@ html.switch .particle {
     transform: translateX(-0.01em);
   }
   .tagline   {
-    margin-top: 8px;
+    margin-top: 11px;
     font-size:4.6vw;
   }
 
