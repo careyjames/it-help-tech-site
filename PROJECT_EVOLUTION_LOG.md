@@ -506,3 +506,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Lowered `san diego` another step (`margin-top: -9px -> -6px` desktop/mobile), increased logo-to-tagline spacing (`.tagline margin-top` desktop/mobile), and increased tagline-to-nav separation (`.nav-wrapper margin-top`) so the lockup reads as three clean tiers without descender collisions.
 - Why: User reported the `g` descender in `san diego` still touching/crowding the gold tagline pill and requested full top-down spacing normalization.
 - Rollback: this branch/PR (`codex/hero-stack-spacing-v1`), baseline commit `5901cf7`.
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Descender clearance micro-pass (`san diego` to tagline pill)
+- Files:
+  - `static/css/late-overrides.css`
+  - `PROJECT_EVOLUTION_LOG.md`
+- Change: Increased only the `san diego` -> tagline spacing (`.tagline margin-top` +3px on desktop and mobile) to remove remaining visual collision with the `g` descender while leaving color, centering, and nav geometry untouched.
+- Why: User confirmed direction but still observed the descender appearing too close to the gold tagline border.
+- Rollback: this branch/PR (`codex/san-diego-descender-clearance-v1`), baseline commit `b3d6c4c`.
