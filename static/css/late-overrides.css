@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #8FC9FF;
-    --logo-blue-mid: #5A9CF6;
-    --logo-blue-bottom: #2B68BF;
+    --logo-blue-top: #7DB4ED;
+    --logo-blue-mid: #3D79CC;
+    --logo-blue-bottom: #1C4F9D;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -190,13 +190,13 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.4px 0 rgba(206, 230, 252, 0.36),
-        -0.32px 0 0 rgba(126, 169, 229, 0.24),
-         0.32px 0 0 rgba(126, 169, 229, 0.24),
-        0 1px 0 rgba(4, 17, 52, 0.90),
-        0 2px 5px rgba(2, 8, 24, 0.34),
-        0 7px 16px rgba(4, 12, 32, 0.38),
-        0 0 4px rgba(74, 142, 242, 0.1);
+        0 -0.3px 0 rgba(196, 224, 252, 0.24),
+        -0.28px 0 0 rgba(112, 156, 220, 0.17),
+         0.28px 0 0 rgba(112, 156, 220, 0.17),
+        0 0.95px 0 rgba(3, 14, 44, 0.88),
+        0 2px 4px rgba(2, 8, 24, 0.30),
+        0 6px 14px rgba(4, 12, 32, 0.34),
+        0 0 2px rgba(70, 132, 224, 0.06);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -334,17 +334,17 @@ html.switch .logo-constellation {
 html.switch .logo-it,
 html.switch .logo-help {
     color: var(--logo-blue-mid);
-    background-image: linear-gradient(180deg, #89C3F5 0%, #4D8FE1 50%, #2866B7 100%);
+    background-image: linear-gradient(180deg, #79AEE0 0%, #3E78C8 50%, #22589F 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 -0.28px 0 rgba(176, 210, 244, 0.24),
-        -0.24px 0 0 rgba(104, 149, 210, 0.16),
-         0.24px 0 0 rgba(104, 149, 210, 0.16),
-        0 1px 0 rgba(8, 27, 74, 0.60),
-        0 2px 4px rgba(2, 8, 24, 0.2),
-        0 5px 11px rgba(12, 30, 65, 0.14);
+        0 -0.22px 0 rgba(170, 204, 238, 0.18),
+        -0.2px 0 0 rgba(94, 138, 198, 0.12),
+         0.2px 0 0 rgba(94, 138, 198, 0.12),
+        0 0.9px 0 rgba(8, 24, 68, 0.54),
+        0 1.8px 3.6px rgba(2, 8, 24, 0.16),
+        0 4px 9px rgba(10, 26, 56, 0.10);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
