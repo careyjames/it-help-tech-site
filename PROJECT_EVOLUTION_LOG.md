@@ -13,6 +13,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-09
+- Actor: AI+Developer
+- Scope: San Diego-to-tagline clearance refinement
+- Files:
+  - `static/css/late-overrides.css`
+- Change: Increased hero tagline top spacing on desktop and mobile so the `san diego` descenders hold a clearer visual gap above the pill border while preserving existing lockup centering and hierarchy.
+- Why: Continue vertical rhythm tuning from PR `#463` so spacing reads cleanly in real desktop and iPhone renderings.
+- Rollback: this branch/PR (`codex/san-diego-descender-clearance-v1`, PR `#463`).
+
 ### 2026-02-08
 - Actor: AI+Developer
 - Scope: San Diego optical center correction (left shift)
