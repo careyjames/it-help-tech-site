@@ -59,6 +59,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - `san diego` must remain visually subordinate to `IT+HELP`: lower luminance, softer glow, and lighter emphasis than primary brand text.
 - Apply a small optical center nudge to `san diego` when needed so it sits centered under the composite `IT+HELP` glyph mass, not just mathematically centered text bounds.
 - Keep vertical lockup breathing room: `san diego` should never touch/scrunch into `IT+HELP`; favor a slightly lower placement over over-tight stacking.
+- Tone target for `san diego`: steel gray-blue (not brand-logo blue) so hierarchy stays clear even when the lockup is centered and tight.
 - Hero tagline panel should remain dark-first and high-legibility, but may use light translucency in dark mode; do not make it fully transparent.
 - Hero tagline panel should be translucent enough to reveal background motion subtly, but never use backdrop blur that softens tagline readability.
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
