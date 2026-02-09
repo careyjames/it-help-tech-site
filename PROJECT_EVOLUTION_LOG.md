@@ -464,3 +464,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Lowered `san diego` placement on desktop/mobile to remove the scrunched look under `IT+HELP`, and reduced its luminance/glow so it stays visibly subordinate to the primary logo text.
 - Why: User feedback showed the lockup was over-tight and `san diego` was popping too close to body-white levels.
 - Rollback: this branch/PR (`codex/san-diego-optical-center-v3`), commit `02ef35b` as pre-adjust reference.
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Stronger vertical drop + stronger tonal separation for `san diego`
+- Files:
+  - `static/css/late-overrides.css`
+  - `PROJECT_EVOLUTION_LOG.md`
+- Change: Dropped `san diego` further away from `IT+HELP` on desktop and mobile (`margin-top` relaxed by ~5-6px) and darkened/desaturated the label/shadow so it no longer reads as the same visual tier as the primary mark.
+- Why: User confirmed the lockup still looked too tight and that `san diego` remained too close to the IT/HELP color family.
+- Rollback: this branch/PR (`codex/san-diego-drop-and-separate-v1`), previous baseline commit `8ceadfa`.
