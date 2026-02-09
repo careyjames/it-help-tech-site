@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP premium-dark navy variant
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Shifted IT/HELP logo ramp to deeper navy-cobalt values and reduced gloss intensity in contour/depth shadows (dark and light theme variants) to produce a calmer, more finished premium-dark wordmark.
+- Why: User requested a less shiny, deeper navy treatment to improve perceived refinement of the primary logo text.
+- Rollback: this branch/PR (`codex/ithelp-premium-dark-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP wordmark refinement (crisper contour + cobalt ramp)
 - Files:
   - `static/css/late-overrides.css`
