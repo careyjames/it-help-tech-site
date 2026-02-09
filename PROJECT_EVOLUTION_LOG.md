@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: In-content gold CTA depth/geometry refinement
+- Files:
+  - `sass/_extra.scss`
+  - `STYLE_GUIDE.md`
+- Change: Rebuilt `.cta-button` styling to a modern gold relief treatment with stronger geometry (balanced height, medium radius), improved depth via layered shadows/gradient, and explicit hover/focus/active states for clearer affordance while keeping the gold role distinct from blue Schedule controls.
+- Why: Align the "Book an On-Site Visit" button’s visual quality and interaction clarity with the hero control language without changing the color-role system.
+- Rollback: this branch/PR (`codex/cta-button-depth-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: San Diego-to-tagline clearance refinement
 - Files:
   - `static/css/late-overrides.css`
