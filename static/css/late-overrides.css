@@ -349,7 +349,7 @@ html.switch .logo-help {
 
 .location {
     font-size: clamp(2.08rem, 4.05vw, 2.52rem);
-    margin-top: -11px;
+    margin-top: -9px;
     line-height: 0.94;
     text-transform: lowercase;
     position: relative;
@@ -672,7 +672,7 @@ html.switch .particle {
   /* bigger, bolder */
   .main-logo {font-size:20vw;}
   .location  {
-    margin-top: -11px;
+    margin-top: -9px;
     font-size: clamp(2.22rem, 10.2vw, 2.58rem);
     line-height: 0.94;
     letter-spacing: 0.038em;

@@ -485,3 +485,13 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Unified desktop/mobile `san diego` horizontal nudge and vertical offset to the same lockup logic, then shifted `san diego` to a clearer steel gray-blue tone with softer shadow so it reads as a secondary line rather than the same brand-blue tier as `IT+HELP`.
 - Why: User requested matching centering behavior across desktop/mobile and clearer color separation from the IT/HELP logo fill.
 - Rollback: this branch/PR (`codex/san-diego-center-and-steel-v2`), baseline commit `bbdd35d`.
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: San Diego micro-drop spacing refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `PROJECT_EVOLUTION_LOG.md`
+- Change: Lowered `san diego` by an additional 2px on desktop and mobile (`margin-top: -11px -> -9px`) to add breathing room above the tagline pill while preserving centering and hierarchy tuning from the previous pass.
+- Why: User confirmed overall direction but requested a small additional downward move because the logo lockup still felt slightly tight.
+- Rollback: this branch/PR (`codex/san-diego-micro-drop-v1`), baseline commit `0aa7dac`.
