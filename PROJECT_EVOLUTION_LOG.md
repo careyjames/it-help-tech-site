@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP wordmark refinement (crisper contour + cobalt ramp)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Tightened IT/HELP letter contour/depth shadows for cleaner edge definition and shifted logo blues to a richer cobalt ramp (dark and light theme variants) while keeping the red plus and `san diego` treatment unchanged.
+- Why: Improve perceived polish and reduce the slightly gray/soft impression in the primary brand wordmark.
+- Rollback: this branch/PR (`codex/ithelp-wordmark-refine-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: In-content gold CTA depth/geometry refinement
 - Files:
   - `sass/_extra.scss`
