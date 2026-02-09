@@ -474,3 +474,14 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 - Change: Dropped `san diego` further away from `IT+HELP` on desktop and mobile (`margin-top` relaxed by ~5-6px) and darkened/desaturated the label/shadow so it no longer reads as the same visual tier as the primary mark.
 - Why: User confirmed the lockup still looked too tight and that `san diego` remained too close to the IT/HELP color family.
 - Rollback: this branch/PR (`codex/san-diego-drop-and-separate-v1`), previous baseline commit `8ceadfa`.
+
+### 2026-02-08
+- Actor: AI+Developer
+- Scope: Cross-breakpoint centering parity + steel-gray `san diego` tone
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+  - `PROJECT_EVOLUTION_LOG.md`
+- Change: Unified desktop/mobile `san diego` horizontal nudge and vertical offset to the same lockup logic, then shifted `san diego` to a clearer steel gray-blue tone with softer shadow so it reads as a secondary line rather than the same brand-blue tier as `IT+HELP`.
+- Why: User requested matching centering behavior across desktop/mobile and clearer color separation from the IT/HELP logo fill.
+- Rollback: this branch/PR (`codex/san-diego-center-and-steel-v2`), baseline commit `bbdd35d`.
