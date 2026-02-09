@@ -1,5 +1,5 @@
 # Style Guide (Living)
-Last updated: 2026-02-08
+Last updated: 2026-02-09
 
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
@@ -74,6 +74,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
 - Schedule CTA should favor deeper, restrained blue depth (not bright toy-like highlights) with subtle professional relief.
+- In-content gold CTA (`.cta-button`, e.g. "Book an On-Site Visit") should use the same geometry language as Schedule (balanced height, medium corner radius, restrained relief) while remaining gold-first for role separation.
 - Keep Schedule CTA slightly shorter than icon slots so the control row height is driven by 44px-class tap targets, not by the button block.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
 - Hero vertical rhythm should use micro-adjustments only: reduce dead air above the logo and tighten `san diego` under IT+HELP, while preserving clear separation between logo block, tagline pill, and nav row.
