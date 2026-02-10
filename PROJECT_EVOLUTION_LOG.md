@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP modern-electric top-highlight variant
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Kept the premium-dark IT/HELP base depth but raised the top blue highlight and edge-light intensity slightly (dark + light variants) for a cleaner modern-electric finish without reverting to high-gloss glow.
+- Why: User requested testing a brighter top-highlight direction while retaining a finished, professional navy wordmark.
+- Rollback: this branch/PR (`codex/ithelp-modern-electric-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP premium-dark navy variant
 - Files:
   - `static/css/late-overrides.css`
