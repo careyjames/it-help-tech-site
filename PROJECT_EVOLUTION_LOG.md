@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP de-yellow correction (blue-first with ultra-faint trace)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Reduced gold trace contribution to a single very low-alpha top cue and restored a brighter blue logo ramp so IT/HELP reads clearly blue at normal viewing distance while retaining micro-kerning/offset tuning.
+- Why: User feedback showed the prior pass still looked too yellow in real-device renderings.
+- Rollback: this branch/PR (`codex/ithelp-deyellow-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP blue-dominant micro-trace + kerning pass
 - Files:
   - `static/css/late-overrides.css`
