@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #88BFF4;
-    --logo-blue-mid: #4684D2;
-    --logo-blue-bottom: #215AA7;
+    --logo-blue-top: #82B8EE;
+    --logo-blue-mid: #3F79C6;
+    --logo-blue-bottom: #1F539E;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -190,18 +190,16 @@ html.switch .logo-constellation {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.12px var(--accent-gold-solid);
-    paint-order: fill stroke;
+    -webkit-text-stroke: 1.16px var(--accent-gold-solid);
+    paint-order: stroke fill;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 0 0.46px rgba(210, 181, 111, 0.76),
-        0 0.42px 0 rgba(210, 181, 111, 0.74),
-        0 -0.12px 0 rgba(204, 230, 255, 0.22),
-        0 0.76px 0 rgba(3, 14, 44, 0.72),
+        0 -0.10px 0 rgba(204, 230, 255, 0.18),
+        0 0.82px 0 rgba(3, 14, 44, 0.74),
         0 2.4px 5px rgba(2, 8, 24, 0.22),
         0 7px 14px rgba(4, 12, 32, 0.24);
-    filter: none;
+    filter: drop-shadow(0 0.52px 0 rgba(210, 181, 111, 0.62));
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -338,21 +336,19 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #3B74BC;
+    color: #366CB2;
     background-image: none;
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.02px var(--accent-gold-solid);
-    paint-order: fill stroke;
+    -webkit-text-stroke: 1.06px var(--accent-gold-solid);
+    paint-order: stroke fill;
     text-shadow:
-        0 0 0.40px rgba(210, 181, 111, 0.66),
-        0 0.36px 0 rgba(210, 181, 111, 0.64),
-        0 -0.12px 0 rgba(198, 226, 252, 0.20),
+        0 -0.10px 0 rgba(198, 226, 252, 0.18),
         0 0.72px 0 rgba(8, 24, 68, 0.46),
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
-    filter: none;
+    filter: drop-shadow(0 0.42px 0 rgba(210, 181, 111, 0.52));
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
