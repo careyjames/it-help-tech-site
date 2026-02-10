@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP horseshoe artifact cleanup + blue pop tune
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Switched wordmark stroke rendering back to `paint-order: stroke fill` to remove inner `P` horseshoe artifacts, added a downward-only gold micro-shadow for lower-edge closure, and nudged the logo blue ramp darker for stronger headline pop.
+- Why: User feedback confirmed the prior pass reintroduced a `P` horseshoe artifact and still needed richer blue emphasis.
+- Rollback: this branch/PR (`codex/ithelp-p-horseshoe-fix-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP perimeter closure + blue depth rebalance
 - Files:
   - `static/css/late-overrides.css`
