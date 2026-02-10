@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP darker blue cohesion + P artifact cleanup
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Returned IT/HELP blue tokens to a deeper palette and replaced the dense directional gold text-shadow ring with a balanced drop-shadow perimeter model (dark + light variants) to smooth curved letter edges while preserving visible thin gold trim.
+- Why: User feedback indicated the prior pass looked too light blue and still showed top-edge artifacting on `P`.
+- Rollback: this branch/PR (`codex/ithelp-p-clean-darkblue-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP Safari artifact kill + headline emphasis pass
 - Files:
   - `static/css/late-overrides.css`
