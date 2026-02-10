@@ -167,9 +167,11 @@ html.switch .logo-constellation {
 .main-logo {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 900;
-    font-size: 5.3rem;
+    font-size: 5.36rem;
     letter-spacing: 0;
-    --logo-letter-spacing: 0.009em;
+    --logo-letter-spacing: 0.0084em;
+    --logo-it-shift: 0.092em;
+    --logo-help-shift: -0.024em;
     --logo-plus-gap: 0em;
     position: relative;
     display: inline-block;
@@ -190,12 +192,12 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.48px 0 rgba(194, 161, 90, 0.34),
-        -0.26px -0.16px 0 rgba(194, 161, 90, 0.24),
-         0.26px -0.16px 0 rgba(194, 161, 90, 0.24),
-        0 -0.3px 0 rgba(196, 224, 252, 0.26),
-        -0.28px 0 0 rgba(112, 156, 220, 0.18),
-         0.28px 0 0 rgba(112, 156, 220, 0.18),
+        0 -0.34px 0 rgba(194, 161, 90, 0.16),
+        -0.18px -0.10px 0 rgba(194, 161, 90, 0.11),
+         0.18px -0.10px 0 rgba(194, 161, 90, 0.11),
+        0 -0.3px 0 rgba(196, 224, 252, 0.30),
+        -0.26px 0 0 rgba(112, 156, 220, 0.19),
+         0.26px 0 0 rgba(112, 156, 220, 0.19),
         0 0.95px 0 rgba(3, 14, 44, 0.88),
         0 2px 4px rgba(2, 8, 24, 0.30),
         0 6px 14px rgba(4, 12, 32, 0.34),
@@ -208,11 +210,11 @@ html.switch .logo-constellation {
 }
 
 .logo-it {
-    left: 0.1em;
+    left: var(--logo-it-shift);
 }
 
 .logo-help {
-    left: -0.03em;
+    left: var(--logo-help-shift);
 }
 
 .logo-it::before,
@@ -342,12 +344,12 @@ html.switch .logo-help {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 -0.4px 0 rgba(194, 161, 90, 0.26),
-        -0.22px -0.14px 0 rgba(194, 161, 90, 0.18),
-         0.22px -0.14px 0 rgba(194, 161, 90, 0.18),
-        0 -0.22px 0 rgba(170, 204, 238, 0.18),
-        -0.2px 0 0 rgba(94, 138, 198, 0.12),
-         0.2px 0 0 rgba(94, 138, 198, 0.12),
+        0 -0.28px 0 rgba(194, 161, 90, 0.12),
+        -0.16px -0.09px 0 rgba(194, 161, 90, 0.08),
+         0.16px -0.09px 0 rgba(194, 161, 90, 0.08),
+        0 -0.22px 0 rgba(170, 204, 238, 0.20),
+        -0.2px 0 0 rgba(94, 138, 198, 0.13),
+         0.2px 0 0 rgba(94, 138, 198, 0.13),
         0 0.9px 0 rgba(8, 24, 68, 0.54),
         0 1.8px 3.6px rgba(2, 8, 24, 0.16),
         0 4px 9px rgba(10, 26, 56, 0.10);
@@ -680,7 +682,12 @@ html.switch .particle {
   }
 
   /* bigger, bolder */
-  .main-logo {font-size:20.4vw;}
+  .main-logo {
+    font-size: 20.6vw;
+    --logo-letter-spacing: 0.0082em;
+    --logo-it-shift: 0.09em;
+    --logo-help-shift: -0.022em;
+  }
   .location  {
     margin-top: -6px;
     font-size: clamp(2.22rem, 10.2vw, 2.58rem);

@@ -42,8 +42,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
-- Current IT/HELP finish target: premium-dark navy depth with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
-- IT/HELP gold treatment, if used, should be a micro-trace only (top/upper edges, sub-pixel feel), never a full heavy outline.
+- Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
+- IT/HELP gold treatment, if used, should be a micro-trace only (top/upper edges, sub-pixel feel), never a full heavy outline or gold-dominant read.
+- Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
 - Gold-forward fallback snapshot (if we intentionally choose that direction): `main@a3b9ea2` from PR `#430`; use it as the restore baseline for logo color treatment.
