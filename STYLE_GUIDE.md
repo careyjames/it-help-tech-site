@@ -43,7 +43,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
-- IT/HELP gold treatment, if used, should be an ultra-faint micro-trace only (single top cue, near-invisible at normal distance), never a full heavy outline or gold-dominant read.
+- IT/HELP gold treatment, if used, should be an ultra-faint sub-pixel wrap trace (all sides with very low alpha), never a full heavy outline or gold-dominant read.
 - Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
