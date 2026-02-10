@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP gold stroke cleanup and solidity pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Increased IT/HELP stroke widths to near-1px values and added a tight gold smoothing halo in text-shadow to reduce jagged edges and make the gold perimeter read as a solid professional border.
+- Why: User feedback confirmed the prior gold stroke was visible but still too thin/janky compared to the crisp hero pill border.
+- Rollback: this branch/PR (`codex/ithelp-gold-stroke-polish-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP explicit gold stroke visibility pass
 - Files:
   - `static/css/late-overrides.css`
