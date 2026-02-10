@@ -13,6 +13,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-10
+- Actor: AI+Developer
+- Scope: IT/HELP visible strip layering pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Reordered and resized the IT/HELP edge stack so a smaller inner blue contour sits above a larger gold ring (dark and light variants), producing a clearly visible thin gold strip around glyphs while keeping blue fill dominant.
+- Why: User feedback remained that gold perimeter was not visible in real Safari/iPhone renderings.
+- Rollback: this branch/PR (`codex/ithelp-gold-strip-visible-v2`).
+
 ### 2026-02-09
 - Actor: AI+Developer
 - Scope: IT/HELP gold perimeter band refinement
