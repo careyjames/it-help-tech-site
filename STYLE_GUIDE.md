@@ -23,6 +23,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - Light mode link: `#2B6FCD` (`$a1`)
   - Light mode hover: `#4A8EDF` (`$a2`)
 - Gold Accent (reserved accent): `#C2A15A`
+- Gold Stroke (pillbox/wordmark border match): `#D2B56F` (`--accent-gold-solid`)
 - Plus Red (plus symbol only): `#FF0066`
 - Dark Background: `#0D1117` (primary), `#161B22` (elevated surface)
 - Light Text: `#FFFFFF`
@@ -47,6 +48,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Build the strip as a larger outer gold ring under a smaller inner blue contour ring in `text-shadow` order so the perimeter remains visible in Safari.
 - Keep perimeter ring weights top/bottom balanced to avoid rough edge artifacts on rounded glyph shoulders (especially `P`) on desktop Safari.
 - Prefer a drop-shadow perimeter ring for IT/HELP edge treatment when Safari shows curved-edge artifacts from dense directional text-shadow stacks.
+- When the ring reads too faint, match the glyph perimeter color to the hero pill gold stroke (`#D2B56F`) before increasing blur or glow.
 - Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
