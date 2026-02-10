@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP gold perimeter band refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Reworked IT/HELP edge treatment to a clearer perimeter gold band around each glyph (all sides) with a restrained dark outer cut, while preserving blue letter fill dominance and existing optical spacing.
+- Why: User requested gold in the geographic perimeter around each letter rather than a faint top cue or yellow-dominant fill.
+- Rollback: this branch/PR (`codex/ithelp-gold-band-outline-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP wraparound micro-trace refinement
 - Files:
   - `static/css/late-overrides.css`
