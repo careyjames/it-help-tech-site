@@ -190,23 +190,16 @@ html.switch .logo-constellation {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0.92px var(--accent-gold-solid);
+    paint-order: stroke fill;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 -0.16px 0 rgba(204, 230, 255, 0.30),
+        0 -0.16px 0 rgba(204, 230, 255, 0.28),
         0 0.95px 0 rgba(3, 14, 44, 0.84),
         0 3px 6px rgba(2, 8, 24, 0.26),
         0 8px 16px rgba(4, 12, 32, 0.28);
-    filter:
-        drop-shadow(-0.72px 0 0 rgba(210, 181, 111, 0.96))
-        drop-shadow(0.72px 0 0 rgba(210, 181, 111, 0.96))
-        drop-shadow(0 -0.72px 0 rgba(210, 181, 111, 0.94))
-        drop-shadow(0 0.72px 0 rgba(210, 181, 111, 0.88))
-        drop-shadow(-0.64px -0.64px 0 rgba(210, 181, 111, 0.92))
-        drop-shadow(0.64px -0.64px 0 rgba(210, 181, 111, 0.92))
-        drop-shadow(-0.64px 0.64px 0 rgba(210, 181, 111, 0.86))
-        drop-shadow(0.64px 0.64px 0 rgba(210, 181, 111, 0.86))
-        drop-shadow(0 0 1.2px rgba(210, 181, 111, 0.22));
+    filter: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -348,21 +341,14 @@ html.switch .logo-help {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0.82px var(--accent-gold-solid);
+    paint-order: stroke fill;
     text-shadow:
         0 -0.14px 0 rgba(198, 226, 252, 0.24),
         0 0.8px 0 rgba(8, 24, 68, 0.50),
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
-    filter:
-        drop-shadow(-0.64px 0 0 rgba(210, 181, 111, 0.78))
-        drop-shadow(0.64px 0 0 rgba(210, 181, 111, 0.78))
-        drop-shadow(0 -0.64px 0 rgba(210, 181, 111, 0.76))
-        drop-shadow(0 0.64px 0 rgba(210, 181, 111, 0.68))
-        drop-shadow(-0.56px -0.56px 0 rgba(210, 181, 111, 0.72))
-        drop-shadow(0.56px -0.56px 0 rgba(210, 181, 111, 0.72))
-        drop-shadow(-0.56px 0.56px 0 rgba(210, 181, 111, 0.62))
-        drop-shadow(0.56px 0.56px 0 rgba(210, 181, 111, 0.62))
-        drop-shadow(0 0 1.0px rgba(210, 181, 111, 0.16));
+    filter: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;

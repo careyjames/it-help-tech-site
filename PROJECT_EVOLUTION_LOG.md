@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP explicit gold stroke visibility pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Replaced IT/HELP drop-shadow perimeter ring with direct `-webkit-text-stroke` gold outlines (dark + light variants) keyed to `--accent-gold-solid`, while retaining blue fill and depth shadows.
+- Why: User reported no visible gold perimeter after repeated ring-shadow passes and requested a clearly solid wrap comparable to the hero pill border.
+- Rollback: this branch/PR (`codex/ithelp-explicit-gold-stroke-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP solid gold wrap visibility pass
 - Files:
   - `static/css/late-overrides.css`
