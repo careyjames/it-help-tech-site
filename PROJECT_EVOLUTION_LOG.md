@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP desktop P shoulder spur cleanup
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Added desktop-only (`min-width: 700px`) reductions for IT/HELP gold stroke and halo intensity (dark + light variants) to smooth the top shoulder of `P`, while preserving stronger mobile wrap settings.
+- Why: User-reported artifact was visible on desktop at the top of `P` but not on mobile; breakpoint-scoped tuning targets the failing surface directly.
+- Rollback: this branch/PR (`codex/ithelp-p-top-spur-fix-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP gold perimeter continuity pass
 - Files:
   - `static/css/late-overrides.css`

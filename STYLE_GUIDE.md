@@ -45,6 +45,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - To avoid inner horseshoe artifacts on curved glyphs (notably `P`), prefer `paint-order: stroke fill`; if bottom edges read weak, add only a subtle downward gold micro-shadow.
 - For cleaner curved tops (especially `P` shoulder), avoid negative-Y top highlight strokes; prefer a centered micro gold smoothing halo plus a downward closure pass.
 - Gold wrap continuity target: if perimeter looks broken, use a low-radius centered halo (`~0.2px`) plus a small positive-Y closure (`~0.4-0.6px`) before increasing stroke thickness further.
+- If a shoulder spur appears only on desktop, apply desktop-only reductions to stroke/halo first (`@media (min-width: 700px)`) and keep mobile values unchanged.
 - If curved-edge noise persists, prefer pure `-webkit-text-stroke` perimeter with no extra gold `filter` stack before increasing effect complexity.
 - Keep Apple rendering weight consistent: do not downshift IT/HELP glyphs to `800` in Safari-targeted overrides; keep the logo at its core heavyweight geometry.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
