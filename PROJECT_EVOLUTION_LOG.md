@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP visible gold strip pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Increased gold perimeter band alpha/width around IT/HELP glyphs (dark and light variants) so a thin strip is visible at normal viewing distance, while keeping blue fill and existing geometry.
+- Why: User feedback indicated the previous strip was still not perceptible.
+- Rollback: this branch/PR (`codex/ithelp-gold-strip-visible-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP wraparound micro-trace refinement
 - Files:
   - `static/css/late-overrides.css`
