@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP gold perimeter continuity pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Kept direct text-stroke rendering but strengthened perimeter continuity with a tiny centered gold smoothing halo and a subtle downward gold closure shadow (dark + light variants), while avoiding filter-based ring effects.
+- Why: User feedback indicated the gold wrap around IT/HELP still looked incomplete/uneven and needed a cleaner, more continuous edge read.
+- Rollback: this branch/PR (`codex/ithelp-gold-wrap-clean-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP P contour cleanup (Apple weight + stroke simplification)
 - Files:
   - `static/css/late-overrides.css`
