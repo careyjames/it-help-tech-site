@@ -356,6 +356,31 @@ html.switch .logo-help {
     animation: none;
 }
 
+/* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */
+@media (min-width: 700px) {
+    .logo-it,
+    .logo-help {
+        -webkit-text-stroke: 1.1px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.18px rgba(210, 181, 111, 0.56),
+            0 0.46px 0 rgba(210, 181, 111, 0.40),
+            0 0.90px 0 rgba(3, 14, 44, 0.74),
+            0 2.4px 5px rgba(2, 8, 24, 0.22),
+            0 7px 14px rgba(4, 12, 32, 0.24);
+    }
+
+    html.switch .logo-it,
+    html.switch .logo-help {
+        -webkit-text-stroke: 1.04px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.16px rgba(210, 181, 111, 0.48),
+            0 0.38px 0 rgba(210, 181, 111, 0.34),
+            0 0.72px 0 rgba(8, 24, 68, 0.46),
+            0 1.6px 3.2px rgba(2, 8, 24, 0.14),
+            0 4px 9px rgba(10, 26, 56, 0.08);
+    }
+}
+
 
 .location {
     font-size: clamp(2.08rem, 4.05vw, 2.52rem);
