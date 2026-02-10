@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP wraparound micro-trace refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Replaced the single top gold cue with an ultra-low-alpha 360-degree sub-pixel trace around IT/HELP glyph edges (dark + light variants) while preserving blue-dominant fill and existing kerning/offset geometry.
+- Why: User requested visible per-letter gold outlining without reintroducing an overall yellow/gold cast.
+- Rollback: this branch/PR (`codex/ithelp-gold-outline-micro-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP de-yellow correction (blue-first with ultra-faint trace)
 - Files:
   - `static/css/late-overrides.css`
