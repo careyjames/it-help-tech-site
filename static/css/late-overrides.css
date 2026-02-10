@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #90C7FA;
-    --logo-blue-mid: #4A86D8;
-    --logo-blue-bottom: #1F56A8;
+    --logo-blue-top: #9BCFFF;
+    --logo-blue-mid: #5A95E3;
+    --logo-blue-bottom: #2A64BB;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -192,31 +192,32 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        /* inner contour sits on top so blue fill stays dominant */
-        -0.34px 0 0 rgba(8, 24, 52, 0.58),
-         0.34px 0 0 rgba(8, 24, 52, 0.58),
-        0 -0.34px 0 rgba(8, 24, 52, 0.56),
-        0  0.34px 0 rgba(8, 24, 52, 0.46),
-        -0.30px -0.30px 0 rgba(8, 24, 52, 0.48),
-         0.30px -0.30px 0 rgba(8, 24, 52, 0.48),
-        -0.30px  0.30px 0 rgba(8, 24, 52, 0.40),
-         0.30px  0.30px 0 rgba(8, 24, 52, 0.40),
-        /* slightly larger perimeter ring behind contour creates a visible gold strip */
-        -0.58px 0 0 rgba(194, 161, 90, 0.78),
-         0.58px 0 0 rgba(194, 161, 90, 0.78),
-        0 -0.58px 0 rgba(194, 161, 90, 0.82),
-        0  0.58px 0 rgba(194, 161, 90, 0.66),
-        -0.52px -0.52px 0 rgba(194, 161, 90, 0.72),
-         0.52px -0.52px 0 rgba(194, 161, 90, 0.72),
-        -0.52px  0.52px 0 rgba(194, 161, 90, 0.60),
-         0.52px  0.52px 0 rgba(194, 161, 90, 0.60),
-        0 -0.28px 0 rgba(198, 225, 252, 0.30),
-        -0.24px 0 0 rgba(118, 164, 230, 0.22),
-         0.24px 0 0 rgba(118, 164, 230, 0.22),
-        0 0.95px 0 rgba(3, 14, 44, 0.90),
-        0 2px 4px rgba(2, 8, 24, 0.30),
-        0 6px 14px rgba(4, 12, 32, 0.34),
-        0 0 2px rgba(70, 132, 224, 0.06);
+        /* tighten inner contour so fills stay brighter and cleaner */
+        -0.28px 0 0 rgba(8, 24, 52, 0.44),
+         0.28px 0 0 rgba(8, 24, 52, 0.44),
+        0 -0.28px 0 rgba(8, 24, 52, 0.42),
+        0  0.28px 0 rgba(8, 24, 52, 0.34),
+        -0.24px -0.24px 0 rgba(8, 24, 52, 0.36),
+         0.24px -0.24px 0 rgba(8, 24, 52, 0.36),
+        -0.24px  0.24px 0 rgba(8, 24, 52, 0.30),
+         0.24px  0.24px 0 rgba(8, 24, 52, 0.30),
+        /* balanced perimeter ring reduces top-edge artifacts on curved glyphs like P */
+        -0.54px 0 0 rgba(194, 161, 90, 0.68),
+         0.54px 0 0 rgba(194, 161, 90, 0.68),
+        0 -0.54px 0 rgba(194, 161, 90, 0.70),
+        0  0.54px 0 rgba(194, 161, 90, 0.56),
+        -0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
+         0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
+        -0.48px  0.48px 0 rgba(194, 161, 90, 0.50),
+         0.48px  0.48px 0 rgba(194, 161, 90, 0.50),
+        0 0 1px rgba(194, 161, 90, 0.18),
+        0 -0.24px 0 rgba(206, 231, 255, 0.34),
+        -0.2px 0 0 rgba(130, 174, 238, 0.24),
+         0.2px 0 0 rgba(130, 174, 238, 0.24),
+        0 0.9px 0 rgba(3, 14, 44, 0.84),
+        0 2px 4px rgba(2, 8, 24, 0.28),
+        0 6px 14px rgba(4, 12, 32, 0.30),
+        0 0 2px rgba(80, 146, 236, 0.08);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -354,33 +355,34 @@ html.switch .logo-constellation {
 html.switch .logo-it,
 html.switch .logo-help {
     color: var(--logo-blue-mid);
-    background-image: linear-gradient(180deg, #8FC6F6 0%, #4A8CD9 50%, #245EA9 100%);
+    background-image: linear-gradient(180deg, #90C5F6 0%, #528DDC 50%, #2A63AF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        -0.30px 0 0 rgba(20, 44, 82, 0.42),
-         0.30px 0 0 rgba(20, 44, 82, 0.42),
-        0 -0.30px 0 rgba(20, 44, 82, 0.40),
-        0  0.30px 0 rgba(20, 44, 82, 0.32),
-        -0.26px -0.26px 0 rgba(20, 44, 82, 0.34),
-         0.26px -0.26px 0 rgba(20, 44, 82, 0.34),
-        -0.26px  0.26px 0 rgba(20, 44, 82, 0.28),
-         0.26px  0.26px 0 rgba(20, 44, 82, 0.28),
-        -0.48px 0 0 rgba(194, 161, 90, 0.56),
-         0.48px 0 0 rgba(194, 161, 90, 0.56),
-        0 -0.48px 0 rgba(194, 161, 90, 0.62),
-        0  0.48px 0 rgba(194, 161, 90, 0.44),
-        -0.44px -0.44px 0 rgba(194, 161, 90, 0.50),
-         0.44px -0.44px 0 rgba(194, 161, 90, 0.50),
-        -0.44px  0.44px 0 rgba(194, 161, 90, 0.36),
-         0.44px  0.44px 0 rgba(194, 161, 90, 0.36),
-        0 -0.22px 0 rgba(174, 208, 242, 0.20),
-        -0.2px 0 0 rgba(96, 140, 200, 0.13),
-         0.2px 0 0 rgba(96, 140, 200, 0.13),
-        0 0.9px 0 rgba(8, 24, 68, 0.54),
-        0 1.8px 3.6px rgba(2, 8, 24, 0.16),
-        0 4px 9px rgba(10, 26, 56, 0.10);
+        -0.26px 0 0 rgba(20, 44, 82, 0.36),
+         0.26px 0 0 rgba(20, 44, 82, 0.36),
+        0 -0.26px 0 rgba(20, 44, 82, 0.34),
+        0  0.26px 0 rgba(20, 44, 82, 0.28),
+        -0.22px -0.22px 0 rgba(20, 44, 82, 0.30),
+         0.22px -0.22px 0 rgba(20, 44, 82, 0.30),
+        -0.22px  0.22px 0 rgba(20, 44, 82, 0.24),
+         0.22px  0.22px 0 rgba(20, 44, 82, 0.24),
+        -0.44px 0 0 rgba(194, 161, 90, 0.52),
+         0.44px 0 0 rgba(194, 161, 90, 0.52),
+        0 -0.44px 0 rgba(194, 161, 90, 0.56),
+        0  0.44px 0 rgba(194, 161, 90, 0.42),
+        -0.40px -0.40px 0 rgba(194, 161, 90, 0.46),
+         0.40px -0.40px 0 rgba(194, 161, 90, 0.46),
+        -0.40px  0.40px 0 rgba(194, 161, 90, 0.34),
+         0.40px  0.40px 0 rgba(194, 161, 90, 0.34),
+        0 0 0.85px rgba(194, 161, 90, 0.14),
+        0 -0.20px 0 rgba(184, 216, 247, 0.24),
+        -0.18px 0 0 rgba(106, 150, 210, 0.16),
+         0.18px 0 0 rgba(106, 150, 210, 0.16),
+        0 0.85px 0 rgba(8, 24, 68, 0.50),
+        0 1.6px 3.2px rgba(2, 8, 24, 0.14),
+        0 4px 9px rgba(10, 26, 56, 0.08);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;

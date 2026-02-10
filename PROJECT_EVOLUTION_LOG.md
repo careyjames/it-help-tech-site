@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP desktop edge cleanup + blue fill pop pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Lifted the logo blue ramp for brighter interior fill, reduced inner contour heaviness, and rebalanced top/bottom gold perimeter ring weights so rounded glyph tops (notably `P`) render cleaner while keeping the thin wraparound gold strip visible.
+- Why: User feedback indicated desktop still showed rough artifacts at the top of `P` and the inner blue needed more presence.
+- Rollback: this branch/PR (`codex/ithelp-p-smooth-blue-pop-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP visible strip layering pass
 - Files:
   - `static/css/late-overrides.css`
