@@ -15,6 +15,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP P top-spur subpixel cleanup (desktop)
+- Files:
+  - `templates/partials/hero_logo.html`
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Isolated the `P` in `HELP` for per-glyph desktop tuning, then snapped desktop logo sizing/offsets to integer-pixel geometry and reduced `P`-only stroke/halo intensity to suppress the persistent top spur without weakening the mobile wrap.
+- Why: User-confirmed top-of-`P` artifact remained on desktop after global perimeter adjustments.
+- Rollback: this branch/PR (`codex/ithelp-p-subpixel-clean-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP desktop P shoulder spur cleanup
 - Files:
   - `static/css/late-overrides.css`
