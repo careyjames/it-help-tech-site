@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#90C7FA` (`--logo-blue-top`)
-  - Mid: `#4A86D8` (`--logo-blue-mid`)
-  - Bottom: `#1F56A8` (`--logo-blue-bottom`)
+  - Top: `#9BCFFF` (`--logo-blue-top`)
+  - Mid: `#5A95E3` (`--logo-blue-mid`)
+  - Bottom: `#2A64BB` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -45,6 +45,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
 - IT/HELP gold treatment, if used, should be a thin perimeter band around glyph edges (all sides) with blue fill visually dominant.
 - Build the strip as a larger outer gold ring under a smaller inner blue contour ring in `text-shadow` order so the perimeter remains visible in Safari.
+- Keep perimeter ring weights top/bottom balanced to avoid rough edge artifacts on rounded glyph shoulders (especially `P`) on desktop Safari.
 - Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
