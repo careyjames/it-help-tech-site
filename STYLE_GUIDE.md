@@ -41,6 +41,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Current blue target: DNS-aligned true blue (non-purple), with depth from shading rather than violet tint.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.8px`-`1.0px`) with solid fill and no glow-heavy stack.
+- For solid premium outlines, use near-integer stroke widths (`~1px`) with a tiny gold smoothing halo; avoid thin sub-pixel strokes that can look jagged.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
