@@ -31,6 +31,7 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --logo-blue-bottom: #245EA9;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
+    --accent-gold-solid: #D2B56F;
     --accent-gold-rgb: 194, 161, 90;
     --accent-gold-glow: 224, 197, 138;
 }
@@ -197,15 +198,15 @@ html.switch .logo-constellation {
         0 3px 6px rgba(2, 8, 24, 0.26),
         0 8px 16px rgba(4, 12, 32, 0.28);
     filter:
-        drop-shadow(-0.58px 0 0 rgba(194, 161, 90, 0.76))
-        drop-shadow(0.58px 0 0 rgba(194, 161, 90, 0.76))
-        drop-shadow(0 -0.58px 0 rgba(194, 161, 90, 0.72))
-        drop-shadow(0 0.58px 0 rgba(194, 161, 90, 0.62))
-        drop-shadow(-0.50px -0.50px 0 rgba(194, 161, 90, 0.68))
-        drop-shadow(0.50px -0.50px 0 rgba(194, 161, 90, 0.68))
-        drop-shadow(-0.50px 0.50px 0 rgba(194, 161, 90, 0.56))
-        drop-shadow(0.50px 0.50px 0 rgba(194, 161, 90, 0.56))
-        drop-shadow(0 0 0.9px rgba(194, 161, 90, 0.14));
+        drop-shadow(-0.72px 0 0 rgba(210, 181, 111, 0.96))
+        drop-shadow(0.72px 0 0 rgba(210, 181, 111, 0.96))
+        drop-shadow(0 -0.72px 0 rgba(210, 181, 111, 0.94))
+        drop-shadow(0 0.72px 0 rgba(210, 181, 111, 0.88))
+        drop-shadow(-0.64px -0.64px 0 rgba(210, 181, 111, 0.92))
+        drop-shadow(0.64px -0.64px 0 rgba(210, 181, 111, 0.92))
+        drop-shadow(-0.64px 0.64px 0 rgba(210, 181, 111, 0.86))
+        drop-shadow(0.64px 0.64px 0 rgba(210, 181, 111, 0.86))
+        drop-shadow(0 0 1.2px rgba(210, 181, 111, 0.22));
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -353,15 +354,15 @@ html.switch .logo-help {
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
     filter:
-        drop-shadow(-0.50px 0 0 rgba(194, 161, 90, 0.60))
-        drop-shadow(0.50px 0 0 rgba(194, 161, 90, 0.60))
-        drop-shadow(0 -0.50px 0 rgba(194, 161, 90, 0.56))
-        drop-shadow(0 0.50px 0 rgba(194, 161, 90, 0.48))
-        drop-shadow(-0.42px -0.42px 0 rgba(194, 161, 90, 0.52))
-        drop-shadow(0.42px -0.42px 0 rgba(194, 161, 90, 0.52))
-        drop-shadow(-0.42px 0.42px 0 rgba(194, 161, 90, 0.42))
-        drop-shadow(0.42px 0.42px 0 rgba(194, 161, 90, 0.42))
-        drop-shadow(0 0 0.7px rgba(194, 161, 90, 0.10));
+        drop-shadow(-0.64px 0 0 rgba(210, 181, 111, 0.78))
+        drop-shadow(0.64px 0 0 rgba(210, 181, 111, 0.78))
+        drop-shadow(0 -0.64px 0 rgba(210, 181, 111, 0.76))
+        drop-shadow(0 0.64px 0 rgba(210, 181, 111, 0.68))
+        drop-shadow(-0.56px -0.56px 0 rgba(210, 181, 111, 0.72))
+        drop-shadow(0.56px -0.56px 0 rgba(210, 181, 111, 0.72))
+        drop-shadow(-0.56px 0.56px 0 rgba(210, 181, 111, 0.62))
+        drop-shadow(0.56px 0.56px 0 rgba(210, 181, 111, 0.62))
+        drop-shadow(0 0 1.0px rgba(210, 181, 111, 0.16));
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;

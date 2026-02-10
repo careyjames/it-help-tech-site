@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP solid gold wrap visibility pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Strengthened IT/HELP perimeter ring with higher-opacity balanced drop-shadow offsets and switched ring color to the same solid gold used by the hero pill border (`#D2B56F`) so the wraparound outline is clearly visible.
+- Why: User requested a more solid, obvious gold perimeter around letters comparable to the pillbox border treatment.
+- Rollback: this branch/PR (`codex/ithelp-solid-gold-wrap-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP darker blue cohesion + P artifact cleanup
 - Files:
   - `static/css/late-overrides.css`
