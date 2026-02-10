@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#9BCFFF` (`--logo-blue-top`)
-  - Mid: `#5A95E3` (`--logo-blue-mid`)
-  - Bottom: `#2A64BB` (`--logo-blue-bottom`)
+  - Top: `#A8D6FF` (`--logo-blue-top`)
+  - Mid: `#6AAAF5` (`--logo-blue-mid`)
+  - Bottom: `#3476D0` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -32,7 +32,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Keep one hue family but use role-based depth:
   - Logo = deeper authority blue.
   - Schedule/link actions = clearly actionable blue, but on dark pages prefer a darker CTA tone to avoid glowing too bright.
-- IT/HELP lettering should use a 3-stop gradient fill (top/mid/bottom logo ramp) for clear dimensionality at a glance.
+- IT/HELP lettering should use a bright blue solid core with subtle highlight/depth shadows for dimensionality (Safari-stable rendering).
 - Blue direction: indigo-leaning (avoid consumer "UI chrome" blues and avoid cyan drift).
 - Current lock target: true non-purple blue aligned to DNS Tool `--status-info` (`#58A6FF`) as the anchor.
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should remain in the same family even when depth differs by role.
@@ -49,6 +49,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
+- For Safari/iOS stability, keep IT/HELP fill as `currentColor` and avoid transparent text fill paths that can introduce curved-edge artifacts.
 - Gold-forward fallback snapshot (if we intentionally choose that direction): `main@a3b9ea2` from PR `#430`; use it as the restore baseline for logo color treatment.
 - Use Gold in controlled doses: CTA button style and restrained logo trim only.
 - Red is reserved for the plus sign.

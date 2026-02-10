@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #9BCFFF;
-    --logo-blue-mid: #5A95E3;
-    --logo-blue-bottom: #2A64BB;
+    --logo-blue-top: #A8D6FF;
+    --logo-blue-mid: #6AAAF5;
+    --logo-blue-bottom: #3476D0;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-rgb: 194, 161, 90;
@@ -185,39 +185,35 @@ html.switch .logo-constellation {
 .logo-it,
 .logo-help {
     color: var(--logo-blue-mid);
-    background-image: linear-gradient(180deg, var(--logo-blue-top) 0%, var(--logo-blue-mid) 50%, var(--logo-blue-bottom) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-image: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        /* tighten inner contour so fills stay brighter and cleaner */
-        -0.28px 0 0 rgba(8, 24, 52, 0.44),
-         0.28px 0 0 rgba(8, 24, 52, 0.44),
-        0 -0.28px 0 rgba(8, 24, 52, 0.42),
-        0  0.28px 0 rgba(8, 24, 52, 0.34),
-        -0.24px -0.24px 0 rgba(8, 24, 52, 0.36),
-         0.24px -0.24px 0 rgba(8, 24, 52, 0.36),
-        -0.24px  0.24px 0 rgba(8, 24, 52, 0.30),
-         0.24px  0.24px 0 rgba(8, 24, 52, 0.30),
-        /* balanced perimeter ring reduces top-edge artifacts on curved glyphs like P */
-        -0.54px 0 0 rgba(194, 161, 90, 0.68),
-         0.54px 0 0 rgba(194, 161, 90, 0.68),
-        0 -0.54px 0 rgba(194, 161, 90, 0.70),
-        0  0.54px 0 rgba(194, 161, 90, 0.56),
-        -0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
-         0.48px -0.48px 0 rgba(194, 161, 90, 0.62),
-        -0.48px  0.48px 0 rgba(194, 161, 90, 0.50),
-         0.48px  0.48px 0 rgba(194, 161, 90, 0.50),
-        0 0 1px rgba(194, 161, 90, 0.18),
-        0 -0.24px 0 rgba(206, 231, 255, 0.34),
-        -0.2px 0 0 rgba(130, 174, 238, 0.24),
-         0.2px 0 0 rgba(130, 174, 238, 0.24),
-        0 0.9px 0 rgba(3, 14, 44, 0.84),
-        0 2px 4px rgba(2, 8, 24, 0.28),
-        0 6px 14px rgba(4, 12, 32, 0.30),
-        0 0 2px rgba(80, 146, 236, 0.08);
+        /* compact inner contour keeps blue fill readable and crisp */
+        -0.22px 0 0 rgba(6, 20, 46, 0.48),
+         0.22px 0 0 rgba(6, 20, 46, 0.48),
+        0 -0.22px 0 rgba(6, 20, 46, 0.46),
+        0  0.22px 0 rgba(6, 20, 46, 0.38),
+        -0.20px -0.20px 0 rgba(6, 20, 46, 0.40),
+         0.20px -0.20px 0 rgba(6, 20, 46, 0.40),
+        -0.20px  0.20px 0 rgba(6, 20, 46, 0.32),
+         0.20px  0.20px 0 rgba(6, 20, 46, 0.32),
+        /* slightly thicker, balanced gold perimeter for cleaner ring visibility */
+        -0.64px 0 0 rgba(194, 161, 90, 0.76),
+         0.64px 0 0 rgba(194, 161, 90, 0.76),
+        0 -0.64px 0 rgba(194, 161, 90, 0.76),
+        0  0.64px 0 rgba(194, 161, 90, 0.64),
+        -0.56px -0.56px 0 rgba(194, 161, 90, 0.68),
+         0.56px -0.56px 0 rgba(194, 161, 90, 0.68),
+        -0.56px  0.56px 0 rgba(194, 161, 90, 0.56),
+         0.56px  0.56px 0 rgba(194, 161, 90, 0.56),
+        0 -0.18px 0 rgba(220, 239, 255, 0.36),
+        0 0.95px 0 rgba(3, 14, 44, 0.84),
+        0 3px 6px rgba(2, 8, 24, 0.26),
+        0 8px 16px rgba(4, 12, 32, 0.28);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
@@ -354,33 +350,30 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: var(--logo-blue-mid);
-    background-image: linear-gradient(180deg, #90C5F6 0%, #528DDC 50%, #2A63AF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #4C86D2;
+    background-image: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
     text-shadow:
-        -0.26px 0 0 rgba(20, 44, 82, 0.36),
-         0.26px 0 0 rgba(20, 44, 82, 0.36),
-        0 -0.26px 0 rgba(20, 44, 82, 0.34),
-        0  0.26px 0 rgba(20, 44, 82, 0.28),
-        -0.22px -0.22px 0 rgba(20, 44, 82, 0.30),
-         0.22px -0.22px 0 rgba(20, 44, 82, 0.30),
-        -0.22px  0.22px 0 rgba(20, 44, 82, 0.24),
-         0.22px  0.22px 0 rgba(20, 44, 82, 0.24),
-        -0.44px 0 0 rgba(194, 161, 90, 0.52),
-         0.44px 0 0 rgba(194, 161, 90, 0.52),
-        0 -0.44px 0 rgba(194, 161, 90, 0.56),
-        0  0.44px 0 rgba(194, 161, 90, 0.42),
-        -0.40px -0.40px 0 rgba(194, 161, 90, 0.46),
-         0.40px -0.40px 0 rgba(194, 161, 90, 0.46),
-        -0.40px  0.40px 0 rgba(194, 161, 90, 0.34),
-         0.40px  0.40px 0 rgba(194, 161, 90, 0.34),
-        0 0 0.85px rgba(194, 161, 90, 0.14),
-        0 -0.20px 0 rgba(184, 216, 247, 0.24),
-        -0.18px 0 0 rgba(106, 150, 210, 0.16),
-         0.18px 0 0 rgba(106, 150, 210, 0.16),
-        0 0.85px 0 rgba(8, 24, 68, 0.50),
+        -0.20px 0 0 rgba(20, 44, 82, 0.38),
+         0.20px 0 0 rgba(20, 44, 82, 0.38),
+        0 -0.20px 0 rgba(20, 44, 82, 0.36),
+        0  0.20px 0 rgba(20, 44, 82, 0.30),
+        -0.18px -0.18px 0 rgba(20, 44, 82, 0.30),
+         0.18px -0.18px 0 rgba(20, 44, 82, 0.30),
+        -0.18px  0.18px 0 rgba(20, 44, 82, 0.24),
+         0.18px  0.18px 0 rgba(20, 44, 82, 0.24),
+        -0.52px 0 0 rgba(194, 161, 90, 0.56),
+         0.52px 0 0 rgba(194, 161, 90, 0.56),
+        0 -0.52px 0 rgba(194, 161, 90, 0.56),
+        0  0.52px 0 rgba(194, 161, 90, 0.46),
+        -0.46px -0.46px 0 rgba(194, 161, 90, 0.50),
+         0.46px -0.46px 0 rgba(194, 161, 90, 0.50),
+        -0.46px  0.46px 0 rgba(194, 161, 90, 0.40),
+         0.46px  0.46px 0 rgba(194, 161, 90, 0.40),
+        0 -0.14px 0 rgba(192, 223, 252, 0.28),
+        0 0.8px 0 rgba(8, 24, 68, 0.50),
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
     -webkit-font-smoothing: antialiased;

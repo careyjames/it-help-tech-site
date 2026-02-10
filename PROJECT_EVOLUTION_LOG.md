@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP Safari artifact kill + headline emphasis pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Removed `background-clip:text` + transparent fill from IT/HELP and switched to solid blue `currentColor` fills with a cleaner, slightly thicker balanced gold perimeter shadow ring. Also brightened logo blue ramp tokens for stronger headline presence.
+- Why: User feedback confirmed the `P` top artifact remained visible on both desktop and mobile and the interior blue still read too muted.
+- Rollback: this branch/PR (`codex/ithelp-p-artifact-kill-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP desktop edge cleanup + blue fill pop pass
 - Files:
   - `static/css/late-overrides.css`
