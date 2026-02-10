@@ -15,6 +15,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP per-glyph P spur suppression (desktop)
+- Files:
+  - `templates/partials/hero_logo.html`
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Split `HELP` to isolate the `P` glyph and applied desktop-only per-glyph optical corrections (slight vertical nudge, reduced stroke/halo, adjusted weight) for dark and light variants to remove the top shoulder spur without altering other letters or mobile behavior.
+- Why: User-confirmed artifact persisted specifically on desktop at the top of `P` after multiple global stroke passes.
+- Rollback: this branch/PR (`codex/ithelp-p-top-spur-fix-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP desktop P shoulder spur cleanup
 - Files:
   - `static/css/late-overrides.css`

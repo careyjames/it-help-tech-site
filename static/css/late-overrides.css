@@ -216,6 +216,12 @@ html.switch .logo-constellation {
     left: var(--logo-help-shift);
 }
 
+.logo-help-p {
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+
 .logo-it::before,
 .logo-it::after,
 .logo-help::before,
@@ -369,6 +375,18 @@ html.switch .logo-help {
             0 7px 14px rgba(4, 12, 32, 0.24);
     }
 
+    .logo-help-p {
+        top: 0.006em;
+        font-weight: 880;
+        -webkit-text-stroke: 1px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.12px rgba(210, 181, 111, 0.50),
+            0 0.30px 0 rgba(210, 181, 111, 0.34),
+            0 0.88px 0 rgba(3, 14, 44, 0.72),
+            0 2.2px 4.6px rgba(2, 8, 24, 0.20),
+            0 7px 14px rgba(4, 12, 32, 0.24);
+    }
+
     html.switch .logo-it,
     html.switch .logo-help {
         -webkit-text-stroke: 1.04px var(--accent-gold-solid);
@@ -377,6 +395,18 @@ html.switch .logo-help {
             0 0.38px 0 rgba(210, 181, 111, 0.34),
             0 0.72px 0 rgba(8, 24, 68, 0.46),
             0 1.6px 3.2px rgba(2, 8, 24, 0.14),
+            0 4px 9px rgba(10, 26, 56, 0.08);
+    }
+
+    html.switch .logo-help-p {
+        top: 0.005em;
+        font-weight: 880;
+        -webkit-text-stroke: 0.96px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.1px rgba(210, 181, 111, 0.42),
+            0 0.26px 0 rgba(210, 181, 111, 0.28),
+            0 0.7px 0 rgba(8, 24, 68, 0.44),
+            0 1.5px 3px rgba(2, 8, 24, 0.14),
             0 4px 9px rgba(10, 26, 56, 0.08);
     }
 }
