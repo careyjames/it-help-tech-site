@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP blue-dominant micro-trace + kerning pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Rebalanced IT/HELP to stay clearly blue-first while retaining only a tiny gold edge cue, and introduced global micro-kerning/optical offset tuning (desktop + mobile) for tighter, more finished glyph geometry.
+- Why: User feedback indicated the prior pass read too gold; objective was blue letterfill with a subtle premium trace and cleaner optical spacing.
+- Rollback: this branch/PR (`codex/ithelp-blue-trace-kerning-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP micro gold-trace experiment
 - Files:
   - `static/css/late-overrides.css`
