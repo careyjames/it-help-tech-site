@@ -190,6 +190,9 @@ html.switch .logo-constellation {
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
+        0 -0.48px 0 rgba(194, 161, 90, 0.34),
+        -0.26px -0.16px 0 rgba(194, 161, 90, 0.24),
+         0.26px -0.16px 0 rgba(194, 161, 90, 0.24),
         0 -0.3px 0 rgba(196, 224, 252, 0.26),
         -0.28px 0 0 rgba(112, 156, 220, 0.18),
          0.28px 0 0 rgba(112, 156, 220, 0.18),
@@ -339,6 +342,9 @@ html.switch .logo-help {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
+        0 -0.4px 0 rgba(194, 161, 90, 0.26),
+        -0.22px -0.14px 0 rgba(194, 161, 90, 0.18),
+         0.22px -0.14px 0 rgba(194, 161, 90, 0.18),
         0 -0.22px 0 rgba(170, 204, 238, 0.18),
         -0.2px 0 0 rgba(94, 138, 198, 0.12),
          0.2px 0 0 rgba(94, 138, 198, 0.12),
