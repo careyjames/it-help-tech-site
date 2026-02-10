@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-09
 - Actor: AI+Developer
+- Scope: IT/HELP head-anchor presence pass
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Re-centered on the premium-dark logo ramp, increased IT/HELP wordmark size/optical tightness, and reduced sheen back to restrained contour shadows so the text reads as the primary page anchor without changing `san diego` treatment.
+- Why: User requested improvements specifically to the words `IT` and `HELP`, with stronger first-impression hierarchy and a more finished look.
+- Rollback: this branch/PR (`codex/ithelp-head-anchor-v1`).
+
+### 2026-02-09
+- Actor: AI+Developer
 - Scope: IT/HELP modern-electric top-highlight variant
 - Files:
   - `static/css/late-overrides.css`
