@@ -1,5 +1,5 @@
 # Style Guide (Living)
-Last updated: 2026-02-09
+Last updated: 2026-02-10
 
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#82B8EE` (`--logo-blue-top`)
-  - Mid: `#3F79C6` (`--logo-blue-mid`)
-  - Bottom: `#1F539E` (`--logo-blue-bottom`)
+  - Top: `#7DAFE8` (`--logo-blue-top`)
+  - Mid: `#3D74BE` (`--logo-blue-mid`)
+  - Bottom: `#1E4F97` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -40,9 +40,12 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
 - Current blue target: DNS-aligned true blue (non-purple), with depth from shading rather than violet tint.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
-- Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.8px`-`1.0px`) with solid fill and no glow-heavy stack.
+- Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.9px`-`1.2px`) with solid fill and no glow-heavy stack.
 - For solid premium outlines, use near-integer stroke widths (`~1px`) with a tiny gold smoothing halo; avoid thin sub-pixel strokes that can look jagged.
 - To avoid inner horseshoe artifacts on curved glyphs (notably `P`), prefer `paint-order: stroke fill`; if bottom edges read weak, add only a subtle downward gold micro-shadow.
+- For cleaner curved tops (especially `P` shoulder), avoid negative-Y top highlight strokes; prefer a centered micro gold smoothing halo plus a downward closure pass.
+- If curved-edge noise persists, prefer pure `-webkit-text-stroke` perimeter with no extra gold `filter` stack before increasing effect complexity.
+- Keep Apple rendering weight consistent: do not downshift IT/HELP glyphs to `800` in Safari-targeted overrides; keep the logo at its core heavyweight geometry.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).

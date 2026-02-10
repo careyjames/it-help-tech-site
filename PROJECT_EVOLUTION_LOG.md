@@ -15,6 +15,26 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP P contour cleanup (Apple weight + stroke simplification)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Simplified IT/HELP edge treatment to direct gold text-stroke plus downward depth shadows (removed extra gold filter halos), slightly increased stroke width for cleaner full-perimeter read, and removed Apple-specific 800-weight downshift so Safari/iPhone keeps the native heavyweight glyph geometry.
+- Why: User still observed dirty/janky rendering around the top of `P`; this pass prioritizes contour cleanliness over effect layering.
+- Rollback: this branch/PR (`codex/ithelp-p-solid-clean-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
+- Scope: IT/HELP perimeter cleanup (P top-edge smoothing) + blue refinement
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Removed the top-edge micro highlight from IT/HELP shadow stacks, normalized gold stroke widths toward integer values, and rebalanced the gold smoothing/closure shadows so the outline reads more continuous around glyphs without rough `P` shoulder artifacting. Also nudged the logo blue ramp slightly darker for better headline fit.
+- Why: User feedback confirmed the top of `P` still looked messy and requested a cleaner full-wrap gold perimeter with a better-fitting blue.
+- Rollback: this branch/PR (`codex/ithelp-p-top-clean-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP horseshoe artifact cleanup + blue pop tune
 - Files:
   - `static/css/late-overrides.css`
