@@ -190,12 +190,14 @@ html.switch .logo-constellation {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.1px var(--accent-gold-solid);
+    -webkit-text-stroke: 1.18px var(--accent-gold-solid);
     paint-order: stroke fill;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 0.90px 0 rgba(3, 14, 44, 0.76),
+        0 0 0.24px rgba(210, 181, 111, 0.64),
+        0 0.56px 0 rgba(210, 181, 111, 0.46),
+        0 0.90px 0 rgba(3, 14, 44, 0.74),
         0 2.4px 5px rgba(2, 8, 24, 0.22),
         0 7px 14px rgba(4, 12, 32, 0.24);
     filter: none;
@@ -340,9 +342,11 @@ html.switch .logo-help {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.02px var(--accent-gold-solid);
+    -webkit-text-stroke: 1.1px var(--accent-gold-solid);
     paint-order: stroke fill;
     text-shadow:
+        0 0 0.2px rgba(210, 181, 111, 0.56),
+        0 0.42px 0 rgba(210, 181, 111, 0.38),
         0 0.72px 0 rgba(8, 24, 68, 0.46),
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
