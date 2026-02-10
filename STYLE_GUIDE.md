@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#90C7FA` (`--logo-blue-top`)
-  - Mid: `#4F8EDD` (`--logo-blue-mid`)
-  - Bottom: `#245EA9` (`--logo-blue-bottom`)
+  - Top: `#88BFF4` (`--logo-blue-top`)
+  - Mid: `#4684D2` (`--logo-blue-mid`)
+  - Bottom: `#215AA7` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -42,6 +42,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.8px`-`1.0px`) with solid fill and no glow-heavy stack.
 - For solid premium outlines, use near-integer stroke widths (`~1px`) with a tiny gold smoothing halo; avoid thin sub-pixel strokes that can look jagged.
+- If bottom edges look weak, render stroke on top (`paint-order: fill stroke`) and keep a subtle downward gold micro-shadow to preserve full perimeter closure.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).

@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP perimeter closure + blue depth rebalance
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Switched IT/HELP stroke rendering to `paint-order: fill stroke` with near-1px gold strokes and a subtle downward gold micro-shadow so the perimeter reads as a complete wrap (including bottom edges). Also nudged logo blue ramp slightly darker for stronger headline presence.
+- Why: User feedback showed bottom outline segments were still weak and the interior blue read too light.
+- Rollback: this branch/PR (`codex/ithelp-gold-stroke-polish-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP gold stroke cleanup and solidity pass
 - Files:
   - `static/css/late-overrides.css`
