@@ -40,7 +40,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
 - Current blue target: DNS-aligned true blue (non-purple), with depth from shading rather than violet tint.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
-- Prefer shadow-based edge treatment for IT/HELP lettering; avoid `-webkit-text-stroke` on logo glyphs because it can introduce Safari artifacts (notably on curved letters like `P`).
+- Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.8px`-`1.0px`) with solid fill and no glow-heavy stack.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
@@ -49,6 +49,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Keep perimeter ring weights top/bottom balanced to avoid rough edge artifacts on rounded glyph shoulders (especially `P`) on desktop Safari.
 - Prefer a drop-shadow perimeter ring for IT/HELP edge treatment when Safari shows curved-edge artifacts from dense directional text-shadow stacks.
 - When the ring reads too faint, match the glyph perimeter color to the hero pill gold stroke (`#D2B56F`) before increasing blur or glow.
+- If visibility is still insufficient after ring tuning, apply direct stroke using `--accent-gold-solid` so gold perimeter remains unmistakable across desktop/mobile.
 - Apply micro-kerning and optical offsets to IT/HELP consistently across desktop and mobile; avoid relying on one breakpoint tune.
 - Avoid silver/steel casts in IT/HELP lettering by keeping cool overlay alpha restrained.
 - Keep logo rendering Safari-stable: use solid indigo fill + shadow depth and avoid `background-clip:text` gradients on IT/HELP glyphs.
