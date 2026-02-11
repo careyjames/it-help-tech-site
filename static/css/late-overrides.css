@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #3B71C5;
-    --logo-blue-mid: #2F5FAF;
-    --logo-blue-bottom: #1A458A;
+    --logo-blue-top: #4679D4;
+    --logo-blue-mid: #2B56A3;
+    --logo-blue-bottom: #173B79;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -58,9 +58,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     justify-content: center !important;
     height: calc(var(--nav-slot-size) - 0.46rem);
     padding: 0 0.86rem !important;
-    background-color: #2F5B90 !important;
-    background-image: linear-gradient(180deg, #4F7DB4 0%, #2F5B90 54%, #1E406E 100%) !important;
-    border: 1px solid rgba(103, 149, 210, 0.42) !important;
+    background-color: #285184 !important;
+    background-image: linear-gradient(180deg, #446EA7 0%, #285184 54%, #16345D 100%) !important;
+    border: 1px solid rgba(95, 139, 198, 0.40) !important;
     border-radius: 0.56rem !important;
     color: #F1F8FF !important;
     font-weight: 780;
@@ -76,8 +76,8 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 
 .nav-wrapper .schedule-link:hover,
 .nav-wrapper .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #5A8AC2 0%, #3A6AA2 54%, #285281 100%) !important;
-    border-color: rgba(122, 170, 232, 0.56) !important;
+    background-image: linear-gradient(180deg, #4E7CB4 0%, #326195 54%, #224B79 100%) !important;
+    border-color: rgba(112, 160, 223, 0.54) !important;
     color: #F1F8FF !important;
     text-decoration: none !important;
     filter: none !important;
@@ -239,11 +239,12 @@ html.switch .logo-constellation {
     margin: 0 var(--logo-plus-gap);
     top: -0.055em;
     text-shadow: 
-        0 0 0.36px rgba(255, 230, 241, 0.24),
-        -0.42px -0.42px 0 rgba(34, 62, 108, 0.68),
-         0.42px -0.42px 0 rgba(34, 62, 108, 0.68),
-        -0.42px  0.42px 0 rgba(34, 62, 108, 0.68),
-         0.42px  0.42px 0 rgba(34, 62, 108, 0.68),
+        0 -0.40px 0 rgba(255, 104, 144, 0.38),
+        0 0.42px 0 rgba(148, 16, 52, 0.54),
+        -0.40px -0.40px 0 rgba(34, 62, 108, 0.64),
+         0.40px -0.40px 0 rgba(34, 62, 108, 0.64),
+        -0.40px  0.40px 0 rgba(34, 62, 108, 0.64),
+         0.40px  0.40px 0 rgba(34, 62, 108, 0.64),
          0 1px 2px rgba(8, 14, 30, 0.34);
     position: relative;
     z-index: 4;
@@ -363,11 +364,11 @@ html.switch .logo-help {
 }
 
 html.switch .logo-it {
-    color: #2A5A9F;
+    color: #254D8E;
 }
 
 html.switch .logo-help {
-    color: #346CB8;
+    color: #3A69B3;
 }
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */
@@ -433,7 +434,7 @@ html.switch .logo-help {
     text-transform: lowercase;
     position: relative;
     font-weight: 545;
-    color: #687688;
+    color: #5D6B7E;
     letter-spacing: 0.038em;
     margin-left: auto;
     margin-right: auto;
@@ -468,7 +469,7 @@ html.switch .location {
     display: inline-block; /* pill snaps to content width */
     padding: 10px 20px;
     border-radius: 30px;
-    border: 2px solid #D2B56F;
+    border: 1.75px solid #D2B56F;
     background-color: rgba(8, 34, 72, 0.38);
     background-clip: padding-box;
     box-shadow: 0 4px 10px rgba(2, 8, 18, 0.14);

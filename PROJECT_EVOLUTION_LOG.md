@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Hero hierarchy micro-tuning (blue split, plus depth, pill restraint)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Increased IT/HELP hierarchy by deepening `IT` blue while lifting `HELP`, added subtle depth shaping to the red plus via text-shadow (hue unchanged), darkened `san diego` tone for stronger anchoring, reduced hero pill gold border weight to a restrained thickness, and darkened the Schedule CTA blue one step to keep the logo as the dominant blue element.
+- Why: User requested precision feedback on cohesion and asked to tighten visual hierarchy without redesigning the hero identity system.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: IT/HELP enterprise hierarchy blue split (IT darker, HELP lighter)
 - Files:
   - `static/css/late-overrides.css`
