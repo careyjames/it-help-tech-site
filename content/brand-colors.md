@@ -14,6 +14,10 @@ scripts = ["js/brand-colors.js"]
 <div class="brand-colors-page">
 <p class="brand-colors-kicker">IT Help San Diego Inc.</p>
 <p class="brand-colors-intro">Canonical palette and token reference for design, engineering, and vendor handoff. This page is public for sharing and is marked <code>noindex, nofollow</code>.</p>
+<div class="brand-copy-actions brand-top-actions" role="group" aria-label="Copy all values">
+<button type="button" class="brand-copy-btn" id="copy-all-hex">Copy all HEX</button>
+<button type="button" class="brand-copy-btn" id="copy-all-css">Copy all CSS vars</button>
+</div>
 <div class="brand-priority-palette" role="list" aria-label="Primary brand palette preview">
 <span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-brand-blue" aria-hidden="true"></span>Primary Blue <code>#58A6FF</code></span>
 <span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-blue-top" aria-hidden="true"></span>Logo Blue <code>#327ED6</code></span>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for entry in entries %}
+  {%- set skip = false %}
+  {%- if entry.permalink == "https://www.it-help.tech/brand-colors/" %}
+    {%- set skip = true %}
+  {%- endif %}
+  {%- if entry.extra and entry.extra.robots and entry.extra.robots is containing("noindex") %}
+    {%- set skip = true %}
+  {%- endif %}
+  {%- if not skip %}
+  <url>
+    <loc>{{ entry.permalink | safe }}</loc>
+    {%- if entry.updated %}
+      <lastmod>{{ entry.updated }}</lastmod>
+    {%- elif entry.date %}
+      <lastmod>{{ entry.date }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endif %}
+{%- endfor %}
+</urlset>
