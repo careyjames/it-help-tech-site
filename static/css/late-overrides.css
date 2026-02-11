@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #6FA8EE;
-    --logo-blue-mid: #2E67BC;
-    --logo-blue-bottom: #15438B;
+    --logo-blue-top: #3B71C5;
+    --logo-blue-mid: #2F5FAF;
+    --logo-blue-bottom: #1A458A;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -185,7 +185,6 @@ html.switch .logo-constellation {
 /* Keep logo typography as a single rendered layer for clarity. */
 .logo-it,
 .logo-help {
-    color: var(--logo-blue-mid);
     background-image: none;
     -webkit-background-clip: border-box;
     background-clip: border-box;
@@ -209,10 +208,12 @@ html.switch .logo-constellation {
 }
 
 .logo-it {
+    color: var(--logo-blue-mid);
     left: var(--logo-it-shift);
 }
 
 .logo-help {
+    color: var(--logo-blue-top);
     left: var(--logo-help-shift);
 }
 
@@ -343,7 +344,6 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #2A61AA;
     background-image: none;
     -webkit-background-clip: border-box;
     background-clip: border-box;
@@ -360,6 +360,14 @@ html.switch .logo-help {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     animation: none;
+}
+
+html.switch .logo-it {
+    color: #2A5A9F;
+}
+
+html.switch .logo-help {
+    color: #346CB8;
 }
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */

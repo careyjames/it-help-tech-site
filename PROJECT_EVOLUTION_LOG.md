@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: IT/HELP enterprise hierarchy blue split (IT darker, HELP lighter)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Shifted the logo authority blue ramp to an enterprise profile anchored on `#2F5FAF`, then split lockup hierarchy so `IT` uses the mid token while `HELP` uses the slightly lighter top token in both dark/light theme variants; retained existing gold stroke widths and `P` artifact safeguards.
+- Why: User requested a more decisive, cohesive blue direction and provided a preference for `IT` darker with `HELP` subtly lighter while keeping gold perimeter treatment.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: IT/HELP deep cobalt-blue refinement (gold edge preserved)
 - Files:
   - `static/css/late-overrides.css`
