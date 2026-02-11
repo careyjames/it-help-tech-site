@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP blue-only darkening refinement (gold preserved)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Restored the logo blue ramp to a darker prior profile and darkened light-theme IT/HELP fill color while leaving all current gold stroke/perimeter settings unchanged.
+- Why: User preferred the previous darker blue interior and requested focusing only on blue tone while keeping the current gold wrap behavior.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP richer blue + thicker gold wrap experiment
 - Files:
   - `static/css/late-overrides.css`
