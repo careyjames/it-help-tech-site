@@ -9,6 +9,7 @@ skip_author = true
 skip_image = true
 robots = "noindex, nofollow"
 stylesheets = ["css/brand-colors.css"]
+scripts = ["js/brand-colors.js"]
 +++
 <div class="brand-colors-page">
 <p class="brand-colors-kicker">IT Help San Diego Inc.</p>

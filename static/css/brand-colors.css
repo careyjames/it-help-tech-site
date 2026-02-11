@@ -28,6 +28,9 @@
 }
 
 .brand-section {
+  display: block;
+  width: 100%;
+  flex: none;
   margin: 0 0 1.55rem;
   padding: 1.1rem;
   border: 1px solid var(--panel-border-dark);
@@ -64,6 +67,7 @@
 
 .brand-grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 0.85rem;
 }
@@ -77,11 +81,23 @@
 }
 
 .brand-card {
+  min-width: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   background:
     linear-gradient(170deg, rgba(8, 17, 29, 0.9) 0%, rgba(14, 23, 37, 0.88) 100%);
   border: 1px solid rgba(119, 148, 186, 0.22);
   border-radius: 0.9rem;
   overflow: hidden;
+}
+
+.brand-card h1,
+.brand-card h2,
+.brand-card h3,
+.brand-card p,
+.brand-card div {
+  text-align: left;
 }
 
 .brand-swatch {
@@ -113,6 +129,49 @@
   color: #a7b9cc;
   font-size: 0.88rem;
   line-height: 1.35;
+}
+
+.brand-copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding: 0 0.78rem 0.84rem;
+}
+
+.brand-copy-btn {
+  appearance: none;
+  border: 1px solid rgba(118, 158, 204, 0.42);
+  background: linear-gradient(180deg, rgba(37, 67, 104, 0.9) 0%, rgba(23, 45, 76, 0.96) 100%);
+  color: #eaf4ff;
+  border-radius: 0.56rem;
+  padding: 0.24rem 0.52rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.brand-copy-btn:hover,
+.brand-copy-btn:focus-visible {
+  border-color: rgba(147, 191, 241, 0.6);
+  background: linear-gradient(180deg, rgba(45, 80, 124, 0.94) 0%, rgba(27, 55, 91, 0.98) 100%);
+}
+
+.brand-copy-btn:focus-visible {
+  outline: 2px solid rgba(149, 204, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.brand-copy-btn[data-copy-state="ok"] {
+  border-color: rgba(128, 206, 150, 0.64);
+  background: linear-gradient(180deg, rgba(42, 113, 72, 0.94) 0%, rgba(26, 88, 54, 0.98) 100%);
+}
+
+.brand-copy-btn[data-copy-state="error"] {
+  border-color: rgba(225, 110, 110, 0.64);
+  background: linear-gradient(180deg, rgba(135, 45, 45, 0.95) 0%, rgba(98, 32, 32, 0.98) 100%);
 }
 
 .brand-token code,
@@ -236,6 +295,30 @@ html.switch .brand-colors-intro code {
 html.switch .brand-note,
 html.switch .brand-rules li {
   color: #3b4f68;
+}
+
+html.switch .brand-copy-btn {
+  border-color: rgba(64, 95, 131, 0.38);
+  background: linear-gradient(180deg, #edf5ff 0%, #dfeaf8 100%);
+  color: #173a63;
+}
+
+html.switch .brand-copy-btn:hover,
+html.switch .brand-copy-btn:focus-visible {
+  border-color: rgba(55, 97, 140, 0.5);
+  background: linear-gradient(180deg, #e5f0ff 0%, #d1e1f6 100%);
+}
+
+html.switch .brand-copy-btn[data-copy-state="ok"] {
+  border-color: rgba(75, 148, 88, 0.45);
+  background: linear-gradient(180deg, #e9f7ec 0%, #d8efdf 100%);
+  color: #1f5a30;
+}
+
+html.switch .brand-copy-btn[data-copy-state="error"] {
+  border-color: rgba(177, 87, 87, 0.45);
+  background: linear-gradient(180deg, #fdeeee 0%, #f8dfdf 100%);
+  color: #7f1f1f;
 }
 
 @media (max-width: 699px) {
