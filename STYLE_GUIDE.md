@@ -17,6 +17,13 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
   - Bottom: `#2359A9` (`--schedule-blue-bottom`)
+- Schedule CTA Operational Ramp (button-specific depth tokens):
+  - Base Top: `#3D659A` (`--schedule-cta-top`)
+  - Base Mid: `#244A79` (`--schedule-cta-mid`)
+  - Base Bottom: `#123055` (`--schedule-cta-bottom`)
+  - Hover Top: `#4673AA` (`--schedule-cta-hover-top`)
+  - Hover Mid: `#2D5A8D` (`--schedule-cta-hover-mid`)
+  - Hover Bottom: `#1C436F` (`--schedule-cta-hover-bottom`)
 - Body/Utility Link Blue (same hue family, action-biased):
   - Dark mode link: `#79B8FF` (`$a1d`)
   - Dark mode hover: `#A5D0FF` (`$a2d`)
@@ -99,6 +106,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
 - Schedule CTA should favor deeper, restrained blue depth (not bright toy-like highlights) with subtle professional relief.
 - Keep Schedule CTA one blue-step below the IT/HELP lockup in luminance so the logo remains the strongest blue anchor.
+- Keep Schedule CTA values tokenized via `--schedule-cta-*` variables (avoid one-off hardcoded hex in component rules) so hierarchy tweaks stay centralized.
 - In-content gold CTA (`.cta-button`, e.g. "Book an On-Site Visit") should use the same geometry language as Schedule (balanced height, medium corner radius, restrained relief) while remaining gold-first for role separation.
 - Keep Schedule CTA slightly shorter than icon slots so the control row height is driven by 44px-class tap targets, not by the button block.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
@@ -124,6 +132,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Mobile dark rendering: use sparse Fibonacci neighbor links (`+1,+2,+3,+5`) instead of full mesh links to avoid dense webbing.
 - Respect `prefers-reduced-motion`: disable decorative hero motion effects when reduction is requested.
 - Avoid aggressive glitch effects; prioritize clarity and polish.
+- Remove unused animation/keyframe blocks from render-blocking CSS before adding new effects.
 
 ## Change Tracking
 - AI agent entry point is `AGENTS.md`.
