@@ -27,6 +27,36 @@
   max-width: 74ch;
 }
 
+.brand-priority-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.44rem;
+  margin: 0 0 1.2rem;
+}
+
+.brand-priority-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.52rem;
+  border-radius: 0.56rem;
+  border: 1px solid rgba(105, 139, 184, 0.33);
+  background: linear-gradient(180deg, rgba(20, 34, 55, 0.92) 0%, rgba(13, 24, 40, 0.98) 100%);
+  color: #d6e6f8;
+  font-size: 0.84rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-priority-chip code {
+  background: rgba(91, 120, 158, 0.2);
+  border: 1px solid rgba(131, 157, 188, 0.32);
+  color: #e9f4ff;
+  border-radius: 0.45rem;
+  padding: 0.14rem 0.35rem;
+  font-size: 0.8rem;
+}
+
 .brand-section {
   display: block;
   width: 100%;
@@ -275,6 +305,18 @@ html.switch .brand-colors-intro {
   color: var(--text-color-light);
 }
 
+html.switch .brand-priority-chip {
+  border-color: rgba(78, 106, 140, 0.36);
+  background: linear-gradient(180deg, #f2f7ff 0%, #e5eef9 100%);
+  color: #1f3f66;
+}
+
+html.switch .brand-priority-chip code {
+  background: rgba(84, 119, 157, 0.13);
+  border-color: rgba(78, 108, 141, 0.3);
+  color: #1f4572;
+}
+
 html.switch .brand-section {
   border-color: var(--panel-border-light);
   background:
@@ -358,6 +400,15 @@ html.switch .brand-copy-btn[data-copy-state="error"] {
   .brand-section {
     padding: 0.9rem;
     border-radius: 0.88rem;
+  }
+
+  .brand-priority-palette {
+    gap: 0.38rem;
+    margin-bottom: 1rem;
+  }
+
+  .brand-priority-chip {
+    font-size: 0.79rem;
   }
 
   .brand-section-head {

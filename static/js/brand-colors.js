@@ -33,53 +33,29 @@
     return Promise.resolve(copyWithFallback(value));
   }
 
-  function parseColorFromValue(value) {
-    if (!value) {
-      return null;
-    }
-
-    var trimmed = value.trim();
-    if (/^#[0-9A-Fa-f]{3}([0-9A-Fa-f]{3})?$/.test(trimmed) || /^#[0-9A-Fa-f]{8}$/.test(trimmed)) {
-      return trimmed;
-    }
-
-    if (/^rgba?\([0-9,\s.]+\)$/.test(trimmed)) {
-      return trimmed;
-    }
-
-    if (/^\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}$/.test(trimmed)) {
-      return 'rgb(' + trimmed + ')';
-    }
-
-    return null;
-  }
-
-  function getCardSwatchColor(card, valueCode) {
-    var parsed = parseColorFromValue(valueCode ? valueCode.textContent : '');
-    if (parsed) {
-      return parsed;
-    }
-
+  function getCardSwatchClass(card) {
     var swatch = card.querySelector('.brand-swatch');
     if (!swatch) {
       return null;
     }
 
-    var resolved = window.getComputedStyle(swatch).backgroundColor;
-    if (!resolved || resolved === 'rgba(0, 0, 0, 0)' || resolved === 'transparent') {
-      return null;
+    var classList = Array.from(swatch.classList);
+    for (var i = 0; i < classList.length; i += 1) {
+      if (classList[i].indexOf('swatch-') === 0) {
+        return classList[i];
+      }
     }
 
-    return resolved;
+    return null;
   }
 
-  function buildMiniSwatch(color) {
+  function buildMiniSwatch(swatchClass) {
     var swatch = document.createElement('span');
     swatch.className = 'brand-mini-swatch';
     swatch.setAttribute('aria-hidden', 'true');
 
-    if (color) {
-      swatch.style.background = color;
+    if (swatchClass) {
+      swatch.classList.add(swatchClass);
     }
 
     return swatch;
@@ -126,14 +102,14 @@
 
     var actions = document.createElement('div');
     actions.className = 'brand-copy-actions';
-    var color = getCardSwatchColor(card, valueCode);
+    var swatchClass = getCardSwatchClass(card);
 
     if (tokenCode) {
       actions.appendChild(buildCopyButton('Copy token', tokenCode.textContent.trim()));
     }
 
     if (valueCode) {
-      valueCode.prepend(buildMiniSwatch(color));
+      valueCode.prepend(buildMiniSwatch(swatchClass));
       actions.appendChild(buildCopyButton('Copy value', valueCode.textContent.trim()));
     }
 
