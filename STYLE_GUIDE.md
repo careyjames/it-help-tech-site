@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#3B71C5` (`--logo-blue-top`)
-  - Mid: `#2F5FAF` (`--logo-blue-mid`)
-  - Bottom: `#1A458A` (`--logo-blue-bottom`)
+  - Top: `#4679D4` (`--logo-blue-top`)
+  - Mid: `#2B56A3` (`--logo-blue-mid`)
+  - Bottom: `#173B79` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -71,6 +71,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Do not use gold as a general link/highlight color across body content.
 - Keep the red plus sign unchanged; it is a core identity anchor.
 - Plus symbol vertical alignment target: `top: -0.055em` on `.logo-plus` to keep optical center aligned with IT/HELP cap height.
+- Plus treatment should remain red (`#FF0066`) with subtle depth via shadow shaping; do not hue-shift it toward pink/purple.
 - Plus motion should remain subtle-but-visible in normal mode (a brief micro-jitter pulse), and be disabled only when `prefers-reduced-motion` is set.
 - Keep IT/HELP edge outlining for readability and depth, but tune intensity before adding thickness.
 - Current target is a subdued edge treatment (~25% quieter than the original high-contrast pass) in `static/css/late-overrides.css`.
@@ -85,6 +86,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero tagline panel should be translucent enough to reveal background motion subtly, but never use backdrop blur that softens tagline readability.
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
 - Hero tagline gold frame should read as a crisp solid perimeter on mobile and desktop.
+- Hero tagline border weight target is slightly restrained (about `1.75px`) so the pill frames content without competing with the IT/HELP lockup.
 - Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
 - Avoid inner highlight seams on the hero pill: no inset white line, inset border ring, or inner blue edge that can read as a gap on mobile.
 - Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
@@ -94,6 +96,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
 - Schedule CTA should favor deeper, restrained blue depth (not bright toy-like highlights) with subtle professional relief.
+- Keep Schedule CTA one blue-step below the IT/HELP lockup in luminance so the logo remains the strongest blue anchor.
 - In-content gold CTA (`.cta-button`, e.g. "Book an On-Site Visit") should use the same geometry language as Schedule (balanced height, medium corner radius, restrained relief) while remaining gold-first for role separation.
 - Keep Schedule CTA slightly shorter than icon slots so the control row height is driven by 44px-class tap targets, not by the button block.
 - Home glyph should stay as a modern outline icon (Apple-style weight/rounding) at a 44px-class touch target on mobile.
