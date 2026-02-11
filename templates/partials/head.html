@@ -94,6 +94,16 @@
         {%- if integrity %} integrity="sha384-{{ get_hash(path='js/nav-toggle.min.js', sha_type=384, base64=true) | safe }}"{% endif %}>
 </script>
 
+{%- if ctx.extra.scripts %}
+  {% set pagescripts = ctx.extra.scripts %}
+  {%- for i in pagescripts %}
+    <script defer
+            src="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}"
+            {%- if integrity %} integrity="sha384-{{ get_hash(path=i, sha_type=384, base64=true) | safe }}"{% endif %}>
+    </script>
+  {%- endfor %}
+{%- endif %}
+
 {# --- Meta tags --- #}
 {% if page.extra.robots %}
   <meta name="robots" content="{{ page.extra.robots }}">

@@ -15,6 +15,18 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: `/brand-colors` layout correction + explicit copy actions
+- Files:
+  - `content/brand-colors.md`
+  - `static/css/brand-colors.css`
+  - `static/js/brand-colors.js`
+  - `templates/partials/head.html`
+- Change: Fixed brand-colors page alignment by overriding Abridge global `section` grid/flex behavior with page-scoped block/grid rules and card sizing resets; added visible per-card copy buttons (token/value) driven by a CSP-safe external script, plus page-level script loading support in head partial via `extra.scripts`.
+- Why: User reported misaligned swatch layout and requested obvious copy/paste controls so collaborators can quickly copy token names and color values.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Public brand color swatch reference page (`/brand-colors`) with noindex controls
 - Files:
   - `content/brand-colors.md`
