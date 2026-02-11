@@ -15,6 +15,26 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: IT/HELP anti-purple micro-channel tune (v2)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Applied a smaller RGB channel correction to the logo blues (lower red, slightly higher green) across dark and light logo fills, preserving the same luminance hierarchy while reducing residual violet perception on Apple displays.
+- Why: User still observed a subtle purplish cast in top logo edges and requested best-practice final polish rather than major recoloring.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
+- Scope: IT/HELP anti-purple hue correction (Apple-safe)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Rotated the IT/HELP blue ramp a few degrees cooler (same luminance band) and updated light-theme logo fills to match, reducing violet cast while preserving existing gold perimeter, hierarchy, and Safari-safe solid fill rendering.
+- Why: User reported the top logo letters still read slightly purplish; objective was true-blue correction without reintroducing risky gradient text techniques.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Hero final optical-weight polish (logo blue depth, schedule restraint, pill centering)
 - Files:
   - `static/css/late-overrides.css`
