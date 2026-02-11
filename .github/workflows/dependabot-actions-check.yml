@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout PR
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
 
@@ -49,7 +49,7 @@ jobs:
           done <<< "${changed_files}"
 
       - name: Install Zola
-        uses: taiki-e/install-action@cargo-binstall
+        uses: taiki-e/install-action@7e574ed8bb89811282a11aecb3fe1d043bf5bf0e # v2
         with:
           tool: zola
 
