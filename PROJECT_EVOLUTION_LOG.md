@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-10
 - Actor: AI+Developer
+- Scope: IT/HELP richer blue + thicker gold wrap experiment
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Tuned the logo blue ramp to a richer mid-blue fill and increased IT/HELP gold perimeter stroke/closure intensity toward a pill-border-adjacent weight (dark + light variants), while retaining desktop per-glyph `P` carveout safeguards.
+- Why: User requested experimentation with stronger interior blue presence and a thicker gold wrap option versus the prior thin perimeter.
+- Rollback: this branch/PR (`codex/ithelp-blue-gold-balance-v1`).
+
+### 2026-02-10
+- Actor: AI+Developer
 - Scope: IT/HELP P top-spur subpixel cleanup (desktop)
 - Files:
   - `templates/partials/hero_logo.html`

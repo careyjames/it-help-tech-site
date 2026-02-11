@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #7DAFE8;
-    --logo-blue-mid: #3D74BE;
-    --logo-blue-bottom: #1E4F97;
+    --logo-blue-top: #86B9EF;
+    --logo-blue-mid: #4B83CB;
+    --logo-blue-bottom: #24589F;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -190,13 +190,13 @@ html.switch .logo-constellation {
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.18px var(--accent-gold-solid);
+    -webkit-text-stroke: 1.3px var(--accent-gold-solid);
     paint-order: stroke fill;
     display: inline-block;
     letter-spacing: var(--logo-letter-spacing);
     text-shadow:
-        0 0 0.24px rgba(210, 181, 111, 0.64),
-        0 0.56px 0 rgba(210, 181, 111, 0.46),
+        0 0 0.28px rgba(210, 181, 111, 0.72),
+        0 0.66px 0 rgba(210, 181, 111, 0.54),
         0 0.90px 0 rgba(3, 14, 44, 0.74),
         0 2.4px 5px rgba(2, 8, 24, 0.22),
         0 7px 14px rgba(4, 12, 32, 0.24);
@@ -343,16 +343,16 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #3466A8;
+    color: #3D72B1;
     background-image: none;
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-text-fill-color: currentColor;
-    -webkit-text-stroke: 1.1px var(--accent-gold-solid);
+    -webkit-text-stroke: 1.22px var(--accent-gold-solid);
     paint-order: stroke fill;
     text-shadow:
-        0 0 0.2px rgba(210, 181, 111, 0.56),
-        0 0.42px 0 rgba(210, 181, 111, 0.38),
+        0 0 0.24px rgba(210, 181, 111, 0.62),
+        0 0.52px 0 rgba(210, 181, 111, 0.44),
         0 0.72px 0 rgba(8, 24, 68, 0.46),
         0 1.6px 3.2px rgba(2, 8, 24, 0.14),
         0 4px 9px rgba(10, 26, 56, 0.08);
@@ -372,10 +372,10 @@ html.switch .logo-help {
 
     .logo-it,
     .logo-help {
-        -webkit-text-stroke: 1.1px var(--accent-gold-solid);
+        -webkit-text-stroke: 1.22px var(--accent-gold-solid);
         text-shadow:
-            0 0 0.18px rgba(210, 181, 111, 0.56),
-            0 0.46px 0 rgba(210, 181, 111, 0.40),
+            0 0 0.24px rgba(210, 181, 111, 0.66),
+            0 0.60px 0 rgba(210, 181, 111, 0.48),
             0 0.90px 0 rgba(3, 14, 44, 0.74),
             0 2.4px 5px rgba(2, 8, 24, 0.22),
             0 7px 14px rgba(4, 12, 32, 0.24);
@@ -384,10 +384,10 @@ html.switch .logo-help {
     .logo-help-p {
         top: 0.005em;
         font-weight: 880;
-        -webkit-text-stroke: 0.94px var(--accent-gold-solid);
+        -webkit-text-stroke: 1.04px var(--accent-gold-solid);
         text-shadow:
-            0 0 0.11px rgba(210, 181, 111, 0.50),
-            0 0.28px 0 rgba(210, 181, 111, 0.34),
+            0 0 0.14px rgba(210, 181, 111, 0.56),
+            0 0.34px 0 rgba(210, 181, 111, 0.40),
             0 0.86px 0 rgba(3, 14, 44, 0.72),
             0 2.2px 4.6px rgba(2, 8, 24, 0.20),
             0 7px 14px rgba(4, 12, 32, 0.24);
@@ -395,10 +395,10 @@ html.switch .logo-help {
 
     html.switch .logo-it,
     html.switch .logo-help {
-        -webkit-text-stroke: 1.04px var(--accent-gold-solid);
+        -webkit-text-stroke: 1.16px var(--accent-gold-solid);
         text-shadow:
-            0 0 0.16px rgba(210, 181, 111, 0.48),
-            0 0.38px 0 rgba(210, 181, 111, 0.34),
+            0 0 0.2px rgba(210, 181, 111, 0.54),
+            0 0.46px 0 rgba(210, 181, 111, 0.40),
             0 0.72px 0 rgba(8, 24, 68, 0.46),
             0 1.6px 3.2px rgba(2, 8, 24, 0.14),
             0 4px 9px rgba(10, 26, 56, 0.08);
@@ -407,10 +407,10 @@ html.switch .logo-help {
     html.switch .logo-help-p {
         top: 0.004em;
         font-weight: 880;
-        -webkit-text-stroke: 0.9px var(--accent-gold-solid);
+        -webkit-text-stroke: 1px var(--accent-gold-solid);
         text-shadow:
-            0 0 0.09px rgba(210, 181, 111, 0.42),
-            0 0.24px 0 rgba(210, 181, 111, 0.28),
+            0 0 0.11px rgba(210, 181, 111, 0.48),
+            0 0.30px 0 rgba(210, 181, 111, 0.34),
             0 0.68px 0 rgba(8, 24, 68, 0.44),
             0 1.5px 3px rgba(2, 8, 24, 0.14),
             0 4px 9px rgba(10, 26, 56, 0.08);

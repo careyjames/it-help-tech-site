@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#7DAFE8` (`--logo-blue-top`)
-  - Mid: `#3D74BE` (`--logo-blue-mid`)
-  - Bottom: `#1E4F97` (`--logo-blue-bottom`)
+  - Top: `#86B9EF` (`--logo-blue-top`)
+  - Mid: `#4B83CB` (`--logo-blue-mid`)
+  - Bottom: `#24589F` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -47,6 +47,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Gold wrap continuity target: if perimeter looks broken, use a low-radius centered halo (`~0.2px`) plus a small positive-Y closure (`~0.4-0.6px`) before increasing stroke thickness further.
 - If a shoulder spur appears only on desktop, apply desktop-only reductions to stroke/halo first (`@media (min-width: 700px)`) and keep mobile values unchanged.
 - If a desktop-only glyph artifact persists, snap desktop logo size and optical offsets to integer-pixel geometry before adding more effect layers.
+- For a bolder headline-wrap experiment, raise gold perimeter stroke into the `~1.2px-1.3px` range and keep `P` as a controlled per-glyph carveout.
 - If curved-edge noise persists, prefer pure `-webkit-text-stroke` perimeter with no extra gold `filter` stack before increasing effect complexity.
 - Keep Apple rendering weight consistent: do not downshift IT/HELP glyphs to `800` in Safari-targeted overrides; keep the logo at its core heavyweight geometry.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
