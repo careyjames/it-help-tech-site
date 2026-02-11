@@ -1,15 +1,15 @@
 ---
 title: DNS Tool - DNS & Email Security Auditor
-description: "Comprehensive DNS intelligence and email security auditor. Analyzes SPF, DMARC, DKIM, DNSSEC, MTA-STS, TLS-RPT, BIMI, and CAA records. Detects enterprise DNS providers, government entities, and self-hosted infrastructure. Generates printable security posture reports for IT professionals and executives."
+description: "Comprehensive DNS and email security auditor with 11 core analysis modules: SPF, DKIM (35 selectors), DMARC + DMARCbis readiness, DNSSEC, DANE/TLSA, MTA-STS, TLS-RPT, SMTP transport verification, BIMI/VMC, MPIC-aware CAA, and CT subdomain discovery. Includes history, comparison, stats, JSON export, and executive print/PDF reports."
 path: dns-tool
 extra:
   skip_image: true
   skip_author: true
 ---
 
-DNS Tool is a **professional-grade DNS, email, and brand security auditor** designed to answer one question clearly: *can this domain be trusted on the internet today?*
+DNS Tool is a **professional-grade DNS, email, transport, and brand security auditor** designed to answer one question clearly: *can this domain be trusted on the internet today?*
 
-It analyzes real-world DNS behavior, not just static records, and presents the results in a single, defensible report.
+It analyzes real-world behavior, not just static records, and presents results in a single defensible report.
 
 👉 <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer" class="gold-link">dnstool.it-help.tech</a>
 
@@ -23,45 +23,36 @@ DNS Tool answers the _real_ questions:
 
 - **Can this domain be impersonated by email?**
 - **Can this brand be convincingly faked?**
+- **Is email encrypted and validated in transit?**
 - **Can DNS itself be tampered with?**
 - **Are security controls enforced, or just declared?**
 - **Is what the world sees the same as what the nameserver is publishing?**
 
 It distinguishes _configured_ vs _enforced_, _unsigned_ vs _broken_, and _missing_ vs _intentionally absent_. That nuance is where most tools fail.
 
-## What the Web Version Audits (In One Pass)
+## 11 Core Analysis Modules (One Pass)
 
-**DNS & Domain Security**
+1. SPF validation (including lookup counts and strict vs soft fail guidance)
+2. DKIM discovery across **35 selectors** with provider-aware logic
+3. DMARC policy interpretation (`none`, `quarantine`, `reject`) plus **DMARCbis readiness checks**
+4. DANE/TLSA validation for SMTP certificate pinning (RFC 7672)
+5. MTA-STS policy retrieval and enforcement validation
+6. TLS-RPT configuration and reporting endpoint checks
+7. **SMTP Transport Verification** - live MX STARTTLS/TLS tests (versions, ciphers, cert validity) with DNS-inferred fallback when live port 25 probing is unavailable
+8. DNSSEC chain-of-trust validation (root -> TLD -> domain)
+9. CAA analysis with CA attribution and **MPIC-aware interpretation** (CA/B Forum SC-067)
+10. BIMI + VMC validation for brand trust in inboxes
+11. **Certificate Transparency subdomain discovery** (crt.sh / RFC 6962) for external attack-surface visibility
+
+The output is a **single, defensible report** - not a pile of green and red checkboxes.
+
+## Additional Domain Intelligence
 
 - NS delegation correctness
-- DNSSEC chain-of-trust validation (root → TLD → domain)
-- DNS Infrastructure Analysis — detects enterprise-grade providers (Cloudflare, AWS Route 53, Akamai, Google Cloud DNS, Azure, UltraDNS, Verisign, NS1) and self-hosted enterprise DNS (Apple, Microsoft, Meta, Amazon, Netflix, Oracle, Cisco, Salesforce)
-- Government Entity Recognition — automatically identifies .gov, .mil, .gov.uk, .gov.au, and .gc.ca domains with compliance context (FISMA, DoD, NCSC)
-- Resolver vs authoritative record diffing (propagation & split-brain detection)
-- CAA parsing with authorized CA attribution
-
-**Email Security**
-
-- SPF validation (including lookup counts and strict vs soft fail)
-- DMARC policy interpretation (`none` vs `quarantine` vs `reject`)
-- DKIM discovery with hyperscaler-aware logic (no false alarms)
-- MTA-STS policy retrieval and enforcement validation
-- TLS-RPT configuration
-- Email security & DMARC management provider identification (where visible in DNS)
-- SMTP Transport Verification — checks MX server STARTTLS support, TLS version, cipher strength, and certificate validity
-
-**Brand Security**
-
-- BIMI detection with logo preview
-- VMC certificate validation (Verified Mark Certificates from DigiCert, Entrust)
-- Certificate issuance control (CAA)
-
-**Traffic & Services**
-
-- A / AAAA / MX routing
-- SRV records (SIP, federation, CalDAV/CardDAV, etc.)—shown, not overreacted to
-
-The output is a **single, defensible report**—not a pile of green and red checkboxes.
+- Resolver vs authoritative record diffing (propagation and split-brain detection)
+- DNS infrastructure analysis for enterprise providers and self-hosted enterprise DNS
+- Government entity recognition for .gov, .mil, .gov.uk, .gov.au, and .gc.ca domains
+- A / AAAA / MX routing plus SRV record visibility for service inventory context
 
 ## DNS Infrastructure Intelligence
 
@@ -73,14 +64,23 @@ DNS Tool doesn't just check if DNSSEC is enabled—it understands **real-world s
 
 When DNSSEC isn't enabled, the tool explains *why that might be acceptable*—enterprise providers with DDoS protection, Anycast, and CAA records provide alternative security layers. This is the "symbiotic security" approach: work with the ecosystem, not against it.
 
+## Platform Features (Web App)
+
+- Analysis history with search
+- Side-by-side domain comparison
+- Statistics dashboard with protocol adoption rates
+- JSON export for programmatic use
+- Executive-grade print/PDF reports with **TLP:CLEAR** classification
+
 ## Why This Version Is Better Than the CLI
 
 The original command-line tool still exists and is useful for scripting and offline checks, but the **web version is the authoritative one**:
 
 - Clear verdicts instead of raw dumps
-- Policy-aware logic (no misleading "monitoring" nonsense)
+- Policy-aware logic (no misleading "monitoring-only" false confidence)
 - Real-time propagation comparison
-- Printable, shareable reports suitable for audits and clients
+- Transport security validation in addition to DNS-only checks
+- Printable, shareable reports suitable for audits, leadership, and client briefings
 
 If you're evaluating DNS posture, this is the version you want.
 
@@ -109,24 +109,29 @@ The web version is the full diagnostic bench.
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Web Browser",
   "url": "https://dnstool.it-help.tech/",
-  "description": "Comprehensive DNS intelligence and email security auditor. Analyzes SPF, DMARC, DKIM, DNSSEC, MTA-STS, TLS-RPT, BIMI, and CAA records. Detects enterprise DNS providers, government entities, and self-hosted infrastructure. Generates printable security posture reports for IT professionals and executives.",
+  "description": "Comprehensive DNS and email security auditor with 11 core analysis modules, including SMTP transport verification, DMARCbis readiness, MPIC-aware CAA analysis, and CT subdomain discovery. Includes history, comparison, JSON export, and executive print/PDF reports.",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
   "featureList": [
-    "SPF, DMARC, DKIM email security analysis",
+    "11 core DNS and email security analysis modules",
+    "SPF validation and policy guidance",
+    "DKIM analysis across 35 selectors",
+    "DMARC enforcement analysis with DMARCbis readiness checks",
+    "DANE/TLSA validation for SMTP transport security",
+    "MTA-STS and TLS-RPT policy validation",
+    "Live SMTP transport verification with DNS-inferred fallback",
     "DNSSEC chain-of-trust validation",
+    "Certificate Transparency subdomain discovery (RFC 6962)",
+    "MPIC-aware CAA analysis (SC-067)",
     "Enterprise DNS provider detection (Cloudflare, AWS, Akamai, Google, Azure)",
     "Self-hosted enterprise DNS recognition (Apple, Microsoft, Meta, Amazon)",
     "Government entity detection (.gov, .mil, .gov.uk)",
-    "MTA-STS and TLS-RPT policy validation",
-    "Email security and DMARC management provider identification",
     "BIMI and VMC certificate verification",
-    "CAA record parsing with CA attribution",
-    "SMTP transport security verification",
-    "Printable PDF security reports"
+    "Analysis history with search, side-by-side comparisons, and statistics dashboard",
+    "JSON export and executive-grade print/PDF reports (TLP:CLEAR)"
   ],
   "author": {
     "@type": "Organization",
