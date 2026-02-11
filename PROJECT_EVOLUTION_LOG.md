@@ -15,6 +15,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Dependabot GitHub Actions self-maintenance + safe auto-merge
+- Files:
+  - `.github/dependabot.yml`
+  - `.github/workflows/dependabot-actions-check.yml`
+  - `.github/workflows/dependabot-actions-automerge.yml`
+- Change: Added Dependabot configuration for weekly grouped GitHub Actions updates and a two-stage automation flow: a Dependabot-only workflow validation (`zola build`, workflow-file-only scope enforcement) and a follow-up workflow that enables PR auto-merge only after the check workflow succeeds.
+- Why: User requested mostly self-maintaining action dependency updates with controlled auto-merge after checks.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Sonar remediation pass (brand-colors + hero RNG hotspot hardening)
 - Files:
   - `static/js/brand-colors.js`

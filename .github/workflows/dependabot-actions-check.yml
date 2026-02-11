@@ -1,0 +1,57 @@
+name: Dependabot Actions Check
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - '.github/workflows/*.yml'
+      - '.github/workflows/*.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: >-
+      github.actor == 'dependabot[bot]' &&
+      startsWith(github.head_ref, 'dependabot/github_actions/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure only workflow files changed
+        run: |
+          set -euo pipefail
+          base_ref='${{ github.base_ref }}'
+          git fetch --no-tags --depth=1 origin "${base_ref}"
+          changed_files="$(git diff --name-only "origin/${base_ref}...HEAD")"
+
+          if [ -z "${changed_files}" ]; then
+            echo "No changed files detected."
+            exit 1
+          fi
+
+          echo "Changed files:"
+          echo "${changed_files}"
+
+          while IFS= read -r file; do
+            case "${file}" in
+              .github/workflows/*.yml|.github/workflows/*.yaml) ;;
+              *)
+                echo "Unexpected non-workflow file changed: ${file}"
+                exit 1
+                ;;
+            esac
+          done <<< "${changed_files}"
+
+      - name: Install Zola
+        uses: taiki-e/install-action@cargo-binstall
+        with:
+          tool: zola
+
+      - name: Run zola build
+        run: zola build
