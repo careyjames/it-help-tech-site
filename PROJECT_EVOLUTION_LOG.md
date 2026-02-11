@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: GitHub Actions supply-chain hardening (full SHA pinning)
+- Files:
+  - `.github/workflows/deploy.yml`
+  - `.github/workflows/dependabot-actions-check.yml`
+- Change: Pinned all third-party GitHub Actions in active workflows to full commit SHAs and retained major-version comments so Dependabot can continue updating pinned SHAs automatically.
+- Why: User approved the strongest mitigation for workflow action integrity while keeping updates self-maintaining.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Dependabot GitHub Actions self-maintenance + safe auto-merge
 - Files:
   - `.github/dependabot.yml`
