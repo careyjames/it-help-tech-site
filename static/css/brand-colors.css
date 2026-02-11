@@ -1,0 +1,264 @@
+.brand-colors-page {
+  --panel-bg-dark: rgba(13, 17, 23, 0.74);
+  --panel-bg-light: #ffffff;
+  --panel-border-dark: rgba(126, 158, 201, 0.24);
+  --panel-border-light: rgba(72, 93, 125, 0.20);
+  --title-color-dark: #f1f7ff;
+  --title-color-light: #0f2648;
+  --text-color-dark: #c4cfdb;
+  --text-color-light: #2c3f58;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.7rem 0 2.5rem;
+}
+
+.brand-colors-kicker {
+  margin: 0;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8ea3bc;
+}
+
+.brand-colors-intro {
+  margin: 0.35rem 0 1.45rem;
+  color: var(--text-color-dark);
+  max-width: 74ch;
+}
+
+.brand-section {
+  margin: 0 0 1.55rem;
+  padding: 1.1rem;
+  border: 1px solid var(--panel-border-dark);
+  border-radius: 1rem;
+  background:
+    radial-gradient(120% 180% at 100% 0%, rgba(50, 126, 214, 0.18) 0%, rgba(50, 126, 214, 0) 45%),
+    linear-gradient(180deg, rgba(18, 27, 42, 0.86) 0%, var(--panel-bg-dark) 100%);
+  box-shadow:
+    0 1px 0 rgba(244, 248, 255, 0.04) inset,
+    0 14px 32px rgba(1, 7, 18, 0.34);
+}
+
+.brand-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-bottom: 0.95rem;
+}
+
+.brand-section h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.3vw, 1.55rem);
+  line-height: 1.22;
+  color: var(--title-color-dark);
+}
+
+.brand-section-head p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #93a6bc;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.85rem;
+}
+
+.brand-grid-3up {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.brand-grid-2up {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.brand-card {
+  background:
+    linear-gradient(170deg, rgba(8, 17, 29, 0.9) 0%, rgba(14, 23, 37, 0.88) 100%);
+  border: 1px solid rgba(119, 148, 186, 0.22);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.brand-swatch {
+  height: 72px;
+  border-bottom: 1px solid rgba(2, 8, 16, 0.4);
+}
+
+.brand-card h3 {
+  margin: 0;
+  padding: 0.82rem 0.78rem 0;
+  font-size: 1.06rem;
+  line-height: 1.2;
+  color: #ecf3fd;
+}
+
+.brand-token,
+.brand-value,
+.brand-note {
+  margin: 0;
+  padding: 0.2rem 0.78rem;
+}
+
+.brand-value {
+  padding-bottom: 0.5rem;
+}
+
+.brand-note {
+  padding-bottom: 0.84rem;
+  color: #a7b9cc;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.brand-token code,
+.brand-value code,
+.brand-colors-intro code {
+  background: rgba(86, 107, 132, 0.28);
+  color: #eaf4ff;
+  border: 1px solid rgba(131, 157, 188, 0.35);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.43rem;
+  font-size: 0.88rem;
+}
+
+.brand-rules ol {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.brand-rules li {
+  color: #ced8e4;
+  margin-bottom: 0.4rem;
+}
+
+.brand-rules li:last-child {
+  margin-bottom: 0;
+}
+
+/* Swatches */
+.swatch-brand-blue { background: #58A6FF; }
+.swatch-plus-red { background: #FF0066; }
+.swatch-gold-accent { background: #C2A15A; }
+.swatch-gold-stroke { background: #D2B56F; }
+
+.swatch-logo-blue-top { background: #327ED6; }
+.swatch-logo-blue-mid { background: #2662AA; }
+.swatch-logo-blue-bottom { background: #13437A; }
+
+.swatch-schedule-blue-top { background: #6CAFEF; }
+.swatch-schedule-blue-mid { background: #3F86D8; }
+.swatch-schedule-blue-bottom { background: #2359A9; }
+
+.swatch-schedule-cta-top { background: #3D659A; }
+.swatch-schedule-cta-mid { background: #244A79; }
+.swatch-schedule-cta-bottom { background: #123055; }
+.swatch-schedule-cta-border { background: rgba(88, 131, 187, 0.40); }
+.swatch-schedule-cta-hover-top { background: #4673AA; }
+.swatch-schedule-cta-hover-mid { background: #2D5A8D; }
+.swatch-schedule-cta-hover-bottom { background: #1C436F; }
+.swatch-schedule-cta-hover-border { background: rgba(104, 151, 211, 0.52); }
+
+.swatch-dark-link { background: #79B8FF; }
+.swatch-dark-link-hover { background: #A5D0FF; }
+.swatch-light-link { background: #2B6FCD; }
+.swatch-light-link-hover { background: #4A8EDF; }
+
+.swatch-dark-bg-primary { background: #0D1117; }
+.swatch-dark-bg-secondary { background: #161B22; }
+.swatch-light-bg-primary { background: #FAFBFC; }
+.swatch-light-bg-secondary { background: #F5F5F7; }
+
+.swatch-light-text { background: #FFFFFF; }
+.swatch-secondary-text { background: #B2BAC5; }
+.swatch-location-dark { background: #566376; }
+.swatch-location-light { background: #404D5B; }
+.swatch-brand-accent-ink { background: #16120A; }
+
+.swatch-brand-blue-glow { background: #B0DAFF; }
+.swatch-gold-glow { background: #E0C58A; }
+
+/* Add visible edge on very light swatches */
+.swatch-light-bg-primary,
+.swatch-light-bg-secondary,
+.swatch-light-text,
+.swatch-dark-link-hover {
+  box-shadow: inset 0 0 0 1px rgba(4, 12, 22, 0.18);
+}
+
+html.switch .brand-colors-kicker {
+  color: #4d6483;
+}
+
+html.switch .brand-colors-intro {
+  color: var(--text-color-light);
+}
+
+html.switch .brand-section {
+  border-color: var(--panel-border-light);
+  background:
+    radial-gradient(120% 180% at 100% 0%, rgba(51, 122, 217, 0.10) 0%, rgba(51, 122, 217, 0) 45%),
+    linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.82) inset,
+    0 10px 24px rgba(15, 33, 58, 0.08);
+}
+
+html.switch .brand-section h2 {
+  color: var(--title-color-light);
+}
+
+html.switch .brand-section-head p {
+  color: #4f6380;
+}
+
+html.switch .brand-card {
+  background: linear-gradient(180deg, #f9fbff 0%, #f1f5fb 100%);
+  border-color: rgba(70, 95, 128, 0.24);
+}
+
+html.switch .brand-card h3 {
+  color: #112b4c;
+}
+
+html.switch .brand-token code,
+html.switch .brand-value code,
+html.switch .brand-colors-intro code {
+  background: rgba(78, 112, 152, 0.12);
+  border-color: rgba(72, 99, 129, 0.28);
+  color: #1b3c66;
+}
+
+html.switch .brand-note,
+html.switch .brand-rules li {
+  color: #3b4f68;
+}
+
+@media (max-width: 699px) {
+  .brand-colors-page {
+    padding-top: 0.4rem;
+  }
+
+  .brand-section {
+    padding: 0.9rem;
+    border-radius: 0.88rem;
+  }
+
+  .brand-section-head {
+    margin-bottom: 0.75rem;
+  }
+
+  .brand-grid,
+  .brand-grid-2up,
+  .brand-grid-3up {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-swatch {
+    height: 62px;
+  }
+}

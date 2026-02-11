@@ -15,6 +15,26 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Public brand color swatch reference page (`/brand-colors`) with noindex controls
+- Files:
+  - `content/brand-colors.md`
+  - `static/css/brand-colors.css`
+- Change: Added a dedicated, shareable brand color page with canonical swatches, token/value labels, usage notes, and brand rules; attached page-specific styling via external CSS and set page robots meta to `noindex, nofollow`.
+- Why: User requested a professional public-facing swatch page for internal/external collaborator handoff that should remain accessible by URL but not indexed in search.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
+- Scope: Brand color reference documentation
+- Files:
+  - `BRAND_COLORS.md`
+  - `STYLE_GUIDE.md`
+- Change: Added a dedicated brand color reference sheet with swatches, token names, hex/rgba values, usage guidance, and copy-ready brand rules; linked the file from the style guide key-files section.
+- Why: User requested a centralized color sheet to improve brand consistency and faster matching across pages.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Schedule CTA token sync + Lighthouse render-blocking hygiene
 - Files:
   - `static/css/late-overrides.css`
