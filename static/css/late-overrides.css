@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #3F6FD8;
-    --logo-blue-mid: #2C58A8;
-    --logo-blue-bottom: #163A77;
+    --logo-blue-top: #327ED6;
+    --logo-blue-mid: #2662AA;
+    --logo-blue-bottom: #13437A;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -364,11 +364,11 @@ html.switch .logo-help {
 }
 
 html.switch .logo-it {
-    color: #234885;
+    color: #1E5389;
 }
 
 html.switch .logo-help {
-    color: #3562AF;
+    color: #2B6CB3;
 }
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */

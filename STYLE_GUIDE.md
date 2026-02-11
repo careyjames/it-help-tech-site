@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#3F6FD8` (`--logo-blue-top`)
-  - Mid: `#2C58A8` (`--logo-blue-mid`)
-  - Bottom: `#163A77` (`--logo-blue-bottom`)
+  - Top: `#327ED6` (`--logo-blue-top`)
+  - Mid: `#2662AA` (`--logo-blue-mid`)
+  - Bottom: `#13437A` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -39,6 +39,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - High-emphasis blue surfaces (IT/HELP lettering and Schedule button) should remain in the same family even when depth differs by role.
 - Standard text links (including phone/map links) should remain in-family with Schedule blue, only shifting brightness for contrast by theme.
 - Current blue target: DNS-aligned true blue (non-purple), with depth from shading rather than violet tint.
+- If the logo reads purplish on Apple displays, cool hue by a small step (increase green/reduce red) before changing luminance.
 - Render IT/HELP letters as a single text layer; avoid duplicated pseudo-text overlays that can create ghosting on retina and screenshot captures.
 - Prefer shadow-based edge treatment for IT/HELP lettering by default; if gold wrap remains imperceptible, use a controlled `-webkit-text-stroke` pass (roughly `0.9px`-`1.2px`) with solid fill and no glow-heavy stack.
 - For solid premium outlines, use near-integer stroke widths (`~1px`) with a tiny gold smoothing halo; avoid thin sub-pixel strokes that can look jagged.
