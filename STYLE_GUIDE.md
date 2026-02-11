@@ -143,6 +143,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero/logo styles: `static/css/late-overrides.css`
 - Palette + component tokens: `sass/_extra.scss`
 - Theme link colors: `sass/css/abridge.scss`
+- Brand color reference: `BRAND_COLORS.md`
 - Logo markup: `templates/partials/hero_logo.html`
 - Hero logo behavior: `static/js/hero-logo.js`
 - Evolution log: `PROJECT_EVOLUTION_LOG.md`
