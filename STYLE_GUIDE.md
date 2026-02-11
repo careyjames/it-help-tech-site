@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#6FA8EE` (`--logo-blue-top`)
-  - Mid: `#2E67BC` (`--logo-blue-mid`)
-  - Bottom: `#15438B` (`--logo-blue-bottom`)
+  - Top: `#3B71C5` (`--logo-blue-top`)
+  - Mid: `#2F5FAF` (`--logo-blue-mid`)
+  - Bottom: `#1A458A` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -51,6 +51,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - If curved-edge noise persists, prefer pure `-webkit-text-stroke` perimeter with no extra gold `filter` stack before increasing effect complexity.
 - Keep Apple rendering weight consistent: do not downshift IT/HELP glyphs to `800` in Safari-targeted overrides; keep the logo at its core heavyweight geometry.
 - Keep logo color strategy blue-led: gold should remain a restrained edge hint only, not a dominant fill impression.
+- IT/HELP hierarchy target: keep `IT` on the deeper mid-blue and `HELP` roughly 3-5% lighter (top-blue token) for subtle lockup dominance without breaking cohesion.
 - IT/HELP lettering should favor stable depth (tonal fill + restrained edge) over attention-grabbing glow.
 - Current IT/HELP finish target: blue-dominant fill with strong silhouette presence (slightly larger wordmark, restrained gloss, crisp contour).
 - IT/HELP gold treatment, if used, should be a thin perimeter band around glyph edges (all sides) with blue fill visually dominant.
