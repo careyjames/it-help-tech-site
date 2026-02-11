@@ -15,6 +15,19 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: `/brand-colors` readability + bulk copy controls + sitemap exclusion hardening
+- Files:
+  - `content/brand-colors.md`
+  - `static/css/brand-colors.css`
+  - `static/js/brand-colors.js`
+  - `templates/sitemap.xml`
+  - `.github/workflows/deploy.yml`
+- Change: Increased top priority palette chip sizing for readability, added top-level `Copy all HEX` and `Copy all CSS vars` controls, and enhanced brand-color copy interactions. Added a custom sitemap template to skip URLs flagged for noindex and explicitly exclude `/brand-colors/`. Added PurgeCSS safelist entries for copy-state classes used at runtime.
+- Why: User requested clearer immediate color visibility, faster bulk handoff tooling, and full search hygiene by keeping the noindex page out of sitemap as well.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: `/brand-colors` immediate palette visibility + robust mini swatch rendering
 - Files:
   - `content/brand-colors.md`

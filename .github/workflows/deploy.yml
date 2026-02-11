@@ -36,7 +36,7 @@ jobs:
       - name: Purge unused CSS
         run: |
           npm install -g purgecss
-          purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line" --safelist "particle"
+          purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line" --safelist "particle" --safelist "is-copied" --safelist "is-copy-error"
 
       - name: Minify CSS and hero JS (safe ship-time optimization)
         run: |

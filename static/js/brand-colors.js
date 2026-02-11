@@ -62,11 +62,16 @@
   }
 
   function setButtonState(button, state, label) {
-    button.dataset.copyState = state;
+    button.classList.remove('is-copied', 'is-copy-error');
+    if (state === 'ok') {
+      button.classList.add('is-copied');
+    } else if (state === 'error') {
+      button.classList.add('is-copy-error');
+    }
     button.textContent = label;
 
     window.setTimeout(function () {
-      button.dataset.copyState = '';
+      button.classList.remove('is-copied', 'is-copy-error');
       button.textContent = button.dataset.defaultLabel;
     }, 1200);
   }
@@ -116,6 +121,65 @@
     card.appendChild(actions);
   }
 
+  function uniquePreserveOrder(values) {
+    var seen = new Set();
+    var output = [];
+
+    values.forEach(function (value) {
+      if (!seen.has(value)) {
+        seen.add(value);
+        output.push(value);
+      }
+    });
+
+    return output;
+  }
+
+  function collectHexValues(root) {
+    var values = Array.from(root.querySelectorAll('.brand-value code'))
+      .map(function (node) { return node.textContent.trim(); })
+      .filter(function (text) { return /^#[0-9A-Fa-f]{3,8}$/.test(text); });
+
+    return uniquePreserveOrder(values);
+  }
+
+  function collectCssVars(root) {
+    var vars = Array.from(root.querySelectorAll('.brand-token code'))
+      .map(function (node) { return node.textContent.trim(); })
+      .filter(function (text) { return /^--[A-Za-z0-9_-]+$/.test(text); });
+
+    return uniquePreserveOrder(vars);
+  }
+
+  function wireCopyAllButtons(root) {
+    var hexButton = root.querySelector('#copy-all-hex');
+    var cssButton = root.querySelector('#copy-all-css');
+
+    [hexButton, cssButton].forEach(function (button) {
+      if (button) {
+        button.dataset.defaultLabel = button.textContent.trim();
+      }
+    });
+
+    if (hexButton) {
+      hexButton.addEventListener('click', function () {
+        var payload = collectHexValues(root).join('\n');
+        copyValue(payload).then(function (ok) {
+          setButtonState(hexButton, ok ? 'ok' : 'error', ok ? 'Copied HEX' : 'Copy failed');
+        });
+      });
+    }
+
+    if (cssButton) {
+      cssButton.addEventListener('click', function () {
+        var payload = collectCssVars(root).join('\n');
+        copyValue(payload).then(function (ok) {
+          setButtonState(cssButton, ok ? 'ok' : 'error', ok ? 'Copied vars' : 'Copy failed');
+        });
+      });
+    }
+  }
+
   function initBrandColorsPage() {
     var root = document.querySelector('.brand-colors-page');
     if (!root) {
@@ -124,6 +188,7 @@
 
     var cards = root.querySelectorAll('.brand-card');
     cards.forEach(buildCardActions);
+    wireCopyAllButtons(root);
   }
 
   if (document.readyState === 'loading') {
