@@ -13,6 +13,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-11
+- Actor: AI+Developer
+- Scope: IT/HELP deep cobalt-blue refinement (gold edge preserved)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Shifted the IT/HELP blue ramp to deeper, higher-saturation cobalt values and tuned blue depth-shadow channels (dark and light variants) so the lettering reads more decisively blue while preserving the existing gold stroke widths and per-glyph `P` stability safeguards.
+- Why: User requested the strongest possible blue presentation, slightly darker than current, while keeping the gold perimeter around `IT` and `HELP`.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
 ### 2026-02-10
 - Actor: AI+Developer
 - Scope: IT/HELP blue-only darkening refinement (gold preserved)

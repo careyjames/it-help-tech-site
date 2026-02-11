@@ -1,5 +1,5 @@
 # Style Guide (Living)
-Last updated: 2026-02-10
+Last updated: 2026-02-11
 
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#7DAFE8` (`--logo-blue-top`)
-  - Mid: `#3D74BE` (`--logo-blue-mid`)
-  - Bottom: `#1E4F97` (`--logo-blue-bottom`)
+  - Top: `#6FA8EE` (`--logo-blue-top`)
+  - Mid: `#2E67BC` (`--logo-blue-mid`)
+  - Bottom: `#15438B` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
