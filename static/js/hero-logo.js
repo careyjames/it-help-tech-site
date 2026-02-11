@@ -139,6 +139,16 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+function randomUnit() {
+  if (globalThis.crypto?.getRandomValues) {
+    const randomBuffer = new Uint32Array(1);
+    globalThis.crypto.getRandomValues(randomBuffer);
+    return randomBuffer[0] / 4294967296;
+  }
+
+  return 0.5;
+}
+
 function seededSpiralPoint(index, count, width, height) {
   const centerX = width * 0.5;
   const centerY = height * 0.5;
@@ -148,8 +158,8 @@ function seededSpiralPoint(index, count, width, height) {
   const radial = Math.sqrt(normalized) * maxRadius;
   const angle = index * GOLDEN_ANGLE;
 
-  const jitterRadius = (Math.random() - 0.5) * maxRadius * 0.07;
-  const jitterAngle = (Math.random() - 0.5) * 0.28;
+  const jitterRadius = (randomUnit() - 0.5) * maxRadius * 0.07;
+  const jitterAngle = (randomUnit() - 0.5) * 0.28;
   const offsetX = Math.cos(angle + jitterAngle) * (radial + jitterRadius);
   const offsetY = Math.sin(angle + jitterAngle) * (radial + jitterRadius);
 
@@ -164,16 +174,16 @@ function createNodes(count, width, height) {
   const nodes = [];
   for (let index = 0; index < count; index += 1) {
     const seed = seededSpiralPoint(index, count, width, height);
-    const driftAngle = seed.angle + Math.PI * 0.5 + (Math.random() - 0.5) * 1.15;
-    const speed = 0.048 + Math.random() * 0.108;
+    const driftAngle = seed.angle + Math.PI * 0.5 + (randomUnit() - 0.5) * 1.15;
+    const speed = 0.048 + randomUnit() * 0.108;
     nodes.push({
       x: seed.x,
       y: seed.y,
       vx: Math.cos(driftAngle) * speed,
       vy: Math.sin(driftAngle) * speed,
-      depth: 0.35 + Math.random() * 0.85,
-      radius: 0.75 + Math.random() * 1.25,
-      gold: Math.random() < 0.3,
+      depth: 0.35 + randomUnit() * 0.85,
+      radius: 0.75 + randomUnit() * 1.25,
+      gold: randomUnit() < 0.3,
       ox: 0,
       oy: 0,
     });
