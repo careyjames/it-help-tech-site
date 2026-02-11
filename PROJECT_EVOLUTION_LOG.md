@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Schedule CTA token sync + Lighthouse render-blocking hygiene
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Introduced dedicated `--schedule-cta-*` tokens and rewired `.schedule-link` base/hover styles to consume tokens instead of hardcoded hex values. Removed five unused keyframe blocks (`gradient-shift`, `specular-sweep`, `logo-gleam`, `logo-sheen`, `shine`) from render-blocking CSS after Lighthouse insight review.
+- Why: User requested final token cleanup and remediation of actionable Lighthouse findings while preserving the approved visual result.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: IT/HELP anti-purple micro-channel tune (v2)
 - Files:
   - `static/css/late-overrides.css`
