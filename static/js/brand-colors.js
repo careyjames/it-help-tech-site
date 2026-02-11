@@ -1,48 +1,25 @@
 (function () {
   'use strict';
 
-  function copyWithFallback(value) {
-    var textarea = document.createElement('textarea');
-    textarea.value = value;
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'fixed';
-    textarea.style.top = '-1000px';
-    textarea.style.left = '-1000px';
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-
-    var copied = false;
-    try {
-      copied = document.execCommand('copy');
-    } catch (error) {
-      copied = false;
-    }
-
-    document.body.removeChild(textarea);
-    return copied;
-  }
-
   function copyValue(value) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
+    if (navigator.clipboard?.writeText) {
       return navigator.clipboard.writeText(value)
         .then(function () { return true; })
-        .catch(function () { return copyWithFallback(value); });
+        .catch(function () { return false; });
     }
 
-    return Promise.resolve(copyWithFallback(value));
+    return Promise.resolve(false);
   }
 
   function getCardSwatchClass(card) {
-    var swatch = card.querySelector('.brand-swatch');
+    const swatch = card.querySelector('.brand-swatch');
     if (!swatch) {
       return null;
     }
 
-    var classList = Array.from(swatch.classList);
-    for (var i = 0; i < classList.length; i += 1) {
-      if (classList[i].indexOf('swatch-') === 0) {
-        return classList[i];
+    for (const className of swatch.classList) {
+      if (className.startsWith('swatch-')) {
+        return className;
       }
     }
 
@@ -50,7 +27,7 @@
   }
 
   function buildMiniSwatch(swatchClass) {
-    var swatch = document.createElement('span');
+    const swatch = document.createElement('span');
     swatch.className = 'brand-mini-swatch';
     swatch.setAttribute('aria-hidden', 'true');
 
@@ -70,14 +47,14 @@
     }
     button.textContent = label;
 
-    window.setTimeout(function () {
+    globalThis.setTimeout(function () {
       button.classList.remove('is-copied', 'is-copy-error');
       button.textContent = button.dataset.defaultLabel;
     }, 1200);
   }
 
   function buildCopyButton(label, value) {
-    var button = document.createElement('button');
+    const button = document.createElement('button');
     button.type = 'button';
     button.className = 'brand-copy-btn';
     button.textContent = label;
@@ -98,16 +75,16 @@
   }
 
   function buildCardActions(card) {
-    var tokenCode = card.querySelector('.brand-token code');
-    var valueCode = card.querySelector('.brand-value code');
+    const tokenCode = card.querySelector('.brand-token code');
+    const valueCode = card.querySelector('.brand-value code');
 
     if (!tokenCode && !valueCode) {
       return;
     }
 
-    var actions = document.createElement('div');
+    const actions = document.createElement('div');
     actions.className = 'brand-copy-actions';
-    var swatchClass = getCardSwatchClass(card);
+    const swatchClass = getCardSwatchClass(card);
 
     if (tokenCode) {
       actions.appendChild(buildCopyButton('Copy token', tokenCode.textContent.trim()));
@@ -122,21 +99,21 @@
   }
 
   function uniquePreserveOrder(values) {
-    var seen = new Set();
-    var output = [];
+    const seen = new Set();
+    const output = [];
 
-    values.forEach(function (value) {
+    for (const value of values) {
       if (!seen.has(value)) {
         seen.add(value);
         output.push(value);
       }
-    });
+    }
 
     return output;
   }
 
   function collectHexValues(root) {
-    var values = Array.from(root.querySelectorAll('.brand-value code'))
+    const values = Array.from(root.querySelectorAll('.brand-value code'))
       .map(function (node) { return node.textContent.trim(); })
       .filter(function (text) { return /^#[0-9A-Fa-f]{3,8}$/.test(text); });
 
@@ -144,7 +121,7 @@
   }
 
   function collectCssVars(root) {
-    var vars = Array.from(root.querySelectorAll('.brand-token code'))
+    const vars = Array.from(root.querySelectorAll('.brand-token code'))
       .map(function (node) { return node.textContent.trim(); })
       .filter(function (text) { return /^--[A-Za-z0-9_-]+$/.test(text); });
 
@@ -152,8 +129,8 @@
   }
 
   function wireCopyAllButtons(root) {
-    var hexButton = root.querySelector('#copy-all-hex');
-    var cssButton = root.querySelector('#copy-all-css');
+    const hexButton = root.querySelector('#copy-all-hex');
+    const cssButton = root.querySelector('#copy-all-css');
 
     [hexButton, cssButton].forEach(function (button) {
       if (button) {
@@ -163,7 +140,7 @@
 
     if (hexButton) {
       hexButton.addEventListener('click', function () {
-        var payload = collectHexValues(root).join('\n');
+        const payload = collectHexValues(root).join('\n');
         copyValue(payload).then(function (ok) {
           setButtonState(hexButton, ok ? 'ok' : 'error', ok ? 'Copied HEX' : 'Copy failed');
         });
@@ -172,7 +149,7 @@
 
     if (cssButton) {
       cssButton.addEventListener('click', function () {
-        var payload = collectCssVars(root).join('\n');
+        const payload = collectCssVars(root).join('\n');
         copyValue(payload).then(function (ok) {
           setButtonState(cssButton, ok ? 'ok' : 'error', ok ? 'Copied vars' : 'Copy failed');
         });
@@ -181,12 +158,12 @@
   }
 
   function initBrandColorsPage() {
-    var root = document.querySelector('.brand-colors-page');
+    const root = document.querySelector('.brand-colors-page');
     if (!root) {
       return;
     }
 
-    var cards = root.querySelectorAll('.brand-card');
+    const cards = root.querySelectorAll('.brand-card');
     cards.forEach(buildCardActions);
     wireCopyAllButtons(root);
   }

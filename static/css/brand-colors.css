@@ -49,9 +49,9 @@
 }
 
 .brand-priority-chip code {
-  background: rgba(91, 120, 158, 0.2);
-  border: 1px solid rgba(131, 157, 188, 0.32);
-  color: #e9f4ff;
+  background: #2a4463;
+  border: 1px solid #6e8fb9;
+  color: #f7fbff;
   border-radius: 0.45rem;
   padding: 0.15rem 0.35rem;
   font-size: 0.82rem;
@@ -324,9 +324,9 @@ html.switch .brand-priority-chip {
 }
 
 html.switch .brand-priority-chip code {
-  background: rgba(84, 119, 157, 0.13);
-  border-color: rgba(78, 108, 141, 0.3);
-  color: #1f4572;
+  background: #d2e1f2;
+  border-color: #8faac6;
+  color: #103760;
 }
 
 html.switch .brand-section {
@@ -363,9 +363,9 @@ html.switch .brand-card h3 {
 html.switch .brand-token code,
 html.switch .brand-value code,
 html.switch .brand-colors-intro code {
-  background: rgba(78, 112, 152, 0.12);
-  border-color: rgba(72, 99, 129, 0.28);
-  color: #1b3c66;
+  background: #cfdeee;
+  border-color: #8da8c4;
+  color: #10365e;
 }
 
 html.switch .brand-note,

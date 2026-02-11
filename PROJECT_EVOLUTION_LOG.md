@@ -15,6 +15,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Sonar remediation pass (brand-colors + hero RNG hotspot hardening)
+- Files:
+  - `static/js/brand-colors.js`
+  - `static/css/brand-colors.css`
+  - `static/js/hero-logo.js`
+- Change: Removed deprecated clipboard fallback path and modernized brand-colors script to `let`/`const`, optional chaining, `for-of`, and `globalThis` usage to satisfy Sonar JS rules; strengthened light-theme contrast for chip/code text combinations flagged by Sonar; replaced hero constellation `Math.random()` calls with Web Crypto-backed random sampling (`crypto.getRandomValues`) with deterministic fallback.
+- Why: User requested remediation of Sonar issues/hotspots export files and cleanup of actionable findings.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: `/brand-colors` readability + bulk copy controls + sitemap exclusion hardening
 - Files:
   - `content/brand-colors.md`
