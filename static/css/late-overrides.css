@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #4679D4;
-    --logo-blue-mid: #2B56A3;
-    --logo-blue-bottom: #173B79;
+    --logo-blue-top: #3F6FD8;
+    --logo-blue-mid: #2C58A8;
+    --logo-blue-bottom: #163A77;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -58,9 +58,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     justify-content: center !important;
     height: calc(var(--nav-slot-size) - 0.46rem);
     padding: 0 0.86rem !important;
-    background-color: #285184 !important;
-    background-image: linear-gradient(180deg, #446EA7 0%, #285184 54%, #16345D 100%) !important;
-    border: 1px solid rgba(95, 139, 198, 0.40) !important;
+    background-color: #244A79 !important;
+    background-image: linear-gradient(180deg, #3D659A 0%, #244A79 54%, #123055 100%) !important;
+    border: 1px solid rgba(88, 131, 187, 0.40) !important;
     border-radius: 0.56rem !important;
     color: #F1F8FF !important;
     font-weight: 780;
@@ -76,8 +76,8 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
 
 .nav-wrapper .schedule-link:hover,
 .nav-wrapper .schedule-link:focus-visible {
-    background-image: linear-gradient(180deg, #4E7CB4 0%, #326195 54%, #224B79 100%) !important;
-    border-color: rgba(112, 160, 223, 0.54) !important;
+    background-image: linear-gradient(180deg, #4673AA 0%, #2D5A8D 54%, #1C436F 100%) !important;
+    border-color: rgba(104, 151, 211, 0.52) !important;
     color: #F1F8FF !important;
     text-decoration: none !important;
     filter: none !important;
@@ -364,11 +364,11 @@ html.switch .logo-help {
 }
 
 html.switch .logo-it {
-    color: #254D8E;
+    color: #234885;
 }
 
 html.switch .logo-help {
-    color: #3A69B3;
+    color: #3562AF;
 }
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */
@@ -434,7 +434,7 @@ html.switch .logo-help {
     text-transform: lowercase;
     position: relative;
     font-weight: 545;
-    color: #5D6B7E;
+    color: #566376;
     letter-spacing: 0.038em;
     margin-left: auto;
     margin-right: auto;
@@ -467,7 +467,7 @@ html.switch .location {
 
 .tagline-border {
     display: inline-block; /* pill snaps to content width */
-    padding: 10px 20px;
+    padding: 10px 20px 11px;
     border-radius: 30px;
     border: 1.75px solid #D2B56F;
     background-color: rgba(8, 34, 72, 0.38);
@@ -767,7 +767,7 @@ html.switch .particle {
   }
 
   /* compensate for smaller container padding */
-  .tagline-border{padding:8px 16px;}
+  .tagline-border{padding:8px 16px 9px;}
 }
 /* ---- keep .gold-link in the controlled interaction palette -------- */
 html:not(.switch) h1 a.gold-link,

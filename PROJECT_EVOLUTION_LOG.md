@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: Hero final optical-weight polish (logo blue depth, schedule restraint, pill centering)
+- Files:
+  - `static/css/late-overrides.css`
+  - `STYLE_GUIDE.md`
+- Change: Slightly deepened the IT/HELP blue ramp to reduce top-edge brightness, subdued Schedule CTA highlight/base blues another step so the logo remains the brightest blue element, darkened `san diego` for stronger lockup anchoring, and applied +1px bottom optical padding in the hero pill (desktop/mobile) while keeping the Apple-safe solid text-fill pipeline.
+- Why: User requested a best-practice final refinement pass focused on cohesion, hierarchy, and professional finish without introducing rendering risk.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: Hero hierarchy micro-tuning (blue split, plus depth, pill restraint)
 - Files:
   - `static/css/late-overrides.css`

@@ -10,9 +10,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
 - Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#4679D4` (`--logo-blue-top`)
-  - Mid: `#2B56A3` (`--logo-blue-mid`)
-  - Bottom: `#173B79` (`--logo-blue-bottom`)
+  - Top: `#3F6FD8` (`--logo-blue-top`)
+  - Mid: `#2C58A8` (`--logo-blue-mid`)
+  - Bottom: `#163A77` (`--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
@@ -87,6 +87,7 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Hero tagline panel interior in dark mode should stay cool navy-blue translucent; avoid warm/brown casts.
 - Hero tagline gold frame should read as a crisp solid perimeter on mobile and desktop.
 - Hero tagline border weight target is slightly restrained (about `1.75px`) so the pill frames content without competing with the IT/HELP lockup.
+- Hero tagline optical centering: keep bottom padding ~`1px` greater than top so two-line copy sits centered in the rounded shell.
 - Implement hero tagline perimeter as a true gold border stroke (not a warm fill band) to avoid muddy color bleed on iPhone.
 - Avoid inner highlight seams on the hero pill: no inset white line, inset border ring, or inner blue edge that can read as a gap on mobile.
 - Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
