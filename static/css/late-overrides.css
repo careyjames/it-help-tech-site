@@ -216,6 +216,12 @@ html.switch .logo-constellation {
     left: var(--logo-help-shift);
 }
 
+.logo-help-p {
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+
 .logo-it::before,
 .logo-it::after,
 .logo-help::before,
@@ -358,6 +364,12 @@ html.switch .logo-help {
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */
 @media (min-width: 700px) {
+    .main-logo {
+        font-size: 86px;           /* integer pixel size to reduce subpixel stroke artifacts */
+        --logo-it-shift: 0.093023em;   /* 8px at 86px */
+        --logo-help-shift: -0.023256em; /* -2px at 86px */
+    }
+
     .logo-it,
     .logo-help {
         -webkit-text-stroke: 1.1px var(--accent-gold-solid);
@@ -369,6 +381,18 @@ html.switch .logo-help {
             0 7px 14px rgba(4, 12, 32, 0.24);
     }
 
+    .logo-help-p {
+        top: 0.005em;
+        font-weight: 880;
+        -webkit-text-stroke: 0.94px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.11px rgba(210, 181, 111, 0.50),
+            0 0.28px 0 rgba(210, 181, 111, 0.34),
+            0 0.86px 0 rgba(3, 14, 44, 0.72),
+            0 2.2px 4.6px rgba(2, 8, 24, 0.20),
+            0 7px 14px rgba(4, 12, 32, 0.24);
+    }
+
     html.switch .logo-it,
     html.switch .logo-help {
         -webkit-text-stroke: 1.04px var(--accent-gold-solid);
@@ -377,6 +401,18 @@ html.switch .logo-help {
             0 0.38px 0 rgba(210, 181, 111, 0.34),
             0 0.72px 0 rgba(8, 24, 68, 0.46),
             0 1.6px 3.2px rgba(2, 8, 24, 0.14),
+            0 4px 9px rgba(10, 26, 56, 0.08);
+    }
+
+    html.switch .logo-help-p {
+        top: 0.004em;
+        font-weight: 880;
+        -webkit-text-stroke: 0.9px var(--accent-gold-solid);
+        text-shadow:
+            0 0 0.09px rgba(210, 181, 111, 0.42),
+            0 0.24px 0 rgba(210, 181, 111, 0.28),
+            0 0.68px 0 rgba(8, 24, 68, 0.44),
+            0 1.5px 3px rgba(2, 8, 24, 0.14),
             0 4px 9px rgba(10, 26, 56, 0.08);
     }
 }
