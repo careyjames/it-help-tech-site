@@ -26,9 +26,9 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:#fff!important}html:
     --schedule-blue-top: #6CAFEF;
     --schedule-blue-mid: #3F86D8;
     --schedule-blue-bottom: #2359A9;
-    --logo-blue-top: #86B9EF;
-    --logo-blue-mid: #4B83CB;
-    --logo-blue-bottom: #24589F;
+    --logo-blue-top: #7DAFE8;
+    --logo-blue-mid: #3D74BE;
+    --logo-blue-bottom: #1E4F97;
     --brand-blue-ink: #F7FBFF;
     --accent-gold: #C2A15A;
     --accent-gold-solid: #D2B56F;
@@ -343,7 +343,7 @@ html.switch .logo-constellation {
 
 html.switch .logo-it,
 html.switch .logo-help {
-    color: #3D72B1;
+    color: #356BAA;
     background-image: none;
     -webkit-background-clip: border-box;
     background-clip: border-box;
