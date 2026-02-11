@@ -15,6 +15,16 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: `/brand-colors` compact swatch visibility refinement
+- Files:
+  - `static/css/brand-colors.css`
+  - `static/js/brand-colors.js`
+- Change: Converted large card-top swatches into compact accent strips and added small visible swatch chips beside each value code; swatch chips are generated per-card from value/color sources so collaborators can quickly see color relationships without extra vertical bulk.
+- Why: User requested small, clearly visible swatches close to the copy controls so color interactions are immediately readable.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: `/brand-colors` layout correction + explicit copy actions
 - Files:
   - `content/brand-colors.md`
