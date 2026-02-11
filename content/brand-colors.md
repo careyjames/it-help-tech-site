@@ -14,6 +14,13 @@ scripts = ["js/brand-colors.js"]
 <div class="brand-colors-page">
 <p class="brand-colors-kicker">IT Help San Diego Inc.</p>
 <p class="brand-colors-intro">Canonical palette and token reference for design, engineering, and vendor handoff. This page is public for sharing and is marked <code>noindex, nofollow</code>.</p>
+<div class="brand-priority-palette" role="list" aria-label="Primary brand palette preview">
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-brand-blue" aria-hidden="true"></span>Primary Blue <code>#58A6FF</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-blue-top" aria-hidden="true"></span>Logo Blue <code>#327ED6</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-plus-red" aria-hidden="true"></span>Plus Red <code>#FF0066</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-gold-accent" aria-hidden="true"></span>Gold Accent <code>#C2A15A</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-gold-stroke" aria-hidden="true"></span>Gold Stroke <code>#D2B56F</code></span>
+</div>
 <section class="brand-section" aria-labelledby="core-brand-colors">
 <div class="brand-section-head">
 <h2 id="core-brand-colors">Core Brand Colors</h2>

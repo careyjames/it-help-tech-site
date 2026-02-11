@@ -15,6 +15,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-11
 - Actor: AI+Developer
+- Scope: `/brand-colors` immediate palette visibility + robust mini swatch rendering
+- Files:
+  - `content/brand-colors.md`
+  - `static/css/brand-colors.css`
+  - `static/js/brand-colors.js`
+- Change: Added a top-of-page priority palette strip for the most important colors (blue, logo blue, plus red, gold accent, gold stroke) so brand relationships are visible before scrolling; updated per-card mini swatch generation to reuse existing static `swatch-*` classes for production reliability.
+- Why: User requested instant top-level color visibility and confirmed small swatches were not consistently visible in the current render.
+- Rollback: this branch/PR (`codex/ithelp-blue-darken-v1`).
+
+### 2026-02-11
+- Actor: AI+Developer
 - Scope: `/brand-colors` compact swatch visibility refinement
 - Files:
   - `static/css/brand-colors.css`
