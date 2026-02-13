@@ -105,10 +105,11 @@ jobs:
       - name: Upload HTML (short TTL)
         run: |
           aws s3 sync public/ s3://$BUCKET/ \
-            --include "*.html" --exclude "llms*.txt" \
+            --exclude "*" --include "*.html" \
             --cache-control "public,max-age=3600,stale-while-revalidate=86400" \
             --metadata-directive REPLACE \
-            --exact-timestamps
+            --exact-timestamps \
+            --delete
         env:
           AWS_REGION: us-east-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
