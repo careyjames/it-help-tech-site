@@ -4,7 +4,7 @@
 
 ## Main
 
-### <img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/logo-light.svg width=356>
+### <img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356>
 
 Source: [https://www.it-help.tech](https://www.it-help.tech)
 
@@ -261,5 +261,4 @@ Source: [https://schedule.it-help.tech/](https://schedule.it-help.tech/)
 Source: [https://www.it-help.tech/blog](https://www.it-help.tech/blog)
 
 *Optional content available at [https://www.it-help.tech/blog](https://www.it-help.tech/blog)*
-
 
