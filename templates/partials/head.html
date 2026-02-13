@@ -71,10 +71,12 @@
         href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
 {%- endfor %}
 
-{%- if ctx.extra.stylesheets %}
+{%- if (page is defined or section is defined) and ctx.extra.stylesheets %}
   {% set pagestylesheets = ctx.extra.stylesheets %}
   {%- for i in pagestylesheets %}
-    <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+    {%- if not stylesheets is containing(i) %}
+      <link rel="stylesheet" href="{{ get_url(path=i, trailing_slash=false, cachebust=true) | safe }}">
+    {%- endif %}
   {%- endfor %}
 {%- endif %}
 
