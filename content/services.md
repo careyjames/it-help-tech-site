@@ -1,8 +1,9 @@
 ---
 title: On-site IT Services San Diego (La Jolla) | IT Help San Diego
 path: services
-description: "Apple‑centric on‑site IT services for homes & SMBs across San Diego: Mac & Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers."
+description: "Apple-centric on-site IT services across San Diego: Mac and Wi‑Fi troubleshooting, DNS/email deliverability, cybersecurity, and data recovery. No retainers."
 extra:
+  seo_title: "On-site IT Services San Diego"
   skip_image: true
   skip_author: true
   og_description: "Apple‑centric on‑site IT services: Mac & Wi‑Fi troubleshooting, DNS/email security, data recovery—no monthly retainers."

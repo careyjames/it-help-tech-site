@@ -7,6 +7,7 @@ categories: [DNS Security, Email Security]
 tags: [DMARC, SPF, DKIM, DNSSEC, email deliverability, cybersecurity, BEC]
 description: "Learn how to set up DMARC, SPF, & DKIM for robust DNS security. Protect your business email from spoofing, phishing, and BEC attacks with these best practices."
 extra:
+  seo_title: "DMARC, SPF & DKIM Security Guide"
   image: /images/dns-security-dmarc.png
   og_title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
   og_description: "Learn how to set up DMARC, SPF, & DKIM for robust DNS security. Protect your business email from spoofing, phishing, and BEC attacks with these best practices."

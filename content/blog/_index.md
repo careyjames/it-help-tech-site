@@ -1,11 +1,11 @@
 +++
 title = "IT Help San Diego Blog | Tech Insights & Support Tips"
-description = "Explore the IT Help blog for expert insights, articles, and troubleshooting tips on macOS, iOS, DNS, email security, DMARC, and cybersecurity best practices."
+description = "Expert IT insights from IT Help San Diego on macOS, iOS, Wi‑Fi, DNS, email deliverability, DMARC, and cybersecurity best practices."
 sort_by = "date"
-paginate_by = 15
 template = "blog.html"
 
 [extra]
+seo_title = "IT Help Blog"
 og_description = "Expert insights on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego."
 twitter_description = "Expert insights on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego."
 +++

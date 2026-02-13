@@ -1,14 +1,15 @@
 +++
 title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
+description = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
 
 [extra]
+seo_title       = "Mac IT Support San Diego"
 og_title        = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-og_description  = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
+og_description  = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
 og_image        = "/images/og-home.png"
 
 twitter_title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-twitter_description = "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers."
+twitter_description = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
 twitter_image       = "/images/og-home.png"
 twitter_card        = "summary_large_image"
 +++

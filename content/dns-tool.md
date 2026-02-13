@@ -1,8 +1,9 @@
 ---
 title: DNS Tool - DNS & Email Security Auditor
-description: "Comprehensive DNS and email security auditor with 11 core analysis modules: SPF, DKIM (35 selectors), DMARC + DMARCbis readiness, DNSSEC, DANE/TLSA, MTA-STS, TLS-RPT, SMTP transport verification, BIMI/VMC, MPIC-aware CAA, and CT subdomain discovery. Includes history, comparison, stats, JSON export, and executive print/PDF reports."
+description: "Professional DNS and email security auditor for SPF, DKIM, DMARC, DNSSEC, MTA-STS, TLS-RPT, SMTP transport checks, CAA, BIMI, and CT reporting."
 path: dns-tool
 extra:
+  seo_title: "DNS & Email Security Auditor"
   skip_image: true
   skip_author: true
 ---

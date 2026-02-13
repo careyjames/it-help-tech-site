@@ -31,18 +31,6 @@
         imagesizes="200px">
 {% endif %}
 
-{% if page.title %}
-  <title>{{ page.title }} – {{ config.title }}</title>
-{% else %}
-  <title>{{ config.title }}</title>
-{% endif %}
-
-{% if page.description %}
-  <meta name="description" content="{{ page.description | safe }}" />
-{% else %}
-  <meta name="description" content="{{ config.description | safe }}" />
-{% endif %}
-
 {# --- choose the right template context: page → section → site config --- #}
 {% if page is defined %}
   {% set ctx = page %}
@@ -51,6 +39,18 @@
 {% else %}
   {% set ctx = config %}
 {% endif %}
+
+{% set seo_title = ctx.extra.seo_title | default(value=ctx.title | default(value=config.title)) %}
+{% if seo_title == config.title or seo_title is containing(config.title) %}
+  <title>{{ seo_title }}</title>
+{% elif seo_title | length <= 35 %}
+  <title>{{ seo_title }} – {{ config.title }}</title>
+{% else %}
+  <title>{{ seo_title }}</title>
+{% endif %}
+
+{% set meta_description = ctx.description | default(value=config.description) %}
+<meta name="description" content="{{ meta_description | safe }}" />
 
 {%- set integrity = config.extra.integrity | default(value=true) -%}
 {%- if config.extra.search_library and config.extra.search_library == "offline" %}
@@ -105,11 +105,18 @@
 {%- endif %}
 
 {# --- Meta tags --- #}
-{% if page.extra.robots %}
-  <meta name="robots" content="{{ page.extra.robots }}">
-{% else %}
-  <meta name="robots" content="index, follow">
+{% set robots_directive = "index, follow" %}
+{% if ctx.extra and ctx.extra.robots %}
+  {% set robots_directive = ctx.extra.robots %}
+{% elif page is not defined and section is not defined %}
+  {% set robots_directive = "noindex, nofollow" %}
+{% elif (current_path is defined and current_path == "404.html")
+     or (current_url is defined and (current_url is ending_with("/404.html")
+     or current_url is ending_with("/404")
+     or current_url is ending_with("/404/"))) %}
+  {% set robots_directive = "noindex, nofollow" %}
 {% endif %}
+<meta name="robots" content="{{ robots_directive }}">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

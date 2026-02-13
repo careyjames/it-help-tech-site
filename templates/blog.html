@@ -63,9 +63,15 @@
 {% block content %}
 <h1 class="page-title text-center">Blog Posts</h1>
 
+{% if paginator is defined %}
+  {% set posts = paginator.pages %}
+{% else %}
+  {% set posts = section.pages %}
+{% endif %}
+
 <ul class="post-list">
   {# section.pages is already sorted by date desc in Zola #}
-  {% for page in paginator.pages %}
+  {% for page in posts %}
     <li class="post-item">
 
       <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>

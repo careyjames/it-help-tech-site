@@ -5,6 +5,15 @@
   {%- if entry.permalink == "https://www.it-help.tech/brand-colors/" %}
     {%- set skip = true %}
   {%- endif %}
+  {%- if entry.permalink == "https://www.it-help.tech/blog/page/1/" %}
+    {%- set skip = true %}
+  {%- endif %}
+  {%- if entry.permalink == "https://www.it-help.tech/categories/" %}
+    {%- set skip = true %}
+  {%- endif %}
+  {%- if entry.permalink == "https://www.it-help.tech/tags/" %}
+    {%- set skip = true %}
+  {%- endif %}
   {%- if entry.extra and entry.extra.robots and entry.extra.robots is containing("noindex") %}
     {%- set skip = true %}
   {%- endif %}

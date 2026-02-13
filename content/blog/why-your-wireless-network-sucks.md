@@ -4,7 +4,7 @@ date: 2025-05-24
 author: Carey Balboa
 categories: [Networking, WiFi, IT Infrastructure]
 tags: [ethernet, wifi, networking, home networking, office networking, cat6a, cat8]
-description: "Discover why your Wi-Fi might be underperforming. Learn about the importance of an Ethernet backbone and how Cat6A/Cat8 cabling can boost your home or office network."
+description: "Learn why Wi-Fi underperforms without an Ethernet backbone and how Cat6A/Cat8 cabling improves speed, stability, and coverage in homes or offices."
 extra:
   image: images/sad-wifi-extender.png
   og_title: "Why Your Wireless Network Sucks: No Ethernet Backbone"
