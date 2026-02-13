@@ -4,7 +4,7 @@
 
 ## Main
 
-- [<img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/logo-light.svg width=356>](https://www.it-help.tech)
+- [<img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356>](https://www.it-help.tech)
 - [Pricing](https://www.it-help.tech/billing)
 - [Services](https://www.it-help.tech/services)
 - [DNS Tool](https://www.it-help.tech/dns-tool)
@@ -14,4 +14,3 @@
 ## Optional
 
 - [Blog](https://www.it-help.tech/blog)
-

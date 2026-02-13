@@ -58,7 +58,7 @@
 {%- endif %}
 
 <noscript>
-  <link rel="stylesheet" href="{{ get_url(path='css/critical-inline.css') | safe }}">
+  <link rel="stylesheet" href="{{ get_url(path='critical-inline.css') | safe }}">
 </noscript>
 
 {# --- Critical hero styling uses CSP nonce --- #}
@@ -198,6 +198,7 @@
 {% else %}
   {% set page_url = config.base_url %}
 {% endif %}
+<link rel="canonical" href="{{ page_url | safe }}">
 
 {# --- Open Graph & Twitter --- #}
 <meta property="og:title"       content="{{ ctx.extra.og_title       | default(value=ctx.title) }}">
