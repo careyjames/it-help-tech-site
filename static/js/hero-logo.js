@@ -5,8 +5,21 @@ globalThis.addEventListener('DOMContentLoaded', () => {
   }
 
   initLogoTilt(logo);
-  initConstellation(logo);
+  scheduleConstellationInit(logo);
 });
+
+function scheduleConstellationInit(logo) {
+  const start = () => {
+    initConstellation(logo);
+  };
+
+  if (typeof globalThis.requestIdleCallback === 'function') {
+    globalThis.requestIdleCallback(start, { timeout: 1400 });
+    return;
+  }
+
+  globalThis.setTimeout(start, 180);
+}
 
 function initLogoTilt(logo) {
   const reducedMotion =
@@ -93,6 +106,8 @@ function createConstellationState(logo, canvas, context, motionQuery) {
     inView: true,
     frameHandle: 0,
     previousTimestamp: 0,
+    lastRenderTimestamp: 0,
+    targetFrameInterval: 0,
     pointerTargetX: 0,
     pointerTargetY: 0,
     pointerX: 0,
@@ -107,17 +122,20 @@ function createConstellationState(logo, canvas, context, motionQuery) {
 
 function nodeCountForArea(area) {
   if (area <= 90000) {
-    return 22;
+    return 20;
   }
   if (area <= 160000) {
-    return 26;
+    return 24;
   }
-  return 30;
+  return 28;
 }
 
 const PHI = (1 + Math.sqrt(5)) / 2;
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const INVERSE_PHI = 1 / PHI;
+const RANDOM_POOL_SIZE = 128;
+let randomPool = null;
+let randomPoolIndex = RANDOM_POOL_SIZE;
 
 function matchesMediaQuery(query) {
   return typeof globalThis.matchMedia === 'function' && globalThis.matchMedia(query).matches;
@@ -141,12 +159,28 @@ function clamp(value, min, max) {
 
 function randomUnit() {
   if (globalThis.crypto?.getRandomValues) {
-    const randomBuffer = new Uint32Array(1);
-    globalThis.crypto.getRandomValues(randomBuffer);
-    return randomBuffer[0] / 4294967296;
+    if (!randomPool || randomPoolIndex >= RANDOM_POOL_SIZE) {
+      randomPool = new Uint32Array(RANDOM_POOL_SIZE);
+      globalThis.crypto.getRandomValues(randomPool);
+      randomPoolIndex = 0;
+    }
+
+    const value = randomPool[randomPoolIndex];
+    randomPoolIndex += 1;
+    return value / 4294967296;
   }
 
   return 0.5;
+}
+
+function resolveTargetFrameInterval(touchViewport, touchDarkBoost) {
+  if (touchDarkBoost) {
+    return 34;
+  }
+  if (touchViewport) {
+    return 30;
+  }
+  return 0;
 }
 
 function seededSpiralPoint(index, count, width, height) {
@@ -205,6 +239,10 @@ function resizeConstellation(state) {
   state.height = Math.max(1, Math.floor(rect.height));
   state.touchViewport = isTouchViewport();
   state.touchDarkBoost = isTouchDarkMode();
+  state.targetFrameInterval = resolveTargetFrameInterval(
+    state.touchViewport,
+    state.touchDarkBoost
+  );
   state.dpr = state.touchViewport
     ? Math.min(globalThis.devicePixelRatio || 1, 1.5)
     : Math.min(globalThis.devicePixelRatio || 1, 2);
@@ -215,9 +253,10 @@ function resizeConstellation(state) {
 
   const baseNodeCount = nodeCountForArea(state.width * state.height);
   let neededNodes = baseNodeCount;
+  if (state.touchViewport) {
+    neededNodes = Math.max(16, neededNodes - 4);
+  }
   if (state.touchDarkBoost) {
-    neededNodes += 2;
-  } else if (state.touchViewport) {
     neededNodes += 1;
   }
   if (state.nodes.length !== neededNodes) {
@@ -268,9 +307,11 @@ function updateNodes(state, frameScale) {
 }
 
 function drawNodeLinks(state, maxDistSq) {
-  for (const [index, a] of state.nodes.entries()) {
-    for (const b of state.nodes.slice(index + 1)) {
-      drawNodeLink(state, a, b, maxDistSq, false);
+  const nodes = state.nodes;
+  for (let index = 0; index < nodes.length; index += 1) {
+    const fromNode = nodes[index];
+    for (let next = index + 1; next < nodes.length; next += 1) {
+      drawNodeLink(state, fromNode, nodes[next], maxDistSq, false);
     }
   }
 }
@@ -283,8 +324,10 @@ function pairKey(indexA, indexB) {
 
 function nearestNodeIndexes(state, fromIndex, maxDistSq, limit) {
   const source = state.nodes[fromIndex];
-  const nearest = new Array(limit).fill(-1);
-  const nearestDist = new Array(limit).fill(Number.POSITIVE_INFINITY);
+  let firstIndex = -1;
+  let secondIndex = -1;
+  let firstDist = Number.POSITIVE_INFINITY;
+  let secondDist = Number.POSITIVE_INFINITY;
 
   for (const [index, node] of state.nodes.entries()) {
     if (index === fromIndex) {
@@ -295,23 +338,32 @@ function nearestNodeIndexes(state, fromIndex, maxDistSq, limit) {
       continue;
     }
 
-    for (let slot = 0; slot < limit; slot += 1) {
-      if (distSq >= nearestDist[slot]) {
-        continue;
-      }
+    if (distSq < firstDist) {
+      secondDist = firstDist;
+      secondIndex = firstIndex;
+      firstDist = distSq;
+      firstIndex = index;
+      continue;
+    }
 
-      for (let shift = limit - 1; shift > slot; shift -= 1) {
-        nearest[shift] = nearest[shift - 1];
-        nearestDist[shift] = nearestDist[shift - 1];
-      }
-
-      nearest[slot] = index;
-      nearestDist[slot] = distSq;
-      break;
+    if (limit > 1 && distSq < secondDist) {
+      secondDist = distSq;
+      secondIndex = index;
     }
   }
 
-  return nearest.filter((index) => index >= 0);
+  if (limit <= 1) {
+    return firstIndex >= 0 ? [firstIndex] : [];
+  }
+
+  const result = [];
+  if (firstIndex >= 0) {
+    result.push(firstIndex);
+  }
+  if (secondIndex >= 0) {
+    result.push(secondIndex);
+  }
+  return result;
 }
 
 function drawMobileDarkLink(state, drawnPairs, indexA, indexB, maxDistSq) {
@@ -464,6 +516,17 @@ function renderConstellationFrame(timestamp, state) {
     return;
   }
 
+  // Throttle mobile draw cadence to cut long main-thread tasks.
+  if (
+    state.targetFrameInterval > 0 &&
+    state.lastRenderTimestamp > 0 &&
+    timestamp - state.lastRenderTimestamp < state.targetFrameInterval
+  ) {
+    state.frameHandle = globalThis.requestAnimationFrame(state.renderFrame);
+    return;
+  }
+
+  state.lastRenderTimestamp = timestamp;
   const frameScale = resolveFrameScale(state, timestamp);
   updatePointerSmoothing(state);
 
@@ -497,6 +560,7 @@ function stopConstellation(state) {
 
   state.running = false;
   state.previousTimestamp = 0;
+  state.lastRenderTimestamp = 0;
   if (state.frameHandle) {
     globalThis.cancelAnimationFrame(state.frameHandle);
     state.frameHandle = 0;
@@ -514,6 +578,7 @@ function startConstellation(state) {
 
   state.running = true;
   state.previousTimestamp = 0;
+  state.lastRenderTimestamp = 0;
   state.frameHandle = globalThis.requestAnimationFrame(state.renderFrame);
 }
 
