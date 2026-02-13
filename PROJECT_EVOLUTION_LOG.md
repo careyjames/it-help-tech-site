@@ -13,6 +13,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-13
+- Actor: AI
+- Scope: Ahrefs crawl follow-up (internal redirect-noise reduction)
+- Files:
+  - `templates/base.html`
+- Change: Updated primary nav internal links to explicit trailing-slash URLs (`/services/`, `/billing/`, `/about/`, `/blog/`, `/dns-tool/`) so crawlers hit canonical section URLs directly instead of slashless variants that can produce 3xx hops.
+- Why: Post-report remediation pass for the "redirect/HTTP redirect" issue set, focusing on safe, non-visual crawl hygiene improvements.
+- Rollback: this branch/PR (`codex/ahrefs-report-followup-20260213`).
+
 ### 2026-02-11
 - Actor: AI+Developer
 - Scope: GitHub Actions supply-chain hardening (full SHA pinning)

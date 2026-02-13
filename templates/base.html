@@ -59,7 +59,7 @@
     <ul class="nav-pill-list">
       <!-- home icon -->
       <li class="nav-home">
-        <a href="{{ get_url(path='/') }}" aria-label="Home" class="home-icon">
+        <a href="{{ get_url(path='/', trailing_slash=true) }}" aria-label="Home" class="home-icon">
           <svg xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 24 24"
                fill="none"
@@ -80,11 +80,11 @@
         <details>
           <summary class="dropdown-toggle">More</summary>
           <ul class="dropdown-content">
-            <li><a href="{{ get_url(path='/services/') }}">Services</a></li>
-            <li><a href="{{ get_url(path='/billing/')  }}">Pricing</a></li>
-            <li><a href="{{ get_url(path='/about/')    }}">Our Expertise</a></li>
-            <li><a href="{{ get_url(path='/blog/')     }}">Blog</a></li>
-            <li><a href="{{ get_url(path='/dns-tool/') }}">DNS Tool</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/billing/">Pricing</a></li>
+            <li><a href="/about/">Our Expertise</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/dns-tool/">DNS Tool</a></li>
           </ul>
         </details>
       </li>
