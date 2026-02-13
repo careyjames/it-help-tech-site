@@ -15,6 +15,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-13
 - Actor: AI
+- Scope: Mobile Lighthouse TBT recovery (hero animation workload reduction)
+- Files:
+  - `static/js/hero-logo.js`
+- Change: Deferred constellation startup to idle-time, added touch-device frame throttling, reduced touch-node density, replaced per-call crypto random sampling with pooled random values, and removed per-frame array allocations in link drawing/neighbor selection paths.
+- Why: User requested a symbiotic remediation pass to improve mobile Lighthouse performance while keeping Ahrefs/SEO crawl hygiene and preserving the established visual system.
+- Rollback: this branch/PR (`codex/mobile-tbt-recovery-v1`).
+
+### 2026-02-13
+- Actor: AI
 - Scope: Ahrefs crawl follow-up (internal redirect-noise reduction)
 - Files:
   - `templates/base.html`
