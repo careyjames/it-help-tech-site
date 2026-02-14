@@ -13,6 +13,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-14
+- Actor: AI
+- Scope: Security disclosure publishing (`/security-policy` + RFC 9116 `security.txt`)
+- Files:
+  - `content/security-policy.md`
+  - `static/.well-known/security.txt`
+  - `static/security.txt`
+- Change: Added a dedicated non-nav `security-policy` page with coordinated disclosure guidance (contact, safe harbor, scope, response targets, and disclosure expectations) and published machine-readable contact metadata at both `/.well-known/security.txt` (canonical) and `/security.txt` (compatibility path).
+- Why: User requested IT Help Tech security reporting text aligned to existing DNS Tool style, with Red Sift continuing to handle MTA-STS hosting separately.
+- Rollback: this branch/PR (`codex/security-policy-rfc9116`, `#510`).
+
 ### 2026-02-13
 - Actor: AI
 - Scope: Deploy hygiene (remove stale HTML without affecting active blog output)
