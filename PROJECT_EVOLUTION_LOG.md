@@ -20,8 +20,8 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
   - `content/security-policy.md`
   - `static/.well-known/security.txt`
   - `static/security.txt`
-- Change: Added a dedicated non-nav `security-policy` page with coordinated disclosure guidance (contact, safe harbor, scope, response targets, and disclosure expectations) and published machine-readable contact metadata at both `/.well-known/security.txt` (canonical) and `/security.txt` (compatibility path).
-- Why: User requested IT Help Tech security reporting text aligned to existing DNS Tool style, with Red Sift continuing to handle MTA-STS hosting separately.
+- Change: Added a dedicated non-nav `security-policy` page with coordinated disclosure guidance (contact, safe harbor, scope, response targets, and disclosure expectations), then refined scope language to explicitly allow written-authorized government/contracted testing (including CISA cyber hygiene and approved red-team/social-engineering activity). Published machine-readable contact metadata at both `/.well-known/security.txt` (canonical) and `/security.txt` (compatibility path).
+- Why: User requested IT Help Tech security reporting text aligned to existing DNS Tool style, with Red Sift continuing to handle MTA-STS hosting separately, and then clarified that authorized federal/program testing must be explicitly accommodated in policy language.
 - Rollback: this branch/PR (`codex/security-policy-rfc9116`, `#510`).
 
 ### 2026-02-13
