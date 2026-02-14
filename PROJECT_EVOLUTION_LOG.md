@@ -15,6 +15,18 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-14
 - Actor: AI
+- Scope: Security disclosure hardening + external-link safety refinement
+- Files:
+  - `content/security-policy.md`
+  - `static/.well-known/security.txt`
+  - `static/security.txt`
+  - `templates/base.html`
+- Change: Hardened disclosure operations by adding an authorized-assessment intake checklist, explicit urgent-report handling, and an acknowledgments section in `/security-policy`. Expanded `security.txt` metadata with a secondary policy URL contact and an RFC-compatible `Acknowledgments` field. Updated the Schedule external link rel attributes to `noopener noreferrer`.
+- Why: User requested additional cleanup and best-practice refinement from all angles after initial security-policy rollout.
+- Rollback: this branch/PR (`codex/security-policy-authorized-testing`, `#511`).
+
+### 2026-02-14
+- Actor: AI
 - Scope: Security disclosure publishing (`/security-policy` + RFC 9116 `security.txt`)
 - Files:
   - `content/security-policy.md`
