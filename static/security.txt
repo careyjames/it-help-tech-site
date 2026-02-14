@@ -1,5 +1,7 @@
 Contact: mailto:security@it-help.tech
+Contact: https://www.it-help.tech/security-policy
 Expires: 2027-02-14T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://www.it-help.tech/.well-known/security.txt
 Policy: https://www.it-help.tech/security-policy
+Acknowledgments: https://www.it-help.tech/security-policy/#acknowledgments

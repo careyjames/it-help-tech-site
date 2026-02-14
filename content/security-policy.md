@@ -15,7 +15,8 @@ If you believe you found a security issue in systems operated by IT Help San Die
 ## Contact
 
 - Email: `security@it-help.tech`
-- Suggested subject: `Security Report - <brief summary>`
+- Suggested subject: `Security Report - [brief summary]`
+- If active exploitation is in progress, include `URGENT` in the subject line.
 
 If you need a different secure reporting channel, request one in your initial email.
 
@@ -50,6 +51,16 @@ Authorized testing may include:
 - Controlled active testing that is agreed in advance.
 
 For authorized engagements, follow the signed rules of engagement and designated escalation channels.
+
+## Authorized Assessment Intake
+
+For government, regulatory, or contracted testing, include:
+
+- Program or sponsor name.
+- Authorization reference (agreement/SOW/ROE identifier).
+- Assessment window (start/end in UTC).
+- Source IP ranges or infrastructure identifiers.
+- Primary operator contact for real-time coordination.
 
 ## Safe Harbor
 
@@ -87,6 +98,10 @@ Please do not publicly disclose vulnerabilities until remediation is complete or
 ## Bug Bounty
 
 IT Help San Diego Inc. does not currently operate a paid bug bounty program.
+
+## Acknowledgments
+
+We appreciate responsible reports that improve security outcomes. Public credit can be coordinated after remediation, based on reporter preference and operational constraints.
 
 ## security.txt
 
