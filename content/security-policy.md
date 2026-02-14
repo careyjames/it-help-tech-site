@@ -35,9 +35,27 @@ This policy applies to internet-facing assets owned and operated by IT Help San 
 
 If you report an issue in third-party infrastructure, include evidence showing how it directly affects our operated assets.
 
+If your assessment is part of a formally authorized program (government, regulatory, or contracted), include the authorization reference so we can route it correctly.
+
+## Authorized Security Testing
+
+IT Help San Diego participates in recurring external security assessments, including CISA Cyber Hygiene scanning and other explicitly authorized testing engagements.
+
+Activities that may otherwise be out of scope are permitted when authorization exists in writing (for example: program agreement, statement of work, or rules of engagement).
+
+Authorized testing may include:
+
+- Phishing or social engineering exercises.
+- Red-team activity.
+- Controlled active testing that is agreed in advance.
+
+For authorized engagements, follow the signed rules of engagement and designated escalation channels.
+
 ## Safe Harbor
 
-If you act in good faith and follow this policy, we will treat your research as authorized and will not pursue legal action for your report.
+If you act in good faith and follow this policy, we will treat your research as authorized for coordinated vulnerability disclosure and will not pursue legal action for your report.
+
+This policy does not limit or override permissions granted under separate written government, regulatory, or contractual testing agreements.
 
 Good-faith testing means:
 
@@ -50,10 +68,10 @@ Good-faith testing means:
 
 The following are generally out of scope unless there is demonstrable business impact:
 
-- Social engineering or phishing attempts against staff/customers.
-- Physical attacks or local network attacks requiring physical access.
-- Denial-of-service (DoS/DDoS), traffic flooding, or resource exhaustion testing.
-- Vulnerabilities that depend on outdated/unpatched client software.
+- Social engineering, phishing, or red-team activity without explicit written authorization.
+- Physical attacks or local network attacks requiring physical access, unless expressly authorized in writing.
+- Denial-of-service (DoS/DDoS), traffic flooding, or resource exhaustion testing, unless expressly authorized in writing with defined scope, windows, and safeguards.
+- Vulnerabilities that depend on outdated/unpatched client software with no direct server-side impact.
 - Reports without reproducible evidence.
 
 ## Response Targets
