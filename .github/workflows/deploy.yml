@@ -133,8 +133,32 @@ jobs:
       - name: Invalidate CloudFront cache and wait
         run: |
           INVALIDATION_ID=$(aws cloudfront create-invalidation --distribution-id $DIST_ID --paths '/*' --query 'Invalidation.Id' --output text)
-          echo "Waiting for CloudFront invalidation $INVALIDATION_ID to complete..."
-          aws cloudfront wait invalidation-completed --distribution-id $DIST_ID --id "$INVALIDATION_ID"
+          echo "Created CloudFront invalidation: $INVALIDATION_ID"
+
+          # The built-in waiter times out around 10 minutes. Use explicit polling so
+          # transiently slow invalidations do not fail otherwise healthy deploys.
+          MAX_ATTEMPTS=90
+          SLEEP_SECONDS=20
+
+          for ATTEMPT in $(seq 1 "$MAX_ATTEMPTS"); do
+            STATUS=$(aws cloudfront get-invalidation \
+              --distribution-id "$DIST_ID" \
+              --id "$INVALIDATION_ID" \
+              --query 'Invalidation.Status' \
+              --output text)
+
+            echo "Invalidation status attempt ${ATTEMPT}/${MAX_ATTEMPTS}: ${STATUS}"
+
+            if [ "$STATUS" = "Completed" ]; then
+              echo "CloudFront invalidation $INVALIDATION_ID completed."
+              exit 0
+            fi
+
+            sleep "$SLEEP_SECONDS"
+          done
+
+          echo "::error::CloudFront invalidation $INVALIDATION_ID did not complete within $((MAX_ATTEMPTS * SLEEP_SECONDS)) seconds."
+          exit 1
         env:
           AWS_REGION: us-east-1
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

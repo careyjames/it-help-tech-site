@@ -15,6 +15,15 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ### 2026-02-14
 - Actor: AI
+- Scope: Deploy reliability hardening (CloudFront invalidation wait robustness)
+- Files:
+  - `.github/workflows/deploy.yml`
+- Change: Replaced `aws cloudfront wait invalidation-completed` with explicit `get-invalidation` polling (90 attempts x 20s = 30 minutes), adding per-attempt status logging and a bounded timeout error message.
+- Why: Main-branch deploy failed after merge because CloudFront invalidation exceeded the AWS waiter default timeout ("Max attempts exceeded") even though artifact upload and CSP updates succeeded.
+- Rollback: this branch/PR (pending commit hash/PR number).
+
+### 2026-02-14
+- Actor: AI
 - Scope: Security disclosure hardening + external-link safety refinement
 - Files:
   - `content/security-policy.md`
