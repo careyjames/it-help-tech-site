@@ -8,11 +8,13 @@
     <div class="hex-decoration"><div class="hex"></div></div>
   {% endfor %}
 
-  {# Brand mark: Athenian-owl medallion + IT+HELP wordmark, mirroring the
-     canonical brand banner composition (owl left, wordmark right on desktop;
-     stacked on mobile). aria-hidden because the brand is already announced
-     via <title>, the topbar logo aria-label, and the page H1 — repeating
-     it here would create three-deep redundancy for screen readers. #}
+  {# 2026-04-17: Hero brand mark — owl medallion ONLY. Per owner direction
+     ("we don't really need the words on the page, just the owl"), the
+     on-page IT+HELP wordmark was removed; the canonical wordmark now lives
+     exclusively in the topbar (see templates/base.html → .topbar-banner).
+     aria-hidden because the brand is already announced via <title>, the
+     topbar logo aria-label, and the page H1 — repeating it here would create
+     three-deep redundancy for screen readers. #}
   <div class="brand-mark" aria-hidden="true">
     <picture class="hero-owl-pic">
       <source srcset="/img/brand/owl-720.webp" type="image/webp">
@@ -23,12 +25,6 @@
            decoding="async"
            fetchpriority="high">
     </picture>
-    <div class="glitch-container">
-      <div class="main-logo">
-        <span class="logo-it">IT</span><span class="logo-plus">+</span><span class="logo-help">HEL<span class="logo-help-p">P</span></span>
-      </div>
-      <div class="location">SAN DIEGO</div>
-    </div>
   </div>
 
   <div class="tagline">
