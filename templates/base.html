@@ -17,7 +17,14 @@
 <html lang="{% if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
 <head>
   {%- include "partials/head.html" %}
-  <link rel="icon" href="/red-plus.ico" type="image/x-icon">
+  {# Brand mark: Athenian-owl medallion. Multi-size .ico (16/32/48) for browsers,
+     plus the existing apple-touch-icon / android-chrome / mstile files which
+     have all been regenerated from the same owl source so every platform shows
+     a consistent brand mark. The legacy /red-plus.ico is kept on disk as a
+     fallback (.local/favicon-backup-pre-owl/) but is no longer referenced. #}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/android-chrome-192x192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
   {%- block comments_init %}{%- endblock comments_init %}
 </head>
 <body>

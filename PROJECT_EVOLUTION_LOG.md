@@ -13,6 +13,30 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Brand · Owl favicon set + brand-banner OG image + mobile drawer seam fix)
+- Actor: AI (Replit Agent)
+- Severity: MEDIUM (visible brand change on every browser tab + every social share; CSS-only mobile fix)
+- Trigger: Owner attached the Athenian-owl medallion (`NORM-proof-transparent-1080`) and the IT+HELP brand banner (`IT-Help-Brand-Banner`) and asked to "use my owl and my banner". Also reported a faint hairline seam under the topbar when the mobile drawer is open — "It just doesn't separate well and you see that tiny little line."
+- Files:
+  - `static/img/brand/owl.png` (new, 1080×1080 transparent) — canonical owl mark
+  - `static/img/brand/it-help-brand-banner.png` (new, 900×246) — canonical full banner
+  - `static/favicon.ico` (new, multi-resolution 16+32+48 ICO built from owl)
+  - `static/apple-touch-icon.png`, `android-chrome-192x192.png`, `android-chrome-512x512.png`, `mstile-150x150.png` — all regenerated from the owl source so every platform shows a consistent brand mark. Old red-plus-based versions backed up to `.local/favicon-backup-pre-owl/`.
+  - `static/images/og-home.png` — replaced. New version is the brand banner composited centered on a 1200×630 black canvas (Twitter/Facebook OG card spec). Every social share now shows the owl + IT+HELP wordmark.
+  - `templates/base.html`:
+    - Replaced `<link rel="icon" href="/red-plus.ico">` with a proper three-link favicon set: `favicon.ico` (any), `android-chrome-192x192.png` (192×192 PNG), `apple-touch-icon.png` (180×180). Existing `manifest.json` already references the android-chrome / mstile files by name, so PWA install also picks up the owl with no further wiring.
+  - `static/css/late-overrides.css`:
+    - Added `.topbar:has(.topbar-nav-toggle-checkbox:checked) { border-bottom-color: transparent; }` inside the `@media (max-width: 768px)` block. When the mobile drawer is open, the topbar's own 1px border-bottom would otherwise leave a faint hairline between two near-identical dark blocks (topbar and drawer) that reads as a visual seam, not an intentional divider. Hiding it lets the two surfaces merge into one continuous panel; the drawer's own border-bottom still terminates the menu cleanly against page content. Uses `:has()` because the checkbox is a descendant of `.topbar`, not a sibling — `~` couldn't reach the parent. Browser support: Safari 15.4+, Chrome 105+, Firefox 121+ (covers >97% of current global usage).
+- Why: Owner-provided brand assets needed primary placements where they would actually be seen — every browser tab (favicon), every PWA install (android-chrome / apple-touch), every social share (OG/Twitter card). The in-page IT+HELP wordmark + tagline pill + red-plus glyph treatment (the carefully-tuned brand non-negotiables) is intentionally untouched. The hamburger seam was a real visual quality bug in the mobile drawer.
+- Verification:
+  - `scripts/check-token-parity.sh`: PASS
+  - `zola build`: clean
+  - Compiled `index.html` carries all three favicon links + the OG meta tags pointing at the new banner-based image.
+  - PurgeCSS dry-run: `:has()` topbar rule survives in `late-overrides.css`.
+  - Backup of all overwritten files in `.local/favicon-backup-pre-owl/` so a one-line `cp` reverts the favicon if needed.
+- Pending: Mobile spot-check on a real iPhone after deploy to confirm the seam is gone (the drawer should look like one continuous panel from topbar through last menu item). Twitter/LinkedIn/iMessage social-card preview after deploy.
+- Rollback: revert this commit; favicons + OG image revert via `cp .local/favicon-backup-pre-owl/* static/` (the old red-plus.ico file is still on disk, just no longer linked).
+
 ### 2026-04-17 (a11y · Lighthouse axe fixes — aria-hidden focusable + skip-link contrast)
 - Actor: AI (Replit Agent)
 - Severity: MEDIUM (real Lighthouse failures from production audit; affects screen-reader users + keyboard users)
