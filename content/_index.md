@@ -1,15 +1,15 @@
 +++
 title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-description = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
+description = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
 
 [extra]
 seo_title       = "Mac IT Support San Diego"
 og_title        = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-og_description  = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
+og_description  = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
 og_image        = "/images/og-home.png"
 
 twitter_title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-twitter_description = "Apple-centric IT support in San Diego for homes and SMBs: Mac, Wi‑Fi, DNS, and email security (SPF, DKIM, DMARC). No monthly retainers."
+twitter_description = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
 twitter_image       = "/images/og-home.png"
 twitter_card        = "summary_large_image"
 +++
@@ -101,7 +101,7 @@ twitter_card        = "summary_large_image"
   "sameAs": [
     "https://www.linkedin.com/company/it-help-san-diego"
   ],
-  "description": "Apple‑centric tech help for homes & SMBs—no monthly retainers.",
+  "description": "Apple‑centric IT and deep-research diagnostics for La Jolla & San Diego — Mac first, with Unix, Linux, and Windows. No hardware sales, no monthly retainers.",
   "knowsAbout": [
     "macOS troubleshooting",
     "iOS troubleshooting",
@@ -198,7 +198,7 @@ twitter_card        = "summary_large_image"
       "@id": "https://www.it-help.tech/#webpage",
       "url": "https://www.it-help.tech/",
       "name": "Mac IT Support San Diego (La Jolla) | IT Help San Diego",
-      "description": "San Diego Apple-centric IT support for homes & SMBs: 25 yrs fixing Mac, Wi‑Fi, DNS & email (SPF · DKIM · DMARC). We solve tech problems—no monthly retainers.",
+      "description": "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla and San Diego. macOS and iOS first, with Unix, Linux, and Windows — a system is a system. 25 years across systems, networks, DNS, and email security (SPF · DKIM · DMARC). No hardware sales, no monthly retainers.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://www.it-help.tech/#website"
@@ -230,7 +230,7 @@ twitter_card        = "summary_large_image"
     <span class="hero-line-primary">We solve tech problems.</span>
     <span class="hero-line-secondary">No monthly retainers.</span>
   </h1>
-  <p class="hero-subtagline">Apple-centric IT, deep-research diagnostics, San Diego concierge.</p>
+  <p class="hero-subtagline">Apple-centric IT, deep-research diagnostics, systems &amp; networks — La Jolla concierge for greater San Diego.</p>
 </section>
 
 <p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On‑Site Visit</a></p>
@@ -246,6 +246,9 @@ Bespoke wireless and wired networks for large homes, estates, and small offices.
 
 ### <a href="/services/#dns-email" class="gold-link">Email Deliverability &amp; DNS Forensics</a>
 We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. <a href="/services/#dns-email" class="gold-link">Learn more →</a>
+
+### <a href="/services/" class="gold-link">Cross-Platform Systems Engineering</a>
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. <a href="/services/" class="gold-link">Learn more →</a>
 
 ## Trust signals
 
