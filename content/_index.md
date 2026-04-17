@@ -1,15 +1,15 @@
 +++
 title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-description = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
+description = "Apple-centric IT, deep-research diagnostics for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no retainers."
 
 [extra]
 seo_title       = "Mac IT Support San Diego"
 og_title        = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-og_description  = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
+og_description  = "Apple-centric IT, deep-research diagnostics for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no retainers."
 og_image        = "/images/og-home.png"
 
 twitter_title       = "Mac IT Support San Diego (La Jolla) | IT Help San Diego"
-twitter_description = "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no monthly retainers."
+twitter_description = "Apple-centric IT, deep-research diagnostics for La Jolla & San Diego. macOS first; Unix, Linux, Windows too. No hardware sales, no retainers."
 twitter_image       = "/images/og-home.png"
 twitter_card        = "summary_large_image"
 +++
