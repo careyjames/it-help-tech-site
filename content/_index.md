@@ -234,7 +234,7 @@ twitter_card        = "summary_large_image"
 </section>
 
 <p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On‑Site Visit</a></p>
-<p><a class="cta-button cta-secondary" href="https://dns.it-help.tech" target="_blank" rel="noopener noreferrer">See Our Research</a></p>
+<p><a class="cta-button cta-secondary" href="https://dnstool.it-help.tech" target="_blank" rel="noopener noreferrer">See Our Research</a></p>
 
 ## What we do
 
@@ -255,7 +255,7 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
 
 ## The Method
 
-We treat each engagement as a small research problem. Before we touch a config, we capture the evidence — packet traces, mail headers, DNS responses, system logs — and reason from there. The same instinct produced our public DNS research platform at <a href="https://dns.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dns.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/" class="gold-link">Read the field notes →</a>
+We treat each engagement as a small research problem. Before we touch a config, we capture the evidence — packet traces, mail headers, DNS responses, system logs — and reason from there. The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/" class="gold-link">Read the field notes →</a>
 
 ## Local credibility
 
