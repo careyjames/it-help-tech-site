@@ -68,21 +68,30 @@
       </svg>
     </label>
 
-    {# 2026-04-17: Active-page indicator wired via aria-current="page". The
-       macro picks the link whose href is a prefix of the current page path
-       (current_path always starts with "/"); a literal === is too strict
-       because Zola pretty-URLs land on /services/ but the current_path on
-       a sub-route like /services/tag/ should still highlight Services. The
-       gold underline is rendered from a [aria-current=page]::after pseudo-
-       element in CSS — so this attribute drives both the visible state and
-       the screen-reader semantics in one shot. External links (DNS Tool,
-       Schedule) are skipped — they live on different domains. #}
+    {# 2026-04-17 (rev): Active-page indicator wired with WCAG-correct
+       aria-current values: "page" for the EXACT current page (e.g. on
+       /services/ the Services link is the current page), and "true" for
+       a section-ancestor match (e.g. on /blog/some-post/ the Field Notes
+       link is part of the current path but not the current page). Both
+       values trigger the same visual underline via the [aria-current]
+       attribute selector in CSS, so users still get the location cue,
+       but screen readers correctly distinguish "current page, Services"
+       from a generic "current location" announcement.
+       External links (DNS Tool, Schedule) are skipped — different domains.
+       Trailing-slash equality is enforced so /services-other/ never
+       false-positives onto Services. #}
     <nav class="topbar-nav" aria-label="Primary">
       {%- set cp = current_path | default(value="/") -%}
       <ul class="topbar-nav-list">
-        <li><a href="/services/"{% if cp is starting_with("/services") %} aria-current="page"{% endif %}>Services</a></li>
-        <li><a href="/about/"{% if cp is starting_with("/about") %} aria-current="page"{% endif %}>About</a></li>
-        <li><a href="/blog/"{% if cp is starting_with("/blog") %} aria-current="page"{% endif %}>Field Notes</a></li>
+        <li><a href="/services/"
+          {%- if cp == "/services/" %} aria-current="page"
+          {%- elif cp is starting_with("/services/") %} aria-current="true"
+          {%- endif %}>Services</a></li>
+        <li><a href="/about/"{% if cp == "/about/" %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/blog/"
+          {%- if cp == "/blog/" %} aria-current="page"
+          {%- elif cp is starting_with("/blog/") %} aria-current="true"
+          {%- endif %}>Field Notes</a></li>
         <li>
           <a href="https://dns.it-help.tech" target="_blank" rel="noopener noreferrer">
             DNS Tool <span class="topbar-ext" aria-hidden="true">↗</span>
