@@ -13,6 +13,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Topbar · Architect-validated definitive seam fix — capability-stratified surface treatment + decorative top-fade)
+- Actor: AI (Replit Agent + architect subagent)
+- Severity: MEDIUM (touches every viewport; root-cause fix for a recurring complaint)
+- Trigger: Owner reported the mobile topbar seam was still visible after `border-bottom: 0; box-shadow: none;` (PR #547). Marked the seam in red on a fresh iPhone screenshot. Directive: "I want it to be beautiful, perfect, and scientific for mobile, iPads, and everything else." Architect was consulted via the code_review skill with full diagnostic context.
+- Files:
+  - `static/css/late-overrides.css` — topbar shell rewritten as 3-tier stratified rule (base / desktop fine-pointer / touch override); circuit-bg + logo-constellation gained 56px top-fade `mask-image`
+  - `STYLE_GUIDE.md` — codified the stratification rule and the never-tint-with-non-c1 invariant
+- Change: Root-caused the seam as a SURFACE DISCONTINUITY (not a border): the previous `@supports (color-mix)` block tinted the topbar from `--surface-charcoal` while body bg uses `--c1` — two different colors meeting at a hard horizontal line, no border could erase it. Plus `backdrop-filter` on a sticky element creates a device-dependent compositor edge on iOS/iPadOS. New stratification: BASE rule `.topbar { background: var(--c1); border-bottom: 0; box-shadow: none; backdrop-filter: none; }` so the topbar matches body exactly; DESKTOP rule `@media (min-width: 961px) and (hover: hover) and (pointer: fine)` re-enables glass + gold hairline but mixes from `--c1` (continuous with page); TOUCH override `@media (hover: none), (pointer: coarse)` forces solid treatment for iPad landscape >960px and any touch laptop. Decorative layers gain `mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,1) 56px)` so circuit grid + constellation dots fade in smoothly below the topbar.
+- Why: Previous attempts (border-color transparent → border 0 → box-shadow none) treated symptoms. The architect's deeper analysis identified that the surface color mismatch IS the seam — eliminating the color step is the only definitive fix. The capability query pattern (hover/pointer instead of just min-width) correctly handles iPad landscape, which exceeds 960px but is a touch device and shouldn't get the glass treatment.
+- Rollback: revert this PR.
+
 ### 2026-04-17 (Hero · Tagline rewrite to "IT research in motion." + mobile topbar seam fix)
 - Actor: AI (Replit Agent)
 - Severity: LOW (copy + decorative-border fix; zero structural change)
