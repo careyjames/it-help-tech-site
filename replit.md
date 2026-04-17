@@ -75,6 +75,11 @@ zola serve --interface 0.0.0.0 --port 5000
 4. **CSP hashes auto-regenerated** via `infra/cloudfront/update_policy.sh` (signature pages use `infra/cloudfront/update_policy_signatures.sh` when `POLICY_ID_SIGNATURES` is set)
 5. S3 sync with proper cache headers
 6. CloudFront invalidation
+7. **Post-deploy audit gate** (`audit` job) — runs Lighthouse mobile + desktop against every URL in `infra/audit/audit.config.json` and re-checks Mozilla Observatory. Fails the workflow if any of Performance / Accessibility / Best Practices / SEO drops below 98 on either form factor, or if Observatory regresses below A+ / score 120.
+
+### Audit gate — how to update
+- All thresholds and the audited URL list live in **`infra/audit/audit.config.json`**. Add a page to `lighthouse.urls` (e.g. `https://www.it-help.tech/services/`) or change a number; no workflow edit needed.
+- The two scripts (`infra/audit/run-lighthouse.mjs`, `infra/audit/run-observatory.mjs`) can be run locally with `lighthouse` + a Chromium binary on PATH to reproduce a CI failure.
 
 **Local/Replit note:** `update_policy_signatures.sh` requires AWS credentials + `POLICY_ID_SIGNATURES`. If those secrets aren't available, the signature CSP update will fail or be skipped—this is expected outside CI.
 

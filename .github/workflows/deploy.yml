@@ -200,6 +200,38 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+  audit:
+    # Post-deploy quality gate. Runs after the CloudFront invalidation
+    # completes (so Lighthouse hits the freshly published bytes) and
+    # fails the build if Lighthouse or Mozilla Observatory regress
+    # below the thresholds in infra/audit/audit.config.json.
+    if: ${{ github.event_name == 'push' }}
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Set up Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse + Chromium
+        run: |
+          npm install -g lighthouse@12
+          # ubuntu-latest ships Chromium via apt; install the headless
+          # build that Lighthouse spawns through CHROME_PATH.
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+          echo "CHROME_PATH=$(command -v chromium-browser || command -v chromium)" >> "$GITHUB_ENV"
+
+      - name: Lighthouse audit (mobile + desktop)
+        run: node infra/audit/run-lighthouse.mjs
+
+      - name: Mozilla Observatory audit
+        run: node infra/audit/run-observatory.mjs
+
   pr-note:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
