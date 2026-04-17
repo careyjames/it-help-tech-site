@@ -157,6 +157,30 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+// Safari/WebKit refuses to allocate canvas backing stores larger than
+// 16384 px on a side or ~268M total pixels; on overflow the canvas
+// silently fails to render. Cap dimensions and area to safe limits and
+// scale the device-pixel ratio down accordingly so drawings stay aligned.
+const MAX_CANVAS_DIM = 8192;
+const MAX_CANVAS_AREA = 16777216;
+function clampCanvasDpr(cssWidth, cssHeight, dpr) {
+  if (cssWidth <= 0 || cssHeight <= 0 || dpr <= 0) {
+    return dpr;
+  }
+  let pxW = cssWidth * dpr;
+  let pxH = cssHeight * dpr;
+  let scale = 1;
+  const dimScale = Math.min(1, MAX_CANVAS_DIM / Math.max(pxW, pxH));
+  scale *= dimScale;
+  pxW *= dimScale;
+  pxH *= dimScale;
+  const area = pxW * pxH;
+  if (area > MAX_CANVAS_AREA) {
+    scale *= Math.sqrt(MAX_CANVAS_AREA / area);
+  }
+  return dpr * scale;
+}
+
 function randomUnit() {
   if (globalThis.crypto?.getRandomValues) {
     if (!randomPool || randomPoolIndex >= RANDOM_POOL_SIZE) {
@@ -247,9 +271,10 @@ function resizeConstellation(state) {
     ? Math.min(globalThis.devicePixelRatio || 1, 1.5)
     : Math.min(globalThis.devicePixelRatio || 1, 2);
 
-  state.canvas.width = Math.max(1, Math.floor(state.width * state.dpr));
-  state.canvas.height = Math.max(1, Math.floor(state.height * state.dpr));
-  state.context.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+  const effectiveDpr = clampCanvasDpr(state.width, state.height, state.dpr);
+  state.canvas.width = Math.max(1, Math.floor(state.width * effectiveDpr));
+  state.canvas.height = Math.max(1, Math.floor(state.height * effectiveDpr));
+  state.context.setTransform(effectiveDpr, 0, 0, effectiveDpr, 0, 0);
 
   const baseNodeCount = nodeCountForArea(state.width * state.height);
   let neededNodes = baseNodeCount;
