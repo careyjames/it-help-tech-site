@@ -149,6 +149,50 @@ Applies to all body copy, headings, CTAs, and meta descriptions across the corp 
 - **One scientific moment per page.** Each page should carry exactly one technical detail that signals depth without overwhelming a non-technical reader (e.g., "SPF macro expansion checked against RFC 7208 §7.4"). Use sparingly; more than one per page reads as showing off.
 - **No retainer language.** Do not describe ongoing engagement structures that resemble managed-services lock-in. The managed-agent option is the only ongoing-fee product, and it is described as opt-in, per-device, and cancellable.
 
+## Design Tokens (SOT)
+
+The single source of truth for design tokens is `static/css/tokens.css` (CSS custom properties for runtime theming) mirrored by `sass/_tokens.scss` (SCSS variables for compile-time computation). Drift between the two files fails CI via `scripts/check-token-parity.sh`. Add/change tokens **only** in those two files, never inline in component CSS.
+
+### Token table
+
+| CSS token | SCSS token | Value | Role |
+|---|---|---|---|
+| `--bg-primary` | `$bg-primary` | `#0d1117` | Main page background (dark) |
+| `--bg-secondary` | `$bg-secondary` | `#161b22` | Elevated surfaces |
+| `--bg-tertiary` | `$bg-tertiary` | `#21262d` | Cards, modals |
+| `--bg-elevated` | `$bg-elevated` | `#30363d` | Highest elevation |
+| `--text-primary` | `$text-primary` | `rgba(230,237,243,.9)` | Primary body text |
+| `--text-secondary` | `$text-secondary` | `#9ca3af` | Secondary body text (~6.3:1 on `--bg-primary`) |
+| `--code-bg` | _(css-only)_ | `#161b22` | Code block background |
+| `--code-border` | _(css-only)_ | `#30363d` | Code block border |
+| `--code-color` | _(css-only)_ | `#f0a8c8` | Inline code color |
+| `--status-success` | `$status-success` | `#3fb950` | Pass / OK |
+| `--status-warning` | `$status-warning` | `#e3b341` | Warn / soft fail |
+| `--status-danger` | `$status-danger` | `#f85149` | Hard fail |
+| `--status-info` | `$status-info` | `#c8956a` | Informational (warm copper) |
+| `--status-neutral` | `$status-neutral` | `#8b949e` | Neutral / muted |
+| `--accent-steel` | `$accent-steel` | `#9a8f82` | Premium steel accent |
+| `--accent-deep` | `$accent-deep` | `#3d2e1f` | Deep umber accent |
+| `--accent-violet` | `$accent-violet` | `#c8956a` | Primary warm accent |
+| `--accent-violet-hover` | `$accent-violet-hover` | `#d4a87d` | Hover variant of `--accent-violet` |
+| `--accent-cyan` | `$accent-cyan` | `#d4a853` | Intelligence gold |
+| `--accent-cobalt` | `$accent-cobalt` | `#b8a089` | Warm taupe |
+| `--accent-gold` | `$accent-gold` | `#d4a853` | Premium trust gold |
+| `--accent-gold-muted` | `$accent-gold-muted` | `#c9a84c` | Borders / glows |
+| `--accent-amber` | `$accent-amber` | `#e8b54a` | Highlight emphasis |
+| `--border-default` | `$border-default` | `#30363d` | Default border |
+| `--border-muted` | `$border-muted` | `#30363d` | Muted border |
+| `--brand-it-help-red` | `$brand-it-help-red` | `#e8195e` | **Red plus sign — DO NOT CHANGE** |
+| `--brand-it-help-blue` | `$brand-it-help-blue` | `#4a8fdf` | **IT/HELP edge outline — DO NOT CHANGE** |
+| `--brand-it-help-gray` | `$brand-it-help-gray` | `#9aa0a6` | "san diego" subtitle |
+
+### Rules
+
+- The two SOT files (`static/css/tokens.css`, `sass/_tokens.scss`) are the **only** files allowed to contain hex literals. All other CSS/SCSS must reference tokens via `var(--name)` or `$name`.
+- `scripts/check-token-parity.sh` enforces both invariants: (a) `--name` and `$name` values are equal across both files, and (b) `static/css/late-overrides.css`, `sass/_extra.scss`, and `sass/css/abridge.scss` contain zero color hex literals.
+- Adding a new token requires updating both files in the same PR plus an entry in `PROJECT_EVOLUTION_LOG.md`.
+- Brand non-negotiables (`--brand-it-help-red`, `--brand-it-help-blue`) are never moved or renamed. Their values must remain visually identical to the original brand marks.
+
 ## Key Files
 - Hero/logo styles: `static/css/late-overrides.css`
 - Palette + component tokens: `sass/_extra.scss`

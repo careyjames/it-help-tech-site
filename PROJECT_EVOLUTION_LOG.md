@@ -14,6 +14,22 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 ## Entries
 
 ### 2026-02-15
+- Actor: AI (Sub-agent 2: Design Token Adoption)
+- Scope: Design token adoption (SOT) + token-parity CI gate + dark-theme baseline
+- Files:
+  - `static/css/tokens.css` (new — verbatim copy of `.agent-transfer/tokens/tokens.css`)
+  - `sass/_tokens.scss` (new — verbatim copy of `.agent-transfer/tokens/tokens.scss`)
+  - `sass/_extra.scss` (added `@use "tokens" as *;` at top so SCSS variables are available)
+  - `templates/partials/head.html` (single `<link>` insertion: `tokens.css` loaded immediately before `late-overrides.css`; head.html is where the `late-overrides.css` link lives, so the one-line stylesheet insertion was made adjacent to it instead of in `base.html`)
+  - `scripts/check-token-parity.sh` (new — parses `--*` from `tokens.css` and `$*` from `_tokens.scss`, asserts (name → value) parity, then runs the hex-grep gate over `late-overrides.css` / `_extra.scss` / `abridge.scss`, excluding both SOT files)
+  - `STYLE_GUIDE.md` (appended Design Tokens section + token table — Sub-agent 1's tone-of-voice section untouched)
+- Change: Installed `tokens.css` and `_tokens.scss` as the project SOT. Wired tokens.css into the cascade ahead of `late-overrides.css` so component CSS can consume `var(--*)`. Added `@use "tokens" as *;` to `_extra.scss` so SCSS-side files can also reference token values at compile time. Added the token-parity CI script. Updated `STYLE_GUIDE.md` with the canonical token table. Dark-theme baseline now applied via `tokens.css` `body { background-color: var(--bg-primary); color: var(--text-primary); }`.
+- Why: Establish a single, drift-checked source of truth for color/typography/spacing tokens before Sub-agent 3 rebuilds the templates.
+- Status / known blocker: Hex audit (Deliverable B) STOPPED per task rule "If a hex has no matching token, STOP and report it in your PR body — do not invent new tokens." The corp-site brand palette currently in `static/css/late-overrides.css` (`--brand-blue`, `--logo-blue-*`, `--schedule-blue-*`, `--schedule-cta-*`, `--accent-gold`, `--accent-gold-solid`, plus the `#ff0066` plus and the `#D2B56F` gold pill stroke) has no equivalents in `tokens.css`, and replacing them with the closest dns-tool tokens (e.g., `--accent-violet` warm copper) would violate the "red plus + IT/HELP outline visually unchanged" non-negotiable. ~104 hex literals therefore remain in the three audited files; `scripts/check-token-parity.sh` exits 1 on the hex-grep gate. Parity check itself passes. Architect decision needed on whether to (a) extend `tokens.css` with a corp-brand block or (b) accept the visual shift to dns-tool tokens.
+- Non-negotiables verified: `static/js/hero-logo.js` not modified; red plus and IT/HELP outline rules in `late-overrides.css` not modified.
+- Rollback: revert this branch's commits (`codex/sub2-design-tokens`).
+
+### 2026-02-15
 - Actor: AI (Sub-agent 1: Information Architecture & Content)
 - Scope: IA & content rewrite per design-transfer/v1 (homepage, services, tone-of-voice)
 - Files:

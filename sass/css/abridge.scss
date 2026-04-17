@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 @use '../../themes/abridge/sass/abridge' with (
   /// LINES HERE END WITH COMMA AFTER THE VALUE!
   /// The things your less likely to need to override have been commented out.
@@ -19,7 +21,7 @@
   $syntax: true,//syntax highlighting for Code Blocks.
 
   $enable-icons: true,// false disables ALL icons
-  $ic: true,// true for colorized icons, otherwise #888 is used.
+  $ic: true,// true for colorized icons, otherwise default gray is used.
 
   $icon-rss: true,
   $icon-mail: false,// e-mail
@@ -76,59 +78,34 @@
 
   /// The colors below can be overrided individually as needed.
 
-  /// Dark Colors
-  $f1d: #E8E8E8,// Font Color Primary
-  $f2d: #ffffff,// Font Color Headers
-  $c1d: #0D1117,// Background Color Primary
-  $c2d: #161B22,// Background Color Secondary
-  $c3d: #30363D,// Table Rows, Block quote edge, Borders
-  $c4d: #3E4550,// Disabled Buttons, Borders, mark background
-  $a1d: #79B8FF,// link color
-  $a2d: #A5D0FF,// link hover/focus color
-  $a3d: #A5D0FF,// link h1-h2 hover/focus color
-  $a4d: #8CC3FF,// link visited color
-  //$cgd: #593,// ins green, success
-  //$crd: #e33,// del red, errors
+  /// Dark Colors — values defined in sass/_tokens.scss as $abridge-* SCSS vars
+  $f1d: $abridge-f1d,// Font Color Primary
+  $f2d: $abridge-f2d,// Font Color Headers
+  $c1d: $abridge-c1d,// Background Color Primary
+  $c2d: $abridge-c2d,// Background Color Secondary
+  $c3d: $abridge-c3d,// Table Rows, Block quote edge, Borders
+  $c4d: $abridge-c4d,// Disabled Buttons, Borders, mark background
+  $a1d: $abridge-a1d,// link color
+  $a2d: $abridge-a2d,// link hover/focus color
+  $a3d: $abridge-a3d,// link h1-h2 hover/focus color
+  $a4d: $abridge-a4d,// link visited color
 
-  /// Light Colors
-  $f1: #1D1D1F,// Font Color Primary
-  $f2: #1D1D1F,// Font Color Headers
-  $c1: #FAFBFC,// Background Color Primary
-  $c2: #F5F5F7,// Background Color Secondary
-  $c3: #E5E5E7,// Table Rows, Block quote edge, Borders
-  $c4: #E5E5E7,// Disabled Buttons, Borders, mark background
-  $a1: #2B6FCD,// link color
-  $a2: #4A8EDF,// link hover/focus color
-  $a3: #4A8EDF,// link h1-h2 hover/focus color
-  $a4: #2B6FCD,// link visited color
-  //$cg: #373,// ins green, success
-  //$cr: #d33,// del red, errors
+  /// Light Colors — values defined in sass/_tokens.scss as $abridge-* SCSS vars
+  $f1: $abridge-f1,// Font Color Primary
+  $f2: $abridge-f2,// Font Color Headers
+  $c1: $abridge-c1,// Background Color Primary
+  $c2: $abridge-c2,// Background Color Secondary
+  $c3: $abridge-c3,// Table Rows, Block quote edge, Borders
+  $c4: $abridge-c4,// Disabled Buttons, Borders, mark background
+  $a1: $abridge-a1,// link color
+  $a2: $abridge-a2,// link hover/focus color
+  $a3: $abridge-a3,// link h1-h2 hover/focus color
+  $a4: $abridge-a4,// link visited color
 
-  /// Dark Syntax Colors
-  //$h0d: #191919,// background color
-  //$h1d: #ddd,// unstyled text
-  //$h2d: #888,// comments
-  //$h3d: #e65,// red, support function
-  //$h4d: #e83,// orange, punctuation, constant, variable, json-key
-  //$h5d: #eb6,// tan, entity/function name
-  //$h6d: #ac3,// green, string
-  //$h7d: #8db,// teal, escape character
-  //$h8d: #6ae,// blue, declaration, tag, property
-  //$h9d: #d6e,// purple, operators
+  /// Syntax color overrides (dark + light) intentionally omitted —
+  /// abridge's $color-syntax: "abridge" template provides defaults.
   //$had: 160%,// mark/highlight line
-
-  /// Light Syntax Colors
-  //$h0: #f7f7f7,// background color
-  //$h1: #222,// unstyled text
-  //$h2: #666,// comments
-  //$h3: #a21,// red, support function
-  //$h4: #930,// orange, punctuation, constant, variable, json-key
-  //$h5: #a50,// tan, entity/function name
-  //$h6: #350,// green, string
-  //$h7: #286,// teal, escape character
-  //$h8: #059,// blue, declaration, tag, property
-  //$h9: #a3c,// purple, operators
-  //$ha: 92%,// mark/highlight line
+  //$ha:  92%,// mark/highlight line
 
   /// These lines find the spot at which to insert your appended fonts.
   //$findFont-Main: "Segoe UI",     // ← APPEND custom MAIN font(s) AFTER this

@@ -1,0 +1,219 @@
+/* ============================================================================
+   IT-HELP-SAN-DIEGO — DESIGN TOKENS v1
+   Extracted verbatim from dns-tool-intel custom.css :root (canonical SOT).
+   This file replaces ad-hoc color/spacing in late-overrides.css and abridge.scss.
+
+   USAGE:
+   - Load this BEFORE any theme CSS. Recommended path: static/css/tokens.css
+   - Reference vars only — no hardcoded hex anywhere else in the codebase.
+   - DO NOT add tokens here without architect approval. New tokens belong in
+     STYLE_GUIDE.md first, then PR'd in here as a single dedicated change.
+
+   COLOR ARCHITECTURE — Five-Layer System
+   --------------------------------------------------------------------------
+   Layer 1: STATUS    — RFC/CVSS-aligned. Pass/fail/warn semantics.
+   Layer 2: SEVERITY  — High-saturation badges (only for incident/risk UI;
+                        the corp site likely won't need these).
+   Layer 3: ICAE      — Maturity tiers (dns-tool-specific; included for parity).
+   Layer 4: ACCENTS   — Brand/UI sophistication. Warm-shifted, scotopic-safe.
+                        Intelligence-gold hero, no high-sat blue/violet/cyan.
+   Layer 5: PRINT     — High-contrast paper variants (@media print at bottom).
+   ============================================================================ */
+
+:root {
+    /* ============================================================
+       Brand non-negotiables — DO NOT MODIFY without architect approval.
+       These mirror the exact pre-redesign brand hex values and protect:
+       the red plus, the IT/HELP logo blue ramp, the gold accent treatment,
+       and the schedule-CTA blue gradients.
+       ============================================================ */
+    --brand-red:                  #ff0066;
+    --brand-logo-blue-top:        #327ED6;
+    --brand-logo-blue-mid:        #2662AA;
+    --brand-logo-blue-bottom:     #13437A;
+    --brand-blue:                 #58A6FF;
+    --brand-blue-rgb:             88, 166, 255;
+    --brand-blue-glow:            176, 218, 255;
+    --brand-blue-ink:             #F7FBFF;
+    --brand-gold:                 #C2A15A;
+    --brand-gold-solid:           #D2B56F;
+    --brand-gold-rgb:             194, 161, 90;
+    --brand-gold-glow:            224, 197, 138;
+    --brand-gold-ink:             #16120A;
+    /* Schedule-CTA blue ramps */
+    --schedule-blue-top:          #6CAFEF;
+    --schedule-blue-mid:          #3F86D8;
+    --schedule-blue-bottom:       #2359A9;
+    --schedule-cta-top:           #3D659A;
+    --schedule-cta-mid:           #244A79;
+    --schedule-cta-bottom:        #123055;
+    --schedule-cta-border:        rgba(88, 131, 187, 0.40);
+    --schedule-cta-hover-top:     #4673AA;
+    --schedule-cta-hover-mid:     #2D5A8D;
+    --schedule-cta-hover-bottom:  #1C436F;
+    --schedule-cta-hover-border:  rgba(104, 151, 211, 0.52);
+
+    /* --- Legacy aliases (back-compat with pre-tokens late-overrides/_extra) --- */
+    --logo-blue-top:    var(--brand-logo-blue-top);
+    --logo-blue-mid:    var(--brand-logo-blue-mid);
+    --logo-blue-bottom: var(--brand-logo-blue-bottom);
+    --accent-gold:      var(--brand-gold);
+    --accent-gold-solid: var(--brand-gold-solid);
+    --accent-gold-rgb:  var(--brand-gold-rgb);
+    --accent-gold-glow: var(--brand-gold-glow);
+    --brand-primary:    var(--brand-blue);
+    --brand-primary-rgb: var(--brand-blue-rgb);
+    --brand-primary-glow: var(--brand-blue-glow);
+    --brand-accent:     var(--brand-gold);
+    --brand-accent-rgb: var(--brand-gold-rgb);
+    --brand-accent-glow: var(--brand-gold-glow);
+    --brand-accent-ink: var(--brand-gold-ink);
+
+    /* --- Utility ink/surface tokens consumed by late-overrides + _extra --- */
+    --neutral-white:        #ffffff;
+    --neutral-black:        #000000;
+    --ink-azure:            #F1F8FF;
+    --ink-frost:            #F5FAFF;
+    --ink-sky:              #A8D7FF;
+    --ink-paper:            #f8f9fa;
+    --ithelp-navy:          #001F3F;
+    --link-blue-dark:       #1E5389;
+    --link-blue-mid:        #2B6CB3;
+    --text-slate:           #566376;
+    --text-slate-dark:      #404d5b;
+    --gold-amber:           #C8A961;
+    --surface-charcoal:     #222;
+    --surface-charcoal-hover: #333;
+    --code-onedark-bg:      #282c34;
+    --code-onedark-fg:      #abb2bf;
+    --switch-overlay-light: rgba(0,0,0,.2);
+
+    /* --- Abridge theme palette (consumed by sass/css/abridge.scss as $-vars) --- */
+    --abridge-f1d:  #E8E8E8;
+    --abridge-f2d:  #ffffff;
+    --abridge-c1d:  #0D1117;
+    --abridge-c2d:  #161B22;
+    --abridge-c3d:  #30363D;
+    --abridge-c4d:  #3E4550;
+    --abridge-a1d:  #79B8FF;
+    --abridge-a2d:  #A5D0FF;
+    --abridge-a3d:  #A5D0FF;
+    --abridge-a4d:  #8CC3FF;
+    --abridge-f1:   #1D1D1F;
+    --abridge-f2:   #1D1D1F;
+    --abridge-c1:   #FAFBFC;
+    --abridge-c2:   #F5F5F7;
+    --abridge-c3:   #E5E5E7;
+    --abridge-c4:   #E5E5E7;
+    --abridge-a1:   #2B6FCD;
+    --abridge-a2:   #4A8EDF;
+    --abridge-a3:   #4A8EDF;
+    --abridge-a4:   #2B6FCD;
+
+    /* --- Backgrounds: dark grays for elevation, no pure black --- */
+    --bg-primary:   #0d1117;   /* Main background — GitHub dark */
+    --bg-secondary: #161b22;   /* Elevated surfaces */
+    --bg-tertiary:  #21262d;   /* Cards, modals */
+    --bg-elevated:  #30363d;   /* Highest elevation */
+
+    /* --- Text: off-white for reduced eye strain --- */
+    --text-primary:   rgba(230, 237, 243, 0.9);  /* ~#e6edf3 at 90% */
+    --text-secondary: #9ca3af;                    /* WCAG AA on #0d1117 (~6.3:1) */
+
+    /* --- Code blocks --- */
+    --code-bg:     #161b22;
+    --code-border: #30363d;
+    --code-color:  #f0a8c8;
+
+    /* --- Layer 1: STATUS — RFC/CVSS-aligned protocol assessment --- */
+    --status-success:    #3fb950;
+    --status-success-bg: rgba(63, 185, 80, 0.15);
+    --status-warning:    #e3b341;
+    --status-warning-bg: rgba(227, 179, 65, 0.15);
+    --status-danger:     #f85149;
+    --status-danger-bg:  rgba(248, 81, 73, 0.15);
+    --status-info:       #c8956a;                 /* warm copper, not blue */
+    --status-info-bg:    rgba(88, 166, 255, 0.15);
+    --status-neutral:    #8b949e;
+
+    /* --- Layer 4: ACCENTS — sophistication, brand authority --- */
+    --accent-steel:        #9a8f82;   /* Warm steel, premium     6.8:1 */
+    --accent-deep:         #3d2e1f;   /* Deep umber, classified */
+    --accent-violet:       #c8956a;   /* Warm copper, primary    7.2:1 */
+    --accent-violet-hover: #d4a87d;
+    --accent-cyan:         #d4a853;   /* Intelligence gold       8.58:1 */
+    --accent-cobalt:       #b8a089;   /* Warm taupe              7.9:1 */
+    /* --accent-gold and --accent-gold-muted intentionally NOT redefined here —
+       they alias to --brand-gold above to preserve brand continuity. */
+    --accent-amber:        #e8b54a;   /* Highlight emphasis     10.04:1 */
+
+    /* --- Borders --- */
+    --border-default: #30363d;
+    --border-muted:   #30363d;
+
+    /* --- IT-HELP brand non-negotiables (preserved from corp-site) --- */
+    /* These are the only NEW tokens — codifying the existing brand marks. */
+    --brand-it-help-red:   #e8195e;  /* The red plus sign — DO NOT CHANGE */
+    --brand-it-help-blue:  #4a8fdf;  /* IT/HELP edge outline — tune toward gold accent */
+    --brand-it-help-gray:  #9aa0a6;  /* "san diego" subtitle */
+
+    /* --- Typography: native Apple stack first (matches dns-tool + corp Mac focus) --- */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+                 system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    /* --- Spacing scale (8pt grid, dns-tool conventions) --- */
+    --space-1: 0.25rem;   /*  4px */
+    --space-2: 0.5rem;    /*  8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.5rem;    /* 24px */
+    --space-6: 2rem;      /* 32px */
+    --space-8: 3rem;      /* 48px */
+
+    /* --- Radii --- */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+
+    /* --- Motion --- */
+    --transition-fast:   150ms ease;
+    --transition-medium: 250ms ease;
+}
+
+/* ----------------------------------------------------------------------------
+   Body baseline — apply once. Do not duplicate elsewhere.
+   ---------------------------------------------------------------------------- */
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+code, pre, kbd, samp { font-family: var(--font-mono); }
+
+/* ----------------------------------------------------------------------------
+   Print — high-contrast inversion for paper output
+   ---------------------------------------------------------------------------- */
+@media print {
+    :root {
+        --bg-primary:     #ffffff;
+        --bg-secondary:   #f5f5f5;
+        --bg-tertiary:    #eeeeee;
+        --text-primary:   #111111;
+        --text-secondary: #444444;
+    }
+    body { background: #fff; color: #111; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast:   0ms;
+        --transition-medium: 0ms;
+    }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
