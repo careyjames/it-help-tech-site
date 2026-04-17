@@ -83,6 +83,10 @@
 {# Design tokens (SOT) must load BEFORE late-overrides so overrides can consume var() #}
 <link rel="stylesheet" href="{{ get_url(path='css/tokens.css', trailing_slash=false, cachebust=true) | safe }}">
 
+{# Footer org-tree component CSS (consumes tokens.css custom properties). #}
+<link rel="stylesheet"
+      href="{{ get_url(path='css/_footer-org.css', trailing_slash=false, cachebust=true) | safe }}">
+
 {# Keep late overrides after base/page CSS to preserve cascade order. #}
 <link rel="stylesheet"
       href="{{ get_url(path='css/late-overrides.css', trailing_slash=false, cachebust=true) | safe }}">

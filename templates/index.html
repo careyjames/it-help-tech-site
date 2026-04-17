@@ -1,4 +1,15 @@
 {% extends "base.html" %}
+
 {% block content %}
-  {{ section.content | regex_replace(pattern="\s+(\S+)$", rep="&nbsp;$1") | safe }}
+  {# ---------- HERO LOGO (homepage only) ---------- #}
+  <section class="hero-wrapper">
+    {% include "partials/hero_logo.html" %}
+  </section>
+  <script defer
+          src="{{ get_url(path='js/hero-logo.js', trailing_slash=false, cachebust=true) | safe }}"></script>
+  {# ---------- /HERO LOGO ---------- #}
+
+  <article class="homepage-body">
+    {{ section.content | regex_replace(pattern="\s+(\S+)$", rep="&nbsp;$1") | safe }}
+  </article>
 {% endblock content %}

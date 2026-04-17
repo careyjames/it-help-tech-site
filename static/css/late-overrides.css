@@ -855,3 +855,257 @@ html:not(.switch) h6 a.gold-link:active {
         padding-right: 6px !important;
     }
 }
+
+/* ============================================================================
+   Sub-3 (Templates) — Top-bar nav, mobile hamburger, and skip-link.
+   Replaces the legacy .site-header / .nav-pill-list system.
+   All colors flow through tokens.css custom properties.
+   ============================================================================ */
+
+/* --- Skip link (a11y) --- */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px 14px;
+    background: var(--brand-blue);
+    color: var(--neutral-black);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 6px 0;
+    z-index: 9999;
+    transition: top 0.18s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--brand-gold-solid);
+    outline-offset: 2px;
+}
+
+/* --- Top bar shell --- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13, 17, 23, 0.92);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+    backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+}
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+}
+.topbar-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    text-decoration: none;
+    line-height: 1;
+    gap: 0.05em;
+}
+.topbar-wordmark {
+    font-family: var(--font-mono, "SF Mono", Menlo, Consolas, monospace);
+    font-weight: 800;
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+.topbar-wordmark-it,
+.topbar-wordmark-help {
+    background: linear-gradient(180deg,
+        var(--brand-logo-blue-top) 0%,
+        var(--brand-logo-blue-mid) 55%,
+        var(--brand-logo-blue-bottom) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.topbar-wordmark-plus {
+    color: var(--brand-red);
+    font-weight: 900;
+    padding: 0 0.05em;
+}
+.topbar-sublocation {
+    font-size: clamp(0.55rem, 0.85vw, 0.7rem);
+    letter-spacing: 0.18em;
+    text-transform: lowercase;
+    color: var(--text-secondary);
+    margin-left: 0.15em;
+}
+.topbar-logo:hover .topbar-sublocation { color: var(--brand-gold-solid); }
+
+/* --- Hamburger checkbox (CSS-only, no JS) --- */
+.topbar-nav-toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.topbar-nav-toggle-label {
+    display: none;
+    margin-left: auto;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 0.25rem;
+    border-radius: 4px;
+    line-height: 0;
+}
+.topbar-nav-toggle-label:hover {
+    color: var(--brand-gold-solid);
+}
+.topbar-nav-toggle-x { display: none; }
+.topbar-nav-toggle-checkbox:focus-visible + .topbar-nav-toggle-label {
+    outline: 2px solid var(--brand-gold-solid);
+    outline-offset: 2px;
+}
+
+/* --- Nav list (desktop) --- */
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-left: auto;
+}
+.topbar-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.topbar-nav-list a {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+.topbar-nav-list a:hover,
+.topbar-nav-list a:focus-visible {
+    color: var(--brand-gold-solid);
+    background: rgba(210, 181, 111, 0.08);
+    outline: none;
+}
+.topbar-ext {
+    display: inline-block;
+    font-size: 0.8em;
+    color: var(--brand-gold-solid);
+    margin-left: 0.15em;
+}
+
+/* --- Schedule CTA (uses brand schedule-cta gradient tokens) --- */
+.topbar-nav-list .topbar-cta {
+    background-color: var(--schedule-cta-mid);
+    background-image: linear-gradient(180deg,
+        var(--schedule-cta-top) 0%,
+        var(--schedule-cta-mid) 54%,
+        var(--schedule-cta-bottom) 100%);
+    border: 1px solid var(--schedule-cta-border);
+    color: var(--ink-azure);
+    font-weight: 700;
+    padding: 0.4rem 0.95rem;
+    border-radius: 6px;
+}
+.topbar-nav-list .topbar-cta:hover,
+.topbar-nav-list .topbar-cta:focus-visible {
+    background-image: linear-gradient(180deg,
+        var(--schedule-cta-hover-top) 0%,
+        var(--schedule-cta-hover-mid) 54%,
+        var(--schedule-cta-hover-bottom) 100%);
+    border-color: var(--schedule-cta-hover-border);
+    color: var(--neutral-white);
+}
+
+/* --- Phone --- */
+.topbar-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.92rem;
+}
+.topbar-phone:hover { color: var(--brand-gold-solid); }
+.topbar-phone svg { flex-shrink: 0; }
+
+/* --- Theme toggle button (carry-over) --- */
+.topbar-mode {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.topbar-mode:hover { color: var(--brand-gold-solid); }
+
+/* ============================================================================
+   Mobile (≤ 768px) — hamburger drawer
+   ============================================================================ */
+@media (max-width: 768px) {
+    .topbar-nav-toggle-label { display: inline-block; }
+
+    .topbar-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(13, 17, 23, 0.98);
+        border-bottom: 1px solid rgba(48, 54, 61, 0.7);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        margin-left: 0;
+    }
+    .topbar-nav-toggle-checkbox:checked ~ .topbar-nav {
+        max-height: 80vh;
+        padding: 0.6rem 1rem 1rem;
+    }
+    .topbar-nav-toggle-checkbox:checked ~ .topbar-nav-toggle-label .topbar-nav-toggle-bars { display: none; }
+    .topbar-nav-toggle-checkbox:checked ~ .topbar-nav-toggle-label .topbar-nav-toggle-x    { display: block; }
+
+    .topbar-nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+    }
+    .topbar-nav-list li { width: 100%; }
+    .topbar-nav-list a {
+        display: block;
+        padding: 0.85rem 0.4rem;
+        border-bottom: 1px solid rgba(48, 54, 61, 0.4);
+    }
+    .topbar-nav-list .topbar-cta {
+        margin-top: 0.6rem;
+        text-align: center;
+    }
+    .topbar-phone {
+        padding: 0.85rem 0.4rem;
+        justify-content: flex-start;
+    }
+    .topbar-phone-text { display: inline; }
+    .topbar-mode { align-self: flex-start; margin-top: 0.4rem; }
+}
+
+/* Smaller fine-grain — hide phone label below 380px to avoid wrap on tiny screens */
+@media (max-width: 380px) {
+    .topbar-logo-img { width: 144px; }
+}
+
+/* Reduced-motion users: kill the drawer transition */
+@media (prefers-reduced-motion: reduce) {
+    .topbar-nav { transition: none; }
+    .skip-link  { transition: none; }
+}

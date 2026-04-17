@@ -24,3 +24,4 @@ csp-*.json
 !infra/cloudfront/csp-policy-v0.json
 !infra/cloudfront/csp-policy-v1.json
 !infra/cloudfront/csp-policy-signatures-v1.json
+sub3_diff.patch
