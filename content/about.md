@@ -1,6 +1,6 @@
 +++
 title = "Our Expertise"
-description = "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support."
+description = "Learn about Carey Balboa, the founder of IT Help San Diego, with 27 years of experience providing expert, ethical IT support."
 path = "about"
 render = true
 template_macros = ["macros/images.html"]
@@ -25,7 +25,7 @@ toc = false
       "@type": "Person",
       "name": "Carey Balboa",
       "jobTitle": "Founder",
-      "description": "25+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
+      "description": "27+ years experience in IT support, specializing in Mac, iOS, DNS, email, and cybersecurity.",
       "image": "https://www.it-help.tech/images/carey-256.avif"
     },
     "address": {
@@ -38,7 +38,7 @@ toc = false
     },
      "url": "https://www.it-help.tech"
   },
-  "description": "Learn about Carey Balboa, the founder of IT Help San Diego, with 25 years of experience providing expert, ethical IT support.",
+  "description": "Learn about Carey Balboa, the founder of IT Help San Diego, with 27 years of experience providing expert, ethical IT support.",
    "url": "https://www.it-help.tech{{ page.url }}"
 }
 </script>  
@@ -51,7 +51,7 @@ Hi, I’m Carey Balboa.<br>
 *(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*<br>
 *(Balboa: Like Balboa Park in San Diego)*
 
-I’ve been solving tech problems for 25 years. I love a challenge, solving technical problems, and helping people. I’m committed to mission success, and scientific discovery is my passion. Since 1999, I’ve assisted high-profile clients in the entertainment, medical, and legal sectors, as well as PhDs, with their technology challenges.
+I’ve been solving tech problems for 27 years. I love a challenge, solving technical problems, and helping people. I’m committed to mission success, and scientific discovery is my passion. Since 1999, I’ve assisted high-profile clients in the entertainment, medical, and legal sectors, as well as PhDs, with their technology challenges.
 
 ## Business Ethics: Carey’s Promise
 

@@ -198,7 +198,7 @@ twitter_card        = "summary_large_image"
       "@id": "https://www.it-help.tech/#webpage",
       "url": "https://www.it-help.tech/",
       "name": "Mac IT Support San Diego (La Jolla) | IT Help San Diego",
-      "description": "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla and San Diego. macOS and iOS first, with Unix, Linux, and Windows — a system is a system. 25 years across systems, networks, DNS, and email security (SPF · DKIM · DMARC). No hardware sales, no monthly retainers.",
+      "description": "Apple-centric IT, deep-research diagnostics, and systems work for La Jolla and San Diego. macOS and iOS first, with Unix, Linux, and Windows — a system is a system. 27 years across systems, networks, DNS, and email security (SPF · DKIM · DMARC). No hardware sales, no monthly retainers.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://www.it-help.tech/#website"
@@ -252,7 +252,7 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Trust signals
 
-- **25+ years** in the field, across macOS, networking, and DNS.
+- **27+ years** in the field, across macOS, Linux, Windows, network architecture, and DNS.
 - **High-profile clients** in entertainment, legal, restaurant, and medical sectors. Discretion comes standard; logos do not.
 - **Federal A+ DNS posture** on our own infrastructure — the same standards we apply to client domains.
 
