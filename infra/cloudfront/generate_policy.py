@@ -29,6 +29,18 @@ from typing import Callable, Iterable
 STYLE_TAG_RE = re.compile(r"<style\b([^>]*)>(.*?)</style>", re.IGNORECASE | re.DOTALL)
 SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.IGNORECASE | re.DOTALL)
 SRC_ATTR_RE = re.compile(r"\bsrc\s*=", re.IGNORECASE)
+# Per W3C CSP §6.6.4.2, scripts whose `type` is not a valid JS MIME type are
+# treated as DATA blocks (e.g. JSON-LD, importmap, speculationrules) and are
+# never executed by the parser. They MUST NOT consume a `script-src` allowance,
+# otherwise the policy bloats unnecessarily and tooling drifts every time a new
+# schema block is added to a page. See csp-tightening-plan.md (Sub-4).
+NON_EXECUTABLE_TYPE_RE = re.compile(
+    r"""\btype\s*=\s*['"]?\s*(?:
+        application/(?:ld\+json|json|importmap)
+      | speculationrules
+    )""",
+    re.IGNORECASE | re.VERBOSE,
+)
 
 SELF = "'self'"
 NONE = "'none'"
@@ -82,6 +94,11 @@ def _extract_inline_scripts(html: str, *, file: Path) -> Iterable[InlineScript]:
     for match in SCRIPT_TAG_RE.finditer(html):
         attrs = (match.group(1) or "").strip()
         if SRC_ATTR_RE.search(attrs):
+            continue
+        # Non-JS-typed <script> blocks (JSON-LD, importmap, speculationrules)
+        # are data — not subject to script-src — so they MUST NOT generate a
+        # CSP hash. See NON_EXECUTABLE_TYPE_RE for spec reference.
+        if NON_EXECUTABLE_TYPE_RE.search(attrs):
             continue
         body = match.group(2) or ""
         if body.strip() == "":

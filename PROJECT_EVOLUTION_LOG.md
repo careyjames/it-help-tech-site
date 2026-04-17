@@ -13,6 +13,21 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17
+- Actor: AI (Sub-agent 4: CSP Hardening & CloudFront Policy)
+- Scope: Push Mozilla Observatory 130 → ≥145 by externalizing the last inline script + style and adding bonus security headers (per `.agent-transfer/plans/csp-tightening-plan.md`).
+- Files:
+  - `static/js/theme-init.js` (new — extracted theme-flash IIFE from `templates/partials/head.html`)
+  - `templates/partials/head.html` (replaced inline `<script>` with same-origin `<script src=... integrity=sha384-... crossorigin=anonymous>` blocking — must run pre-paint; replaced inline `<style>{{critical_css}}</style>` with `<link rel=stylesheet href=css/critical.min.css>`; removed obsolete `noscript` wrapper and the now-unused `load_data` import)
+  - `infra/cloudfront/generate_policy.py` (added `NON_EXECUTABLE_TYPE_RE` filter so `<script type="application/ld+json">`, `application/json`, `application/importmap`, and `speculationrules` blocks no longer consume `script-src` allowance — they are data per W3C CSP §6.6.4.2 and were inflating the policy with 15 unnecessary hashes)
+  - `infra/cloudfront/csp-policy-v1.json` (regenerated CSP collapses to `default-src 'none'; ...; style-src 'self'; script-src 'self'; ...` — zero hashes, 260 bytes vs ~2KB before; added `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-origin` custom headers)
+  - `PROJECT_EVOLUTION_LOG.md` (this entry)
+- Change: Removed every CSP hash from the site policy by externalizing the two remaining inline blocks and teaching the policy generator to ignore non-executable `<script>` types. Added COOP+CORP for the documented +10 Observatory bonus.
+- Score delta target: Observatory 130 → ≥145 (+10 from "no inline executable scripts/styles, hash-free policy" + +10 from COOP/CORP). COEP `require-corp` deferred per the plan caveat (requires staging crawl validation of every cross-origin subresource before promotion).
+- Verification: `zola build` clean; `python3 infra/cloudfront/generate_policy.py --mode site` reports `0 inline script hashes, 0 inline style hashes, CSP length 260`; programmatic audit of `public/*.html` (excluding the signature page on its separate CloudFront behavior) confirms zero inline executable `<script>` and zero inline `<style>` blocks; live preview renders identically to pre-change.
+- Non-negotiables verified: `static/js/hero-logo.js` not modified; Sub-2 token system intact (parity gate passes); Sub-3 chrome unchanged.
+- Rollback: revert this branch's commits (`codex/sub4-csp`).
+
 ### 2026-02-15
 - Actor: AI (Sub-agent 2: Design Token Adoption)
 - Scope: Design token adoption (SOT) + token-parity CI gate + dark-theme baseline
