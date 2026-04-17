@@ -27,7 +27,7 @@ from typing import Callable, Iterable
 
 
 STYLE_TAG_RE = re.compile(r"<style\b([^>]*)>(.*?)</style>", re.IGNORECASE | re.DOTALL)
-SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.IGNORECASE | re.DOTALL)
+SCRIPT_TAG_RE = re.compile(r"<script\b([^>]*)>(.*?)</script\b[^>]*>", re.IGNORECASE | re.DOTALL)
 SRC_ATTR_RE = re.compile(r"\bsrc\s*=", re.IGNORECASE)
 # Per W3C CSP §6.6.4.2, scripts whose `type` is not a valid JS MIME type are
 # treated as DATA blocks (e.g. JSON-LD, importmap, speculationrules) and are
