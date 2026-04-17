@@ -480,9 +480,19 @@ section h2 {
    — zero hex literals (intentional: hex values discussed only in prose
    above are kept token-named, not literal).
    ========================================================================== */
+/* Skip link uses transform: translateY(-100%) instead of a hardcoded
+   negative top. The previous `top: -40px` was a pixel guess — at the
+   actual rendered link height (~44px with bold + padding + line-height
+   at 16px base) it leaked roughly 4px of pale-blue into the top-left
+   of every page. transform: translateY(-100%) hides the element by
+   exactly its own rendered height regardless of font size, padding,
+   user zoom, or future copy changes — the standards-compliant pattern
+   used by github.com, apple.com, gov.uk, and the WAI-ARIA Authoring
+   Practices reference implementation. left:0/top:0 anchor the visible
+   focused state to the corner; the transform handles hide/reveal. */
 a.skip-link {
   position: absolute;
-  top: -40px;
+  top: 0;
   left: 0;
   padding: 8px 14px;
   background: var(--brand-blue);
@@ -491,11 +501,12 @@ a.skip-link {
   text-decoration: none;
   border-radius: 0 0 6px 0;
   z-index: 9999;
-  transition: top 0.18s ease;
+  transform: translateY(-100%);
+  transition: transform 0.18s ease;
 }
 a.skip-link:focus,
 a.skip-link:focus-visible {
-  top: 0;
+  transform: translateY(0);
   color: var(--neutral-black);
   background: var(--brand-blue);
   outline: 2px solid var(--brand-gold-solid);
