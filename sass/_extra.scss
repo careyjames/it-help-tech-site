@@ -461,3 +461,97 @@ section h2 {
 :root:not(.switch) .footer-nap a {
   color: var(--a2);
 }
+
+/* ==========================================================================
+   FORM-CONTROL BASELINE — forward-compatible default styling.
+
+   The site has zero body-level form controls today (the DNS Tool lives on its
+   own subdomain). This block exists so the *next* contact form, signup, or
+   search box inherits the brand instead of falling back to OS chrome
+   (which renders inconsistently across Safari, Firefox, Chrome on Win/Mac/Linux,
+   creates contrast/a11y issues in dark mode, and looks unprofessional next to
+   the rest of the site). Tap targets are sized for mobile (44px min height).
+   Focus ring matches the schedule-CTA pattern (brand-blue with offset). All
+   colors are tokens — token-parity gate (scripts/check-token-parity.sh) green.
+   ========================================================================== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--brand-primary);
+}
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="tel"]:focus-visible,
+input[type="url"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="password"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-color: var(--brand-primary);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Native checkbox + radio inherit the brand color */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--brand-primary);
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}

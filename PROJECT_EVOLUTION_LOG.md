@@ -13,6 +13,24 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Polish · Phase 1 — a11y motion + print stylesheet + form baseline)
+- Actor: AI (Replit Agent)
+- Severity: LOW (pure additions; only one existing rule modified — extending a selector list in the existing `prefers-reduced-motion` block)
+- Scope: First slice of the "make UI amazing, work everywhere" polish program. Architect-reviewed two-phase plan: Phase 1 = compliance + critical fixes (this entry), Phase 2 = visual evolution (sub-page heroes, ultra-wide treatment, CLS fix, "scientific proof" telemetry footer). This entry covers the highest-leverage Phase 1 items with zero brand risk.
+- Files:
+  - `static/css/late-overrides.css`:
+    - Extended the existing `prefers-reduced-motion` block to add `.blob`, `.circuit-bg`, and `.hex-decoration` to the `display: none` selector list. The global `* { animation-duration: 0.01ms !important }` rule in `tokens.css` already neutralizes their motion, but for *purely decorative* elements we hide them outright — a 0.01ms-cycle blur or rotating ring can still produce visible sub-frame jitter on some renderers, which is exactly the kind of low-amplitude motion vestibular-sensitive users react to. Brand identity (IT/HELP wordmark, gold pill, plus, "san diego") is preserved in static form.
+    - New `@media print` block at end of file. Hides topbar/hero/nav/footer/all decorative chrome. Adds a small letterhead (`body::before`) on page 1: `IT+HELP san diego  ·  it-help.tech  ·  (619) 853-5008`. Sets paper-friendly typography (11pt body, 12-18pt headings, 1.5 line-height, 0.65in margins). Expands `<a href="http*">` links inline to full URL so the print is useful offline (skips in-page anchors and `mailto:`/`tel:` which are useless on paper). Tables get full borders inheriting `currentColor`, code blocks get a quiet gray background. All colors flow from existing `--bg-*`/`--text-*` tokens which `tokens.css` Layer 5 already remaps to paper colors under `@media print`. **Zero hex literals**, parity gate green.
+  - `sass/_extra.scss`:
+    - New `FORM-CONTROL BASELINE` block at end. Tokenized styles for `input[type=text|email|tel|url|search|number|password]`, `textarea`, `select`, with `:hover`, `:focus-visible` (brand-blue ring with 2px offset matching the schedule-CTA pattern), `:disabled`, `::placeholder`, `accent-color` for native checkbox/radio, and `<label>`. Site has zero body-level form controls today (DNS Tool is on its own subdomain), so this is forward-compat — the next contact form / signup / search box inherits the brand instead of OS chrome (which renders inconsistently across Safari/Firefox/Chrome on Win/Mac/Linux and breaks dark mode contrast). 44px tap targets, no `-webkit-appearance` hacks needed for Safari.
+- Why: Owner asked the agent to "make the UI amazing, work everywhere on every device, perfectly compatible." Architect (consulted before implementation via explore subagent) recommended the two-phase split. Immediate user-visible benefit: printing the rates page now produces a clean leave-behind document instead of a screenshot of the dark website with hidden URLs.
+- Verification (local):
+  - `scripts/check-token-parity.sh`: PASS (no hex literals leaked into consumer files)
+  - `zola build`: clean, 12 pages + 1 section, zero warnings, ~310ms
+  - PurgeCSS pipeline (with PR #537's quoted-glob fix now merged to main): `late-overrides.css` survives at 38,071 B (was 24,313 B pre-print-block). Letterhead, hero-wrapper, reduced-motion, and print rules all preserved through purge. Form baseline survives into `abridge.css`.
+- Pending: Visual print-output verification on a real printer / browser print dialog (out-of-band; recommend the owner spot-check `Cmd+P` on `/billing/` and a blog post after merge). PR will be `polish/phase-1-a11y-print-forms` against main.
+- Rollback: revert this branch's commits — three additions in two files, zero existing rules deleted.
+
 ### 2026-04-17 (Hotfix · Revert COEP `require-corp`)
 - Actor: AI (incident response)
 - Severity: HIGH (production page blank in Safari below the navigation)

@@ -111,6 +111,7 @@ Then click "Pull" in Replit to sync. This prevents duplicate commits in future P
 Site maintains 98-100 scores. All changes must preserve these.
 
 ## Recent Changes
+- 2026-04-17: Polish Phase 1 — `prefers-reduced-motion` extended to decorative-only elements (`.blob`, `.circuit-bg`, `.hex-decoration`); new `@media print` "leave-behind" stylesheet with letterhead + paper typography; tokenized form-control baseline ready for first contact form
 - 2026-02-04: Fixed CSP pipeline to prevent hash accumulation (removed --merge-hashes-from-stdin)
 - 2026-02-04: Created og-home.png (1200x630px, 498KB) with tagline for OG/Twitter sharing
 - 2026-02-04: Combined hero-logo.css + gold-override.css into late-overrides.css (5→4 CSS requests)
