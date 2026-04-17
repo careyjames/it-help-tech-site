@@ -1066,6 +1066,19 @@ html:not(.switch) h6 a.gold-link:active {
         max-height: 80vh;
         padding: 0.6rem 1rem 1rem;
     }
+
+    /* When the drawer is open, the topbar's own border-bottom would otherwise
+       leave a faint 1px hairline between the topbar and the drawer (two
+       near-identical dark blocks separated by a thin gray rule that reads as
+       a visual seam, not an intentional divider). Hiding the topbar's border
+       while the drawer is open lets the two surfaces merge into one
+       continuous panel — the drawer's own border-bottom still terminates the
+       menu cleanly against the page content below. Uses :has() (Safari 15.4+,
+       Chrome 105+, Firefox 121+) because the checkbox is a descendant of
+       .topbar, not a sibling, so ~ won't reach the parent. */
+    .topbar:has(.topbar-nav-toggle-checkbox:checked) {
+        border-bottom-color: transparent;
+    }
     .topbar-nav-toggle-checkbox:checked ~ .topbar-nav-toggle-label .topbar-nav-toggle-bars { display: none; }
     .topbar-nav-toggle-checkbox:checked ~ .topbar-nav-toggle-label .topbar-nav-toggle-x    { display: block; }
 
