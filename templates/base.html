@@ -68,11 +68,21 @@
       </svg>
     </label>
 
+    {# 2026-04-17: Active-page indicator wired via aria-current="page". The
+       macro picks the link whose href is a prefix of the current page path
+       (current_path always starts with "/"); a literal === is too strict
+       because Zola pretty-URLs land on /services/ but the current_path on
+       a sub-route like /services/tag/ should still highlight Services. The
+       gold underline is rendered from a [aria-current=page]::after pseudo-
+       element in CSS — so this attribute drives both the visible state and
+       the screen-reader semantics in one shot. External links (DNS Tool,
+       Schedule) are skipped — they live on different domains. #}
     <nav class="topbar-nav" aria-label="Primary">
+      {%- set cp = current_path | default(value="/") -%}
       <ul class="topbar-nav-list">
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/blog/">Field Notes</a></li>
+        <li><a href="/services/"{% if cp is starting_with("/services") %} aria-current="page"{% endif %}>Services</a></li>
+        <li><a href="/about/"{% if cp is starting_with("/about") %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/blog/"{% if cp is starting_with("/blog") %} aria-current="page"{% endif %}>Field Notes</a></li>
         <li>
           <a href="https://dns.it-help.tech" target="_blank" rel="noopener noreferrer">
             DNS Tool <span class="topbar-ext" aria-hidden="true">↗</span>
