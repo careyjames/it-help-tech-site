@@ -60,7 +60,7 @@ We do not bill recurring fees, retainers, or unattended time.
 ## Privacy, Security & Ethics
 
 * All client data is encrypted and never shared or sold.
-* We have served high-profile and security-sensitive clients for over 25 years.
+* We have served high-profile and security-sensitive clients for over 27 years.
 * We have never had a data leak and never speak with media or third parties.
 
 ### Business Ethics — Carey’s Promise

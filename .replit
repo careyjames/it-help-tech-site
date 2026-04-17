@@ -42,3 +42,7 @@ externalPort = 80
 deploymentTarget = "static"
 build = ["zola", "build"]
 publicDir = "public"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 60000
