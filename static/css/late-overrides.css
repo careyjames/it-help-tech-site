@@ -150,17 +150,18 @@ html.switch .logo-constellation {
     z-index: 3;
 }
 
-/* 2026-04-17: Hero brand mark — owl medallion + IT+HELP wordmark, mirroring
-   the canonical brand banner composition (owl left, wordmark right on
-   desktop; stacked on mobile so neither element shrinks below readable
-   size). Sits above the constellation/particles/blob layers (z-index 3).
-   Owl is sourced as picture+webp+png so retina screens stay crisp without
-   shipping the 1.3 MB master to phones. */
+/* 2026-04-17 (rev): Hero brand mark — owl medallion ONLY. The on-page
+   IT+HELP wordmark was removed per owner direction; the canonical wordmark
+   now lives exclusively in the topbar (banner cutout). With the owl solo
+   in the hero, the layout collapses to a centered single element and the
+   owl can grow larger without competing for horizontal space against the
+   wordmark. Sits above constellation/particles/blob layers (z-index 3).
+   Owl shipped as picture+webp+png so retina screens stay crisp without
+   forcing the 1.3 MB master onto phones. */
 .brand-mark {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 3.5vw, 2.6rem);
     position: relative;
     z-index: 3;
     max-width: 100%;
@@ -175,7 +176,7 @@ html.switch .logo-constellation {
 }
 
 .hero-owl {
-    width: clamp(120px, 18vw, 240px);
+    width: clamp(180px, 28vw, 320px);
     height: auto;
     display: block;
     /* Subtle dark drop-shadow so the gold owl medallion lifts off the
@@ -185,12 +186,10 @@ html.switch .logo-constellation {
 
 @media (max-width: 700px) {
     .brand-mark {
-        flex-direction: column;
-        gap: 0.4rem;
         padding: 0 0.5rem;
     }
     .hero-owl {
-        width: clamp(108px, 28vw, 168px);
+        width: clamp(160px, 46vw, 240px);
     }
 }
 
@@ -965,43 +964,28 @@ html:not(.switch) h6 a.gold-link:active {
     line-height: 1;
     gap: 0.05em;
 }
-.topbar-wordmark {
-    font-family: var(--font-mono, "SF Mono", Menlo, Consolas, monospace);
-    font-weight: 800;
-    font-size: clamp(1.25rem, 2vw, 1.55rem);
-    letter-spacing: -0.02em;
-    line-height: 1;
+/* 2026-04-17 (rev): Topbar wordmark replaced with the canonical brand-banner
+   cutout image (gold IT+HELP + red plus + silver SAN DIEGO on transparent
+   background). The cutout was provided by the owner to guarantee perfect
+   font + color fidelity to the master banner — nothing here recolors or
+   restyles the image. Sized by height so the aspect ratio (≈ 8.4:1) is
+   preserved automatically. The intrinsic 622×74 dimensions on the <img>
+   reserve layout space (no CLS). Hover lift is a 1px translate — purely
+   tactile, no color shift, since the banner is already final. */
+.topbar-banner {
+    display: block;
+    height: clamp(28px, 3.6vw, 40px);
+    width: auto;
+    max-width: 70vw;
+    transition: transform 0.18s ease;
 }
-/* 2026-04-17: Topbar wordmark flipped from cobalt blue gradient to metallic
-   gold gradient so the nav matches the canonical Athenian-owl banner. Same
-   gradient shape (top-light → mid → bottom-deep) for the same metallic
-   3D-letter feel — only the hue family changes. The user's spec: "up in
-   that top left part, just the yellow IT help and the red plus is enough,
-   with the little San Diego looking good." Plus + sublocation (san diego)
-   stay as-is — already correct per banner. */
-.topbar-wordmark-it,
-.topbar-wordmark-help {
-    background: linear-gradient(180deg,
-        var(--brand-logo-gold-top) 0%,
-        var(--brand-logo-gold-mid) 55%,
-        var(--brand-logo-gold-bottom) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.topbar-logo:hover .topbar-banner,
+.topbar-logo:focus-visible .topbar-banner {
+    transform: translateY(-1px);
 }
-.topbar-wordmark-plus {
-    color: var(--brand-red);
-    font-weight: 900;
-    padding: 0 0.05em;
+@media (max-width: 380px) {
+    .topbar-banner { height: 26px; }
 }
-.topbar-sublocation {
-    font-size: clamp(0.55rem, 0.85vw, 0.7rem);
-    letter-spacing: 0.18em;
-    text-transform: lowercase;
-    color: var(--text-secondary);
-    margin-left: 0.15em;
-}
-.topbar-logo:hover .topbar-sublocation { color: var(--brand-gold-solid); }
 
 /* --- Hamburger checkbox (CSS-only, no JS) --- */
 .topbar-nav-toggle-checkbox {
@@ -1175,10 +1159,7 @@ html:not(.switch) h6 a.gold-link:active {
     .topbar-mode { align-self: flex-start; margin-top: 0.4rem; }
 }
 
-/* Smaller fine-grain — hide phone label below 380px to avoid wrap on tiny screens */
-@media (max-width: 380px) {
-    .topbar-logo-img { width: 144px; }
-}
+/* Smaller fine-grain (banner-height tweak lives in the .topbar-banner block above) */
 
 /* Reduced-motion users: kill the drawer transition */
 @media (prefers-reduced-motion: reduce) {

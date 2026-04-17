@@ -35,13 +35,22 @@
 {%- block header %}
 <header class="topbar" role="banner">
   <div class="topbar-inner">
+    {# 2026-04-17: Topbar wordmark switched from CSS-rendered text spans to
+       the canonical brand-banner cutout (gold IT+HELP + red plus + silver
+       SAN DIEGO on transparent background). Owner provided the cutout to
+       guarantee perfect font + color fidelity to the master banner. The
+       <a> retains the accessible name via aria-label, so the <img> uses
+       alt="" to avoid the link being announced twice ("IT Help San Diego —
+       home, IT Help San Diego"). Intrinsic dimensions on the img reserve
+       layout space (no CLS). #}
     <a href="{{ get_url(path='/') }}"
        class="topbar-logo"
        aria-label="IT Help San Diego — home">
-      <span class="topbar-wordmark" aria-hidden="true">
-        <span class="topbar-wordmark-it">IT</span><span class="topbar-wordmark-plus">+</span><span class="topbar-wordmark-help">HELP</span>
-      </span>
-      <span class="topbar-sublocation" aria-hidden="true">san diego</span>
+      <img class="topbar-banner"
+           src="/img/brand/wordmark-banner.png"
+           alt=""
+           width="622" height="74"
+           decoding="async">
     </a>
 
     {# CSS-only mobile hamburger via checkbox-hack: zero JS, CSP-safe.
