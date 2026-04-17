@@ -4,9 +4,9 @@ const TOML = require('fast-toml');
 const UglifyJS = require('uglify-js');
 const jsonminify = require("jsonminify");
 const util = require("util");
-const { exec } = require("child_process");
+const { execFile } = require("child_process");
 const { exit } = require('process');
-const execPromise = util.promisify(exec);
+const execFilePromise = util.promisify(execFile);
 
 if (!(fs.existsSync('config.toml'))) {
   throw new Error('ERROR: cannot find config.toml!');
@@ -33,7 +33,7 @@ const pwa_IGNORE_FILES = data.extra.pwa_IGNORE_FILES;
 
 // This is used to pass arguments to zola via npm, for example:
 // npm run abridge -- "--base-url https://abridge.pages.dev"
-let args = process.argv[2] ? ' ' + process.argv[2] : '';
+let args = process.argv.slice(2);
 
 // check if abridge is used directly or as a theme.
 let bpath = '';
@@ -47,8 +47,8 @@ _rmRegex(path.join(__dirname, "static/js/"), /^pagefind-entry.*json$/);
 _rmRecursive(path.join(__dirname, "static/js/index"));
 _rmRecursive(path.join(__dirname, "static/js/fragment"));
 
-async function execWrapper(cmd) {
-  const { stdout, stderr } = await execPromise(cmd);
+async function execWrapper(cmd, cmdArgs = []) {
+  const { stdout, stderr } = await execFilePromise(cmd, cmdArgs);
   if (stdout) {
     console.log(stdout);
   }
@@ -71,7 +71,7 @@ async function setIndexFormat() {
     replaceInFileSync({ files: 'config.toml', from: /index_format.*=.*/g, to: `index_format = "${format}"` });
   }
   if (search_library === 'offline') {
-    args = args + ` -u "${__dirname}/public"`;
+    args.push('-u', path.join(__dirname, 'public'));
   }
 }
 
@@ -202,7 +202,7 @@ async function abridge() {
   await setIndexFormat();
 
   console.log('Zola Build to generate files for minification:');
-  await execWrapper('zola build' + args);
+  await execWrapper('zola', ['build', ...args]);
 
   ensureStaticJsDir();
 
@@ -240,7 +240,7 @@ async function abridge() {
   _rmRegex(path.join(__dirname, 'static/js/'), /^pagefind_search\.js$/);
 
   console.log('Zola Build to generate new integrity hashes for the previously minified files:');
-  await execWrapper('zola build' + args);
+  await execWrapper('zola', ['build', ...args]);
 }
 
 async function _headersWASM() {
