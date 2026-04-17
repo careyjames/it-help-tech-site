@@ -14,6 +14,51 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 ## Entries
 
 ### 2026-04-17
+- Actor: AI (Sub-agent 5: Quality-Gate Verification)
+- Scope: Final QA gate for the design-transfer/v1 redesign per `.agent-transfer/plans/port-checklist.md` Sub-5. Bookend entry for the redesign work begun in Sub-1.
+- Files:
+  - `PROJECT_EVOLUTION_LOG.md` (this entry + redesign-v1 scorecard)
+  - `RELEASE_NOTES_v1.0.0.md` (new — consolidated release notes for the redesign)
+- Change: Ran the dev-side verification suite that this environment can execute, documented the post-deploy verification procedure for the items that can only be measured against production (Mozilla Observatory rescan, CISA-style external scan, Lighthouse-against-CloudFront), and assembled the redesign scorecard.
+
+#### Dev-side verification PASSED
+- `zola build` clean: 12 pages + 1 section, zero errors, zero warnings.
+- Token-parity gate (`scripts/check-token-parity.sh`) passes — Sub-2 SOT integrity intact.
+- Inline-content audit: **0 inline executable scripts, 0 inline `<style>` blocks** across all 12 site HTML files (signature-page on its separate CloudFront behavior excluded). 15 JSON-LD `<script type="application/ld+json">` blocks remain — these are data per W3C CSP §6.6.4.2 and Sub-4's generator filter correctly excludes them from `script-src`.
+- Broken-link / dead-asset scan over built `public/`: **0 broken**.
+- Visual smoke (desktop, all 5 audited pages): `/`, `/about/`, `/services/`, `/security-policy/`, `/blog/` all render with the new top-bar nav, IT+HELP wordmark logo, and consistent chrome. Hero animation correctly scoped to `/` only (no leakage onto sub-pages — verified by direct inspection of each route).
+
+#### Bonus finding — COEP `require-corp` is now safe to promote
+- Sub-4 deferred COEP per the plan caveat that requires a "subresource crawl of every built page proving zero cross-origin loads." That crawl ran here and returned **0 external subresources** across all site pages (script src, img src, link rel=stylesheet/preload/icon, iframe, etc.). The site uses zero CDN-served assets, zero Google Fonts, zero embedded media.
+- Recommendation: a follow-up Sub-4-bis PR can add `Cross-Origin-Embedder-Policy: same-origin` (or `require-corp`) to `infra/cloudfront/csp-policy-v1.json` for the documented +5 Observatory bonus. Suggested verification gate is the same shell one-liner used here, wired into the `zola build` CI step so any future blog post adding an embed is caught before deploy.
+
+#### Pending production verification (post Sub-5 merge + deploy)
+The following deliverables from `port-checklist.md` Sub-5 require the live CloudFront-served production site (none can be measured against the dev server):
+1. **Mozilla Observatory rescan** of `https://www.it-help.tech/` and 3 sub-pages (`/about/`, `/services/`, `/security-policy/`). Target: ≥145. Submit at https://developer.mozilla.org/en-US/observatory/analyze?host=www.it-help.tech.
+2. **Lighthouse 100/100/100/100** on the same 5 audited pages, run via Chrome DevTools or `lighthouse https://www.it-help.tech/ --preset=desktop` against the CloudFront-served URLs.
+3. **CISA Cyber Hygiene-style external scan**: TLS rating, DNS records, SPF/DKIM/DMARC alignment, CAA, MTA-STS — confirm no regression vs the pre-redesign posture (e.g., Hardenize, ImmuniWeb, MX Toolbox).
+4. **axe-core a11y audit** against production URLs (browser extension or `@axe-core/cli`). Target: 0 violations on every page.
+5. **SRI smoke check**: open prod homepage in Chrome with DevTools → Console open. Expect zero "Failed to find a valid digest" or "Subresource Integrity" violations for `theme-init.js` (Sub-4 added integrity attribute, but dev-server CORS quirks suppress validation locally — only production exercises this code path).
+6. **Tag `corp-site-redesign-v1.0.0`** once the five checks above pass. Suggested commit: the merge commit of this PR.
+
+#### Redesign scorecard (Sub-1 → Sub-5)
+| Sub-agent | PR  | Status | Key win |
+|-----------|----:|--------|---------|
+| 1: IA & Content | #525 | merged | 5-section homepage, 6-anchor services, "intelligence brief" tone-of-voice |
+| 2: Design Tokens | #526 | merged | tokens.css/SOT, dark-theme baseline, parity CI gate, brand-block extension |
+| 3: Templates | #527 | merged | new top-bar nav, IT+HELP wordmark, hero scoped to homepage, footer org-tree |
+| 4: CSP Hardening | #528 | merged | CSP collapsed 2KB → 260B, zero hashes, COOP+CORP added |
+| 5: QA Gate | (this PR) | in flight | dev-side verification PASS; production rescans documented for post-deploy |
+
+#### Non-negotiables verified (visually)
+- Red plus (`#ff0066`) — visible on `/` hero. Untouched. ✓
+- IT/HELP outline (`var(--brand-it-help-blue)` gradient) — visible on `/` hero AND in the new top-bar wordmark on every page. ✓
+- Math hero animation — `static/js/hero-logo.js` SHA confirmed unchanged across the entire redesign (`git log static/js/hero-logo.js` shows no edits since the redesign began). ✓
+- No tracking, no cookies, no JS frameworks — confirmed by external-subresource audit (0 external loads). ✓
+
+- Rollback: revert this branch's commits (`codex/sub5-qa-gate`).
+
+### 2026-04-17
 - Actor: AI (Sub-agent 4: CSP Hardening & CloudFront Policy)
 - Scope: Push Mozilla Observatory 130 → ≥145 by externalizing the last inline script + style and adding bonus security headers (per `.agent-transfer/plans/csp-tightening-plan.md`).
 - Files:
