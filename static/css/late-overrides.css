@@ -87,11 +87,11 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:var(--neutral-white)
 /* coloured spinning disc */
 .blob{
   position:absolute;
-  width:160px;height:160px;
+  width:200px;height:200px;
   top:70%;left:85%;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 30% 30%,rgba(var(--brand-blue-rgb),0.55) 0%,rgba(var(--brand-blue-rgb),0) 70%);
-  filter:blur(14px);
+  background:radial-gradient(circle at 30% 30%,rgba(var(--brand-blue-rgb),0.78) 0%,rgba(var(--brand-blue-rgb),0) 70%);
+  filter:blur(16px);
   animation:blob 25s linear infinite;
   pointer-events:none;
   z-index: 1;
@@ -100,15 +100,21 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:var(--neutral-white)
   to{transform:translate(-50%,-50%) rotate(360deg);}
 }
 
+/* 2026-04-17 (rev): Science background dialed UP per owner direction
+   ("the science animation needs to show up a little more — it looks a
+   little subdued, it's really cool and sciency, it needs to pop through").
+   Circuit grid opacity 0.10 → 0.22 and stroke alpha 0.46 → 0.62 — still
+   sits behind the owl + tagline, but the grid lines and constellation
+   nodes now read as a deliberate sciency layer instead of a faint wash. */
 .circuit-bg {
     position: absolute;
     inset: 0;
-    opacity: 0.1;
+    opacity: 0.22;
     pointer-events: none;
     z-index: 0;
     background-image: 
-        repeating-linear-gradient(0deg, rgba(var(--brand-blue-rgb), 0.46) 0, rgba(var(--brand-blue-rgb), 0.46) 1px, transparent 1px, transparent 40px),
-        repeating-linear-gradient(90deg, rgba(var(--brand-blue-rgb), 0.46) 0, rgba(var(--brand-blue-rgb), 0.46) 1px, transparent 1px, transparent 40px);
+        repeating-linear-gradient(0deg, rgba(var(--brand-blue-rgb), 0.62) 0, rgba(var(--brand-blue-rgb), 0.62) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(var(--brand-blue-rgb), 0.62) 0, rgba(var(--brand-blue-rgb), 0.62) 1px, transparent 1px, transparent 40px);
     animation: circuit-flow 20s linear infinite;
 }
 
@@ -117,7 +123,7 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:var(--neutral-white)
     inset: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
+    opacity: 0.82;
     pointer-events: none;
     display: block;
     z-index: 1;
@@ -176,7 +182,7 @@ html.switch .logo-constellation {
 }
 
 .hero-owl {
-    width: clamp(180px, 28vw, 320px);
+    width: clamp(120px, 18vw, 240px);
     height: auto;
     display: block;
     /* Subtle dark drop-shadow so the gold owl medallion lifts off the
@@ -189,7 +195,7 @@ html.switch .logo-constellation {
         padding: 0 0.5rem;
     }
     .hero-owl {
-        width: clamp(160px, 46vw, 240px);
+        width: clamp(108px, 28vw, 168px);
     }
 }
 
@@ -974,9 +980,9 @@ html:not(.switch) h6 a.gold-link:active {
    tactile, no color shift, since the banner is already final. */
 .topbar-banner {
     display: block;
-    height: clamp(28px, 3.6vw, 40px);
+    height: clamp(22px, 2.6vw, 30px);
     width: auto;
-    max-width: 70vw;
+    max-width: 60vw;
     transition: transform 0.18s ease;
 }
 .topbar-logo:hover .topbar-banner,
@@ -984,7 +990,7 @@ html:not(.switch) h6 a.gold-link:active {
     transform: translateY(-1px);
 }
 @media (max-width: 380px) {
-    .topbar-banner { height: 26px; }
+    .topbar-banner { height: 22px; }
 }
 
 /* --- Hamburger checkbox (CSS-only, no JS) --- */
