@@ -116,6 +116,13 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:var(--neutral-white)
         repeating-linear-gradient(0deg, rgba(var(--brand-blue-rgb), 0.62) 0, rgba(var(--brand-blue-rgb), 0.62) 1px, transparent 1px, transparent 40px),
         repeating-linear-gradient(90deg, rgba(var(--brand-blue-rgb), 0.62) 0, rgba(var(--brand-blue-rgb), 0.62) 1px, transparent 1px, transparent 40px);
     animation: circuit-flow 20s linear infinite;
+    /* Architect-recommended top fade: the decorative grid lines and dots
+       can clip hard against the sticky topbar's bottom edge, amplifying
+       the perceived seam. A 56px linear mask at the top fades the
+       pattern in smoothly, so the topbar/hero junction reads as a
+       continuous surface rather than a content boundary. */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,1) 56px);
+    mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,1) 56px);
 }
 
 .logo-constellation {
@@ -127,6 +134,10 @@ html:not(.switch) h3 a,html:not(.switch) h3 a:visited{color:var(--neutral-white)
     pointer-events: none;
     display: block;
     z-index: 1;
+    /* Same top-fade as .circuit-bg — keeps the constellation dots from
+       butting hard against the topbar edge. */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,1) 56px);
+    mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,1) 56px);
 }
 
 /* Light backgrounds need extra contrast so the constellation pattern reads clearly. */
@@ -943,43 +954,67 @@ html:not(.switch) h6 a.gold-link:active {
    (more reliably retained through the prod PurgeCSS pipeline). See that
    file for the full rule and the reasoning. */
 
-/* --- Top bar shell ---
-   2026-04-17 (rev): Apple-style glass surface — sticky bar with backdrop
-   blur + saturate, token-driven translucent fill so the science layer
-   reads through subtly without the topbar going invisible. The
-   color-mix() variant gives both themes consistent translucency from a
-   single source token. Older WebKit gracefully ignores color-mix() and
-   falls back to the rgba() rule below. */
+/* --- Top bar shell — stratified surface treatment ---
+   Architect-validated fix for the persistent mobile/iPad seam:
+   the perceived "line" under the topbar is a SURFACE DISCONTINUITY,
+   not a border. The previous color-mix() block tinted the topbar with
+   --surface-charcoal (a charcoal grey) while body bg is --c1 (the
+   dark navy in dark mode and white in light mode), so the topbar
+   always read as a different surface than
+   the page below. backdrop-filter on sticky elements also creates a
+   device-dependent compositor edge on iOS/iPadOS that no border
+   removal can erase.
+
+   Stratification:
+   1) BASE (all viewports): solid surface that EXACTLY matches body bg
+      (--c1). No blur, no border, no compositor hint. By construction
+      there is no chroma/luminance step, therefore no seam.
+   2) DESKTOP (≥961px AND fine pointer + hover): re-enable the Apple
+      glass aesthetic + WCAG 1.4.11 gold hairline — but mix from --c1
+      (the actual body color) instead of --surface-charcoal so even
+      the translucent state stays visually continuous with the page.
+   3) TOUCH override (hover:none OR pointer:coarse): force the solid
+      treatment regardless of width — catches iPad landscape (which
+      can exceed 960px) and any touch laptop. */
 .topbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(13, 17, 23, 0.82);
-    -webkit-backdrop-filter: saturate(160%) blur(14px);
-    backdrop-filter: saturate(160%) blur(14px);
-    /* 2026-04-17 (architect rev): bumped border alpha from 18% → 38% so the
-       gold hairline meets WCAG 1.4.11 non-text-contrast (≥3:1) against the
-       dark glass surface and remains visible (but not garish) in light
-       theme. The fallback border below is also gold-tinted now so older
-       browsers still get the brand-aligned edge instead of a generic gray
-       hairline. */
-    border-bottom: 1px solid rgba(210, 181, 111, 0.38);
-    /* Promote to its own compositing layer so backdrop-filter doesn't repaint
-       the layers below on every scroll frame (Lighthouse Performance + low-
-       end Android win). transform: translateZ(0) is the most portable hint;
-       will-change is added narrowly to backdrop-filter only — broader hints
-       can balloon memory on iOS. */
-    transform: translateZ(0);
-    will-change: backdrop-filter;
+    background: var(--c1);
+    border-bottom: 0;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 }
-@supports (background: color-mix(in oklab, red, blue)) {
+@media (min-width: 961px) and (hover: hover) and (pointer: fine) {
     .topbar {
-        background: color-mix(in oklab, var(--surface-charcoal) 82%, transparent);
-        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 38%, transparent);
+        background: rgba(13, 17, 23, 0.82);
+        -webkit-backdrop-filter: saturate(160%) blur(14px);
+        backdrop-filter: saturate(160%) blur(14px);
+        border-bottom: 1px solid rgba(210, 181, 111, 0.38);
+        transform: translateZ(0);
+        will-change: backdrop-filter;
     }
-    html.switch .topbar {
-        background: color-mix(in oklab, var(--neutral-white) 82%, transparent);
-        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 42%, transparent);
+    @supports (background: color-mix(in oklab, red, blue)) {
+        .topbar {
+            background: color-mix(in oklab, var(--c1) 82%, transparent);
+            border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 38%, transparent);
+        }
+        html.switch .topbar {
+            background: color-mix(in oklab, var(--c1) 82%, transparent);
+            border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 42%, transparent);
+        }
+    }
+}
+@media (hover: none), (pointer: coarse) {
+    .topbar {
+        background: var(--c1);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border-bottom: 0;
+        box-shadow: none;
+        transform: none;
+        will-change: auto;
     }
 }
 .topbar-inner {
@@ -1207,20 +1242,11 @@ html:not(.switch) h6 a.gold-link:active {
 @media (max-width: 960px) {
     .topbar-nav-toggle-label { display: inline-block; }
 
-    /* 2026-04-17 (rev): on mobile/compact widths, drop the topbar's gold
-       bottom hairline. The 38% gold border was added in the prior polish
-       pass for desktop UI-component contrast (WCAG 1.4.11), but on mobile
-       it reads as a stray seam — and when the drawer toggles open/closed
-       it transitions between gold and transparent, which calls attention
-       to the line as a flicker. On mobile the glass surface alone provides
-       sufficient separation from the science layer below; the drawer's
-       own border still terminates the open menu cleanly. WCAG 1.4.11
-       doesn't apply to purely decorative borders, so removing it here
-       is fully compliant. */
-    .topbar {
-        border-bottom: 0;
-        box-shadow: none;
-    }
+    /* Topbar surface treatment for this width is now handled by the
+       stratified base + touch override at the top of this file (which
+       guarantees the topbar matches body --c1 exactly with no blur,
+       no border, no compositor edge — eliminating the seam by
+       construction). No per-width override needed here. */
 
     .topbar-nav {
         position: absolute;
