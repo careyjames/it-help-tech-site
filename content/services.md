@@ -213,6 +213,16 @@ extra:
         "description": "Extraction of iPhone text messages for legal professionals, creating court-admissible reports.",
         "provider": { "@id": "https://www.it-help.tech/#business" }
       }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "Service",
+        "name": "Cross-Platform & Systems Work",
+        "description": "Unix, Linux, and Windows systems work alongside macOS — shell scripting, file servers, mixed-OS networks, and server diagnostics.",
+        "provider": { "@id": "https://www.it-help.tech/#business" }
+      }
     }
   ]
 }
@@ -323,6 +333,14 @@ extra:
     },
     {
       "@type": "Service",
+      "name": "Cross-Platform & Systems Work",
+      "serviceType": "Systems Engineering",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Unix, Linux, and Windows systems work alongside macOS — shell scripting, file servers, mixed-OS networks, and server diagnostics. A system is a system.",
+      "url": "https://www.it-help.tech/services/#cross-platform"
+    },
+    {
+      "@type": "Service",
       "name": "Managed Agent (Opt-In, $50/Device)",
       "serviceType": "Managed Endpoint Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
@@ -334,7 +352,7 @@ extra:
 </script>
 
 
-Six service pillars, organized by the problem they solve. No retainers, no lock-in, no padded hours — just clear billing for actual work performed.
+Seven service pillars, organized by the problem they solve. No retainers, no lock-in, no padded hours — just clear billing for actual work performed.
 
 ## Mac & Apple Ecosystem {#mac}
 
@@ -379,6 +397,16 @@ Endpoint defense, mobile device security, and remote support that respects clien
 ## Forensic Data Extraction {#data-extraction}
 
 For law firms and legal professionals: structured extraction of email and iPhone iMessages into court-admissible, timestamped PDF reports suitable for litigation and eDiscovery. The work is done **on-site, on your equipment, so the data never leaves your office.** After the first engagement we document the process so your team can repeat it without us.
+
+## Cross-Platform & Systems Work {#cross-platform}
+
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. We engage the problem, not the logo. The same instinct for reading logs, tracing packets, and reasoning from evidence applies whether the prompt is `$`, `#`, or `C:\>`.
+
+* **Shell scripting and automation** — Bash, Zsh, and PowerShell for repeatable, auditable operations instead of click-by-click drift.
+* **File servers and shared storage** — SMB and NFS that hold up across macOS, Windows, and Linux clients without permissions roulette.
+* **Mixed-OS networks** — identity, DNS, printing, and file sharing that behave the same on every desk, regardless of operating system.
+* **Server diagnostics** — Linux and Windows server troubleshooting from the logs up: systemd, journalctl, Event Viewer, and the boring fundamentals that vendor dashboards skip.
+* **Cross-platform migrations** — moving users, data, and workflows between macOS, Windows, and Linux without losing fidelity along the way.
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 

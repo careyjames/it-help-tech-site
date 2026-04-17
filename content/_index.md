@@ -247,8 +247,8 @@ Bespoke wireless and wired networks for large homes, estates, and small offices.
 ### <a href="/services/#dns-email" class="gold-link">Email Deliverability &amp; DNS Forensics</a>
 We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. <a href="/services/#dns-email" class="gold-link">Learn more →</a>
 
-### <a href="/services/" class="gold-link">Cross-Platform Systems Engineering</a>
-macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. <a href="/services/" class="gold-link">Learn more →</a>
+### <a href="/services/#cross-platform" class="gold-link">Cross-Platform Systems Engineering</a>
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. <a href="/services/#cross-platform" class="gold-link">Learn more →</a>
 
 ## Trust signals
 
