@@ -68,10 +68,14 @@ jobs:
           cp -r static/images public/
           cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg public/
 
-      - name: Verify no external subresources (COEP require-corp gate)
-        # Fails the deploy if any built page loads a cross-origin script/style/image/iframe/etc.
-        # Required because csp-policy-v1.json sets Cross-Origin-Embedder-Policy: require-corp.
-        # See infra/cloudfront/csp-policy-v1.json and PROJECT_EVOLUTION_LOG.md (Sub-4-bis).
+      - name: Verify no external subresources (advisory)
+        # Was the COEP require-corp safety net (Sub-4-bis). COEP was rolled back
+        # because Safari blocks the page under require-corp when same-origin S3
+        # assets do not carry per-asset CORP headers (CloudFront response-headers
+        # policy only attaches to the document, not the S3-served assets).
+        # Kept as an advisory check so future external embeds get flagged in the
+        # build log even though they no longer break security headers.
+        # See PROJECT_EVOLUTION_LOG.md (2026-04-17 Hotfix · Revert COEP).
         run: ./scripts/check-no-external-subresources.sh
 
       - name: Update CloudFront signature-pages security headers policy (CSP)
