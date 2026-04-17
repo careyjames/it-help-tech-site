@@ -37,9 +37,12 @@
       <span class="topbar-sublocation" aria-hidden="true">san diego</span>
     </a>
 
-    {# CSS-only mobile hamburger via checkbox-hack: zero JS, CSP-safe. #}
-    <input type="checkbox" id="topbar-nav-toggle" class="topbar-nav-toggle-checkbox" aria-hidden="true">
-    <label for="topbar-nav-toggle" class="topbar-nav-toggle-label" aria-label="Toggle navigation menu">
+    {# CSS-only mobile hamburger via checkbox-hack: zero JS, CSP-safe.
+       The input IS the keyboard-accessible interactive element (Space toggles
+       it), so it must NOT be aria-hidden. Accessible name lives on the input
+       itself; the label remains the visual click target wrapping the icon. #}
+    <input type="checkbox" id="topbar-nav-toggle" class="topbar-nav-toggle-checkbox" aria-label="Toggle navigation menu">
+    <label for="topbar-nav-toggle" class="topbar-nav-toggle-label">
       <svg viewBox="0 0 24 24" width="28" height="28"
            fill="none" stroke="currentColor"
            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

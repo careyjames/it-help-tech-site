@@ -13,6 +13,32 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (a11y · Lighthouse axe fixes — aria-hidden focusable + skip-link contrast)
+- Actor: AI (Replit Agent)
+- Severity: MEDIUM (real Lighthouse failures from production audit; affects screen-reader users + keyboard users)
+- Trigger: Owner ran a fresh Lighthouse audit on production and surfaced two failing rules.
+- Files:
+  - `templates/base.html`:
+    - Removed `aria-hidden="true"` from the CSS-only hamburger checkbox `<input id="topbar-nav-toggle">`. axe-core correctly flagged it: the input is keyboard-focusable (Space toggles it) and IS the actual interactive element for screen-reader and keyboard users — it must not be hidden from the a11y tree.
+    - Moved `aria-label="Toggle navigation menu"` from the `<label>` to the input. The input now carries the accessible name; the label remains the visual click target wrapping the SVG icon. Sighted/mouse behavior unchanged.
+  - `sass/_extra.scss`:
+    - Added a hardened `a.skip-link` rule (and `:focus`/`:focus-visible`) using `--neutral-black` on `--brand-blue` (~9:1 contrast, above WCAG AAA). Specificity `a.skip-link` (0,1,1) beats the global `a { color: var(--a1) }` rule (0,0,1) regardless of source order or future cascade additions.
+    - Lives in `_extra.scss` (compiled into `abridge.css`) instead of `late-overrides.css` so the rule rides in the most reliably-retained stylesheet through prod PurgeCSS — the original failure mode was that a previous deploy's broken purge glob silently stripped `.skip-link` from `late-overrides.css`, leaving the link to inherit the global blue link color on a non-existent background.
+    - Explicit `color`/`background` repeated in the `:focus` block as defense in depth.
+  - `static/css/late-overrides.css`:
+    - Removed the now-duplicated `.skip-link` and `.skip-link:focus` rules; replaced with a comment pointer to `_extra.scss` so the next maintainer doesn't re-add them.
+- Why: Two real, failing Lighthouse axe rules from a fresh production audit:
+  1. `[aria-hidden="true"] elements contain focusable descendents` on the nav toggle input.
+  2. `Background and foreground colors do not have a sufficient contrast ratio` on the skip-link.
+  Both block WCAG AA conformance and would degrade the Accessibility score.
+- Verification:
+  - `scripts/check-token-parity.sh`: PASS (no hex literals leaked)
+  - `zola build`: clean
+  - Compiled `index.html` confirms input renders as `<input aria-label="Toggle navigation menu" class=topbar-nav-toggle-checkbox id=topbar-nav-toggle type=checkbox>` — no aria-hidden present.
+  - PurgeCSS dry-run: `a.skip-link` survives in `abridge.css`; Phase-1 print block + reduced-motion still preserved in `late-overrides.css`.
+- Pending: Production re-audit after deploy to confirm both axe rules clear.
+- Rollback: revert commit `22c5701`.
+
 ### 2026-04-17 (Polish · Phase 1 — a11y motion + print stylesheet + form baseline)
 - Actor: AI (Replit Agent)
 - Severity: LOW (pure additions; only one existing rule modified — extending a selector list in the existing `prefers-reduced-motion` block)

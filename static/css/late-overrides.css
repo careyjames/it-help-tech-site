@@ -872,24 +872,9 @@ html:not(.switch) h6 a.gold-link:active {
    ============================================================================ */
 
 /* --- Skip link (a11y) --- */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    padding: 8px 14px;
-    background: var(--brand-blue);
-    color: var(--neutral-black);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 0 0 6px 0;
-    z-index: 9999;
-    transition: top 0.18s ease;
-}
-.skip-link:focus {
-    top: 0;
-    outline: 2px solid var(--brand-gold-solid);
-    outline-offset: 2px;
-}
+/* .skip-link styling moved to sass/_extra.scss so it rides in abridge.css
+   (more reliably retained through the prod PurgeCSS pipeline). See that
+   file for the full rule and the reasoning. */
 
 /* --- Top bar shell --- */
 .topbar {
