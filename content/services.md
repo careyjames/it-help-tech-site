@@ -365,7 +365,7 @@ We resolve email deliverability and domain-security problems by going to the wir
 * **DNS edits and configuration** for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
 * **DMARC enforcement** to `p=reject`, staged carefully through monitor and quarantine.
 * **Website and domain recovery** when access has been lost.
-* **Public research platform:** [dns.it-help.tech](https://dns.it-help.tech) — the same diagnostic depth we apply to client domains, available for anyone to use.
+* **Public research platform:** [dnstool.it-help.tech](https://dnstool.it-help.tech) — the same diagnostic depth we apply to client domains, available for anyone to use.
 
 ## Cybersecurity & Ethical Screen Sharing {#cybersecurity}
 
