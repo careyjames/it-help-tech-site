@@ -1,0 +1,68 @@
+// ============================================================================
+// IT-HELP-SAN-DIEGO — DESIGN TOKENS v1 (SCSS mirror of tokens.css)
+//
+// Use this in sass/_extra.scss or sass/css/abridge.scss when SCSS-time
+// computation is needed (e.g., color functions, mixins). For runtime
+// theming, prefer tokens.css custom properties — they're zero-cost to
+// switch and match dns-tool conventions.
+//
+// Single source of truth: tokens.css. This file MUST be regenerated
+// from tokens.css if values change. Drift is a release-gate failure.
+// ============================================================================
+
+// --- Backgrounds ---
+$bg-primary:   #0d1117;
+$bg-secondary: #161b22;
+$bg-tertiary:  #21262d;
+$bg-elevated:  #30363d;
+
+// --- Text ---
+$text-primary:   rgba(230, 237, 243, 0.9);
+$text-secondary: #9ca3af;
+
+// --- Status (Layer 1) ---
+$status-success: #3fb950;
+$status-warning: #e3b341;
+$status-danger:  #f85149;
+$status-info:    #c8956a;
+$status-neutral: #8b949e;
+
+// --- Accents (Layer 4) ---
+$accent-steel:        #9a8f82;
+$accent-deep:         #3d2e1f;
+$accent-violet:       #c8956a;
+$accent-violet-hover: #d4a87d;
+$accent-cyan:         #d4a853;
+$accent-cobalt:       #b8a089;
+$accent-gold:         #d4a853;
+$accent-gold-muted:   #c9a84c;
+$accent-amber:        #e8b54a;
+
+// --- Borders ---
+$border-default: #30363d;
+$border-muted:   #30363d;
+
+// --- Brand non-negotiables ---
+$brand-it-help-red:  #e8195e;
+$brand-it-help-blue: #4a8fdf;
+$brand-it-help-gray: #9aa0a6;
+
+// --- Typography stacks ---
+$font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+            system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// --- Spacing (8pt grid) ---
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-8: 3rem;
+
+// --- Radii ---
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 10px;

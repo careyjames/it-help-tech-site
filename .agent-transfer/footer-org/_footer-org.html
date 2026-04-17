@@ -1,0 +1,124 @@
+{# ===========================================================================
+   IT-HELP-SAN-DIEGO — Footer Org-Tree partial
+   Adapted from dns-tool-intel go-server/templates/_footer.html for Zola/Tera.
+
+   USAGE:
+   {% include "partials/_footer-org.html" %}
+
+   This partial renders ONLY the organizational structure — the IT Help San
+   Diego corp tree. The visual styling lives in static/css/_footer-org.css.
+
+   Conversion notes (vs. dns-tool original):
+   - Go template syntax  {{ ... }}  →  Tera  {{ ... }} (compatible at face)
+   - Go {{icon "name"}}  →  inline SVG sprite refs (Zola has no helper);
+     using <svg class="ftr-icon"><use href="#i-name"/></svg>. Define sprite
+     once in base layout: see footer-org/SPRITE.svg in this package.
+   - "Research Department" / "DNS Tool" / "Professional Consulting" branches
+     replaced with corp-site service hierarchy (see ADAPTATION_NOTES.md).
+   - Removed dns-tool-only links: /corpus, /publications, /case-study,
+     /confidence, /topology, /roe, /owl-semaphore, /black-site, /agent/plugin.
+   =========================================================================== #}
+
+<nav class="ftr-tree" aria-label="Organizational structure">
+
+    <div class="ftr-copyright">
+        <span>&copy; {{ now() | date(format="%Y") }}</span>
+        <a href="https://github.com/IT-Help-San-Diego" target="_blank" rel="noopener">
+            <svg class="ftr-icon" aria-hidden="true"><use href="#i-building"/></svg>
+            IT Help San Diego Inc.
+        </a>
+        <span>All rights reserved.</span>
+    </div>
+
+    {# --- Registration row: Delaware (left), California (right) --- #}
+    <div class="ftr-org">
+        <div class="ftr-org-reg">
+            <div class="ftr-org-reg-left">
+                <a href="https://opencorporates.com/companies/us_de/10191352" target="_blank" rel="noopener" class="ftr-node">
+                    <svg class="ftr-icon" aria-hidden="true"><use href="#i-landmark"/></svg>
+                    Incorporated in Delaware
+                </a>
+                <div class="ftr-org-reg-arm"></div>
+            </div>
+            <div class="ftr-org-reg-right">
+                <div class="ftr-org-reg-arm"></div>
+                <a href="https://opencorporates.com/companies/us_ca/B20250124081" target="_blank" rel="noopener" class="ftr-node">
+                    <svg class="ftr-icon" aria-hidden="true"><use href="#i-landmark"/></svg>
+                    Foreign Entity in California
+                </a>
+            </div>
+        </div>
+
+        {# --- Department row: Consulting (left, primary), Research/DNS Tool (right) --- #}
+        <div class="ftr-org-dept">
+            <div class="ftr-org-dept-left">
+                <div class="ftr-org-dept-left-col">
+                    <div class="ftr-org-dept-left-top">
+                        <a href="/services" class="ftr-node">
+                            <svg class="ftr-icon" aria-hidden="true"><use href="#i-briefcase"/></svg>
+                            Concierge IT Consulting
+                        </a>
+                        <div class="ftr-org-dept-arm"></div>
+                    </div>
+                    <div class="ftr-vline"></div>
+                    <a href="https://schedule.it-help.tech" target="_blank" rel="noopener" class="ftr-node ftr-node--project">
+                        <svg class="ftr-icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                        Book On-Site Visit
+                    </a>
+                </div>
+            </div>
+            <div class="ftr-org-dept-right">
+                <div class="ftr-org-dept-arm"></div>
+                <a href="https://dns.it-help.tech" target="_blank" rel="noopener" class="ftr-node">
+                    <svg class="ftr-icon" aria-hidden="true"><use href="#i-brain"/></svg>
+                    DNS Tool (Research Platform)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {# --- 4-column drop-down connectors --- #}
+    <div class="ftr-grid-connector">
+        <div class="ftr-grid-bar"></div>
+        <div class="ftr-grid-drops">
+            <div class="ftr-grid-drop"><div class="ftr-vline"></div></div>
+            <div class="ftr-grid-drop"><div class="ftr-vline"></div></div>
+            <div class="ftr-grid-drop"><div class="ftr-vline"></div></div>
+            <div class="ftr-grid-drop"><div class="ftr-vline"></div></div>
+        </div>
+    </div>
+
+    {# --- 4-cell link grid: Services / Expertise / Trust / Company --- #}
+    <div class="ftr-grid">
+        <div class="ftr-cell">
+            <span class="ftr-heading"><svg class="ftr-icon" aria-hidden="true"><use href="#i-tools"/></svg> Services</span>
+            <a href="/services#mac" class="ftr-link">macOS &amp; iOS Support</a>
+            <a href="/services#wifi" class="ftr-link">Wi-Fi &amp; Networking</a>
+            <a href="/services#dns-email" class="ftr-link">DNS &amp; Email Deliverability</a>
+            <a href="/services#cybersecurity" class="ftr-link">Cybersecurity</a>
+            <a href="/services#data-extraction" class="ftr-link">Forensic Data Extraction</a>
+        </div>
+        <div class="ftr-cell">
+            <span class="ftr-heading"><svg class="ftr-icon" aria-hidden="true"><use href="#i-microchip"/></svg> Expertise</span>
+            <a href="/about" class="ftr-link">25+ Years Experience</a>
+            <a href="/about#clients" class="ftr-link">High-Profile Clients</a>
+            <a href="https://dns.it-help.tech" target="_blank" rel="noopener" class="ftr-link">Research Platform</a>
+            <a href="/blog" class="ftr-link">Field Notes</a>
+        </div>
+        <div class="ftr-cell">
+            <span class="ftr-heading"><svg class="ftr-icon" aria-hidden="true"><use href="#i-shield"/></svg> Trust</span>
+            <a href="/security-policy" class="ftr-link">Security Policy</a>
+            <a href="/billing" class="ftr-link">Billing &amp; Pricing</a>
+            <a href="https://dns.it-help.tech/privacy" target="_blank" rel="noopener" class="ftr-link">Privacy</a>
+            <a href="/brand-colors" class="ftr-link">Brand Colors</a>
+        </div>
+        <div class="ftr-cell">
+            <span class="ftr-heading"><svg class="ftr-icon" aria-hidden="true"><use href="#i-building"/></svg> Company</span>
+            <a href="/about" class="ftr-link">About</a>
+            <a href="https://schedule.it-help.tech" target="_blank" rel="noopener" class="ftr-link">Schedule</a>
+            <a href="tel:+16198535008" class="ftr-link">(619) 853-5008</a>
+            <a href="https://github.com/IT-Help-San-Diego" target="_blank" rel="noopener" class="ftr-link">GitHub Org</a>
+        </div>
+    </div>
+
+</nav>
