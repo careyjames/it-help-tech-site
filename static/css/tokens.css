@@ -40,6 +40,13 @@
     --brand-gold-rgb:             194, 161, 90;
     --brand-gold-glow:            224, 197, 138;
     --brand-gold-ink:             #16120A;
+    /* Athenian-owl banner gold ramp — used by hero wordmark + topbar wordmark.
+       Mirrors the blue ramp shape (top/mid/bottom) so existing gradient
+       declarations can swap blue→gold token-for-token. Values picked to match
+       the metallic gold of the canonical brand banner medallion. */
+    --brand-logo-gold-top:        #E0C58A;
+    --brand-logo-gold-mid:        #D2B56F;
+    --brand-logo-gold-bottom:     #A8843E;
     /* Schedule-CTA blue ramps */
     --schedule-blue-top:          #6CAFEF;
     --schedule-blue-mid:          #3F86D8;
@@ -57,6 +64,9 @@
     --logo-blue-top:    var(--brand-logo-blue-top);
     --logo-blue-mid:    var(--brand-logo-blue-mid);
     --logo-blue-bottom: var(--brand-logo-blue-bottom);
+    --logo-gold-top:    var(--brand-logo-gold-top);
+    --logo-gold-mid:    var(--brand-logo-gold-mid);
+    --logo-gold-bottom: var(--brand-logo-gold-bottom);
     --accent-gold:      var(--brand-gold);
     --accent-gold-solid: var(--brand-gold-solid);
     --accent-gold-rgb:  var(--brand-gold-rgb);
