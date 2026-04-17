@@ -13,6 +13,23 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Sub-4-bis · COEP promotion)
+- Actor: AI (CSP follow-up)
+- Scope: Promote `Cross-Origin-Embedder-Policy: require-corp` and add a CI gate that prevents future blog posts / template changes from silently breaking it. This is the follow-up the Sub-5 entry below documented as "safe to ship now."
+- Files:
+  - `infra/cloudfront/csp-policy-v1.json` — added COEP header, Quantity 3 → 4
+  - `scripts/check-no-external-subresources.sh` — new CI gate
+  - `.github/workflows/deploy.yml` — wired the gate in after the asset-copy step, before the CSP-update step
+  - `PROJECT_EVOLUTION_LOG.md` — this entry
+- Change:
+  1. Appended `Cross-Origin-Embedder-Policy: require-corp` to `csp-policy-v1.json`'s `CustomHeadersConfig.Items`. `require-corp` (not `same-origin`, which is not a valid COEP value — that confusion is with COOP) is the strict variant Mozilla Observatory awards bonus points for. Safe to ship because Sub-5's subresource crawl returned zero external loads.
+  2. New CI gate `scripts/check-no-external-subresources.sh` parses every built `*.html` (excluding signature pages on their separate CF behavior) and fails with a clear error if it finds any cross-origin `<script src>`, `<link rel=stylesheet|preload|modulepreload|icon|manifest|mask-icon|apple-touch-icon|prefetch href>`, `<img src>`, `<iframe src>`, `<video src>`, `<audio src>`, `<source src>`, `<embed src>`, or `<object data>`. Verified locally: exits 0 against current `public/`.
+  3. Wired into `deploy.yml` as a new step between "Copy images and root files" and the CSP-update steps. Fails closed: if a future change introduces an external embed, the deploy aborts BEFORE the CSP/headers policy is updated, so production stays serving the previous (working) policy.
+- Why: One more Observatory bonus (COEP `require-corp` is +5 in the standard scoring), and a permanent safety net so the COEP header can never silently break.
+- Confirmed safe by: `update_policy.sh → generate_policy.py` only mutates `SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy`. It never touches `CustomHeadersConfig`. The new COEP header therefore survives every future CSP regeneration without special handling.
+- Optional future improvement (not in this PR): add a separate workflow job that runs the gate on PR (the current deploy job is gated on `event_name == 'push'`, so PRs only catch this at merge time). The gate is fast (<100ms) so a PR-time run is cheap.
+- Rollback: revert this branch's commits, or remove the COEP item from `csp-policy-v1.json` and bump Quantity 4 → 3.
+
 ### 2026-04-17
 - Actor: AI (Sub-agent 5: Quality-Gate Verification)
 - Scope: Final QA gate for the design-transfer/v1 redesign per `.agent-transfer/plans/port-checklist.md` Sub-5. Bookend entry for the redesign work begun in Sub-1.

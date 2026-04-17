@@ -68,6 +68,12 @@ jobs:
           cp -r static/images public/
           cp static/robots.txt static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg public/
 
+      - name: Verify no external subresources (COEP require-corp gate)
+        # Fails the deploy if any built page loads a cross-origin script/style/image/iframe/etc.
+        # Required because csp-policy-v1.json sets Cross-Origin-Embedder-Policy: require-corp.
+        # See infra/cloudfront/csp-policy-v1.json and PROJECT_EVOLUTION_LOG.md (Sub-4-bis).
+        run: ./scripts/check-no-external-subresources.sh
+
       - name: Update CloudFront signature-pages security headers policy (CSP)
         run: |
           if [ -n "${POLICY_ID_SIGNATURES:-}" ]; then
