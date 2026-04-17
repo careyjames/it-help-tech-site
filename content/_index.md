@@ -258,7 +258,13 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## The Method
 
-We treat each engagement as a small research problem. Before we touch a config, we capture the evidence — packet traces, mail headers, DNS responses, system logs — and reason from there. The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/" class="gold-link">Read the field notes →</a>
+**Deep-research diagnostics** — the principle is simple: we measure before we fix. A doctor runs labs before prescribing; we read the evidence the system is already producing before we touch a config.
+
+Most IT support pattern-matches symptoms to the usual fix and hopes it sticks. We start one step earlier: capture the primary evidence — packet traces, mail headers, DNS responses, system logs, RF readings — and reason from there. The fix is whatever the evidence demands, not whatever the script says.
+
+A working example: when client mail goes to spam, the off-the-shelf answer is "buy a warmup tool." The evidence-led answer is to read the failed DMARC reports, find the one sending service that's misaligned, and fix the DNS so SPF, DKIM, and DMARC line up against the actual sending surface. Mail lands. No subscriptions added.
+
+The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/it-problem-solving-scientific-method/" class="gold-link">Read the field notes →</a>
 
 ## Local credibility
 
