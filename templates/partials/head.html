@@ -1,21 +1,15 @@
-{% set critical_css = load_data(path="static/css/critical.min.css") %}
 <meta charset="utf-8" />
-<script>
-  // Prevent a flash of the wrong theme before CSS loads.
-  (function () {
-    try {
-      if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.classList.add('switch');
-      }
-    } catch (error) {
-      // localStorage can throw in privacy-restricted contexts; keep default theme.
-      if (typeof console !== 'undefined' && typeof console.debug === 'function') {
-        console.debug('Theme preference storage unavailable:', error);
-      }
-    }
-  })();
-</script>
-<style>{{- critical_css | safe -}}</style>
+{# --- Theme-flash guard (externalized for CSP — Sub-4). Blocking on purpose:
+       must run before paint to apply the stored light/dark preference. --- #}
+<script src="{{ get_url(path='js/theme-init.js', trailing_slash=false, cachebust=true) | safe }}"
+        integrity="sha384-{{ get_hash(path='js/theme-init.js', sha_type=384, base64=true) | safe }}"
+        crossorigin="anonymous"></script>
+
+{# --- Critical above-the-fold CSS (externalized for CSP — Sub-4).
+       Tiny (~850B), same-origin, edge-cached: render-blocking cost is negligible
+       and the inline-style CSP hash is no longer required. --- #}
+<link rel="stylesheet"
+      href="{{ get_url(path='css/critical.min.css', trailing_slash=false, cachebust=true) | safe }}">
 
 {#
   Preload the page's main portrait image only when it exists. This
@@ -56,13 +50,6 @@
 {%- if config.extra.search_library and config.extra.search_library == "offline" %}
   {% set integrity = false %}
 {%- endif %}
-
-<noscript>
-  <link rel="stylesheet" href="{{ get_url(path='critical-inline.css') | safe }}">
-</noscript>
-
-{# --- Critical hero styling uses CSP nonce --- #}
-
 
 {# --- Style Sheets --- #}
 {%- set stylesheets = config.extra.stylesheets | default(value=[ "css/abridge.css" ]) -%}
