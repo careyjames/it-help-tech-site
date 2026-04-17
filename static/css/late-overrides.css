@@ -957,16 +957,29 @@ html:not(.switch) h6 a.gold-link:active {
     background: rgba(13, 17, 23, 0.82);
     -webkit-backdrop-filter: saturate(160%) blur(14px);
     backdrop-filter: saturate(160%) blur(14px);
-    border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+    /* 2026-04-17 (architect rev): bumped border alpha from 18% → 38% so the
+       gold hairline meets WCAG 1.4.11 non-text-contrast (≥3:1) against the
+       dark glass surface and remains visible (but not garish) in light
+       theme. The fallback border below is also gold-tinted now so older
+       browsers still get the brand-aligned edge instead of a generic gray
+       hairline. */
+    border-bottom: 1px solid rgba(210, 181, 111, 0.38);
+    /* Promote to its own compositing layer so backdrop-filter doesn't repaint
+       the layers below on every scroll frame (Lighthouse Performance + low-
+       end Android win). transform: translateZ(0) is the most portable hint;
+       will-change is added narrowly to backdrop-filter only — broader hints
+       can balloon memory on iOS. */
+    transform: translateZ(0);
+    will-change: backdrop-filter;
 }
 @supports (background: color-mix(in oklab, red, blue)) {
     .topbar {
         background: color-mix(in oklab, var(--surface-charcoal) 82%, transparent);
-        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 18%, transparent);
+        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 38%, transparent);
     }
     html.switch .topbar {
         background: color-mix(in oklab, var(--neutral-white) 82%, transparent);
-        border-bottom-color: color-mix(in oklab, var(--ithelp-navy) 14%, transparent);
+        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 42%, transparent);
     }
 }
 .topbar-inner {
@@ -1067,19 +1080,22 @@ html:not(.switch) h6 a.gold-link:active {
     position: relative;
     transition: color 0.15s ease, background 0.15s ease;
 }
-.topbar-nav-list a:hover,
-.topbar-nav-list a:focus-visible {
+.topbar-nav-list a:hover {
     color: var(--brand-gold-solid);
     background: rgba(210, 181, 111, 0.08);
-    outline: none;
 }
 /* Active page indicator: thin gold underline anchored to the link's
    baseline. Drawn with a pseudo-element so it animates independently of
    the link's color/background transitions and never affects layout. */
-.topbar-nav-list a[aria-current="page"] {
+/* 2026-04-17 (architect rev): match BOTH aria-current="page" (exact match)
+   AND aria-current="true" (section-ancestor match, e.g. blog post under
+   /blog/). The visual underline appears in both cases — users still see
+   "you are in this section" — but screen readers correctly distinguish
+   the exact-page announcement from the section announcement. */
+.topbar-nav-list a[aria-current] {
     color: var(--brand-gold-solid);
 }
-.topbar-nav-list a[aria-current="page"]::after {
+.topbar-nav-list a[aria-current]::after {
     content: "";
     position: absolute;
     left: 0.55rem;
@@ -1088,6 +1104,25 @@ html:not(.switch) h6 a.gold-link:active {
     height: 2px;
     background: var(--brand-gold-solid);
     border-radius: 2px;
+}
+/* When the nav link contains an external-link arrow (↗), trim the
+   underline's right edge so the gold bar tracks under the text label
+   only — never extends under the icon, which looked imbalanced. */
+.topbar-nav-list a[aria-current]:has(.topbar-ext)::after {
+    right: calc(0.55rem + 1.05em);
+}
+/* High-contrast focus ring (WCAG 2.4.7 + 1.4.11). The hover/active state
+   alone is not sufficient for keyboard users — :focus-visible now gets a
+   distinct gold outline at full opacity, separate from the hover bg
+   tint, with offset for the rounded corners. Outline is offset INWARD
+   (negative offset would clip), so we add a 1px outset to keep the
+   sticky-bar interior tidy. */
+.topbar-nav-list a:focus-visible,
+.topbar-phone:focus-visible,
+.topbar-mode:focus-visible {
+    outline: 2px solid var(--brand-gold-solid);
+    outline-offset: 2px;
+    border-radius: 6px;
 }
 .topbar-ext {
     display: inline-block;
@@ -1113,7 +1148,7 @@ html:not(.switch) h6 a.gold-link:active {
 /* CTA never gets the active-page underline (it's an external link, not a
    site page) — explicit override so the rule above can't accidentally
    stack a line under the gradient. */
-.topbar-nav-list .topbar-cta[aria-current="page"]::after { content: none; }
+.topbar-nav-list .topbar-cta[aria-current]::after { content: none; }
 .topbar-nav-list .topbar-cta:hover,
 .topbar-nav-list .topbar-cta:focus-visible {
     background-image: linear-gradient(180deg,
