@@ -227,75 +227,41 @@ twitter_card        = "summary_large_image"
 <!-- Homepage hero heading -->
 <section class="homepage-hero">
   <h1 class="hero">
-    Mac IT Support in San Diego (La Jolla)
+    We solve tech problems. No monthly retainers.
   </h1>
+  <p class="hero-subtagline">Apple-centric IT, deep-research diagnostics, San Diego concierge.</p>
 </section>
 
-<p class="intro">
-Apple-centric IT support for homes &amp; SMBs across San Diego County. macOS/iOS, Wi‑Fi, DNS, and email deliverability (SPF/DKIM/DMARC). On‑site, in‑home, or La Jolla office by appointment. Clear answers &amp; discreet service. <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
-</p>
+<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On‑Site Visit</a></p>
+<p><a class="cta-button cta-secondary" href="https://dns.it-help.tech" target="_blank" rel="noopener noreferrer">See Our Research</a></p>
+
+## What we do
+
+### <a href="/services/#mac" class="gold-link">Mac &amp; Apple Ecosystem</a>
+macOS, iOS, iCloud, and Apple Mail diagnosed at the system level. Storage, sync, performance, and migration handled correctly the first time. <a href="/services/#mac" class="gold-link">Learn more →</a>
+
+### <a href="/services/#wifi" class="gold-link">Wi‑Fi &amp; Network Engineering</a>
+Bespoke wireless and wired networks for large homes, estates, and small offices. Cat6A/Cat8/fiber backbones, mesh design, and dead-zone elimination using measured RF data, not guesswork. <a href="/services/#wifi" class="gold-link">Learn more →</a>
+
+### <a href="/services/#dns-email" class="gold-link">Email Deliverability &amp; DNS Forensics</a>
+We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. <a href="/services/#dns-email" class="gold-link">Learn more →</a>
+
+## Trust signals
+
+- **25+ years** in the field, across macOS, networking, and DNS.
+- **High-profile clients** in entertainment, legal, restaurant, and medical sectors. Discretion comes standard; logos do not.
+- **Federal A+ DNS posture** on our own infrastructure — the same standards we apply to client domains.
+
+## The Method
+
+We treat each engagement as a small research problem. Before we touch a config, we capture the evidence — packet traces, mail headers, DNS responses, system logs — and reason from there. The same instinct produced our public DNS research platform at <a href="https://dns.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dns.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/" class="gold-link">Read the field notes →</a>
+
+## Local credibility
 
 <p class="nap">
 <strong>Office (by appointment):</strong> 888 Prospect Street Suite 200, La Jolla, CA 92037 • <a class="gold-link" href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer">Google Maps</a><br>
-<strong>Service area:</strong> San Diego County (including La Jolla, Del Mar, and greater San Diego)
+<strong>Service area:</strong> San Diego County, including La Jolla, Del Mar, and greater San Diego.<br>
+<strong>Phone:</strong> <a class="phone-line" href="tel:16198535008">(619) 853‑5008</a>
 </p>
 
-<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On‑Site Visit</a></p>
-<p><a class="gold-link" href="https://maps.app.goo.gl/hXw49HPZZkWU7s5E9" target="_blank" rel="noopener noreferrer">Read Google Reviews</a></p>    
-
-## Custom Solutions That Work for You  
-
-Our premium, concierge-level on-site tech support service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 25 years of experience supporting high-profile clients in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs. Have a Mac expert come to you.
-
-## Core Expertise
-
-We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
-Our key areas of deep expertise include:
-
-### <a href="/services/#macos-system" class="gold-link">macOS System &amp; Application Support</a>
-
-We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
-
-### <a href="/services/#network-wifi" class="gold-link">Network Infrastructure &amp; WiFi Troubleshooting</a>
-
-Spend more time at the beach, not fighting your WiFi.
-Specializing in large luxury homes and offices with extensive networking and WiFi needs.
-We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
-
-### <a href="/services/#email-domain-dns" class="gold-link">Advanced Email, Domain, &amp; DNS Solutions</a>
-
-Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery. 
-
-### <a href="/services/#cybersecurity" class="gold-link">Cybersecurity &amp; Ethical Screen Sharing</a>
-
-We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
-* **Ethical Screen Sharing:** We adhere to the highest security and ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
-
-### <a href="/services/#data-discovery" class="gold-link">Specialized Data Extraction Services</a>
-
-* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals.
-
-## Why Choose IT Help San Diego?
-
-* **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
-* **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable support.
-* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or assist via secure screen sharing and other remote tools.
-
-## Frequently Asked Questions
-
-### Can you help with PC, Linux, or mixed computer environments?
-Yes. Our primary expertise is macOS and iOS, including secure remote troubleshooting (including iPhone/iPad screen sharing when appropriate). We also support Windows and Linux in mixed environments, especially where identity, networking, and email deliverability overlap.
-
-### How is your service different from a Managed Service Provider (MSP)?
-We focus on transparent, on-demand help instead of locking clients into monthly fees. No long-term contracts or retainers—just clear billing for actual work performed. The incentive is to solve problems efficiently, not pad hours.
-
-### Do you fix cracked iPhone screens?
-No. We are not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients, we can do a concierge replacement: pick up a factory-fresh iPhone from Apple and migrate your data on-site while you watch. Prefer glass replacement? We can refer you to a vetted local technician.
-
-### Do you provide same-day service in La Jolla?
-Yes—schedule permitting. For most Mac, Wi‑Fi, or email issues we can often dispatch to La Jolla the same day.
-
-Tired of paying for a month of IT service when nothing happened?
-Ready to make your tech problems disappear?  
-
-<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On-Site Visit Now</a></p>
+<p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an On-Site Visit</a></p>
