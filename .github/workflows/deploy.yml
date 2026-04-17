@@ -44,7 +44,25 @@ jobs:
       - name: Purge unused CSS
         run: |
           npm install -g purgecss
-          purgecss --css public/css/*.css --content public/**/*.html --output public/css/ --safelist "phone-line" --safelist "particle" --safelist "is-copied" --safelist "is-copy-error"
+          # IMPORTANT: quote the --content glob.
+          # When unquoted, bash (without `globstar`) expands `public/**/*.html`
+          # to `public/*/*.html`, which matches files in IMMEDIATE subdirs only
+          # and silently SKIPS:
+          #   - public/index.html        (homepage — selectors only used here)
+          #   - public/404.html
+          #   - public/blog/<post>/index.html  (two levels deep)
+          # The result is PurgeCSS strips ~30 KB of homepage-specific rules
+          # (.hero-wrapper, .logo-container, .homepage-body, .homepage-hero,
+          #  .tech-particles, .main-logo, .tagline, .blob, .hex-decoration, …)
+          # from late-overrides.css, breaking the homepage in production.
+          # Quoting forces PurgeCSS's own glob lib (which honours `**`) to do
+          # the expansion correctly, recursively.
+          purgecss \
+            --css public/css/*.css \
+            --content "public/**/*.html" \
+            --output public/css/ \
+            --safelist "phone-line" --safelist "particle" \
+            --safelist "is-copied" --safelist "is-copy-error"
 
       - name: Minify CSS and hero JS (safe ship-time optimization)
         run: |
