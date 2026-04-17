@@ -227,7 +227,8 @@ twitter_card        = "summary_large_image"
 <!-- Homepage hero heading -->
 <section class="homepage-hero">
   <h1 class="hero">
-    We solve tech problems. No monthly retainers.
+    <span class="hero-line-primary">We solve tech problems.</span>
+    <span class="hero-line-secondary">No monthly retainers.</span>
   </h1>
   <p class="hero-subtagline">Apple-centric IT, deep-research diagnostics, San Diego concierge.</p>
 </section>

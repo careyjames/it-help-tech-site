@@ -1217,7 +1217,10 @@ html:not(.switch) h6 a.gold-link:active {
        own border still terminates the open menu cleanly. WCAG 1.4.11
        doesn't apply to purely decorative borders, so removing it here
        is fully compliant. */
-    .topbar { border-bottom-color: transparent; }
+    .topbar {
+        border-bottom: 0;
+        box-shadow: none;
+    }
 
     .topbar-nav {
         position: absolute;

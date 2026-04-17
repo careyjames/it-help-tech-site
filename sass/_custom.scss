@@ -18,6 +18,23 @@
   margin-right: auto;
 }
 
+/* Two-line "triangle" hero H1: primary line carries the proposition at full
+   weight; secondary line ("No monthly retainers.") drops below at ~78% size
+   so the heading reads as a tapered pyramid — visual hierarchy that draws
+   the eye down toward the CTAs without losing the SEO value of keeping
+   both phrases in the same <h1>. */
+.homepage-hero > h1.hero .hero-line-primary,
+.homepage-hero > h1.hero .hero-line-secondary {
+  display: block;
+}
+.homepage-hero > h1.hero .hero-line-secondary {
+  font-size: 0.78em;
+  font-weight: 600;
+  opacity: 0.92;
+  margin-top: 0.15em;
+  letter-spacing: 0.005em;
+}
+
 /* Explicitly left-align other headings and paragraphs */
 .homepage-hero > h2,
 .homepage-hero > p:not(.phone-line):not(:has(.cta-button)) {
