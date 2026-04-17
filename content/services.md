@@ -283,90 +283,106 @@ extra:
   "@graph": [
     {
       "@type": "Service",
-      "name": "macOS System & Application Support",
+      "name": "Mac & Apple Ecosystem",
       "serviceType": "IT Support",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Expert troubleshooting for system-level and application-specific macOS issues, iCloud sync, and storage optimization.",
-      "url": "https://www.it-help.tech/services/#macos-system"
+      "description": "Expert troubleshooting for macOS, iOS, iCloud sync, storage, performance, backups, and migration.",
+      "url": "https://www.it-help.tech/services/#mac"
     },
     {
       "@type": "Service",
-      "name": "Network Infrastructure & WiFi Troubleshooting",
+      "name": "Wi‑Fi & Network Engineering",
       "serviceType": "Networking Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Enterprise-grade Wi-Fi design, dead zone elimination, and network security for large homes and offices.",
-      "url": "https://www.it-help.tech/services/#network-wifi"
+      "description": "Bespoke wired and wireless networks for large homes, estates, and small offices using measured RF data.",
+      "url": "https://www.it-help.tech/services/#wifi"
     },
     {
       "@type": "Service",
-      "name": "Advanced Email, Domain, & DNS Solutions",
+      "name": "Email Deliverability & DNS Forensics",
       "serviceType": "Email Security Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Resolution of email deliverability issues, DMARC/SPF/DKIM configuration, and Google Workspace migration.",
-      "url": "https://www.it-help.tech/services/#email-domain-dns"
+      "description": "Resolution of email deliverability issues, SPF/DKIM/DMARC alignment, DNSSEC, BIMI, and Google Workspace migration.",
+      "url": "https://www.it-help.tech/services/#dns-email"
     },
     {
       "@type": "Service",
-      "name": "Cybersecurity & Data Protection",
+      "name": "Cybersecurity & Ethical Screen Sharing",
       "serviceType": "Cybersecurity Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Endpoint protection, mobile device security, and ethical screen sharing support.",
+      "description": "Endpoint protection, mobile device security, and client-initiated remote support.",
       "url": "https://www.it-help.tech/services/#cybersecurity"
+    },
+    {
+      "@type": "Service",
+      "name": "Forensic Data Extraction",
+      "serviceType": "eDiscovery Service",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Email and iPhone iMessage extraction for law firms, producing court-admissible timestamped PDF reports on-site.",
+      "url": "https://www.it-help.tech/services/#data-extraction"
+    },
+    {
+      "@type": "Service",
+      "name": "Managed Agent (Opt-In, $50/Device)",
+      "serviceType": "Managed Endpoint Service",
+      "provider": { "@id": "https://www.it-help.tech/#business" },
+      "description": "Optional lightweight monitoring agent at $50 per device per month — opt-in only, no retainers, no lock-in.",
+      "url": "https://www.it-help.tech/services/#managed-agent"
     }
   ]
 }
 </script>
 
 
-We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting.<br>Our expertise ensures your critical systems run smoothly, securely, and efficiently.
+Six service pillars, organized by the problem they solve. No retainers, no lock-in, no padded hours — just clear billing for actual work performed.
 
-## Advanced Email, Domain, & DNS Solutions {#email-domain-dns}
+## Mac & Apple Ecosystem {#mac}
 
-We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
+Deep, system-level support for macOS and iOS. We diagnose what an Apple Store appointment cannot: kernel-level disk pressure, iCloud sync collisions, Spotlight index corruption, and the long tail of post-migration breakage. We are fluent on the command line and read system logs directly rather than guessing from symptoms.
 
-* **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
-* **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
-* **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
-* **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
-* **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex Email security into unmatched reliability.
+* **Mac performance & troubleshooting** — startup disk pressure, iCloud sync failures, application crashes, and post-update regressions.
+* **Apple Mail on macOS and iOS** — IMAP/SMTP setup, certificate issues, signing/encryption, and recovery of broken local mailboxes.
+* **Time Machine and backup strategy** — verified restores, not just green checkmarks.
+* **Cloud storage** — Dropbox, iCloud Drive, and Google Drive setup with sane permissions.
+* **Disaster recovery planning** — documented procedures, not improvisation.
 
-## Cybersecurity & Data Protection {#cybersecurity}
+## Wi‑Fi & Network Engineering {#wifi}
 
-Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, Email phishing, browser blocks, and more.
+Bespoke wired and wireless networks for large luxury homes, estates, and small offices. We use Cat6A, Cat8, and fiber backbones, and we design from measured RF data rather than vendor brochures. You buy gear directly from the source; we are not a 40% reseller markup, which means we are free to recommend the right hardware rather than the hardware we are channel-locked into.
 
-* **Endpoint Security:** Setup and management of leading endpoint protection for macOS, Windows, and Linux.
-* **Mobile Device Security (iOS):** Advising on best practices and tools to secure your iPhones and iPads.
-* **Data Privacy & Discreet Advisory:** Handling sensitive technical challenges that require deep expertise, discretion, and trust, such as secure data handling and quiet remediation of compromised systems.
-* **Ethical Screen Sharing:** For all remote support, **you, the client, always initiate and approve screen access**. We prioritize your privacy and control.
+* **Wi‑Fi mesh design and dead-zone elimination** based on actual site survey data.
+* **Network setup and security** for home and office.
+* **Infrastructure planning** for new construction and remodels.
+* **Static-IP configuration**, port forwarding, and double-NAT remediation.
+* **Network printer sharing** that does not break on every macOS update.
+* **Switch, gateway, and firewall programming**, including lost-credential recovery.
 
-## macOS System & Application Support {#macos-system}
+## Email Deliverability & DNS Forensics {#dns-email}
 
-We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+We resolve email deliverability and domain-security problems by going to the wire. We read mail headers, verify DKIM signatures byte-for-byte, and check SPF macro expansion against RFC 7208 §7.4 instead of trusting a green checkmark in a vendor dashboard.
 
-* **Mac Performance & Troubleshooting:** Addressing macOS software issues, iCloud synchronization problems, Mac storage warnings (“Your startup disk is almost full”), and system performance concerns.
-* **Apple Time Machine Backups:** Setup, troubleshooting, and ensuring your backup strategy is sound.
-* **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
-* **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
+* **Email migration and setup**, including Google Workspace.
+* **DNS edits and configuration** for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
+* **DMARC enforcement** to `p=reject`, staged carefully through monitor and quarantine.
+* **Website and domain recovery** when access has been lost.
+* **Public research platform:** [dns.it-help.tech](https://dns.it-help.tech) — the same diagnostic depth we apply to client domains, available for anyone to use.
 
-## Network Infrastructure & WiFi Troubleshooting {#network-wifi}
+## Cybersecurity & Ethical Screen Sharing {#cybersecurity}
 
-Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections.
-We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear.
-This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products.
-We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you’re paying for) everywhere in your location.
+Endpoint defense, mobile device security, and remote support that respects client control. Sensitive engagements are handled with discretion appropriate to legal, medical, and high-net-worth contexts.
 
-* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
-* **Network setup & home/office network security**
-* **Network design & infrastructure planning**
-* **Network troubleshooting**
-* **Static‑IP configuration & troubleshooting**
-* **Port forwarding & double NAT**
-* **Network printer sharing**
-* **Switch, gateway & firewall programming and lost credential recovery**
+* **Endpoint security** for macOS, Windows, and Linux.
+* **Mobile device security** for iPhone and iPad.
+* **Data privacy and discreet advisory** for sensitive technical situations.
+* **Ethical screen sharing** — you, the client, always initiate and approve access. We do not maintain standing remote access to your systems.
 
-## Specialized Data Extraction Services {#data-discovery}
+## Forensic Data Extraction {#data-extraction}
 
-* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
+For law firms and legal professionals: structured extraction of email and iPhone iMessages into court-admissible, timestamped PDF reports suitable for litigation and eDiscovery. The work is done **on-site, on your equipment, so the data never leaves your office.** After the first engagement we document the process so your team can repeat it without us.
+
+## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
+
+An ethical opt-in: a lightweight monitoring agent runs on your device, you pay $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No multi-year contracts, no minimum seat counts, no hidden tiering, no surprise restructuring. You can turn it off at any time. The agent surfaces health and security signals; we still bill on-demand for actual remediation work.
 
 ## Our Recommendations
 

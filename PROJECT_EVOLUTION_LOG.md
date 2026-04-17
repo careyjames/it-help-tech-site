@@ -13,6 +13,18 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-02-15
+- Actor: AI (Sub-agent 1: Information Architecture & Content)
+- Scope: IA & content rewrite per design-transfer/v1 (homepage, services, tone-of-voice)
+- Files:
+  - `content/_index.md`
+  - `content/services.md`
+  - `STYLE_GUIDE.md`
+  - `PROJECT_EVOLUTION_LOG.md`
+- Change: Rewrote `content/_index.md` body to the 5-section homepage structure from `.agent-transfer/plans/ia-blueprint.md` (hero with new sub-tagline + primary/secondary CTAs, 3-card service teaser, trust-signals strip, "The Method" think-tank paragraph linking to `/blog/` and `dns.it-help.tech`, local credibility block with NAP and phone). Restructured `content/services.md` body into six anchored sections (`#mac`, `#wifi`, `#dns-email`, `#cybersecurity`, `#data-extraction`, `#managed-agent`) with the new `#managed-agent` paragraph framing the $50/device opt-in agent as the explicit anti-managed-services position; refreshed the `ItemList` and `Service` JSON-LD entries to match the new section names and anchors. Appended a new "Tone of Voice" section to `STYLE_GUIDE.md` codifying calm authority, no marketing-speak, specific-over-generic, discretion language, and one-scientific-moment-per-page rules. All existing JSON-LD `<script>` blocks preserved; raw-HTML `cta-button` markup preserved.
+- Why: Sub-agent 1 deliverable in the design-transfer/v1 multi-agent port. Locks the structure before Sub-agent 3 rebuilds templates and ensures copy reads at the "intelligence brief" register the architect specified.
+- Rollback: revert PR for branch `codex/sub1-ia-content`.
+
 ### 2026-02-14
 - Actor: AI
 - Scope: Deploy reliability hardening (CloudFront invalidation wait robustness)

@@ -139,6 +139,16 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Log visual-system changes in `PROJECT_EVOLUTION_LOG.md`.
 - Each entry should include: date, actor (AI/dev), files changed, rationale, and rollback notes.
 
+## Tone of Voice
+Applies to all body copy, headings, CTAs, and meta descriptions across the corp site (per `.agent-transfer/plans/ia-blueprint.md` §"Tone & voice").
+
+- **Calm authority.** Match the "intelligence brief" register of the dns-tool. State the situation; do not sell.
+- **No marketing-speak.** Forbidden vocabulary includes (but is not limited to): "synergize," "leverage," "solutions provider," "best-in-class," "world-class," "cutting-edge," "unlock," "empower," "seamless," "bulletproof."
+- **Specific over generic.** Prefer the concrete, measurable claim: "We rescue email from spam folders by fixing SPF/DKIM/DMARC alignment" beats "We help with email."
+- **Discretion language.** "Concierge," "discreet," "by appointment," "high-profile" — the right register for La Jolla / Del Mar clientele. Never name clients or industries beyond high-level sector references.
+- **One scientific moment per page.** Each page should carry exactly one technical detail that signals depth without overwhelming a non-technical reader (e.g., "SPF macro expansion checked against RFC 7208 §7.4"). Use sparingly; more than one per page reads as showing off.
+- **No retainer language.** Do not describe ongoing engagement structures that resemble managed-services lock-in. The managed-agent option is the only ongoing-fee product, and it is described as opt-in, per-device, and cancellable.
+
 ## Key Files
 - Hero/logo styles: `static/css/late-overrides.css`
 - Palette + component tokens: `sass/_extra.scss`
