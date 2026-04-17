@@ -461,3 +461,137 @@ section h2 {
 :root:not(.switch) .footer-nap a {
   color: var(--a2);
 }
+
+/* ==========================================================================
+   SKIP-LINK — a11y "skip to main content" affordance.
+
+   MUST live in _extra.scss (not late-overrides.css) so it travels inside
+   abridge.css, which is the most reliably retained stylesheet through the
+   prod PurgeCSS pipeline. A previous deploy (pre-PurgeCSS-glob-fix) silently
+   stripped .skip-link from late-overrides.css, leaving the link to inherit
+   `a { color: var(--a1) }` (light blue) on a light-blue background — a real
+   WCAG contrast failure flagged by Lighthouse. Defining it here ensures the
+   color/bg pairing survives any future cascade or purge surprise.
+
+   Specificity: `a.skip-link` (0,1,1) is higher than the global `a` rule
+   above (0,0,1), so it wins regardless of source order or future overrides.
+   Color pair: --neutral-black on --brand-blue gives roughly a 9 to 1 ratio
+   in dark mode, well above WCAG AAA (7 to 1). Token-parity gate compatible
+   — zero hex literals (intentional: hex values discussed only in prose
+   above are kept token-named, not literal).
+   ========================================================================== */
+a.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 14px;
+  background: var(--brand-blue);
+  color: var(--neutral-black);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  z-index: 9999;
+  transition: top 0.18s ease;
+}
+a.skip-link:focus,
+a.skip-link:focus-visible {
+  top: 0;
+  color: var(--neutral-black);
+  background: var(--brand-blue);
+  outline: 2px solid var(--brand-gold-solid);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   FORM-CONTROL BASELINE — forward-compatible default styling.
+
+   The site has zero body-level form controls today (the DNS Tool lives on its
+   own subdomain). This block exists so the *next* contact form, signup, or
+   search box inherits the brand instead of falling back to OS chrome
+   (which renders inconsistently across Safari, Firefox, Chrome on Win/Mac/Linux,
+   creates contrast/a11y issues in dark mode, and looks unprofessional next to
+   the rest of the site). Tap targets are sized for mobile (44px min height).
+   Focus ring matches the schedule-CTA pattern (brand-blue with offset). All
+   colors are tokens — token-parity gate (scripts/check-token-parity.sh) green.
+   ========================================================================== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--brand-primary);
+}
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="tel"]:focus-visible,
+input[type="url"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="password"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-color: var(--brand-primary);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Native checkbox + radio inherit the brand color */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--brand-primary);
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}

@@ -575,7 +575,16 @@ html.switch .particle {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-constellation {
+  /* Decorative-only motion is fully suppressed for vestibular-sensitive users.
+     The global *{animation-duration:0.01ms} in tokens.css handles every keyframe,
+     but for *purely decorative* elements we go further and hide them outright,
+     because a 0.01ms-cycle blur or rotating ring can still produce visible
+     sub-frame jitter on some renderers. Brand identity (IT/HELP wordmark, gold
+     pill, plus, "san diego") is preserved in static form. */
+  .logo-constellation,
+  .blob,
+  .circuit-bg,
+  .hex-decoration {
     display: none;
   }
   .tech-particles {
@@ -863,24 +872,9 @@ html:not(.switch) h6 a.gold-link:active {
    ============================================================================ */
 
 /* --- Skip link (a11y) --- */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    padding: 8px 14px;
-    background: var(--brand-blue);
-    color: var(--neutral-black);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 0 0 6px 0;
-    z-index: 9999;
-    transition: top 0.18s ease;
-}
-.skip-link:focus {
-    top: 0;
-    outline: 2px solid var(--brand-gold-solid);
-    outline-offset: 2px;
-}
+/* .skip-link styling moved to sass/_extra.scss so it rides in abridge.css
+   (more reliably retained through the prod PurgeCSS pipeline). See that
+   file for the full rule and the reasoning. */
 
 /* --- Top bar shell --- */
 .topbar {
@@ -1108,4 +1102,145 @@ html:not(.switch) h6 a.gold-link:active {
 @media (prefers-reduced-motion: reduce) {
     .topbar-nav { transition: none; }
     .skip-link  { transition: none; }
+}
+
+/* ==========================================================================
+   PRINT — clean "leave-behind" stylesheet.
+
+   Goal: when a client prints the rates page, a blog post, or any reference,
+   the result should look like a *document* — not a screenshot of the website.
+   That means:
+     - Paper background, near-black body text (max ink density)
+     - No nav, no hero animation, no footer chrome — content only
+     - Hyperlinks resolve their full URL inline (so the print is useful offline)
+     - Headings, lists, tables stay aligned to the same vertical rhythm as web
+     - A small IT+HELP letterhead survives at the very top of page 1
+     - Fits A4 / US Letter with sane margins, no printer-hostile gradients
+   tokens.css already remaps --bg-* / --text-* to paper colors under @media
+   print (see Layer 5 in tokens.css). This block hides the chrome, sets type,
+   and tunes the residual content. NO hex literals here — every color flows
+   from the canonical print-token overrides in tokens.css, keeping the
+   token-parity gate (scripts/check-token-parity.sh) green.
+   ========================================================================== */
+@media print {
+    /* Page geometry — 0.65in matches a comfortable Word/Pages default */
+    @page {
+        margin: 0.65in;
+    }
+
+    /* Hide all interactive / decorative chrome that has no meaning on paper */
+    .skip-link,
+    .topbar,
+    .hero-wrapper,
+    .nav-wrapper,
+    .ftr-tree,
+    .footer-org,
+    footer,
+    .blob,
+    .circuit-bg,
+    .hex-decoration,
+    .tech-particles,
+    .logo-constellation,
+    .glitch-container,
+    .topbar-nav-toggle-checkbox,
+    .topbar-nav-toggle-label,
+    .topbar-mode,
+    .mode-btn,
+    button,
+    .cta-button {
+        display: none !important;
+    }
+
+    /* Letterhead — small wordmark + contact line at the top of page 1.
+       border color inherits via currentColor, which equals --text-primary
+       (near-black ink in print per tokens.css Layer 5). */
+    body::before {
+        content: "IT+HELP san diego  ·  it-help.tech  ·  (619) 853-5008";
+        display: block;
+        font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+        font-size: 9pt;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--text-primary);
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 0.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Body baseline — paper bg, near-black ink, generous line-height */
+    html, body {
+        background: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    main, #main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: none !important;
+    }
+
+    /* Headings — same ink color as body, avoid orphaning */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-primary) !important;
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+    h1 { font-size: 18pt; margin-top: 0; }
+    h2 { font-size: 14pt; margin-top: 1.2em; }
+    h3 { font-size: 12pt; }
+
+    /* Avoid breaking inside paragraphs, lists, tables, blockquotes */
+    p, li, blockquote, tr, pre, table {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Links: keep visually obvious, expand URL inline for offline reference.
+       Skip expansion for in-page anchors and mailto:/tel: links (useless on
+       paper). URL annotation uses --text-secondary (a quieter gray). */
+    a, a:visited {
+        color: var(--text-primary) !important;
+        text-decoration: underline;
+    }
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        font-weight: normal;
+        color: var(--text-secondary);
+        word-break: break-all;
+    }
+    a[href^="#"]::after,
+    a[href^="mailto:"]::after,
+    a[href^="tel:"]::after {
+        content: "";
+    }
+
+    /* Tables — full borders for readability on paper. currentColor inherits
+       the body ink color so border + text are perfectly matched. */
+    table { border-collapse: collapse; width: 100%; }
+    th, td {
+        border: 1px solid currentColor;
+        padding: 0.3rem 0.5rem;
+    }
+    th { background: var(--bg-tertiary); }
+
+    /* Code blocks — quiet light-gray background (--bg-secondary in print),
+       same ink as body, soft border. */
+    pre, code, kbd, samp {
+        font-family: ui-monospace, "SF Mono", "Menlo", monospace;
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        border: 1px solid var(--bg-tertiary);
+    }
+    pre { padding: 0.5rem; overflow: visible; white-space: pre-wrap; }
+
+    /* Images — keep within page, never break across pages */
+    img, svg {
+        max-width: 100% !important;
+        height: auto !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
 }
