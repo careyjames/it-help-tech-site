@@ -1,0 +1,126 @@
+// ============================================================================
+// IT-HELP-SAN-DIEGO — DESIGN TOKENS v1 (SCSS mirror of tokens.css)
+//
+// Use this in sass/_extra.scss or sass/css/abridge.scss when SCSS-time
+// computation is needed (e.g., color functions, mixins). For runtime
+// theming, prefer tokens.css custom properties — they're zero-cost to
+// switch and match dns-tool conventions.
+//
+// Single source of truth: tokens.css. This file MUST be regenerated
+// from tokens.css if values change. Drift is a release-gate failure.
+// ============================================================================
+
+// --- Backgrounds ---
+$bg-primary:   #0d1117;
+$bg-secondary: #161b22;
+$bg-tertiary:  #21262d;
+$bg-elevated:  #30363d;
+
+// --- Text ---
+$text-primary:   rgba(230, 237, 243, 0.9);
+$text-secondary: #9ca3af;
+
+// --- Status (Layer 1) ---
+$status-success: #3fb950;
+$status-warning: #e3b341;
+$status-danger:  #f85149;
+$status-info:    #c8956a;
+$status-neutral: #8b949e;
+
+// --- Accents (Layer 4) ---
+$accent-steel:        #9a8f82;
+$accent-deep:         #3d2e1f;
+$accent-violet:       #c8956a;
+$accent-violet-hover: #d4a87d;
+$accent-cyan:         #d4a853;
+$accent-cobalt:       #b8a089;
+$accent-amber:        #e8b54a;
+
+// --- Borders ---
+$border-default: #30363d;
+$border-muted:   #30363d;
+
+// --- Brand non-negotiables ---
+$brand-it-help-red:  #e8195e;
+$brand-it-help-blue: #4a8fdf;
+$brand-it-help-gray: #9aa0a6;
+
+// --- Typography stacks ---
+$font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+            system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// --- Spacing (8pt grid) ---
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-8: 3rem;
+
+// --- Radii ---
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 10px;
+
+// --- Brand non-negotiables (verified pre-redesign hex; mirrors tokens.css) ---
+$brand-red:                  #ff0066;
+$brand-logo-blue-top:        #327ED6;
+$brand-logo-blue-mid:        #2662AA;
+$brand-logo-blue-bottom:     #13437A;
+$brand-blue:                 #58A6FF;
+$brand-blue-ink:             #F7FBFF;
+$brand-gold:                 #C2A15A;
+$brand-gold-solid:           #D2B56F;
+$brand-gold-ink:             #16120A;
+$schedule-blue-top:          #6CAFEF;
+$schedule-blue-mid:          #3F86D8;
+$schedule-blue-bottom:       #2359A9;
+$schedule-cta-top:           #3D659A;
+$schedule-cta-mid:           #244A79;
+$schedule-cta-bottom:        #123055;
+$schedule-cta-hover-top:     #4673AA;
+$schedule-cta-hover-mid:     #2D5A8D;
+$schedule-cta-hover-bottom:  #1C436F;
+
+// --- Utility ink/surface tokens ---
+$neutral-white:        #ffffff;
+$neutral-black:        #000000;
+$ink-azure:            #F1F8FF;
+$ink-frost:            #F5FAFF;
+$ink-sky:              #A8D7FF;
+$ink-paper:            #f8f9fa;
+$ithelp-navy:          #001F3F;
+$link-blue-dark:       #1E5389;
+$link-blue-mid:        #2B6CB3;
+$text-slate:           #566376;
+$text-slate-dark:      #404d5b;
+$gold-amber:           #C8A961;
+$surface-charcoal:     #222;
+$surface-charcoal-hover: #333;
+$code-onedark-bg:      #282c34;
+$code-onedark-fg:      #abb2bf;
+
+// --- Abridge theme palette (consumed via @use 'abridge' with (...) in abridge.scss) ---
+$abridge-f1d:  #E8E8E8;
+$abridge-f2d:  #ffffff;
+$abridge-c1d:  #0D1117;
+$abridge-c2d:  #161B22;
+$abridge-c3d:  #30363D;
+$abridge-c4d:  #3E4550;
+$abridge-a1d:  #79B8FF;
+$abridge-a2d:  #A5D0FF;
+$abridge-a3d:  #A5D0FF;
+$abridge-a4d:  #8CC3FF;
+$abridge-f1:   #1D1D1F;
+$abridge-f2:   #1D1D1F;
+$abridge-c1:   #FAFBFC;
+$abridge-c2:   #F5F5F7;
+$abridge-c3:   #E5E5E7;
+$abridge-c4:   #E5E5E7;
+$abridge-a1:   #2B6FCD;
+$abridge-a2:   #4A8EDF;
+$abridge-a3:   #4A8EDF;
+$abridge-a4:   #2B6FCD;

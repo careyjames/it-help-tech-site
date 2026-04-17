@@ -1,14 +1,9 @@
+@use "tokens" as *;
+
 /* --- ALL CUSTOM STYLES --------------------------------------- */
 
-:root {
-  --brand-primary: #58A6FF;
-  --brand-primary-rgb: 88, 166, 255;
-  --brand-primary-glow: 176, 218, 255;
-  --brand-accent: #C2A15A;
-  --brand-accent-rgb: 194, 161, 90;
-  --brand-accent-glow: 224, 197, 138;
-  --brand-accent-ink: #16120A;
-}
+/* Brand-primary / brand-accent tokens are now defined in tokens.css (the SOT).
+   This file only consumes them via var(--*). */
 
 :root:not(.switch) {
   --a1-rgb: 88, 166, 255;
@@ -94,13 +89,13 @@ h2, h3, h4, h5, h6      { text-align: left; }
 }
 
 strong,
-li strong { color: #fff; }
+li strong { color: var(--neutral-white); }
 
 img { border-radius: 15px; }
 
 code {
   background-color: rgb(53.8, 82, 108.9);
-  color: #f8f9fa;
+  color: var(--ink-paper);
   border: 1px solid rgb(67.3, 102.6, 136.2);
   padding: 0.2em 0.4em;
   margin: 0 0.1em;
@@ -108,8 +103,8 @@ code {
   border-radius: 6px;
 }
 pre {
-  background-color: #282c34 !important;
-  color: #abb2bf !important;
+  background-color: var(--code-onedark-bg) !important;
+  color: var(--code-onedark-fg) !important;
 }
 
 /* Footer brag text */
@@ -245,8 +240,8 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
     top: 100%;
     width: max-content;
     min-width: 10rem;
-    background: #222;
-    color: #fff;
+    background: var(--surface-charcoal);
+    color: var(--neutral-white);
     border-radius: 0.5em;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     display: none;
@@ -266,25 +261,25 @@ body > a.anchor { display: none !important; visibility: hidden !important; }
     display: block;
     padding: 0.5em 1.5em;
     white-space: nowrap;
-    color: #fff;
+    color: var(--neutral-white);
     text-decoration: none;
   }
 
   .dropdown-content a:hover {
-    background: #333;
+    background: var(--surface-charcoal-hover);
   }
 
   /* Light mode adjustments */
   :root.switch .dropdown-content {
-    background: #fff;
-    color: #001F3F;
+    background: var(--neutral-white);
+    color: var(--ithelp-navy);
   }
   :root.switch .dropdown-content a {
-    color: #001F3F;
+    color: var(--ithelp-navy);
   }
   :root.switch .dropdown-content a:hover {
     color: var(--a2);
-    background: #fff;
+    background: var(--neutral-white);
   }
 }
 
@@ -387,25 +382,25 @@ details[open] summary::before {
 .schedule-link {
   background-color: var(--brand-primary);
   border: 1px solid rgba(var(--brand-primary-rgb), 0.55);
-  color: #f7fbff !important;
+  color: var(--brand-blue-ink) !important;
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
 }
 
 @media (min-width: 700px) {
   :root.switch .schedule-link {
-    color: #f7fbff !important;
+    color: var(--brand-blue-ink) !important;
   }
   :root.switch .schedule-link:hover {
-    color: #f7fbff !important;
+    color: var(--brand-blue-ink) !important;
   }
   :root:not(.switch) .schedule-link:hover {
-    color: #f7fbff !important;
+    color: var(--brand-blue-ink) !important;
   }
 }
 
 .schedule-link:hover {
-  color: #f7fbff;
+  color: var(--brand-blue-ink);
   filter: brightness(1.08);
   text-decoration: none;
 }
