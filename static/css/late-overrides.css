@@ -1012,7 +1012,21 @@ html:not(.switch) h6 a.gold-link:active {
         }
     }
 }
-@media (hover: none), (pointer: coarse) {
+/* Architect-validated touch override using ANY-input detection.
+   iPadOS Safari (since iPadOS 13) deliberately reports `pointer: fine`
+   and `hover: hover` to masquerade as a desktop browser — the
+   primary-input queries we used previously failed silently on iPad.
+   `any-pointer: coarse` is true if ANY available input is coarse, so
+   it catches iPad's touch capability even when iPad lies about its
+   primary pointer. `any-hover: none` adds belt-and-suspenders for
+   browsers that report no hovering input at all. Together they
+   correctly classify: iPhone, iPad (portrait + landscape, with or
+   without Magic Keyboard), Surface in tablet mode, hybrid 2-in-1s,
+   and any future touch device — all get the seam-free solid topbar.
+   True desktops (Mac with mouse only, Windows/Linux with mouse) are
+   the only environments without ANY coarse pointer, so they retain
+   the Apple-glass aesthetic + 38% gold WCAG 1.4.11 hairline. */
+@media (any-pointer: coarse), (any-hover: none) {
     .topbar {
         background: var(--c1);
         -webkit-backdrop-filter: none;

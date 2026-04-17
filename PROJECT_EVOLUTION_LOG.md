@@ -13,6 +13,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Topbar · iPad-truthful capability gate — `any-pointer`/`any-hover` replaces primary-input queries)
+- Actor: AI (Replit Agent + architect subagent)
+- Severity: HIGH (visible regression on iPad Pro landscape — owner provided photographic proof from real iPadOS Safari simulator)
+- Trigger: After PRs #547/#548/#549 shipped, owner produced fresh iOS Simulator screenshots (iPad Pro 13-inch M5 + iPhone 17 Pro + iPhone Air) of LIVE production showing a horizontal blue/gold band still cutting under the topbar on iPad. iPad screenshot also confirmed it was rendering the full DESKTOP nav layout (Services, About, Field Notes, DNS Tool inline) — proving iPad was hitting the desktop-glass branch despite PR #548's touch override. Architect (code_review skill) consulted with full diagnostic context.
+- Files:
+  - `static/css/late-overrides.css` — replaced `@media (hover: none), (pointer: coarse)` with `@media (any-pointer: coarse), (any-hover: none)` on the topbar touch override; added inline rationale comment block citing iPadOS 13+ Safari behavior
+  - `STYLE_GUIDE.md` — codified the `any-pointer`/`any-hover` invariant + warning that primary-input queries silently fail on iPad
+- Change: Diagnosed root cause as iPadOS Safari deliberately reporting `pointer: fine` + `hover: hover` (it has masqueraded as desktop Safari since iPadOS 13). Primary-input queries (`pointer:*`, `hover:*`) describe the PRIMARY input only; `any-pointer:*` / `any-hover:*` describe ANY available input. Switching the touch override to the `any-` variants makes the query truthful: iPad has touch capability regardless of whether a Magic Keyboard is attached, so `any-pointer: coarse` evaluates true, the override fires, the topbar collapses to solid `var(--c1)` with no glass + no gold hairline, and the seam class of bugs is eliminated on iPad in every orientation.
+- Why: Architect rejected width-based fallbacks (brittle, mis-classify small laptops + future devices) and iPad-specific WebKit hacks (fragile). The `any-` queries are the W3C-standard primitive designed exactly for this case. True desktops (Mac/Windows/Linux mouse-only) remain the only environments without ANY coarse pointer, so they retain the Apple-glass + WCAG 1.4.11 gold hairline. Hybrids/2-in-1s gracefully degrade to solid — aligned with the stated "true mouse-driven desktops only" requirement.
+- Rollback: revert this PR.
+
 ### 2026-04-17 (Topbar · Architect-validated definitive seam fix — capability-stratified surface treatment + decorative top-fade)
 - Actor: AI (Replit Agent + architect subagent)
 - Severity: MEDIUM (touches every viewport; root-cause fix for a recurring complaint)
