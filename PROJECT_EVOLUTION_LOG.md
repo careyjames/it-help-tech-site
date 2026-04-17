@@ -13,6 +13,18 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Hero · Tagline rewrite to "IT research in motion." + mobile topbar seam fix)
+- Actor: AI (Replit Agent)
+- Severity: LOW (copy + decorative-border fix; zero structural change)
+- Trigger: Owner direction — "I really like the IT research in motion. I think that's a good slogan. The text right below it already says that, so it's not like we need to say it twice. Plus, I think it's a better slogan." Also reported a "tiny line" near the top of the screen visible when toggling the mobile hamburger.
+- Files:
+  - `templates/partials/hero_logo.html` — tagline copy revised to a single line: `IT research <span class="highlight">in motion</span>.`
+  - `static/css/late-overrides.css` — within `@media (max-width: 960px)`, added `.topbar { border-bottom-color: transparent; }` so the topbar's gold hairline is dropped on mobile/compact widths only. Desktop retains the WCAG-1.4.11-compliant 38% gold border from PR #545.
+  - `STYLE_GUIDE.md` — hero tagline rule updated; new highlight word is `in motion`; explicit guidance that the H1 below the pill carries the literal proposition for SEO and the pill carries the brand promise (no duplication).
+- Change: Hero tagline rewritten from `We solve tech problems. / No monthly retainers.` (two lines, two highlights) to `IT research in motion.` (single line, one highlight). The H1 retained verbatim. Mobile topbar bottom border (38% gold hairline) hidden inside `@media (max-width: 960px)`; desktop unchanged.
+- Why: The previous tagline duplicated the H1 directly below it, creating cognitive triple-redundancy (page title, hero pill, H1). "IT research in motion" is a stronger brand promise that complements rather than echoes the proposition. The mobile gold hairline was added in PR #545 for desktop UI-component contrast (WCAG 1.4.11) but on mobile the line read as a stray seam, especially during drawer open/close transitions. WCAG 1.4.11 doesn't apply to purely decorative borders, so removing it on mobile is fully compliant.
+- Rollback: revert this PR.
+
 ### 2026-04-17 (Brand · Owl favicon set + brand-banner OG image + mobile drawer seam fix)
 - Actor: AI (Replit Agent)
 - Severity: MEDIUM (visible brand change on every browser tab + every social share; CSS-only mobile fix)

@@ -1207,6 +1207,18 @@ html:not(.switch) h6 a.gold-link:active {
 @media (max-width: 960px) {
     .topbar-nav-toggle-label { display: inline-block; }
 
+    /* 2026-04-17 (rev): on mobile/compact widths, drop the topbar's gold
+       bottom hairline. The 38% gold border was added in the prior polish
+       pass for desktop UI-component contrast (WCAG 1.4.11), but on mobile
+       it reads as a stray seam — and when the drawer toggles open/closed
+       it transitions between gold and transparent, which calls attention
+       to the line as a flicker. On mobile the glass surface alone provides
+       sufficient separation from the science layer below; the drawer's
+       own border still terminates the open menu cleanly. WCAG 1.4.11
+       doesn't apply to purely decorative borders, so removing it here
+       is fully compliant. */
+    .topbar { border-bottom-color: transparent; }
+
     .topbar-nav {
         position: absolute;
         top: 100%;
