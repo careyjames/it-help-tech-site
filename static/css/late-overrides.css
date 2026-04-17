@@ -150,6 +150,55 @@ html.switch .logo-constellation {
     z-index: 3;
 }
 
+/* 2026-04-17: Hero brand mark — owl medallion + IT+HELP wordmark, mirroring
+   the canonical brand banner composition (owl left, wordmark right on
+   desktop; stacked on mobile so neither element shrinks below readable
+   size). Sits above the constellation/particles/blob layers (z-index 3).
+   Owl is sourced as picture+webp+png so retina screens stay crisp without
+   shipping the 1.3 MB master to phones. */
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3.5vw, 2.6rem);
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.hero-owl-pic {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.hero-owl {
+    width: clamp(120px, 18vw, 240px);
+    height: auto;
+    display: block;
+    /* Subtle dark drop-shadow so the gold owl medallion lifts off the
+       near-black background without a hard ring around it. */
+    filter: drop-shadow(0 10px 24px rgba(2, 8, 24, 0.55));
+}
+
+@media (max-width: 700px) {
+    .brand-mark {
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0 0.5rem;
+    }
+    .hero-owl {
+        width: clamp(108px, 28vw, 168px);
+    }
+}
+
+/* Respect reduced-motion: drop the lift shadow (decorative only). */
+@media (prefers-reduced-motion: reduce) {
+    .hero-owl { filter: none; }
+}
+
 /* Main logo wrapper */
 .main-logo {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Helvetica Neue', Arial, sans-serif;
@@ -193,13 +242,20 @@ html.switch .logo-constellation {
     z-index: 2;
 }
 
+/* 2026-04-17: Wordmark fill flipped from cobalt blue to metallic gold so the
+   on-page brand matches the canonical Athenian-owl banner (owl + gold IT+HELP
+   + red plus + silver SAN DIEGO). The gold text-stroke + drop-shadow chain
+   below was already gold-keyed (rgba(210, 181, 111, …) ≈ --brand-gold-solid),
+   so only the FILL needed to change. Both spans use the same gold to match
+   the banner's uniform metallic treatment (banner does not two-tone IT vs
+   HELP). */
 .logo-it {
-    color: var(--logo-blue-mid);
+    color: var(--logo-gold-mid);
     left: var(--logo-it-shift);
 }
 
 .logo-help {
-    color: var(--logo-blue-top);
+    color: var(--logo-gold-mid);
     left: var(--logo-help-shift);
 }
 
@@ -276,12 +332,18 @@ html.switch .logo-help {
     animation: none;
 }
 
+/* Light-mode wordmark: deeper gold so the metallic letters retain enough
+   contrast against light backgrounds (the lighter --logo-gold-mid would
+   wash out). --brand-gold is the deeper of the two metallic gold tokens
+   defined in tokens.css; against the off-white surface it hits roughly
+   three-and-a-half-to-one contrast, reinforced by the gold text-stroke
+   plus the dark drop-shadow chain below. */
 html.switch .logo-it {
-    color: var(--link-blue-dark);
+    color: var(--brand-gold);
 }
 
 html.switch .logo-help {
-    color: var(--link-blue-mid);
+    color: var(--brand-gold);
 }
 
 /* Desktop optical cleanup: reduce top-shoulder spur on P while preserving mobile wrap strength. */
@@ -910,12 +972,19 @@ html:not(.switch) h6 a.gold-link:active {
     letter-spacing: -0.02em;
     line-height: 1;
 }
+/* 2026-04-17: Topbar wordmark flipped from cobalt blue gradient to metallic
+   gold gradient so the nav matches the canonical Athenian-owl banner. Same
+   gradient shape (top-light → mid → bottom-deep) for the same metallic
+   3D-letter feel — only the hue family changes. The user's spec: "up in
+   that top left part, just the yellow IT help and the red plus is enough,
+   with the little San Diego looking good." Plus + sublocation (san diego)
+   stay as-is — already correct per banner. */
 .topbar-wordmark-it,
 .topbar-wordmark-help {
     background: linear-gradient(180deg,
-        var(--brand-logo-blue-top) 0%,
-        var(--brand-logo-blue-mid) 55%,
-        var(--brand-logo-blue-bottom) 100%);
+        var(--brand-logo-gold-top) 0%,
+        var(--brand-logo-gold-mid) 55%,
+        var(--brand-logo-gold-bottom) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

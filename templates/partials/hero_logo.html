@@ -8,11 +8,27 @@
     <div class="hex-decoration"><div class="hex"></div></div>
   {% endfor %}
 
-  <div class="glitch-container" aria-hidden="true">
-    <div class="main-logo">
-      <span class="logo-it">IT</span><span class="logo-plus">+</span><span class="logo-help">HEL<span class="logo-help-p">P</span></span>
+  {# Brand mark: Athenian-owl medallion + IT+HELP wordmark, mirroring the
+     canonical brand banner composition (owl left, wordmark right on desktop;
+     stacked on mobile). aria-hidden because the brand is already announced
+     via <title>, the topbar logo aria-label, and the page H1 — repeating
+     it here would create three-deep redundancy for screen readers. #}
+  <div class="brand-mark" aria-hidden="true">
+    <picture class="hero-owl-pic">
+      <source srcset="/img/brand/owl-720.webp" type="image/webp">
+      <img class="hero-owl"
+           src="/img/brand/owl-720.png"
+           alt=""
+           width="720" height="720"
+           decoding="async"
+           fetchpriority="high">
+    </picture>
+    <div class="glitch-container">
+      <div class="main-logo">
+        <span class="logo-it">IT</span><span class="logo-plus">+</span><span class="logo-help">HEL<span class="logo-help-p">P</span></span>
+      </div>
+      <div class="location">SAN DIEGO</div>
     </div>
-    <div class="location">SAN DIEGO</div>
   </div>
 
   <div class="tagline">
