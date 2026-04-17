@@ -22,13 +22,13 @@ args = "Zola Dev Server"
 name = "Zola Dev Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "zola serve --interface 0.0.0.0 --port 5000"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash -lc 'zola serve --interface 0.0.0.0 --port 5000 --base-url https://$REPLIT_DEV_DOMAIN --no-port-append'"
+waitForPort = 5000
 
 [[ports]]
 localPort = 1024

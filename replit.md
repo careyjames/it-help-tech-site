@@ -111,6 +111,8 @@ Then click "Pull" in Replit to sync. This prevents duplicate commits in future P
 Site maintains 98-100 scores. All changes must preserve these.
 
 ## Recent Changes
+- 2026-04-17: PR #545 — WCAG-correct nav polish. `aria-current="page"` reserved for exact match; section ancestors emit `aria-current="true"` (CSS attr selector widened to `[aria-current]` so underline shows for both). Topbar bottom-border alpha 18% → 38% for WCAG 1.4.11. Distinct focus-visible state restored (2px gold outline, no longer collapsed into hover). Compositing hint added to topbar (`translateZ(0)` + narrow `will-change: backdrop-filter`). External-link arrow underline trim via `:has(.topbar-ext)`.
+- 2026-04-17: PR #544 — single-line nav fix. `white-space: nowrap` on every nav item (links, CTA, phone, phone label). Hamburger threshold raised 768 → 960px. New compact-desktop band (769–960px) hides phone label so icon stays as a tappable call link without crowding. Apple-style glass topbar via `backdrop-filter: saturate(160%) blur(14px)` + `color-mix()` translucent fill (with `@supports` fallback). Active-page indicator wired in `templates/base.html` via Tera prefix match.
 - 2026-04-17: Polish Phase 1 — `prefers-reduced-motion` extended to decorative-only elements (`.blob`, `.circuit-bg`, `.hex-decoration`); new `@media print` "leave-behind" stylesheet with letterhead + paper typography; tokenized form-control baseline ready for first contact form
 - 2026-02-04: Fixed CSP pipeline to prevent hash accumulation (removed --merge-hashes-from-stdin)
 - 2026-02-04: Created og-home.png (1200x630px, 498KB) with tagline for OG/Twitter sharing

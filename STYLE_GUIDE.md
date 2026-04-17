@@ -100,7 +100,8 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 - Avoid inner highlight seams on the hero pill: no inset white line, inset border ring, or inner blue edge that can read as a gap on mobile.
 - Keep hero pill interior as a clean flat translucent navy surface (no faux bevel/tilt gradients) for a tighter professional finish.
 - Keep hero pill as a single-surface shell (border + translucent fill on outer wrapper, transparent text layer) to prevent inner-gap artifacts.
-- Highlight words inside the hero tagline (`tech problems`, `retainers`) should remain crisp; avoid glow blur on those terms.
+- Hero tagline copy is `IT research in motion.` (single line) with `in motion` as the gold highlight phrase. The H1 directly below carries the literal proposition (`We solve tech problems. No monthly retainers.`) for SEO; the hero pill carries the brand promise. Do not duplicate the H1 inside the pill.
+- Highlight words inside the hero tagline (`in motion`) should remain crisp; avoid glow blur on those terms.
 - Keep nav icon slots symmetric; if house vs sun optical size diverges, tune glyph size/stroke, not whitespace hacks.
 - Hero nav row uses fixed slot geometry (home slot, more, schedule, mode slot). Keep spacing in CSS grid; do not add manual whitespace characters in markup to fake alignment.
 - `More` label + chevron should stay in the Schedule blue family for control-row cohesion.
