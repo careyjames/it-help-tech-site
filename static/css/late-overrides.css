@@ -943,20 +943,36 @@ html:not(.switch) h6 a.gold-link:active {
    (more reliably retained through the prod PurgeCSS pipeline). See that
    file for the full rule and the reasoning. */
 
-/* --- Top bar shell --- */
+/* --- Top bar shell ---
+   2026-04-17 (rev): Apple-style glass surface — sticky bar with backdrop
+   blur + saturate, token-driven translucent fill so the science layer
+   reads through subtly without the topbar going invisible. The
+   color-mix() variant gives both themes consistent translucency from a
+   single source token. Older WebKit gracefully ignores color-mix() and
+   falls back to the rgba() rule below. */
 .topbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(13, 17, 23, 0.92);
-    -webkit-backdrop-filter: saturate(160%) blur(10px);
-    backdrop-filter: saturate(160%) blur(10px);
+    background: rgba(13, 17, 23, 0.82);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
     border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+}
+@supports (background: color-mix(in oklab, red, blue)) {
+    .topbar {
+        background: color-mix(in oklab, var(--surface-charcoal) 82%, transparent);
+        border-bottom-color: color-mix(in oklab, var(--brand-gold-solid) 18%, transparent);
+    }
+    html.switch .topbar {
+        background: color-mix(in oklab, var(--neutral-white) 82%, transparent);
+        border-bottom-color: color-mix(in oklab, var(--ithelp-navy) 14%, transparent);
+    }
 }
 .topbar-inner {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     max-width: 1240px;
     margin: 0 auto;
     padding: 0.5rem 1rem;
@@ -1017,17 +1033,26 @@ html:not(.switch) h6 a.gold-link:active {
     outline-offset: 2px;
 }
 
-/* --- Nav list (desktop) --- */
+/* --- Nav list (desktop) ---
+   2026-04-17 (rev): Nav wrap fix — every label gets white-space: nowrap so
+   "Field Notes" and "(619) 853-5008" stay single-line. Gaps tightened
+   (nav 1.25→0.85rem, list 1→0.6rem, link padding 0.6→0.5rem) so the bar
+   fits a 5-link nav + CTA + phone + theme toggle without stealing the
+   hero's vertical real estate. Also added active-page indicator
+   (.topbar-nav-list a[aria-current=page]) — a 2px gold underline rather
+   than a bg fill, per Apple HIG: subtle, persistent, never competes with
+   the hover state. Hover layered on top reuses the gold tint at lower
+   alpha so active+hover remain distinguishable. */
 .topbar-nav {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 0.85rem;
     margin-left: auto;
 }
 .topbar-nav-list {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.35rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1036,8 +1061,10 @@ html:not(.switch) h6 a.gold-link:active {
     color: var(--text-primary);
     font-weight: 500;
     text-decoration: none;
-    padding: 0.4rem 0.6rem;
-    border-radius: 4px;
+    padding: 0.4rem 0.55rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    position: relative;
     transition: color 0.15s ease, background 0.15s ease;
 }
 .topbar-nav-list a:hover,
@@ -1045,6 +1072,22 @@ html:not(.switch) h6 a.gold-link:active {
     color: var(--brand-gold-solid);
     background: rgba(210, 181, 111, 0.08);
     outline: none;
+}
+/* Active page indicator: thin gold underline anchored to the link's
+   baseline. Drawn with a pseudo-element so it animates independently of
+   the link's color/background transitions and never affects layout. */
+.topbar-nav-list a[aria-current="page"] {
+    color: var(--brand-gold-solid);
+}
+.topbar-nav-list a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.18rem;
+    height: 2px;
+    background: var(--brand-gold-solid);
+    border-radius: 2px;
 }
 .topbar-ext {
     display: inline-block;
@@ -1063,9 +1106,14 @@ html:not(.switch) h6 a.gold-link:active {
     border: 1px solid var(--schedule-cta-border);
     color: var(--ink-azure);
     font-weight: 700;
-    padding: 0.4rem 0.95rem;
+    padding: 0.4rem 0.85rem;
     border-radius: 6px;
+    white-space: nowrap;
 }
+/* CTA never gets the active-page underline (it's an external link, not a
+   site page) — explicit override so the rule above can't accidentally
+   stack a line under the gradient. */
+.topbar-nav-list .topbar-cta[aria-current="page"]::after { content: none; }
 .topbar-nav-list .topbar-cta:hover,
 .topbar-nav-list .topbar-cta:focus-visible {
     background-image: linear-gradient(180deg,
@@ -1080,12 +1128,14 @@ html:not(.switch) h6 a.gold-link:active {
 .topbar-phone {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
     color: var(--text-secondary);
     text-decoration: none;
     font-variant-numeric: tabular-nums;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
+.topbar-phone-text { white-space: nowrap; }
 .topbar-phone:hover { color: var(--brand-gold-solid); }
 .topbar-phone svg { flex-shrink: 0; }
 
@@ -1101,9 +1151,25 @@ html:not(.switch) h6 a.gold-link:active {
 .topbar-mode:hover { color: var(--brand-gold-solid); }
 
 /* ============================================================================
-   Mobile (≤ 768px) — hamburger drawer
+   Compact + mobile (≤ 960px) — hamburger drawer
    ============================================================================ */
-@media (max-width: 768px) {
+/* Compact desktop (768–960px): hide the phone label so the phone reduces
+   to its tappable icon, freeing horizontal space without losing the
+   call-to-call entry point. The icon remains a 44×44 hit target via the
+   parent <a>'s padding + flex alignment. */
+@media (min-width: 769px) and (max-width: 960px) {
+    .topbar-phone-text { display: none; }
+    .topbar-phone { padding: 0.4rem; }
+}
+
+/* 2026-04-17 (rev): Hamburger threshold raised 768 → 960px. At common
+   laptop widths (≈900-1100px) the desktop nav was cramming the banner +
+   5 nav links + Schedule CTA + phone + theme toggle into a single line,
+   forcing "Field Notes" and the phone number to wrap onto two lines.
+   Switching to the drawer at 960px keeps the laptop layout single-line
+   and pushes the rich nav into the (already polished) hamburger drawer
+   on tablets, where it belongs. */
+@media (max-width: 960px) {
     .topbar-nav-toggle-label { display: inline-block; }
 
     .topbar-nav {
