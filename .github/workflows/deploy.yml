@@ -8,6 +8,14 @@ on:
     branches:
       - main
 
+# Least-privilege default for GITHUB_TOKEN. The deploy job authenticates to AWS
+# via repository secrets (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY), not via
+# GITHUB_TOKEN, so `contents: read` is sufficient. If a future job needs to
+# write back to the repo (e.g. comment on PRs, push tags), grant the extra
+# scope on that specific job rather than widening this default.
+permissions:
+  contents: read
+
 jobs:
   deploy:
     if: ${{ github.event_name == 'push' }}
