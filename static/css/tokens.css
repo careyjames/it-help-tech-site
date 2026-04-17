@@ -143,8 +143,8 @@
     --accent-violet-hover: #d4a87d;
     --accent-cyan:         #d4a853;   /* Intelligence gold       8.58:1 */
     --accent-cobalt:       #b8a089;   /* Warm taupe              7.9:1 */
-    --accent-gold:         #d4a853;   /* Premium trust           8.58:1 */
-    --accent-gold-muted:   #c9a84c;   /* Borders/glows           8.28:1 */
+    /* --accent-gold and --accent-gold-muted intentionally NOT redefined here —
+       they alias to --brand-gold above to preserve brand continuity. */
     --accent-amber:        #e8b54a;   /* Highlight emphasis     10.04:1 */
 
     /* --- Borders --- */

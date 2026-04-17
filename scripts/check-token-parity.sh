@@ -75,6 +75,22 @@ tmp_css="$(mktemp)"
 tmp_scss="$(mktemp)"
 trap 'rm -f "$tmp_css" "$tmp_scss"' EXIT
 
+# ---- 0. Duplicate-token gate ------------------------------------------------
+#
+# Detect duplicate --token-name declarations inside the canonical :root block.
+# Silent overrides (later declaration wins) caused real brand-continuity bugs.
+dup_tokens="$(
+  first_root_block "$TOKENS_CSS" \
+    | grep -oE '^\s*--[A-Za-z0-9_-]+\s*:' \
+    | sed -E 's/^[[:space:]]*--([A-Za-z0-9_-]+).*/\1/' \
+    | sort | uniq -d
+)"
+if [[ -n "$dup_tokens" ]]; then
+  echo "FAIL: duplicate --token declarations inside canonical :root of $TOKENS_CSS:" >&2
+  printf '  --%s\n' $dup_tokens >&2
+  fail=1
+fi
+
 # Extract --name: value pairs from tokens.css (only the canonical :root block,
 # not @media print or prefers-reduced-motion overrides).
 first_root_block "$TOKENS_CSS" \
