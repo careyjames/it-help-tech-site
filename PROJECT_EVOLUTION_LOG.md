@@ -13,6 +13,26 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-17 (Hotfix · Revert COEP `require-corp`)
+- Actor: AI (incident response)
+- Severity: HIGH (production page blank in Safari below the navigation)
+- Scope: Roll back the COEP `require-corp` header that Sub-4-bis added in PR #530.
+- Files:
+  - `infra/cloudfront/csp-policy-v1.json` — removed COEP item, Quantity 4 → 3
+  - `.github/workflows/deploy.yml` — kept the subresource-check step but reframed it as advisory (it no longer guards a load-bearing security header)
+  - `PROJECT_EVOLUTION_LOG.md` — this entry
+- What broke: Safari rendered the homepage with the top-bar nav visible but everything below the fold blank. Confirmed by user screenshot. Chromium rendered the page correctly, which is why my pre-merge testing missed it.
+- Root cause: The CloudFront response-headers policy is attached to the document response only. CSS/JS/image files served from S3 do not carry `Cross-Origin-Resource-Policy` per-asset. Per the Fetch spec, same-origin responses without CORP should still be allowed under `require-corp`, but WebKit/Safari enforces a stricter interpretation than Chromium for some asset types and silently blocks them, leaving the document with no rendered body content.
+- Fix: Remove the COEP header. Keeps the rest of Sub-4 / Sub-4-bis intact (zero-hash CSP, COOP, CORP on the document, the subresource gate script).
+- What I should have done before shipping #530: tested the live deploy in Safari, not just Chromium. Adding to the post-deploy checklist below.
+- Future re-promotion path (if ever pursued):
+  1. First add a CloudFront cache behavior + a second response-headers policy that attaches the same CORP `same-origin` header to all `/css/*`, `/js/*`, `/images/*`, `/fonts/*` paths.
+  2. Verify in Safari Tech Preview as well as stable Safari.
+  3. Then re-add COEP `require-corp` (or try `credentialless` first, which is more permissive).
+- Updated post-deploy QA checklist (additions to the Sub-5 entry below):
+  - Open prod homepage in Safari (macOS and iOS) before declaring success on any header change.
+- Rollback of this rollback: revert this branch's commits.
+
 ### 2026-04-17 (Sub-4-bis · COEP promotion)
 - Actor: AI (CSP follow-up)
 - Scope: Promote `Cross-Origin-Embedder-Policy: require-corp` and add a CI gate that prevents future blog posts / template changes from silently breaking it. This is the follow-up the Sub-5 entry below documented as "safe to ship now."

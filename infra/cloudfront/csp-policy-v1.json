@@ -45,13 +45,8 @@
         "Header": "Cross-Origin-Resource-Policy",
         "Value": "same-origin",
         "Override": true
-      },
-      {
-        "Header": "Cross-Origin-Embedder-Policy",
-        "Value": "require-corp",
-        "Override": true
       }
     ],
-    "Quantity": 4
+    "Quantity": 3
   }
 }
