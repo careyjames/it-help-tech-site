@@ -1023,6 +1023,38 @@ html:not(.switch) h6 a.gold-link:active {
         will-change: auto;
     }
 }
+
+/* 2026-04-18: iPhone Safari glass re-enable.
+   The previous touch override killed the Apple-glass aesthetic on every
+   coarse-pointer device — overshooting the iPad-landscape problem PR #548
+   was actually trying to solve and silently demoting iPhone (where Safari
+   handles backdrop-filter beautifully) to a flat treatment. This branch
+   restores the blur/saturation pair on iPhone Safari ONLY, gated by the
+   conjunction:
+     1) -webkit-touch-callout: none      → WebKit on iOS (rejects Android)
+     2) font: -apple-system-body         → Apple platforms (belt-and-suspenders)
+     3) backdrop-filter feature support  → guarantees the effect actually paints
+     4) max-width: 960px                 → iPhone form factor (rejects iPad
+                                            Safari which still gets solid)
+   No gold border-bottom is added here on purpose — owner has repeatedly
+   flagged any hairline at the topbar/content junction as a defect; the
+   Apple aesthetic he's asked to preserve is the GLASS, not the line.
+   Layer-promoted via translateZ(0) for compositor stability on iOS. */
+@supports (-webkit-touch-callout: none)
+      and (font: -apple-system-body)
+      and ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))) {
+    @media (max-width: 960px) and (hover: none) and (pointer: coarse) {
+        .topbar {
+            background: color-mix(in oklab, var(--c1) 82%, transparent);
+            -webkit-backdrop-filter: saturate(160%) blur(14px);
+            backdrop-filter: saturate(160%) blur(14px);
+            border-bottom: 0;
+            box-shadow: none;
+            transform: translateZ(0);
+            will-change: backdrop-filter;
+        }
+    }
+}
 .topbar-inner {
     display: flex;
     align-items: center;
@@ -1254,6 +1286,15 @@ html:not(.switch) h6 a.gold-link:active {
        no border, no compositor edge — eliminating the seam by
        construction). No per-width override needed here. */
 
+    /* 2026-04-18: Drawer border moved from base state into the :checked
+       (open) state. Previously border-bottom: 1px painted unconditionally;
+       even with max-height: 0; overflow: hidden the border-box still
+       composites a 1px hairline at the topbar/page-content junction —
+       visible on iPhone Safari while scrolling as a faint stray line.
+       overflow: hidden clips CONTENT, not the element's own border.
+       Architect-confirmed root cause for the persistent mobile seam that
+       PR #545/#546/#548 attempted to fix at the wrong layer (topbar
+       surface treatment) when it was the drawer all along. */
     .topbar-nav {
         position: absolute;
         top: 100%;
@@ -1263,7 +1304,7 @@ html:not(.switch) h6 a.gold-link:active {
         align-items: stretch;
         gap: 0;
         background: rgba(13, 17, 23, 0.98);
-        border-bottom: 1px solid rgba(48, 54, 61, 0.7);
+        border-bottom: 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.25s ease;
@@ -1272,6 +1313,7 @@ html:not(.switch) h6 a.gold-link:active {
     .topbar-nav-toggle-checkbox:checked ~ .topbar-nav {
         max-height: 80vh;
         padding: 0.6rem 1rem 1rem;
+        border-bottom: 1px solid rgba(48, 54, 61, 0.7);
     }
 
     /* When the drawer is open, the topbar's own border-bottom would otherwise
