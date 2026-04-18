@@ -95,8 +95,8 @@ The report tells you _what_ is wrong, but if you need help fixing it, we have a 
 
 The CLI tool is open-source and maintained for those who want it:
 
-- <a href="https://github.com/IT-Help-San-Diego/dns-tool/" target="_blank" rel="noopener noreferrer" class="gold-link">GitHub (Source & Docs)</a>
-- <a href="https://github.com/IT-Help-San-Diego/dns-tool/releases" target="_blank" rel="noopener noreferrer" class="gold-link">CLI Releases</a>
+- <a href="https://github.com/IT-Help-San-Diego/dns-tool-intel/" target="_blank" rel="noopener noreferrer" class="gold-link">GitHub (Source & Docs)</a>
+- <a href="https://github.com/IT-Help-San-Diego/dns-tool-intel/releases" target="_blank" rel="noopener noreferrer" class="gold-link">CLI Releases</a>
 
 Think of it as a sharp pocket knife.
 

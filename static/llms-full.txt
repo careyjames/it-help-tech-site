@@ -225,8 +225,8 @@ It works interactively (with history!) or in batch mode. I use it daily to get a
 
 Want to try it out, see the code, or dive into the full details on installation and every command-line flag? It's all open-source and waiting for you on GitHub:
 
-* **[Main GitHub Repository (Code & Full README)](https://github.com/IT-Help-San-Diego/dns-tool/)**
-* **[Download Pre-compiled Binaries (Releases Page)](https://github.com/IT-Help-San-Diego/dns-tool/releases)**
+* **[Main GitHub Repository (Code & Full README)](https://github.com/IT-Help-San-Diego/dns-tool-intel/)**
+* **[Download Pre-compiled Binaries (Releases Page)](https://github.com/IT-Help-San-Diego/dns-tool-intel/releases)**
 
 ### Our Expertise
 

@@ -71,5 +71,5 @@ For anyone who wants to verify the work underneath the practice — the deployed
 
 - <a href="https://dnstool.it-help.tech/" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool — DNS &amp; Email Security Auditor</a> — the deployed web app.
 - <a href="https://dnstool.it-help.tech/about" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool — Origin Story</a> — how it was built, and why.
-- <a href="https://github.com/IT-Help-San-Diego/dns-tool" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool — CLI source on GitHub</a> — open-source command-line version.
+- <a href="https://github.com/IT-Help-San-Diego/dns-tool-intel" target="_blank" rel="noopener noreferrer" class="gold-link">DNS Tool — CLI source on GitHub</a> — open-source command-line version.
 - <a href="https://github.com/IT-Help-San-Diego" target="_blank" rel="noopener noreferrer" class="gold-link">IT Help San Diego on GitHub</a> — the corporate organization.
