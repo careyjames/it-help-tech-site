@@ -11,7 +11,6 @@ import process from "node:process";
 
 const REPO_ROOT = process.cwd();
 const CONFIG_PATH = path.join(REPO_ROOT, "infra/llms/llms-full.config.json");
-const CONTENT_DIR = path.join(REPO_ROOT, "content");
 const SITE_CONFIG_PATH = path.join(REPO_ROOT, "config.toml");
 const OUTPUT_PATH = path.join(REPO_ROOT, "build/llms-full.txt");
 
@@ -24,6 +23,27 @@ function die(msg) {
 
 function warn(msg) {
   console.error(`[build-llms-full] WARN: ${msg}`);
+}
+
+// Apply a strip regex repeatedly until the string stops changing.
+// Defends against nested-tag bypasses like "<scr<script>ipt>" where a single
+// pass would leave residual "<scr" text. Used for tag/comment/svg stripping
+// since CodeQL flags single-pass replacements as incomplete sanitization.
+// Bounded to 10 iterations to prevent any pathological input from looping.
+function stripUntilStable(s, re) {
+  for (let i = 0; i < 10; i++) {
+    const next = s.replace(re, "");
+    if (next === s) return next;
+    s = next;
+  }
+  return s.replace(re, "");
+}
+
+// Single-pass HTML entity decode. Avoids cascading replacements that would
+// double-unescape inputs like "&amp;lt;" → "&lt;" → "<" (CodeQL flag).
+const ENTITY_MAP = { amp: "&", lt: "<", gt: ">", quot: '"', "#39": "'", nbsp: " " };
+function decodeEntities(s) {
+  return s.replace(/&(amp|lt|gt|quot|#39|nbsp);/g, (_, e) => ENTITY_MAP[e]);
 }
 
 // --- Parse minimal site config (just title/description/base_url) ---
@@ -97,29 +117,47 @@ function parseFrontmatter(raw, filePath) {
 }
 
 // --- Body transform pipeline (deterministic, no markdown libs) ---
+// All tag/comment/svg strips run via stripUntilStable() to defeat nested-tag
+// bypasses (CodeQL "incomplete multi-character sanitization"). Entity decode
+// happens BEFORE tag-aware steps so reconstituted tags get caught by the
+// downstream strip passes. Entity decode is single-pass (decodeEntities) to
+// avoid the cascade-double-unescape bug ("&amp;lt;" → "&lt;" → "<").
 function transformBody(body, filePath) {
   let s = body;
 
-  // 1. Strip JSON-LD blocks.
-  s = s.replace(/<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
+  // Helper: strip a tag pair until stable, then strip any orphan opening or
+  // closing tokens of the same name. Defends against reassembly attacks like
+  // "<scr<script>alert()</script>ipt>" where pair-strip leaves a literal
+  // "<script>" by concatenating "<scr" + "ipt>". Two-stage cleanup gives
+  // CodeQL a complete sanitization signature it can recognize.
+  const stripTagPair = (input, tagName) => {
+    const pair = new RegExp(`<${tagName}\\b[^>]*>[\\s\\S]*?<\\/${tagName}>`, "gi");
+    const orphan = new RegExp(`<\\/?${tagName}\\b[^>]*>`, "gi");
+    let out = stripUntilStable(input, pair);
+    out = stripUntilStable(out, orphan);
+    return out;
+  };
 
-  // 1b. Strip HTML comments.
-  s = s.replace(/<!--[\s\S]*?-->/g, "");
+  // 1. Strip JSON-LD blocks first (most specific pattern), then all script tags.
+  s = stripUntilStable(s, /<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi);
+  s = stripTagPair(s, "script");
 
-  // 2. Strip <svg>...</svg> blocks.
-  s = s.replace(/<svg\b[\s\S]*?<\/svg>/gi, "");
+  // 1c. Strip HTML comments (loop until stable). Comments cannot legally nest,
+  //     and there is no "orphan comment" form, so a single pair-strip suffices.
+  s = stripUntilStable(s, /<!--[\s\S]*?-->/g);
 
-  // 2b. Decode common HTML entities EARLY, so any reconstituted tags
-  //     (e.g. "&lt;script&gt;..." → "<script>...") are caught by the
-  //     downstream tag-aware steps (anchor convert + conservative strip).
-  //     Per architect hardening note: decoding after tag-strip can leak
-  //     literal "<...>" text into the output.
-  s = s.replace(/&amp;/g, "&")
-       .replace(/&lt;/g, "<")
-       .replace(/&gt;/g, ">")
-       .replace(/&quot;/g, '"')
-       .replace(/&#39;/g, "'")
-       .replace(/&nbsp;/g, " ");
+  // 2. Strip <svg>...</svg> blocks plus any orphan svg tokens.
+  s = stripTagPair(s, "svg");
+
+  // 2b. Decode common HTML entities EARLY (single-pass, no cascade) so any
+  //     reconstituted tags get caught by the downstream tag-aware steps.
+  s = decodeEntities(s);
+
+  // 2c. Re-run dangerous-tag strips after entity decode in case the decoded
+  //     text now contains tag syntax that wasn't visible before.
+  s = stripTagPair(s, "script");
+  s = stripUntilStable(s, /<!--[\s\S]*?-->/g);
+  s = stripTagPair(s, "svg");
 
   // 3. Normalize <br> and </p> to line breaks.
   s = s.replace(/<br\s*\/?>/gi, "\n");
@@ -134,18 +172,18 @@ function transformBody(body, filePath) {
       return inner;
     }
     const href = hrefMatch[1];
-    const label = inner.replace(/<[^>]+>/g, "").trim();
+    const label = stripUntilStable(inner, /<[^>]+>/g).trim();
     if (!label) return `<${href}>`;
     return `[${label}](${href})`;
   });
 
   // 5. Strip remaining HTML tags conservatively (warn on anything substantive).
-  s = s.replace(/<\/?(?:span|div|section|article|header|footer|nav|aside|main|figure|figcaption|button|small|strong|em|i|b|u|s|mark|sup|sub|cite|abbr|kbd|code|pre|blockquote|hr|input|label|select|option|table|thead|tbody|tr|th|td|ul|ol|li|h[1-6])\b[^>]*>/gi, "");
-  // Remaining tags = unrecognized; warn and strip.
+  s = stripUntilStable(s, /<\/?(?:span|div|section|article|header|footer|nav|aside|main|figure|figcaption|button|small|strong|em|i|b|u|s|mark|sup|sub|cite|abbr|kbd|code|pre|blockquote|hr|input|label|select|option|table|thead|tbody|tr|th|td|ul|ol|li|h[1-6])\b[^>]*>/gi);
+  // Remaining tags = unrecognized; warn and strip until stable.
   const remaining = s.match(/<[a-z][^>]*>/gi);
   if (remaining) {
     warn(`${filePath}: stripped ${remaining.length} unrecognized HTML tag(s); first: ${remaining[0]}`);
-    s = s.replace(/<[^>]+>/g, "");
+    s = stripUntilStable(s, /<[^>]+>/g);
   }
 
   // 6. Strip Zola heading-anchor syntax {#anchor} from heading lines.
