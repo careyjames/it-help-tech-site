@@ -9,6 +9,7 @@
     ],
     "formFactors": ["mobile", "desktop"],
     "samplesPerAudit": 3,
+    "retriesPerSample": 2,
     "thresholds": {
       "performance": 98,
       "accessibility": 98,

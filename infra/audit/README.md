@@ -31,12 +31,31 @@ single sample dipped below threshold but the median still passed. That
 is a leading indicator of thinning margin on a page and is worth
 investigating before the next deploy, even if the gate is green.
 
-## Editing thresholds, sample count, or URLs
+## Transient-error retry
+
+Headless-Chromium occasionally aborts a Lighthouse run with a runtime
+error that has nothing to do with the site under test —
+`NO_NAVSTART`, `NO_FCP`, `INSUFFICIENT_FCP`, `PROTOCOL_TIMEOUT`, or a
+"Target closed" trace-recording failure. Without retry these flakes
+fail the entire deploy gate even though the site itself is healthy.
+
+Each sample therefore gets up to `1 + lighthouse.retriesPerSample`
+attempts (default 2 retries, so 3 attempts per sample). Retries are
+**only** triggered when stderr matches one of the known-transient
+patterns in `TRANSIENT_ERROR_PATTERNS` inside `run-lighthouse.mjs`;
+any other lighthouse failure is fatal exactly as before, so a real
+regression cannot hide behind retry. Each retry is logged inline
+(`run 1/3: transient lighthouse error (NO_NAVSTART) on attempt 1/3 — retrying`).
+
+Set `lighthouse.retriesPerSample` to `0` to disable retries.
+
+## Editing thresholds, sample count, retries, or URLs
 
 Open `audit.config.json`. Add a URL to `lighthouse.urls`, change a
 number in `lighthouse.thresholds` / `observatory`, or adjust
-`lighthouse.samplesPerAudit`. No workflow changes required. Setting
-`samplesPerAudit` to 1 reverts to the original single-sample behavior.
+`lighthouse.samplesPerAudit` / `lighthouse.retriesPerSample`. No
+workflow changes required. Setting `samplesPerAudit` to 1 reverts to
+the original single-sample behavior.
 
 ## Cost
 
