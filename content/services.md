@@ -414,6 +414,8 @@ An ethical opt-in: a lightweight management agent runs on your device, you pay $
 
 The agent handles ongoing maintenance from a single console: remediations, configuration changes, and security-policy updates across Mac, Windows, iOS, and Android where platform controls allow. Final OS-version upgrades on unsupervised devices still require user action; clients who want full remote OS control can opt into supervised MDM, and many choose not to. Security Edition adds managed threat detection. We continue billing on-demand for diagnostics and architecture.
 
+The service is month-to-month with no minimum term, and it is designed as continuous protection rather than short-term surge support. While enrolled, supported devices are kept aligned with current security baselines: when a policy-required update is due, you receive a clear prompt to save your work, and the change is scheduled in a defined maintenance window (typically after hours where possible). In practice, that gives you MSP-grade operating discipline without long-term contracts or separate incident billing.
+
 ## Our Recommendations
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
