@@ -442,7 +442,7 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 * **<a href="https://www.devontechnologies.com/apps/devonthink" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONthink:</a>** Long-form document and research database for Mac.
 * **<a href="https://www.devontechnologies.com/apps/devonagent" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONagent Pro:</a>** Focused web research agent for Mac.
 * **<a href="https://www.devontechnologies.com/apps/devonsphere" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONsphere Express:</a>** Mac-wide content search and indexing.
-* **<a href="https://www.devontechnologies.com/apps/devonagent" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONagent Express:</a>** Free DEVONagent build for ad-hoc research.
+* **<a href="https://www.devontechnologies.com/apps/devonagent" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONagent Express:</a>** Lightweight DEVONagent build for ad-hoc research.
 
 Need expert Mac IT help to solve your tech challenges?
 <p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an on-site Appointment Now</a></p>
