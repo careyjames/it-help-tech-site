@@ -262,7 +262,17 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
 
 Most IT support pattern-matches symptoms to the usual fix and hopes it sticks. We start one step earlier: capture the primary evidence — packet traces, mail headers, DNS responses, system logs, RF readings — and reason from there. The fix is whatever the evidence demands, not whatever the script says.
 
-A working example: when client mail goes to spam, the off-the-shelf answer is "buy a warmup tool." The evidence-led answer is to read the failed DMARC reports, find the one sending service that's misaligned, and fix the DNS so SPF, DKIM, and DMARC line up against the actual sending surface. Mail lands. No subscriptions added.
+If you've ever called for tech support and bounced through tiers trying to reach someone who could both understand the problem and actually fix it, you already know why this matters. The diagnostic step is the part that gets skipped — and it's the part that decides whether the fix holds.
+
+**A few working examples.**
+
+**Computer running slow.** The off-the-shelf answer is "you need a new computer," or a monthly "PC speed-up" subscription. The evidence-led answer is to open the system's task monitor — Activity Monitor on a Mac, Task Manager on a PC — and look at what's actually running. Usually it's a forgotten cloud-backup tool from three years ago pegging the disk, or a browser extension chewing through memory. Uninstall it, the computer is fast again.
+
+**Printer that "stops working" every few weeks.** The off-the-shelf answer is "time for a new printer," or worse, a managed-print contract. The evidence-led answer is to read the printer's own log: it's losing its IP every time the router reboots overnight. While we're in there, we usually find the alarm panel, the cameras, the access control, and the VoIP phones all hardcoded with static IPs that were chosen by hand at install time — a recipe for silent collisions when something else on the network grabs the same address. The right pattern is usually the opposite: leave devices on DHCP and reserve their addresses by MAC at the router. Set once, no more address fights.
+
+**Slow Wi-Fi.** The off-the-shelf answer is whatever the recommendation was — almost always a mesh kit. Mesh without a wired backbone is a workaround for not having infrastructure: each node repeats the signal of the node before it, sharing the same airspace and stepping on its own broadcast. Sometimes the fix really is simple — your router lives in a closet behind a metal filing cabinet and moving it twelve feet solves it. More often, the real fix is to do it right once: pull actual Ethernet to the spots wireless needs to live, and feed each access point with a wire. Wires are what make wireless excellent.
+
+**Email going to customers' spam folders.** The off-the-shelf answer is to sign up for a deliverability service or an inbox "warm-up" subscription. The evidence-led answer is to look at what's actually sending mail in your name: usually it's an old appointment-reminder app, or an invoicing tool from three providers ago, that was never properly authorized at the DNS level when it was added. Authorize the ones you still use, shut off the ones you don't, and mail lands. One afternoon of cleanup, no recurring fee.
 
 The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/it-problem-solving-scientific-method/" class="gold-link">Read the field notes →</a>
 
