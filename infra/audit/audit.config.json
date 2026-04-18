@@ -4,7 +4,8 @@
     "urls": [
       "https://www.it-help.tech/",
       "https://www.it-help.tech/services/",
-      "https://www.it-help.tech/billing/"
+      "https://www.it-help.tech/billing/",
+      "https://www.it-help.tech/about/"
     ],
     "formFactors": ["mobile", "desktop"],
     "thresholds": {
