@@ -410,7 +410,7 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 
-An ethical opt-in: a lightweight management agent runs on your device at $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No retainers, no multi-year contracts, no minimum seat counts, no hidden tiering, and no surprise restructuring. You can turn it off at any time.
+An ethical opt-in: a lightweight management agent runs on your device at $50 per device per month, and that is the entire arrangement. No retainers, no multi-year contracts, no minimum seat counts, no hidden tiering, and no surprise restructuring. You can turn it off at any time.
 
 It is the same class of agent used in larger managed-service programs, delivered here as a focused month-to-month subscription, configured properly and without bundled contract layers.
 
