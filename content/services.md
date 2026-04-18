@@ -396,7 +396,7 @@ Endpoint defense, mobile device security, and remote support that respects clien
 
 ## Forensic Data Extraction {#data-extraction}
 
-For law firms and legal professionals: structured extraction of email and iPhone iMessages into court-admissible, timestamped PDF reports suitable for litigation and eDiscovery. The work is done **on-site, on your equipment, so the data never leaves your office.** After the first engagement we document the process so your team can repeat it without us.
+For law firms and legal professionals: structured extraction of email and iPhone iMessages into court-admissible, timestamped PDF reports suitable for litigation and eDiscovery. The work is done **on-site, on your equipment, so the data never leaves your office.** On the first engagement, we document the workflow and train your staff so your firm can run future extractions in-house, without ongoing dependency on us. If you prefer, we can also continue handling matters case-by-case.
 
 ## Cross-Platform & Systems Work {#cross-platform}
 
@@ -410,7 +410,9 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 
-An ethical opt-in: a lightweight monitoring agent runs on your device, you pay $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No multi-year contracts, no minimum seat counts, no hidden tiering, no surprise restructuring. You can turn it off at any time. The agent surfaces health and security signals; we still bill on-demand for actual remediation work.
+An ethical opt-in: a lightweight management agent runs on your device, you pay $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No multi-year contracts, no minimum seat counts, no hidden tiering, no surprise restructuring. You can turn it off at any time.
+
+The agent handles ongoing maintenance from a single console: remediations, configuration changes, and security-policy updates across Mac, Windows, iOS, and Android where platform controls allow. Final OS-version upgrades on unsupervised devices still require user action; clients who want full remote OS control can opt into supervised MDM, and many choose not to. Security Edition adds managed threat detection. We continue billing on-demand for diagnostics and architecture.
 
 ## Our Recommendations
 
@@ -425,6 +427,15 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 * **<a href="https://www.threatdown.com/" target="_blank" rel="noopener noreferrer" class="gold-link">ThreatDown by Malwarebytes:</a>** For simplified EDR and MDR solutions.
 * **<a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Yubico Security Keys:</a>** For hardware-based multi-factor authentication.
 * **<a href="https://1password.com/" target="_blank" rel="noopener noreferrer" class="gold-link">1Password:</a>** For secure password and credential management.
+* **<a href="https://www.notion.com/product/mail" target="_blank" rel="noopener noreferrer" class="gold-link">Notion Mail:</a>** Notion's email client; excellent on Mac, for teams comfortable with hosted email workflows.
+* **<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer" class="gold-link">Zotero:</a>** Open-source reference and citation manager for research.
+* **<a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer" class="gold-link">Obsidian:</a>** Local-first markdown knowledge base.
+* **<a href="https://www.raycast.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Raycast:</a>** Fast launcher and productivity shell for Mac.
+* **<a href="https://www.thebrain.com/" target="_blank" rel="noopener noreferrer" class="gold-link">TheBrain:</a>** Visual knowledge graph for non-linear thinking and connection-mapping.
+* **<a href="https://www.devontechnologies.com/apps/devonthink" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONthink:</a>** Long-form document and research database for Mac.
+* **<a href="https://www.devontechnologies.com/apps/devonagent" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONagent Pro:</a>** Focused web research agent for Mac.
+* **<a href="https://www.devontechnologies.com/apps/devonsphere" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONsphere Express:</a>** Mac-wide content search and indexing.
+* **<a href="https://www.devontechnologies.com/apps/devonagent" target="_blank" rel="noopener noreferrer" class="gold-link">DEVONagent Express:</a>** Free DEVONagent build for ad-hoc research.
 
 Need expert Mac IT help to solve your tech challenges?
 <p><a class="cta-button" href="https://schedule.it-help.tech/" target="_blank" rel="noopener noreferrer">Book an on-site Appointment Now</a></p>
