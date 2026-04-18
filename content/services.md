@@ -412,6 +412,8 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 An optional month-to-month maintenance and security layer that keeps your devices current between consulting sessions — across macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS. $50 per device per month, no managed service contracts.
 
+Once enrolled, the agent handles automated OS updates and application patching, security policy enforcement, centralized device visibility, and remote support access. The goal: spend live consulting time on actual problems, not routine maintenance.
+
 IT Consulting Sessions work stays on the same transparent break-fix on-demand billing.
 
 Your devices will have the same advanced monitoring agent trusted by top managed service providers — at a fraction of the typical cost. Platform: ManageEngine Endpoint Central Cloud — Security Edition.
