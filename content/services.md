@@ -356,7 +356,7 @@ Seven service pillars, organized by the problem they solve. Across all seven, th
 
 ## Mac & Apple Ecosystem {#mac}
 
-Deep, system-level support for macOS and iOS. We diagnose what an Apple Store appointment cannot: kernel-level disk pressure, iCloud sync collisions, Spotlight index corruption, and the long tail of post-migration breakage. We are fluent on the command line and read system logs directly rather than guessing from symptoms.
+System-level support for macOS and iOS, focused on the diagnostics that require direct log access and command-line tooling: kernel-level disk pressure, iCloud sync collisions, Spotlight index corruption, and the long tail of post-migration breakage. We read system logs directly rather than guessing from symptoms.
 
 * **Mac performance & troubleshooting** — startup disk pressure, iCloud sync failures, application crashes, and post-update regressions.
 * **Apple Mail on macOS and iOS** — IMAP/SMTP setup, certificate issues, signing/encryption, and recovery of broken local mailboxes.
