@@ -1,0 +1,66 @@
+# `llms-full.txt` generator
+
+Auto-generates `llms-full.txt` from `content/*.md` so it never drifts from the live site.
+
+## Why this exists
+
+`llms-full.txt` is a long-form, plain-text mirror of the site for AI/LLM crawlers. Before this generator, it was hand-maintained in `static/llms-full.txt` and drifted badly: in the most recent audit it listed 5 old service pillars when the live page had 7 new ones, and was missing 13+ vendor recommendations. Hand-maintenance does not scale at the editing cadence we run.
+
+## How it works
+
+1. `infra/llms/build-llms-full.mjs` reads `infra/llms/llms-full.config.json` for the canonical page order, then walks each referenced `content/*.md`.
+2. For each page: parses frontmatter (TOML `+++` or YAML `---`, both supported), strips JSON-LD `<script>` blocks, strips HTML comments and `<svg>` blocks, normalizes `<br>`/`<p>`, converts inline `<a>` tags to markdown links, strips remaining HTML conservatively, decodes common HTML entities, strips Zola heading-anchor `{#anchor}` syntax, normalizes whitespace.
+3. Writes the assembled output to `build/llms-full.txt` (UTF-8, LF line endings, deterministic — same input always produces the same output, byte-for-byte).
+4. Deploy uploads `build/llms-full.txt` directly to S3 with a 1-hour TTL plus `stale-while-revalidate=86400`.
+
+The script has zero dependencies beyond Node stdlib.
+
+## Local usage
+
+```bash
+# Print to stdout without writing (debugging):
+node infra/llms/build-llms-full.mjs --dry-run
+
+# Write to build/llms-full.txt:
+node infra/llms/build-llms-full.mjs
+```
+
+## Config: `llms-full.config.json`
+
+- `tagline` — short site tagline used in the header preamble.
+- `main` / `optional` — section arrays. Each section has a `heading` and an `entries` list.
+- Each entry is one of:
+  - **File-backed**: `{ "label": "...", "file": "content/path.md" }`. Label and source URL are derived from config + file path; body comes from the page.
+  - **Link-only**: `{ "label": "...", "url": "https://...", "description": "..." }`. For external destinations like the booking subdomain that have no markdown source.
+
+### Per-page label override
+
+If a content author wants the LLM-facing label to differ from the page `<title>`, they can add `extra.llms_label = "..."` to the page frontmatter. Config wins if both are set; otherwise frontmatter wins; otherwise page title.
+
+## CI integration
+
+- **PR validation** (`.github/workflows/llms-validate.yml`): runs the generator on every PR that touches `content/`, `infra/llms/`, or `config.toml`. Uploads the generated file as a workflow artifact so reviewers can download and inspect the LLM-facing copy before merge.
+- **Deploy** (`.github/workflows/deploy.yml`): regenerates after `zola build` and before the S3 upload. Fail-closed — if the generator throws, the deploy stops and no `llms-*` file is uploaded that run.
+
+## Failure runbook
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| Deploy fails at "Generate llms-full.txt from content/" with `frontmatter missing required 'title'` | A content file is missing `title` in its frontmatter | Add the `title` field to the offending file (the error message names the file). Push fix; re-run deploy. |
+| Same step fails with `config references missing file: …` | A renamed/moved `content/*.md` left a stale entry in `llms-full.config.json` | Update the `file` path in the config. Push fix. |
+| Same step fails with `duplicate label in config: …` or `duplicate URL in config: …` | Two entries collide | Rename one of the labels, or remove the duplicate entry. |
+| Same step warns `stripped N unrecognized HTML tag(s)` but doesn't fail | A page added an HTML construct the conservative stripper doesn't know about | Inspect `build/llms-full.txt` (or the PR validation artifact) to confirm output is acceptable. Extend the recognized-tag list in `transformBody()` if needed. |
+| `llms-full.txt` on production looks stale 1+ hour after deploy | CloudFront edge cache | Cache-control is `max-age=3600`; wait an hour or invalidate `/llms-full.txt` via CloudFront. |
+| Need to roll back to the prior hand-maintained file | Generator producing wrong output and we need a hotfix | Revert the relevant PR. Until `static/llms-full.txt` is removed (Phase C of rollout), reverting also restores the hand-maintained file. |
+
+## Rollout plan (3 phases)
+
+- **Phase A** (this PR): Add generator + config + PR-validate workflow + deploy.yml updates (output path + cache-control). `static/llms-full.txt` stays in repo as fallback. After merge, deploy proves the generator works against current production.
+- **Phase B**: Inspect generator output vs current `static/llms-full.txt`, tune config/labels until parity is good or deliberate-improvement is achieved. Document any intentional differences.
+- **Phase C**: Delete `static/llms-full.txt` from repo. Generator becomes sole source of truth.
+
+## Out of scope
+
+- `llms.txt` (short nav index) stays hand-maintained — it's stable and not the drift source.
+- `sitemap.xml` is auto-generated by Zola; no changes here.
+- Schema (JSON-LD) is in markdown files and rebuilt by Zola; no changes here.

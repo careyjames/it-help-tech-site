@@ -151,14 +151,27 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
-      - name: Set UTF-8 header for LLMS files
+      - name: Generate llms-full.txt from content/
+        # Source of truth: infra/llms/llms-full.config.json + content/*.md.
+        # Fail-closed: if the generator throws, the deploy stops here, before any
+        # llms-* file is uploaded — better than shipping a stale or incomplete LLM
+        # corpus. See infra/llms/README.md for the runbook.
+        run: node infra/llms/build-llms-full.mjs
+
+      - name: Upload LLMS files (short TTL for freshness)
+        # llms-full.txt comes from build/ (generator output, source of truth).
+        # llms.txt is the small hand-maintained nav index in static/.
+        # Both get a short TTL with stale-while-revalidate so AI bots see updates
+        # within an hour while still tolerating origin hiccups.
         run: |
-          for f in static/llms*.txt; do
-            aws s3 cp "$f" "s3://$BUCKET/$(basename "$f")" \
-              --content-type "text/plain; charset=utf-8" \
-              --cache-control "public,max-age=31536000,immutable" \
-              --metadata-directive REPLACE
-          done
+          aws s3 cp build/llms-full.txt "s3://$BUCKET/llms-full.txt" \
+            --content-type "text/plain; charset=utf-8" \
+            --cache-control "public,max-age=3600,stale-while-revalidate=86400" \
+            --metadata-directive REPLACE
+          aws s3 cp static/llms.txt "s3://$BUCKET/llms.txt" \
+            --content-type "text/plain; charset=utf-8" \
+            --cache-control "public,max-age=3600,stale-while-revalidate=86400" \
+            --metadata-directive REPLACE
 
         env:
           AWS_S3_BUCKET: ${{ env.BUCKET }}

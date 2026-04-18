@@ -1,0 +1,28 @@
+{
+  "tagline": "Expert Apple IT support in San Diego for homes and businesses. No monthly retainers.",
+  "main": [
+    {
+      "heading": "Main",
+      "entries": [
+        { "label": "IT Help San Diego", "file": "content/_index.md" },
+        { "label": "Pricing", "file": "content/billing.md" },
+        { "label": "Services", "file": "content/services.md" },
+        { "label": "DNS Tool", "file": "content/dns-tool.md" },
+        { "label": "Our Expertise", "file": "content/about.md" },
+        {
+          "label": "Schedule",
+          "url": "https://schedule.it-help.tech/",
+          "description": "Book an on-site appointment."
+        }
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "heading": "Optional",
+      "entries": [
+        { "label": "Blog", "file": "content/blog/_index.md" }
+      ]
+    }
+  ]
+}
