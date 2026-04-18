@@ -1,14 +1,21 @@
 # AGENTS.md
 
+This is the canonical, durable source of truth for all AI agents and human
+contributors working on this repository. `replit.md` is intentionally a stub
+(see `PROJECT_EVOLUTION_LOG.md` 2026-04-18 entry); do not rely on it for
+governance.
+
 ## Mandatory Read (All AI Agents)
 
-If you are an AI coding or automation agent (Codex, Replit Agent, Claude Code, Cursor, Copilot, Anti-Gravity, or similar), read these files before making any edits:
+If you are an AI coding or automation agent (Codex, Replit Agent, Claude Code,
+Cursor, Copilot, Anti-Gravity, or similar), read these files before making any
+edits, in this order:
 
-1. `STYLE_GUIDE.md`
-2. `PROJECT_EVOLUTION_LOG.md`
-3. `replit.md` (for build/deploy pipeline constraints)
+1. `AGENTS.md` (this file) — primary governance
+2. `STYLE_GUIDE.md` — visual system and tokens
+3. `PROJECT_EVOLUTION_LOG.md` — recent change rationale and rollback hooks
 
-Do not make style or UX edits until those files are read.
+Do not make style, UX, infrastructure, or copy edits until those files are read.
 
 ## Engineering Philosophy (Hard Quality Bar)
 
@@ -43,6 +50,37 @@ If a gate cannot be met, document the reason and rollback path in both PR notes 
   - IT/HELP edge outline stays, but should be tuned for clarity without harsh glow.
 - Avoid duplicate CSS selectors and dead override blocks; Sonar must stay clean.
 - Do not introduce new palette colors ad hoc. Use existing tokens first.
+- **Never use Replit's "Publish" button.** It deploys to a `*.replit.app` host that creates an SEO collision with the production site (`https://www.it-help.tech/`). All deploys go through the GitHub Actions pipeline below.
+
+## Development Workflow
+
+- Work on `replit/working` (or a topic branch named `replit/<scope>` for isolated changes).
+- Push to GitHub and open a PR against `main`.
+- Merge to `main` via **squash and merge** only.
+- After every squash-merge, reset the working branch locally so the next PR doesn't carry duplicate commits:
+  ```bash
+  git fetch origin
+  git checkout replit/working
+  git reset --hard origin/main
+  git push --force origin replit/working
+  ```
+  Then click "Pull" in Replit to sync.
+- Topic branches (`replit/<scope>`) can be deleted after merge.
+
+## Deploy & Build Pipeline
+
+Automatic on merge to `main` via `.github/workflows/deploy.yml`:
+
+1. **Zola build** → outputs to `public/` (or `build/` after the llms generator runs).
+2. **PurgeCSS** removes unused styles.
+3. **KaTeX assets** removed if unused.
+4. **CSP hashes auto-regenerated** via `infra/cloudfront/update_policy.sh` (signature pages use `infra/cloudfront/update_policy_signatures.sh` when `POLICY_ID_SIGNATURES` is set).
+5. **`infra/llms/build-llms-full.mjs`** auto-generates `build/llms-full.txt` from `content/*.md` so it never drifts from the live site.
+6. **S3 sync** with proper cache headers (`max-age=3600, stale-while-revalidate=86400` for `llms*.txt`; long-cache for fingerprinted assets).
+7. **CloudFront invalidation**.
+8. **Post-deploy audit gate** — `infra/audit/run-lighthouse.mjs` runs Lighthouse mobile/desktop and Mozilla Observatory against URLs in `infra/audit/audit.config.json`. Median-of-3 sampling per (url, formFactor); fails if any per-category median drops below thresholds (currently 98 for Performance/Accessibility/Best Practices/SEO; A+/120 for Observatory). Single-sample dips that pass the median surface as warnings, not failures.
+
+Local build: `zola build` → `public/`. Local preview: `zola serve --interface 0.0.0.0 --port 5000`.
 
 ## Required Update Process For Visual Changes
 
@@ -58,6 +96,39 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
    - rollback reference (commit/PR)
 4. Run `zola build` before opening or updating a PR.
 
+## Project Architecture (At-a-Glance)
+
+**Stack:** Zola static site generator + Abridge theme (customized). SASS for styles, PurgeCSS for optimization. No client-side frameworks. No trackers, no cookies, no third-party JS frameworks.
+
+**Layout:**
+
+- `content/` — Markdown pages, blog posts, and embedded JSON-LD schema
+- `templates/` — Zola HTML templates and macros (`base.html`, `page.html`, `blog.html`)
+- `themes/abridge/` — Abridge theme; SEO macros at `themes/abridge/templates/macros/seo.html`
+- `sass/` — SASS sources (`_extra.scss` holds component/interaction tokens; `css/abridge.scss` holds theme/link tokens)
+- `static/` — assets, `robots.txt`, `llms.txt`; `static/css/late-overrides.css` is the canonical visual-system file
+- `infra/` — `audit/` (Lighthouse + Observatory gate), `llms/` (build-time `llms-full.txt` generator), `cloudfront/` (CSP policy regen)
+- `public/` — Zola build output (gitignored)
+- `build/` — generator output staged for S3 (gitignored)
+
+**Content pages and schema types:**
+
+| Page | File | Schema Types |
+|------|------|--------------|
+| Home | `content/_index.md` | FAQPage, LocalBusiness+ProfessionalService, WebSite, WebPage |
+| Services | `content/services.md` | WebSite, WebPage, LocalBusiness, ItemList, Offer, FAQPage, Service graph |
+| Billing | `content/billing.md` | Offer, FAQPage |
+| About | `content/about.md` | AboutPage with Organization |
+| DNS Tool | `content/dns-tool.md` | SoftwareApplication |
+| Blog Index | `content/blog/_index.md` | ItemList |
+| Blog Posts | `content/blog/*.md` | Article (via `templates/page.html`) |
+
+**SEO architecture:** Theme SEO macros handle base meta, OG, Twitter. Per-page overrides via content frontmatter (`extra.og_title`, `extra.twitter_description`, etc.). JSON-LD schema lives in content Markdown files, not templates. `templates/blog.html` adds Blog schema for the index.
+
+**CSS load order (do not reorder):** `critical.min.css` (inlined) → `cls-fixes.css` → `abridge.css` → `override.min.css` → `late-overrides.css`.
+
+**LLM/bot files:** `static/robots.txt` enumerates AI bot permissions. `static/llms.txt` is the short LLM-friendly summary. `build/llms-full.txt` (auto-generated at deploy time from `content/*.md`) is the full content snapshot; the legacy `static/llms-full.txt` is retained as a Phase A fallback and will be deleted in a future PR.
+
 ## Canonical Files
 
 - Visual system: `static/css/late-overrides.css`
@@ -65,3 +136,20 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
 - Component/interaction tokens: `sass/_extra.scss`
 - Project style rules: `STYLE_GUIDE.md`
 - Change history: `PROJECT_EVOLUTION_LOG.md`
+- Site config: `config.toml`
+- Layout shell + footer NAP: `templates/base.html`
+- Audit gate config + thresholds: `infra/audit/audit.config.json`
+- llms-full generator + page order: `infra/llms/build-llms-full.mjs`, `infra/llms/llms-full.config.json`
+
+## Why `replit.md` Is a Stub
+
+Replit's checkpoint subsystem auto-rewrites `replit.md` on every "Loop ended"
+event (commit author `careybalboa <...@users.noreply.replit.com>`, trailer
+`Replit-Commit-Checkpoint-Type: full_checkpoint`). Manually curated sections do
+not survive. There is no documented `.replit` flag to disable this. We
+therefore deny the auto-summarizer anything meaningful to manage by keeping
+`replit.md` short, and we enforce the stub policy with a CI guard
+(`.github/workflows/replit-md-guard.yml`). All real governance lives here,
+in `STYLE_GUIDE.md`, and in `PROJECT_EVOLUTION_LOG.md`. See
+`PROJECT_EVOLUTION_LOG.md` 2026-04-18 doc-hierarchy entry for the full
+investigation.

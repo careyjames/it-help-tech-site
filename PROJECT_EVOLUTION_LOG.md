@@ -13,6 +13,19 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-18 (Docs · `replit.md` reduced to platform-owned stub; AGENTS.md becomes sole governance source)
+- Actor: AI (Replit Agent + architect subagent)
+- Severity: MEDIUM (changes the documented source-of-truth hierarchy for all AI agents on this repo)
+- Trigger: Replit's checkpoint subsystem was repeatedly stripping `replit.md` on every "Loop ended" event. Three strips observed in a single session (137 → 46 → 78 → 45 lines), each commit titled "Restore..." but actually deleting 90+ lines. Author trailer `careybalboa <43527839-careybalboa@users.noreply.replit.com>` and commit headers `Replit-Commit-Checkpoint-Type: full_checkpoint` + `Replit-Helium-Checkpoint-Created: true` confirmed platform automation as the source. No documented `.replit` flag disables the behavior. Owner directive: "find out how to prevent this error."
+- Files:
+  - `replit.md` — reduced from 137 lines to ~12-line stub: title, one paragraph explaining the stub policy, canonical-sources block pointing to `AGENTS.md`, `STYLE_GUIDE.md`, `PROJECT_EVOLUTION_LOG.md`
+  - `AGENTS.md` — folded in Development Workflow, Deploy & Build Pipeline, Project Architecture (At-a-Glance), and "Why replit.md Is a Stub" sections. Mandatory Read list updated to drop `replit.md` and elevate `AGENTS.md` itself as primary
+  - `.github/workflows/replit-md-guard.yml` — new CI guard fails any PR where `replit.md` exceeds 30 lines or drops the canonical-sources pointers (`AGENTS.md`, `STYLE_GUIDE.md`, `PROJECT_EVOLUTION_LOG.md`)
+  - `PROJECT_EVOLUTION_LOG.md` — this entry
+- Change: AGENTS.md is now the sole canonical source for engineering governance, dev workflow, deploy pipeline, and project architecture pointers. `replit.md` is intentionally disposable; the platform may rewrite it freely without affecting governance. CI guard at PR boundary blocks any future re-expansion (whether from the platform auto-summarizer or from accidental human edits).
+- Why: Architect-validated root cause — the Replit checkpoint subsystem treats `replit.md` as an auto-summary file it owns, derived from a project metadata pass that fires after the agent loop ends. Fighting it inside the loop is futile (autocommit lands after the agent's last action). Architect ranked five mitigation options; the durable fix is option (a): deny the auto-summarizer anything meaningful to summarize, and let CI catch any drift at PR time. Options (b) `.gitignore`, (c) author/line-delta pre-commit hook, and (d) `.replit` config flag were rejected (no supported flag; hooks may not run for platform commits; ignoring breaks fresh-clone bootstrap). The 137-line `replit.md` we kept restoring was itself a prior platform summary, not the owner's original — confirming the file has not been durably owner-controlled for some time.
+- Rollback: revert this PR. Note: reverting reintroduces the strip-cycle on every checkpoint and re-orphans governance content into a file the platform overwrites unpredictably.
+
 ### 2026-04-18 (Audit gate · jitter elimination via median-of-3 with leading-indicator warnings)
 - Actor: AI (Replit Agent + architect subagent)
 - Severity: MEDIUM (CI infrastructure; affects every deploy going forward; engineering bar preserved exactly)

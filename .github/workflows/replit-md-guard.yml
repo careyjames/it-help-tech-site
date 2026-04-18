@@ -1,0 +1,64 @@
+name: Guard replit.md against auto-expansion
+
+# Replit's checkpoint subsystem auto-rewrites replit.md on every "Loop ended"
+# event, so durable governance lives in AGENTS.md / STYLE_GUIDE.md /
+# PROJECT_EVOLUTION_LOG.md instead. This workflow enforces that replit.md
+# stays a small stub at PR time, blocking any future re-expansion (whether
+# from the platform auto-summarizer or from accidental manual edits).
+#
+# See PROJECT_EVOLUTION_LOG.md 2026-04-18 entry for the full investigation.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "replit.md"
+      - ".github/workflows/replit-md-guard.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Enforce stub policy
+        run: |
+          set -euo pipefail
+          MAX_LINES=30
+          ACTUAL=$(wc -l < replit.md)
+          echo "replit.md line count: $ACTUAL (max allowed: $MAX_LINES)"
+
+          if [ "$ACTUAL" -gt "$MAX_LINES" ]; then
+            echo "::error file=replit.md::replit.md has grown to $ACTUAL lines (max $MAX_LINES)."
+            echo ""
+            echo "This file is intentionally a stub."
+            echo "Replit's checkpoint subsystem auto-rewrites replit.md on every"
+            echo "'Loop ended' event, so durable governance must live in:"
+            echo "  - AGENTS.md (primary)"
+            echo "  - STYLE_GUIDE.md"
+            echo "  - PROJECT_EVOLUTION_LOG.md"
+            echo ""
+            echo "See PROJECT_EVOLUTION_LOG.md 2026-04-18 doc-hierarchy entry."
+            exit 1
+          fi
+
+          if ! grep -qF "AGENTS.md" replit.md; then
+            echo "::error file=replit.md::replit.md no longer references AGENTS.md as the canonical source."
+            echo "The stub must keep the canonical-sources pointer block intact."
+            exit 1
+          fi
+
+          if ! grep -qF "STYLE_GUIDE.md" replit.md; then
+            echo "::error file=replit.md::replit.md no longer references STYLE_GUIDE.md."
+            exit 1
+          fi
+
+          if ! grep -qF "PROJECT_EVOLUTION_LOG.md" replit.md; then
+            echo "::error file=replit.md::replit.md no longer references PROJECT_EVOLUTION_LOG.md."
+            exit 1
+          fi
+
+          echo "Stub policy: OK"
