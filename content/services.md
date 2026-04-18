@@ -344,7 +344,7 @@ extra:
       "name": "Managed Agent (Opt-In, $50/Device)",
       "serviceType": "Managed Endpoint Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Optional lightweight monitoring agent at $50 per device per month — opt-in only, no retainers, no lock-in.",
+      "description": "Optional month-to-month device maintenance and security layer powered by ManageEngine Endpoint Central Cloud — Security Edition. $50 per device per month, no managed service contracts.",
       "url": "https://www.it-help.tech/services/#managed-agent"
     }
   ]
@@ -410,13 +410,11 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 
-An ethical opt-in: a lightweight management agent runs on your device at $50 per device per month, and that is the entire arrangement. No retainers, no multi-year contracts, no minimum seat counts, no hidden tiering, and no surprise restructuring. You can turn it off at any time.
+An optional month-to-month maintenance and security layer that keeps your devices current between consulting sessions — across macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS. $50 per device per month, no managed service contracts.
 
-It is the same class of agent used in larger managed-service programs, delivered here as a focused month-to-month subscription, configured properly and without bundled contract layers.
+IT Consulting Sessions work stays on the same transparent break-fix on-demand billing.
 
-The agent handles ongoing maintenance from a single console: remediations, configuration changes, and security-policy updates across Mac, Windows, iOS, and Android where platform controls allow. Final OS-version upgrades on unsupervised devices still require user action; clients who want full remote OS control can opt into supervised MDM, and many choose not to. Security Edition adds managed threat detection. We continue billing on-demand for diagnostics and architecture.
-
-The service is month-to-month with no minimum term, and it is designed as continuous protection rather than short-term surge support. While enrolled, supported devices are kept aligned with current security baselines: when a policy-required update is due, you receive a clear prompt to save your work, and the change is scheduled in a defined maintenance window (typically after hours where possible). In practice, that gives you MSP-grade operating discipline without long-term contracts or bundled retainers. IT Consulting Sessions work stays on the same transparent break-fix billing as everything else.
+Your devices will have the same advanced monitoring agent trusted by top managed service providers — at a fraction of the typical cost. Platform: ManageEngine Endpoint Central Cloud — Security Edition.
 
 ## Our Recommendations
 
