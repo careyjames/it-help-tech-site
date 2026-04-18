@@ -431,6 +431,7 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 * **<a href="https://www.threatdown.com/" target="_blank" rel="noopener noreferrer" class="gold-link">ThreatDown by Malwarebytes:</a>** For simplified EDR and MDR solutions.
 * **<a href="https://www.yubico.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Yubico Security Keys:</a>** For hardware-based multi-factor authentication.
 * **<a href="https://1password.com/" target="_blank" rel="noopener noreferrer" class="gold-link">1Password:</a>** For secure password and credential management.
+* **<a href="https://objective-see.org/products/lulu.html" target="_blank" rel="noopener noreferrer" class="gold-link">LuLu:</a>** Free, open-source macOS firewall from Objective-See; blocks unauthorized outbound network connections at the system level.
 * **<a href="https://www.notion.com/product/mail" target="_blank" rel="noopener noreferrer" class="gold-link">Notion Mail:</a>** Notion's email client; excellent on Mac, for teams comfortable with hosted email workflows.
 * **<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer" class="gold-link">Zotero:</a>** Open-source reference and citation manager for research.
 * **<a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer" class="gold-link">Obsidian:</a>** Local-first markdown knowledge base.
