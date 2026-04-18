@@ -352,7 +352,7 @@ extra:
 </script>
 
 
-Seven service pillars, organized by the problem they solve. No retainers, no lock-in, no padded hours — just clear billing for actual work performed.
+Seven service pillars, organized by the problem they solve. Across all seven, the model is the same: you bring a mission, problem, or research goal; we engage, solve it, and bill only for work performed. No retainers, no lock-in, no padded hours. This structure gives clients access to senior-level engineering when needed, without an ongoing contract.
 
 ## Mac & Apple Ecosystem {#mac}
 
@@ -410,7 +410,9 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 
-An ethical opt-in: a lightweight management agent runs on your device, you pay $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No multi-year contracts, no minimum seat counts, no hidden tiering, no surprise restructuring. You can turn it off at any time.
+An ethical opt-in: a lightweight management agent runs on your device at $50 per device per month, and that is the entire arrangement. Not a managed-services hostage situation. No retainers, no multi-year contracts, no minimum seat counts, no hidden tiering, and no surprise restructuring. You can turn it off at any time.
+
+It is the same class of agent used in larger managed-service programs, delivered here as a focused month-to-month subscription, configured properly and without bundled contract layers.
 
 The agent handles ongoing maintenance from a single console: remediations, configuration changes, and security-policy updates across Mac, Windows, iOS, and Android where platform controls allow. Final OS-version upgrades on unsupervised devices still require user action; clients who want full remote OS control can opt into supervised MDM, and many choose not to. Security Edition adds managed threat detection. We continue billing on-demand for diagnostics and architecture.
 
