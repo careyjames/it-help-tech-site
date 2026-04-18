@@ -82,9 +82,10 @@ We follow clear policies for our IT support services. **No monthly retainers!**
 ## IT Consulting & Support Rate
 
 * **Base Rate:** $275 per hour.
+* **Specialty Rate:** $400 per hour for select networking and scientific engineering work. Where this applies, the client is informed before the session begins.
 * **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote or phone support.
 * **Billing Increments:** We bill precisely in **1-minute increments**, based on call or session timers or time tracked for offline tasks.
-* **Travel:** $1.50 per mile for every on‑site visit. For sites under 15 miles, we bill one-way mileage; for sites above 15 miles, we bill round-trip mileage plus drive time.
+* **Travel:** Local transportation is billed at actual cost (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate. As a courtesy, short local travel of 15 minutes or less each way is not billed for travel time. Travel time is measured door-to-door. Out-of-area or air travel: actual cost (transport and lodging) plus travel time, pre-approved.
 
 This policy covers real operational costs and ensures continued reliability.
 
