@@ -606,3 +606,12 @@ textarea {
   min-height: 6rem;
   resize: vertical;
 }
+
+/* About page: ORCID iD line — official ORCID green mark inline with iD text.
+   Inline attribute styles would be CSP-blocked under style-src 'self' in prod,
+   so the SVG geometry tweaks live here. The iD text inherits the page link
+   color so dark/light theme handles itself. */
+.orcid-line svg {
+  vertical-align: -3px;
+  margin-right: 6px;
+}
