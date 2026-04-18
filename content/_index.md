@@ -274,7 +274,7 @@ If you've ever called for tech support and bounced through tiers trying to reach
 
 **Email going to customers' spam folders.** The off-the-shelf answer is to sign up for a deliverability service or an inbox "warm-up" subscription. The evidence-led answer is to look at what's actually sending mail in your name: usually it's an old appointment-reminder app, or an invoicing tool from three providers ago, that was never properly authorized at the DNS level when it was added. Authorize the ones you still use, shut off the ones you don't, and mail lands. One afternoon of cleanup, no recurring fee.
 
-The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="/blog/it-problem-solving-scientific-method/" class="gold-link">Read the field notes →</a>
+The same instinct produced our public DNS research platform at <a href="https://dnstool.it-help.tech" class="gold-link" target="_blank" rel="noopener noreferrer">dnstool.it-help.tech</a>, where we publish what we learn from the wire. <a href="https://doi.org/10.5281/zenodo.19468134" class="gold-link" target="_blank" rel="noopener noreferrer">Read the published science →</a>
 
 ## Local credibility
 
