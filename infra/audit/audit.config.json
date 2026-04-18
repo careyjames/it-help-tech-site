@@ -8,6 +8,7 @@
       "https://www.it-help.tech/about/"
     ],
     "formFactors": ["mobile", "desktop"],
+    "samplesPerAudit": 3,
     "thresholds": {
       "performance": 98,
       "accessibility": 98,

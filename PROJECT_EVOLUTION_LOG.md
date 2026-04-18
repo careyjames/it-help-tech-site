@@ -13,6 +13,19 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-18 (Audit gate · jitter elimination via median-of-3 with leading-indicator warnings)
+- Actor: AI (Replit Agent + architect subagent)
+- Severity: MEDIUM (CI infrastructure; affects every deploy going forward; engineering bar preserved exactly)
+- Trigger: Owner reported recurring CI false-failures from single-sample Lighthouse jitter on the homepage mobile audit. PR #554 deploy hit P=96, PR #557 deploy hit P=95 — both cleared on manual GitHub-UI re-run. Owner directive: "fix it, get some deep research with the architect and find a path forward so we're very clean and healthy."
+- Files:
+  - `infra/audit/run-lighthouse.mjs` — rewritten: collects N samples per (url, formFactor), computes per-category-independent median, fails on median < threshold, emits non-failing warning when any single sample dipped below threshold but median passed
+  - `infra/audit/audit.config.json` — added `lighthouse.samplesPerAudit` (default 3); existing thresholds unchanged
+  - `infra/audit/README.md` — new "Why median-of-N" section + cost analysis + samplesPerAudit documentation
+  - `replit.md` — Engineering Bar section updated to describe median-of-N gate; Recent Changes entry added
+- Change: Single-sample → median-of-3 gate. For each (url, formFactor) pair, run Lighthouse 3 times, take median per category independently, fail the deploy only if any per-category median drops below its threshold. A separate warning (non-failing) lists any single-sample sub-threshold dips where median still passed — that surfaces thinning-margin pages as a leading indicator without blocking the deploy. `samplesPerAudit` is configurable in `audit.config.json` and falls back to 3.
+- Why: Architect deep-research evaluated 7 options (best-of-N, median-of-N, conditional retry, soft tolerance, Lighthouse-CI migration, throttling-method swap, hybrid retry+median) and recommended median-of-N (option 2) for this project's constraints: privacy-first static site, perfectionist owner, deploy time matters but not critical, no observability stack. Best-of-N rejected because it would actively mask intermittent real regressions. Lighthouse-CI migration rejected as fighting the existing JSON config schema. Median-of-3 keeps the engineering bar honest — a real regression that triggers in ≥2 of 3 samples still fails the gate — while a single jittery sample no longer false-fails. Median is computed per-category-independently (not over the full report) so a Performance dip can't be averaged away by perfect Accessibility/SEO. Cost: Lighthouse phase grows from ~96s to ~5min per deploy (24 audits × ~12s); Observatory unchanged.
+- Rollback: revert this PR; or set `lighthouse.samplesPerAudit: 1` in `audit.config.json` to revert to the original single-sample behavior without code changes.
+
 ### 2026-04-17 (Topbar · Architect-validated definitive seam fix — capability-stratified surface treatment + decorative top-fade)
 - Actor: AI (Replit Agent + architect subagent)
 - Severity: MEDIUM (touches every viewport; root-cause fix for a recurring complaint)
