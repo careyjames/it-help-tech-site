@@ -241,14 +241,14 @@ twitter_card        = "summary_large_image"
 ### <a href="/services/#mac" class="gold-link">Mac &amp; Apple Ecosystem</a>
 macOS, iOS, iCloud, and Apple Mail diagnosed at the system level. Storage, sync, performance, and migration handled correctly the first time. <a href="/services/#mac" class="gold-link">Learn more →</a>
 
+### <a href="/services/#cross-platform" class="gold-link">Cross-Platform Systems Engineering</a>
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. <a href="/services/#cross-platform" class="gold-link">Learn more →</a>
+
 ### <a href="/services/#wifi" class="gold-link">Wi‑Fi &amp; Network Engineering</a>
 Bespoke wireless and wired networks for large homes, estates, and small offices. Cat6A/Cat8/fiber backbones, mesh design, and dead-zone elimination using measured RF data, not guesswork. <a href="/services/#wifi" class="gold-link">Learn more →</a>
 
 ### <a href="/services/#dns-email" class="gold-link">Email Deliverability &amp; DNS Forensics</a>
 We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. <a href="/services/#dns-email" class="gold-link">Learn more →</a>
-
-### <a href="/services/#cross-platform" class="gold-link">Cross-Platform Systems Engineering</a>
-macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. <a href="/services/#cross-platform" class="gold-link">Learn more →</a>
 
 ## Trust signals
 

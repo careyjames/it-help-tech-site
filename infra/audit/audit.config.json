@@ -1,0 +1,23 @@
+{
+  "$comment": "Single source of truth for the post-deploy audit gate. Bumping a threshold or adding a URL here is the only edit needed; the deploy workflow + scripts pick it up automatically.",
+  "lighthouse": {
+    "urls": [
+      "https://www.it-help.tech/",
+      "https://www.it-help.tech/services/",
+      "https://www.it-help.tech/billing/",
+      "https://www.it-help.tech/about/"
+    ],
+    "formFactors": ["mobile", "desktop"],
+    "thresholds": {
+      "performance": 98,
+      "accessibility": 98,
+      "best-practices": 98,
+      "seo": 98
+    }
+  },
+  "observatory": {
+    "host": "www.it-help.tech",
+    "minGrade": "A+",
+    "minScore": 120
+  }
+}

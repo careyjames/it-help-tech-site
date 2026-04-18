@@ -15,15 +15,26 @@ Clear, transparent IT consulting. **No monthly retainers. No open-ended charges.
 ## IT Consulting & Support Rates
 
 * **Base Rate:** $275 per hour
+* **Specialty Rate:** $400 per hour for select networking and scientific engineering work. Where this applies, you are informed before the session begins.
 * **Minimum Charges:**
   * **On-site service:** 1-hour minimum (**this first hour functions as a booking deposit**)
   * **Remote / phone / screen-sharing support:** 30-minute minimum (**booking deposit**)
-* **Billing Increments:** All work beyond the initial minimum is billed precisely in **1-minute increments**, based on session timers or documented offline work.
-* **Travel:** $1.50 per mile for on-site visits.
-  * Locations within 15 miles: one-way mileage
-  * Locations beyond 15 miles: round-trip mileage **plus billable drive time**
+* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers or documented offline work.
 
 This policy reflects real operational costs and ensures reliability and availability.
+
+
+## Travel
+
+Local transportation is billed at **actual cost** (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate.
+
+As a courtesy, short local travel of **15 minutes or less each way is not billed for travel time**. If travel exceeds 15 minutes in either direction, travel time **beyond the initial 15 minutes** is billable. Travel time is measured **door-to-door**.
+
+For very short local visits, transportation cost may be waived at our discretion.
+
+Out-of-area or extended travel is quoted or pre-approved in advance.
+
+Air travel is billed at **actual cost** (transport and lodging) plus travel time.
 
 
 ## Booking & Payment Policy
@@ -53,8 +64,10 @@ We do not bill recurring fees, retainers, or unattended time.
 ## Quick Questions & Brief Communications
 
 * Existing clients may call, text, or email at any time.
-* Brief communications under **10 minutes** are not billed.
-* Calls, remote sessions, or other work exceeding 10 minutes are billable at the standard rate, subject to the **30-minute minimum**.
+* Unscheduled communications lasting **10 minutes or less are not billed**.
+* If an interaction exceeds 10 minutes, billing is activated for the **full duration**, subject to standard minimums (30-minute remote minimum).
+* Multiple or fragmented interactions about the same issue may be combined and treated as a **single interaction** for billing purposes.
+* Courtesy time is capped at **10 minutes per issue within any 24-hour period** — so you can run something by us without fear of being billed.
 
 
 ## Privacy, Security & Ethics
@@ -129,7 +142,7 @@ Clear billing, agreed work, documented time.
       "name": "How do travel fees work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We charge $1.50 per mile for every visit. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus billable drive time."
+        "text": "Local transportation is billed at actual cost (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate. Short local travel of 15 minutes or less each way is not billed for travel time; beyond that, travel time over the first 15 minutes is billable. Travel time is measured door-to-door. Air travel is billed at actual cost (transport and lodging) plus travel time."
       }
     }
   ]

@@ -281,7 +281,7 @@ extra:
       "name": "Do you charge a travel fee?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Travel is billed at $1.50 per mile. For locations within 15 miles we bill one‑way mileage; beyond 15 miles we bill round‑trip mileage plus drive time."
+        "text": "Yes. Local transportation is billed at actual cost (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate. Short local travel of 15 minutes or less each way is not billed for travel time; beyond that, travel time over the first 15 minutes is billable. Travel time is measured door-to-door. Air travel is billed at actual cost (transport and lodging) plus travel time."
       }
     }
   ]
