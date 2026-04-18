@@ -189,18 +189,63 @@ function transformBody(body, filePath) {
   // 6. Strip Zola heading-anchor syntax {#anchor} from heading lines.
   s = s.replace(/^(#{1,6}\s+.*?)\s*\{#[^}]+\}\s*$/gm, "$1");
 
+  // 6b. Demote in-page headings so they nest under the page label.
+  //     The page label is rendered at level 3 ("### Label"), so the highest
+  //     in-page heading must be at least level 4 to maintain a valid outline.
+  //     Otherwise an in-page h2 emits at the same level as the "## Main"
+  //     section heading (an outline violation that confuses LLMs and TOC tools).
+  //     We compute the minimum heading level present in the body and shift
+  //     every heading by max(0, 4 - min). Result is capped at h6.
+  s = demoteHeadings(s, 4);
+
   // 7. Normalize whitespace.
-  s = s.replace(/[ \t]+\n/g, "\n");           // trailing spaces
-  s = s.replace(/\n{3,}/g, "\n\n");            // collapse 3+ blank lines
-  s = s.replace(/^\s+|\s+$/g, "");             // trim
+  //    - Strip trailing spaces on every line.
+  //    - Collapse 3+ consecutive blank lines to 2.
+  //    - Trim leading/trailing whitespace overall.
+  //    - Strip leading whitespace from text lines (lines that begin with a
+  //      letter). Defends against the residue left when inline HTML wrappers
+  //      like <h1><span>...</span><span>...</span></h1> are stripped — the
+  //      inner text keeps the original indentation and reads as garbage.
+  //      Lines beginning with list/quote/heading/code markers are preserved.
+  s = s.replace(/[ \t]+\n/g, "\n");
+  s = s.replace(/^[ \t]+(?=[A-Za-z])/gm, "");
+  s = s.replace(/\n{3,}/g, "\n\n");
+  s = s.replace(/^\s+|\s+$/g, "");
 
   return s;
+}
+
+// Demote every heading line in `s` so the smallest level present is at least
+// `targetMin`. Caps at level 6. No-op if all headings already satisfy the
+// floor. Operates on Markdown ATX-style headings only (`# ` through `###### `).
+function demoteHeadings(s, targetMin) {
+  const headings = [...s.matchAll(/^(#{1,6})\s/gm)];
+  if (headings.length === 0) return s;
+  let minLevel = 6;
+  for (const h of headings) minLevel = Math.min(minLevel, h[1].length);
+  const shift = Math.max(0, targetMin - minLevel);
+  if (shift === 0) return s;
+  return s.replace(/^(#{1,6})(\s)/gm, (_, hashes, sp) => {
+    const newLevel = Math.min(6, hashes.length + shift);
+    return "#".repeat(newLevel) + sp;
+  });
 }
 
 // --- Main ---
 function main() {
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf8"));
   const site = readSiteConfig();
+
+  // Build a Zola-canonical URL for a content file (always trailing-slash,
+  // matching the live site's URL canonicalization for both root and section pages).
+  // content/_index.md      → ${base_url}/
+  // content/services.md    → ${base_url}/services/
+  // content/blog/_index.md → ${base_url}/blog/
+  // content/blog/foo.md    → ${base_url}/blog/foo/
+  const fileToUrl = (file) => {
+    const stripped = file.replace(/^content\//, "").replace(/\.md$/, "").replace(/(^|\/)_index$/, "$1");
+    return `${site.base_url}/${stripped}${stripped && !stripped.endsWith("/") ? "/" : ""}`;
+  };
 
   // Validate config: dup URLs/labels.
   const seenLabels = new Set();
@@ -209,7 +254,7 @@ function main() {
     for (const entry of sec.entries) {
       if (seenLabels.has(entry.label)) die(`duplicate label in config: ${entry.label}`);
       seenLabels.add(entry.label);
-      const url = entry.url ?? (entry.file ? `${site.base_url}/${entry.file.replace(/^content\//, "").replace(/\.md$/, "").replace(/_index$/, "")}` : null);
+      const url = entry.url ?? (entry.file ? fileToUrl(entry.file) : null);
       if (url) {
         if (seenUrls.has(url)) die(`duplicate URL in config: ${url}`);
         seenUrls.add(url);
@@ -249,7 +294,7 @@ function main() {
       const raw = fs.readFileSync(filePath, "utf8");
       const { fm, body } = parseFrontmatter(raw, entry.file);
       const finalLabel = entry.label ?? fm.llms_label ?? fm.title;
-      const url = `${site.base_url}/${entry.file.replace(/^content\//, "").replace(/\.md$/, "").replace(/_index$/, "")}`;
+      const url = fileToUrl(entry.file);
       const cleanedBody = transformBody(body, entry.file);
 
       out.push(`### ${finalLabel}`);

@@ -9,7 +9,7 @@ Auto-generates `llms-full.txt` from `content/*.md` so it never drifts from the l
 ## How it works
 
 1. `infra/llms/build-llms-full.mjs` reads `infra/llms/llms-full.config.json` for the canonical page order, then walks each referenced `content/*.md`.
-2. For each page: parses frontmatter (TOML `+++` or YAML `---`, both supported), strips JSON-LD `<script>` blocks, strips HTML comments and `<svg>` blocks, normalizes `<br>`/`<p>`, converts inline `<a>` tags to markdown links, strips remaining HTML conservatively, decodes common HTML entities, strips Zola heading-anchor `{#anchor}` syntax, normalizes whitespace.
+2. For each page: parses frontmatter (TOML `+++` or YAML `---`, both supported), strips JSON-LD `<script>` blocks, strips HTML comments and `<svg>` blocks, normalizes `<br>`/`<p>`, converts inline `<a>` tags to markdown links, strips remaining HTML conservatively, decodes common HTML entities, strips Zola heading-anchor `{#anchor}` syntax, **demotes in-page headings** so the highest level is at least `####` (nesting under the `### Page Label`), normalizes whitespace including stripping leading-whitespace residue left by stripped inline HTML wrappers like `<h1><span>...</span></h1>`.
 3. Writes the assembled output to `build/llms-full.txt` (UTF-8, LF line endings, deterministic — same input always produces the same output, byte-for-byte).
 4. Deploy uploads `build/llms-full.txt` directly to S3 with a 1-hour TTL plus `stale-while-revalidate=86400`.
 
@@ -58,6 +58,11 @@ If a content author wants the LLM-facing label to differ from the page `<title>`
 - **Phase A** (this PR): Add generator + config + PR-validate workflow + deploy.yml updates (output path + cache-control). `static/llms-full.txt` stays in repo as fallback. After merge, deploy proves the generator works against current production.
 - **Phase B**: Inspect generator output vs current `static/llms-full.txt`, tune config/labels until parity is good or deliberate-improvement is achieved. Document any intentional differences.
 - **Phase C**: Delete `static/llms-full.txt` from repo. Generator becomes sole source of truth.
+
+## Known limitations
+
+- **Heading demotion is regex-based, not code-fence-aware.** If a content page introduces a fenced code block whose lines start with `#`, `##`, etc. (e.g., a Bash or Python comment), the demoter will treat them as headings and shift them. Current configured pages contain no such content. If this becomes an issue, make the demoter walk the body and skip lines inside fenced (` ``` `) regions.
+- **`<h1><span>...</span></h1>` and similar inline-wrapper hero markup**: text content survives, but original layout is flattened — multi-line spans collapse onto separate plain-text lines.
 
 ## Out of scope
 
