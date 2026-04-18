@@ -32,10 +32,63 @@ const config = JSON.parse(
 );
 
 const { urls, formFactors, thresholds } = config.lighthouse;
-const samplesPerAudit = Number(config.lighthouse.samplesPerAudit ?? 3);
+
+// Strict config validation: a misconfigured count must fail loudly at
+// startup rather than silently producing zero loop iterations or NaN
+// retry budgets at runtime.
+function readBoundedInt(name, raw, fallback, { min, max }) {
+  const value = raw == null ? fallback : Number(raw);
+  if (!Number.isInteger(value) || value < min || value > max) {
+    throw new Error(
+      `audit.config.json: lighthouse.${name} must be an integer in ` +
+        `[${min}, ${max}], got ${JSON.stringify(raw)}`,
+    );
+  }
+  return value;
+}
+const samplesPerAudit = readBoundedInt(
+  "samplesPerAudit",
+  config.lighthouse.samplesPerAudit,
+  3,
+  { min: 1, max: 25 },
+);
+const retriesPerSample = readBoundedInt(
+  "retriesPerSample",
+  config.lighthouse.retriesPerSample,
+  2,
+  { min: 0, max: 10 },
+);
 const categories = Object.keys(thresholds);
 
-function runLighthouse(url, formFactor) {
+// Lighthouse runtime errors that reflect headless-Chromium / CDP plumbing
+// flakes rather than a real site regression. When stderr matches any of
+// these we treat the run as a transient failure and retry the sample.
+// Adding a new pattern here is the safe way to absorb a newly-observed
+// flake; do NOT add patterns that could mask a real defect (e.g. an HTTP
+// 5xx from origin, a CSP violation, etc.).
+const TRANSIENT_ERROR_PATTERNS = [
+  /NO_NAVSTART/,
+  /NO_FCP/,
+  /INSUFFICIENT_FCP/,
+  /PROTOCOL_TIMEOUT/,
+  /Something went wrong with recording the trace/i,
+  /Target closed/i,
+];
+
+function isTransientError(stderrText) {
+  if (!stderrText) return false;
+  return TRANSIENT_ERROR_PATTERNS.some((re) => re.test(stderrText));
+}
+
+class TransientLighthouseError extends Error {
+  constructor(message, stderrText) {
+    super(message);
+    this.name = "TransientLighthouseError";
+    this.stderrText = stderrText;
+  }
+}
+
+function runLighthouseOnce(url, formFactor) {
   const workdir = mkdtempSync(join(tmpdir(), "lh-"));
   const outPath = join(workdir, "report.json");
 
@@ -49,14 +102,23 @@ function runLighthouse(url, formFactor) {
   ];
   if (formFactor === "desktop") args.push("--preset=desktop");
 
+  // stderr is piped (not inherited) so we can pattern-match transient
+  // Lighthouse runtime errors. We forward the captured stderr to the
+  // build log unconditionally so the verbose Lighthouse output remains
+  // visible (matches the prior --quiet+inherit behavior in CI).
   const result = spawnSync("lighthouse", args, {
-    stdio: ["ignore", "inherit", "inherit"],
+    stdio: ["ignore", "inherit", "pipe"],
   });
+  const stderrText = result.stderr ? result.stderr.toString() : "";
+  if (stderrText) process.stderr.write(stderrText);
+
   if (result.status !== 0) {
     rmSync(workdir, { recursive: true, force: true });
-    throw new Error(
-      `lighthouse exited ${result.status} for ${url} (${formFactor})`,
-    );
+    const baseMsg = `lighthouse exited ${result.status} for ${url} (${formFactor})`;
+    if (isTransientError(stderrText)) {
+      throw new TransientLighthouseError(baseMsg, stderrText);
+    }
+    throw new Error(baseMsg);
   }
   const report = JSON.parse(readFileSync(outPath, "utf8"));
   rmSync(workdir, { recursive: true, force: true });
@@ -67,6 +129,33 @@ function runLighthouse(url, formFactor) {
     scores[cat] = raw == null ? null : Math.round(raw * 100);
   }
   return scores;
+}
+
+// Retry wrapper. Each sample gets up to (1 + retriesPerSample) attempts.
+// Only TransientLighthouseError triggers a retry — any other error
+// (including a real non-transient lighthouse failure) is fatal as before.
+function runLighthouse(url, formFactor, sampleIndex, sampleTotal) {
+  const maxAttempts = 1 + Math.max(0, retriesPerSample);
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return runLighthouseOnce(url, formFactor);
+    } catch (err) {
+      lastErr = err;
+      if (!(err instanceof TransientLighthouseError)) throw err;
+      if (attempt < maxAttempts) {
+        const matched = TRANSIENT_ERROR_PATTERNS.find((re) =>
+          re.test(err.stderrText || ""),
+        );
+        const codeLabel = matched ? matched.source : "transient";
+        console.log(
+          `    run ${sampleIndex}/${sampleTotal}: transient lighthouse error ` +
+            `(${codeLabel}) on attempt ${attempt}/${maxAttempts} — retrying`,
+        );
+      }
+    }
+  }
+  throw lastErr;
 }
 
 // Median per-category-independently (NOT median over the full report).
@@ -92,7 +181,7 @@ for (const url of urls) {
     // Collect samplesPerAudit runs; per-category arrays for median.
     const runs = [];
     for (let i = 1; i <= samplesPerAudit; i++) {
-      const scores = runLighthouse(url, formFactor);
+      const scores = runLighthouse(url, formFactor, i, samplesPerAudit);
       runs.push(scores);
       const oneLine = categories
         .map((c) => `${c}=${scores[c]}`)
