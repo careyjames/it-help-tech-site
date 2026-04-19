@@ -16,30 +16,6 @@ extra:
   canonical_url: "https://www.it-help.tech/field-notes/mac-cybersecurity-threats/"
 ---
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "isAccessibleForFree": true,
-  "headline": "Mac Cybersecurity Threats: What Apple Already Protects, What It Doesn't, and the Magic Combo That Closes the Gap",
-  "description": "What Apple's built-in stack (XProtect, XProtect Remediator, Gatekeeper, Notarization) actually defends against on macOS, where the real gaps are, and the practical Magic Combo — ManageEngine Security Edition plus LuLu — that closes them on real client machines.",
-  "proficiencyLevel": "Intermediate",
-  "author": {
-    "@type": "Person",
-    "name": "Carey Balboa",
-    "url": "https://www.it-help.tech/about/"
-  },
-  "publisher": {
-    "@id": "https://www.it-help.tech/#business"
-  },
-  "image": "https://www.it-help.tech/images/mac-cybersecurity.jpeg",
-  "datePublished": "2025-05-23",
-  "dateModified": "2026-04-19",
-  "mainEntityOfPage": "https://www.it-help.tech/field-notes/mac-cybersecurity-threats/",
-  "keywords": ["macOS Security", "iOS Security", "XProtect", "Gatekeeper", "Lockdown Mode", "Stolen Device Protection", "LuLu", "ManageEngine", "Pegasus", "FORCEDENTRY", "IT Help San Diego"]
-}
-</script>
-
 ### TL;DR
 
 Apple's built-in stack on a current Mac is genuinely good. **XProtect** (signature scan), **XProtect Remediator** (background remediation), **Gatekeeper** (code-signing enforcement), and **Notarization** (Apple-side malware scan of every distributed binary) together stop the overwhelming majority of commodity malware before it ever touches user data [^1]. The myth that Macs are immune is wrong; the inverted myth that Apple ships a defenseless OS is also wrong. The real threats are narrower and more interesting: WebKit memory-corruption chains exploited by state-grade spyware (the **FORCEDENTRY** case is the canonical primary-source example) [^2][^3], adware and potentially-unwanted programs (PUPs) that Apple's stack tolerates because they are technically "valid" software, social engineering, and the persistent network-egress problem — software you trusted at install time talking to places you didn't authorize.
@@ -266,3 +242,27 @@ Call **619-853-5008** or [schedule a consultation](https://schedule.it-help.tech
 A BibTeX file for these references is available at [`/field-notes/mac-cybersecurity-threats.bib`](/field-notes/mac-cybersecurity-threats.bib) for one-click import into Zotero or any reference manager.
 
 *Last updated April 19, 2026 — verified against Apple Platform Security Guide, Citizen Lab FORCEDENTRY disclosure, MITRE CVE entries, vendor product documentation, and current operational deployment experience.*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "isAccessibleForFree": true,
+  "headline": "Mac Cybersecurity Threats: What Apple Already Protects, What It Doesn't, and the Magic Combo That Closes the Gap",
+  "description": "What Apple's built-in stack (XProtect, XProtect Remediator, Gatekeeper, Notarization) actually defends against on macOS, where the real gaps are, and the practical Magic Combo — ManageEngine Security Edition plus LuLu — that closes them on real client machines.",
+  "proficiencyLevel": "Intermediate",
+  "author": {
+    "@type": "Person",
+    "name": "Carey Balboa",
+    "url": "https://www.it-help.tech/about/"
+  },
+  "publisher": {
+    "@id": "https://www.it-help.tech/#business"
+  },
+  "image": "https://www.it-help.tech/images/mac-cybersecurity.jpeg",
+  "datePublished": "2025-05-23",
+  "dateModified": "2026-04-19",
+  "mainEntityOfPage": "https://www.it-help.tech/field-notes/mac-cybersecurity-threats/",
+  "keywords": ["macOS Security", "iOS Security", "XProtect", "Gatekeeper", "Lockdown Mode", "Stolen Device Protection", "LuLu", "ManageEngine", "Pegasus", "FORCEDENTRY", "IT Help San Diego"]
+}
+</script>

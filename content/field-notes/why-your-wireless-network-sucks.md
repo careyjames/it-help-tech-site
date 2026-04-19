@@ -16,29 +16,6 @@ extra:
 ---
 
 Slow Wi-Fi is rarely a router problem. It is almost always a chain problem — and the chain has a physics layer underneath it that explains exactly why each wireless hop without a wired backhaul degrades like a photocopy of a photocopy. This guide names that physics, then walks through what an Ethernet backbone, proper cabling, and modern Wi-Fi 6/7 actually fix.
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "isAccessibleForFree": true,
-  "headline": "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It",
-  "description": "Why wireless degrades like a photocopy of a photocopy — half-duplex CSMA/CA, Shannon-Hartley capacity, and retransmit compounding — and how an Ethernet backbone, proper Cat6A/Cat8 cabling, and modern Wi-Fi 6/7 deliver the speed you are paying for to your endpoint.",
-  "proficiencyLevel": "Intermediate",
-  "author": {
-    "@type": "Person",
-    "name": "Carey Balboa",
-    "url": "https://www.it-help.tech/about/"
-  },
-  "publisher": {
-    "@id": "https://www.it-help.tech/#business"
-  },
-  "image": "https://www.it-help.tech/images/sad-wifi-extender.png",
-  "datePublished": "2025-05-24",
-  "dateModified": "2026-04-19",
-  "mainEntityOfPage": "https://www.it-help.tech/field-notes/why-your-wireless-network-sucks/",
-  "keywords": ["Wi-Fi", "Ethernet backbone", "Cat6A", "Cat8", "Wi-Fi 6", "Wi-Fi 7", "CSMA/CA", "mesh", "PoE", "IT Help San Diego"]
-}
-</script>
 
 ### TL;DR
 Each wireless extender or mesh node *without a wired backhaul* shares one half-duplex radio between talking to the upstream access point and talking to your device. The IEEE 802.11 medium access protocol (CSMA/CA) cannot do both at full speed simultaneously, so per-hop usable throughput is roughly halved, and noise plus retransmits compound the loss [^1][^2]. After two relayed hops you are typically at ~25% of nominal; after three, ~12.5%. That is the "copy of a copy" problem expressed in physics. The fix is an Ethernet backbone — Cat6A or Cat8 cable feeding access points so the radio's airtime is spent on *you*, not on relaying its own backhaul. Modern Wi-Fi 6/7 with proper wired backhaul (for example, a Ubiquiti Dream Machine plus U7-class APs on Cat6A) does soften the older "always halve" rule when deployed correctly, and the section below names that honestly. Specialized environments — mine rescue, military operations — solve wireless backhaul with leaky-feeder cable systems and dedicated MANET radios, not consumer 802.11 gear from a big-box store. Tracking the gap between speed paid for and speed actually delivered to the endpoint has been my discipline for fifteen years (out of 27+ in IT overall), and the work below is the engineering that makes it possible.
@@ -169,3 +146,27 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 A BibTeX file for these references is available at [`/field-notes/why-your-wireless-network-sucks.bib`](/field-notes/why-your-wireless-network-sucks.bib) for one-click import into Zotero or any reference manager.
 
 *Last updated April 19, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.3-2022, ANSI/TIA-568.2-D, and current operational deployment experience.*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "isAccessibleForFree": true,
+  "headline": "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It",
+  "description": "Why wireless degrades like a photocopy of a photocopy — half-duplex CSMA/CA, Shannon-Hartley capacity, and retransmit compounding — and how an Ethernet backbone, proper Cat6A/Cat8 cabling, and modern Wi-Fi 6/7 deliver the speed you are paying for to your endpoint.",
+  "proficiencyLevel": "Intermediate",
+  "author": {
+    "@type": "Person",
+    "name": "Carey Balboa",
+    "url": "https://www.it-help.tech/about/"
+  },
+  "publisher": {
+    "@id": "https://www.it-help.tech/#business"
+  },
+  "image": "https://www.it-help.tech/images/sad-wifi-extender.png",
+  "datePublished": "2025-05-24",
+  "dateModified": "2026-04-19",
+  "mainEntityOfPage": "https://www.it-help.tech/field-notes/why-your-wireless-network-sucks/",
+  "keywords": ["Wi-Fi", "Ethernet backbone", "Cat6A", "Cat8", "Wi-Fi 6", "Wi-Fi 7", "CSMA/CA", "mesh", "PoE", "IT Help San Diego"]
+}
+</script>
