@@ -46,9 +46,18 @@
     <a href="{{ get_url(path='/') }}"
        class="topbar-logo"
        aria-label="IT Help San Diego — home">
+      {# 2026-04-19: alt="" + role="presentation" is the WAI-Tutorials canonical
+         pattern for "Logo Image as Link" — the parent <a> already announces
+         the brand via aria-label, so the img must NOT contribute a second
+         accessible name (would cause double-announcement on screen readers).
+         role="presentation" is added solely to silence non-WCAG-aware SEO
+         crawlers (Ahrefs et al.) that flag empty alt as a defect; it does not
+         change the accessibility tree because empty alt already makes the
+         image presentational. See WAI Tutorial: "Decorative Images". #}
       <img class="topbar-banner"
            src="/img/brand/wordmark-banner.png"
            alt=""
+           role="presentation"
            width="622" height="74"
            decoding="async">
     </a>
