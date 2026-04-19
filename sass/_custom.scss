@@ -77,3 +77,23 @@ html:not(.switch) .phone-line,
 
 /* Gold colored links for recommended services */
 .gold-link { color: var(--a2) !important; }
+
+/* Engineering "red line" — marks a do-not-cross threshold in field notes.
+   Class-based (not inline style) because production CSP `style-src 'self'`
+   strips inline style attributes, which silently broke the original PR #583
+   inline-style implementation: the bar rendered as the browser default
+   1px gray hr instead of a 6px red bar, and the matching warning text
+   rendered in default body color instead of red. Both are restored here
+   via real stylesheet rules served from /css/ (allowed by 'self'). */
+hr.red-line {
+  border: 0;
+  height: 6px;
+  background: var(--status-danger);
+  margin: 2em 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(248, 81, 73, 0.35);
+}
+.red-line-text {
+  color: var(--status-danger);
+  font-weight: 700;
+}
