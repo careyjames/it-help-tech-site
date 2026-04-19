@@ -1,65 +1,122 @@
 ---
-title: "Hack Your Engrams to Remember and Keep Passwords Private"
+title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
 date: 2025-06-03
+updated: 2026-04-19
 author: Carey Balboa
 categories: [Security, Passwords]
-tags: [passphrase, password security, NIST, memory, negativity bias]
-description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
+tags: [passphrase, password security, NIST, memory, negativity bias, engram, passkeys]
+description: "Use the neuroscience of emotional memory to build long passphrases that satisfy NIST SP 800-63B-4 and that you would never type in front of the people standing behind you."
 extra:
   image: images/engram-hack.png
-  og_title: "Hack Your Engrams to Remember and Keep Passwords Private"
-  og_description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
-  twitter_title: "Hack Your Engrams to Remember and Keep Passwords Private"
-  twitter_description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
+  og_title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
+  og_description: "The neuroscience of emotional memory, applied to the one threat most password advice ignores: the trusted person standing behind you."
+  twitter_title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
+  twitter_description: "The neuroscience of emotional memory, applied to the one threat most password advice ignores: the trusted person standing behind you."
   canonical_url: "https://www.it-help.tech/field-notes/hack-your-engrams-to-remember-passwords/"
 ---
 
 ### TL;DR
-Negativity bias—our brain’s tendency to *magnify and store* bad or taboo experiences—can be exploited to make **long, unforgettable passphrases** that still satisfy the latest NIST password rules. And that you would NEVER want anyone to see you type. 
+Most password advice optimizes against attackers on a network. This note is about a different adversary: the person who already loves and trusts you, standing two feet behind your laptop. A passphrase loaded with imagery you would *never* let them see you type acts as a behavioral interlock — you stop, you cover, you wait — and the same emotional load makes it dramatically easier to recall. The neuroscience of emotional memory consolidation is well established; we are just applying it on purpose.
 
-Example:
-DidYourBro4Times!
+Example: `DidYourBro4Times!`
 
-It’s outrageous, deeply emotional, and **not** traceable to publicly searchable facts, so it sticks in your head but stays off an attacker’s radar.
-Also, if you are a high-powered executive and your spouse were to come up and embrace you from behind while you’re typing on your laptop, you’d pause and wait to prevent them from seeing you type that one!
+It is outrageous, deeply emotional, and not traceable to publicly searchable facts about you, so it sticks in your head but stays off an attacker's radar.
 
 ---
 
-## Why the Trick Works
-* **Negativity bias:** Humans remember negative information more vividly than neutral or positive data [[Baumeister et al., 2001](https://pmc.ncbi.nlm.nih.gov/articles/PMC3652533/)].
-* **Emotion-driven consolidation:** High arousal triggers the amygdala, boosting long-term potentiation and locking the “engram” in place [[Paré & Headley, 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC10034520/)].
+## The Threat Model Most Articles Skip
 
-Result: one shocking passphrase you’d NEVER want anyone to see you typing➜ memory Velcro + extra password security from onlookers.
+Standard password guidance assumes the attacker is on the other side of a wire — credential stuffing, phishing, breach replay. Those threats are real and the defenses are well known: a password manager, unique credentials per site, multi-factor authentication, and passkeys wherever the site supports them.
 
----
+This note is about a different threat: a person you already trust who happens to be physically present when you type a high-value secret. An assistant leaning over to point at the calendar. A partner walking up to hand you coffee. A friend on the next couch cushion. They are not adversaries today, but a memorized password lives forever and human relationships do not. If they ever become adversarial — or merely careless in conversation — anything they watched you type is now part of the threat surface.
 
-## Building a Compliant “Bad-Memory” Passphrase
-NIST SP 800-63B (Section 5.1.1.2) says verifiers should permit **64-character pass-phrases, any Unicode, no mandatory complexity rules** [[NIST 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html)].
-Follow three rules:
+The defense most often deployed against this threat is a tinted privacy filter on the screen. The defense most often *not* deployed is a passphrase whose contents would mortify the user too much to type in front of the observer in the first place. That is what this technique does.
 
-1. **Three-plus uncommon words + digit + symbol**  
-   *Good:* `DidYourBro4Times!`  
-   *Also good:* `IWantToSellMyKids2025!` (youd never let kids see you type that; nobody else can guess).
-2. **No public facts** – skip birthdays, addresses, pet names.
-3. **Unique everywhere** – one site, one secret.
+## Why It Works (the neuroscience)
 
-> **Forced-disclosure scenario:** A gun to your head defeats *any* single-factor password. This trick isn’t worse; it just improves recall under normal conditions.
+Three well-replicated findings combine here:
 
----
+1. **Negativity bias.** Negative information is encoded more deeply, recalled more readily, and weighted more heavily than positive or neutral information of equal magnitude — across attention, memory, learning, and social judgment [^1].
+2. **Emotional arousal drives consolidation.** Emotionally arousing experiences are remembered better than neutral ones because amygdala activity at encoding modulates the consolidation of long-term memory in adjacent structures, including the hippocampus [^2][^3].
+3. **Distinctiveness wins recall.** The classic von Restorff effect — distinctive items are remembered better than homogeneous ones — is now understood to be a function of *how* the item differs, not merely *that* it differs. Items processed for what makes them unusual receive a memory boost beyond their semantic content alone [^4].
+
+The "engram" metaphor in the title is not loose. Modern neuroscience can identify, manipulate, and even reactivate the cell ensembles that store specific memories in mice [^5]. We obviously cannot do that to a password — but we *can* engineer the input so that the brain's own consolidation machinery picks it up and locks it in.
+
+A fourth mechanism is implicit: the **generation effect**. Material you produce yourself is remembered better than material handed to you [^6]. The phrase has to come from your own imagination, not from a list — that step is doing memory work.
+
+Stack the four together and you get a phrase that is long, unique, emotionally loaded, distinctive, and self-generated. That is what your hippocampus is built to remember.
+
+## What NIST Actually Says in 2026
+
+The current authoritative reference is **NIST Special Publication 800-63B, Revision 4** [^7]. The headline rules for memorized secrets:
+
+- **Length matters; composition rules don't.** Verifiers SHALL require a minimum of 8 characters and SHOULD permit at least 64. Verifiers SHALL NOT impose composition rules (no "must contain an uppercase letter and a symbol").
+- **No periodic rotation.** Verifiers SHALL NOT require passwords to be changed on a schedule. Force a change only on evidence of compromise.
+- **No password hints. No knowledge-based "security questions."** Both are deprecated.
+- **All printable characters allowed**, including spaces and Unicode. Each Unicode code point counts as one character.
+- **Compromised-password screening.** Verifiers SHALL check new secrets against breach corpora and reject known-compromised values.
+- **Syncable authenticators (passkeys) are first-class.** Where a relying party supports them, they are the preferred authenticator and avoid the memorization problem entirely.
+
+Translated to practice: a long, weird, self-generated phrase satisfies the rules; a short phrase padded with `!1` does not, and never really did.
+
+## Where This Technique Fits in 2026
+
+Use passkeys wherever they are offered. They are unphishable, they remove the memorization burden, and the standards work has caught up to mainstream platform support [^8].
+
+Use a password manager for everything else. Generate random secrets per site; you should not be memorizing them.
+
+Reserve memorable passphrases for the small set of secrets you have to type by hand:
+
+- Your laptop or desktop login.
+- Your password manager's master password.
+- Recovery phrases and break-glass credentials.
+- Accounts that — for legitimate reasons — cannot live in a manager.
+
+That set is small enough that the memorability gain from the technique below is real and the typing-in-public risk is concentrated on exactly the moments where the social-inhibition effect matters most.
+
+## Building a "Bad-Memory" Passphrase
+
+Three working principles. None of these are NIST requirements — composition rules are explicitly out — they are *heuristics* for hitting the memory and social-inhibition targets at the same time.
+
+1. **Aim for three or more uncommon words; let length do the work.** Length is what NIST cares about and what entropy depends on. A short phrase padded with a `!` does neither job. A long, weird sentence does both. Add digits or punctuation if it helps you remember the phrase or satisfies a legacy site that still demands them — not because they make the phrase stronger on their own.
+   *Good:* `DidYourBro4Times!`
+   *Also good:* `IWantToSellMyKids2025!` — you would never let kids see you type that, and the underlying imagery is not in any public record about you.
+2. **No public facts.** Skip birthdays, addresses, pet names, school mascots, anything someone could find on a Wikipedia page about you, in a tax filing, or in a tabloid. The more your life is documented, the more aggressively you should fictionalize.
+3. **Unique per account.** One site, one secret. Reuse breaks the model — and it is the single most common way memorable passphrases turn into breach-replay credentials.
+
+A working test: if you would feel comfortable typing the phrase in front of the specific person most likely to be standing behind you when you log in, the phrase is not loaded enough.
+
+> **Forced-disclosure scenario.** A gun to your head defeats *any* single-factor password. This trick is not worse; it just improves recall under normal conditions. For coercion-resistant authentication you want a hardware security key in a separate physical location, or a duress credential supported by the platform. Neither is the subject of this note.
 
 ## Quick Risk Check
-Risk: Targeted guessing via public info  
-Mitigation: Keep phrases fictional or private and *weird*. 
 
-Risk: Daily emotional drain  
-Mitigation: Pick **absurd** negative imagery, not genuine trauma.  
-PutKidsUpForAdoption!2025 Use a phrase you’d *never* type in front of them.  
-
----
+| Risk | Mitigation |
+| --- | --- |
+| Targeted guessing from public information | Keep the phrase fictional, private, and weird. Anything traceable to your public life is out. |
+| Daily emotional drain from carrying a real-trauma phrase | Pick *absurd* negative imagery, not genuine trauma. The point is taboo, not therapy. |
+| Keylogger or malware on the endpoint | This technique does nothing for you. Endpoint hygiene and a passkey on a separate device do. |
+| Network capture or phishing | Use TLS-protected sites, MFA, and passkeys. This technique does nothing for you here either. |
+| Camera in the room or over-the-shoulder screen recording | Out of scope. A privacy filter on the screen and situational awareness about ceiling cameras and phone lenses are the relevant defenses. |
+| Trusted observer who happens to be present | The whole point. The phrase contains imagery you will not let them see. You pause; you cover; you wait. |
 
 ## References
-1. Baumeister, R. F., *et al.* “Bad Is Stronger Than Good.” *Rev. Gen. Psych.* 2001.  
-2. Paré, D., Headley, D. “The amygdala mediates the facilitating influence of emotions on memory.” 2022.  
-3. NIST Special Publication 800-63B, *Digital Identity Guidelines*, rev. 3 (and draft rev. 4).
 
-*Memory is messy—use that mess to your advantage.*
+[^1]: Baumeister, R. F., Bratslavsky, E., Finkenauer, C., & Vohs, K. D. (2001). Bad is stronger than good. *Review of General Psychology*, 5(4), 323–370. <https://doi.org/10.1037/1089-2680.5.4.323>
+
+[^2]: McGaugh, J. L. (2004). The amygdala modulates the consolidation of memories of emotionally arousing experiences. *Annual Review of Neuroscience*, 27, 1–28. <https://doi.org/10.1146/annurev.neuro.27.070203.144157>
+
+[^3]: LaBar, K. S., & Cabeza, R. (2006). Cognitive neuroscience of emotional memory. *Nature Reviews Neuroscience*, 7(1), 54–64. <https://doi.org/10.1038/nrn1825>
+
+[^4]: Hunt, R. R. (1995). The subtlety of distinctiveness: What von Restorff really did. *Psychonomic Bulletin & Review*, 2(1), 105–112. <https://doi.org/10.3758/BF03214414>
+
+[^5]: Josselyn, S. A., & Tonegawa, S. (2020). Memory engrams: Recalling the past and imagining the future. *Science*, 367(6473), eaaw4325. <https://doi.org/10.1126/science.aaw4325>
+
+[^6]: Slamecka, N. J., & Graf, P. (1978). The generation effect: Delineation of a phenomenon. *Journal of Experimental Psychology: Human Learning and Memory*, 4(6), 592–604. <https://doi.org/10.1037/0278-7393.4.6.592>
+
+[^7]: National Institute of Standards and Technology. (2025). *Digital Identity Guidelines: Authentication and Authenticator Management* (SP 800-63B, Revision 4). U.S. Department of Commerce. <https://pages.nist.gov/800-63-4/sp800-63b.html>
+
+[^8]: World Wide Web Consortium. (2024). *Web Authentication: An API for Accessing Public Key Credentials, Level 3*. <https://www.w3.org/TR/webauthn-3/>
+
+A BibTeX file for these references is available at [`/field-notes/hack-your-engrams.bib`](/field-notes/hack-your-engrams.bib) for one-click import into Zotero or any reference manager.
+
+*Memory is messy. Used on purpose, the mess is the defense.*
