@@ -14,8 +14,8 @@
   {%- set_global page = section -%}
   {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, is_home=true) }}
 
-  {% set blog_title = section.title | default(value="IT Help San Diego Blog | Tech Insights & Support Tips") %}
-  {% set blog_desc = section.description | default(value="Expert insights on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego.") %}
+  {% set blog_title = section.title | default(value="IT Help San Diego Field Notes | Tech Insights & Support Stories") %}
+  {% set blog_desc = section.description | default(value="Practitioner field notes on macOS, Wi‑Fi, DNS, email deliverability, cybersecurity and more—straight from IT Help San Diego.") %}
   {% set blog_url = section.permalink %}
   {% set blog_img_path = config.extra.default_og_image | default(value="/images/og-home.png") %}
   {% set blog_img = get_url(path=blog_img_path) %}
@@ -61,7 +61,7 @@
 {% endblock seo %}
 
 {% block content %}
-<h1 class="page-title text-center">Blog Posts</h1>
+<h1 class="page-title text-center">Field Notes</h1>
 
 {% if paginator is defined %}
   {% set posts = paginator.pages %}

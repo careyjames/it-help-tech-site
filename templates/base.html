@@ -71,7 +71,7 @@
     {# 2026-04-17 (rev): Active-page indicator wired with WCAG-correct
        aria-current values: "page" for the EXACT current page (e.g. on
        /services/ the Services link is the current page), and "true" for
-       a section-ancestor match (e.g. on /blog/some-post/ the Field Notes
+       a section-ancestor match (e.g. on /field-notes/some-post/ the Field Notes
        link is part of the current path but not the current page). Both
        values trigger the same visual underline via the [aria-current]
        attribute selector in CSS, so users still get the location cue,
@@ -88,9 +88,9 @@
           {%- elif cp is starting_with("/services/") %} aria-current="true"
           {%- endif %}>Services</a></li>
         <li><a href="/about/"{% if cp == "/about/" %} aria-current="page"{% endif %}>About</a></li>
-        <li><a href="/blog/"
-          {%- if cp == "/blog/" %} aria-current="page"
-          {%- elif cp is starting_with("/blog/") %} aria-current="true"
+        <li><a href="/field-notes/"
+          {%- if cp == "/field-notes/" %} aria-current="page"
+          {%- elif cp is starting_with("/field-notes/") %} aria-current="true"
           {%- endif %}>Field Notes</a></li>
         <li>
           <a href="https://dnstool.it-help.tech" target="_blank" rel="noopener noreferrer">

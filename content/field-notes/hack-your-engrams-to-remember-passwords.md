@@ -11,7 +11,7 @@ extra:
   og_description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
   twitter_title: "Hack Your Engrams to Remember and Keep Passwords Private"
   twitter_description: "Use negativity bias to craft memorable passphrases that stay private and comply with modern NIST guidelines."
-  canonical_url: "https://www.it-help.tech/blog/hack-your-engrams-to-remember-passwords/"
+  canonical_url: "https://www.it-help.tech/field-notes/hack-your-engrams-to-remember-passwords/"
 ---
 
 ### TL;DR

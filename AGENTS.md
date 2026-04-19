@@ -102,8 +102,8 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
 
 **Layout:**
 
-- `content/` — Markdown pages, blog posts, and embedded JSON-LD schema
-- `templates/` — Zola HTML templates and macros (`base.html`, `page.html`, `blog.html`)
+- `content/` — Markdown pages, field notes, and embedded JSON-LD schema
+- `templates/` — Zola HTML templates and macros (`base.html`, `page.html`, `field-notes.html`)
 - `themes/abridge/` — Abridge theme; SEO macros at `themes/abridge/templates/macros/seo.html`
 - `sass/` — SASS sources (`_extra.scss` holds component/interaction tokens; `css/abridge.scss` holds theme/link tokens)
 - `static/` — assets, `robots.txt`, `llms.txt`; `static/css/late-overrides.css` is the canonical visual-system file
@@ -120,10 +120,10 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
 | Billing | `content/billing.md` | Offer, FAQPage |
 | About | `content/about.md` | AboutPage with Organization |
 | DNS Tool | `content/dns-tool.md` | SoftwareApplication |
-| Blog Index | `content/blog/_index.md` | ItemList |
-| Blog Posts | `content/blog/*.md` | Article (via `templates/page.html`) |
+| Field Notes Index | `content/field-notes/_index.md` | ItemList |
+| Field Notes Posts | `content/field-notes/*.md` | Article (via `templates/page.html`) |
 
-**SEO architecture:** Theme SEO macros handle base meta, OG, Twitter. Per-page overrides via content frontmatter (`extra.og_title`, `extra.twitter_description`, etc.). JSON-LD schema lives in content Markdown files, not templates. `templates/blog.html` adds Blog schema for the index.
+**SEO architecture:** Theme SEO macros handle base meta, OG, Twitter. Per-page overrides via content frontmatter (`extra.og_title`, `extra.twitter_description`, etc.). JSON-LD schema lives in content Markdown files, not templates. `templates/field-notes.html` adds Blog schema for the index.
 
 **CSS load order (do not reorder):** `critical.min.css` (inlined) → `cls-fixes.css` → `abridge.css` → `override.min.css` → `late-overrides.css`.
 

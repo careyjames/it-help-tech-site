@@ -13,6 +13,34 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-19 (IA · `/blog/*` section renamed to `/field-notes/*` site-wide)
+- Actor: AI (Replit Agent)
+- Severity: MEDIUM (URL change; SEO/redirect coordination required outside the repo)
+- Trigger: Owner directive to bring the URL path in line with the long-standing in-app label "Field Notes". The nav link, footer link, and page semantics already used the "Field Notes" name; only the URL slug `/blog/` was inconsistent.
+- Files:
+  - `content/blog/` → renamed to `content/field-notes/` (7 markdown files, all `git mv`'d so history is preserved). Per-post `extra.canonical_url` and JSON-LD `mainEntityOfPage` URLs updated to `/field-notes/...`. Cross-link inside `mac-cybersecurity-threats.md` updated. Phrase "blog post like this" inside `it-problem-solving-scientific-method.md` softened to "field note like this".
+  - `content/field-notes/_index.md` — title, description, seo_title, OG/Twitter copy, ItemList JSON-LD URLs, and `template = "field-notes.html"` updated.
+  - `templates/blog.html` → renamed to `templates/field-notes.html` (`git mv`). Inline H1 "Blog Posts" → "Field Notes". Default OG/Twitter title/description fallbacks updated.
+  - `templates/page.html` — comment updated.
+  - `templates/base.html` — primary nav link `/blog/` → `/field-notes/` (label "Field Notes" already correct). aria-current branches and rev-comment updated.
+  - `templates/partials/_footer-org.html` — Expertise column "Field Notes" link `/blog` → `/field-notes`.
+  - `templates/sitemap.xml` — pagination skip rule updated to `/field-notes/page/1/`.
+  - `config.toml` — main menu entry renamed `Blog` → `Field Notes`, URL `/blog/` → `/field-notes/`.
+  - `static/robots.txt` — `Allow: /blog/` → `Allow: /field-notes/`.
+  - `static/llms.txt` — Optional section entry updated.
+  - `static/llms-full.txt` — Optional section heading + URLs updated (legacy Phase A snapshot file).
+  - `infra/llms/llms-full.config.json` — Optional entry label + file path updated.
+  - `infra/llms/build-llms-full.mjs` — example comment updated.
+  - `content/dns-tool.md` — "DNS Security Best Practices" outbound link rewritten to `/field-notes/...`.
+  - `static/css/late-overrides.css` — comment updated.
+  - `scripts/check-no-external-subresources.sh` — comment updated.
+  - `AGENTS.md` — Architecture layout, content/schema table, and SEO architecture paragraph updated to reference `field-notes` and `field-notes.html`.
+- Change: All references to the `/blog/` URL path replaced with `/field-notes/` site-wide. The Zola section directory rename causes Zola to emit the new permalinks automatically; templates, sitemap, robots, llms-full, and JSON-LD ItemList all now point at the new URLs. Nav and footer labels were already "Field Notes" — only URLs (and the H1 on the index) shift. Legacy `static/llms-full.txt` (still committed pending Phase C deletion) was updated in-place to keep the snapshot consistent.
+- Why: URL/label parity. Owner brand voice positions these articles as practitioner write-ups, not "blog posts" — the `/field-notes/` URL slug now matches the long-standing nav label and the in-content terminology.
+- Verification: `zola serve` builds clean (12 pages, 1 section, 0 internal-link errors). `curl /field-notes/` and `/field-notes/dns-security-best-practices/` return 200. `/sitemap.xml` lists all six new permalinks. `/robots.txt` advertises the new path. `grep -rn "/blog" --exclude-dir=themes` returns only historical PROJECT_EVOLUTION_LOG entries (intentionally preserved as history).
+- Outside-repo follow-up (CloudFront, owner): add 301 redirects from `/blog/*` → `/field-notes/*` (preserve path tail). Without this, externally cached links to the old slug will 404. This repo has no `_redirects` file; the redirect must live in CloudFront (CloudFront Function or behavior-level rule on distribution `E2TEEM88QINCGT`). Once the redirect is live, any backlinks/Google index entries pointing at the old URLs will transition seamlessly.
+- Rollback: revert this PR on the corporate repo. The Zola section dir rename reverses cleanly via `git revert` since all moves were `git mv`.
+
 ### 2026-04-18 (Docs · `replit.md` reduced to platform-owned stub; AGENTS.md becomes sole governance source)
 - Actor: AI (Replit Agent + architect subagent)
 - Severity: MEDIUM (changes the documented source-of-truth hierarchy for all AI agents on this repo)

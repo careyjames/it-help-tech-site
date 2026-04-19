@@ -12,7 +12,7 @@ extra:
   og_description: "Learn how to unlock your Apple Account after too many failed sign-ins and avoid 'iJail'. Updated for 2025 with passkeys and security key tips."
   twitter_title: "Apple Sends You Directly To \"iJail\" For Too Many Incorrect Password Guesses!"
   twitter_description: "Learn how to unlock your Apple Account after too many failed sign-ins and avoid 'iJail'. Updated for 2025 with passkeys and security key tips."
-  canonical_url: "https://www.it-help.tech/blog/apple-sends-you-to-ijail/"
+  canonical_url: "https://www.it-help.tech/field-notes/apple-sends-you-to-ijail/"
 ---
 
 Your **Apple Account** (formerly "Apple ID") unlocks your entire iUniverse—from iPhone to iCloud. It controls email, contacts, the App Store, and more. Getting locked out can put a serious damper on your digital freedom.

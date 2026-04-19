@@ -13,7 +13,7 @@ extra:
   og_description: "Learn how to set up DMARC, SPF, & DKIM for robust DNS security. Protect your business email from spoofing, phishing, and BEC attacks with these best practices."
   twitter_title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
   twitter_description: "Learn how to set up DMARC, SPF, & DKIM for robust DNS security. Protect your business email from spoofing, phishing, and BEC attacks with these best practices."
-  canonical_url: "https://www.it-help.tech/blog/dns-security-best-practices/"
+  canonical_url: "https://www.it-help.tech/field-notes/dns-security-best-practices/"
   og_image: /images/dns-security-dmarc-og.png
   twitter_image: /images/dns-security-dmarc-og.png
 ---
@@ -38,7 +38,7 @@ This guide explains how to configure and verify DNS email security controls so y
   "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
   "datePublished": "2025-05-25",
   "dateModified": "2026-02-11",
-  "mainEntityOfPage": "https://www.it-help.tech/blog/dns-security-best-practices/",
+  "mainEntityOfPage": "https://www.it-help.tech/field-notes/dns-security-best-practices/",
   "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
 }
 </script>

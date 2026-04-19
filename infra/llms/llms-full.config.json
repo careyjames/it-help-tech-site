@@ -21,7 +21,7 @@
     {
       "heading": "Optional",
       "entries": [
-        { "label": "Blog", "file": "content/blog/_index.md" }
+        { "label": "Field Notes", "file": "content/field-notes/_index.md" }
       ]
     }
   ]

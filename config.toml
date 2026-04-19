@@ -54,8 +54,8 @@ slash  = true
 weight = 4
 
 [[extra.menu]]
-name   = "Blog"
-url    = "/blog/"
+name   = "Field Notes"
+url    = "/field-notes/"
 slash  = true
 weight = 5
 

@@ -18,7 +18,7 @@ User-agent: AndiBot
 User-agent: FirecrawlAgent
 Allow: /
 Allow: /services/
-Allow: /blog/
+Allow: /field-notes/
 Allow: /about/
 Allow: /billing/
 Allow: /dns-tool/
