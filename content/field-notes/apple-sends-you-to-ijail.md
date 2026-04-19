@@ -16,6 +16,8 @@ extra:
   canonical_url: "https://www.it-help.tech/field-notes/apple-sends-you-to-ijail/"
 ---
 
+> **The password you entered is wrong. Stop. Breathe. Think. And you won't get locked out.**
+
 ### TL;DR
 When you sit down to type a password, you either know it or you don't. If you're consulting a piece of paper, you don't know it — you're transcribing. If it's not in a password manager that copy-pastes a known-good string, you don't have a verified credential. Both Apple and Google escalate against repeated wrong guesses; both push you into recovery flows that take days to clear. Stop after the second wrong attempt, every time, and start the recovery flow on purpose instead of stumbling into it.
 
