@@ -1,7 +1,7 @@
 ---
 title: "Mac Cybersecurity Threats: What Apple Already Protects, What It Doesn't, and the Magic Combo That Closes the Gap"
 date: 2025-05-23
-last_modified: 2026-04-19
+updated: 2026-04-19
 author: Carey Balboa
 categories: [Apple, Security, Cybersecurity]
 tags: [macOS, iOS, cybersecurity, malware, phishing, Apple security, endpoint protection, EDR, LuLu, ManageEngine, Pegasus, threat model, XProtect, Lockdown Mode, Stolen Device Protection]
