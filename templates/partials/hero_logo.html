@@ -14,13 +14,20 @@
      exclusively in the topbar (see templates/base.html → .topbar-banner).
      aria-hidden because the brand is already announced via <title>, the
      topbar logo aria-label, and the page H1 — repeating it here would create
-     three-deep redundancy for screen readers. #}
+     three-deep redundancy for screen readers.
+     2026-04-19: alt="" + role="presentation" added on the <img> per WAI
+     Tutorials "Decorative Images". The parent div is already
+     aria-hidden="true" so assistive tech sees nothing here regardless;
+     role="presentation" exists solely to silence non-WCAG-aware SEO crawlers
+     (Ahrefs et al.) that traverse aria-hidden subtrees and flag empty alt
+     as a defect. No accessibility-tree change. #}
   <div class="brand-mark" aria-hidden="true">
     <picture class="hero-owl-pic">
       <source srcset="/img/brand/owl-720.webp" type="image/webp">
       <img class="hero-owl"
            src="/img/brand/owl-720.png"
            alt=""
+           role="presentation"
            width="720" height="720"
            decoding="async"
            fetchpriority="high">

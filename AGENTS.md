@@ -79,6 +79,7 @@ Automatic on merge to `main` via `.github/workflows/deploy.yml`:
 6. **S3 sync** with proper cache headers (`max-age=3600, stale-while-revalidate=86400` for `llms*.txt`; long-cache for fingerprinted assets).
 7. **CloudFront invalidation**.
 8. **Post-deploy audit gate** — `infra/audit/run-lighthouse.mjs` runs Lighthouse mobile/desktop and Mozilla Observatory against URLs in `infra/audit/audit.config.json`. Median-of-3 sampling per (url, formFactor); fails if any per-category median drops below thresholds (currently 98 for Performance/Accessibility/Best Practices/SEO; A+/120 for Observatory). Single-sample dips that pass the median surface as warnings, not failures.
+9. **IndexNow ping** (`indexnow-ping` job, `continue-on-error`, isolated from the audit gate) — diff-driven instant-indexing notification to participating engines (Bing, Yandex, Seznam.cz, Naver, Yep). Pings only URLs whose markdown source changed in the push; filters drafts; deploys with no content changes do not ping. Google does not participate in IndexNow and is unaffected. Verification key file: `static/<key>.txt`.
 
 Local build: `zola build` → `public/`. Local preview: `zola serve --interface 0.0.0.0 --port 5000`.
 

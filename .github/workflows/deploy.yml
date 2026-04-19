@@ -245,6 +245,44 @@ jobs:
       - name: Mozilla Observatory audit
         run: node infra/audit/run-observatory.mjs
 
+  indexnow-ping:
+    # Best-effort instant-indexing notification to IndexNow-participating
+    # search engines (Bing, Yandex, Seznam.cz, Naver, Yep — Google does NOT
+    # participate, so this is purely additive to our existing sitemap-driven
+    # crawl posture). Diff-driven: pings ONLY URLs whose markdown source
+    # actually changed in this push, plus their parent section listing and
+    # affected taxonomy term listings (categories/tags). Drafts are
+    # filtered. Empty diff = no ping. continue-on-error so a network blip
+    # on api.indexnow.org cannot fail the deploy. Isolated job so the
+    # audit gate (98/A+/120) is the only quality gate. Spec:
+    # https://www.indexnow.org/documentation. Implementation:
+    # infra/indexnow/submit.py.
+    if: ${{ github.event_name == 'push' }}
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      INDEXNOW_KEY: d6ff22bcff9d13ff0628919ec002cfa60387f3900ef201f5abfc28ab24f8361d
+      HOST: www.it-help.tech
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Submit changed content URLs to IndexNow
+        # All implementation details (pathspec semantics, draft filtering,
+        # parent-section URL inference, taxonomy-term URL union over BEFORE
+        # and AFTER frontmatter, rename/delete handling) live in
+        # infra/indexnow/submit.py. The script is idempotent, network-
+        # tolerant (always exits 0), and writes a $GITHUB_STEP_SUMMARY block.
+        # Architect-reviewed on PR #589.
+        run: |
+          set -euo pipefail
+          BEFORE='${{ github.event.before }}'
+          AFTER='${{ github.sha }}'
+          python3 infra/indexnow/submit.py "$BEFORE" "$AFTER" "$HOST" "$INDEXNOW_KEY"
+
   pr-note:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
