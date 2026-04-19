@@ -283,6 +283,77 @@ jobs:
           AFTER='${{ github.sha }}'
           python3 infra/indexnow/submit.py "$BEFORE" "$AFTER" "$HOST" "$INDEXNOW_KEY"
 
+  google-indexing-ping:
+    # Best-effort instant-indexing notification to the Google Indexing API
+    # (https://indexing.googleapis.com/v3/urlNotifications:publish). Auth
+    # is keyless OIDC via Workload Identity Federation — see the GCP setup
+    # documented in PROJECT_EVOLUTION_LOG.md (2026-04-19 WIF entry). No
+    # service-account JSON keys exist in this project (org policy
+    # iam.disableServiceAccountKeyCreation is enforced).
+    #
+    # URL set comes from the SAME shared collector that drives IndexNow
+    # (infra/indexing/urlset.py) so the two notifiers can never drift.
+    #
+    # Preflight: if the GCP_WIF_PROVIDER / GCP_INDEXING_SA_EMAIL repo
+    # Variables are unset (e.g. credentials being rotated, fork PR), the
+    # job writes a clear skip-summary and exits without attempting auth.
+    #
+    # continue-on-error so any indexing-side failure cannot fail the
+    # deploy or regress the audit gate. Implementation:
+    # infra/google-indexing/submit.py.
+    if: ${{ github.event_name == 'push' }}
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+      id-token: write  # REQUIRED for the OIDC token exchange.
+    env:
+      HOST: www.it-help.tech
+    steps:
+      - name: Preflight — check WIF Variables are configured
+        id: preflight
+        run: |
+          set -euo pipefail
+          if [ -z "${{ vars.GCP_WIF_PROVIDER }}" ] || [ -z "${{ vars.GCP_INDEXING_SA_EMAIL }}" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Google Indexing API"
+              echo ""
+              echo "Skipped: GCP_WIF_PROVIDER and/or GCP_INDEXING_SA_EMAIL repo Variables are unset."
+              echo "Configure under Settings → Secrets and variables → Actions → Variables tab."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout code
+        if: steps.preflight.outputs.configured == 'true'
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Authenticate to Google Cloud (OIDC)
+        if: steps.preflight.outputs.configured == 'true'
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_INDEXING_SA_EMAIL }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/indexing
+          export_environment_variables: true
+
+      - name: Submit changed URLs to Google Indexing API
+        if: steps.preflight.outputs.configured == 'true'
+        # Implementation in infra/google-indexing/submit.py. Reuses the
+        # shared URL collector, fails soft, caps at 50 URLs/run, writes
+        # a per-URL status table to $GITHUB_STEP_SUMMARY.
+        run: |
+          set -euo pipefail
+          BEFORE='${{ github.event.before }}'
+          AFTER='${{ github.sha }}'
+          python3 infra/google-indexing/submit.py "$BEFORE" "$AFTER" "$HOST"
+
   pr-note:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
