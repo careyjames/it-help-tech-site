@@ -113,9 +113,11 @@ If you've found a competent low-voltage or AV company, they will offer you sever
 The category ratings are not marketing — they are defined by the ANSI/TIA-568.2-D twisted-pair cabling standard [^11], and the Ethernet variants that ride on top of them are defined by IEEE 802.3 [^12].
 
 * **Cat5e:** rated to 100 MHz. Adequate only for 1 Gbps (1000BASE-T). Not future-ready; we discourage new installs.
-* **Cat6:** rated to 250 MHz. Supports 10GBASE-T at limited distances (up to ~55 m under the right conditions) [^11].
-* **Cat6A:** rated to 500 MHz. Full 10GBASE-T at the standard 100 m channel length, and supports the higher PoE classes (PoE++ up to 90 W per IEEE 802.3bt) [^7].
+* **Cat6:** rated to 250 MHz. Supports 10GBASE-T at limited distances (up to ~55 m under the right conditions) [^11]. **Red line for modern PoE-rich smart-home builds — do not cross.** Cat6 remains acceptable for legacy data-only runs, and for light PoE Type 1/2 loads when bundle and thermal limits are validated; what it is *not* is the cable to design a new property around once that property starts collecting PoE cameras, PoE thermostats, PoE access points, and PoE++ gear in shared bundles. The reason is thermal: PoE current flowing through twisted-pair conductors produces I²R resistive heating, and the temperature rise inside a cable bundle is a function of bundle density, ambient temperature, and per-conductor resistance — variables that compound at the higher PoE classes. **TIA TSB-184-A** is the canonical industry document on bundle-temperature derating for power-over-cabling installations and provides the category and bundling guidance installers actually use [^14]; **IEEE 802.3bt-2018** defines the *power* envelope (Type 3 up to 60 W and Type 4 up to 90 W per port at the PSE) [^7], but the bundle-thermal math is TIA's territory, not IEEE's. The conservative engineering call for new PoE-dense installs is **Cat6A or better, every time.**
+* **Cat6A:** rated to 500 MHz. Full 10GBASE-T at the standard 100 m channel length, and supports the higher PoE classes (PoE++ up to 90 W per port at the PSE per IEEE 802.3bt) [^7].
 * **Cat8:** rated to 2000 MHz (2 GHz). Defined for 25GBASE-T and 40GBASE-T (IEEE 802.3bq) [^13] but **only at short distances — typically up to 30 m for the full 40 Gbps channel** [^11]. That is why Cat8 is found in data-center top-of-rack runs, high-end creative studios (8K video workflows), and demanding home-office runs that fit inside the 30-meter envelope.
+
+**Engineering note: PoE budgets are real load math.** A modern smart home is, in load terms, a small commercial PoE deployment. Four PoE cameras at ~10 W each, a video doorbell at ~5 W, two PoE thermostats at ~5 W each, three PoE++ access points at up to 90 W per port at the PSE (~71 W delivered at the PD per IEEE 802.3bt Type 4 [^7]) — and the switch closet is quietly pushing well into the hundreds of watts of DC across bundled twisted-pair. Adding the per-port wattages, picking a switch with adequate PSE budget headroom (not just adequate port count), and choosing cabling whose thermal envelope handles the bundled load is engineering work, not shopping. It is also why cable category is not a marketing detail — it is a load decision.
 
 Cat8 is the current top of the twisted-pair stack. Beyond that, we move to SFP/SFP+/SFP28 fiber for the runs that need it.
 
@@ -158,6 +160,8 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 [^12]: IEEE. (2022). *IEEE Standard for Ethernet* (IEEE Std 802.3-2022). <https://standards.ieee.org/ieee/802.3/10422/>
 
 [^13]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer and Management Parameters for 25 Gb/s and 40 Gb/s Operation, Types 25GBASE-T and 40GBASE-T* (IEEE Std 802.3bq-2016). <https://standards.ieee.org/ieee/802.3bq/5957/>
+
+[^14]: Telecommunications Industry Association. (2017). *Guidelines for Supporting Power Delivery Over Balanced Twisted-Pair Cabling* (TIA TSB-184-A). Documents temperature rise in cable bundles under Power over Ethernet loads and provides category and bundling guidance for high-power PoE installations. <https://tiaonline.org/products/tia-tsb-184-a/>
 
 A BibTeX file for these references is available at [`/field-notes/why-your-wireless-network-sucks.bib`](/field-notes/why-your-wireless-network-sucks.bib) for one-click import into Zotero or any reference manager.
 
