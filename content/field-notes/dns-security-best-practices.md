@@ -19,29 +19,6 @@ extra:
 ---
 
 This guide explains how to configure and verify DNS email security controls so you can reduce spoofing, phishing, and business email compromise risk with defensible evidence — citing the IETF RFCs and federal guidance each control derives from.
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "isAccessibleForFree": true,
-  "headline": "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM",
-  "description": "Step-by-step setup guide for DMARC, SPF, DKIM, DNSSEC, and email transport controls to prevent spoofing and phishing.",
-  "proficiencyLevel": "Intermediate",
-  "author": { 
-    "@type": "Person", 
-    "name": "Carey Balboa",
-    "url": "https://www.it-help.tech/about/"
-  },
-  "publisher": { 
-    "@id": "https://www.it-help.tech/#business"
-  },
-  "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
-  "datePublished": "2025-05-25",
-  "dateModified": "2026-04-19",
-  "mainEntityOfPage": "https://www.it-help.tech/field-notes/dns-security-best-practices/",
-  "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
-}
-</script>
 
 ### TL;DR
 Email-authentication failures are rarely failures of *missing* records. They are failures of misinterpreting what the records actually enforce. The robust modern configuration for an active sending domain is **SPF `~all` + DKIM (2048-bit) + DMARC `p=reject`**, layered with **MTA-STS, TLS-RPT, and DANE** at the transport tier and **DNSSEC** beneath. Each control is defined by a specific IETF RFC, and the most common operational error — using SPF `-all` "for safety" — is explicitly warned against in RFC 7489 §10.1 because it can short-circuit DMARC. The sections below walk through what each control actually does, what threat it actually defends against, and how to validate behavior rather than just record presence.
@@ -196,61 +173,7 @@ When setting up DMARC and SPF, watch out for these common mistakes:
 * Setting overly strict policies initially.
 * Be cautious with automated "DNS auto-fix" platforms that request full zone access. Some tools modify records beyond the intended scope. Review diffs before publishing and keep a rollback snapshot of your zone file.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I set up DMARC and SPF myself?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, but only if you fully understand how SPF, DKIM, and DMARC interact. Misconfigurations are common and can silently break email delivery or weaken spoofing protection."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if I don’t set up DMARC or SPF?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Your domain remains easier to impersonate in phishing and BEC campaigns, which can damage trust, disrupt operations, and create direct financial risk."
-      }
-    }
-  ]
-}
-</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to Set Up DMARC, SPF, and DKIM",
-  "description": "A step-by-step guide to securing your business email and domain with SPF, DKIM, DMARC, and practical verification.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Check Current Security Status",
-      "text": "Run a baseline audit of your domain to capture current SPF, DKIM, and DMARC posture before making changes."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Send a Test Email",
-      "text": "Use Red Sift Investigate to generate a test email address. Send an email to it from your CRM or marketing platform to verify delivery headers from those specific services."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Configure DNS Records",
-      "text": "Log in to your DNS provider (e.g. Cloudflare, GoDaddy) and add the reliable SPF, DKIM, and DMARC records tailored to your domain."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Verify Enforcement",
-      "text": "Verify propagation and enforcement across SPF, DKIM, and DMARC, then confirm transport controls and mailbox-provider delivery behavior."
-    }
-  ]
-}
-</script>
 
 ## FAQs: Your DNS Security Questions Answered
 
@@ -308,3 +231,83 @@ If you want a second set of eyes, we offer practical DNS/email security reviews 
 A BibTeX file for these references is available at [`/field-notes/dns-security-best-practices.bib`](/field-notes/dns-security-best-practices.bib) for one-click import into Zotero or any reference manager.
 
 *Last updated April 19, 2026 — verified against RFC 7489, RFC 7208, RFC 6376, NIST SP 800-177 Rev. 1, and current operational email-authentication best practices.*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "isAccessibleForFree": true,
+  "headline": "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM",
+  "description": "Step-by-step setup guide for DMARC, SPF, DKIM, DNSSEC, and email transport controls to prevent spoofing and phishing.",
+  "proficiencyLevel": "Intermediate",
+  "author": { 
+    "@type": "Person", 
+    "name": "Carey Balboa",
+    "url": "https://www.it-help.tech/about/"
+  },
+  "publisher": { 
+    "@id": "https://www.it-help.tech/#business"
+  },
+  "image": "https://www.it-help.tech/images/dns-security-dmarc.png",
+  "datePublished": "2025-05-25",
+  "dateModified": "2026-04-19",
+  "mainEntityOfPage": "https://www.it-help.tech/field-notes/dns-security-best-practices/",
+  "keywords": ["DMARC", "SPF", "DKIM", "DNSSEC", "Email Security", "DNS Security", "BEC", "IT Help San Diego"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I set up DMARC and SPF myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but only if you fully understand how SPF, DKIM, and DMARC interact. Misconfigurations are common and can silently break email delivery or weaken spoofing protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I don’t set up DMARC or SPF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your domain remains easier to impersonate in phishing and BEC campaigns, which can damage trust, disrupt operations, and create direct financial risk."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Set Up DMARC, SPF, and DKIM",
+  "description": "A step-by-step guide to securing your business email and domain with SPF, DKIM, DMARC, and practical verification.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Check Current Security Status",
+      "text": "Run a baseline audit of your domain to capture current SPF, DKIM, and DMARC posture before making changes."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send a Test Email",
+      "text": "Use Red Sift Investigate to generate a test email address. Send an email to it from your CRM or marketing platform to verify delivery headers from those specific services."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure DNS Records",
+      "text": "Log in to your DNS provider (e.g. Cloudflare, GoDaddy) and add the reliable SPF, DKIM, and DMARC records tailored to your domain."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Verify Enforcement",
+      "text": "Verify propagation and enforcement across SPF, DKIM, and DMARC, then confirm transport controls and mailbox-provider delivery behavior."
+    }
+  ]
+}
+</script>
