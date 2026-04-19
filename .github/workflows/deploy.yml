@@ -250,10 +250,13 @@ jobs:
     # search engines (Bing, Yandex, Seznam.cz, Naver, Yep — Google does NOT
     # participate, so this is purely additive to our existing sitemap-driven
     # crawl posture). Diff-driven: pings ONLY URLs whose markdown source
-    # actually changed in this push. Drafts are filtered. Empty diff = no
-    # ping. continue-on-error so a network blip on api.indexnow.org cannot
-    # fail the deploy. Isolated job so the audit gate (98/A+/120) is the only
-    # quality gate. Spec: https://www.indexnow.org/documentation
+    # actually changed in this push, plus their parent section listing and
+    # affected taxonomy term listings (categories/tags). Drafts are
+    # filtered. Empty diff = no ping. continue-on-error so a network blip
+    # on api.indexnow.org cannot fail the deploy. Isolated job so the
+    # audit gate (98/A+/120) is the only quality gate. Spec:
+    # https://www.indexnow.org/documentation. Implementation:
+    # infra/indexnow/submit.py.
     if: ${{ github.event_name == 'push' }}
     needs: deploy
     runs-on: ubuntu-latest
@@ -267,160 +270,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Compute changed content URLs and submit to IndexNow
+      - name: Submit changed content URLs to IndexNow
+        # All implementation details (pathspec semantics, draft filtering,
+        # parent-section URL inference, taxonomy-term URL union over BEFORE
+        # and AFTER frontmatter, rename/delete handling) live in
+        # infra/indexnow/submit.py. The script is idempotent, network-
+        # tolerant (always exits 0), and writes a $GITHUB_STEP_SUMMARY block.
+        # Architect-reviewed on PR #589.
         run: |
           set -euo pipefail
-
           BEFORE='${{ github.event.before }}'
           AFTER='${{ github.sha }}'
-
-          # Guard against the very first push to a branch (BEFORE is the zero
-          # SHA). In that case, fall back to HEAD~1 so we still ping something
-          # sensible without flooding with the entire site.
-          ZERO_SHA="0000000000000000000000000000000000000000"
-          if [ -z "$BEFORE" ] || [ "$BEFORE" = "$ZERO_SHA" ]; then
-            BEFORE="$(git rev-parse "${AFTER}^" 2>/dev/null || echo "")"
-          fi
-
-          if [ -z "$BEFORE" ]; then
-            echo "No prior commit available; skipping IndexNow ping."
-            echo "indexnow_status=skipped_no_before" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          echo "Computing diff: ${BEFORE}..${AFTER} (paths: content/**/*.md)"
-          CHANGED=$(git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- 'content/**/*.md' || true)
-
-          if [ -z "$CHANGED" ]; then
-            echo "No content/*.md files changed; skipping IndexNow ping."
-            {
-              echo "## IndexNow"
-              echo ""
-              echo "No content changes — no ping submitted."
-            } >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-
-          echo "Changed markdown files:"
-          echo "$CHANGED"
-
-          # Map each changed path -> canonical URL, filtering drafts and
-          # non-existent paths (deleted files were excluded by --diff-filter=AM
-          # but be defensive). Zola routing rules:
-          #   content/_index.md                  -> /
-          #   content/<section>.md               -> /<section>/
-          #   content/<section>/_index.md        -> /<section>/
-          #   content/<section>/<slug>.md        -> /<section>/<slug>/
-          # Drafts are skipped (frontmatter draft = true / draft: true).
-          mapfile -t URLS < <(python3 - "$CHANGED" <<'PY'
-          import sys, re, os
-          changed = sys.argv[1].splitlines()
-          out = []
-          for p in changed:
-              p = p.strip()
-              if not p or not p.startswith("content/"):
-                  continue
-              if not os.path.exists(p):
-                  continue
-              # Read first ~80 lines of frontmatter to spot draft flag.
-              try:
-                  with open(p, "r", encoding="utf-8") as fh:
-                      head = "".join([fh.readline() for _ in range(80)])
-              except Exception as e:
-                  print(f"WARN: could not read {p}: {e}", file=sys.stderr)
-                  continue
-              # Match TOML "draft = true" or YAML "draft: true" inside the
-              # frontmatter block (delimited by +++ or ---).
-              if re.search(r'(?im)^\s*draft\s*[:=]\s*true\b', head):
-                  print(f"SKIP draft: {p}", file=sys.stderr)
-                  continue
-              rel = p[len("content/"):]
-              # Strip .md suffix.
-              if rel.endswith(".md"):
-                  rel = rel[:-3]
-              # _index becomes section root.
-              if rel == "_index":
-                  url_path = "/"
-              elif rel.endswith("/_index"):
-                  url_path = "/" + rel[:-len("/_index")] + "/"
-              else:
-                  url_path = "/" + rel + "/"
-              out.append(f"https://www.it-help.tech{url_path}")
-          # Dedup while preserving order.
-          seen = set()
-          for u in out:
-              if u in seen:
-                  continue
-              seen.add(u)
-              print(u)
-          PY
-          )
-
-          if [ "${#URLS[@]}" -eq 0 ]; then
-            echo "All changed files were drafts or unmappable; skipping IndexNow ping."
-            {
-              echo "## IndexNow"
-              echo ""
-              echo "All changed files were drafts — no ping submitted."
-            } >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-
-          echo "URLs to submit (${#URLS[@]}):"
-          printf '  %s\n' "${URLS[@]}"
-
-          # Build JSON payload per spec:
-          # https://www.indexnow.org/documentation -> "Submitting URLs"
-          PAYLOAD=$(python3 -c '
-          import json, sys
-          host, key = sys.argv[1], sys.argv[2]
-          urls = sys.argv[3:]
-          print(json.dumps({
-              "host": host,
-              "key": key,
-              "keyLocation": f"https://{host}/{key}.txt",
-              "urlList": urls,
-          }))
-          ' "$HOST" "$INDEXNOW_KEY" "${URLS[@]}")
-
-          # POST to canonical IndexNow endpoint. The IndexNow network
-          # auto-forwards to all participating engines, so a single POST
-          # covers Bing + Yandex + Seznam.cz + Naver + Yep.
-          HTTP_CODE=$(curl --silent --show-error --max-time 30 \
-            --output /tmp/indexnow.body \
-            --write-out '%{http_code}' \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            -X POST \
-            --data "$PAYLOAD" \
-            'https://api.indexnow.org/IndexNow' || echo "000")
-
-          echo "IndexNow HTTP status: $HTTP_CODE"
-          echo "Response body:"
-          cat /tmp/indexnow.body || true
-          echo ""
-
-          {
-            echo "## IndexNow"
-            echo ""
-            echo "- URLs submitted: **${#URLS[@]}**"
-            echo "- HTTP status: **${HTTP_CODE}**"
-            echo ""
-            echo '```'
-            printf '%s\n' "${URLS[@]}"
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
-
-          # Per spec: 200/202 = accepted. Anything else is a warning we want
-          # in the log, but not a deploy blocker (continue-on-error covers it
-          # at the job level too).
-          case "$HTTP_CODE" in
-            200|202)
-              echo "IndexNow ping accepted."
-              ;;
-            *)
-              echo "::warning::IndexNow returned HTTP $HTTP_CODE (non-2xx). Ping was best-effort; deploy is unaffected."
-              ;;
-          esac
+          python3 infra/indexnow/submit.py "$BEFORE" "$AFTER" "$HOST" "$INDEXNOW_KEY"
 
   pr-note:
     if: ${{ github.event_name == 'pull_request' }}
