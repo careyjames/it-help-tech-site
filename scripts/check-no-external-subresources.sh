@@ -4,7 +4,7 @@
 # This is the safety net for the COEP `require-corp` header (Sub-4-bis).
 # COEP requires every subresource to either be same-origin or carry an
 # explicit CORP / CORS opt-in from the cross-origin server. The site has
-# zero external subresources today; this gate prevents a future blog post
+# zero external subresources today; this gate prevents a future field note
 # (or template change) from silently breaking the COEP-protected pages.
 #
 # Excludes the signature page (`ithelp-anilogo.html`) which is served by a

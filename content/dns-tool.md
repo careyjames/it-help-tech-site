@@ -89,7 +89,7 @@ If you're evaluating DNS posture, this is the version you want.
 
 The report tells you _what_ is wrong, but if you need help fixing it, we have a comprehensive guide:
 
-👉 <a href="https://www.it-help.tech/blog/dns-security-best-practices/" target="_blank" rel="noopener noreferrer" class="gold-link"><strong>Read: DNS Security Best Practices (Step-by-Step Guide)</strong></a>
+👉 <a href="https://www.it-help.tech/field-notes/dns-security-best-practices/" target="_blank" rel="noopener noreferrer" class="gold-link"><strong>Read: DNS Security Best Practices (Step-by-Step Guide)</strong></a>
 
 ## Command-Line Version (Still Available)
 

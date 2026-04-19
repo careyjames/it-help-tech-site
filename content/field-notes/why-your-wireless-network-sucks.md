@@ -11,7 +11,7 @@ extra:
   og_description: "Discover why your Wi-Fi might be underperforming. Learn about the importance of an Ethernet backbone and how Cat6A/Cat8 cabling can boost your home or office network."
   twitter_title: "Why Your Wireless Network Sucks: No Ethernet Backbone"
   twitter_description: "Discover why your Wi-Fi might be underperforming. Learn about the importance of an Ethernet backbone and how Cat6A/Cat8 cabling can boost your home or office network."
-  canonical_url: "https://www.it-help.tech/blog/why-your-wireless-network-sucks/"
+  canonical_url: "https://www.it-help.tech/field-notes/why-your-wireless-network-sucks/"
 ---
 
 Have you ever faced the frustration of slow or unreliable Wi-Fi in your home or office? You’re not alone. The secret to a robust and speedy wireless network lies in an overlooked component: the Ethernet backbone.

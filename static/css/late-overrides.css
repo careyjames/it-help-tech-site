@@ -1162,7 +1162,7 @@ html:not(.switch) h6 a.gold-link:active {
    the link's color/background transitions and never affects layout. */
 /* 2026-04-17 (architect rev): match BOTH aria-current="page" (exact match)
    AND aria-current="true" (section-ancestor match, e.g. blog post under
-   /blog/). The visual underline appears in both cases — users still see
+   /field-notes/). The visual underline appears in both cases — users still see
    "you are in this section" — but screen readers correctly distinguish
    the exact-page announcement from the section announcement. */
 .topbar-nav-list a[aria-current] {

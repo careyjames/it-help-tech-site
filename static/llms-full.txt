@@ -257,9 +257,9 @@ Source: [https://schedule.it-help.tech/](https://schedule.it-help.tech/)
 
 ## Optional
 
-### Blog
+### Field Notes
 
-Source: [https://www.it-help.tech/blog](https://www.it-help.tech/blog)
+Source: [https://www.it-help.tech/field-notes](https://www.it-help.tech/field-notes)
 
-*Optional content available at [https://www.it-help.tech/blog](https://www.it-help.tech/blog)*
+*Optional content available at [https://www.it-help.tech/field-notes](https://www.it-help.tech/field-notes)*
 

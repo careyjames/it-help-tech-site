@@ -240,8 +240,8 @@ function main() {
   // matching the live site's URL canonicalization for both root and section pages).
   // content/_index.md      → ${base_url}/
   // content/services.md    → ${base_url}/services/
-  // content/blog/_index.md → ${base_url}/blog/
-  // content/blog/foo.md    → ${base_url}/blog/foo/
+  // content/field-notes/_index.md → ${base_url}/field-notes/
+  // content/field-notes/foo.md    → ${base_url}/field-notes/foo/
   const fileToUrl = (file) => {
     const stripped = file.replace(/^content\//, "").replace(/\.md$/, "").replace(/(^|\/)_index$/, "$1");
     return `${site.base_url}/${stripped}${stripped && !stripped.endsWith("/") ? "/" : ""}`;

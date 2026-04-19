@@ -13,4 +13,4 @@
 
 ## Optional
 
-- [Blog](https://www.it-help.tech/blog)
+- [Field Notes](https://www.it-help.tech/field-notes)

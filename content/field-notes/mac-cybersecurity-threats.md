@@ -12,7 +12,7 @@ extra:
   og_description: "Think your Mac is immune? Explore real-world macOS threats, vulnerabilities, and the best endpoint protection software to safeguard your digital life."
   twitter_title: "Mac Cybersecurity Threats: You May Not Be As Safe As You Think"
   twitter_description: "Think your Mac is immune? Explore real-world macOS threats, vulnerabilities, and the best endpoint protection software to safeguard your digital life."
-  canonical_url: "https://www.it-help.tech/blog/mac-cybersecurity-threats/"
+  canonical_url: "https://www.it-help.tech/field-notes/mac-cybersecurity-threats/"
 ---
 ---
 
@@ -71,7 +71,7 @@ Stay up to date and have an antivirus program installed.
 All are American-based companies.
 
 **What is the best way to protect my company’s email users?**
-* Update DNS Records! (As discussed in our [DNS Security Best Practices blog post](/blog/dns-security-best-practices/))
+* Update DNS Records! (As discussed in our [DNS Security Best Practices field note](/field-notes/dns-security-best-practices/))
 * **ProofPoint or Perception Point:** It sits before your Google Workspace or Microsoft 365 Exchange provider, stops evil, and reduces spam.
 * **RedSift and Mail Hardener are Great tools for achieving an A+ email quality rating and protecting and monitoring your users from attacks.
 
