@@ -174,30 +174,42 @@ def parse_frontmatter(text: str) -> dict:
                     out["taxonomies"].setdefault(key, []).extend(values)
     else:
         # YAML: look for "tags:" / "categories:" lists.
+        def _strip_yaml_scalar(s: str) -> str:
+            s = s.strip()
+            if len(s) >= 2 and s[0] == s[-1] and s[0] in ('"', "'"):
+                s = s[1:-1]
+            return s.strip()
+
         for key in ("tags", "categories"):
-            # Inline list form: tags: [foo, bar]
+            # Inline list form: `tags: [foo, "bar baz", 'qux quux']`. We
+            # split on the top-level commas (no nested-list support — YAML
+            # inline-flow nesting is not used in our content). The regex
+            # for individual scalars must NOT tokenize on whitespace
+            # because terms like "Apple Account" or "password reset" are
+            # legitimate multi-word tag values.
             inline = re.search(
                 rf'(?im)^\s*{key}\s*:\s*\[([^\]]*)\]', fm_text
             )
             if inline:
-                values = re.findall(r'"([^"]+)"|\'([^\']+)\'|([\w-]+)', inline.group(1))
-                flat = [v for triple in values for v in triple if v]
-                if flat:
-                    out["taxonomies"].setdefault(key, []).extend(flat)
+                items = [_strip_yaml_scalar(it) for it in inline.group(1).split(",")]
+                items = [it for it in items if it]
+                if items:
+                    out["taxonomies"].setdefault(key, []).extend(items)
                 continue
             # Block list form:
             #   tags:
             #     - foo
-            #     - bar
+            #     - bar baz
+            #     - "qux quux"
             block = re.search(
                 rf'(?im)^\s*{key}\s*:\s*\n((?:\s*-\s*.+\n?)+)', fm_text
             )
             if block:
-                values = re.findall(r'-\s*"?([^"\n]+?)"?\s*$', block.group(1), re.M)
-                if values:
-                    out["taxonomies"].setdefault(key, []).extend(
-                        [v.strip() for v in values]
-                    )
+                items = re.findall(r'^\s*-\s*(.+?)\s*$', block.group(1), re.M)
+                items = [_strip_yaml_scalar(it) for it in items]
+                items = [it for it in items if it]
+                if items:
+                    out["taxonomies"].setdefault(key, []).extend(items)
     return out
 
 
@@ -365,7 +377,9 @@ def collect_urls(
 
         # 3) Modified files: also include BEFORE-side taxonomy terms
         # (page has been REMOVED from these terms; their listings
-        # changed too).
+        # changed too). Also includes the taxonomy ROOT URL so e.g. an
+        # M-transitioning-to-draft page still signals /tags/ + /categories/
+        # whose all-posts listing changed (architect MINOR finding).
         if status == "M":
             before_text = file_at_ref(before, path)
             if before_text is not None:
@@ -375,6 +389,8 @@ def collect_urls(
                         slug = slugify(term)
                         if slug:
                             add(f"https://{host}/{tax}/{slug}/")
+                    if fm_before["taxonomies"].get(tax):
+                        add(f"https://{host}/{tax}/")
 
     return urls
 
