@@ -1,7 +1,7 @@
 ---
 title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
 date: 2025-05-25
-last_modified: 2026-04-19
+updated: 2026-04-19
 author: Carey Balboa
 categories: [DNS Security, Email Security]
 tags: [DMARC, SPF, DKIM, DNSSEC, MTA-STS, TLS-RPT, DANE, BIMI, email deliverability, cybersecurity, BEC, IC3, threat model]

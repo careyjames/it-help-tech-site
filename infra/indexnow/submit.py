@@ -10,19 +10,26 @@ canonical URLs whose markdown source actually changed in that range. This
 is the single architectural reason the integration cannot become spammy:
 unchanged URLs are never re-submitted.
 
-Coverage rules (post architect-review on PR #589):
+Coverage rules (post architect-review on PR #589, taxonomy emission
+removed 2026-04-19 per whole-repo health check — see
+PROJECT_EVOLUTION_LOG.md entry):
   * Page URLs for added/modified pages (drafts filtered out).
   * Old page URLs for deleted/renamed pages (signals removal/redirect to
     participating engines so stale entries clear faster).
   * Parent section URL for any changed page (e.g. content/field-notes/foo.md
     also pings /field-notes/ because the section's listing page changed).
-  * Taxonomy term URLs for the union of terms across BEFORE and AFTER
-    versions of each changed page (e.g. tag/category listings change when
-    a post is added to or removed from a term). Taxonomies are read from
-    config.toml at script load.
   * Pathspec uses git's :(glob) magic prefix so top-level files like
     content/_index.md and content/about.md are caught. (Default git
     pathspec semantics do NOT treat ** specially.)
+
+NOT emitted (deliberate): /tags/, /categories/, /tags/<slug>/,
+/categories/<slug>/. config.toml declares both taxonomies but this Zola
+site has no taxonomy templates (templates/taxonomy_list.html and
+templates/taxonomy_single.html do not exist), so those URLs return 404
+in production. Pinging 404 URLs would burn search-engine crawl budget
+and signal noise. If we ever add taxonomy browse pages, restore the
+slugify() / read_taxonomy_names() helpers and the emission paths from
+git history (commit before this change).
 
 Failure mode:
   * Network failures, non-2xx responses, malformed payloads — all log a
@@ -43,8 +50,6 @@ import subprocess
 import sys
 import urllib.request
 import urllib.error
-from pathlib import Path
-from typing import Iterable
 
 INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow"
 ZERO_SHA = "0000000000000000000000000000000000000000"
@@ -61,67 +66,17 @@ def run_git(*args: str) -> str:
     return result.stdout
 
 
-def slugify(term: str) -> str:
-    """
-    Replicate Zola's default slugification for taxonomy terms: lowercase,
-    transliterate non-ASCII (best effort — most of our tags are ASCII),
-    replace whitespace and underscores with hyphens, strip everything
-    that isn't [a-z0-9-], collapse repeated hyphens, trim hyphens from
-    ends.
-
-    This matches Zola's `slugify_paths.taxonomies` default of "on" with
-    the standard slugification rules. If our config later sets
-    slugify_paths.taxonomies = "safe", this would need to change.
-    """
-    s = term.lower().strip()
-    # Replace whitespace and underscores with hyphens.
-    s = re.sub(r"[\s_]+", "-", s)
-    # Strip everything that isn't ASCII alphanumeric or hyphen.
-    s = re.sub(r"[^a-z0-9-]", "", s)
-    # Collapse repeated hyphens.
-    s = re.sub(r"-+", "-", s)
-    # Trim hyphens from ends.
-    return s.strip("-")
-
-
-def read_taxonomy_names(config_path: Path) -> list[str]:
-    """
-    Parse config.toml's [[taxonomies]] entries and return the list of
-    taxonomy names (e.g. ["categories", "tags"]). Tolerant minimal parser
-    so we don't add a tomllib dep on Python < 3.11 runners.
-    """
-    if not config_path.exists():
-        return []
-    text = config_path.read_text(encoding="utf-8")
-    names: list[str] = []
-    in_block = False
-    for line in text.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("[["):
-            in_block = stripped.startswith("[[taxonomies]]")
-            continue
-        if stripped.startswith("["):
-            in_block = False
-            continue
-        if not in_block:
-            continue
-        m = re.match(r'name\s*=\s*"([^"]+)"', stripped)
-        if m:
-            names.append(m.group(1))
-    return names
-
-
 def parse_frontmatter(text: str) -> dict:
     """
     Return a dict containing whatever we care about from the frontmatter:
     * draft (bool)
-    * taxonomies (dict[str, list[str]])
 
     Supports both Zola's TOML frontmatter (delimited by +++) and YAML
     (delimited by ---). Minimal parser; we only look at known keys, not
-    arbitrary structure.
+    arbitrary structure. Taxonomy parsing was removed 2026-04-19 along
+    with taxonomy URL emission — see module docstring.
     """
-    out: dict = {"draft": False, "taxonomies": {}}
+    out: dict = {"draft": False}
     if not text:
         return out
 
@@ -146,70 +101,6 @@ def parse_frontmatter(text: str) -> dict:
     # draft = true | draft: true
     if re.search(r"(?im)^\s*draft\s*[:=]\s*true\b", fm_text):
         out["draft"] = True
-
-    if delim == "+++":
-        # TOML: look for [taxonomies] block with arrays.
-        tax_block = re.search(
-            r"(?ims)^\[taxonomies\](.*?)(?=^\[|\Z)", fm_text + "\n["
-        )
-        if tax_block:
-            for m in re.finditer(
-                r'(?im)^\s*([a-z_]+)\s*=\s*\[([^\]]*)\]', tax_block.group(1)
-            ):
-                key = m.group(1)
-                values = re.findall(r'"([^"]+)"', m.group(2))
-                if values:
-                    out["taxonomies"].setdefault(key, []).extend(values)
-        # Inline taxonomies = { tags = [...], categories = [...] }
-        inline = re.search(
-            r'(?im)^\s*taxonomies\s*=\s*\{([^}]*)\}', fm_text
-        )
-        if inline:
-            for m in re.finditer(
-                r'([a-z_]+)\s*=\s*\[([^\]]*)\]', inline.group(1)
-            ):
-                key = m.group(1)
-                values = re.findall(r'"([^"]+)"', m.group(2))
-                if values:
-                    out["taxonomies"].setdefault(key, []).extend(values)
-    else:
-        # YAML: look for "tags:" / "categories:" lists.
-        def _strip_yaml_scalar(s: str) -> str:
-            s = s.strip()
-            if len(s) >= 2 and s[0] == s[-1] and s[0] in ('"', "'"):
-                s = s[1:-1]
-            return s.strip()
-
-        for key in ("tags", "categories"):
-            # Inline list form: `tags: [foo, "bar baz", 'qux quux']`. We
-            # split on the top-level commas (no nested-list support — YAML
-            # inline-flow nesting is not used in our content). The regex
-            # for individual scalars must NOT tokenize on whitespace
-            # because terms like "Apple Account" or "password reset" are
-            # legitimate multi-word tag values.
-            inline = re.search(
-                rf'(?im)^\s*{key}\s*:\s*\[([^\]]*)\]', fm_text
-            )
-            if inline:
-                items = [_strip_yaml_scalar(it) for it in inline.group(1).split(",")]
-                items = [it for it in items if it]
-                if items:
-                    out["taxonomies"].setdefault(key, []).extend(items)
-                continue
-            # Block list form:
-            #   tags:
-            #     - foo
-            #     - bar baz
-            #     - "qux quux"
-            block = re.search(
-                rf'(?im)^\s*{key}\s*:\s*\n((?:\s*-\s*.+\n?)+)', fm_text
-            )
-            if block:
-                items = re.findall(r'^\s*-\s*(.+?)\s*$', block.group(1), re.M)
-                items = [_strip_yaml_scalar(it) for it in items]
-                items = [it for it in items if it]
-                if items:
-                    out["taxonomies"].setdefault(key, []).extend(items)
     return out
 
 
@@ -308,7 +199,6 @@ def collect_urls(
     before: str,
     after: str,
     host: str,
-    taxonomy_names: list[str],
 ) -> list[str]:
     """
     Walk the diff and produce a deduplicated, ordered list of URLs to
@@ -345,20 +235,11 @@ def collect_urls(
                 )
                 if parent:
                     add(f"https://{host}{parent}")
-                # Taxonomy term URLs — AFTER-side terms (page is now in
-                # these terms; their listings changed).
-                for tax in taxonomy_names:
-                    for term in fm_after["taxonomies"].get(tax, []):
-                        slug = slugify(term)
-                        if slug:
-                            add(f"https://{host}/{tax}/{slug}/")
-                    add(f"https://{host}/{tax}/")
 
         # 2) Old page URL for deletes/renames-from.
         if status == "D" or (status == "R" and old_path):
             removed_path = path if status == "D" else old_path
             assert removed_path is not None
-            before_text = file_at_ref(before, removed_path)
             removed_url = url_for_page(host, removed_path)
             add(removed_url)
             parent = parent_section_url(
@@ -366,31 +247,6 @@ def collect_urls(
             )
             if parent:
                 add(f"https://{host}{parent}")
-            if before_text is not None:
-                fm_before = parse_frontmatter(before_text)
-                for tax in taxonomy_names:
-                    for term in fm_before["taxonomies"].get(tax, []):
-                        slug = slugify(term)
-                        if slug:
-                            add(f"https://{host}/{tax}/{slug}/")
-                    add(f"https://{host}/{tax}/")
-
-        # 3) Modified files: also include BEFORE-side taxonomy terms
-        # (page has been REMOVED from these terms; their listings
-        # changed too). Also includes the taxonomy ROOT URL so e.g. an
-        # M-transitioning-to-draft page still signals /tags/ + /categories/
-        # whose all-posts listing changed (architect MINOR finding).
-        if status == "M":
-            before_text = file_at_ref(before, path)
-            if before_text is not None:
-                fm_before = parse_frontmatter(before_text)
-                for tax in taxonomy_names:
-                    for term in fm_before["taxonomies"].get(tax, []):
-                        slug = slugify(term)
-                        if slug:
-                            add(f"https://{host}/{tax}/{slug}/")
-                    if fm_before["taxonomies"].get(tax):
-                        add(f"https://{host}/{tax}/")
 
     return urls
 
@@ -472,11 +328,6 @@ def main() -> int:
         action="store_true",
         help="Compute URLs but do not POST.",
     )
-    parser.add_argument(
-        "--config",
-        default="config.toml",
-        help="Path to Zola config.toml (default: ./config.toml)",
-    )
     args = parser.parse_args()
 
     before = resolve_before(args.before, args.after)
@@ -485,10 +336,7 @@ def main() -> int:
         write_summary([], 0, os.environ.get("GITHUB_STEP_SUMMARY", ""))
         return 0
 
-    taxonomy_names = read_taxonomy_names(Path(args.config))
-    print(f"Taxonomies discovered: {taxonomy_names}", file=sys.stderr)
-
-    urls = collect_urls(before, args.after, args.host, taxonomy_names)
+    urls = collect_urls(before, args.after, args.host)
     print(f"Computed {len(urls)} URL(s) to submit.", file=sys.stderr)
     for u in urls:
         print(f"  {u}", file=sys.stderr)

@@ -1,7 +1,7 @@
 ---
 title: "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It"
 date: 2025-05-24
-last_modified: 2026-04-19
+updated: 2026-04-19
 author: Carey Balboa
 categories: [Networking, WiFi, IT Infrastructure]
 tags: [ethernet, wifi, wi-fi 6, wi-fi 7, networking, home networking, office networking, cat6a, cat8, mesh, csma-ca, shannon, ubiquiti, poe]
