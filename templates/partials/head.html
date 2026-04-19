@@ -232,6 +232,12 @@
   {%- endfor %}
 {%- endif %}
 
+{# --- Structured data (Schema.org JSON-LD) ---
+   Sourced from a single partial so every page emits Organization +
+   (when applicable) Article/TechArticle + BreadcrumbList + Blog markup,
+   driven entirely by frontmatter. See _jsonld.html for details. #}
+{% include "partials/_jsonld.html" %}
+
 {# --- Extra items injected from config --- #}
 {%- if config.extra.head_extra %}
   {{ config.extra.head_extra | safe }}

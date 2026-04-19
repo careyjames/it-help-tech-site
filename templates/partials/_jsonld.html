@@ -1,0 +1,104 @@
+{# =============================================================================
+   _jsonld.html — auto-emitted JSON-LD structured data (Schema.org)
+
+   Single source of truth for site-wide structured data. Included from
+   templates/partials/head.html so every page emits Organization + (when
+   applicable) Article/TechArticle + BreadcrumbList + Blog markup, all
+   driven from frontmatter — no per-page hand-coded JSON-LD required.
+
+   Emitted contexts:
+     • ALL pages         → Organization (publisher), with stable @id anchor
+     • field-notes posts → Article (or TechArticle via extra.schema_type)
+                           + BreadcrumbList (Home → Field Notes → post)
+     • field-notes index → Blog
+
+   Frontmatter knobs (all optional):
+     extra.schema_type        → "TechArticle" (default "Article")
+     extra.skip_auto_jsonld   → true to opt this page out (e.g. when the
+                                markdown body already contains a richer
+                                hand-written JSON-LD block and we don't
+                                want any auto-generated supplement)
+     extra.author             → author display name (falls back to
+                                page.author, then "Carey Balboa")
+     extra.og_image           → image URL (falls back to extra.image,
+                                then config.extra.default_og_image)
+
+   CSP-safe: emitted as <script type="application/ld+json"> blocks, which
+   are not subject to the production style-src 'self' restriction. All
+   string values are routed through Tera's `json_encode` filter so titles
+   and descriptions containing apostrophes, em-dashes, or quotes serialize
+   as valid JSON automatically.
+   ============================================================================ #}
+
+{%- set org_id = config.base_url ~ "/#organization" -%}
+{%- set org_logo = "https://www.it-help.tech/logo.svg" -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ org_id | json_encode | safe }},
+  "name": {{ config.title | json_encode | safe }},
+  "url": {{ config.base_url | json_encode | safe }},
+  "logo": {{ org_logo | json_encode | safe }}
+}
+</script>
+
+{%- if page is defined and page.title and page.path is starting_with("/field-notes/") and not page.extra.skip_auto_jsonld %}
+{%- set art_type    = page.extra.schema_type | default(value="Article") -%}
+{%- set art_url     = page.permalink -%}
+{%- set art_desc    = page.description | default(value=config.description) -%}
+{%- set art_img_rel = page.extra.og_image | default(value=page.extra.image | default(value=config.extra.default_og_image | default(value="/images/og-home.png"))) -%}
+{%- set art_img     = get_url(path=art_img_rel, trailing_slash=false) -%}
+{%- set art_author  = page.extra.author | default(value=page.author | default(value="Carey Balboa")) -%}
+{%- set art_date    = page.date | date(format="%Y-%m-%d") -%}
+{%- set art_updated = page.updated | default(value=page.date) | date(format="%Y-%m-%d") -%}
+{%- set fn_index_url = config.base_url ~ "/field-notes/" -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {{ art_type | json_encode | safe }},
+  "headline": {{ page.title | json_encode | safe }},
+  "description": {{ art_desc | json_encode | safe }},
+  "image": {{ art_img | json_encode | safe }},
+  "datePublished": {{ art_date | json_encode | safe }},
+  "dateModified": {{ art_updated | json_encode | safe }},
+  "author": {
+    "@type": "Person",
+    "name": {{ art_author | json_encode | safe }}
+  },
+  "publisher": { "@id": {{ org_id | json_encode | safe }} },
+  "mainEntityOfPage": {{ art_url | json_encode | safe }},
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",        "item": {{ config.base_url | json_encode | safe }} },
+    { "@type": "ListItem", "position": 2, "name": "Field Notes", "item": {{ fn_index_url | json_encode | safe }} },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | json_encode | safe }}, "item": {{ art_url | json_encode | safe }} }
+  ]
+}
+</script>
+
+{%- elif section is defined and section.path == "/field-notes/" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": {{ section.title | json_encode | safe }},
+  "description": {{ section.description | default(value=config.description) | json_encode | safe }},
+  "url": {{ section.permalink | json_encode | safe }},
+  "publisher": { "@id": {{ org_id | json_encode | safe }} },
+  "inLanguage": "en-US"
+}
+</script>
+
+{%- endif %}

@@ -13,6 +13,28 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-19 — Site-wide Schema.org JSON-LD: auto-emitted Organization + Article + BreadcrumbList + Blog from a single partial
+- Actor: AI (owner-directed remediation β following the architect-driven discovery that 3 of 6 field-notes shipped zero structured data).
+- Trigger: Whole-repo audit revealed JSON-LD coverage was inconsistent — `dns-security`, `mac-cybersecurity`, and `wireless` had hand-written `<script type="application/ld+json">` blocks embedded in their markdown bodies, while `apple-sends-you-to-ijail`, `hack-your-engrams-to-remember-passwords`, and `it-problem-solving-scientific-method` had none. Initial scratchpad diagnosis (that `templates/macros/seo.html` was missing and `{% block seo %}` was unwired) was wrong: the file exists in the abridge theme via inheritance, and the `{% block seo %}` definitions in `page.html`/`field-notes.html` are dead code because `base.html` defines no parent block. Real SEO source of truth is `templates/partials/head.html`, which generates title/meta/OG/Twitter from frontmatter but emitted **zero** JSON-LD. So the gap was: no automatic structured-data layer existed at all; coverage came entirely from per-author markdown body discipline.
+- Files:
+  - `templates/partials/_jsonld.html` (NEW) — single source of truth. Emits Organization (every page, with stable `@id` anchor for graph linking), plus Article (or TechArticle via `extra.schema_type`) + BreadcrumbList on field-notes posts, plus Blog on the field-notes section index. All values driven from frontmatter (`page.title`, `page.description`, `page.date`, `page.updated`, `page.extra.og_image`/`extra.image`, `page.extra.author`, `page.permalink`). Strings routed through Tera's `json_encode` filter so apostrophes/em-dashes/quotes serialize as valid JSON automatically. Opt-out via `page.extra.skip_auto_jsonld = true` for any page that wants to suppress the auto-emitted Article block (defensive escape hatch; not used by any current page).
+  - `templates/partials/head.html` — added `{% include "partials/_jsonld.html" %}` directly before the `head_extra` injection point so structured data ships with every rendered page.
+  - `PROJECT_EVOLUTION_LOG.md` — this entry.
+- Build verification (local `zola build`, every JSON-LD block parsed with stdlib `json.loads`):
+  - apple-sends-you-to-ijail: 0 → 3 blocks `[Organization, Article, BreadcrumbList]`
+  - hack-your-engrams-to-remember-passwords: 0 → 3 blocks `[Organization, Article, BreadcrumbList]`
+  - it-problem-solving-scientific-method: 0 → 3 blocks `[Organization, Article, BreadcrumbList]`
+  - dns-security-best-practices: 3 → 6 blocks (3 new auto + 3 hand-curated TechArticle/FAQPage/HowTo retained)
+  - mac-cybersecurity-threats: 1 → 4 blocks (3 new auto + existing TechArticle retained)
+  - why-your-wireless-network-sucks: 1 → 4 blocks (3 new auto + existing TechArticle retained)
+  - field-notes section index: 0 → 2 blocks `[Organization, Blog]`
+  - All other pages (home, about, services): pre-existing rich JSON-LD intact, plus the new Organization baseline (consistent `@id` link target across the site).
+  - All blocks parsed cleanly. No Tera template errors. Build time 498ms.
+- Why duplicate Organization/Article on hand-curated pages is intentional: Google supports multiple JSON-LD blocks per page (they are merged into a single graph), and the consistent `@id` anchor on Organization lets crawlers de-duplicate the publisher entity across all blocks. Removing the hand-written blocks from the 3 curated markdowns is a separate, lower-priority cleanup deferred to a follow-up PR — keeping them avoids any risk of regression in the rich types (HowTo, FAQPage) that the auto layer doesn't yet emit.
+- Why `_jsonld.html` and not a Tera macro: includes execute in the `page`/`section` template context automatically (no need to pass them as macro arguments through every call site), and adding to a partial is a one-line wire-up vs. modifying every template that extends `base.html`.
+- CSP compatibility: production `style-src 'self'` is unaffected — JSON-LD ships in `<script type="application/ld+json">` tags, which fall under `script-src` (which already permits inline + same-origin per the existing CSP).
+- Rollback: this branch/PR (`feat/jsonld-structured-data`), baseline commit on main pre-merge.
+
 ### 2026-04-19 — Google Indexing API integration (keyless OIDC, shared URL collector with IndexNow)
 - Actor: AI (owner-directed remediation following the architect-driven discovery that no Google Indexing code existed in the repo despite the GCP-side WIF setup being in place).
 - Trigger: Earlier sessions documented "tasks #21/#22 merged" for Google Indexing, but a direct check of the repo confirmed the truth: the GCP/Search-Console plumbing was real (Workload Identity Pool `github-actions-pool`, OIDC provider `github-oidc`, SA `id-web-search-indexing-api@it-help-indexing.iam.gserviceaccount.com` bound to repo `IT-Help-San-Diego/it-help-tech-site`, SA owner of `https://www.it-help.tech/` in Search Console, repo Variables `GCP_WIF_PROVIDER` + `GCP_INDEXING_SA_EMAIL`), but **no GitHub Actions job, no Python script, and no `infra/google-indexing/` directory ever landed on `main`**. GitHub code search confirmed: zero occurrences of `indexing.googleapis.com` in the repo before this commit. So the keyless auth was dangling — provisioned but unused. This PR connects the wire.
