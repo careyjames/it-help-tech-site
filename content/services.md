@@ -422,6 +422,7 @@ Your devices will have the same advanced monitoring agent trusted by top managed
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
 
+* **<a href="https://www.libreoffice.org/" target="_blank" rel="noopener noreferrer" class="gold-link">LibreOffice:</a>** Free, open-source office suite from The Document Foundation. Full-featured word processing, spreadsheets, presentations, drawings, and databases on **Linux, Windows 11 Pro, and macOS** — no Microsoft Office license required, and you are not missing features. Mature, transparently developed, and what we run on our own machines.
 * **<a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="gold-link">Cloudflare:</a>** For DNS, WAF, CDN.
 * **<a href="https://aws.amazon.com/route53/" target="_blank" rel="noopener noreferrer" class="gold-link">Amazon Route 53:</a>** For highly available and scalable DNS services.
 * **<a href="https://landing.google.com/advancedprotection/" target="_blank" rel="noopener noreferrer" class="gold-link">Google Advanced Protection Program:</a>** For Google's strongest account security.
