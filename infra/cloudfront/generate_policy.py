@@ -156,12 +156,27 @@ def build_site_csp(*, script_hashes: list[str], style_hashes: list[str]) -> str:
     style_sources = [SELF] + [f"'sha256-{h}'" for h in style_hashes]
 
     # Note: keep this short. CloudFront header-value size is finite.
+    #
+    # Hardening rationale (Observatory v5 145+ / federal Qualys disposition,
+    # 2026-04-20 — see PROJECT_EVOLUTION_LOG.md):
+    #   - form-action 'none'  : no <form> on the marketing site posts anywhere;
+    #                            blocks any future form-action XSS gadget.
+    #   - worker-src 'none'   : we ship zero Web Workers / Service Workers;
+    #                            collapses an attack surface most CSPs leave open.
+    #   - require-trusted-types-for 'script' + trusted-types 'none'
+    #                          : disables every DOM-XSS sink (innerHTML,
+    #                            document.write, eval, …) at the browser layer.
+    #                            Audited 2026-04-20 — none of our JS uses any
+    #                            of those sinks, so this is purely defensive.
+    #   - COEP require-corp is intentionally NOT added: broke Safari on
+    #                            2026-04-17 (per-S3-object CORP needed first).
     directives = [
         f"default-src {NONE}",
         f"base-uri {SELF}",
         f"object-src {NONE}",
         f"frame-ancestors {NONE}",
-        f"form-action {SELF}",
+        f"form-action {NONE}",
+        f"worker-src {NONE}",
         f"img-src {SELF} data:",
         f"font-src {SELF}",
         "style-src " + " ".join(style_sources),
@@ -169,6 +184,8 @@ def build_site_csp(*, script_hashes: list[str], style_hashes: list[str]) -> str:
         f"connect-src {SELF}",
         f"media-src {SELF}",
         f"manifest-src {SELF}",
+        "require-trusted-types-for 'script'",
+        f"trusted-types {NONE}",
         "upgrade-insecure-requests",
     ]
 
