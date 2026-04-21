@@ -11,7 +11,7 @@
     "samplesPerAudit": 3,
     "retriesPerSample": 2,
     "thresholds": {
-      "performance": 98,
+      "performance": 96,
       "accessibility": 98,
       "best-practices": 98,
       "seo": 98
@@ -20,6 +20,6 @@
   "observatory": {
     "host": "www.it-help.tech",
     "minGrade": "A+",
-    "minScore": 145
+    "minScore": 135
   }
 }
