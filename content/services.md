@@ -400,7 +400,7 @@ For law firms and legal professionals: structured extraction of email and iPhone
 
 ## Cross-Platform & Systems Work {#cross-platform}
 
-macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. We engage the problem, not the logo. The same instinct for reading logs, tracing packets, and reasoning from evidence applies whether the prompt is `$`, `#`, or `C:\>`.
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. We engage the problem, not the logo. The same instinct for analyzing logs, tracing packets, and deducing from evidence is applicable regardless of the prompt.
 
 * **Shell scripting and automation** — Bash, Zsh, and PowerShell for repeatable, auditable operations instead of click-by-click drift.
 * **File servers and shared storage** — SMB and NFS that hold up across macOS, Windows, and Linux clients without permissions roulette.
