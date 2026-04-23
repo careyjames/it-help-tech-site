@@ -1518,6 +1518,12 @@ html:not(.switch) h6 a.gold-link:active {
 @media (min-width: 800px) {
     .how-we-work {
         grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 1100px) {
+    .how-we-work {
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1.75rem;
     }
 }
