@@ -254,15 +254,15 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
 
 <div class="how-we-work">
   <figure class="hww-card">
-    {{ picture(base="/images/onsite", alt="IT Help San Diego technician walking on-site to a La Jolla coastal small business, branded polo and tool bag in hand, ocean and palms in the background.") }}
+    {{ picture(base="/images/onsite", alt="IT Help San Diego technician arriving on-site at a La Jolla coastal small business, branded polo and diagnostic kit in hand, ocean and palms in the background.") }}
     <figcaption>
-      <strong>On-site across San Diego</strong> — La Jolla concierge for greater San Diego. We come to your home, office, or storefront with the tools and parts on hand. Same-day slots when the calendar allows.
+      <strong>On-site across San Diego</strong> — La Jolla concierge for greater San Diego. We arrive with scientific diagnostic equipment. IT Support at your location. macOS, iOS, Windows, Linux, systems troubleshooting, network builds, Wi-Fi, security hardening, system migrations — handled in person at your home or office in the greater San Diego area.
     </figcaption>
   </figure>
   <figure class="hww-card">
-    {{ picture(base="/images/remote", alt="Remote IT session workspace overlooking the Pacific: laptop with the IT Help San Diego brand on screen, branded mug, notebook, and a coastal La Jolla view.") }}
+    {{ picture(base="/images/remote", alt="Secure Remote IT Session workspace overlooking the Pacific: laptop with the IT Help San Diego brand on screen, branded mug, notebook, and a coastal La Jolla view.") }}
     <figcaption>
-      <strong>Remote anywhere</strong> — Secure screen sharing for Mac, iPhone, and iPad, plus deep-research diagnostics on email, DNS, and networks regardless of where you are. Reliable support, wherever you are.
+      <strong>Secure Remote IT Sessions</strong> — Encrypted screen sharing for macOS, iOS, iPadOS, Linux, Windows, and Android. Professional remote assistance for troubleshooting and resolving technical issues. Connect with an expert via phone and screen-sharing for efficient problem-solving.
     </figcaption>
   </figure>
 </div>
