@@ -250,6 +250,23 @@ Bespoke wireless and wired networks for large homes, estates, and small offices.
 ### <a href="/services/#dns-email" class="gold-link">Email Deliverability &amp; DNS Forensics</a>
 We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. <a href="/services/#dns-email" class="gold-link">Learn more →</a>
 
+## How we work
+
+<div class="how-we-work">
+  <figure class="hww-card">
+    {{ picture(base="/images/onsite", alt="IT Help San Diego technician walking on-site to a La Jolla coastal small business, branded polo and tool bag in hand, ocean and palms in the background.") }}
+    <figcaption>
+      <strong>On-site across San Diego</strong> — La Jolla concierge for greater San Diego. We come to your home, office, or storefront with the tools and parts on hand. Same-day slots when the calendar allows.
+    </figcaption>
+  </figure>
+  <figure class="hww-card">
+    {{ picture(base="/images/remote", alt="Remote IT session workspace overlooking the Pacific: laptop with the IT Help San Diego brand on screen, branded mug, notebook, and a coastal La Jolla view.") }}
+    <figcaption>
+      <strong>Remote anywhere</strong> — Secure screen sharing for Mac, iPhone, and iPad, plus deep-research diagnostics on email, DNS, and networks regardless of where you are. Reliable support, wherever you are.
+    </figcaption>
+  </figure>
+</div>
+
 ## Trust signals
 
 - **27+ years** in the field, across macOS, Linux, Windows, network architecture, and DNS.

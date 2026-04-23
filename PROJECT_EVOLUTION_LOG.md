@@ -13,6 +13,28 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-23 — Homepage "How we work" 2-up imagery (on-site + remote)
+- Actor: AI (owner-supplied marketing imagery: `attached_assets/on-site_*.png`, `attached_assets/remote_*.png`, both 1254×1254 PNG ~2.0–2.4 MB).
+- Scope: Add a "How we work" section to the homepage with two side-by-side branded panels (On-site across San Diego / Remote anywhere). Visually communicates the two engagement modes that the existing copy hints at but never shows.
+- Files:
+  - `static/images/onsite-{320,512,640,960,1280}.{avif,webp}` (NEW, 10 files) and `remote-{320,512,640,960,1280}.{avif,webp}` (NEW, 10 files) — responsive variants generated from the source PNGs via ImageMagick (Lanczos resize, AVIF q=60, WebP q=80 method=6). Total payload ~1.4 MB across all 20 files; a typical mobile fetch loads only one variant in the 36–50 KB range.
+  - `templates/shortcodes/picture.html` (NEW) — general-purpose responsive `<picture>` shortcode. Takes `base`, `alt`, optional `sizes` (default `(min-width: 800px) 480px, 92vw`), `width`/`height` (default 960), and `lcp` (default false → `loading="lazy" decoding="async"`). Distinct from the existing `responsive.html` shortcode, which is hardcoded for the 70px Carey avatar (`sizes="70px"`, `width=200 height=200`, `.jpg` fallback) and is left untouched.
+  - `content/_index.md` — new `## How we work` section between "What we do" and "Trust signals". Two `<figure class="hww-card">` panels, each invoking `{{ picture(...) }}` with descriptive alt text and a gold-labeled caption.
+  - `static/css/late-overrides.css` — `.how-we-work` grid (1-col mobile, 2-col from 800px) plus `.hww-card` styling (dark surface, gold-rule border, 1:1 aspect-ratio image, gold caption label). Print rules included for paper rendering.
+- Why: The existing homepage describes services categorically (Mac, Cross-Platform, Wi-Fi, DNS) but never visually shows how the work happens. The two source images (technician walking up to a La Jolla coastal restaurant; laptop + branded mug overlooking the Pacific) reinforce both the geographic positioning ("La Jolla concierge for greater San Diego") and the dual-mode delivery (on-site + remote) without any new copy commitments.
+- Compliance posture:
+  - **CSP**: zero changes. `img-src self data:` already covers same-origin images in any modern format.
+  - **Observatory**: zero impact (no header changes, no new hostnames, no inline anything).
+  - **Lighthouse**: section is below the fold, both images are `loading="lazy" decoding="async"` with explicit `width`/`height`/`aspect-ratio` → zero LCP/CLS impact. Modern format negotiation (AVIF → WebP → WebP fallback) keeps the actual byte cost in the tens of KB on the wire.
+  - **Accessibility**: descriptive alt text for both images naming the brand, the setting, and the action depicted; semantic `<figure>` + `<figcaption>` markup; gold caption label is a `<strong>` not a color-only signal.
+  - **Schema.org**: no JSON-LD changes (these are decorative content imagery, not Product/Service hero images).
+- Verification:
+  - `zola build` clean, 12 pages + 1 section, 457 ms.
+  - Rendered HTML inspected: both `<picture>` tags emitted, srcset format matches the existing `carey-*` set convention, lazy-loading attributes present.
+  - Live preview screenshot confirmed: 2-up panel renders correctly on desktop with the dark card surface, gold border, and gold caption label.
+- Rollback: revert this commit. No infra, CSP, response-headers, or external-service changes to unwind.
+
+
 ### 2026-04-20 — CSP hardening to clear Mozilla Observatory v5 score 145 (A+) and dispose of federal Qualys CWE-201 false positives
 - Actor: AI (owner-directed remediation, architect-consulted plan, Task #23).
 - Trigger: Two convergent inputs:

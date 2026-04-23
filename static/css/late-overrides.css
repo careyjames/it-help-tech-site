@@ -1503,3 +1503,57 @@ html:not(.switch) h6 a.gold-link:active {
         break-inside: avoid;
     }
 }
+
+/* ── How we work: on-site / remote 2-up panels (homepage) ─────────────────
+   Stacked on mobile, side-by-side from 800px up. Cards inherit the dark
+   surface tokens for visual continuity with the rest of the homepage; the
+   gold rule on the figure border matches the existing brand divider used
+   in the email signature and section headers. */
+.how-we-work {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+@media (min-width: 800px) {
+    .how-we-work {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+    }
+}
+.how-we-work .hww-card {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-secondary, #0f1622);
+    border: 1px solid var(--border-subtle, rgba(196, 162, 87, 0.18));
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.how-we-work .hww-card picture,
+.how-we-work .hww-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+.how-we-work .hww-card figcaption {
+    padding: 0.9rem 1.1rem 1.1rem;
+    color: var(--text-primary, #e7ecf4);
+    line-height: 1.5;
+}
+.how-we-work .hww-card figcaption strong {
+    color: var(--brand-gold, #c4a257);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1.02rem;
+    letter-spacing: 0.01em;
+}
+
+/* Print: keep cards from breaking awkwardly */
+@media print {
+    .how-we-work { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .how-we-work .hww-card { break-inside: avoid; border-color: currentColor; }
+}
