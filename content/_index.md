@@ -262,7 +262,7 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
   <figure class="hww-card">
     {{ picture(base="/images/remote", alt="Secure Remote IT Session workspace overlooking the Pacific: laptop with the IT Help San Diego brand on screen, branded mug, notebook, and a coastal La Jolla view.") }}
     <figcaption>
-      <strong>Secure Remote IT Sessions</strong> — Encrypted screen sharing for macOS, iOS, iPadOS, Linux, Windows, and Android.
+      <strong>Secure Remote IT Sessions</strong> — Encrypted screen sharing for macOS, iOS, iPadOS, Linux, Windows, and Android. Professional remote assistance for troubleshooting and resolving technical issues. Connect with an expert via phone and screen-sharing for efficient problem-solving.
     </figcaption>
   </figure>
 </div>
