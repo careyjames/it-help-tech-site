@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "E1uTQsUVGAkt4ITB3Fmd_"
+uri = "file://exports/lajolla-office-master-1180.png"
+type = "image"
+title = "La Jolla Office — master (1180×1180, post-crop & color-graded)"
