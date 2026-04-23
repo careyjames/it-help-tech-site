@@ -254,7 +254,7 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
 
 - **27+ years** in the field, across macOS, Linux, Windows, network architecture, and DNS.
 - **High-profile clients** in entertainment, legal, restaurant, and medical sectors. Discretion comes standard; logos do not.
-- **Federal A+ DNS posture** on our own infrastructure — the same standards we apply to client domains.
+- **A+ DNS posture** on our own infrastructure — the same standards we apply to client domains.
 
 ## The Method
 
