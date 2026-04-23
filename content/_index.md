@@ -265,6 +265,12 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
       <strong>Remote anywhere</strong> — Secure screen sharing for Mac, iPhone, and iPad, plus deep-research diagnostics on email, DNS, and networks regardless of where you are. Reliable support, wherever you are.
     </figcaption>
   </figure>
+  <figure class="hww-card">
+    {{ picture(base="/images/lajolla-office", alt="888 Prospect Street office building in La Jolla village, where IT Help San Diego meets clients by appointment, steps from village hotels and restaurants.") }}
+    <figcaption>
+      <strong>La Jolla Office</strong> — Bring devices to the Prospect Street office in La Jolla, by appointment only — steps from the village hotels and restaurants. Bring your Mac, iPhone, iPad, or Windows laptop, and we'll work through it together. Same consulting, same expertise, no trip fee. Ideal if you're local and prefer to come to us, visiting from out of town, or just want a face-to-face session without scheduling a house call.
+    </figcaption>
+  </figure>
 </div>
 
 ## Trust signals
