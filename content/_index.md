@@ -256,7 +256,7 @@ We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the a
   <figure class="hww-card">
     {{ picture(base="/images/onsite", alt="IT Help San Diego technician arriving on-site at a La Jolla coastal small business, branded polo and diagnostic kit in hand, ocean and palms in the background.") }}
     <figcaption>
-      <strong>On-site across San Diego</strong> — La Jolla concierge for greater San Diego. We arrive with scientific diagnostic equipment — a calibrated Ethernet certifier, RF measurement tools, DNS test gear, and a working laptop. No hardware sales, no repairs — measurement and engineering only.
+      <strong>On-site across San Diego</strong> — La Jolla concierge for greater San Diego. We arrive with scientific diagnostic equipment. IT Support at your location. macOS, iOS, Windows, Linux, systems troubleshooting, network builds, Wi-Fi, security hardening, system migrations — handled in person at your home or office in the greater San Diego area.
     </figcaption>
   </figure>
   <figure class="hww-card">
