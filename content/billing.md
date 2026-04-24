@@ -18,7 +18,7 @@ Clear, transparent IT consulting. **No monthly retainers. No managed service con
 * **Minimum Charges:**
   * **On-site service:** 1-hour minimum (**this first hour functions as a booking deposit**)
   * **Remote / phone / screen-sharing support:** 30-minute minimum (**booking deposit**)
-* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers or documented offline work.  
+* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers and documented work.  
 
 * **Specialty Rate:** $400/hour for advanced networking and scientific engineering engagements. Scope is defined and agreed upon during the discovery call. Work performed within that scope is billed at the specialty rate; all other services are billed at the standard rate.
 
