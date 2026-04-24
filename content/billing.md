@@ -9,7 +9,7 @@ extra:
 
 
 
-Clear, transparent IT consulting. **No monthly retainers. No open-ended charges.**
+Clear, transparent IT consulting. **No monthly retainers. No managed service contracts.**
 
 
 ## IT Consulting & Support Rates
@@ -18,24 +18,24 @@ Clear, transparent IT consulting. **No monthly retainers. No open-ended charges.
 * **Minimum Charges:**
   * **On-site service:** 1-hour minimum (**this first hour functions as a booking deposit**)
   * **Remote / phone / screen-sharing support:** 30-minute minimum (**booking deposit**)
-* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers or documented offline work.
-* **Specialty Rate:** $400/hour for advanced networking and scientific engineering engagements. Scope is defined and agreed upon during the discovery call. Work performed within that scope is billed at the specialty rate; all other services are billed at the standard rate.
+* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers or documented offline work.  
 
-This policy reflects real operational costs and ensures reliability and availability.
+* **Specialty Rate:** $400/hour for advanced networking and scientific engineering engagements. Scope is defined and agreed upon during the discovery call. Work performed within that scope is billed at the specialty rate; all other services are billed at the standard rate.
 
 
 ## Travel
 
-Local transportation is billed at **actual cost** (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate.
+Local travel is billed as follows:
 
-As a courtesy, short local travel of **15 minutes or less each way is not billed for travel time**. If travel exceeds 15 minutes in either direction, travel time **beyond the initial 15 minutes** is billable. Travel time is measured **door-to-door**.
+- Transportation: billed at actual cost (e.g., Uber/Lyft).
+- Travel time: billed at the standard hourly rate, based on actual transit duration as recorded by Uber/Lyft ride receipts (pickup to drop-off only; wait time is not billed).
 
-For very short local visits, transportation cost may be waived at our discretion.
+For local travel of 15 minutes or less each way, travel time is not billed.  
+If travel exceeds 15 minutes in either direction, all travel time is billable.
 
 Out-of-area or extended travel is quoted or pre-approved in advance.
 
-Air travel is billed at **actual cost** (transport and lodging) plus travel time.
-
+Air travel is billed at actual cost (transport and lodging) plus travel time.
 
 ## Booking & Payment Policy
 
@@ -48,7 +48,7 @@ Air travel is billed at **actual cost** (transport and lodging) plus travel time
 * **Payment Method:** A valid credit card is required to book services. We do not accept checks and do not offer net terms. **No card, no service — no exceptions.**
 * **How Billing Works:**
   * Scope and estimated time are agreed upon in advance whenever practical.
-  * Charges are applied only for time actually worked.
+  * Charges apply only to time actively worked.
   * Billing occurs after each completed session or day of service.
   * Invoices clearly itemize total time worked, billing increments applied, service type (on-site or remote), and the date(s) services were performed.
 
@@ -78,17 +78,21 @@ We do not bill recurring fees, retainers, or unattended time.
 
 ### Business Ethics — Carey’s Promise
 
-We sell time, not products.  
+We sell time (research, analysis, execution), not products.  
 No affiliate commissions. No kickbacks. No hidden incentives.
 
-All recommendations are based on verifiable technical data so clients can make informed decisions. Transparency and long-term reliability always come first.
+We do not accept referral payments. Vendors occasionally offer compensation for directing clients to services (e.g., data recovery providers). We decline. Recommendations are made solely on technical merit and verified performance.
+
+Pay-to-play incentives — including referral commissions and locked distributor agreements where service providers are restricted to a single vendor ecosystem — distort outcomes, degrade trust, and undermine the integrity of technical decision-making. In many cases, this results in suboptimal equipment being deployed regardless of better-performing or more appropriate alternatives.
+
+All recommendations are grounded in verifiable data so clients can make informed decisions. Transparency and long-term reliability come first.
 
 ## Final Notes
 
 IT Help San Diego provides expert support across Mac, Linux, Windows, enterprise networking, cybersecurity, and crisis-response scenarios.
 
 No retainers.  
-No automatic recurring charges.  
+No managed service contracts.  
 Clear billing, agreed work, documented time.
 
 <p class="final-tagline">YOUR TECH PROBLEMS ARE ABOUT TO DISAPPEAR. 🚀</p>
@@ -142,7 +146,7 @@ Clear billing, agreed work, documented time.
       "name": "How do travel fees work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Local transportation is billed at actual cost (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate. Short local travel of 15 minutes or less each way is not billed for travel time; beyond that, travel time over the first 15 minutes is billable. Travel time is measured door-to-door. Air travel is billed at actual cost (transport and lodging) plus travel time."
+        "text": "Local transportation is billed at actual cost (e.g., Uber/Lyft fare). Travel time is billed at the standard hourly rate, based on actual transit duration as recorded by Uber/Lyft ride receipts (pickup to drop-off only; wait time is not billed). For local travel of 15 minutes or less each way, travel time is not billed; if travel exceeds 15 minutes in either direction, all travel time is billable. Air travel is billed at actual cost (transport and lodging) plus travel time."
       }
     }
   ]
