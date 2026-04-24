@@ -13,6 +13,17 @@ Purpose: Track meaningful AI/developer changes with enough context to roll back 
 
 ## Entries
 
+### 2026-04-23 — `/brand-colors` refresh: Athenian-owl medallion + gold-led wordmark identity, demote legacy logo blue ramp
+- Actor: AI+Developer
+- Scope: Public brand-colors reference page (`/brand-colors`), STYLE_GUIDE top section
+- Files:
+  - `content/brand-colors.md`
+  - `static/css/brand-colors.css`
+  - `STYLE_GUIDE.md`
+- Change: Updated the brand-colors page to accurately reflect the live identity. Added a top "Brand Mark — Athenian Owl" section that displays the owl medallion (`/img/brand/owl-720.{webp,png}`) with `<picture>` + WebP/PNG fallback. Replaced the misleading "Logo Authority Blue Ramp" (no longer consumed by any selector) with "Logo Authority Gold Ramp (Athenian-Owl Banner)" — `--brand-logo-gold-top #E0C58A`, `--brand-logo-gold-mid #D2B56F`, `--brand-logo-gold-bottom #A8843E` — and noted that `--brand-logo-gold-mid` is the live fill of `.logo-it` and `.logo-help`. Demoted the blue ramp to a "Legacy" section with a clear "retained as token aliases only" pill tag at reduced opacity. Reordered the priority chip strip to lead with Logo Gold + Plus Red + gold highlight/shadow, then Action Blue + Primary Blue. Rewrote the intro and Brand Rules to make gold-led IT+HELP wordmark + owl medallion explicit. Added matching CSS for the new swatches, the brand-mark figure (circular crop, gold rim, deep shadow), the heritage section pill tag, and a `(max-width: 699px)` mobile shrink for the medallion. Updated `STYLE_GUIDE.md` top section to lead with the owl mark and gold ramp; bumped Last-updated date.
+- Why: User reported the brand-colors page no longer matched the live look and feel. Investigation confirmed the IT+HELP wordmark transitioned from blue to the owl-banner gold ramp, but the page was still presenting the legacy blue ramp as the "logo authority" colors and never displayed the owl medallion at all.
+- Rollback: this branch/PR (`content/brand-colors-owl-gold-refresh`).
+
 ### 2026-04-23 — Homepage "How we work" 2-up imagery (on-site + remote)
 - Actor: AI (owner-supplied marketing imagery: `attached_assets/on-site_*.png`, `attached_assets/remote_*.png`, both 1254×1254 PNG ~2.0–2.4 MB).
 - Scope: Add a "How we work" section to the homepage with two side-by-side branded panels (On-site across San Diego / Remote anywhere). Visually communicates the two engagement modes that the existing copy hints at but never shows.

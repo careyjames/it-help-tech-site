@@ -245,6 +245,85 @@
   font-size: 0.88rem;
 }
 
+.brand-mark-section .brand-section-head {
+  margin-bottom: 0.6rem;
+}
+
+.brand-mark-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 0.5rem 0.4rem;
+}
+
+.brand-mark-figure picture {
+  display: inline-flex;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(210, 181, 111, 0.42),
+    0 14px 36px rgba(2, 8, 18, 0.42);
+}
+
+.brand-mark-image {
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.brand-mark-figure figcaption {
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--text-color-dark);
+  max-width: 64ch;
+}
+
+html.switch .brand-mark-figure figcaption {
+  color: var(--text-color-light);
+}
+
+.brand-section-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 0.42rem;
+  border: 1px solid rgba(210, 181, 111, 0.42);
+  background: rgba(168, 132, 62, 0.18);
+  color: #e0c58a;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+html.switch .brand-section-tag {
+  border-color: rgba(168, 132, 62, 0.5);
+  background: rgba(224, 197, 138, 0.22);
+  color: #6f5424;
+}
+
+.brand-section-heritage {
+  opacity: 0.86;
+}
+
+.brand-section-heritage:hover,
+.brand-section-heritage:focus-within {
+  opacity: 1;
+}
+
+@media (max-width: 699px) {
+  .brand-mark-image {
+    width: 240px;
+  }
+}
+
 .brand-rules ol {
   margin: 0.3rem 0 0;
   padding-left: 1.15rem;
@@ -268,6 +347,10 @@
 .swatch-logo-blue-top { background: #327ED6; }
 .swatch-logo-blue-mid { background: #2662AA; }
 .swatch-logo-blue-bottom { background: #13437A; }
+
+.swatch-logo-gold-top { background: #E0C58A; }
+.swatch-logo-gold-mid { background: #D2B56F; }
+.swatch-logo-gold-bottom { background: #A8843E; }
 
 .swatch-schedule-blue-top { background: #6CAFEF; }
 .swatch-schedule-blue-mid { background: #3F86D8; }
