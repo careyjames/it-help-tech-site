@@ -9,8 +9,9 @@ Purpose: Keep the visual system consistent and readable across the site. Update 
 ## Brand Colors
 - IT+HELP Wordmark Gold Ramp (Athenian-Owl Banner) — **the live wordmark fill**:
   - Top: `#E0C58A` (`--brand-logo-gold-top`)
-  - Mid: `#D2B56F` (`--brand-logo-gold-mid`) — used by `.logo-it` and `.logo-help`
+  - Mid: `#D2B56F` (`--brand-logo-gold-mid`) — dark-mode fill of `.logo-it` and `.logo-help`
   - Bottom: `#A8843E` (`--brand-logo-gold-bottom`)
+  - Light-mode override: `html.switch .logo-it` and `html.switch .logo-help` use `--brand-gold` (`#C2A15A`) — one luminance step down — for contrast against the off-white surface (see `static/css/late-overrides.css`).
 - Primary Blue (shared hue anchor for actions/glow/particles): `#58A6FF`
   - Source of truth: `--brand-blue` in `static/css/tokens.css`
   - If changed, also update:

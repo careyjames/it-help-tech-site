@@ -78,7 +78,7 @@ scripts = ["js/brand-colors.js"]
 <section class="brand-section" aria-labelledby="logo-gold-ramp">
 <div class="brand-section-head">
 <h2 id="logo-gold-ramp">Logo Authority Gold Ramp (Athenian-Owl Banner)</h2>
-<p>IT+HELP wordmark fill and topbar banner gold tones. <code>--brand-logo-gold-mid</code> is the live letter color of <code>.logo-it</code> and <code>.logo-help</code>.</p>
+<p>IT+HELP wordmark fill and topbar banner gold tones. <code>--brand-logo-gold-mid</code> is the dark-mode letter color of <code>.logo-it</code> and <code>.logo-help</code>; in light mode (<code>html.switch</code>) the letters drop one luminance step to <code>--brand-gold</code> (<code>#C2A15A</code>) for contrast against the off-white surface.</p>
 </div>
 <div class="brand-grid brand-grid-3up">
 <article class="brand-card">
@@ -93,7 +93,7 @@ scripts = ["js/brand-colors.js"]
 <h3>Logo Gold Mid</h3>
 <p class="brand-token"><code>--brand-logo-gold-mid</code></p>
 <p class="brand-value"><code>#D2B56F</code></p>
-<p class="brand-note">Live IT+HELP letter fill. Same value as <code>--brand-gold-solid</code> (different role).</p>
+<p class="brand-note">Dark-mode IT+HELP letter fill. Light mode steps down to <code>--brand-gold</code> (<code>#C2A15A</code>). Same value as <code>--brand-gold-solid</code> (different role).</p>
 </article>
 <article class="brand-card">
 <div class="brand-swatch swatch-logo-gold-bottom" aria-hidden="true"></div>
@@ -334,7 +334,7 @@ scripts = ["js/brand-colors.js"]
 </div>
 <ol>
 <li>The Athenian owl medallion is the primary brand mark; the IT+HELP wordmark is its lockup partner.</li>
-<li>IT+HELP letters render in the owl-banner gold ramp (<code>--logo-gold-mid</code> / <code>#D2B56F</code>). The legacy logo-blue ramp is retained as token aliases only and is not used on the wordmark.</li>
+<li>IT+HELP letters render in the owl-banner gold ramp: <code>--logo-gold-mid</code> (<code>#D2B56F</code>) in dark mode, stepping down to <code>--brand-gold</code> (<code>#C2A15A</code>) in light mode for surface contrast. The legacy logo-blue ramp is retained as token aliases only and is not used on the wordmark in either theme.</li>
 <li>Red is reserved for the plus symbol — never for body text, links, or other accents.</li>
 <li>Action / link / schedule blues sit one luminance step below the wordmark gold so the lockup remains the dominant signal.</li>
 <li>Gold accent (<code>--brand-gold</code>) and gold stroke (<code>--brand-gold-solid</code>) are used in restrained doses on hero pill border and CTA trim; they share hue with the logo gold ramp by design.</li>
