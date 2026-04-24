@@ -13,18 +13,32 @@ scripts = ["js/brand-colors.js"]
 +++
 <div class="brand-colors-page">
 <p class="brand-colors-kicker">IT Help San Diego Inc.</p>
-<p class="brand-colors-intro">Canonical palette and token reference for design, engineering, and vendor handoff. This page is public for sharing and is marked <code>noindex, nofollow</code>.</p>
+<p class="brand-colors-intro">Canonical palette and token reference for design, engineering, and vendor handoff. The brand is led by the <strong>Athenian owl medallion</strong> with a <strong>gold IT+HELP wordmark</strong>; blue is the action / link family. This page is public for sharing and is marked <code>noindex, nofollow</code>.</p>
 <div class="brand-copy-actions brand-top-actions" role="group" aria-label="Copy all values">
 <button type="button" class="brand-copy-btn" id="copy-all-hex">Copy all HEX</button>
 <button type="button" class="brand-copy-btn" id="copy-all-css">Copy all CSS vars</button>
 </div>
 <div class="brand-priority-palette" role="list" aria-label="Primary brand palette preview">
-<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-brand-blue" aria-hidden="true"></span>Primary Blue <code>#58A6FF</code></span>
-<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-blue-top" aria-hidden="true"></span>Logo Blue <code>#327ED6</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-gold-mid" aria-hidden="true"></span>Logo Gold <code>#D2B56F</code></span>
 <span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-plus-red" aria-hidden="true"></span>Plus Red <code>#FF0066</code></span>
-<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-gold-accent" aria-hidden="true"></span>Gold Accent <code>#C2A15A</code></span>
-<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-gold-stroke" aria-hidden="true"></span>Gold Stroke <code>#D2B56F</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-gold-top" aria-hidden="true"></span>Gold Highlight <code>#E0C58A</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-logo-gold-bottom" aria-hidden="true"></span>Gold Shadow <code>#A8843E</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-schedule-blue-mid" aria-hidden="true"></span>Action Blue <code>#3F86D8</code></span>
+<span class="brand-priority-chip" role="listitem"><span class="brand-mini-swatch swatch-brand-blue" aria-hidden="true"></span>Primary Blue <code>#58A6FF</code></span>
 </div>
+<section class="brand-section brand-mark-section" aria-labelledby="brand-mark">
+<div class="brand-section-head">
+<h2 id="brand-mark">Brand Mark — Athenian Owl</h2>
+<p>Primary identity element. Pairs with the IT+HELP wordmark across hero, topbar, polos, and collateral.</p>
+</div>
+<figure class="brand-mark-figure">
+<picture>
+<source srcset="/img/brand/owl-720.webp" type="image/webp">
+<img src="/img/brand/owl-720.png" alt="Athenian owl medallion — IT Help San Diego brand mark" width="360" height="360" loading="lazy" decoding="async" class="brand-mark-image">
+</picture>
+<figcaption>Greek-key border, gold owl on dark ground. Source: <code>/img/brand/owl-720.webp</code> (WebP) and <code>/img/brand/owl-720.png</code> (PNG fallback). Reference: Athena's owl, classical iconography.</figcaption>
+</figure>
+</section>
 <section class="brand-section" aria-labelledby="core-brand-colors">
 <div class="brand-section-head">
 <h2 id="core-brand-colors">Core Brand Colors</h2>
@@ -61,28 +75,57 @@ scripts = ["js/brand-colors.js"]
 </article>
 </div>
 </section>
-<section class="brand-section" aria-labelledby="logo-ramp">
+<section class="brand-section" aria-labelledby="logo-gold-ramp">
 <div class="brand-section-head">
-<h2 id="logo-ramp">Logo Authority Blue Ramp</h2>
-<p>IT+HELP hierarchy and depth tones.</p>
+<h2 id="logo-gold-ramp">Logo Authority Gold Ramp (Athenian-Owl Banner)</h2>
+<p>IT+HELP wordmark fill and topbar banner gold tones. <code>--brand-logo-gold-mid</code> is the dark-mode letter color of <code>.logo-it</code> and <code>.logo-help</code>; in light mode (<code>html.switch</code>) the letters drop one luminance step to <code>--brand-gold</code> (<code>#C2A15A</code>) for contrast against the off-white surface.</p>
+</div>
+<div class="brand-grid brand-grid-3up">
+<article class="brand-card">
+<div class="brand-swatch swatch-logo-gold-top" aria-hidden="true"></div>
+<h3>Logo Gold Top</h3>
+<p class="brand-token"><code>--brand-logo-gold-top</code></p>
+<p class="brand-value"><code>#E0C58A</code></p>
+<p class="brand-note">Highlight tone for wordmark dimensionality.</p>
+</article>
+<article class="brand-card">
+<div class="brand-swatch swatch-logo-gold-mid" aria-hidden="true"></div>
+<h3>Logo Gold Mid</h3>
+<p class="brand-token"><code>--brand-logo-gold-mid</code></p>
+<p class="brand-value"><code>#D2B56F</code></p>
+<p class="brand-note">Dark-mode IT+HELP letter fill. Light mode steps down to <code>--brand-gold</code> (<code>#C2A15A</code>). Same value as <code>--brand-gold-solid</code> (different role).</p>
+</article>
+<article class="brand-card">
+<div class="brand-swatch swatch-logo-gold-bottom" aria-hidden="true"></div>
+<h3>Logo Gold Bottom</h3>
+<p class="brand-token"><code>--brand-logo-gold-bottom</code></p>
+<p class="brand-value"><code>#A8843E</code></p>
+<p class="brand-note">Shadow tone for banner depth and weight.</p>
+</article>
+</div>
+</section>
+<section class="brand-section brand-section-heritage" aria-labelledby="legacy-logo-blue">
+<div class="brand-section-head">
+<h2 id="legacy-logo-blue">Legacy Logo Blue Ramp <span class="brand-section-tag">retained as token aliases only</span></h2>
+<p>The IT+HELP wordmark used this blue ramp before the gold transition. Tokens remain in <code>tokens.css</code> for back-compat but are no longer consumed by any selector. Do not use for new components.</p>
 </div>
 <div class="brand-grid brand-grid-3up">
 <article class="brand-card">
 <div class="brand-swatch swatch-logo-blue-top" aria-hidden="true"></div>
-<h3>Logo Blue Top</h3>
-<p class="brand-token"><code>--logo-blue-top</code></p>
+<h3>Legacy Logo Blue Top</h3>
+<p class="brand-token"><code>--brand-logo-blue-top</code></p>
 <p class="brand-value"><code>#327ED6</code></p>
 </article>
 <article class="brand-card">
 <div class="brand-swatch swatch-logo-blue-mid" aria-hidden="true"></div>
-<h3>Logo Blue Mid</h3>
-<p class="brand-token"><code>--logo-blue-mid</code></p>
+<h3>Legacy Logo Blue Mid</h3>
+<p class="brand-token"><code>--brand-logo-blue-mid</code></p>
 <p class="brand-value"><code>#2662AA</code></p>
 </article>
 <article class="brand-card">
 <div class="brand-swatch swatch-logo-blue-bottom" aria-hidden="true"></div>
-<h3>Logo Blue Bottom</h3>
-<p class="brand-token"><code>--logo-blue-bottom</code></p>
+<h3>Legacy Logo Blue Bottom</h3>
+<p class="brand-token"><code>--brand-logo-blue-bottom</code></p>
 <p class="brand-value"><code>#13437A</code></p>
 </article>
 </div>
@@ -290,12 +333,13 @@ scripts = ["js/brand-colors.js"]
 <h2 id="brand-rules">Brand Rules</h2>
 </div>
 <ol>
-<li>Blue is primary identity; logo blues remain the strongest signal.</li>
-<li>Red is reserved for the plus symbol.</li>
-<li>Gold is utility accent: perimeter, hero pill border, and gold CTA.</li>
-<li>Schedule CTA remains one luminance step below the logo blues.</li>
-<li><code>san diego</code> stays subordinate steel-blue gray.</li>
-<li>Do not mint ad hoc colors without updating style docs.</li>
+<li>The Athenian owl medallion is the primary brand mark; the IT+HELP wordmark is its lockup partner.</li>
+<li>IT+HELP letters render in the owl-banner gold ramp: <code>--logo-gold-mid</code> (<code>#D2B56F</code>) in dark mode, stepping down to <code>--brand-gold</code> (<code>#C2A15A</code>) in light mode for surface contrast. The legacy logo-blue ramp is retained as token aliases only and is not used on the wordmark in either theme.</li>
+<li>Red is reserved for the plus symbol — never for body text, links, or other accents.</li>
+<li>Action / link / schedule blues sit one luminance step below the wordmark gold so the lockup remains the dominant signal.</li>
+<li>Gold accent (<code>--brand-gold</code>) and gold stroke (<code>--brand-gold-solid</code>) are used in restrained doses on hero pill border and CTA trim; they share hue with the logo gold ramp by design.</li>
+<li><code>san diego</code> stays subordinate steel-blue gray (<code>#566376</code> dark / <code>#404D5B</code> light).</li>
+<li>Do not mint ad hoc colors without updating <code>STYLE_GUIDE.md</code> and <code>static/css/tokens.css</code> in the same PR; <code>scripts/check-token-parity.sh</code> enforces no-hex-in-component-CSS.</li>
 </ol>
 </section>
 </div>

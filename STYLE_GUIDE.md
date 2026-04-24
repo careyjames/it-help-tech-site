@@ -1,18 +1,26 @@
 # Style Guide (Living)
-Last updated: 2026-02-11
+Last updated: 2026-04-23
 
 Purpose: Keep the visual system consistent and readable across the site. Update this file whenever palette, typography, or motion choices change.
 
+## Brand Mark
+- Primary identity element: the **Athenian owl medallion** at `/img/brand/owl-720.{webp,png}`. Greek-key border, gold owl on dark ground. Pairs with the IT+HELP wordmark across hero, topbar, polos, and collateral.
+
 ## Brand Colors
-- Primary Blue (shared hue anchor): `#58A6FF`  
-  - Source of truth: `--brand-blue` in `static/css/late-overrides.css`
+- IT+HELP Wordmark Gold Ramp (Athenian-Owl Banner) — **the live wordmark fill**:
+  - Top: `#E0C58A` (`--brand-logo-gold-top`)
+  - Mid: `#D2B56F` (`--brand-logo-gold-mid`) — dark-mode fill of `.logo-it` and `.logo-help`
+  - Bottom: `#A8843E` (`--brand-logo-gold-bottom`)
+  - Light-mode override: `html.switch .logo-it` and `html.switch .logo-help` use `--brand-gold` (`#C2A15A`) — one luminance step down — for contrast against the off-white surface (see `static/css/late-overrides.css`).
+- Primary Blue (shared hue anchor for actions/glow/particles): `#58A6FF`
+  - Source of truth: `--brand-blue` in `static/css/tokens.css`
   - If changed, also update:
     - `--brand-blue-rgb` (comma RGB)
     - `--brand-blue-glow` (particle glow)
-- Logo Authority Blue Ramp (deeper tone for premium trust feel):
-  - Top: `#327ED6` (`--logo-blue-top`)
-  - Mid: `#2662AA` (`--logo-blue-mid`)
-  - Bottom: `#13437A` (`--logo-blue-bottom`)
+- Legacy Logo Blue Ramp (retained as token aliases only — **no longer used on IT+HELP letters**; do not use for new components):
+  - Top: `#327ED6` (`--brand-logo-blue-top` / `--logo-blue-top`)
+  - Mid: `#2662AA` (`--brand-logo-blue-mid` / `--logo-blue-mid`)
+  - Bottom: `#13437A` (`--brand-logo-blue-bottom` / `--logo-blue-bottom`)
 - Schedule Indigo Depth Ramp:
   - Top: `#6CAFEF` (`--schedule-blue-top`)
   - Mid: `#3F86D8` (`--schedule-blue-mid`)
