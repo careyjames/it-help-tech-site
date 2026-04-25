@@ -1,7 +1,7 @@
 ---
 title: "Don't Guess Wrong: Apple, Google, and the Memory Science Behind Account Lockouts"
 date: 2025-06-01
-updated: 2026-04-19
+updated: 2026-04-25
 author: Carey Balboa
 categories: [Apple, Google, Security, Passwords]
 tags: [Apple Account, Google Account, password reset, account recovery, security keys, passkeys, metacognition, tip of the tongue]
@@ -19,7 +19,7 @@ extra:
 > **The password you entered is wrong. Stop. Breathe. Think. And you won't get locked out.**
 
 ### TL;DR
-When you sit down to type a password, you either know it or you don't. If you're consulting a piece of paper, you don't know it — you're transcribing. If it's not in a password manager that copy-pastes a known-good string, you don't have a verified credential. Both Apple and Google escalate against repeated wrong guesses; both push you into recovery flows that take days to clear. Stop after the second wrong attempt, every time, and start the recovery flow on purpose instead of stumbling into it.
+When you sit down to type a password, you either know it or you don't. If you're consulting a piece of paper, you don't know it — you're transcribing. If it's not in a password manager that copy-pastes a known-good string, you don't have a verified credential. The two ecosystems then diverge sharply: **Apple** locks accounts after repeated wrong guesses and pushes you into a recovery flow whose worst-case wait time is "several days or longer." **Google** escalates *sign-in* friction (CAPTCHA, 2FA, recovery prompts) but explicitly states there is **no limit** on attempts inside the recovery process itself. The same operating rule covers both: stop after the second wrong attempt, every time, and start the recovery flow on purpose instead of stumbling into it — for Apple to avoid the lockout, for Google to avoid burning attempts on guesses when you should be assembling your recovery information.
 
 ---
 
@@ -27,7 +27,7 @@ When you sit down to type a password, you either know it or you don't. If you're
 
 I am sitting next to a client. We open a browser. They type their Gmail address, hit Tab, and fire off a password. Wrong. Without pausing — without even letting their hands settle — they type the *same thing* again. Wrong. They go for a third. That is the moment I put a hand up and say *stop.*
 
-What I am stopping is not a typo. Typos resolve themselves on the second attempt. What I am stopping is a behavioral loop: the brain is generating a feeling of near-recognition (*it's right there, I almost have it*), the body is converting that feeling into action, and three rapid identical guesses are about to commit the user to a multi-day recovery process they did not consent to.
+What I am stopping is not a typo. Typos resolve themselves on the second attempt. What I am stopping is a behavioral loop: the brain is generating a feeling of near-recognition (*it's right there, I almost have it*), the body is converting that feeling into action, and three rapid identical guesses are about to escalate the system against the user — and on Apple, commit them to a multi-day recovery process they did not consent to.
 
 The moral is simple, and it is the entire point of this note: **don't guess wrong.** You either know the password — in the bet-your-day-on-it sense — or you don't. There is no middle state worth typing.
 
@@ -65,17 +65,7 @@ This is the only kind of "guess" that isn't really a guess. Everything else is.
 
 ## What Apple Actually Does When You Guess Wrong
 
-Apple does not publish an exact threshold for ordinary Apple Account sign-in failures, but the behavior is well-documented in aggregate: repeated failures escalate to a temporary lock, then to an account disable, then to Account Recovery. If you have hardware security keys configured on the account, the documented threshold is **six** consecutive failures before the account locks [^7].
-
-The iPhone *device passcode* is a separate system with a published escalation that is worth memorizing because it can erase your phone:
-
-- 6 wrong → 1-minute timeout
-- 7 wrong → 5-minute timeout
-- 8 wrong → 15-minute timeout
-- 9 wrong → 60-minute timeout
-- 10 wrong → device disabled (and erased, if **Erase Data** is enabled in Settings) [^8]
-
-When the Apple Account itself locks, recovery runs through `iforgot.apple.com`. If the alert says you must wait, Apple's own warning is that Account Recovery "can take several days or longer." A paired hardware security key can unlock a frozen account on-device once you regain access [^7].
+Apple does not publish an exact threshold for Apple Account sign-in failures. The current support page (HT204106, rewritten on December 5, 2025) says only that an account locks "if you or someone else might have entered your password or other account information incorrectly too many times" [^7]. (An earlier version of this article cited a "six consecutive failures" threshold for accounts with hardware security keys; that figure is not in the current Apple Support documentation, and I cannot reproduce it from any current Apple primary source. The corrected guidance: assume Apple does not publish a number.)
 
 You will see one of these alerts:
 
@@ -83,21 +73,45 @@ You will see one of these alerts:
 - *You can't sign in because your account was disabled for security reasons.*
 - *This Apple Account has been locked for security reasons.*
 
-That is iJail. The only two ways out are recovery or waiting.
+That is iJail. As of iOS 26, some of these alerts now include a **Request Access** button you can tap directly from the lock alert — that route and `iforgot.apple.com/unlock` lead to the same recovery flow [^7].
+
+How long the recovery actually takes depends on what you have left to prove identity with:
+
+- **Trusted device already signed in (iPhone, iPad, or Mac):** minutes to hours. You can reset the password directly from `Settings → [Your Name] → Sign-In & Security → Change Password`, and Apple's own password-reset page treats this as the fast path [^8].
+- **Web reset without a trusted device:** Apple's documented language is that the reset "might take a little longer" [^8].
+- **Account Recovery (locked account, no trusted device, failed verification):** Apple's documented worst case is "several days or longer" [^7]. A paired hardware security key can unlock a frozen account on-device *once you regain access* — but keys are most useful for *preventing* lockouts, not recovering from them after the fact.
+
+The iPhone *device passcode* is a separate system with a published escalation worth memorizing because it can erase your phone. The current escalation, from the Apple Platform Security Guide entry on passcodes and passwords [^9], is:
+
+- 4 wrong → 1-minute lockout
+- 5 wrong → 5-minute lockout
+- 6 wrong → 15-minute lockout
+- 7 wrong → 1-hour lockout
+- 8 wrong → 3-hour lockout
+- 9 wrong → 8-hour lockout
+- 10 or more wrong → device locked; must connect to a Mac or PC to restore
+
+If **Erase Data** is enabled (`Settings → [Face ID / Touch ID] & Passcode → Erase Data`), all content and settings are removed after 10 consecutive incorrect passcode entries [^9]. (An earlier version of this article reported the escalation as starting at 6 attempts and topping out at "60 minutes" before disable — that table reflected a much older iOS version. The figures above are the ones Apple currently publishes; treat the published table as the source of truth and ignore older copies.)
 
 ---
 
 ## What Google Actually Does When You Guess Wrong
 
-Google's behavior is harder to summarize because it is *risk-based*. Rather than counting attempts to a fixed number, Google's authentication system evaluates each sign-in against a model of expected behavior — same device? same network? same time of day? known location? — and escalates challenges proportionally [^9].
+Google's behavior splits cleanly into two phases — *sign-in challenges*, and *account recovery* — and they have very different attempt-cost rules.
 
-In practice, that means three things:
+The **sign-in path** is risk-based. Rather than counting attempts to a fixed number, Google's authentication system evaluates each sign-in against a model of expected behavior — same device? same network? same time of day? known location? — and escalates challenges proportionally [^10].
+
+In practice, that means:
 
 1. **Wrong guesses on a known device** typically prompt re-entry, then a CAPTCHA, then a secondary factor (device prompt, security key, recovery phone, recovery email). The exact sequence is not published.
-2. **Wrong guesses on an unknown device or network** escalate faster. You can hit a "couldn't verify it's you" dead-end in under five attempts.
-3. **Persistent failures push you into Account Recovery at `g.co/recover`**, which collects identity signals and, per Google's own documentation, can take time. Google explicitly warns against entering guesses during the recovery questionnaire — they want best-known information, not best-current-guess [^10].
+2. **Wrong guesses on an unknown device or network** escalate faster. Google does not publish a fixed attempt count; in practice I see accounts hit a "couldn't verify it's you" dead-end in under five attempts.
+3. **Persistent failures push you into Account Recovery at `g.co/recover`.**
 
-Google Workspace accounts (the managed kind a business or school issues) inherit lockout policies from the workspace administrator and may behave differently from consumer Gmail accounts. If you are not sure which kind you have, ask whoever set the account up before you start guessing.
+The **recovery path** is where Google differs sharply from Apple. Google's own recovery page states, verbatim: *"Wrong guesses won't kick you out of the account recovery process. There's no limit to the number of times you can attempt to recover your account"* [^11]. The recovery questionnaire collects identity signals — previous passwords, account creation date, recovery email — and Google explicitly wants your best-known information, not best-current-guess. Unlike Apple, you will *not* be locked out of recovery itself for trying. The friction lives in the *sign-in* challenges, not in the recovery flow. (An earlier version of this article said "persistent failures push you into Account Recovery, which … can take time," implying the recovery flow itself enforces wait penalties. That conflated Apple's behavior with Google's. The correction: only the sign-in side has escalating friction; the recovery side is unlimited-attempt.)
+
+So why does the "stop after two attempts" rule still apply to Google? Because the sign-in challenges escalate based on risk, and each failed attempt makes you look more like an attacker. By the time you arrive at recovery, you want your recovery information already in hand — not after burning five attempts and triggering maximum friction.
+
+Google Workspace accounts (the managed kind a business or school issues) inherit lockout policies from the workspace administrator and may behave differently from consumer Gmail accounts. Workspace administrators can set lockout thresholds, require specific 2FA methods, and even disable account recovery options. If you are not sure which kind you have, ask whoever set the account up before you start guessing.
 
 ---
 
@@ -117,7 +131,7 @@ When you sit down to enter a password — your own, or one you are helping a cli
 2. **If not, do you *know* it — in the bet-your-day-on-it sense?** Not "I think so." Not "I almost have it." Not "let me try the usual one." If the answer is anything short of certain, treat the next step as a one-shot.
 3. **Type once, deliberately.** Caps Lock off, correct keyboard layout, correct account selected in the email field. If it works, you're done.
 4. **If it fails once: pause.** Confirm the email/username is right and the field has not autofilled the wrong account. Confirm the keyboard. *Then* allow yourself one more attempt — only if step 2 was a clear yes.
-5. **If it fails twice: stop.** Do not type a third. Open `iforgot.apple.com` or `g.co/recover`, and start recovery on purpose.
+5. **If it fails twice: stop.** Do not type a third. For an Apple Account, tap **Request Access** in the lock alert (iOS 26+) or open `iforgot.apple.com/unlock`. For a Google account, open `g.co/recover` — there is no attempt limit inside the recovery flow, but if you are still guessing you are not helping yourself. Either way, gather your recovery information first (previous passwords, account-creation date, recovery email and phone), then start the questionnaire on purpose.
 
 That is the whole thing. Two attempts maximum, and only the second if you genuinely passed the bet-your-day test on the first. Anything beyond that is sunk-cost reasoning paying for a feeling-of-knowing that was never going to deliver.
 
@@ -165,13 +179,15 @@ In digital security, an ounce of prevention is worth a pound of cure. With these
 
 [^6]: Arkes, H. R., & Blumer, C. (1985). The psychology of sunk cost. *Organizational Behavior and Human Decision Processes*, 35(1), 124–140. <https://doi.org/10.1016/0749-5978(85)90049-4>
 
-[^7]: Apple Inc. *If your Apple Account is locked or disabled.* Apple Support. <https://support.apple.com/HT204106>
+[^7]: Apple Inc. *If your Apple Account is locked, not active, or disabled.* Apple Support, updated December 5, 2025. <https://support.apple.com/en-us/102640> (formerly catalogued as `HT204106`).
 
-[^8]: Apple Inc. *Use a passcode with your iPhone, iPad, or iPod touch* (Erase Data behavior). Apple Support. <https://support.apple.com/HT204060>
+[^8]: Apple Inc. *If you forgot your Apple Account password.* Apple Support. <https://support.apple.com/en-us/102656>
 
-[^9]: Google. *How Google authenticates users* / risk-based sign-in challenges. Google Safety Center. <https://safety.google/intl/en_us/authentication/>
+[^9]: Apple Inc. *Apple Platform Security — Passcodes and passwords.* <https://support.apple.com/guide/security/passcodes-and-passwords-sec20230a10d/web> (canonical published source for the iPhone passcode-escalation table and the Erase Data 10-attempt threshold; the simplified Apple Support article is at <https://support.apple.com/en-us/119586>, formerly catalogued as `HT204060`).
 
-[^10]: Google. *Recover your Google Account or Gmail.* Google Account Help. <https://support.google.com/accounts/answer/7682439>
+[^10]: Google. *How Google authenticates users* / risk-based sign-in challenges. Google Safety Center. <https://safety.google/intl/en_us/safety/authentication/>
+
+[^11]: Google. *How to recover your Google Account or Gmail.* Google Account Help. <https://support.google.com/accounts/answer/7682439>
 
 A BibTeX file for these references is available at [`/field-notes/apple-sends-you-to-ijail.bib`](/field-notes/apple-sends-you-to-ijail.bib) for one-click import into Zotero or any reference manager.
 
@@ -179,4 +195,4 @@ A BibTeX file for these references is available at [`/field-notes/apple-sends-yo
 
 For a second set of eyes on a stuck Apple or Google account before you start guessing, call **619-853-5008**.
 
-*Last updated April 19, 2026.*
+*Last updated April 25, 2026, after independent re-verification of every Apple, Google, and cognitive-psychology citation against its primary source: Apple Support `support.apple.com/en-us/102640` (formerly HT204106, updated December 5, 2025); Apple Support `support.apple.com/en-us/119586` (formerly HT204060) and the Apple Platform Security Guide entry "Passcodes and passwords"; Apple Support `support.apple.com/en-us/102656` ("If you forgot your Apple Account password"); Google `safety.google/intl/en_us/safety/authentication/` (URL migrated from `safety.google/intl/en_us/authentication/`); Google Account Help `support.google.com/accounts/answer/7682439` (verbatim: "Wrong guesses won't kick you out of the account recovery process. There's no limit to the number of times you can attempt to recover your account."); and the six cognitive-psychology DOIs `10.1016/S0022-5371(66)80040-3`, `10.3758/s13421-010-0066-8`, `10.1037/0033-295X.100.4.609`, `10.1037/0033-2909.114.1.3`, `10.1037/h0044616`, `10.1016/0749-5978(85)90049-4`. The pass corrected the iPhone passcode-escalation table (was off by 2 attempts and missing the 3-hour and 8-hour stages), removed an unsourceable "six consecutive failures" account-lockout threshold, added the iOS 26 "Request Access" alert button, separated Google's sign-in challenges from its (unlimited-attempt) recovery flow, tiered the Apple recovery wait-time language, and qualified the Google "under five attempts" challenge-escalation observation as field experience rather than published Google policy (Google does not publish a fixed attempt count).*
