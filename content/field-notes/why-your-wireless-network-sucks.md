@@ -91,7 +91,7 @@ If you've found a competent low-voltage or AV company, they will offer you sever
 
 ## The Scientific Facts: Cabling, Bandwidth, and the Standards That Define Them
 
-The category ratings are not marketing — they are defined by the ANSI/TIA-568.2-D twisted-pair cabling standard [^11], and the Ethernet variants that ride on top of them are defined by IEEE 802.3 [^12].
+The category ratings are not marketing — they are defined by the ANSI/TIA-568.2-E twisted-pair cabling standard [^11], and the Ethernet variants that ride on top of them are defined by IEEE 802.3 [^12].
 
 * **Cat5e:** rated to 100 MHz. Adequate only for 1 Gbps (1000BASE-T). Not future-ready; we discourage new installs.
 * **Cat6:** rated to 250 MHz. Supports 10GBASE-T only at reduced distances — commonly cited as up to ~55 m in low-alien-crosstalk environments, and as little as ~37 m in densely bundled installations [^11]. Cat6 *can* carry IEEE 802.3bt PoE++ if the installed channel meets the electrical and thermal requirements; the issue is design margin, not capability. Cat6 conductors are typically 24 AWG against Cat6A's 23 AWG, which means more I²R resistive heating per ampere and tighter bundle-size limits under TIA TSB-184-A's bundle-temperature-rise ceiling [^14] — variables that compound as PoE class climbs. **IEEE 802.3bt-2018** defines the power envelope: Type 3 up to 60 W at the PSE (~51 W minimum delivered at the PD) and Type 4 up to 90 W at the PSE (~71 W delivered at the PD) [^7]; **TIA TSB-184-A** is the canonical industry document on bundle-thermal derating for power-over-balanced-twisted-pair installations [^14], and the temperature-rise data it documents is what makes Cat6A the industry-preferred minimum for high-wattage PoE bundles in modern integrator practice. For new PoE-rich properties — properties that will collect PoE cameras, doorbells, access points, thermostats, and PoE++ gear in shared bundles — design around Cat6A from day one. <span class="red-line-text">Red line for modern PoE-rich smart-home builds: do not design new properties around Cat6.</span>
@@ -144,7 +144,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 [^10]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer Specifications and Management Parameters for 2.5 Gb/s and 5 Gb/s Operation, Types 2.5GBASE-T and 5GBASE-T* (IEEE Std 802.3bz-2016). <https://standards.ieee.org/ieee/802.3bz/6280/>
 
-[^11]: Telecommunications Industry Association. (2018). *Balanced Twisted-Pair Telecommunications Cabling and Components Standards* (ANSI/TIA-568.2-D). Defines categories Cat5e through Cat8 and their reach for the corresponding Ethernet variants. <https://tiaonline.org/products/ansi-tia-568-2-d/> — Note: as of April 2026, the "E" revision is under active development by the TIA TR-42.7 subcommittee but has not yet superseded -D as the ratified standard, so primary-source citations should continue to reference -D until the -E revision is published.
+[^11]: Telecommunications Industry Association. (2024). *Balanced Twisted-Pair Telecommunications Cabling and Components Standard* (ANSI/TIA-568.2-E). Document published October 23, 2024; TIA public release announcement Arlington, VA, November 5, 2024; ANSI-approved. Revises and supersedes ANSI/TIA-568.2-D (2018), consolidating the prior amendments and updating nomenclature. Defines categories Cat5e through Cat8 and their reach for the corresponding Ethernet variants. TIA announcement: <https://tiaonline.org/standardannouncement/tia-publishes-new-standards-ansi-tia-568-2-e-and-ansi-tia-568-5-1/>. Document listing (Accuris/Techstreet, TIA's official distributor): <https://store.accuristech.com/standards/tia-ansi-tia-568-2-e?product_id=2921304>.
 
 [^12]: IEEE. (2022). *IEEE Standard for Ethernet* (IEEE Std 802.3-2022). <https://standards.ieee.org/ieee/802.3/10422/>
 
@@ -154,7 +154,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 A BibTeX file for these references is available at [`/field-notes/why-your-wireless-network-sucks.bib`](/field-notes/why-your-wireless-network-sucks.bib) for one-click import into Zotero or any reference manager.
 
-*Last updated April 25, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.11be-2024 (MLO/STR/EMLSR/NSTR mode definitions), IEEE 802.3-2022, ANSI/TIA-568.2-D (with TIA-568.2-E revision noted as in-development), and current operational deployment experience.*
+*Last updated April 25, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.11be-2024 (MLO/STR/EMLSR/NSTR mode definitions), IEEE 802.3-2022, ANSI/TIA-568.2-E (2024, supersedes -D), and current operational deployment experience.*
 
 <script type="application/ld+json">
 {
