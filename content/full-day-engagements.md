@@ -158,6 +158,7 @@ For standard hourly rates, minimums, and billing policies, see [Rates & Billing 
         "@type": "PriceSpecification",
         "price": "1900",
         "priceCurrency": "USD",
+        "unitCode": "DAY",
         "valueAddedTaxIncluded": false,
         "description": "Flat-rate full-day engagement (up to 8 hours)."
       }
@@ -170,6 +171,7 @@ For standard hourly rates, minimums, and billing policies, see [Rates & Billing 
         "@type": "PriceSpecification",
         "price": "2900",
         "priceCurrency": "USD",
+        "unitCode": "DAY",
         "valueAddedTaxIncluded": false,
         "description": "Flat-rate extended-day engagement (up to 12 hours)."
       }
@@ -187,6 +189,18 @@ For standard hourly rates, minimums, and billing policies, see [Rates & Billing 
         "description": "Per-hour rate beyond the 12-hour extended-day cap."
       }
     }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.it-help.tech/" },
+    { "@type": "ListItem", "position": 2, "name": "Rates & Billing", "item": "https://www.it-help.tech/billing/" },
+    { "@type": "ListItem", "position": 3, "name": "Full-Day Engagements", "item": "https://www.it-help.tech/full-day-engagements/" }
   ]
 }
 </script>
