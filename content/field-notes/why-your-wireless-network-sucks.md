@@ -124,7 +124,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 ## References
 
-[^1]: IEEE. (2020). *IEEE Standard for Information Technology — Telecommunications and Information Exchange Between Systems — Local and Metropolitan Area Networks — Specific Requirements — Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications* (IEEE Std 802.11-2020). <https://standards.ieee.org/ieee/802.11/7028/>
+[^1]: IEEE. (2024). *IEEE Standard for Information Technology — Telecommunications and Information Exchange Between Systems — Local and Metropolitan Area Networks — Specific Requirements — Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications* (IEEE Std 802.11-2024, REVme). Current rolled-up base standard, published April 28, 2025; supersedes IEEE Std 802.11-2020 (which remains an authoritative reference for the substantive CSMA/CA half-duplex behaviour cited here, unchanged across the revision). <https://standards.ieee.org/ieee/802.11/10548/>
 
 [^2]: Bianchi, G. (2000). Performance analysis of the IEEE 802.11 distributed coordination function. *IEEE Journal on Selected Areas in Communications*, 18(3), 535–547. <https://doi.org/10.1109/49.840210>
 
@@ -132,7 +132,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 [^4]: Akyildiz, I. F., Wang, X., & Wang, W. (2005). Wireless mesh networks: A survey. *Computer Networks*, 47(4), 445–487. <https://doi.org/10.1016/j.comnet.2004.12.001>
 
-[^5]: IEEE. (2021). *IEEE Standard for Information Technology — Telecommunications and Information Exchange Between Systems — Local and Metropolitan Area Networks — Specific Requirements — Part 11: Wireless LAN MAC and PHY Specifications — Amendment 1: Enhancements for High-Efficiency WLAN* (IEEE Std 802.11ax-2021). <https://standards.ieee.org/ieee/802.11ax/7345/>
+[^5]: IEEE. (2021). *IEEE Standard for Information Technology — Telecommunications and Information Exchange Between Systems — Local and Metropolitan Area Networks — Specific Requirements — Part 11: Wireless LAN MAC and PHY Specifications — Amendment 1: Enhancements for High-Efficiency WLAN* (IEEE Std 802.11ax-2021). <https://standards.ieee.org/ieee/802.11ax/7180/>
 
 [^6]: IEEE. (2024). *IEEE Standard for Information Technology — Telecommunications and Information Exchange Between Systems — Local and Metropolitan Area Networks — Specific Requirements — Part 11: Wireless LAN MAC and PHY Specifications — Amendment: Enhancements for Extremely High Throughput (EHT)* (IEEE Std 802.11be-2024). The IEEE 802.11 working group page tracks current amendment status: <https://www.ieee802.org/11/Reports/tgbe_update.htm>
 
@@ -142,19 +142,19 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 [^9]: Telecommunications Industry Association. *TIA-102 series* — Project 25 (P25) digital land-mobile radio standards for public-safety communications. <https://tiaonline.org/what-we-do/technology-programs/project-25-p25/>
 
-[^10]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer Specifications and Management Parameters for 2.5 Gb/s and 5 Gb/s Operation, Types 2.5GBASE-T and 5GBASE-T* (IEEE Std 802.3bz-2016). <https://standards.ieee.org/ieee/802.3bz/6280/>
+[^10]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 7: Media Access Control Parameters, Physical Layers, and Management Parameters for 2.5 Gb/s and 5 Gb/s Operation, Types 2.5GBASE-T and 5GBASE-T* (IEEE Std 802.3bz-2016). <https://standards.ieee.org/ieee/802.3bz/6130/>
 
 [^11]: Telecommunications Industry Association. (2024). *Balanced Twisted-Pair Telecommunications Cabling and Components Standard* (ANSI/TIA-568.2-E). Document published October 23, 2024; TIA public release announcement Arlington, VA, November 5, 2024; ANSI-approved. Revises and supersedes ANSI/TIA-568.2-D (2018), consolidating the prior amendments and updating nomenclature. Defines categories Cat5e through Cat8 and their reach for the corresponding Ethernet variants. TIA announcement: <https://tiaonline.org/standardannouncement/tia-publishes-new-standards-ansi-tia-568-2-e-and-ansi-tia-568-5-1/>. Document listing (Accuris/Techstreet, TIA's official distributor): <https://store.accuristech.com/standards/tia-ansi-tia-568-2-e?product_id=2921304>.
 
 [^12]: IEEE. (2022). *IEEE Standard for Ethernet* (IEEE Std 802.3-2022). <https://standards.ieee.org/ieee/802.3/10422/>
 
-[^13]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer and Management Parameters for 25 Gb/s and 40 Gb/s Operation, Types 25GBASE-T and 40GBASE-T* (IEEE Std 802.3bq-2016). <https://standards.ieee.org/ieee/802.3bq/5957/>
+[^13]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer and Management Parameters for 25 Gb/s and 40 Gb/s Operation, Types 25GBASE-T and 40GBASE-T* (IEEE Std 802.3bq-2016). <https://standards.ieee.org/ieee/802.3bq/6227/>
 
 [^14]: Telecommunications Industry Association. (2017). *Guidelines for Supporting Power Delivery Over Balanced Twisted-Pair Cabling* (TIA TSB-184-A). Documents temperature rise in cable bundles under Power over Ethernet loads and provides category and bundling guidance for high-power PoE installations. <https://tiaonline.org/products/tia-tsb-184-a/>
 
 A BibTeX file for these references is available at [`/field-notes/why-your-wireless-network-sucks.bib`](/field-notes/why-your-wireless-network-sucks.bib) for one-click import into Zotero or any reference manager.
 
-*Last updated April 25, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.11be-2024 (MLO/STR/EMLSR/NSTR mode definitions), IEEE 802.3-2022, ANSI/TIA-568.2-E (2024, supersedes -D), and current operational deployment experience.*
+*Last updated April 25, 2026 — verified against IEEE 802.11-2024 (REVme, current rolled-up base; supersedes 802.11-2020), IEEE 802.11ax-2021, IEEE 802.11be-2024 (MLO/STR/EMLSR/NSTR mode definitions), IEEE 802.3-2022, IEEE 802.3bt-2018 (PoE++ Type 3/4 wattages), IEEE 802.3bz-2016 (NBASE-T 2.5/5GBASE-T), IEEE 802.3bq-2016 (Cat8 25/40GBASE-T), ANSI/TIA-568.2-E (2024, supersedes -D), TIA TSB-155 (Cat6 10GBASE-T 55 m / 37 m AXT-dependent reach), TIA TSB-184-A (2017, PoE bundle thermal), and current operational deployment experience.*
 
 <script type="application/ld+json">
 {
