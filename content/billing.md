@@ -22,6 +22,8 @@ Clear, transparent IT consulting. **No monthly retainers. No managed service con
 
 * **Specialty Rate:** $400/hour for advanced networking and scientific engineering engagements. Scope is defined and agreed upon during the discovery call. Work performed within that scope is billed at the specialty rate; all other services are billed at the standard rate.
 
+For complex projects that benefit from sustained focus, primary-source research, and uninterrupted execution, see **[Full-Day & Multi-Day Engagements →](/full-day-engagements/)**.
+
 
 ## Travel
 
@@ -105,7 +107,7 @@ Clear billing, agreed work, documented time.
     "@type": "Service",
     "name": "On-site tech support",
     "serviceType": "On-site tech support",
-    "provider": { "@id": "https://www.it-help.tech/#identity" },
+    "provider": { "@id": "https://www.it-help.tech/#organization" },
     "areaServed": "San Diego",
     "description": "We solve tech problems—no monthly retainers."
   },
