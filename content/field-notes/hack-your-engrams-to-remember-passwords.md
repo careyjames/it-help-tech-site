@@ -1,7 +1,7 @@
 ---
 title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
 date: 2025-06-03
-updated: 2026-04-19
+updated: 2026-04-25
 author: Carey Balboa
 categories: [Security, Passwords]
 tags: [passphrase, password security, NIST, memory, negativity bias, engram, passkeys]
@@ -48,16 +48,16 @@ Stack the four together and you get a phrase that is long, unique, emotionally l
 
 ## What NIST Actually Says in 2026
 
-The current authoritative reference is **NIST Special Publication 800-63B, Revision 4** [^7]. The headline rules for memorized secrets:
+The current authoritative reference is **NIST Special Publication 800-63B, Revision 4**, published as a final document on July 31, 2025 [^7]. Rev 4 renames the user-chosen secret from "memorized secret" (the Rev 3 term) to plain "password" — both refer to the same thing. The headline rules for passwords:
 
-- **Length matters; composition rules don't.** Verifiers SHALL require a minimum of 8 characters and SHOULD permit at least 64. Verifiers SHALL NOT impose composition rules (no "must contain an uppercase letter and a symbol").
+- **Length matters, and Rev 4 raised the floor; composition rules don't.** Verifiers SHALL require passwords used as a *single-factor* authentication mechanism to be a minimum of **15 characters**; passwords used only as part of *multi-factor* authentication MAY be shorter but SHALL be a minimum of 8 characters. Verifiers SHOULD permit at least 64 characters. Verifiers SHALL NOT impose composition rules (no "must contain an uppercase letter and a symbol"). The 15-character single-factor floor is a Rev 4 change from the previous 8-character minimum and is the single most common point on which older write-ups — including a previous version of this note — were wrong.
 - **No periodic rotation.** Verifiers SHALL NOT require passwords to be changed on a schedule. Force a change only on evidence of compromise.
 - **No password hints. No knowledge-based "security questions."** Both are deprecated.
 - **All printable characters allowed**, including spaces and Unicode. Each Unicode code point counts as one character.
-- **Compromised-password screening.** Verifiers SHALL check new secrets against breach corpora and reject known-compromised values.
+- **Compromised-password screening.** Verifiers SHALL check new passwords against breach corpora and reject known-compromised values.
 - **Syncable authenticators (passkeys) are first-class.** Where a relying party supports them, they are the preferred authenticator and avoid the memorization problem entirely.
 
-Translated to practice: a long, weird, self-generated phrase satisfies the rules; a short phrase padded with `!1` does not, and never really did.
+Translated to practice: a long, weird, self-generated phrase comfortably clears the 15-character single-factor floor; a short phrase padded with `!1` does not. It never really did, and as of Rev 4 NIST is explicit about it.
 
 ## Where This Technique Fits in 2026
 
@@ -78,9 +78,9 @@ That set is small enough that the memorability gain from the technique below is 
 
 Three working principles. None of these are NIST requirements — composition rules are explicitly out — they are *heuristics* for hitting the memory and social-inhibition targets at the same time.
 
-1. **Aim for three or more uncommon words; let length do the work.** Length is what NIST cares about and what entropy depends on. A short phrase padded with a `!` does neither job. A long, weird sentence does both. Add digits or punctuation if it helps you remember the phrase or satisfies a legacy site that still demands them — not because they make the phrase stronger on their own.
-   *Good:* `DidYourBro4Times!`
-   *Also good:* `IWantToSellMyKids2025!` — you would never let kids see you type that, and the underlying imagery is not in any public record about you.
+1. **Clear the 15-character floor with three or more uncommon words; let length do the work.** Fifteen characters is the single-factor minimum NIST 800-63B-4 now requires, and length is what entropy depends on. A short phrase padded with a `!` does neither job. A long, weird sentence does both. Add digits or punctuation if it helps you remember the phrase or satisfies a legacy site that still demands them — not because they make the phrase stronger on their own.
+   *Good:* `DidYourBro4Times!` (17 characters — clears the floor)
+   *Also good:* `IWantToSellMyKids2025!` (22 characters) — you would never let kids see you type that, and the underlying imagery is not in any public record about you.
 2. **No public facts.** Skip birthdays, addresses, pet names, school mascots, anything someone could find on a Wikipedia page about you, in a tax filing, or in a tabloid. The more your life is documented, the more aggressively you should fictionalize.
 3. **Unique per account.** One site, one secret. Reuse breaks the model — and it is the single most common way memorable passphrases turn into breach-replay credentials.
 
@@ -115,8 +115,10 @@ A working test: if you would feel comfortable typing the phrase in front of the 
 
 [^7]: National Institute of Standards and Technology. (2025). *Digital Identity Guidelines: Authentication and Authenticator Management* (SP 800-63B, Revision 4). U.S. Department of Commerce. <https://pages.nist.gov/800-63-4/sp800-63b.html>
 
-[^8]: World Wide Web Consortium. (2024). *Web Authentication: An API for Accessing Public Key Credentials, Level 3*. <https://www.w3.org/TR/webauthn-3/>
+[^8]: World Wide Web Consortium. (2026). *Web Authentication: An API for Accessing Public Key Credentials, Level 3* (W3C Candidate Recommendation Snapshot, 13 January 2026). The Working Group has stated this CR is not expected to advance to Recommendation any earlier than 10 February 2026; the previous version is WebAuthn Level 2, an April 2021 W3C Recommendation. <https://www.w3.org/TR/webauthn-3/>
 
 A BibTeX file for these references is available at [`/field-notes/hack-your-engrams.bib`](/field-notes/hack-your-engrams.bib) for one-click import into Zotero or any reference manager.
+
+*Last updated April 25, 2026 — verified against NIST SP 800-63B, Revision 4 (Final, published July 31, 2025; in particular Section 3.1.1 on password length requirements at <https://pages.nist.gov/800-63-4/sp800-63b/authenticators/>), W3C WebAuthn Level 3 (Candidate Recommendation Snapshot, 13 January 2026), and the DOI-confirmed primary sources for each cited neuroscience paper (Baumeister 2001, McGaugh 2004, LaBar &amp; Cabeza 2006, Hunt 1995, Josselyn &amp; Tonegawa 2020, Slamecka &amp; Graf 1978).*
 
 *Memory is messy. Used on purpose, the mess is the defense.*
