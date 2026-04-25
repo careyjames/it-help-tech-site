@@ -1,7 +1,7 @@
 ---
 title: "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It"
 date: 2025-05-24
-updated: 2026-04-19
+updated: 2026-04-25
 author: Carey Balboa
 categories: [Networking, WiFi, IT Infrastructure]
 tags: [ethernet, wifi, wi-fi 6, wi-fi 7, networking, home networking, office networking, cat6a, cat8, mesh, csma-ca, shannon, ubiquiti, poe]
@@ -57,7 +57,11 @@ For a foundational survey of wireless mesh networking and its scaling limits, th
 
 Being honest about scope: there are two cases where the older "always halve per hop" rule softens.
 
-**Case 1: Modern Wi-Fi 6/7 mesh with a wired backhaul.** When the relay nodes are themselves connected by Ethernet (so the airtime tax disappears) and the radios are IEEE 802.11ax (Wi-Fi 6) [^5] or 802.11be (Wi-Fi 7) [^6] with multi-link operation, OFDMA, and 6 GHz spectrum, the *client-facing* link can be far closer to nominal than the older 802.11n/ac math suggested. This is why a properly deployed Ubiquiti UniFi setup — a Dream Machine plus U7-class access points wired on Cat6A, with PoE++ over IEEE 802.3bt [^7] — can deliver multi-gigabit throughput to a modern client. The old adage that "Wi-Fi can never reach wired speeds" is being challenged in practice by this generation of gear, and it is honest to say so. *The catch*: the wired backhaul is not optional. The instant you remove it and let the AP self-mesh on its own radios, the half-duplex airtime tax returns.
+**Case 1: Modern Wi-Fi 6/7 mesh with a wired backhaul.** When the relay nodes are themselves connected by Ethernet (so the airtime tax disappears) and the radios are IEEE 802.11ax (Wi-Fi 6) [^5] or 802.11be (Wi-Fi 7) [^6] with multi-link operation, OFDMA, and 6 GHz spectrum, the *client-facing* link can be far closer to nominal than the older 802.11n/ac math suggested. This is why a properly deployed Ubiquiti UniFi setup — a Dream Machine plus U7-class access points wired on Cat6A, with PoE++ over IEEE 802.3bt [^7] — can deliver multi-gigabit throughput to a modern client. The old adage that "Wi-Fi can never reach wired speeds" is being challenged in practice by this generation of gear, and it is honest to say so.
+
+The mechanism behind that softening deserves a name. IEEE 802.11be-2024 introduces a Multi-Link Operation (MLO) mode called Simultaneous Transmit and Receive (STR), which lets an MLO-capable device communicate across non-overlapping bands — typically 5 GHz and 6 GHz — at the same time, partially side-stepping the half-duplex constraint that bounds single-band single-radio operation [^6]. STR is the mechanism behind the genuine throughput gains seen on properly-deployed Wi-Fi 7 hardware, and it is a useful, narrowly-scoped softening of the older "always halve per hop" rule. The honest qualifier: full STR support is hardware-dependent. Many access points marketed as "Wi-Fi 7" actually implement non-simultaneous modes — Non-STR (NSTR) or Enhanced Multi-Link Single Radio (EMLSR) — because the in-device filtering required to prevent one radio's transmission from desensitizing the other radio across bands is expensive to build correctly. MLO meaningfully reduces latency and recovers some of the airtime budget; it does not eliminate the underlying physics of shared spectrum, and it does not eliminate the need for a wired backhaul to reach peak capacity.
+
+*The catch*: the wired backhaul is not optional. The instant you remove it and let the AP self-mesh on its own radios, the half-duplex airtime tax returns.
 
 **Case 2: Specialized non-802.11 systems.** Mine rescue, cave operations, and tactical military communications do solve wireless connectivity in extremely difficult environments, but they do not do it with the consumer 802.11 gear sold at big-box stores. They use **leaky-feeder coaxial cable** strung along tunnels (a long radiating cable that acts as a distributed antenna), as has been documented for decades in NIOSH mine-communications research [^8]; **public-safety land-mobile radio** systems built on standards such as APCO Project 25 (P25), with a published TIA standards suite [^9]; and **mobile ad-hoc networks (MANETs)** running custom routing protocols on dedicated hardware. None of these are interchangeable with a $99 home Wi-Fi extender. When someone says "wireless mesh just works in caves," what is actually deployed is engineered radio infrastructure with planned coverage and dedicated backhaul — not consumer self-meshing.
 
@@ -140,7 +144,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 [^10]: IEEE. (2016). *IEEE Standard for Ethernet — Amendment 3: Physical Layer Specifications and Management Parameters for 2.5 Gb/s and 5 Gb/s Operation, Types 2.5GBASE-T and 5GBASE-T* (IEEE Std 802.3bz-2016). <https://standards.ieee.org/ieee/802.3bz/6280/>
 
-[^11]: Telecommunications Industry Association. (2018). *Balanced Twisted-Pair Telecommunications Cabling and Components Standards* (ANSI/TIA-568.2-D). Defines categories Cat5e through Cat8 and their reach for the corresponding Ethernet variants. <https://tiaonline.org/products/ansi-tia-568-2-d/>
+[^11]: Telecommunications Industry Association. (2018). *Balanced Twisted-Pair Telecommunications Cabling and Components Standards* (ANSI/TIA-568.2-D). Defines categories Cat5e through Cat8 and their reach for the corresponding Ethernet variants. <https://tiaonline.org/products/ansi-tia-568-2-d/> — Note: as of April 2026, the "E" revision is under active development by the TIA TR-42.7 subcommittee but has not yet superseded -D as the ratified standard, so primary-source citations should continue to reference -D until the -E revision is published.
 
 [^12]: IEEE. (2022). *IEEE Standard for Ethernet* (IEEE Std 802.3-2022). <https://standards.ieee.org/ieee/802.3/10422/>
 
@@ -150,7 +154,7 @@ Call 619-853-5008 and [schedule a walkthrough](https://schedule.it-help.tech/) f
 
 A BibTeX file for these references is available at [`/field-notes/why-your-wireless-network-sucks.bib`](/field-notes/why-your-wireless-network-sucks.bib) for one-click import into Zotero or any reference manager.
 
-*Last updated April 19, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.3-2022, ANSI/TIA-568.2-D, and current operational deployment experience.*
+*Last updated April 25, 2026 — verified against IEEE 802.11-2020, IEEE 802.11ax-2021, IEEE 802.11be-2024 (MLO/STR/EMLSR/NSTR mode definitions), IEEE 802.3-2022, ANSI/TIA-568.2-D (with TIA-568.2-E revision noted as in-development), and current operational deployment experience.*
 
 <script type="application/ld+json">
 {
@@ -170,7 +174,7 @@ A BibTeX file for these references is available at [`/field-notes/why-your-wirel
   },
   "image": "https://www.it-help.tech/images/sad-wifi-extender.png",
   "datePublished": "2025-05-24",
-  "dateModified": "2026-04-19",
+  "dateModified": "2026-04-25",
   "mainEntityOfPage": "https://www.it-help.tech/field-notes/why-your-wireless-network-sucks/",
   "keywords": ["Wi-Fi", "Ethernet backbone", "Cat6A", "Cat8", "Wi-Fi 6", "Wi-Fi 7", "CSMA/CA", "mesh", "PoE", "IT Help San Diego"]
 }
