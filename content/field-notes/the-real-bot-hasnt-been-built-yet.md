@@ -46,7 +46,7 @@ In July 2024, Ilia Shumailov and colleagues published, in *Nature*, the most con
 
 In plain language: every generation of AI that scrapes the post-2022 internet is increasingly likely to be training on the previous generation's hallucinations. The rare, expert, hard-won material in the *tails* of the human knowledge distribution — the part that distinguishes a domain expert from a confident generalist — is the first thing to disappear, and the authors describe the loss as **irreversible**. They warn explicitly that "the value of data collected about genuine human interactions with systems will be increasingly valuable in the presence of LLM-generated content in data crawled from the Internet" [^3].
 
-Translation for the field: pre-2023 human-authored writing is now a finite, vanishing, and rapidly more valuable resource — and the companies positioned to know that best are quietly racing to fence off what is left, while continuing to sell newer models as if they were strictly improving.
+Translation for the field: on the evidence of Shumailov et al., pre-2023 human-authored writing is a finite resource of rapidly increasing scientific value, and the same authors flag this in the paper itself. Whether commercial labs are currently fencing off that resource is an interpretation, not a finding; what *is* a finding is that the cleanest substrate for an honest research-grade model exists primarily in pre-2023 human-authored corpora.
 
 The paper was published in *Nature*, Volume 631, pages 755–759, on 24 July 2024, with an Author Correction issued on 21 March 2025 [^3]. It is not a fringe critique; it is the highest level of peer-reviewed publication the natural sciences offer.
 
@@ -71,9 +71,9 @@ A small clarification matters here, because the underlying long-form manifesto n
 
 ## The 2023 Line in the Sand
 
-A useful rule of thumb has emerged in the research and archival communities: any text scraped from the open web after roughly 2022–2023 carries an unknown and rising probability of being AI-generated rather than human-written. There is no reliable way to separate them at scale. As a result, **pre-2023 corpora are now treated as a distinct, more trustworthy category** — and they are the only training base on which an honest Scholar Bot could be built without inheriting the model-collapse problem from day one.
+A working rule has emerged in the research and archival communities: text scraped from the open web after roughly 2022–2023 carries a growing, hard-to-quantify probability of being AI-generated rather than human-written, and there is no reliable way to separate the two at scale [^3]. The practical consequence — drawn directly from Shumailov et al.'s recommendation that "data collected about genuine human interactions" is increasingly valuable — is that **pre-2023 corpora are now treated as a distinct, higher-trust category** for any training run intended to avoid the recursive-collapse dynamic.
 
-This is the practical reason C2PA exists: it offers a *forward-looking* solution (cryptographically prove this new content is human or machine) to the *retrospective* problem the open web cannot solve (everything from 2023 forward is contaminated unless proven otherwise).
+This is the practical reason C2PA exists: it offers a *forward-looking* mechanism (cryptographically attest, at capture or publication time, that a new piece of content is human or machine) for the *retrospective* problem the open web cannot solve on its own.
 
 ---
 
@@ -142,7 +142,7 @@ The knowledge bases for the second column already exist: PubMed, Westlaw, arXiv,
 - **Stop accepting "hallucination" as an excuse.** Fabrication is a bug, not a feature, and it is the model itself that can describe — on request — exactly which optimization choice produced it (see Exhibit A).
 - **Stop accepting "powered by AI, may not get things right" as a disclaimer.** You would not accept that from a doctor, a lawyer, a teacher, or a contractor. The price of the subscription does not change the standard.
 - **When you do use an AI product for research, demand the citation standard a third-grader is already held to.** If the product cannot meet it, use the product for the work it can actually do — drafting, summarizing, brainstorming — and verify every factual claim against a primary source by hand.
-- **Say it out loud.** Every time someone laughs at the idea of a Scholar Bot, point them to the *Nature* model-collapse paper, the live C2PA member page, and the verbatim transcript above. The science is settled. The build is the part that hasn't happened yet.
+- **Say it out loud.** Every time someone laughs at the idea of a Scholar Bot, point them to the *Nature* model-collapse paper, the live C2PA member page, and the verbatim transcript above. The peer-reviewed evidence is on the table. The build is the part that hasn't happened yet.
 
 ---
 
@@ -150,7 +150,7 @@ The knowledge bases for the second column already exist: PubMed, Westlaw, arXiv,
 
 [^1]: Aristotle. *Nicomachean Ethics*, Book VI (the intellectual virtues — *episteme*, *techne*, *phronesis*). Standard scholarly text; Bekker numbers 1138b–1145a. Cf. the Stanford Encyclopedia of Philosophy entry on Aristotle's Ethics. <https://plato.stanford.edu/entries/aristotle-ethics/>
 
-[^2]: Ryle, G. (1949). *The Concept of Mind*. London: Hutchinson; reissued by University of Chicago Press, 1984. Chapter I (the "category mistake"). <https://en.wikipedia.org/wiki/Category_mistake>
+[^2]: Ryle, G. (1949). *The Concept of Mind*. London: Hutchinson, Chapter I, §2 ("The Absurdity of the Official Doctrine"), where the term *category-mistake* is introduced. 60th-anniversary edition with a critical introduction by Daniel C. Dennett: London: Routledge, 2009 (ISBN 978-0-415-48547-0). Stanford Encyclopedia of Philosophy entry on Ryle (high-authority secondary): <https://plato.stanford.edu/entries/ryle/>
 
 [^3]: Shumailov, I., Shumaylov, Z., Zhao, Y., Gal, Y., Papernot, N., & Anderson, R. (2024). AI models collapse when trained on recursively generated data. *Nature*, **631**, 755–759 (Author Correction 21 March 2025). DOI: <https://doi.org/10.1038/s41586-024-07566-y>
 
@@ -162,7 +162,7 @@ The knowledge bases for the second column already exist: PubMed, Westlaw, arXiv,
 
 [^7]: WICG / W3C. *Text Fragments* (the `#:~:text=` URL fragment standard). <https://wicg.github.io/scroll-to-text-fragment/>
 
-[^8]: Postman, N. (1985). *Amusing Ourselves to Death: Public Discourse in the Age of Show Business*. New York: Viking Penguin. ISBN 0-670-80454-1. The verbatim quote in this note is the source-of-truth language reproduced in the *Amusing Ourselves to Death* Wikipedia article, which cites the book directly. <https://en.wikipedia.org/wiki/Amusing_Ourselves_to_Death>
+[^8]: Postman, N. (1985). *Amusing Ourselves to Death: Public Discourse in the Age of Show Business*. New York: Viking Penguin (ISBN 0-670-80454-1), Chapter 7 ("Now… This"). The disinformation passage is in Postman's discussion of the form of television news in that chapter; the verbatim language in this note matches the standard quotation from the 20th-anniversary Penguin edition (2005, ISBN 978-0-14-303653-1). Library of Congress catalog record: <https://lccn.loc.gov/85005335>.
 
 [^9]: *McDougal v. Fox News Network, LLC*, No. 1:19-cv-11161 (S.D.N.Y. Sept. 24, 2020). Memorandum and order of dismissal by Judge Mary Kay Vyskocil. Docket via CourtListener: <https://www.courtlistener.com/docket/16591235/mcdougal-v-fox-news-network-llc/>
 
