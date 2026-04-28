@@ -22,8 +22,12 @@ Analytics, Google Tag Manager, Facebook Pixel, Plausible, Fathom,
 Hotjar, or any other measurement script. We do not embed any
 third-party tracking widgets. We do not feed visitor data to ad
 networks, marketing platforms, AI training pipelines, or data brokers.
-We do not sell, rent, or share any visitor information with anyone, for
-any purpose, ever.
+We do not sell, rent, or share visitor information with anyone, for any
+purpose. The only exception that could ever change that is a valid
+court order — in which case we would comply with the order, tell the
+truth under oath, and notify the affected party to the extent the law
+permits. That's it. There is no other circumstance under which your
+information leaves this site.
 
 You can verify this in your browser's developer tools. Open Network and
 reload the page. Every request goes to `it-help.tech` or its own
@@ -40,21 +44,23 @@ keep the site reachable and to investigate abuse if it occurs.
 
 ## How we handle client data during engagements
 
-The honest version, because anything else would be a fairy tale:
+Every IT firm runs on tools made by other companies — laptops,
+operating systems, cloud storage, encrypted password vaults,
+accounting software. The question worth asking isn't "do you use
+third-party tools" — every honest answer is yes. The questions worth
+asking are *what is stored where, who can read it, and what are they
+allowed to do with it.* Our answers:
 
-**Every modern IT firm uses third-party tools.** The Mac on the desk is
-third-party. iCloud is third-party. Google Workspace is third-party.
-The encrypted password vault is third-party. Anyone telling you "we
-never touch third-party storage" is either lying or running a
-typewriter. The real questions are: *what is stored where, who can read
-it, and what are they allowed to do with it.* Our answers:
-
-- **Personally identifying information (PII) is encrypted and
-  isolated.** Passwords, credentials, payment information, account
+- **Personally identifying information (PII) is encrypted with keys
+  only we hold.** Passwords, credentials, payment information, account
   recovery keys, and other deeply sensitive material live in
-  end-to-end encrypted vaults that only we can decrypt. Vendors do not
-  see them. AI services do not see them. No one outside the engagement
-  sees them.
+  zero-knowledge encrypted vaults. The vault vendor's servers host the
+  encrypted blobs; the vendor cannot decrypt them and has no way to
+  read them. **In nearly three decades, we have never had to tell a
+  client that a tool we use was breached** — because we deliberately
+  choose tools with stronger security track records than the industry
+  average, and we revisit that choice every time a new disclosure
+  surfaces.
 - **Technical work product is worked on without client-identifying
   context.** When a network configuration, a DNS issue, or a
   troubleshooting question goes into an AI assistant for analysis, the
@@ -89,16 +95,20 @@ breach. We have never had a leak. We have never spoken about a client to
 a journalist, a paparazzi, or any third party.** That track record
 exists because of how the work is structured, and the same clients have
 referred us to other clients on the strength of it for nearly three
-decades.
+decades. If anything were ever to change about that — a breach, a legal
+compulsion to disclose, a policy change — affected clients would be
+told directly, in writing, before any other communication.
 
 ## What we record, and what we tell you about it
 
 When you call our main line, the recorded greeting tells you: *"All
 calls are transcribed by AI to help us provide better service."* That's
-not a tagline — it's a disclosure under California's two-party consent
-law (Penal Code § 632). The transcript is used to keep accurate notes
-of what we discussed. It is not shared, not sold, and not used for
-marketing.
+an audible consent notice. California Penal Code § 632 requires both
+parties to consent to the recording of confidential communications, and
+an audible notice on connect — combined with continuing the call — is
+how every California business handles this, from rideshare to banking.
+The transcript is used to keep accurate notes of what we discussed. It
+is not shared, not sold, and not used for marketing.
 
 When we're on-site at your home or office, we sometimes use a meeting
 transcription tool (Fireflies.ai) so the technical decisions made in
