@@ -38,10 +38,10 @@ twitter_card        = "summary_large_image"
     },
     {
       "@type": "Question",
-      "name": "Do you fix cracked iPhone screens?",
+      "name": "Do you service physical device damage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. We are not a hardware repair shop—we specialize in operating systems, software, networking, and data security. For existing clients, we can do a concierge replacement: pick up a factory-fresh iPhone from Apple and migrate your data on-site while you watch. Prefer glass replacement? We can refer you to a vetted local technician."
+        "text": "No. We work on operating systems, software, networking, and data security — not physical device damage. For existing clients, we offer a concierge device replacement: we pick up a factory-fresh iPhone from Apple and migrate your data on-site while you watch. For physical-screen work, we refer to a vetted local technician."
       }
     },
     {
