@@ -61,9 +61,9 @@ Absolutely! Our primary expertise lies with **macOS and iOS support**, and we ex
 
 We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust. Our goal is to resolve issues efficiently and effectively. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
 
-### Do you fix cracked iPhone screens?
+### Do you service physical device damage?
 
-**No, we’re not a hardware repair shop.** We specialize in operating systems, software, networking, and data security. For existing clients with a cracked screen, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. Prefer a glass replacement? We’ll refer you to a vetted local technician.
+**No — we work on operating systems, software, networking, and data security, not physical device damage.** For existing clients who need a new device, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. For physical-screen work, we refer you to a vetted local technician.
 
 ---
 
