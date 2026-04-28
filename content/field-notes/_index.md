@@ -3,6 +3,7 @@ title = "IT Help San Diego Field Notes | Tech Insights & Support Stories"
 description = "Field Notes from IT Help San Diego: practitioner write-ups on macOS, iOS, Wi‑Fi, DNS, email deliverability, DMARC, and cybersecurity."
 sort_by = "date"
 template = "field-notes.html"
+aliases = ["/blog/"]
 
 [extra]
 seo_title = "IT Help Field Notes"

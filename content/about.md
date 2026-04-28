@@ -2,6 +2,7 @@
 title = "Our Expertise"
 description = "Learn about Carey Balboa, the founder of IT Help San Diego, with 27 years of experience providing expert, ethical IT support."
 path = "about"
+aliases = ["/about-us/"]
 render = true
 template_macros = ["macros/images.html"]
 
