@@ -2,6 +2,11 @@
 title: Rates & Billing Policies
 description: "Transparent IT support rates ($275/hour, On-site 1-hour minimum, Remote 30-min minimum), billing policies, payment terms, and our commitment to ethical service."
 path: billing
+aliases:
+  - /terms/
+  - /terms-of-service/
+  - /tos/
+  - /pricing/
 extra:
   skip_image: true
   skip_author: true

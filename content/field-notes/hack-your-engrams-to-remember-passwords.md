@@ -6,6 +6,8 @@ author: Carey Balboa
 categories: [Security, Passwords]
 tags: [passphrase, password security, NIST, memory, negativity bias, engram, passkeys]
 description: "Use the neuroscience of emotional memory to build long passphrases that satisfy NIST SP 800-63B-4 and that you would never type in front of the people standing behind you."
+aliases:
+  - /blog/hack-your-engrams-to-remember-passwords/
 extra:
   image: images/engram-hack.png
   og_title: "Hack Your Engrams: Memorable Passphrases That Stay Private"

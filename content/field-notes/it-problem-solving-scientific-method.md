@@ -6,6 +6,8 @@ author: Carey Balboa
 categories: [Consulting, Troubleshooting, Methodology]
 tags: [scientific method, IT consulting, problem solving, diagnostic reasoning, cognitive bias, falsifiability, Cynefin, postmortem]
 description: "How a working adaptation of the scientific method — grounded in Popper, Peirce, and the medical diagnostic-error literature — defeats the cognitive biases that derail most IT troubleshooting."
+aliases:
+  - /blog/it-problem-solving-scientific-method/
 extra:
   seo_title: "IT Problem-Solving as Hypothesis-Driven Inquiry"
   image: images/it-problem-solving-scientific-method.webp

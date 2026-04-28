@@ -6,6 +6,8 @@ author: Carey Balboa
 categories: [Apple, Security, Cybersecurity]
 tags: [macOS, iOS, cybersecurity, malware, phishing, Apple security, endpoint protection, EDR, LuLu, ManageEngine, Pegasus, threat model, XProtect, Lockdown Mode, Stolen Device Protection]
 description: "What Apple's built-in stack (XProtect, XProtect Remediator, Gatekeeper, Notarization) actually defends against on macOS, where the real gaps are, and the practical Magic Combo — ManageEngine Security Edition plus LuLu — that closes them on real client machines."
+aliases:
+  - /blog/mac-cybersecurity-threats/
 extra:
   seo_title: "Mac Cybersecurity Threats: The Real Magic Combo"
   image: images/mac-cybersecurity.jpeg

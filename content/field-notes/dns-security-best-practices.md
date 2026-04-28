@@ -6,6 +6,8 @@ author: Carey Balboa
 categories: [DNS Security, Email Security]
 tags: [DMARC, SPF, DKIM, DNSSEC, MTA-STS, TLS-RPT, DANE, BIMI, email deliverability, cybersecurity, BEC, IC3, threat model]
 description: "Configure and verify SPF, DKIM, DMARC, MTA-STS, TLS-RPT, DANE, and DNSSEC to defensibly reduce spoofing, phishing, and BEC risk — with primary-source citations to every standard the controls depend on."
+aliases:
+  - /blog/dns-security-best-practices/
 extra:
   seo_title: "DMARC, SPF & DKIM Security Guide"
   image: /images/dns-security-dmarc.png
