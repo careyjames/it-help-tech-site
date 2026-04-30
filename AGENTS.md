@@ -104,10 +104,10 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
 **Layout:**
 
 - `content/` — Markdown pages, field notes, and embedded JSON-LD schema
-- `templates/` — Zola HTML templates and macros (`base.html`, `page.html`, `field-notes.html`)
+- `templates/` — Zola HTML templates and macros (`base.html`, `page.html`, `field-notes.html`); also project-level theme overrides (Zola precedence rule), e.g. `templates/robots.txt` is the canonical source for `/robots.txt`
 - `themes/abridge/` — Abridge theme; SEO macros at `themes/abridge/templates/macros/seo.html`
 - `sass/` — SASS sources (`_extra.scss` holds component/interaction tokens; `css/abridge.scss` holds theme/link tokens)
-- `static/` — assets, `robots.txt`, `llms.txt`; `static/css/late-overrides.css` is the canonical visual-system file
+- `static/` — assets, `llms.txt`; `static/css/late-overrides.css` is the canonical visual-system file
 - `infra/` — `audit/` (Lighthouse + Observatory gate), `llms/` (build-time `llms-full.txt` generator), `cloudfront/` (CSP policy regen)
 - `public/` — Zola build output (gitignored)
 - `build/` — generator output staged for S3 (gitignored)
@@ -128,7 +128,7 @@ When changing palette, hero/logo styling, nav/CTA styling, or readability treatm
 
 **CSS load order (do not reorder):** `critical.min.css` (inlined) → `cls-fixes.css` → `abridge.css` → `override.min.css` → `late-overrides.css`.
 
-**LLM/bot files:** `static/robots.txt` enumerates AI bot permissions. `static/llms.txt` is the short LLM-friendly summary. `build/llms-full.txt` (auto-generated at deploy time from `content/*.md`) is the full content snapshot; the legacy `static/llms-full.txt` is retained as a Phase A fallback and will be deleted in a future PR.
+**LLM/bot files:** `templates/robots.txt` enumerates AI bot permissions and is rendered to `/robots.txt` (overriding the theme's robots template; **never edit `themes/abridge/templates/robots.txt` and never reintroduce `static/robots.txt`** — both are silently overridden). `static/llms.txt` is the short LLM-friendly summary. `build/llms-full.txt` (auto-generated at deploy time from `content/*.md`) is the full content snapshot; the legacy `static/llms-full.txt` is retained as a Phase A fallback and will be deleted in a future PR.
 
 ## Canonical Files
 
