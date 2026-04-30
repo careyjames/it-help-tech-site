@@ -92,7 +92,7 @@ I do not know how many eligible devices that restaurant actually had. A restaura
 But a smaller restaurant may have closer to six eligible endpoints: for example, several POS stations, one tablet, and one back-office computer. In that case the Managed Agent layer would be **$300/month**, not **$1,850/month**.
 
 | Scenario | Calculation | Monthly base |
-|---|---:|---:|
+|---|---|---|
 | 6 eligible devices | 6 × $50 | $300/month |
 | 37 eligible devices | 37 × $50 | $1,850/month |
 | Public example base fee | Given in thread | $1,850/month |
@@ -104,7 +104,7 @@ If a six-device restaurant pays $1,850/month, that behaves like **$308.33 per de
 The yearly view is the strongest proof, because quiet months are where vague retainers become expensive. Use a conservative small-restaurant example of six managed devices. The actual Reddit device count is unknown.
 
 | Annual scenario | Calculation | Yearly cost |
-|---|---:|---:|
+|---|---|---|
 | Transparent base device layer | 6 devices × $50 × 12 | $3,600 |
 | Transparent year with one 6-hour incident | $3,600 + (6 × $275) | $5,250 |
 | Transparent year with incident + example $600 firewall | $5,250 + $600 | $5,850 |
@@ -112,7 +112,7 @@ The yearly view is the strongest proof, because quiet months are where vague ret
 | Public example incident year | $22,200 + $1,410 | $23,610 |
 
 | Comparison | Transparent model | Public example | Difference |
-|---|---:|---:|---:|
+|---|---|---|---|
 | Incident year before hardware | $5,250 | $23,610 | $18,360 less |
 | Incident year with $600 firewall | $5,850 | $23,610 | $17,760 less |
 | 60 hours of senior support | $20,100 | $22,200 base-only | $2,100 less |
@@ -124,7 +124,7 @@ The yearly view is the strongest proof, because quiet months are where vague ret
 ## Support-hour thresholds
 
 | Threshold | Calculation | Hours of senior support |
-|---|---:|---:|
+|---|---|---|
 | Match $22,200 base-only spend, no hardware | ($22,200 − $3,600) / $275 | 67.6 hours |
 | Match $22,200 base-only spend, with $600 hardware | ($22,200 − $3,600 − $600) / $275 | 65.5 hours |
 | Match $23,610 incident-year spend, no hardware | ($23,610 − $3,600) / $275 | 72.8 hours |
@@ -155,7 +155,7 @@ There is also a hard internal cost: the management portal itself has a current f
 ```
 
 | Scenario | Client revenue | After portal floor | Senior time funded | Meaning |
-|---|---:|---:|---:|---|
+|---|---|---|---|---|
 | 4 devices | $200/mo | −$100 | 0 hr; loss before labor | Early/underfilled portal state. |
 | 5 devices | $250/mo | −$50 | 0 hr; loss before labor | Still below the portal floor. |
 | 6 devices | $300/mo | $0 | 0 hr | Covers about the portal floor only. |
