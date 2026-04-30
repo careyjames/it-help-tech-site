@@ -10,8 +10,6 @@ aliases:
 extra:
   skip_image: true
   skip_author: true
-  og_title: "Managed Agent — Transparent Device Maintenance and Security"
-  twitter_title: "Managed Agent — Transparent Device Maintenance and Security"
 ---
 
 **$50 per enrolled device per month. Month-to-month. No MSP contract. Live work is separate.**
@@ -236,6 +234,9 @@ For the underlying hourly consulting rates, travel policy, payment terms, schedu
   "description": "Optional month-to-month device maintenance and security layer powered by ManageEngine Endpoint Central Cloud — Security Edition. Per-device subscription, no managed-service contract; live consulting work billed separately at the standard hourly rate.",
   "offers": {
     "@type": "Offer",
+    "price": "50.00",
+    "priceCurrency": "USD",
+    "unitText": "enrolled device",
     "priceSpecification": {
       "@type": "UnitPriceSpecification",
       "price": "50.00",
