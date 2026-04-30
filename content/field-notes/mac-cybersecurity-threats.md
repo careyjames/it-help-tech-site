@@ -33,7 +33,7 @@ For iPhone: turn on **Stolen Device Protection** today [^10]. Reserve **Lockdown
 
 ## Mac Security Is Not Mac Immunity
 
-Mac computers are well-defended. They are not immune. The "Macs don't get viruses" claim was always marketing rather than engineering, and Apple itself stopped making it years ago. What is true is that the macOS architecture — code signing required by default, sandboxed App Store apps, System Integrity Protection (SIP) restricting even root from modifying system locations, hardware-rooted boot trust on Apple Silicon, and the XProtect family running quietly in the background — raises the cost of a successful attack substantially compared to a default Windows install [^1].
+Mac computers are well-defended. They are not immune. The "Macs don't get viruses" claim was always marketing rather than engineering. What is true is that the macOS architecture — code signing required by default, sandboxed App Store apps, System Integrity Protection (SIP) restricting even root from modifying system locations, hardware-rooted boot trust on Apple Silicon, and the XProtect family running quietly in the background — substantially raises the cost of a successful attack [^1].
 
 That higher cost shapes the threat landscape in a useful way. Commodity criminal malware that targets Windows-style user habits (run an attachment, install a "video codec," click through a UAC prompt) mostly bounces off macOS for purely structural reasons. What gets through is narrower and more deliberate: targeted exploits, adware and potentially-unwanted programs (PUPs) that side-step malware definitions on a technicality, and social engineering that bypasses every technical control by attacking the user.
 
@@ -104,7 +104,7 @@ Don't disable Gatekeeper. Don't disable SIP. Don't override Notarization for one
 
 If you do nothing else from this article, do this one.
 
-**LuLu** is a free, open-source, host-based application firewall for macOS [^6]. It is licensed under **GPLv3** [^7] and developed by **Patrick Wardle**, a former NSA security researcher [^8] who founded the **Objective-See Foundation** to ship the defensive macOS tools Apple does not. What LuLu does, mechanically, is straightforward and exactly what Apple has not built into the OS: it intercepts outbound network connections from each application and prompts you to allow or deny them, then remembers the decision. It does not require a paid subscription. It does not phone home. The source code is on GitHub for anyone to audit.
+**LuLu** is a free, open-source, host-based application firewall for macOS [^6]. It is licensed under **GPLv3** [^7] and developed by **Patrick Wardle**, a former NSA security researcher [^8] who founded the **Objective-See Foundation** to ship the defensive macOS tools Apple does not. What LuLu does, mechanically, is straightforward and exactly what Apple has not built into the OS: it intercepts outbound network connections from each application and prompts you to allow or deny them, then remembers the decision. It does not require a paid subscription. The source code is on GitHub [^7] — open to anyone who wants to audit it for unwanted network behavior.
 
 What this gives you in practice:
 
@@ -128,7 +128,7 @@ A note on the historical alternative: in the older Mac-IT literature you will se
 
 If you want a consumer-friendly anti-malware layer on top of Apple's defaults — the kind your CFO or your relatives expect to see installed — **Malwarebytes** is a fine choice [^9]. Their annual *State of Malware* reports are the data source for the "Macs do see threats, just mostly adware/PUPs" claim above; the company knows the Mac threat landscape because it is the one measuring it.
 
-A free tier exists; the paid Premium product is in the low-tens-of-dollars-per-year range. It is not a substitute for the layers above; it is an additive baseline that catches the kind of nuisanceware that signature-based detection still does well against.
+A free tier exists; the paid Premium product is reasonably priced for what it is — check current pricing on their site. It is not a substitute for the layers above; it is an additive baseline that catches the kind of nuisanceware that signature-based detection still does well against.
 
 **Cost:** free or low. **Time:** trivial.
 
@@ -136,15 +136,13 @@ That is the cheap stack. **Apple defaults + LuLu + (optionally) Malwarebytes.** 
 
 ### 4. If you want it managed for you.
 
-If you would rather have someone else maintain the OS patching cadence, the security policy, FileVault key escrow, and the endpoint alerts on a per-device monthly fee — without an MSP retainer — that is what our [Managed Agent](/managed-agent/) page documents. The platform underneath is **ManageEngine Endpoint Central — Security Edition**, deployed on a per-client basis. Read the page for the full scope, the billing boundary, and what is and is not included; the math is shown before enrollment so you can decide on the merits.
+If you would rather have all of the above maintained for you on a per-device monthly basis — patching cadence, security policy, FileVault key escrow, endpoint alerts — that is what the [Managed Agent](/managed-agent/) page covers. Read it once, decide on the merits, move on.
 
 You do not need this to be safer than most people. You might want it because you would rather not think about it.
 
 ### 5. If you are genuinely enterprise-class.
 
-For organizations with the budget, the staffing, and the threat exposure to justify it, **SentinelOne Singularity** and **CrowdStrike Falcon** are both excellent endpoint detection and response platforms with strong macOS support. Both are deployed across Fortune 500s, financial institutions, and government agencies. The honest caveat is operational: enterprise EDR is high-maintenance. You need someone who reads the alerts, tunes the policies, and responds to the detections. Buying enterprise EDR and not staffing it produces the worst outcome — alerts no one acts on. For most San Diego small-to-mid clients the layers above are the right answer; if you are in the small fraction for whom they are not, you already know.
-
-For organizations with a federal-posture mobile requirement specifically (active DoD contracts, FedRAMP scope, devices on the DHS Continuous Diagnostics and Mitigation Approved Products List), **Zimperium Mobile Threat Defense** is the right call and we will happily set up the portal. For everyone else, the rest of this article is enough.
+For organizations with the budget, the staffing, and the threat exposure to justify it, **SentinelOne Singularity** and **CrowdStrike Falcon** are both serious endpoint detection and response platforms with strong macOS support. The honest caveat is operational: enterprise EDR is only as good as the staff reading the alerts and acting on them. Buying it without that staffing produces the worst outcome — alerts no one acts on. For organizations with a federal-posture mobile requirement, **Zimperium Mobile Threat Defense** is the right call and we will happily set up the portal. For everyone else, the rest of this article is enough.
 
 ---
 
