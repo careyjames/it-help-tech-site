@@ -4,7 +4,7 @@ Auto-generates `llms-full.txt` from `content/*.md` so it never drifts from the l
 
 ## Why this exists
 
-`llms-full.txt` is a long-form, plain-text mirror of the site for AI/LLM crawlers. Before this generator, it was hand-maintained in `static/llms-full.txt` and drifted badly: in the most recent audit it listed 5 old service pillars when the live page had 7 new ones, and was missing 13+ vendor recommendations. Hand-maintenance does not scale at the editing cadence we run.
+`llms-full.txt` is a long-form, plain-text mirror of the site for AI/LLM crawlers. Before this generator, it was hand-maintained in `static/llms-full.txt` and drifted badly: at the time the generator was introduced it listed 5 old service pillars when the live page had 7 new ones, and was missing 13+ vendor recommendations. Hand-maintenance did not scale at the editing cadence we run, so the static copy was deleted in Phase C and the generator is now the sole source.
 
 ## How it works
 
@@ -23,7 +23,22 @@ node infra/llms/build-llms-full.mjs --dry-run
 
 # Write to build/llms-full.txt:
 node infra/llms/build-llms-full.mjs
+
+# Convenience preview (regenerate + show stats + first 60 lines):
+scripts/preview-llms-full.sh
+
+# Same, but cat the full file:
+scripts/preview-llms-full.sh --full
+
+# Same, but diff against the previous run:
+scripts/preview-llms-full.sh --diff
 ```
+
+`zola serve` cannot serve `/llms-full.txt` locally — `static/llms-full.txt`
+was deleted in Phase C and must not be reintroduced (see Phase C above and
+the LLM/bot files note in `AGENTS.md`). Use `scripts/preview-llms-full.sh`
+to inspect the generator output instead. On deploy the file is uploaded
+directly from `build/llms-full.txt` to S3.
 
 ## Config: `llms-full.config.json`
 
@@ -51,13 +66,13 @@ If a content author wants the LLM-facing label to differ from the page `<title>`
 | Same step fails with `duplicate label in config: …` or `duplicate URL in config: …` | Two entries collide | Rename one of the labels, or remove the duplicate entry. |
 | Same step warns `stripped N unrecognized HTML tag(s)` but doesn't fail | A page added an HTML construct the conservative stripper doesn't know about | Inspect `build/llms-full.txt` (or the PR validation artifact) to confirm output is acceptable. Extend the recognized-tag list in `transformBody()` if needed. |
 | `llms-full.txt` on production looks stale 1+ hour after deploy | CloudFront edge cache | Cache-control is `max-age=3600`; wait an hour or invalidate `/llms-full.txt` via CloudFront. |
-| Need to roll back to the prior hand-maintained file | Generator producing wrong output and we need a hotfix | Revert the relevant PR. Until `static/llms-full.txt` is removed (Phase C of rollout), reverting also restores the hand-maintained file. |
+| Need to roll back to the prior hand-maintained file | Generator producing wrong output and we need a hotfix | Revert the PR that introduced the bad config/generator change, OR temporarily restore a known-good `build/llms-full.txt` to the deploy artifact. The hand-maintained `static/llms-full.txt` no longer exists (Phase C complete) — `git show` an earlier commit if you need a reference copy. |
 
-## Rollout plan (3 phases)
+## Rollout plan (complete)
 
-- **Phase A** (this PR): Add generator + config + PR-validate workflow + deploy.yml updates (output path + cache-control). `static/llms-full.txt` stays in repo as fallback. After merge, deploy proves the generator works against current production.
-- **Phase B**: Inspect generator output vs current `static/llms-full.txt`, tune config/labels until parity is good or deliberate-improvement is achieved. Document any intentional differences.
-- **Phase C**: Delete `static/llms-full.txt` from repo. Generator becomes sole source of truth.
+- **Phase A** (PR #549): Added generator + config + PR-validate workflow + deploy.yml updates (output path + cache-control). `static/llms-full.txt` stayed in repo as fallback. Deploy proved the generator works against production.
+- **Phase B**: Inspected generator output vs the prior hand-maintained file, tuned config/labels until parity was satisfactory.
+- **Phase C** (PR #622): Deleted `static/llms-full.txt`. Generator is now the sole source of truth for `/llms-full.txt`.
 
 ## Known limitations
 

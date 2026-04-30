@@ -344,7 +344,7 @@ extra:
       "name": "Managed Agent (Opt-In, $50/Device)",
       "serviceType": "Managed Endpoint Service",
       "provider": { "@id": "https://www.it-help.tech/#business" },
-      "description": "Optional month-to-month device maintenance and security layer powered by ManageEngine Endpoint Central Cloud — Security Edition. $50 per device per month, no managed service contracts.",
+      "description": "Optional month-to-month device maintenance and security layer powered by ManageEngine Endpoint Central Cloud — Security Edition. $50 per device per month, no managed-service contracts.",
       "url": "https://www.it-help.tech/services/#managed-agent"
     }
   ]
@@ -410,7 +410,7 @@ macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientifi
 
 ## Managed Agent (Opt-In, $50 per Device) {#managed-agent}
 
-An optional month-to-month maintenance and security layer that keeps your devices current between consulting sessions — across macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS. $50 per device per month, no managed service contracts.
+An optional month-to-month maintenance and security layer that keeps your devices current between consulting sessions — across macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS. $50 per device per month, no managed-service contracts.
 
 Once enrolled, the agent handles automated OS updates and application patching, security policy enforcement, centralized device visibility, and remote support access. The goal: spend live consulting time on actual problems, not routine maintenance.
 

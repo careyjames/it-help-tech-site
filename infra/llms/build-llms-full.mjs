@@ -159,6 +159,44 @@ function transformBody(body, filePath) {
   s = stripUntilStable(s, /<!--[\s\S]*?-->/g);
   s = stripTagPair(s, "svg");
 
+  // 2d. Resolve Zola/Tera shortcodes that survived to here.
+  //     Only `{{ picture(...) }}` is currently used in content/, but the
+  //     strip is generic so that any new shortcode (audio, video, etc.)
+  //     doesn't leak verbatim into the LLM-facing output. For picture/
+  //     image/img we emit "[Image: alt]" so the alt text — the meaningful
+  //     content for an LLM — is preserved. Other shortcodes are stripped
+  //     with a warning so a future regression surfaces in the build log.
+  //     Tera statement tags `{% ... %}` are stripped unconditionally (none
+  //     in the current corpus). Runs AFTER JSON-LD/script stripping so any
+  //     `{{ page.url }}` inside JSON-LD is already gone (and wouldn't match
+  //     this regex anyway since it has no parens).
+  //
+  //     Both Tera whitespace-control forms (`{{- ... -}}` and `{%- ... -%}`)
+  //     and both quote styles for the alt attribute (`alt="..."` and
+  //     `alt='...'`) are handled — the corpus today only uses the plain
+  //     forms with double quotes, but the generic claim ("doesn't leak
+  //     verbatim") would otherwise be false for new authors using either
+  //     variant.
+  s = s.replace(/\{\{-?\s*([a-z_]\w*)\s*\(([\s\S]*?)\)\s*-?\}\}/gi, (_match, name, args) => {
+    const lname = name.toLowerCase();
+    if (lname === "picture" || lname === "image" || lname === "img") {
+      // Try double-quoted alt first, then single-quoted. Both support the
+      // standard backslash-escape form. Whichever matches first wins.
+      const dq = args.match(/\balt\s*=\s*"((?:[^"\\]|\\.)*)"/);
+      const sq = !dq && args.match(/\balt\s*=\s*'((?:[^'\\]|\\.)*)'/);
+      const altRaw = dq ? dq[1] : sq ? sq[1] : null;
+      if (altRaw !== null) {
+        const alt = altRaw.replace(/\\(["'\\])/g, "$1");
+        return `[Image: ${alt}]`;
+      }
+      warn(`${filePath}: ${lname}() shortcode without alt attribute; stripping`);
+      return "";
+    }
+    warn(`${filePath}: unknown shortcode '${lname}()' stripped (extend transformBody if it carries LLM-relevant text)`);
+    return "";
+  });
+  s = stripUntilStable(s, /\{%-?[\s\S]*?-?%\}/g);
+
   // 3. Normalize <br> and </p> to line breaks.
   s = s.replace(/<br\s*\/?>/gi, "\n");
   s = s.replace(/<\/p>/gi, "\n");

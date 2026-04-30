@@ -28,3 +28,6 @@ sub3_diff.patch
 
 # llms-full.txt generator output (regenerated in CI; see infra/llms/README.md)
 build/
+
+# Local build-review snapshots (one-off audit dumps; deploy uses public/, not this)
+build-review/
