@@ -143,7 +143,7 @@ When something actually breaks, you escalate by cost:
 - **A real problem that needs a senior person:** call me. That is what the hourly rate is for.
 - **Not sure who you need:** call me for ten minutes. That is a long conversation, and we can usually figure it out together. I will send you in the right direction even if I am not the one who should be doing the work — because for that work I am too expensive.
 
-Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to 27+ years of depth most IT generalists do not have.
+Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to the depth that 27 years of this work builds.
 
 The [DNS tool](/dns-tool/) and the [field notes](/field-notes/) are the public version of how deep this work goes. Average IT does not go that deep on how the actual internet works. That depth is what you are buying when you call, and it is why you do not need to buy it monthly.
 
