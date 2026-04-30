@@ -1,4 +1,11 @@
+<<<<<<<< HEAD:build-review/robots.txt
 
+========
+{%- if config.extra.dev %}
+User-Agent: *
+Disallow: /
+{%- else %}
+>>>>>>>> 1c2ba33 (fix(seo): override theme robots.txt; hyphenate "managed-service contracts"; billing OG title):templates/robots.txt
 # Default: allow all crawlers
 User-agent: *
 Allow: /
@@ -35,4 +42,5 @@ User-agent: AhrefsBot
 User-agent: AhrefsSiteAudit
 Allow: /
 
-Sitemap: https://www.it-help.tech/sitemap.xml
+Sitemap: {{ get_url(path="sitemap.xml", trailing_slash=false) }}
+{%- endif %}

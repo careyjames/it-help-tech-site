@@ -146,7 +146,6 @@ When something actually breaks, you escalate by cost:
 Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to the depth that 27 years of this work builds.
 
 The [DNS tool](/dns-tool/) and the [field notes](/field-notes/) are the public version of how deep this work goes. Average IT does not go that deep on how the actual internet works. That depth is what you are buying when you call, and it is why you do not need to buy it monthly.
-
 ## Why $50/device/month is not unlimited support
 
 There is also a hard internal cost: the management portal itself has a current floor of about $300/month with a 26-device minimum. That is why the $50/device price has to stay tightly scoped.
