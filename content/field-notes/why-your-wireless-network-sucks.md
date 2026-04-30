@@ -19,7 +19,7 @@ extra:
 
 Slow Wi-Fi is rarely a router problem. It is almost always a chain problem — and the chain has a physics layer underneath it that explains exactly why each wireless hop without a wired backhaul degrades like a photocopy of a photocopy. This guide names that physics, then walks through what an Ethernet backbone, proper cabling, and modern Wi-Fi 6/7 actually fix.
 
-### TL;DR
+## TL;DR
 Each wireless extender or mesh node *without a wired backhaul* shares one half-duplex radio between talking to the upstream access point and talking to your device. The IEEE 802.11 medium access protocol (CSMA/CA) cannot do both at full speed simultaneously, so per-hop usable throughput is roughly halved, and noise plus retransmits compound the loss [^1][^2]. After two relayed hops you are typically at ~25% of nominal; after three, ~12.5%. That is the "copy of a copy" problem expressed in physics. The fix is an Ethernet backbone — Cat6A or Cat8 cable feeding access points so the radio's airtime is spent on *you*, not on relaying its own backhaul. Modern Wi-Fi 6/7 with proper wired backhaul (for example, a Ubiquiti Dream Machine plus U7-class APs on Cat6A) does soften the older "always halve" rule when deployed correctly, and the section below names that honestly. Specialized environments — mine rescue, military operations — solve wireless backhaul with leaky-feeder cable systems and dedicated MANET radios, not consumer 802.11 gear from a big-box store. Tracking the gap between speed paid for and speed actually delivered to the endpoint has been my discipline for fifteen years (out of 27+ in IT overall), and the work below is the engineering that makes it possible.
 
 ---
