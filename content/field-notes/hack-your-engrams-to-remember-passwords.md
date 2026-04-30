@@ -17,7 +17,7 @@ extra:
   canonical_url: "https://www.it-help.tech/field-notes/hack-your-engrams-to-remember-passwords/"
 ---
 
-### TL;DR
+## TL;DR
 Most password advice optimizes against attackers on a network. This note is about a different adversary: the person who already loves and trusts you, standing two feet behind your laptop. A passphrase loaded with imagery you would *never* let them see you type acts as a behavioral interlock — you stop, you cover, you wait — and the same emotional load makes it dramatically easier to recall. The neuroscience of emotional memory consolidation is well established; we are just applying it on purpose.
 
 Example: `DidYourBro4Times!`

@@ -18,7 +18,7 @@ extra:
   canonical_url: "https://www.it-help.tech/field-notes/mac-cybersecurity-threats/"
 ---
 
-### TL;DR
+## TL;DR
 
 Apple's built-in stack on a current Mac is genuinely good. **XProtect** (signature scan), **XProtect Remediator** (background remediation), **Gatekeeper** (code-signing enforcement), and **Notarization** (Apple-side malware scan of every distributed binary) together stop the overwhelming majority of commodity malware before it ever touches user data [^1]. The myth that Macs are immune is wrong; the inverted myth that Apple ships a defenseless OS is also wrong. The real threats are narrower and more interesting: WebKit memory-corruption chains exploited by state-grade spyware (the **FORCEDENTRY** case is the canonical primary-source example) [^2][^3], adware and potentially-unwanted programs (PUPs) that Apple's stack tolerates because they are technically "valid" software, social engineering, and the persistent network-egress problem — software you trusted at install time talking to places you didn't authorize.
 

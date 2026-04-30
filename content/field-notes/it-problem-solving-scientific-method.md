@@ -20,7 +20,7 @@ extra:
 
 In my [IT consulting work](/services/), my PhD clients have always told me that I naturally follow a process like the scientific method when solving complex technical problems. I may not wear a lab coat, but the way I tackle IT issues is essentially scientific. By approaching problems in a structured, evidence-based way — aligned with [my commitment to ethical service](/about/) — I produce solutions that are reliable rather than lucky. Below, I walk through how each stage of the classic scientific method translates into IT troubleshooting, with a few personal tweaks for the consulting world and explicit pointers to the bodies of work this method is borrowed from.
 
-### TL;DR
+## TL;DR
 IT troubleshooting fails for two intertwined reasons: gaps in the troubleshooter's knowledge of the system, and *diagnostic-reasoning* failures of exactly the kind well documented in clinical medicine — anchoring, confirmation bias, premature closure, search satisficing. The seven steps below are not bureaucracy. They are cognitive forcing functions — adapted from the philosophy of science (Popper, Peirce, Hempel), from the medical diagnostic-error literature (Croskerry, Norman), and from the operational software traditions of postmortem analysis (Google SRE) and complex-system incident response (Allspaw / SNAFUcatchers) — designed to slow you down enough to notice the gaps and work around the biases. Wearing the discipline takes more time than seat-of-the-pants guessing for the first ten minutes and far less time after that.
 
 ---

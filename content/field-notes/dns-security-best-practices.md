@@ -22,7 +22,7 @@ extra:
 
 This guide explains how to configure and verify DNS email security controls so you can reduce spoofing, phishing, and business email compromise risk with defensible evidence — citing the IETF RFCs and federal guidance each control derives from.
 
-### TL;DR
+## TL;DR
 Email-authentication failures are rarely failures of *missing* records. They are failures of misinterpreting what the records actually enforce. The robust modern configuration for an active sending domain is **SPF `~all` + DKIM (2048-bit) + DMARC `p=reject`**, layered with **MTA-STS, TLS-RPT, and DANE** at the transport tier and **DNSSEC** beneath. Each control is defined by a specific IETF RFC, and the most common operational error — using SPF `-all` "for safety" — is explicitly warned against in RFC 7489 §10.1 because it can short-circuit DMARC. The sections below walk through what each control actually does, what threat it actually defends against, and how to validate behavior rather than just record presence.
 
 ---
