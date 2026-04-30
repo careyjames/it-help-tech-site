@@ -286,14 +286,6 @@ For the underlying hourly consulting rates, travel policy, payment terms, schedu
     },
     {
       "@type": "Question",
-      "name": "Is the Managed Agent a contract?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The Managed Agent is month-to-month with no managed-service contract. Enrollment means agreement to baseline security controls where the platform supports them; cancellation is on notice."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "But my CFO wants a fixed monthly number — what do I tell them?",
       "acceptedAnswer": {
         "@type": "Answer",
