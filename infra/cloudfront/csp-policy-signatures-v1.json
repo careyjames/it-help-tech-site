@@ -25,7 +25,7 @@
       "Override": true
     },
     "ContentSecurityPolicy": {
-      "ContentSecurityPolicy": "default-src 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-7C9dOfsnraKSwMhpGpwKO1wi0jO9caXq7o7zs9hIss0='; connect-src 'self'; media-src 'self'; manifest-src 'self'; upgrade-insecure-requests",
+      "ContentSecurityPolicy": "default-src 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; worker-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-7C9dOfsnraKSwMhpGpwKO1wi0jO9caXq7o7zs9hIss0='; connect-src 'self'; media-src 'self'; manifest-src 'self'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests",
       "Override": true
     }
   },
@@ -35,8 +35,23 @@
         "Header": "Permissions-Policy",
         "Value": "interest-cohort=(), accelerometer=(), ambient-light-sensor=(), battery=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), storage-access=(), sync-xhr=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()",
         "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Opener-Policy",
+        "Value": "same-origin",
+        "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Resource-Policy",
+        "Value": "same-origin",
+        "Override": true
+      },
+      {
+        "Header": "Cross-Origin-Embedder-Policy",
+        "Value": "credentialless",
+        "Override": true
       }
     ],
-    "Quantity": 1
+    "Quantity": 4
   }
 }

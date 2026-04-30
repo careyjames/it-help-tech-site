@@ -94,14 +94,20 @@ jobs:
           cp -r static/images public/
           cp static/ithelp-logo-sig-seablue.html static/ithelp-logo-sig-gold.html static/ithelp-anilogo.html static/red-plus.ico static/bimi-logo.svg public/
 
-      - name: Verify no external subresources (advisory)
-        # Was the COEP require-corp safety net (Sub-4-bis). COEP was rolled back
-        # because Safari blocks the page under require-corp when same-origin S3
-        # assets do not carry per-asset CORP headers (CloudFront response-headers
-        # policy only attaches to the document, not the S3-served assets).
-        # Kept as an advisory check so future external embeds get flagged in the
-        # build log even though they no longer break security headers.
-        # See PROJECT_EVOLUTION_LOG.md (2026-04-17 Hotfix · Revert COEP).
+      - name: Verify no external subresources (security-relevant)
+        # Original COEP require-corp safety net (Sub-4-bis). require-corp was
+        # rolled back on 2026-04-17 because Safari blocked the page under that
+        # value when same-origin S3 assets lacked per-asset CORP headers
+        # (CloudFront response-headers policy only attaches to the document,
+        # not to S3-served assets).
+        # 2026-04-30: COEP returned as `credentialless`, which does NOT impose
+        # the per-asset CORP requirement on same-origin requests, so the
+        # Safari incident is sidestepped. credentialless DOES strip credentials
+        # from cross-origin requests though — so this gate is once again
+        # security-relevant: any new cross-origin asset that needs credentials
+        # would silently fail. Keep failing the build (or at minimum loudly
+        # flagging) when the count is non-zero. See PROJECT_EVOLUTION_LOG.md
+        # (2026-04-17 Hotfix · Revert COEP, 2026-04-30 COEP credentialless).
         run: ./scripts/check-no-external-subresources.sh
 
       - name: Update CloudFront signature-pages security headers policy (CSP)
