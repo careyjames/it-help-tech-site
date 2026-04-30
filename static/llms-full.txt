@@ -1,183 +1,467 @@
 # IT Help San Diego Inc.
 
-> Expert Apple IT support in San Diego for homes and businesses. No monthly retainers!
+> Expert Apple IT support in San Diego for homes and businesses. No monthly retainers.
 
 ## Main
 
-### <img alt="IT Help San Diego" class="logo logo-dark" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356> <img alt="IT Help San Diego" class="logo logo-light" decoding=async height=48 src=https://www.it-help.tech/bimi-logo.svg width=356>
+### IT Help San Diego
 
-Source: [https://www.it-help.tech](https://www.it-help.tech)
+Source: [https://www.it-help.tech/](https://www.it-help.tech/)
 
-# Expert Mac IT Support
+We solve tech problems.
+No monthly retainers.
 
-La Jolla and San Diego’s Apple‑centric IT and deep-research diagnostics shop. 27+ years across systems, networks, DNS, and email security. Mac and iOS first, with Unix, Linux, and Windows — a system is a system. We fix macOS/iOS issues, eliminate Wi‑Fi dead zones, boost security, and ensure email delivery (SPF/DKIM/DMARC) — on‑site, in‑home, or at our La Jolla office by appointment. No hardware sales, no monthly retainers. Clear answers & discreet service. [(619) 853‑5008](tel:16198535008)
+Apple-centric IT, deep-research diagnostics, systems & networks — La Jolla concierge for greater San Diego.
 
-[Read Verified Reviews](https://8750b1ff89054a2b8a27550322e2ed7c.elf.site)
+[Book an On‑Site Visit](https://schedule.it-help.tech/)
 
-## Custom Solutions That Work for You
+[See Our Research](https://dnstool.it-help.tech)
 
-Our premium, concierge-level on-site service is designed for individuals, executives, business owners, and anyone who values precision, discretion, and results. With over 27 years of experience supporting high-profile clients in the entertainment, legal, restaurant, and medical fields, we bring the technical depth and professionalism to solve your problem correctly the first time. We listen closely and implement solutions that are proven to work effectively, tailored to your specific needs.
+#### What we do
 
-## Core Expertise
+##### [Mac & Apple Ecosystem](/services/#mac)
+macOS, iOS, iCloud, and Apple Mail diagnosed at the system level. Storage, sync, performance, and migration handled correctly the first time. [Learn more →](/services/#mac)
 
-We can tackle a vast array of IT challenges and are highly comfortable using the terminal and the command line.  
- Our key areas of deep expertise include:
+##### [Cross-Platform Systems Engineering](/services/#cross-platform)
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. From shell scripts to file servers to mixed-OS environments, we engage the problem, not the logo. [Learn more →](/services/#cross-platform)
 
-### [macOS System & Application Support](/services/#macos-system)
+##### [Wi‑Fi & Network Engineering](/services/#wifi)
+Bespoke wireless and wired networks for large homes, estates, and small offices. Cat6A/Cat8/fiber backbones, mesh design, and dead-zone elimination using measured RF data, not guesswork. [Learn more →](/services/#wifi)
 
-We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+##### [Email Deliverability & DNS Forensics](/services/#dns-email)
+We rescue email from spam folders by aligning SPF, DKIM, and DMARC against the actual sending surface — including SPF macro expansion checked against RFC 7208 §7.4. [Learn more →](/services/#dns-email)
 
-### [Network Infrastructure & WiFi Troubleshooting](/services/#network-wifi)
+#### How we work
 
-Spend more time at the beach, not fighting your WiFi. Specializing in large luxury homes and offices with extensive networking and WiFi needs. We design and implement bespoke high-performance WiFi networks for large La Jolla estates, modern Del Mar residences, and smart homes throughout San Diego.
+    {{ picture(base="/images/onsite", alt="IT Help San Diego technician arriving on-site at a La Jolla coastal small business, branded polo and diagnostic kit in hand, ocean and palms in the background.") }}
 
-### [Advanced Email, Domain, & DNS Solutions](/services/#email-domain-dns)
+On-site across San Diego — La Jolla concierge for greater San Diego. We arrive with scientific diagnostic equipment. IT Support at your location. macOS, iOS, Windows, Linux, systems troubleshooting, network builds, Wi-Fi, security hardening, system migrations — handled in person at your home or office in the greater San Diego area.
 
-Struggling with Email deliverability, domain security, or complex DNS configurations? We ensure these critical systems run flawlessly, helping you migrate to modern platforms like Google Workspace, so you can focus on your business. We diagnose and resolve deep-seated Email issues, rescuing your messages from spam folders and ensuring reliable delivery.
+    {{ picture(base="/images/remote", alt="Secure Remote IT Session workspace overlooking the Pacific: laptop with the IT Help San Diego brand on screen, branded mug, notebook, and a coastal La Jolla view.") }}
 
-### [Cybersecurity & Ethical Screen Sharing](/services/#cybersecurity)
+Secure Remote IT Sessions — Encrypted screen sharing for macOS, iOS, iPadOS, Linux, Windows, and Android. Professional remote assistance for troubleshooting and resolving technical issues. Connect with an expert via phone and screen-sharing for efficient problem-solving.
 
-We provide robust Mac defenses against viruses, Email phishing, browser blocks, and more, providing powerful tools to reduce risks and enhance your digital security. We can help secure your endpoints (macOS, Windows, Linux) and advise on best practices for mobile device security.
+    {{ picture(base="/images/lajolla-office", alt="888 Prospect Street office building in La Jolla village, where IT Help San Diego meets clients by appointment, steps from village hotels and restaurants.") }}
 
-* **Ethical Screen Sharing:** We adhere to the highest security and ethical standards. For all screen-sharing sessions, **you, the client, always initiate and approve access**. We never access your systems “behind your back."
+La Jolla Office — Bring devices to the Prospect Street office in La Jolla, by appointment only — steps from the village hotels and restaurants. Bring your Mac, iPhone, iPad, or Windows laptop, and we'll work through it together. Same consulting, same expertise, no trip fee. Ideal if you're local and prefer to come to us, visiting from out of town, or just want a face-to-face session without scheduling a house call.
 
-### [Specialized Data Extraction Services](/services/#data-discovery)
+#### Trust signals
 
-* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals.
+- **27+ years** in the field, across macOS, Linux, Windows, network architecture, and DNS.
+- **High-profile clients** in entertainment, legal, restaurant, and medical sectors. Discretion comes standard; logos do not.
+- **A+ DNS posture** on our own infrastructure — the same standards we apply to client domains.
 
-## Why Choose IT Help San Diego?
+#### The Method
 
-* **Unwavering Integrity:** We are committed to honesty and neutrality, continually striving to deliver best-in-class tech support practices.
-* **Expertise You Can Trust:** Our team stays updated with the latest trends and solutions to provide you with reliable support.
-* **Flexible & Responsive Support:** While appointments are standard, we are equipped to deploy on-site and assist quickly when availability permits, or assist via secure screen sharing and other remote tools.
+**Deep-research diagnostics** — the principle is simple: we measure before we fix. A doctor runs labs before prescribing; we read the evidence the system is already producing before we touch a config.
 
-## Frequently Asked Questions
+Most IT support pattern-matches symptoms to the usual fix and hopes it sticks. We start one step earlier: capture the primary evidence — packet traces, mail headers, DNS responses, system logs, RF readings — and reason from there. The fix is whatever the evidence demands, not whatever the script says.
 
-### Can you help with PC, Linux, or mixed computer environments?
+If you've ever called for tech support and bounced through tiers trying to reach someone who could both understand the problem and actually fix it, you already know why this matters. The diagnostic step is the part that gets skipped — and it's the part that decides whether the fix holds.
 
-Absolutely! Our primary expertise lies with **macOS and iOS support**, and we excel at troubleshooting for these platforms, including **secure screen sharing directly with iPhones and iPads**. We also possess a deep understanding of Linux and Windows systems, enabling us to support a diverse range of technical environments effectively.
+**A few working examples.**
 
-### How is your service different from a Managed Service Provider (MSP)?
+**Computer running slow.** The off-the-shelf answer is "you need a new computer," or a monthly "PC speed-up" subscription. The evidence-led answer is to open the system's task monitor — Activity Monitor on a Mac, Task Manager on a PC — and look at what's actually running. Usually it's a forgotten cloud-backup tool from three years ago pegging the disk, or a browser extension chewing through memory. Uninstall it, the computer is fast again.
 
-We take a different approach focused on transparency and on-demand support. Unlike many MSPs that lock clients into fixed monthly fees regardless of usage, **we believe you should only pay for IT help when needed.** There are no long-term contracts or arbitrary retainers with us – just fair, transparent billing for actual work performed. Think of it as having an elite IT team on call: we can essentially become part of your team on an as-needed basis. This flexible model saves you money and builds trust. Our goal is to resolve issues efficiently and effectively. We offer high-touch, on-demand IT support as an ethical alternative to the traditional MSP model.
+**Printer that "stops working" every few weeks.** The off-the-shelf answer is "time for a new printer," or worse, a managed-print contract. The evidence-led answer is to read the printer's own log: it's losing its IP every time the router reboots overnight. While we're in there, we usually find the alarm panel, the cameras, the access control, and the VoIP phones all hardcoded with static IPs that were chosen by hand at install time — a recipe for silent collisions when something else on the network grabs the same address. The right pattern is usually the opposite: leave devices on DHCP and reserve their addresses by MAC at the router. Set once, no more address fights.
 
-### Do you service physical device damage?
+**Slow Wi-Fi.** The off-the-shelf answer is whatever the recommendation was — almost always a mesh kit. Mesh without a wired backbone is a workaround for not having infrastructure: each node repeats the signal of the node before it, sharing the same airspace and stepping on its own broadcast. Sometimes the fix really is simple — your router lives in a closet behind a metal filing cabinet and moving it twelve feet solves it. More often, the real fix is to do it right once: pull actual Ethernet to the spots wireless needs to live, and feed each access point with a wire. Wires are what make wireless excellent.
 
-**No — we work on operating systems, software, networking, and data security, not physical device damage.** For existing clients who need a new device, **we offer a concierge replacement:** we pick up a factory-fresh iPhone from Apple, meet you on-site, and migrate your data while you watch. Your phone never leaves your side, so your contacts and sensitive info stay shielded from prying eyes. For physical-screen work, we refer you to a vetted local technician.
+**Email going to customers' spam folders.** The off-the-shelf answer is to sign up for a deliverability service or an inbox "warm-up" subscription. The evidence-led answer is to look at what's actually sending mail in your name: usually it's an old appointment-reminder app, or an invoicing tool from three providers ago, that was never properly authorized at the DNS level when it was added. Authorize the ones you still use, shut off the ones you don't, and mail lands. One afternoon of cleanup, no recurring fee.
+
+The same instinct produced our public DNS research platform at [dnstool.it-help.tech](https://dnstool.it-help.tech), where we publish what we learn from the wire. [Read the published science →](https://doi.org/10.5281/zenodo.19468134)
+
+#### Local credibility
+
+Office (by appointment): 888 Prospect Street Suite 200, La Jolla, CA 92037 • [Google Maps](https://maps.app.goo.gl/hXw49HPZZkWU7s5E9)
+
+Service area: San Diego County, including La Jolla, Del Mar, and greater San Diego.
+
+Phone: [(619) 853‑5008](tel:16198535008)
+
+[Book an On-Site Visit](https://schedule.it-help.tech/)
 
 ---
 
-Tired of paying for a month of IT service when nothing happened? Ready to make your tech problems disappear?
-
-[Book an On-Site Visit Now](https://schedule.it-help.tech/)
-
 ### Pricing
 
-Source: [https://www.it-help.tech/billing](https://www.it-help.tech/billing)
+Source: [https://www.it-help.tech/billing/](https://www.it-help.tech/billing/)
 
-# Rates & Billing Policies
+Clear, transparent IT consulting. **No prepaid labor retainers. No managed-service contracts.**
 
-We follow clear policies for our IT support services. **No monthly retainers!**
+An optional **[Managed Agent](/managed-agent/)** device-maintenance and security layer is available month-to-month at **$50 per enrolled device per month**, separate from live consulting work. The math, the scope, and the billing boundary are visible before enrollment.
 
-## IT Consulting & Support Rate
+#### IT Consulting & Support Rates
 
-* **Base Rate:** $275 per hour.
-* **Specialty Rate:** $400 per hour for select networking and scientific engineering work. Where this applies, the client is informed before the session begins.
-* **Minimum Charge:** 1-hour minimum for on-site, 30-minute minimum for remote or phone support.
-* **Billing Increments:** We bill precisely in **1-minute increments**, based on call or session timers or time tracked for offline tasks.
-* **Travel:** Local transportation is billed at actual cost (e.g., Uber/Lyft fare) plus travel time at the standard hourly rate. As a courtesy, short local travel of 15 minutes or less each way is not billed for travel time. Travel time is measured door-to-door. Out-of-area or air travel: actual cost (transport and lodging) plus travel time, pre-approved.
+* **Base Rate:** $275 per hour
+* **Minimum Charges:**
+  * **On-site service:** 1-hour minimum (**this first hour functions as a booking deposit**)
+  * **Remote / phone / screen-sharing support:** 30-minute minimum (**booking deposit**)
+* **Billing Increments:** All work beyond the initial minimum is billed in **1-minute increments**, based on session timers and documented work.
 
-This policy covers real operational costs and ensures continued reliability.
+* **Specialty Rate:** $400/hour for advanced networking and scientific engineering engagements. Scope is defined and agreed upon during the discovery call. Work performed within that scope is billed at the specialty rate; all other services are billed at the standard rate.
 
-## Payment Policy
+For complex projects that benefit from sustained focus, primary-source research, and uninterrupted execution, see **[Full-Day & Multi-Day Engagements →](/full-day-engagements/)**.
 
-* **Method:** We require a valid credit card on file before services are rendered.
-* **Billing Cycle:** Billing occurs automatically **at the end of each session or day's work** to the authorized card on file.
-* **Terms:** We do not accept checks and do not offer net payment terms. **No card, no service, no exceptions.**
+#### Travel
 
-## Scheduling & Cancellation Policy
+Local travel is billed as follows:
 
-* **Booking:** Appointments are booked with a 30-minute minimum charge (deposit) for remote sessions, which reserves that time specifically for you.
-* **Billing:** You are only billed for the time used beyond the initial 30-minute minimum.
-* **Notice:** To reschedule or cancel without charge, please provide at least **24 hours’ notice**.
-* **Late/No-Show:** Late cancellations (less than 24 hours) or no-shows will be billed for the 30-minute minimum, as that time was held exclusively for you.
+- Transportation: billed at actual cost (e.g., Uber/Lyft).
+- Travel time: billed at the standard hourly rate, based on actual transit duration as recorded by Uber/Lyft ride receipts (pickup to drop-off only; wait time is not billed).
 
-## Quick Phone/Text/Email Support
+For local travel of 15 minutes or less each way, travel time is not billed.
+If travel exceeds 15 minutes in either direction, all travel time is billable.
 
-* Existing clients are welcome to reach out anytime.
-* We do not charge for brief communications (under 10 minutes).
-* All calls, remote sessions, or other time spent rendering services lasting more than 10 minutes are billed at our standard rate, subject to the 30-minute minimum.
+Out-of-area or extended travel is quoted or pre-approved in advance.
 
-## Privacy & Security
+Air travel is billed at actual cost (transport and lodging) plus travel time.
 
-* All client data (login credentials, network configurations, etc.) is encrypted and is NEVER shared or sold.
-* We have served high-profile, sensitive security and entertainment businesses for 27 years.
-* We have never had a data leak or spoken with paparazzi/journalists. Your trust is paramount.
+#### Booking & Payment Policy
 
-## Final Notes
+* **Booking Deposit:** Appointments are reserved only after the minimum charge is authorized:
+  * On-site: **1 hour**
+  * Remote: **30 minutes**
 
-Our expertise covers Mac, Linux, Windows, enterprise networking, and high-end tech solutions. We provide discreet cyber-security and crisis response services, backed by nearly two decades of hands-on experience.
+This deposit applies directly to the first block of service time and is **not** an extra fee.
+
+* **Payment Method:** A valid credit card is required to book services. We do not accept checks and do not offer net terms. **No card, no service — no exceptions.**
+* **How Billing Works:**
+  * Scope and estimated time are agreed upon in advance whenever practical.
+  * Charges apply only to time actively worked.
+  * Billing occurs after each completed session or day of service.
+  * Invoices clearly itemize total time worked, billing increments applied, service type (on-site or remote), and the date(s) services were performed.
+
+We do not bill recurring fees, retainers, or unattended time.
+
+#### Scheduling & Cancellation
+
+* **Cancellation / Rescheduling:** At least **24 hours’ notice** is required to avoid charges.
+* **Late Cancellations / No-Shows:** Cancellations with less than 24 hours’ notice or missed appointments are billed for the **minimum booked time**, as that time was reserved exclusively for you.
+
+#### Quick Questions & Brief Communications
+
+* Existing clients may call, text, or email at any time.
+* Unscheduled communications lasting **10 minutes or less are not billed**.
+* If an interaction exceeds 10 minutes, billing is activated for the **full duration**, subject to standard minimums (30-minute remote minimum).
+* Multiple or fragmented interactions about the same issue may be combined and treated as a **single interaction** for billing purposes.
+* Courtesy time is capped at **10 minutes per issue within any 24-hour period** — so you can run something by us without fear of being billed.
+* The same 10-minute courtesy lane applies to clients enrolled in the [Managed Agent](/managed-agent/) device-maintenance layer.
+
+#### Privacy, Security & Ethics
+
+* All client data is encrypted and never shared or sold.
+* We have served high-profile and security-sensitive clients for over 27 years.
+* We have never had a data leak and never speak with media or third parties.
+
+##### Business Ethics — Carey’s Promise
+
+We sell time (research, analysis, execution), not products.
+No affiliate commissions. No kickbacks. No hidden incentives.
+
+We do not accept referral payments. Vendors occasionally offer compensation for directing clients to services (e.g., data recovery providers). We decline. Recommendations are made solely on technical merit and verified performance.
+
+Pay-to-play incentives — including referral commissions and locked distributor agreements where service providers are restricted to a single vendor ecosystem — distort outcomes, degrade trust, and undermine the integrity of technical decision-making. In many cases, this results in suboptimal equipment being deployed regardless of better-performing or more appropriate alternatives.
+
+All recommendations are grounded in verifiable data so clients can make informed decisions. Transparency and long-term reliability come first.
+
+#### Final Notes
+
+IT Help San Diego provides expert support across Mac, Linux, Windows, enterprise networking, cybersecurity, and crisis-response scenarios.
+
+No retainers.
+No managed-service contracts.
+Clear billing, agreed work, documented time.
 
 YOUR TECH PROBLEMS ARE ABOUT TO DISAPPEAR. 🚀
 
+---
+
+### Managed Agent
+
+Source: [https://www.it-help.tech/managed-agent/](https://www.it-help.tech/managed-agent/)
+
+**$50 per enrolled device per month. Month-to-month. No MSP contract. Live work is separate.**
+
+#### Core premise
+
+Small businesses should not have to prepay a vague monthly IT retainer just to access high-quality support. Routine maintenance should be inexpensive and explicit. Premium senior support should be paid for only when it is actually needed.
+
+The Managed Agent is the maintenance and security layer. The live service I sell is my professional time.
+
+#### What this document proves
+
+- The client is buying a recurring device maintenance and security layer, not an unlimited support contract.
+- The device fee keeps enrolled devices updated, policy-managed, visible, and support-ready between consulting sessions.
+- Brief advisory calls up to 10 minutes are no-charge so a client can ask whether something matters without fear of instantly triggering a bill.
+- Troubleshooting, user support, consulting, recovery, incident work, research, configuration, documentation, and interactions beyond 10 minutes are billed at the standard hourly rate.
+- The math is visible before enrollment. That is the ethical point.
+
+**One-sentence client explanation:** Routine maintenance stays inexpensive; premium senior support is paid for only when actual work is needed.
+
+#### The public example: a small restaurant facing opaque IT billing
+
+Source: Reddit r/sandiego thread, **["Best San Diego IT support?"](https://www.reddit.com/r/sandiego/comments/o6m0nc/best_san_diego_it_support/)**
+
+This public thread is a current example of the same failure pattern I saw nearly two decades ago, and it is why I built my model differently.
+
+The post describes a Gaslamp-area Mexican restaurant owner dealing with the modern restaurant technology stack: POS systems, internet service, security systems, digital ordering, delivery platforms, and support lines that were not solving the operational problem. This is not a tech company. It is a small business that needs systems to keep working and needs to understand what it is paying for.
+
+According to the post, the owner was paying **$1,850 per month** for IT support. They said that for six months they had no issue and, from their perspective, the provider did not have to work for them. Then the restaurant internet went down after a firewall failure. The provider came to the restaurant, replaced the firewall, worked **six hours**, and charged **$1,410** on top of the **$1,850** monthly fee. The owner asked whether that was normal.
+
+**Neutrality note:** This example is used solely to illustrate the mathematical contrast between a bundled-retainer model and a per-device model. No claim is made about the quality of that provider's work or the validity of any specific charge. The agreement, scope, hardware cost, warranty status, travel, after-hours status, and service terms are unknown. The $1,410 bill may have included legitimate hardware, materials, configuration, travel, replacement work, or other valid labor. The narrower and stronger point: the client did not clearly understand what the monthly fee bought, what it excluded, and why a major event still produced another bill.
+
+The comments under the thread reinforce the same issue. One commenter explained that a managed-service agreement may bill monthly whether or not time is used, and that materials and related labor may still be separate. Another noted that $1,850 per month is roughly a $22,000 annual spend and could be cheaper than hiring an employee. Both observations point to the same requirement: the scope must be explicit before something breaks.
+
+The problem is not that every MSP is bad. The problem is ambiguity: a vague monthly IT bundle creates distrust when the client later discovers that hardware, infrastructure, emergency work, or incident labor may still be billed separately.
+
+#### The different model: a device layer plus actual time when needed
+
+My model removes the ambiguity by separating maintenance from live work.
+
+**The billing rule:** I do not sell a vague IT bundle or a prepaid labor contract. The Managed Agent subscription keeps enrolled devices maintained, secure, visible, and support-ready. If you do not request live work and no separate event occurs, the only recurring bill is the enrolled-device fee.
+
+When you actually need senior support, you pay for senior support. If you do not need my time, there is no live-support bill.
+
+**Managed Agent rate:** $50 per enrolled device per month. Month-to-month. No managed-service contract.
+
+Supported enrolled devices can include **macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS/Chromebook**. Feature depth varies by platform and enrollment method.
+
+##### What the device fee buys
+
+- Automated OS updates and desktop application patching where supported.
+- Security policy enforcement and centralized visibility.
+- Inventory, update status, risk visibility, and grouped actions.
+- Remote-support readiness on supported enrolled devices.
+- Routine portal review and ordinary management actions.
+
+##### What remains separately billed
+
+- Live troubleshooting, user support, consulting, and configuration.
+- Backup/recovery, device rebuilds, incident response, forensics, and documentation.
+- Firewall/router/network hardware, RMA handling, replacement, configuration, and testing.
+- Cloud/tenant administration, compliance, custom policy work, projects, after-hours work, and interactions beyond 10 minutes.
+
+##### The 10-minute no-bill lane
+
+Clients need to be able to call their IT company and ask whether something matters without fear of instantly creating an invoice. Brief advisory calls up to 10 minutes are no-charge. Ten minutes is long enough to describe the issue, decide whether it is real work, and choose the next step. If the conversation becomes troubleshooting, research, configuration, documentation, support, recovery, incident work, or goes beyond 10 minutes, it becomes billable work.
+
+Per the [billing policies](/billing/), courtesy time is capped at **10 minutes per issue within any 24-hour period**, so a single concern cannot be repeatedly re-raised to stay inside the no-bill window.
+
+#### The restaurant math: $1,850/month equals 37 managed devices
+
+The public thread gives a useful number: **$1,850 per month**. Under this model, that amount is not a vague support bundle. It maps directly to a device count.
+
+```text
+$1,850/month / $50/device/month = 37 managed devices
+```
+
+I do not know how many eligible devices that restaurant actually had. A restaurant can have more technology than people expect: POS stations, a back-office computer, tablets, phones, kiosks, delivery devices, and other systems. Maybe they really had a large managed environment. If they had 37 eligible endpoints, $1,850/month would equal 37 explicitly counted managed devices in my model.
+
+But a smaller restaurant may have closer to six eligible endpoints: for example, several POS stations, one tablet, and one back-office computer. In that case the Managed Agent layer would be **$300/month**, not **$1,850/month**.
+
+| Scenario | Calculation | Monthly base |
+|---|---:|---:|
+| 6 eligible devices | 6 × $50 | $300/month |
+| 37 eligible devices | 37 × $50 | $1,850/month |
+| Public example base fee | Given in thread | $1,850/month |
+
+If a six-device restaurant pays $1,850/month, that behaves like **$308.33 per device per month** before any incident bill. That is not proof that the public contract was wrong. It is proof of why my model is different: the device count, scope, and billing boundary are visible before enrollment.
+
+#### Annual proof: a 6-device restaurant, one real incident, and even 60 support hours
+
+The yearly view is the strongest proof, because quiet months are where vague retainers become expensive. Use a conservative small-restaurant example of six managed devices. The actual Reddit device count is unknown.
+
+| Annual scenario | Calculation | Yearly cost |
+|---|---:|---:|
+| Transparent base device layer | 6 devices × $50 × 12 | $3,600 |
+| Transparent year with one 6-hour incident | $3,600 + (6 × $275) | $5,250 |
+| Transparent year with incident + example $600 firewall | $5,250 + $600 | $5,850 |
+| Public example base-only year | $1,850 × 12 | $22,200 |
+| Public example incident year | $22,200 + $1,410 | $23,610 |
+
+| Comparison | Transparent model | Public example | Difference |
+|---|---:|---:|---:|
+| Incident year before hardware | $5,250 | $23,610 | $18,360 less |
+| Incident year with $600 firewall | $5,850 | $23,610 | $17,760 less |
+| 60 hours of senior support | $20,100 | $22,200 base-only | $2,100 less |
+| 60 hours + $600 firewall | $20,700 | $22,200 base-only | $1,500 less |
+| 60 hours + $600 firewall | $20,700 | $23,610 incident year | $3,910 less |
+
+**The 60-hour stress test:** For a six-device restaurant, the recurring device layer is $3,600/year. Sixty hours of senior support at $275/hour is $16,500. Add a hypothetical $600 firewall and the year is $20,700. That is still below the public example's $22,200 base-only year, and $3,910 below the public example's $23,610 incident year. This does not mean 60 hours is included. It proves the expensive part is prepaying a vague retainer during quiet months.
+
+#### Support-hour thresholds
+
+| Threshold | Calculation | Hours of senior support |
+|---|---:|---:|
+| Match $22,200 base-only spend, no hardware | ($22,200 − $3,600) / $275 | 67.6 hours |
+| Match $22,200 base-only spend, with $600 hardware | ($22,200 − $3,600 − $600) / $275 | 65.5 hours |
+| Match $23,610 incident-year spend, no hardware | ($23,610 − $3,600) / $275 | 72.8 hours |
+| Match $23,610 incident-year spend, with $600 hardware | ($23,610 − $3,600 − $600) / $275 | 70.6 hours |
+
+A six-device restaurant could use about **67.6 hours** of senior support before matching the public example's annual base fee, or about **72.8 hours** before matching the public example's incident-year spend. Even after reserving $600 for hardware, the thresholds are still about **65.5** and **70.6** hours.
+
+#### "But my CFO wants a fixed monthly number"
+
+You can have this enterprise agent — top of the food chain — cheaper than any other company would give it to you. The $50/device/month layer is the predictable line item. It does not change month to month.
+
+When something actually breaks, you escalate by cost:
+
+- **Regular Apple problems:** call Apple for free and get them answered.
+- **Mid-level work:** a local $120/hour tech can usually handle it.
+- **A real problem that needs a senior person:** call me. That is what the hourly rate is for.
+- **Not sure who you need:** call me for ten minutes. That is a long conversation, and we can usually figure it out together. I will send you in the right direction even if I am not the one who should be doing the work — because for that work I am too expensive.
+
+Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to the depth that 27 years of this work builds.
+
+The [DNS tool](/dns-tool/) and the [field notes](/field-notes/) are the public version of how deep this work goes. Average IT does not go that deep on how the actual internet works. That depth is what you are buying when you call, and it is why you do not need to buy it monthly.
+
+#### Why $50/device/month is not unlimited support
+
+There is also a hard internal cost: the management portal itself has a current floor of about $300/month with a 26-device minimum. That is why the $50/device price has to stay tightly scoped.
+
+```text
+((device count × $50) − $300 portal floor) / $275 = professional labor hours funded per month
+```
+
+| Scenario | Client revenue | After portal floor | Senior time funded | Meaning |
+|---|---:|---:|---:|---|
+| 4 devices | $200/mo | −$100 | 0 hr; loss before labor | Early/underfilled portal state. |
+| 5 devices | $250/mo | −$50 | 0 hr; loss before labor | Still below the portal floor. |
+| 6 devices | $300/mo | $0 | 0 hr | Covers about the portal floor only. |
+| 26 devices | $1,300/mo | $1,000 | 3.6 hr/mo; about 50 min/wk | Minimum buy-in filled; still very limited included labor. |
+| 37 devices | $1,850/mo | $1,550 | 5.6 hr/mo; about 1.3 hr/wk | Same base price as the public restaurant example. |
+| 50 devices | $2,500/mo | $2,200 | 8.0 hr/mo; about 1.85 hr/wk | Viable only because live work remains separate. |
+
+At 26 devices, the entire pool funds only about **3.6 hours/month** after the portal floor. At 50 devices, it funds about **8 hours/month**. That is why the price is low, but the scope must be precise.
+
+#### Device boundary: endpoint agent vs. infrastructure
+
+A restaurant has many technical assets, but not every asset is a Managed Agent endpoint. This distinction prevents the same ambiguity that causes billing disputes.
+
+| Category | Managed Agent endpoint? | Notes |
+|---|---|---|
+| Windows/macOS/Linux computers | Usually yes | Agentable when the operating system and access permit enrollment. |
+| iPhone/iPad/Android | Yes, if enrolled | MDM capability varies by supervision, OEM, OS, and enrollment method. |
+| ChromeOS/Chromebook | Yes, if enrolled | Policy, app, and OS update management; not full desktop-style remote control. |
+| POS terminals | Maybe | Only if the POS vendor and operating system permit third-party management. |
+| Payment terminals/PIN pads | Usually no | Often vendor-controlled and compliance-sensitive. |
+| Firewall/router/switch/access point | No | Network infrastructure; supportable, but not an endpoint-agent device. |
+| Cameras/NVR/DVR/printers | No by default | Supportable as infrastructure or peripherals, but not counted as Managed Agent endpoints by default. |
+
+#### Security baseline agreement
+
+- Enrollment means agreement to baseline security controls where the platform supports them.
+- Updates, patching, inventory, visibility, and policy enforcement are not optional decorations; they are the point of the service.
+- Exceptions are not default. Requested exceptions may require written risk acceptance and billable remediation.
+- A device that is offline, asleep, vendor-locked, unsupported, or not properly enrolled may not receive the same management depth.
+- This is not cyber insurance, not a guarantee against failure, and not unlimited incident response.
+
+Plain English: If you enroll a device, you are agreeing to best-practice management for that device in the ways the platform supports. If you want unmanaged devices, ignored updates, disabled controls, or unsupported exceptions, do not enroll that device in the Managed Agent layer.
+
+#### Why this platform, and why now
+
+I have tested other MDM/RMM-style tools over the years. I was not willing to sell clients a white-label tool just because it existed. This offering exists because the platform is mature enough for me to put my name on it and manage devices according to real baseline security practices.
+
+**Management platform:** ManageEngine Endpoint Central Cloud — Security Edition.
+
+ManageEngine describes Endpoint Central as a unified endpoint management and security platform for managing and securing desktops, laptops, servers, and mobile devices. Its official product materials describe centralized endpoint management, patching, remote troubleshooting, mobile-device management, and endpoint-security capabilities. Feature availability depends on edition, platform, enrollment method, and configuration.
+
+Platform limits:
+
+- Windows generally has the deepest control set.
+- macOS and Linux support depends on the exact function, OS version, permissions, and agent/enrollment state.
+- iPhone/iPad remote sessions are view-only, and forced Apple mobile OS updates require supervised enrollment.
+- Android remote control depends on supported OEM/device/enrollment.
+- ChromeOS/Chromebook support is policy, app, and OS update management rather than full desktop-style remote control.
+
+#### Final ethics statement
+
+The ethical advantage is not that the service is free or low-end. It is that the client sees the math, the scope, and the billing boundary before enrollment.
+
+The Managed Agent is a precise, low-recurring-cost maintenance and security layer. The premium service is my senior professional time, billed only when actual live work is needed. No hidden bundle. No vague all-inclusive promise. No managed-service contract.
+
+For the underlying hourly consulting rates, travel policy, payment terms, scheduling, and cancellation policy that govern live work, see [Rates & Billing](/billing/).
+
+#### Sources
+
+- Reddit public example: [reddit.com/r/sandiego/comments/o6m0nc/best_san_diego_it_support/](https://www.reddit.com/r/sandiego/comments/o6m0nc/best_san_diego_it_support/)
+- ManageEngine Endpoint Central: [manageengine.com/products/desktop-central/](https://www.manageengine.com/products/desktop-central/)
+- ManageEngine Endpoint Central Cloud: [manageengine.com/products/desktop-central/cloud/](https://www.manageengine.com/products/desktop-central/cloud/)
+- ManageEngine edition comparison: [manageengine.com/products/desktop-central/edition-comparison-matrix.html](https://www.manageengine.com/products/desktop-central/edition-comparison-matrix.html)
+
+---
+
 ### Services
 
-Source: [https://www.it-help.tech/services](https://www.it-help.tech/services)
+Source: [https://www.it-help.tech/services/](https://www.it-help.tech/services/)
 
-# On-site, In-home IT Services
+Seven service pillars, organized by the problem they solve. Across all seven, the model is the same: you bring a mission, problem, or research goal; we engage, solve it, and bill only for work performed. No retainers, no lock-in, no padded hours. This structure gives clients access to senior-level engineering when needed, without an ongoing contract.
 
-We offer specialized IT support solutions focused on robust infrastructure, advanced security, and deep-dive troubleshooting.  
-Our expertise ensures your critical systems run smoothly, securely, and efficiently.
+#### Mac & Apple Ecosystem
+System-level support for macOS and iOS, focused on the diagnostics that require direct log access and command-line tooling: kernel-level disk pressure, iCloud sync collisions, Spotlight index corruption, and the long tail of post-migration breakage. We read system logs directly rather than guessing from symptoms.
 
-## Advanced Email, Domain, & DNS Solutions
+* **Mac performance & troubleshooting** — startup disk pressure, iCloud sync failures, application crashes, and post-update regressions.
+* **Apple Mail on macOS and iOS** — IMAP/SMTP setup, certificate issues, signing/encryption, and recovery of broken local mailboxes.
+* **Time Machine and backup strategy** — verified restores, not just green checkmarks.
+* **Cloud storage** — Dropbox, iCloud Drive, and Google Drive setup with sane permissions.
+* **Disaster recovery planning** — documented procedures, not improvisation.
 
-We ensure your digital communications and online presence are reliable and secure. We specialize in resolving complex Email deliverability issues, helping you get your Emails out of spam folders, and strengthening your domain against spoofing and phishing attacks.
+#### Wi‑Fi & Network Engineering
+Bespoke wired and wireless networks for large luxury homes, estates, and small offices. We use Cat6A, Cat8, and fiber backbones, and we design from measured RF data rather than vendor brochures. You buy gear directly from the source; we are not a 40% reseller markup, which means we are free to recommend the right hardware rather than the hardware we are channel-locked into.
 
-* **Email Migration & Setup**: Specializing in migrations to Google Workspace and troubleshooting complex Email problems.
-* **Mac & iOS Mail Support**: Expert setup & troubleshooting for Apple Mail on macOS and iOS.
-* **Website & Domain Recovery**: Regain access and control over your digital assets in the event of an issue.
-* **DNS Edits & Configuration**: Precision edits for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI records.
-* **DMARC & Email Security Implementation:** We architect bulletproof, security-compliant DNS solutions with robust DMARC `p=reject` implementations, transforming complex Email security into unmatched reliability.
+* **Wi‑Fi mesh design and dead-zone elimination** based on actual site survey data.
+* **Network setup and security** for home and office.
+* **Infrastructure planning** for new construction and remodels.
+* **Static-IP configuration**, port forwarding, and double-NAT remediation.
+* **Network printer sharing** that does not break on every macOS update.
+* **Switch, gateway, and firewall programming**, including lost-credential recovery.
 
-## Cybersecurity & Data Protection
+#### Email Deliverability & DNS Forensics
+We resolve email deliverability and domain-security problems by going to the wire. We read mail headers, verify DKIM signatures byte-for-byte, and check SPF macro expansion against RFC 7208 §7.4 instead of trusting a green checkmark in a vendor dashboard.
 
-Protect your digital assets with our expert cybersecurity services. We help you defend against viruses, malware, Email phishing, browser blocks, and more.
+* **Email migration and setup**, including Google Workspace.
+* **DNS edits and configuration** for MX, SPF, DKIM, DMARC, DNSSEC, and BIMI.
+* **DMARC enforcement** to `p=reject`, staged carefully through monitor and quarantine.
+* **Website and domain recovery** when access has been lost.
+* **Public research platform:** [dnstool.it-help.tech](https://dnstool.it-help.tech) — the same diagnostic depth we apply to client domains, available for anyone to use.
 
-* **Endpoint Security:** Setup and management of leading endpoint protection for macOS, Windows, and Linux.
-* **Mobile Device Security (iOS):** Advising on best practices and tools to secure your iPhones and iPads.
-* **Data Privacy & Discreet Advisory:** Handling sensitive technical challenges that require deep expertise, discretion, and trust, such as secure data handling and quiet remediation of compromised systems.
-* **Ethical Screen Sharing:** For all remote support, **you, the client, always initiate and approve screen access**. We prioritize your privacy and control.
+#### Cybersecurity & Ethical Screen Sharing
+Endpoint defense, mobile device security, and remote support that respects client control. Sensitive engagements are handled with discretion appropriate to legal, medical, and high-net-worth contexts.
 
-## macOS System & Application Support
+* **Endpoint security** for macOS, Windows, and Linux.
+* **Mobile device security** for iPhone and iPad.
+* **Data privacy and discreet advisory** for sensitive technical situations.
+* **Ethical screen sharing** — you, the client, always initiate and approve access. We do not maintain standing remote access to your systems.
 
-We provide expert troubleshooting for a wide range of system-level and application-specific issues to ensure your devices perform optimally.
+#### Forensic Data Extraction
+For law firms and legal professionals: structured extraction of email and iPhone iMessages into court-admissible, timestamped PDF reports suitable for litigation and eDiscovery. The work is done **on-site, on your equipment, so the data never leaves your office.** On the first engagement, we document the workflow and train your staff so your firm can run future extractions in-house, without ongoing dependency on us. If you prefer, we can also continue handling matters case-by-case.
 
-* **Mac Performance & Troubleshooting:** Addressing macOS software issues, iCloud synchronization problems, Mac storage warnings (“Your startup disk is almost full”), and system performance concerns.
-* **Apple Time Machine Backups:** Setup, troubleshooting, and ensuring your backup strategy is sound.
-* **Cloud Storage Solutions (e.g., Dropbox):** Setup, troubleshooting, and advice on advanced organizational permissions for services like Dropbox Enterprise.
-* **Disaster Recovery Planning:** Helping you prepare for and recover from data loss scenarios.
+#### Cross-Platform & Systems Work
+macOS and iOS lead our work, but Unix, Linux, and Windows get the same scientific care — a system is a system. We engage the problem, not the logo. The same instinct for analyzing logs, tracing packets, and deducing from evidence is applicable regardless of the prompt.
 
-## Network Infrastructure & WiFi Troubleshooting
+* **Shell scripting and automation** — Bash, Zsh, and PowerShell for repeatable, auditable operations instead of click-by-click drift.
+* **File servers and shared storage** — SMB and NFS that hold up across macOS, Windows, and Linux clients without permissions roulette.
+* **Mixed-OS networks** — identity, DNS, printing, and file sharing that behave the same on every desk, regardless of operating system.
+* **Server diagnostics** — Linux and Windows server troubleshooting from the logs up: systemd, journalctl, Event Viewer, and the boring fundamentals that vendor dashboards skip.
+* **Cross-platform migrations** — moving users, data, and workflows between macOS, Windows, and Linux without losing fidelity along the way.
 
-Leveraging enterprise-grade infrastructure, including Cat6A, Cat8, and fiber backbones, we ensure flawless, secure, and ultra-fast connectivity that supports demanding applications, extensive smart home integrations, and the high-bandwidth needs of creative professionals and executive home offices. Say goodbye to dead zones and unreliable connections. We use science-based methods to solve problems and design networks. We show you options for gear that can achieve the speeds you want, and you buy directly from the source, not from us. We don’t depend upon a 40% markup for survival, and we are not limited to lower-spec gear. This allows us to be free from the distribution channels that most IT/AV companies are locked into, enabling us to demonstrate, using the specs, why you may want specific products. We architect secure, robust networks that seamlessly integrate advanced technologies with precision and clarity, so you get fast WiFi (at the speed you’re paying for) everywhere in your location.
+#### Managed Agent (Opt-In, $50 per Device)
+An optional month-to-month maintenance and security layer that keeps your devices current between consulting sessions — across macOS, Windows, Linux, iPhone/iPad, Android, and ChromeOS. $50 per device per month, no managed-service contracts.
 
-* **Wireless Wi‑Fi Mesh, Fix Dead Zones**
-* **Network setup & home/office network security**
-* **Network design & infrastructure planning**
-* **Network troubleshooting**
-* **Static‑IP configuration & troubleshooting**
-* **Port forwarding & double NAT**
-* **Network printer sharing**
-* **Switch, gateway & firewall programming and lost credential recovery**
+Once enrolled, the agent handles automated OS updates and application patching, security policy enforcement, centralized device visibility, and remote support access. The goal: spend live consulting time on actual problems, not routine maintenance.
 
-## Specialized Data Extraction Services
+IT Consulting Sessions work stays on the same transparent break-fix on-demand billing.
 
-* **Email & iPhone Text Message Extraction for Law Firms:** We specialize in extracting Email & iPhone text messages (iMessages) for legal professionals. Using proven tools, we can guide you or assist in creating comprehensive, court-admissible, timestamped PDF reports suitable for litigation and eDiscovery, ensuring every message is documented. We can complete this **on-site at your law firm on your computer, so the data never leaves your office.** After we set up the process, you'll be empowered to never hire help again for this task.
+Your devices will have the same advanced monitoring agent trusted by top managed service providers — at a fraction of the typical cost. Platform: ManageEngine Endpoint Central Cloud — Security Edition.
 
-## Our Recommendations
+For the full pricing math, scope, billing boundary, and the public Reddit example that anchors the transparency model, see **[Managed Agent — Transparent Device Maintenance & Security →](/managed-agent/)**.
+
+#### Our Recommendations
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
 
+* **[LibreOffice:](https://www.libreoffice.org/)** Free, open-source office suite from The Document Foundation. Full-featured word processing, spreadsheets, presentations, drawings, and databases on **Linux, Windows 11 Pro, and macOS** — no Microsoft Office license required, and you are not missing features. Mature, transparently developed, and what we run on our own machines.
 * **[Cloudflare:](https://www.cloudflare.com/)** For DNS, WAF, CDN.
 * **[Amazon Route 53:](https://aws.amazon.com/route53/)** For highly available and scalable DNS services.
 * **[Google Advanced Protection Program:](https://landing.google.com/advancedprotection/)** For Google's strongest account security.
@@ -187,79 +471,167 @@ We believe in using best-in-class tools to achieve the best security and reliabi
 * **[ThreatDown by Malwarebytes:](https://www.threatdown.com/)** For simplified EDR and MDR solutions.
 * **[Yubico Security Keys:](https://www.yubico.com/)** For hardware-based multi-factor authentication.
 * **[1Password:](https://1password.com/)** For secure password and credential management.
+* **[LuLu:](https://objective-see.org/products/lulu.html)** Free, open-source macOS firewall from Objective-See; blocks unauthorized outbound network connections at the system level.
+* **[CISA Cyber Hygiene Services:](https://www.cisa.gov/cyber-hygiene-services)** Free recurring vulnerability scanning of internet-facing systems for eligible organizations through CISA; enrollment is directly with CISA, and we participate as an independent private-sector stakeholder.
+* **[Ubiquiti (UniFi):](https://www.ui.com/)** Enterprise-grade networking hardware — switches, access points, gateways, routers — sold direct to end users without reseller or distributor markup, with a unified management interface across the stack.
+* **[Notion Mail:](https://www.notion.com/product/mail)** Notion's email client; excellent on Mac, for teams comfortable with hosted email workflows.
+* **[Zotero:](https://www.zotero.org/)** Open-source reference and citation manager for research.
+* **[Obsidian:](https://obsidian.md/)** Local-first markdown knowledge base.
+* **[Raycast:](https://www.raycast.com/)** Fast launcher and productivity shell for Mac.
+* **[TheBrain:](https://www.thebrain.com/)** Visual knowledge graph for non-linear thinking and connection-mapping.
+* **[DEVONthink:](https://www.devontechnologies.com/apps/devonthink)** Long-form document and research database for Mac.
+* **[DEVONagent Pro:](https://www.devontechnologies.com/apps/devonagent)** Focused web research agent for Mac.
+* **[DEVONsphere Express:](https://www.devontechnologies.com/apps/devonsphere)** Mac-wide content search and indexing.
+* **[DEVONagent Express:](https://www.devontechnologies.com/apps/devonagent)** Lightweight DEVONagent build for ad-hoc research.
+
+Need expert Mac IT help to solve your tech challenges?
+[Book an on-site Appointment Now](https://schedule.it-help.tech/)
 
 ---
 
-Need expert Mac IT help to solve your tech challenges?
-
-[Book an on-site Appointment Now](https://schedule.it-help.tech/)
-
 ### DNS Tool
 
-Source: [https://www.it-help.tech/dns-tool](https://www.it-help.tech/dns-tool)
+Source: [https://www.it-help.tech/dns-tool/](https://www.it-help.tech/dns-tool/)
 
-# DNS Tool - DNS & Email Security Auditor
+DNS Tool is a **professional-grade DNS, email, transport, and brand security auditor** designed to answer one question clearly: *can this domain be trusted on the internet today?*
 
-Tired of juggling a dozen different web tools and `dig` commands just to check if a domain's DNS and email security records were _actually_ set up right? **So was I.** That's why I built **DNS Tool**.
+It analyzes real-world behavior, not just static records, and presents results in a single defensible report.
 
-### Why I Built This: The `p=none` Problem
+👉 [dnstool.it-help.tech](https://dnstool.it-help.tech/)
 
-As I always say: **“If your DMARC says `p=none`, your work’s not done—get to `p=reject`!”**
+This is the authoritative version of the tool. It prioritizes clarity, correctness, and defensible conclusions over raw record dumps.
 
-But getting to `p=reject` isn't just about DMARC. It means ensuring SPF is aligned, DKIM is signing correctly, DNSSEC is enabled, and MTA-STS is in place. Before DNS Tool, verifying all this meant a tedious dance across countless browser tabs and terminal windows, especially when waiting for DNS propagation. It was inefficient and far too easy to miss something critical.
+#### What This Tool Actually Solves
 
-### One Tool to Check Them All
+Most DNS tools dump raw records and expect you to "interpret" them. That's how people end up thinking they're secure when they're not.
 
-DNS Tool is my personal command-line solution born from that frustration. It’s a single, portable binary (thanks to PyInstaller!) that runs on Linux, macOS, and Windows – no Python install needed on the target system. It's my Swiss Army knife for DNS validation.
+DNS Tool answers the _real_ questions:
 
-In one go, it hammers a domain and reports back, with clear ✅ ❌ ⚠️ symbols, on _all_ the important stuff:
+- **Can this domain be impersonated by email?**
+- **Can this brand be convincingly faked?**
+- **Is email encrypted and validated in transit?**
+- **Can DNS itself be tampered with?**
+- **Are security controls enforced, or just declared?**
+- **Is what the world sees the same as what the nameserver is publishing?**
 
-* **Core Records:** NS, A, AAAA, MX, TXT, SOA, CAA
-* **Email Security:** SPF (and its lookups!), DMARC (with `p=reject` nagging!), multiple DKIM selectors, MTA-STS, BIMI
-* **Infrastructure:** DNSSEC validation status
-* **Info:** PTR records and even an RDAP/WHOIS lookup.
+It distinguishes _configured_ vs _enforced_, _unsigned_ vs _broken_, and _missing_ vs _intentionally absent_. That nuance is where most tools fail.
 
-It works interactively (with history!) or in batch mode. I use it daily to get a quick, comprehensive picture of a domain's DNS health, verify changes _instantly_ as they propagate, and ensure nothing falls through the cracks. It saves me time and gives me confidence that things are _really_ secure and configured correctly.
+#### 11 Core Analysis Modules (One Pass)
 
-### Get The Tool & Full Details
+1. SPF validation (including lookup counts and strict vs soft fail guidance)
+2. DKIM discovery across **35 selectors** with provider-aware logic
+3. DMARC policy interpretation (`none`, `quarantine`, `reject`) plus **DMARCbis readiness checks**
+4. DANE/TLSA validation for SMTP certificate pinning (RFC 7672)
+5. MTA-STS policy retrieval and enforcement validation
+6. TLS-RPT configuration and reporting endpoint checks
+7. **SMTP Transport Verification** - live MX STARTTLS/TLS tests (versions, ciphers, cert validity) with DNS-inferred fallback when live port 25 probing is unavailable
+8. DNSSEC chain-of-trust validation (root -> TLD -> domain)
+9. CAA analysis with CA attribution and **MPIC-aware interpretation** (CA/B Forum SC-067)
+10. BIMI + VMC validation for brand trust in inboxes
+11. **Certificate Transparency subdomain discovery** (crt.sh / RFC 6962) for external attack-surface visibility
 
-Want to try it out, see the code, or dive into the full details on installation and every command-line flag? It's all open-source and waiting for you on GitHub:
+The output is a **single, defensible report** - not a pile of green and red checkboxes.
 
-* **[Main GitHub Repository (Code & Full README)](https://github.com/IT-Help-San-Diego/dns-tool-intel/)**
-* **[Download Pre-compiled Binaries (Releases Page)](https://github.com/IT-Help-San-Diego/dns-tool-intel/releases)**
+#### Additional Domain Intelligence
+
+- NS delegation correctness
+- Resolver vs authoritative record diffing (propagation and split-brain detection)
+- DNS infrastructure analysis for enterprise providers and self-hosted enterprise DNS
+- Government entity recognition for .gov, .mil, .gov.uk, .gov.au, and .gc.ca domains
+- A / AAAA / MX routing plus SRV record visibility for service inventory context
+
+#### DNS Infrastructure Intelligence
+
+DNS Tool doesn't just check if DNSSEC is enabled—it understands **real-world security postures**:
+
+- **Enterprise DNS Providers** — Cloudflare, AWS Route 53, Akamai, Google Cloud DNS, Azure DNS, UltraDNS, Verisign, NS1
+- **Self-Hosted Enterprise** — Apple, Microsoft, Meta, Amazon, Netflix, Oracle, Cisco, Intel, Salesforce, Adobe
+- **Government Entities** — .gov (FISMA), .mil (DoD), .gov.uk (NCSC), .gov.au (ASD), .gc.ca (GC)
+
+When DNSSEC isn't enabled, the tool explains *why that might be acceptable*—enterprise providers with DDoS protection, Anycast, and CAA records provide alternative security layers. This is the "symbiotic security" approach: work with the ecosystem, not against it.
+
+#### Platform Features (Web App)
+
+- Analysis history with search
+- Side-by-side domain comparison
+- Statistics dashboard with protocol adoption rates
+- JSON export for programmatic use
+- Executive-grade print/PDF reports with **TLP:CLEAR** classification
+
+#### Why This Version Is Better Than the CLI
+
+The original command-line tool still exists and is useful for scripting and offline checks, but the **web version is the authoritative one**:
+
+- Clear verdicts instead of raw dumps
+- Policy-aware logic (no misleading "monitoring-only" false confidence)
+- Real-time propagation comparison
+- Transport security validation in addition to DNS-only checks
+- Printable, shareable reports suitable for audits, leadership, and client briefings
+
+If you're evaluating DNS posture, this is the version you want.
+
+#### Need Help Fixing Issues?
+
+The report tells you _what_ is wrong, but if you need help fixing it, we have a comprehensive guide:
+
+👉 [Read: DNS Security Best Practices (Step-by-Step Guide)](https://www.it-help.tech/field-notes/dns-security-best-practices/)
+
+#### Command-Line Version (Still Available)
+
+The CLI tool is open-source and maintained for those who want it:
+
+- [GitHub (Source & Docs)](https://github.com/IT-Help-San-Diego/dns-tool-intel/)
+- [CLI Releases](https://github.com/IT-Help-San-Diego/dns-tool-intel/releases)
+
+Think of it as a sharp pocket knife.
+
+The web version is the full diagnostic bench.
+
+---
 
 ### Our Expertise
 
-Source: [https://www.it-help.tech/about](https://www.it-help.tech/about)
+Source: [https://www.it-help.tech/about/](https://www.it-help.tech/about/)
 
-# Our Expertise
+Hi, I’m Carey Balboa.
 
-![Carey Balboa with service animal Tango](https://www.it-help.tech/images/carey-256.avif)
+*(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)*
 
-Hi, I’m Carey Balboa.  
-_(Carey: Like the Hawksbill Sea Turtle (Eretmochelys imbricata) Common Name: Carey)_  
-_(Balboa: Like Balboa Park in San Diego)_
+*(Balboa: Like Balboa Park in San Diego)*
 
 I’ve been solving tech problems for 27 years. I love a challenge, solving technical problems, and helping people. I’m committed to mission success, and scientific discovery is my passion. Since 1999, I’ve assisted high-profile clients in the entertainment, medical, and legal sectors, as well as PhDs, with their technology challenges.
 
-## Business Ethics: Carey’s Promise
+[ORCID iD: 0009-0000-5237-9065](https://orcid.org/0009-0000-5237-9065)
 
-As the Founder of IT Help San Diego Inc., I see my role as a problem solver, not a salesperson. My recommendations are based on transparent, verifiable data, not opinions or distributor deals. **We don’t sell products, and we don’t accept commissions, affiliate fees, or kickbacks.** If we recommend a solution, whether it's Route 53, SentinelOne, or 1Password, it's because we believe it's the best tool for the job. We'll show you the options, explain the _why_, and you'll purchase directly from the vendor. Our only revenue comes from our time and expertise dedicated to implementing these solutions effectively for you. My focus is always on your long-term reliability—truly listening so I can help you understand exactly what you want—and delivering real value.
+#### Business Ethics: Carey’s Promise
+
+As the Founder of IT Help San Diego Inc., I see my role as a problem solver, not a salesperson. My recommendations are based on transparent, verifiable data, not opinions or distributor deals. We don’t sell products, and we don’t accept commissions, affiliate fees, or kickbacks. If we recommend a solution, whether it's Route 53, SentinelOne, or 1Password, it's because we believe it's the best tool for the job. We'll show you the options, the specs, explain the *why*, and you'll purchase directly from the vendor. Our only revenue comes from our time and expertise dedicated to implementing these solutions effectively for you. My focus is always on your long-term reliability—truly listening so I can help you understand exactly what you want—and delivering real value.
 
 I’ve always stayed true to my ethics: no price gouging, no hidden fees, and no cutting corners on quality. That’s who I am, and that’s exactly how I’ll continue to operate.
+
+#### Engineering & Research
+
+For anyone who wants to verify the work underneath the practice — the deployed tools, the source, and the story behind them:
+
+- [DNS Tool — DNS & Email Security Auditor](https://dnstool.it-help.tech/) — the deployed web app.
+- [DNS Tool — Origin Story](https://dnstool.it-help.tech/about) — how it was built, and why.
+- [DNS Tool — source on GitHub](https://github.com/IT-Help-San-Diego/dns-tool-intel) — source for the web app, including the scientifically published version.
+- [IT Help San Diego on GitHub](https://github.com/IT-Help-San-Diego) — the corporate organization.
+
+---
 
 ### Schedule
 
 Source: [https://schedule.it-help.tech/](https://schedule.it-help.tech/)
 
-*Content available at [https://schedule.it-help.tech/](https://schedule.it-help.tech/)*
+Book an on-site appointment.
 
+---
 
 ## Optional
 
 ### Field Notes
 
-Source: [https://www.it-help.tech/field-notes](https://www.it-help.tech/field-notes)
+Source: [https://www.it-help.tech/field-notes/](https://www.it-help.tech/field-notes/)
 
-*Optional content available at [https://www.it-help.tech/field-notes](https://www.it-help.tech/field-notes)*
-
+---
