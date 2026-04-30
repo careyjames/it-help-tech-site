@@ -10,8 +10,6 @@ aliases:
 extra:
   skip_image: true
   skip_author: true
-  og_title: "Managed Agent — Transparent Device Maintenance and Security"
-  twitter_title: "Managed Agent — Transparent Device Maintenance and Security"
 ---
 
 **$50 per enrolled device per month. Month-to-month. No MSP contract. Live work is separate.**

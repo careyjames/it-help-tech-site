@@ -10,8 +10,6 @@ aliases:
 extra:
   skip_image: true
   skip_author: true
-  og_title: "Rates and Billing Policies"
-  twitter_title: "Rates and Billing Policies"
 ---
 
 
