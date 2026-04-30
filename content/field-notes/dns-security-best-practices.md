@@ -59,7 +59,7 @@ Here is a DNS Tool record snapshot from CISA (Cybersecurity and Infrastructure S
 <img
   src="/images/cisa-dns.png"
   alt="DNS Tool record showing CISA DMARC, SPF, and DKIM enforcement"
-  style="width: 520px !important; max-width: 100% !important; height: auto; margin: 0 auto; display: block;"
+  class="img-centered-520"
   loading="lazy"
   decoding="async">
 

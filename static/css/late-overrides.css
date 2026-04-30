@@ -1563,3 +1563,14 @@ html:not(.switch) h6 a.gold-link:active {
     .how-we-work { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     .how-we-work .hww-card { break-inside: avoid; border-color: currentColor; }
 }
+
+/* CSP-safe replacement for inline image styling. Used by content/field-notes/dns-security-best-practices.md
+   for the CISA DNS Tool screenshot. Adding the class keeps the visual (centered, capped at 520px,
+   responsive) without inline style="..." which would violate strict style-src 'self'. */
+img.img-centered-520 {
+    width: 520px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
