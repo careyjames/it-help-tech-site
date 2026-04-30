@@ -102,7 +102,7 @@ All recommendations are grounded in verifiable data so clients can make informed
 IT Help San Diego provides expert support across Mac, Linux, Windows, enterprise networking, cybersecurity, and crisis-response scenarios.
 
 No retainers.  
-No managed service contracts.  
+No managed-service contracts.  
 Clear billing, agreed work, documented time.
 
 <p class="final-tagline">YOUR TECH PROBLEMS ARE ABOUT TO DISAPPEAR. 🚀</p>

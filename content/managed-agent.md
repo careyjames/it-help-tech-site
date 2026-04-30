@@ -146,7 +146,6 @@ When something actually breaks, you escalate by cost:
 Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to the depth that 27 years of this work builds.
 
 The [DNS tool](/dns-tool/) and the [field notes](/field-notes/) are the public version of how deep this work goes. Average IT does not go that deep on how the actual internet works. That depth is what you are buying when you call, and it is why you do not need to buy it monthly.
-
 ## Why $50/device/month is not unlimited support
 
 There is also a hard internal cost: the management portal itself has a current floor of about $300/month with a 26-device minimum. That is why the $50/device price has to stay tightly scoped.
@@ -220,3 +219,79 @@ For the underlying hourly consulting rates, travel policy, payment terms, schedu
 - ManageEngine Endpoint Central: [manageengine.com/products/desktop-central/](https://www.manageengine.com/products/desktop-central/)
 - ManageEngine Endpoint Central Cloud: [manageengine.com/products/desktop-central/cloud/](https://www.manageengine.com/products/desktop-central/cloud/)
 - ManageEngine edition comparison: [manageengine.com/products/desktop-central/edition-comparison-matrix.html](https://www.manageengine.com/products/desktop-central/edition-comparison-matrix.html)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Managed Agent",
+  "alternateName": "Transparent Device Maintenance and Security",
+  "serviceType": "Managed Endpoint Service",
+  "provider": { "@id": "https://www.it-help.tech/#organization" },
+  "areaServed": "San Diego",
+  "url": "https://www.it-help.tech/managed-agent/",
+  "description": "Optional month-to-month device maintenance and security layer powered by ManageEngine Endpoint Central Cloud — Security Edition. Per-device subscription, no managed-service contract; live consulting work billed separately at the standard hourly rate.",
+  "offers": {
+    "@type": "Offer",
+    "price": "50.00",
+    "priceCurrency": "USD",
+    "unitText": "enrolled device",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "50.00",
+      "priceCurrency": "USD",
+      "unitCode": "MON",
+      "referenceQuantity": {
+        "@type": "QuantitativeValue",
+        "value": "1",
+        "unitCode": "C62"
+      },
+      "valueAddedTaxIncluded": false,
+      "description": "$50 per enrolled device per month."
+    },
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.it-help.tech/managed-agent/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the $50 per device per month buy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automated OS updates and desktop application patching where supported, security policy enforcement, centralized device visibility, inventory and update status, remote-support readiness on supported enrolled devices, and routine portal review and ordinary management actions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is not included in the $50 per device per month fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live troubleshooting, user support, consulting, configuration, backup and recovery, device rebuilds, incident response, forensics, documentation, firewall/router/network hardware work, RMA handling, cloud and tenant administration, compliance, custom policy work, projects, after-hours work, and any interaction beyond 10 minutes. Live work is billed at the standard hourly consulting rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the 10-minute no-bill lane work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brief advisory calls up to 10 minutes are no-charge so clients can ask whether something matters without instantly creating an invoice. Courtesy time is capped at 10 minutes per issue within any 24-hour period. If a conversation becomes troubleshooting, research, configuration, support, recovery, or incident work — or goes beyond 10 minutes — it becomes billable work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "But my CFO wants a fixed monthly number — what do I tell them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The $50 per device per month layer is the predictable line item; it does not change month to month. When something actually breaks, escalate by cost: free Apple support for regular Apple problems, a local mid-level tech around $120/hour for routine work, or call us for senior-level problems billed at the hourly consulting rate. The not-sure path is a 10-minute call to triage who you actually need."
+      }
+    }
+  ]
+}
+</script>

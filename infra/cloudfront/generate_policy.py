@@ -168,8 +168,18 @@ def build_site_csp(*, script_hashes: list[str], style_hashes: list[str]) -> str:
     #                            document.write, eval, …) at the browser layer.
     #                            Audited 2026-04-20 — none of our JS uses any
     #                            of those sinks, so this is purely defensive.
-    #   - COEP require-corp is intentionally NOT added: broke Safari on
-    #                            2026-04-17 (per-S3-object CORP needed first).
+    #   - COEP credentialless (NOT require-corp) is set as a custom header
+    #                            in csp-policy-v1.json. The 2026-04-17 incident
+    #                            was specifically `require-corp` blocking
+    #                            same-origin S3 assets in Safari because they
+    #                            lacked per-object CORP headers. credentialless
+    #                            (Safari 16.4+, March 2023) does NOT impose
+    #                            that per-asset CORP requirement on same-origin
+    #                            requests, so it is the Safari-safe variant.
+    #                            Same +5 Observatory bonus, same isolation
+    #                            posture — this site has zero cross-origin
+    #                            subresources, so credentialless ≡ require-corp
+    #                            in steady-state behavior here.
     directives = [
         f"default-src {NONE}",
         f"base-uri {SELF}",
@@ -195,12 +205,26 @@ def build_site_csp(*, script_hashes: list[str], style_hashes: list[str]) -> str:
 def build_signatures_csp(*, script_hashes: list[str]) -> str:
     script_sources = [SELF] + [f"'sha256-{h}'" for h in script_hashes]
 
+    # Hardening rationale (2026-04-30 — see PROJECT_EVOLUTION_LOG.md):
+    # The signature pages are reference renders of the email signature
+    # markup; they have no forms, no Web Workers, and the lone inline
+    # script (in ithelp-anilogo.html, allowlisted by sha256 hash) was
+    # audited and uses zero DOM-XSS sinks (no innerHTML, document.write,
+    # eval, etc.). So the same Trusted Types + form-action 'none' +
+    # worker-src 'none' hardening applied to the marketing site can also
+    # apply here.  'unsafe-inline' on style-src has to stay because the
+    # gold/seablue signatures are pure inline-`style="…"` markup (the
+    # email-client portability constraint that drives the whole asset's
+    # design). Custom headers in csp-policy-signatures-v1.json mirror the
+    # marketing-site set: COOP same-origin, CORP same-origin, COEP
+    # credentialless, plus the standard Permissions-Policy lockdown.
     directives = [
         f"default-src {NONE}",
         f"base-uri {SELF}",
         f"object-src {NONE}",
         f"frame-ancestors {NONE}",
-        f"form-action {SELF}",
+        f"form-action {NONE}",
+        f"worker-src {NONE}",
         f"img-src {SELF} data:",
         f"font-src {SELF}",
         # Email signature pages and the animation logo page rely on inline styles.
@@ -209,6 +233,8 @@ def build_signatures_csp(*, script_hashes: list[str]) -> str:
         f"connect-src {SELF}",
         f"media-src {SELF}",
         f"manifest-src {SELF}",
+        "require-trusted-types-for 'script'",
+        f"trusted-types {NONE}",
         "upgrade-insecure-requests",
     ]
 

@@ -1,3 +1,7 @@
+{%- if config.extra.dev %}
+User-Agent: *
+Disallow: /
+{%- else %}
 # Default: allow all crawlers
 User-agent: *
 Allow: /
@@ -21,6 +25,7 @@ Allow: /services/
 Allow: /field-notes/
 Allow: /about/
 Allow: /billing/
+Allow: /managed-agent/
 Allow: /dns-tool/
 
 # Traditional Search Bots
@@ -33,4 +38,5 @@ User-agent: AhrefsBot
 User-agent: AhrefsSiteAudit
 Allow: /
 
-Sitemap: https://www.it-help.tech/sitemap.xml
+Sitemap: {{ get_url(path="sitemap.xml", trailing_slash=false) }}
+{%- endif %}

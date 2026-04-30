@@ -6,6 +6,7 @@
       "entries": [
         { "label": "IT Help San Diego", "file": "content/_index.md" },
         { "label": "Pricing", "file": "content/billing.md" },
+        { "label": "Managed Agent", "file": "content/managed-agent.md" },
         { "label": "Services", "file": "content/services.md" },
         { "label": "DNS Tool", "file": "content/dns-tool.md" },
         { "label": "Our Expertise", "file": "content/about.md" },
