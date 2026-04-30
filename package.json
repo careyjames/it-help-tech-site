@@ -1,1 +1,13 @@
-{ "name": "site", "version": "1.0.0", "scripts": { "test": "echo \"no tests\" && exit 0" } }
+{
+  "name": "site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"no tests\" && exit 0",
+    "lh": "node infra/audit/quick-lh.mjs",
+    "lh:gate": "node infra/audit/run-lighthouse.mjs"
+  },
+  "devDependencies": {
+    "lighthouse": "12.8.2"
+  }
+}

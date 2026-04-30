@@ -31,3 +31,6 @@ build/
 
 # Local build-review snapshots (one-off audit dumps; deploy uses public/, not this)
 build-review/
+
+# Node deps (lighthouse devDependency for `npm run lh`); lockfile IS committed
+node_modules/

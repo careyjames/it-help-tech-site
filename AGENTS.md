@@ -54,6 +54,53 @@ If a gate cannot be met, document the reason and rollback path in both PR notes 
 
 ## Development Workflow
 
+### In-loop Lighthouse intelligence (`infra/audit/quick-lh.mjs`)
+
+The deploy-gate audit (`infra/audit/run-lighthouse.mjs`) is median-of-N
+across the full URL × form-factor grid — too slow and too binary for
+in-the-loop use. **`infra/audit/quick-lh.mjs` is the agent's
+working microscope:** one URL, one form factor, prints scores and the
+ordered list of failing audits in ~20 seconds. Always use it instead of
+asking the user to feed Lighthouse reports back.
+
+```bash
+npm run lh -- https://www.it-help.tech/field-notes/apple-sends-you-to-ijail/ mobile
+npm run lh -- http://localhost:5000/ desktop --save /tmp/lh.json
+```
+
+Default form factor is `mobile` (matches PageSpeed default). The
+`--save` flag dumps the full Lighthouse JSON for deeper inspection.
+
+**Setup (one-time per environment):** `npm install` — `lighthouse` is
+pinned in `package.json` as a devDependency so every agent and CI run
+gets the same version. A chromium binary on PATH is also required;
+that's already provisioned via `replit.nix` (`pkgs.chromium`) locally
+and `apt-get install chromium-browser` in CI — see
+`.github/workflows/deploy.yml`. CI's deploy gate still installs the
+same version globally for `run-lighthouse.mjs` to keep the existing
+pipeline contract unchanged.
+
+**Caveat — single-run jitter:** a one-shot Lighthouse run is noisy,
+especially on mobile Performance. Treat the **failing-audits list as
+ground truth** and the perf score as directional. The deploy gate's
+median-of-N is what gates shipping.
+
+**When to use it:**
+- After any change to templates, CSS, JS, image assets, or front matter
+  on a page that had a Lighthouse complaint, *before* opening the PR.
+- When the user reports a PageSpeed/Lighthouse issue, run it first
+  rather than guessing — exit lists every failing audit verbatim.
+- The mobile Performance score will be lower than the user's PageSpeed
+  reading because the Replit datacenter has higher latency to
+  CloudFront. The **failing audits list is what matters** — that is
+  what reproduces between this tool and the user's reports.
+
+The deploy gate (`run-lighthouse.mjs`) remains the source of truth for
+"are we shipping". `quick-lh.mjs` is the source of truth for "what
+should I edit next".
+
+### Branching & PR workflow
+
 - Work on `replit/working` (or a topic branch named `replit/<scope>` for isolated changes).
 - Push to GitHub and open a PR against `main`.
 - Merge to `main` via **squash and merge** only.
