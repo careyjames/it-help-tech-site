@@ -14,7 +14,9 @@ extra:
 
 
 
-Clear, transparent IT consulting. **No monthly retainers. No managed service contracts.**
+Clear, transparent IT consulting. **No prepaid labor retainers. No managed-service contracts.**
+
+An optional **[Managed Agent](/managed-agent/)** device-maintenance and security layer is available month-to-month at **$50 per enrolled device per month**, separate from live consulting work. The math, the scope, and the billing boundary are visible before enrollment.
 
 
 ## IT Consulting & Support Rates
@@ -75,6 +77,7 @@ We do not bill recurring fees, retainers, or unattended time.
 * If an interaction exceeds 10 minutes, billing is activated for the **full duration**, subject to standard minimums (30-minute remote minimum).
 * Multiple or fragmented interactions about the same issue may be combined and treated as a **single interaction** for billing purposes.
 * Courtesy time is capped at **10 minutes per issue within any 24-hour period** — so you can run something by us without fear of being billed.
+* The same 10-minute courtesy lane applies to clients enrolled in the [Managed Agent](/managed-agent/) device-maintenance layer.
 
 
 ## Privacy, Security & Ethics
