@@ -15,8 +15,22 @@
   Preload the page's main portrait image only when it exists. This
   prevents needless preloading on pages that don't include the image
   (which triggered warnings in Lighthouse and Safari).
+
+  When a page declares `extra.image_responsive_base`, preload the AVIF
+  responsive set (with `type="image/avif"`); browsers that can't decode
+  AVIF ignore the hint and fall back to the WebP source in the
+  <picture> element rendered by templates/page.html. This matches the
+  picture element exactly so no double-fetch occurs.
 #}
-{% if page and page.extra and page.extra.image %}
+{% if page and page.extra and page.extra.image_responsive_base %}
+  {% set rb = get_url(path=page.extra.image_responsive_base ~ "-256.avif") | split(pat="-256.avif") | first %}
+  <link rel="preload"
+        as="image"
+        type="image/avif"
+        imagesrcset="{{ rb }}-256.avif 256w, {{ rb }}-512.avif 512w, {{ rb }}-800.avif 800w"
+        imagesizes="200px"
+        fetchpriority="high">
+{% elif page and page.extra and page.extra.image %}
   <link rel="preload"
         as="image"
         href="{{ get_url(path=page.extra.image) }}"

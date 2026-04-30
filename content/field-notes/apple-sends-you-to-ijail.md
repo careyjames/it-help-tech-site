@@ -11,6 +11,7 @@ aliases:
 extra:
   seo_title: "Apple and Google Account Lockouts: The Don't-Guess-Wrong Protocol"
   image: images/wrong-password.png
+  image_responsive_base: images/wrong-password
   og_title: "Don't Guess Wrong: Apple, Google, and the Memory Science Behind Account Lockouts"
   og_description: "Why repeated wrong-password guessing locks you out of Apple and Google, what the cognitive science says about your sense of 'almost knowing it,' and the protocol that keeps you out of iJail."
   twitter_title: "Don't Guess Wrong: Apple, Google, and the Memory Science Behind Account Lockouts"
