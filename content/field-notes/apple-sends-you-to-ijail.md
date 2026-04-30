@@ -21,7 +21,7 @@ extra:
 
 > **The password you entered is wrong. Stop. Breathe. Think. And you won't get locked out.**
 
-### TL;DR
+## TL;DR
 When you sit down to type a password, you either know it or you don't. If you're consulting a piece of paper, you don't know it — you're transcribing. If it's not in a password manager that copy-pastes a known-good string, you don't have a verified credential. The two ecosystems then diverge sharply: **Apple** locks accounts after repeated wrong guesses and pushes you into a recovery flow whose worst-case wait time is "several days or longer." **Google** escalates *sign-in* friction (CAPTCHA, 2FA, recovery prompts) but explicitly states there is **no limit** on attempts inside the recovery process itself. The same operating rule covers both: stop after the second wrong attempt, every time, and start the recovery flow on purpose instead of stumbling into it — for Apple to avoid the lockout, for Google to avoid burning attempts on guesses when you should be assembling your recovery information.
 
 ---
