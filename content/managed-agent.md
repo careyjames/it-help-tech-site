@@ -132,6 +132,21 @@ The yearly view is the strongest proof, because quiet months are where vague ret
 
 A six-device restaurant could use about **67.6 hours** of senior support before matching the public example's annual base fee, or about **72.8 hours** before matching the public example's incident-year spend. Even after reserving $600 for hardware, the thresholds are still about **65.5** and **70.6** hours.
 
+## "But my CFO wants a fixed monthly number"
+
+You can have this enterprise agent — top of the food chain — cheaper than any other company would give it to you. The $50/device/month layer is the predictable line item. It does not change month to month.
+
+When something actually breaks, you escalate by cost:
+
+- **Regular Apple problems:** call Apple for free and get them answered.
+- **Mid-level work:** a local $120/hour tech can usually handle it.
+- **A real problem that needs a senior person:** call me. That is what the hourly rate is for.
+- **Not sure who you need:** call me for ten minutes. That is a long conversation, and we can usually figure it out together. I will send you in the right direction even if I am not the one who should be doing the work — because for that work I am too expensive.
+
+Most of my clients and I never have this conversation. They are already on the other side of it. They know what a bundled retainer would cost them over a year. They would rather take the chance that nothing happens, and accept that if it did and they were down, a single missed lunch service could cost them $15,000 in lost revenue. That makes the premium hourly rate easy to justify, and that rate is appropriately matched to 27+ years of depth most IT generalists do not have.
+
+The [DNS tool](/dns-tool/) and the [field notes](/field-notes/) are the public version of how deep this work goes. Average IT does not go that deep on how the actual internet works. That depth is what you are buying when you call, and it is why you do not need to buy it monthly.
+
 ## Why $50/device/month is not unlimited support
 
 There is also a hard internal cost: the management portal itself has a current floor of about $300/month with a 26-device minimum. That is why the $50/device price has to stay tightly scoped.
