@@ -11,6 +11,7 @@ aliases:
 extra:
   seo_title: "IT Problem-Solving as Hypothesis-Driven Inquiry"
   image: images/it-problem-solving-scientific-method.webp
+  image_responsive_base: images/it-problem-solving-scientific-method
   og_title: "IT Problem-Solving Meets the Scientific Method"
   og_description: "How a working adaptation of the scientific method — grounded in Popper, Peirce, and the medical diagnostic-error literature — defeats the cognitive biases that derail most IT troubleshooting."
   twitter_title: "IT Problem-Solving Meets the Scientific Method"

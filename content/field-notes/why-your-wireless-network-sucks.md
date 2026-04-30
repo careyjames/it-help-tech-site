@@ -10,6 +10,7 @@ aliases:
   - /blog/why-your-wireless-network-sucks/
 extra:
   image: images/sad-wifi-extender.png
+  image_responsive_base: images/sad-wifi-extender
   og_title: "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It"
   og_description: "Wireless degrades like a photocopy of a photocopy — and the physics of half-duplex CSMA/CA, Shannon-Hartley capacity, and retransmit compounding explains why. Here is how an Ethernet backbone, proper Cat6A/Cat8 cabling, and (sometimes) modern Wi-Fi 6/7 with wired backhaul actually deliver the speed you are paying for to your endpoint."
   twitter_title: "Why Your Wireless Network Sucks: Copy of a Copy, and the Ethernet Backbone That Fixes It"

@@ -10,6 +10,7 @@ aliases:
   - /blog/hack-your-engrams-to-remember-passwords/
 extra:
   image: images/engram-hack.png
+  image_responsive_base: images/engram-hack
   og_title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
   og_description: "The neuroscience of emotional memory, applied to the one threat most password advice ignores: the trusted person standing behind you."
   twitter_title: "Hack Your Engrams: Memorable Passphrases That Stay Private"
