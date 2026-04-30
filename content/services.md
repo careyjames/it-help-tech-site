@@ -418,6 +418,8 @@ IT Consulting Sessions work stays on the same transparent break-fix on-demand bi
 
 Your devices will have the same advanced monitoring agent trusted by top managed service providers — at a fraction of the typical cost. Platform: ManageEngine Endpoint Central Cloud — Security Edition.
 
+For the full pricing math, scope, billing boundary, and the public Reddit example that anchors the transparency model, see **[Managed Agent — Transparent Device Maintenance & Security →](/managed-agent/)**.
+
 ## Our Recommendations
 
 We believe in using best-in-class tools to achieve the best security and reliability. We often work with and recommend the following platforms and services:
