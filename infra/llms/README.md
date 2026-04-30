@@ -23,7 +23,22 @@ node infra/llms/build-llms-full.mjs --dry-run
 
 # Write to build/llms-full.txt:
 node infra/llms/build-llms-full.mjs
+
+# Convenience preview (regenerate + show stats + first 60 lines):
+scripts/preview-llms-full.sh
+
+# Same, but cat the full file:
+scripts/preview-llms-full.sh --full
+
+# Same, but diff against the previous run:
+scripts/preview-llms-full.sh --diff
 ```
+
+`zola serve` cannot serve `/llms-full.txt` locally — `static/llms-full.txt`
+was deleted in Phase C and must not be reintroduced (see Phase C above and
+the LLM/bot files note in `AGENTS.md`). Use `scripts/preview-llms-full.sh`
+to inspect the generator output instead. On deploy the file is uploaded
+directly from `build/llms-full.txt` to S3.
 
 ## Config: `llms-full.config.json`
 
