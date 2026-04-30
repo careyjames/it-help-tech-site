@@ -11,6 +11,7 @@ aliases:
 extra:
   seo_title: "Mac Cybersecurity Threats: The Real Magic Combo"
   image: images/mac-cybersecurity.jpeg
+  image_responsive_base: images/mac-cybersecurity
   og_title: "Mac Cybersecurity Threats: What Apple Already Protects, What It Doesn't, and the Magic Combo That Closes the Gap"
   og_description: "What Apple's built-in stack actually defends against on macOS, where the real gaps are, and the practical Magic Combo that closes them — with primary-source citations to Apple's Platform Security Guide, Citizen Lab, and the relevant CVEs."
   twitter_title: "Mac Cybersecurity Threats: What Apple Already Protects, What It Doesn't"

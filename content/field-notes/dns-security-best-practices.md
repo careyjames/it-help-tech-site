@@ -11,6 +11,7 @@ aliases:
 extra:
   seo_title: "DMARC, SPF & DKIM Security Guide"
   image: /images/dns-security-dmarc.png
+  image_responsive_base: images/dns-security-dmarc
   og_title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
   og_description: "Configure and verify SPF, DKIM, DMARC, MTA-STS, TLS-RPT, DANE, and DNSSEC to defensibly reduce spoofing, phishing, and BEC risk — with primary-source citations to every standard the controls depend on."
   twitter_title: "DNS Security Best Practices: Defend Your Domain with DMARC, SPF & DKIM"
