@@ -1,112 +1,102 @@
-% Mac Cybersecurity Threats — Bibliography
-% Companion to /field-notes/mac-cybersecurity-threats/
-% Maintained by IT Help San Diego Inc.
-
-@misc{apple_platform_security_malware,
+@misc{appleplatformsecurity,
   author       = {{Apple Inc.}},
   title        = {Apple Platform Security Guide --- Protecting against malware in {macOS}},
-  howpublished = {Apple Inc.},
+  year         = {2024},
+  howpublished = {Online},
   url          = {https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web},
-  note         = {Documents XProtect, XProtect Remediator, Gatekeeper, and Notarization}
+  note         = {Documents XProtect, XProtect Remediator, Gatekeeper, Notarization, code signing, App Sandbox, and the hardened runtime}
 }
 
-@techreport{citizenlab_forcedentry_2021,
+@techreport{citizenlab2021forcedentry,
   author      = {Marczak, Bill and Scott-Railton, John and Razzak, Bahr Abdul and Al-Jizawi, Noura and Anstis, Siena and Berdan, Kristin and Deibert, Ron},
   title       = {{FORCEDENTRY}: {NSO} Group {iMessage} Zero-Click Exploit Captured in the Wild},
   institution = {The Citizen Lab, University of Toronto},
   year        = {2021},
   month       = sep,
-  day         = {13},
-  url         = {https://citizenlab.ca/2021/09/forcedentry-nso-group-imessage-zero-click-exploit-captured-in-the-wild/}
+  url         = {https://citizenlab.ca/research/forcedentry-nso-group-imessage-zero-click-exploit-captured-in-the-wild/}
 }
 
-@misc{cve_2021_30860,
+@misc{cve202130860,
   author       = {{MITRE Corporation}},
-  title        = {{CVE-2021-30860} --- Apple {CoreGraphics} integer overflow processing maliciously crafted {PDF} ({FORCEDENTRY})},
-  howpublished = {MITRE CVE Program},
+  title        = {{CVE-2021-30860} --- {Apple} {CoreGraphics} integer overflow processing maliciously crafted {PDF} ({FORCEDENTRY})},
+  year         = {2021},
+  howpublished = {Online},
   url          = {https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30860}
 }
 
-@misc{manageengine_endpoint_central_security,
-  author       = {{Zoho Corporation}},
-  title        = {{ManageEngine} {Endpoint} {Central} --- {Security} {Edition}},
-  howpublished = {Zoho Corporation},
-  url          = {https://www.manageengine.com/products/desktop-central/endpoint-security-edition.html},
-  note         = {Vulnerability management, anti-ransomware, browser security, application control, peripheral security, BitLocker/FileVault management}
-}
-
-@misc{lulu_objective_see,
-  author       = {Wardle, Patrick},
-  title        = {{LuLu} --- the free, open-source {macOS} firewall},
-  howpublished = {Objective-See Foundation},
-  url          = {https://objective-see.org/products/lulu.html}
-}
-
-@misc{lulu_github,
-  author       = {Wardle, Patrick},
-  title        = {{LuLu} source repository},
-  howpublished = {GitHub, {GPLv3}-licensed},
-  url          = {https://github.com/objective-see/LuLu}
-}
-
-@misc{malwarebytes_state_of_malware,
-  author       = {{Malwarebytes}},
-  title        = {State of Malware (annual report series)},
-  howpublished = {Malwarebytes Labs},
-  url          = {https://www.malwarebytes.com/resources/state-of-malware}
-}
-
-@misc{apple_stolen_device_protection,
-  author       = {{Apple Inc.}},
-  title        = {About {Stolen Device Protection} for {iPhone}},
-  howpublished = {Apple Support},
-  url          = {https://support.apple.com/en-us/HT212510},
-  note         = {iOS 17.3+; Face ID/Touch ID biometric requirement with no passcode fallback; one-hour security delay for high-impact actions away from familiar locations}
-}
-
-@misc{apple_lockdown_mode,
-  author       = {{Apple Inc.}},
-  title        = {About {Lockdown Mode}},
-  howpublished = {Apple Support},
-  url          = {https://support.apple.com/en-us/HT212650},
-  note         = {iOS 16 / iPadOS 16 / macOS Ventura+; restrictions on Messages attachments, Safari JIT, FaceTime, Shared Albums, wired-accessory connections while locked, and configuration-profile installation}
-}
-
-@techreport{verizon_dbir,
-  author      = {{Verizon}},
-  title       = {Data Breach Investigations Report},
-  institution = {Verizon Business},
-  year        = {2024},
-  url         = {https://www.verizon.com/business/resources/reports/dbir/},
-  note        = {Annual report. The human element (phishing, pretexting, credential abuse) is consistently the dominant initial-access vector}
-}
-
-@misc{little_snitch,
-  author       = {{Objective Development Software GmbH}},
-  title        = {{Little Snitch}},
-  howpublished = {Objective Development, Vienna},
-  url          = {https://www.obdev.at/products/littlesnitch/index.html},
-  note         = {Version 6.x; supports macOS Sequoia and Apple Silicon as of 2026}
-}
-
-@misc{cve_2021_30858,
+@misc{cve202130858,
   author       = {{MITRE Corporation}},
   title        = {{CVE-2021-30858} --- Use-after-free in {WebKit}; exploited in the wild against {Safari}},
-  howpublished = {MITRE CVE Program},
+  year         = {2021},
+  howpublished = {Online},
   url          = {https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30858}
 }
 
-@misc{cve_2021_30632,
+@misc{cve202130632,
   author       = {{MITRE Corporation}},
   title        = {{CVE-2021-30632} --- {JIT} type-confusion in {WebKit}; exploited in the wild},
-  howpublished = {MITRE CVE Program},
+  year         = {2021},
+  howpublished = {Online},
   url          = {https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30632}
 }
 
-@misc{zimperium_federal,
-  author       = {{Zimperium}},
-  title        = {Federal solutions --- {FedRAMP Authorized}; {DHS CDM} {Approved} {Products} {List}},
-  howpublished = {Zimperium, Inc.},
-  url          = {https://www.zimperium.com/zimperium-for-federal-government/},
-  note         = {FedRAMP Marketplace listing: https://marketplace.fedramp.gov/products/FR2118491856}
+@misc{lulu,
+  author       = {Wardle, Patrick},
+  title        = {{LuLu} --- the free, open-source {macOS} firewall},
+  year         = {2026},
+  howpublished = {Online; Objective-See Foundation},
+  url          = {https://objective-see.org/products/lulu.html}
+}
+
+@misc{lulurepo,
+  author       = {{Objective-See Foundation}},
+  title        = {{LuLu} source repository},
+  year         = {2026},
+  howpublished = {Online; GitHub. License: {GNU} General Public License v3.0 ({GPL-3.0})},
+  url          = {https://github.com/objective-see/LuLu}
+}
+
+@misc{wardlebio,
+  author       = {Wardle, Patrick},
+  title        = {About --- Objective-See Foundation},
+  year         = {2026},
+  howpublished = {Online},
+  url          = {https://objective-see.org/about.html},
+  note         = {Confirms prior NSA tenure}
+}
+
+@misc{malwarebytesstateofmalware,
+  author       = {{Malwarebytes}},
+  title        = {State of Malware (annual report series)},
+  year         = {2026},
+  howpublished = {Online},
+  url          = {https://www.malwarebytes.com/resources/state-of-malware},
+  note         = {Documents Mac-vs-Windows threat-detection volumes and the adware/PUP-dominated composition of Mac detections}
+}
+
+@misc{applesdp,
+  author       = {{Apple Inc.}},
+  title        = {About Stolen Device Protection for {iPhone}},
+  year         = {2024},
+  howpublished = {Online},
+  url          = {https://support.apple.com/en-us/120340},
+  note         = {Specifies the iOS 17.3 release, the Face ID/Touch ID biometric requirement with no passcode fallback, and the security-delay behavior away from familiar locations}
+}
+
+@misc{applelockdownmode,
+  author       = {{Apple Inc.}},
+  title        = {About Lockdown Mode},
+  year         = {2022},
+  howpublished = {Online},
+  url          = {https://support.apple.com/en-us/105120},
+  note         = {Specifies the iOS 16 / iPadOS 16 / macOS Ventura release and enumerates the restrictions imposed when Lockdown Mode is enabled}
+}
+
+@techreport{verizondbir,
+  author      = {{Verizon}},
+  title       = {Data Breach Investigations Report ({DBIR})},
+  institution = {Verizon Business},
+  year        = {2024},
+  url         = {https://www.verizon.com/business/resources/reports/dbir/},
+  note        = {Annual; repeatedly identifies the human element --- phishing, pretexting, and credential abuse --- as the dominant initial-access vector across breaches in scope}
 }
